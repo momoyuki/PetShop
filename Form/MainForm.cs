@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Petshop
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form 
     {
         private MySQLDBConnect iConnect; //ดึงClass MySQLDBConnect มาใช้ โดยเก็บไว้ในตัวแปร iconnect
         public MainForm()

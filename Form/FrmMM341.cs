@@ -106,20 +106,22 @@ namespace Petshop
 
         private void bt_Print_Click(object sender, EventArgs e)
         {
-            AddServiceBill();
-
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            if ((Lb_BillID.Text != null) && (Lb_BillID.Text != ""))
             {
-                if (form.GetType() == typeof(FrmBillreview))
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    form.Activate();
-                    return;
+                    if (form.GetType() == typeof(FrmBillreview))
+                    {
+                        form.Activate();
+                        return;
+                    }
                 }
+                FrmBillreview iFrmBill = new FrmBillreview();
+                iFrmBill.MdiParent = MainForm.ActiveForm;
+                iFrmBill.Show();
+                iFrmBill.lb_BillID.Text = Lb_BillID.Text.Trim();
             }
-            FrmBillreview iFrmBill = new FrmBillreview();
-            iFrmBill.MdiParent = MainForm.ActiveForm;
-            iFrmBill.Show();
-            iFrmBill.lb_BillID.Text = Lb_BillID.Text.Trim();
+            BillAdd();
         }
 
         private void AddServiceBill()
@@ -141,7 +143,7 @@ namespace Petshop
                             idtServiceBilCheck = iConnect.SelectByCommand(isqlServiceBillCheck);//ลักษณะการทำงานคือ เมื่อเข้าไปเช็คในฐานข้อมูล หากไม่มี ให้ทำการเพิ่ม หากมีอยู่แล้ว ให้ทำการ แก้ไขให้ตรงกับปัจจุบัน
                             if (idtServiceBilCheck.Rows.Count == 0)
                             {
-                                MessageBox.Show("เข้าแล้ว 2 ");
+                                
                                 string isqlServiceBill = "INSERT INTO `tb_servicebill` (`Bill_ID`, `Service_ID`, `Service_Bill_Unit`, `Service_Bill_Price`, `Service_Bill_Amt`) VALUES ('" + ilbBillID + "', '" + iServiceID + "', '1', '" + iServicePrice + "', '" + iServicePrice + "')";
                                 iConnect.Insert(isqlServiceBill);
                             }
@@ -176,7 +178,7 @@ namespace Petshop
                             idtMediBillCheck = iConnect.SelectByCommand(isqlMediBillCheck);
                             if (idtMediBillCheck.Rows.Count == 0)
                             {
-                                MessageBox.Show("เข้าแล้ว 2 ");
+                                
                                 string isqlMediBill = "INSERT INTO `petshop`.`tb_medibill` (`Bill_ID`, `Medi_ID`, `Medi_Bill_Unit`, `Medi_Bill_Price`, `Medi_Bill_Amt`) VALUES ('" + ilbBillID + "', '" + iMediID + "', '" + iMediUnit + "', '" + iMediPrice + "', '" + iMediAmt + "')";
                                 iConnect.Insert(isqlMediBill);
                             }

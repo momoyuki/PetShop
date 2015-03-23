@@ -89,14 +89,14 @@
             // ตงคาสนคาToolStripMenuItem
             // 
             this.ตงคาสนคาToolStripMenuItem.Name = "ตงคาสนคาToolStripMenuItem";
-            this.ตงคาสนคาToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.ตงคาสนคาToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ตงคาสนคาToolStripMenuItem.Text = "&2.สินค้า";
             this.ตงคาสนคาToolStripMenuItem.Click += new System.EventHandler(this.ตงคาสนคาToolStripMenuItem_Click);
             // 
             // หนวยToolStripMenuItem
             // 
             this.หนวยToolStripMenuItem.Name = "หนวยToolStripMenuItem";
-            this.หนวยToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.หนวยToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.หนวยToolStripMenuItem.Text = "&3.หน่วย";
             this.หนวยToolStripMenuItem.Click += new System.EventHandler(this.หนวยToolStripMenuItem_Click);
             // 
@@ -110,14 +110,14 @@
             // พนกงานToolStripMenuItem
             // 
             this.พนกงานToolStripMenuItem.Name = "พนกงานToolStripMenuItem";
-            this.พนกงานToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.พนกงานToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.พนกงานToolStripMenuItem.Text = "&5.พนักงาน";
             this.พนกงานToolStripMenuItem.Click += new System.EventHandler(this.พนกงานToolStripMenuItem_Click);
             // 
             // ตงคาหนวยงานToolStripMenuItem
             // 
             this.ตงคาหนวยงานToolStripMenuItem.Name = "ตงคาหนวยงานToolStripMenuItem";
-            this.ตงคาหนวยงานToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.ตงคาหนวยงานToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ตงคาหนวยงานToolStripMenuItem.Text = "&6.หน่วยงาน";
             this.ตงคาหนวยงานToolStripMenuItem.Click += new System.EventHandler(this.ตงคาหนวยงานToolStripMenuItem_Click);
             // 
