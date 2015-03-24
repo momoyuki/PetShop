@@ -1,5 +1,4 @@
-﻿using Petshop.Resources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,374 +11,285 @@ namespace Petshop
 {
     public partial class FrmMM24 : Form
     {
-        private TextBox _Textbox = new TextBox();
         private MySQLDBConnect iConnect;
-        
-        public FrmMM24(ref TextBox refTextbox)
+        DataTable /* idtProduct,idtProductSale , */idtProductSaleDetail, idtEmployee;
+        public FrmMM24()
         {
-            
-            iConnect = new MySQLDBConnect();
             InitializeComponent();
-            _Textbox = refTextbox;
-        }
-        private void bt_LoadProfile_Click(object sender, EventArgs e)
-        {
-            LoadData();
+            iConnect = new MySQLDBConnect();
         }
 
-        private void LoadData()
+        private void bt_Load_Click(object sender, EventArgs e)
         {
-           // LoadSex();
-            LoadCompany();
-            LoadPetProfile();
-            LoadPetType();
-            LoadPetBreed();
+            loadData();
+        }
+
+        private void loadData()
+        {
+            loadEmployee();
+            loadProductSaleDetail();
+            Calculate();
+        }
+
+        private void Calculate()
+        {
+            decimal iProductAmt = 0;
+            if ((lb_PriceAmt.Text != null) && (lb_PriceAmt.Text != ""))
+            {
+                iProductAmt = Convert.ToDecimal(lb_PriceAmt.Text);
+            }
+            txb_ProductSaleTotal.Text = iProductAmt.ToString();
+            decimal iTotal = 0;
+            if ((txb_ProductSaleTotal.Text != null) && (txb_ProductSaleTotal.Text != ""))
+            {
+                iTotal = Convert.ToDecimal(txb_ProductSaleTotal.Text);
+            }
+            decimal iDC = 0;
+            if ((txb_ProductSaleDC.Text != null) && (txb_ProductSaleDC.Text != ""))
+            {
+                iDC = Convert.ToDecimal(txb_ProductSaleDC.Text);
+            }
+            decimal iNet = 0;
+            if ((txb_ProductSaleNet.Text != null) && (txb_ProductSaleNet.Text != ""))
+            {
+                iNet = Convert.ToDecimal(txb_ProductSaleNet.Text);
+            }
+            iNet = iTotal - iDC;
+            txb_ProductSaleNet.Text = iNet.ToString();
+        }
+        private void FrmMM22_Load(object sender, EventArgs e)
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH"); //ดึงข้อมูล ปี และกำหนดให้เป็นแบบไทย
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            lbyear.Text = DateTime.Now.ToString("yy");
+            loadData();
+        }
+
+        private void loadProductSaleDetail()
+        {
             
+            string ilbproductSaleID = lb_ProductSaleID.Text.Trim();
+            string isqlProductSaleDetail = "SELECT tb_productsaledetail.*,tb_Product.Product_Des  FROM tb_Product,tb_productsaledetail "+
+            "WHERE (tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' AND tb_Product.Product_ID = tb_productsaledetail.Product_ID)";
+            idtProductSaleDetail = iConnect.SelectByCommand(isqlProductSaleDetail);
+            dGV_Product.DataSource = idtProductSaleDetail;
+            dGV_Product.Refresh();
+
+            DataTable idtSumProduct;
+            string isqlSumProduct = "SELECT sum(ProductSale_Total) as ProductSaleTotal FROM tb_productsaledetail WHERE tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' ";
+            idtSumProduct = iConnect.SelectByCommand(isqlSumProduct);
+            lb_PriceAmt.DataBindings.Clear();
+            Binding b = new Binding("Text", idtSumProduct, "ProductSaleTotal");
+            lb_PriceAmt.DataBindings.Add(b);
         }
 
-        private void LoadSex() // ญังไม่ได้เสร็จ มีปัญหา ในการ เพิ่ม เพศ ชาย หญิง
+        private void loadEmployee()
         {
-            if (rb_F.Checked == true)
-            {
-                lbSex.Text = "0";               
-            }
-            else if (rb_M.Checked == true)
-            {
-                lbSex.Text = "1";
-            }
+            string isqlEmployee = "SELECT * FROM tb_employee";
+            idtEmployee = iConnect.SelectByCommand(isqlEmployee);
+            cb_Em.DisplayMember = idtEmployee.Columns["Em_Name"].ColumnName;
+            cb_Em.ValueMember = idtEmployee.Columns["Em_ID"].ColumnName;
+            cb_Em.DataSource = idtEmployee;
         }
-
-        private void LoadCompany()
+        private void AddRecordProductSale() //สร้างรหัส และ อัพเดต Total DC Net
         {
-            DataTable idtCompany;
-            string isqlCommand = "SELECT * FROM `tb_company`";
-            idtCompany = iConnect.SelectByCommand(isqlCommand);
-            lbCompany.Text = idtCompany.Rows[0]["Company_ID"].ToString();
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            lbYear.Text = DateTime.Now.ToString("yy");
-            lbCompany.Text = idtCompany.Rows[0]["Company_ID"].ToString();
-        }
+            string ilbProductSaleID = lb_ProductSaleID.Text.Trim();
+            string icb_Em = cb_Em.SelectedValue.ToString();
+            string itxbRemark = txb_Remark.Text.Trim();
+            string itxbTotal = txb_ProductSaleTotal.Text.Trim();
+            string itxbDC = txb_ProductSaleDC.Text.Trim();
+            string itxbNet = txb_ProductSaleNet.Text.Trim();
 
-        private void LoadPetType()
-        {
-            DataTable idtPetType;
-            string isqlCommand = "SELECT * FROM `tb_pettype`";
-            idtPetType = iConnect.SelectByCommand(isqlCommand);
-            cb_PetType.DisplayMember = idtPetType.Columns["PetType_Des"].ColumnName;
-            cb_PetType.ValueMember = idtPetType.Columns["PetType_ID"].ColumnName;
-            cb_PetType.DataSource = idtPetType;
-         }
-
-        private void LoadPetBreed()
-        {
-            string icbTypeID = cb_PetType.SelectedValue.ToString();
-            if ((icbTypeID != "") || (icbTypeID != null))
-            {
-                
-                DataTable idtPetBreed;
-                string isqlCommand = "SELECT * FROM `tb_petbreed` where PetType_ID = " + icbTypeID + "";
-
-                idtPetBreed = iConnect.SelectByCommand(isqlCommand);
-                cb_PetBreed.DisplayMember = idtPetBreed.Columns["PetBreed_Des"].ColumnName;
-                cb_PetBreed.ValueMember = idtPetBreed.Columns["PetBreed_ID"].ColumnName;
-                cb_PetBreed.DataSource = idtPetBreed;
-            }
-        }
-        private void LoadPetProfile()
-        {
-            string itxbSearch = txb_SearchPet.Text.Trim();
-            DataTable itbPetProfile;
-            string isqlCommand = "SELECT tb_petprofile.*,tb_petbreed.petbreed_des,tb_pettype.pettype_des FROM `tb_petprofile`,tb_petbreed,tb_pettype where tb_petprofile.petbreed_ID = tb_petbreed.petbreed_id AND tb_petprofile.pettype_id = tb_pettype.pettype_id";
-            itbPetProfile = iConnect.SelectByCommand(isqlCommand);
-            dGV_PetProfile.DataSource = itbPetProfile;
-            dGV_PetProfile.Refresh();
-        }
-
-        private void bt_AddMember_Click(object sender, EventArgs e)
-        {
-            string itbPetID = txb_PetProfileID.Text.Trim();
-            string itbPetName = txb_PetName.Text.Trim();
-            string ilbSex = lbSex.Text.Trim();
-           // string icbPetSex = cb_Sex.SelectedValue.ToString();
+            string ilbyear = lbyear.Text.Trim();
             System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            string idTPBorn = dTP_Born.Value.ToString("yyyy-MM-dd");
-            string itbPetColor = txb_PetColor.Text.Trim();
-            string icbPetTypeID = cb_PetType.SelectedValue.ToString();
-            string icbPetBreedID = cb_PetBreed.SelectedValue.ToString();
-            string iSterility = "0000-00-00";
-            if(CheckBox_Sterility.Checked == true) {
-                iSterility = dTP_Sterility.Value.ToString("yyyy-MM-dd");
-            }
-            string idTPSterility = iSterility;
-            string itbOwnerName = txb_NameOwner.Text.Trim();
-            string itbOwnerAddr = Txb_Addr.Text.Trim();
-            string itbOwnerTel = txb_TelOwner.Text.Trim();
-            string ilbyear = lbYear.Text.Trim();
-            string ilbCompany = lbCompany.Text.Trim();
-
-           // if ((itbPetID == null) || (itbPetID == ""))
-            //{
-                DialogResult iConfirmResult = MessageBox.Show("ต้องการเพิ่มข้อมูลสัตว์ใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
+            string idTP_ProductSaleDate = dTP_ProductSaleDate.Value.ToString("yyyy-MM-dd");
+            if ((lb_ProductSaleID.Text == "")||(lb_ProductSaleID.Text == null)) {
+                DialogResult iConfirmResult = MessageBox.Show("ต้องการบันทึกข้อมูลการรักษาใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    string isqlCommand = "INSERT INTO `tb_petprofile` (`Pet_ID`, `Pet_Name`, `Pet_Sex`, `Pet_DOB`, `Pet_Color`, `PetType_ID`, `PetBreed_ID`, `Pet_Sterility`, `Owner_Name`, `Owner_Addr`, `Owner_Tel`) "+
-                        "VALUES (CONCAT('" + ilbyear + ilbCompany + "', LPAD(  IFNULL( (SELECT SUBSTR(`pet_Id`, 5) FROM `tb_petProfile` AS `alias` WHERE SUBSTR(`pet_Id`, 1, 2) = ('" + ilbyear + "')  "+
-                        "ORDER BY `pet_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )),'" + itbPetName + "', b'" + ilbSex + "', '" + idTPBorn + "', '" + itbPetColor + "', '" + icbPetTypeID + "', '" + icbPetBreedID + "', '" + idTPSterility + "', '" + itbOwnerName + "', '" + itbOwnerAddr + "', '" + itbOwnerTel + "')";
-                    iConnect.Insert(isqlCommand);
+                    string isqlProductSale = "INSERT INTO `tb_productsale` (`ProductSale_ID`, `Em_ID`, `ProductSale_Date`, `Productsale_Total`, `Productsale_DC`, `Productsale_Net`, `Productsale_Remark`) "+
+                        "VALUES (CONCAT('" + ilbyear + "99', LPAD(  IFNULL( (SELECT SUBSTR(`ProductSale_ID`, 5) FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  "+
+                        "ORDER BY `ProductSale_ID` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) , '" + icb_Em + "', '" + idTP_ProductSaleDate + "', '" + itxbTotal + "', '" + itxbDC + "', '" + itxbNet + "', '" + itxbRemark + "')";
+                    iConnect.Insert(isqlProductSale);
+
+                    DataTable idtProductSaleID; //เรียกไอดีเดิมขึ้นมาโชว์
+                    string isqProductSaleID = "SELECT ProductSale_ID FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  ORDER BY `ProductSale_ID` DESC LIMIT 1";
+                    idtProductSaleID = iConnect.SelectByCommand(isqProductSaleID);
+                    lb_ProductSaleID.Text = idtProductSaleID.Rows[0].Field<string>(0);
                 }
-                LoadPetProfile();
-            //}
-        }
-
-        private void cb_PetType_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            LoadPetBreed();
-        }
-        private void FrmMM24_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void bt_EditMember_Click(object sender, EventArgs e)
-        {
-            string itbPetID = txb_PetProfileID.Text.Trim();
-            string itbPetName = txb_PetName.Text.Trim();
-            //string icbPetSex = cb_Sex.SelectedValue.ToString();
-            string ilbSex = lbSex.Text.Trim();
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            string idTPBorn = dTP_Born.Value.ToString("yyyy-MM-dd");
-            string itbPetColor = txb_PetColor.Text.Trim();
-            string icbPetTypeID = cb_PetType.SelectedValue.ToString();
-            string icbPetBreedID = cb_PetBreed.SelectedValue.ToString();
-            string iSterility = "0000-00-00";
-            if (CheckBox_Sterility.Checked == true)
-            {
-                iSterility = dTP_Sterility.Value.ToString("yyyy-MM-dd");
-            }
-            string idTPSterility = iSterility;
-            string itbOwnerName = txb_NameOwner.Text.Trim();
-            string itbOwnerAddr = Txb_Addr.Text.Trim();
-            string itbOwnerTel = txb_TelOwner.Text.Trim();
-            string ilbyear = lbYear.Text.Trim();
-            string ilbCompany = lbCompany.Text.Trim();
-
-            if ((itbPetID != null) || (itbPetID != ""))
-            {
-                DialogResult iConfirmResult = MessageBox.Show("ต้องการแก้ไขข้อมูลสัตว์ใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
-                {
-                    string isqlCommand = "UPDATE `tb_petprofile` SET `Pet_Name` = '" + itbPetName + "', `Pet_Sex` = b'" + ilbSex + "', `Pet_DOB` = '" + idTPBorn + "', `Pet_Color` = '" + itbPetColor + "', `PetType_ID` = '" + icbPetTypeID + "', `PetBreed_ID` = '" + icbPetBreedID + "', `Pet_Sterility` = '" + idTPSterility + "', `Owner_Name` = '" + itbOwnerName + "', `Owner_Addr` = '" + itbOwnerAddr + "', `Owner_Tel` = '" + itbOwnerTel + "' WHERE `tb_petprofile`.`Pet_ID` = '" + itbPetID + "'";
-                    iConnect.Insert(isqlCommand);
-                }
-                LoadPetProfile();
-            }
-        }
-
-        private void rb_F_CheckedChanged(object sender, EventArgs e)
-        {
-            LoadSex();
-        }
-
-        private void rb_M_CheckedChanged(object sender, EventArgs e)
-        {
-            LoadSex();
-        }
-        private void bt_Service_Click(object sender, EventArgs e)
-        {
-            //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM21))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM21 iFrmMM21 = new FrmMM21();
-            iFrmMM21.MdiParent = MainForm.ActiveForm;
-            iFrmMM21.Show();
-            iFrmMM21.txb_PetID.Text = txb_PetProfileID.Text;
-
-        }
-        private void txb_PetProfileID_TextChanged(object sender, EventArgs e)
-        {
-            _Textbox.Text = txb_PetProfileID.Text;
-            loadHealRecord();
-        }
-
-        private void loadHealRecord()
-        {
-           string  iPetID = txb_PetProfileID.Text.Trim();
-            DataTable idtHealRecord;
-            string isqlHealRecord = "SELECT * FROM petshop.tb_healrecord where pet_ID = " + iPetID + "";
-            idtHealRecord = iConnect.SelectByCommand(isqlHealRecord);
-            dGV_HealRecord.DataSource = idtHealRecord;
-            dGV_HealRecord.Refresh();
-            lb_CountHealRecord.Text = idtHealRecord.Rows.Count.ToString();
-        }
-
-        private void bt_Search_Click(object sender, EventArgs e)
-        {
-            string iSearchBox = txb_SearchPet.Text.Trim();
-            if((iSearchBox !="")||(iSearchBox !=null)){
-
-                DataTable itbPetProfile;
-                string isqlCommand = "SELECT tb_petprofile.*,tb_petbreed.petbreed_des,tb_pettype.pettype_des "+
-                    "FROM `tb_petprofile`,tb_petbreed,tb_pettype where ( Pet_ID like '%"+iSearchBox+"%' OR Pet_Name like '%"+iSearchBox+"%' OR Owner_Name like '"+iSearchBox+"' ) AND (tb_petprofile.petbreed_ID = tb_petbreed.petbreed_id) AND (tb_petprofile.pettype_id = tb_pettype.pettype_id)";
-                itbPetProfile = iConnect.SelectByCommand(isqlCommand);
-                dGV_PetProfile.DataSource = itbPetProfile;
-                dGV_PetProfile.Refresh();
             }
             else
             {
-                LoadPetProfile();
+                //ส่วนอัพเดต
+                string isqlUpdate = "";
+                //iConnect.Insert(isqlUpdate);
+                MessageBox.Show("Update");
+
+            }
+           
+        }
+        private void BuyProduct()
+        {
+            string ilbProductSaleID = lb_ProductSaleID.Text.Trim();
+            string itxbProductID = txb_ProductID.Text.Trim();
+            string inUDProductUnit = nUD_ProductUnit.Text.Trim();
+            if ((itxbProductID != null) && (itxbProductID != ""))
+            {
+            if ((ilbProductSaleID !="")&&(ilbProductSaleID !=null)){
+                
+
+                DataTable idtProductCheck;
+                string isqlProductCheck = "SELECT * FROM `tb_product` where Product_ID = " + itxbProductID + "";
+                idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
+
+                if ((idtProductCheck != null) && (idtProductCheck.Rows.Count > 0)) 
+                {
+                    
+                    decimal iUnit = Convert.ToDecimal(nUD_ProductUnit.Value);
+                    decimal iPrice = idtProductCheck.Rows[0].Field<decimal>(4);
+                    decimal iProductSale_Total = iPrice * iUnit;
+                    string iProductName = idtProductCheck.Rows[0].Field<string>(1);
+                    UInt32 iProductUnitAmt = idtProductCheck.Rows[0].Field<UInt32>(8);
+                    UInt32 iProductUnitOrder = idtProductCheck.Rows[0].Field<UInt32>(9);
+                    UInt64 iStock = idtProductCheck.Rows[0].Field<UInt64>(10);
+
+                    int iResult = 0;
+                    if(iStock == 0){
+                        iResult = 1;
+                    }
+                    else
+                    {
+                       
+                        if ((iProductUnitAmt > iUnit) || (iProductUnitAmt == iUnit))
+                        {
+                            iResult = 1;
+                            if((iProductUnitAmt < iProductUnitOrder)||(iProductUnitAmt == iProductUnitOrder))
+                            {
+                                MessageBox.Show("สินค้า "+iProductName +"ใกล้หมด เหลือเพียง"+iProductUnitAmt+"");
+                            }
+                            string isqlreStock = "UPDATE `tb_product` SET `Product_Unit_Amt`= Product_Unit_Amt -" + iUnit + " WHERE `Product_ID`='" + itxbProductID + "'";
+                            iConnect.Insert(isqlreStock);
+                        }
+                        else
+                        {
+                            MessageBox.Show("สินค้า "+iProductName+" มีไม่เพียงพอ เหลือเพียง "+ iProductUnitAmt +"");
+                        }
+                    }
+                    if(iResult == 1)
+                    {
+                        
+                        DataTable idtProductSaleCheck;
+                        string isqlProductSaleCheck = "SELECT * FROM `tb_productsaledetail` where ProductSale_ID = " + ilbProductSaleID + " AND Product_ID = " + itxbProductID + "";
+                        idtProductSaleCheck = iConnect.SelectByCommand(isqlProductSaleCheck);
+                        if((idtProductSaleCheck !=null)&&(idtProductSaleCheck.Rows.Count >0 )){
+                            string isqlProductSaleUpdate = "UPDATE `tb_productsaledetail` SET `Productsale_Unit` = Productsale_Unit+" + inUDProductUnit + ", `ProductSale_Total` = ProductSale_Total+'" + iProductSale_Total + "' " +
+                            "WHERE `tb_productsaledetail`.`ProductSale_ID` = '" + ilbProductSaleID + "' AND `tb_productsaledetail`.`Product_ID` = '" + itxbProductID + "'";
+                            iConnect.Insert(isqlProductSaleUpdate);
+                        }
+                        else
+                        {
+                            string isqlProductSale = "INSERT INTO `tb_productsaledetail` (`ProductSale_ID`, `Product_ID`, `Productsale_Unit`, `Product_Sale`, `ProductSale_Total`) " +
+                                        "VALUES ('" + ilbProductSaleID + "', '" + itxbProductID + "', '" + inUDProductUnit + "', '" + iPrice + "', '" + iProductSale_Total + "')";
+                            iConnect.Insert(isqlProductSale);
+                        }
+                        nUD_ProductUnit.Text = "1";
+                        txb_ProductID.Clear();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("ไม่พบข้อมูล สินค้า");
+                }
+            }
+            else
+            {
+                AddRecordProductSale();
+                //BuyProduct();
+            }
+            loadData();
+        }
+
+        }
+
+        private void txb_Buy_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode ==Keys.Enter ) {
+                BuyProduct();
             }
         }
 
-        private void bt_HealDate_Click(object sender, EventArgs e)
+        private void bt_Print_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM23))
+                if (form.GetType() == typeof(FrmMM342))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM23 iFrmMM23 = new FrmMM23();
-            iFrmMM23.MdiParent = MainForm.ActiveForm;
-            iFrmMM23.lb_PetID.Text = txb_PetProfileID.Text;
-            iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
-            iFrmMM23.Show();
+            FrmMM342 iFrmMM342 = new FrmMM342();
+            iFrmMM342.MdiParent = this;
+            iFrmMM342.Show();
+            iFrmMM342.txb_ReferID.Text = lb_ProductSaleID.Text.Trim();
         }
 
-       /* private void dGV_HealRecord_SelectionChanged(object sender, EventArgs e)
+        private void bt_AddProductSale_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dGV_HealRecord.SelectedRows)
-            {
-                lb_HealRecordID.Text = row.Cells["ccHealRecord_ID"].Value.ToString();
-              
-            }
-        } */
-        private void dGV_HealRecord_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dGV_HealRecord.Rows[e.RowIndex];
-                lb_HealRecordID.Text = row.Cells["ccHealRecord_ID"].Value.ToString();
-            }
-        }
-     /*   private void dGV_PetProfile_SelectionChanged(object sender, EventArgs e) //ไว้ทดสอบ
-        {
-            foreach (DataGridViewRow row in dGV_PetProfile.SelectedRows)
-            {
-                txb_PetProfileID.Text = row.Cells["ccPet_ID"].Value.ToString();
-                txb_PetName.Text = row.Cells["ccPet_Name"].Value.ToString();
-                //เพศ ccPet_Sex Combobox
-                int isex = Convert.ToInt32(row.Cells["ccPet_Sex"].Value);
-                if (isex == 0)
-                {
-                    rb_F.Checked = true;
-                }
-                else if (isex == 1)
-                {
-                    rb_M.Checked = true;
-                }
-
-                //วันเกิด ccPet_DOB DateTimePicker
-                txb_PetColor.Text = row.Cells["ccPet_Color"].Value.ToString();
-                //ประเภทสัตว์ ccPetType_ID  Combobox
-                //พันธุ์สัตว์ ccPet_Breed_ID Combobox
-                //ทำหมัน ccPet_Sterility DateTimePicker
-                DateTime iSterility = Convert.ToDateTime(row.Cells["ccPet_Sterility"].Value);
-                if (iSterility > DateTime.MinValue)
-                {
-                    CheckBox_Sterility.Checked = true;
-                    //DateTime  iSterility = Convert.ToDateTime(row.Cells["ccPet_Sterility"].Value);
-                    dTP_Sterility.Value = iSterility;
-                }
-                else
-                {
-                    CheckBox_Sterility.Checked = false;
-                }
-                txb_NameOwner.Text = row.Cells["ccOwner_Name"].Value.ToString();
-                Txb_Addr.Text = row.Cells["ccOwner_Addr"].Value.ToString();
-                txb_TelOwner.Text = row.Cells["ccOwner_Tel"].Value.ToString();
-            }
-        } */
-
-        private void bt_HealRecordDetail_Click(object sender, EventArgs e)
-        {
-            //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM21))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM21 iFrmMM21 = new FrmMM21();
-            iFrmMM21.MdiParent = MainForm.ActiveForm;
-            iFrmMM21.Show();
-            iFrmMM21.lb_HealRecordID.Text = lb_HealRecordID.Text;
+            BuyProduct();
         }
 
-        private void dGV_PetProfile_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void bt_CancelBuy_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dGV_PetProfile.Rows[e.RowIndex];
-                txb_PetProfileID.Text = row.Cells["ccPet_ID"].Value.ToString();
-                txb_PetName.Text = row.Cells["ccPet_Name"].Value.ToString();
-                //เพศ ccPet_Sex Combobox
-                int isex = Convert.ToInt32(row.Cells["ccPet_Sex"].Value);
-                if (isex == 0)
-                {
-                    rb_F.Checked = true;
-                }
-                else if (isex == 1)
-                {
-                    rb_M.Checked = true;
-                }
+            string ilbProductSaleID = lb_ProductSaleID.Text.Trim();
+            string ilbProductID = lb_ProductID.Text.Trim();
+            string ilbProductUnit = lb_ProductUnit.Text.Trim();
+             DialogResult iConfirmResult = MessageBox.Show("ต้องการยกเลิกรายการสินค้า ?", "ยกเลิกรายการสินค้า..", MessageBoxButtons.YesNo);
+             if (iConfirmResult == DialogResult.Yes)
+             {
+                 DataTable idtCheckProduct;
+                 string isqlCheckProduct = "SELECT * FROM tb_Product where Product_ID = '" + ilbProductID + "'";
+                 idtCheckProduct = iConnect.SelectByCommand(isqlCheckProduct);
 
-                //วันเกิด ccPet_DOB DateTimePicker
-                txb_PetColor.Text = row.Cells["ccPet_Color"].Value.ToString();
-                //ประเภทสัตว์ ccPetType_ID  Combobox
-                //พันธุ์สัตว์ ccPet_Breed_ID Combobox
-                //ทำหมัน ccPet_Sterility DateTimePicker
-                DateTime iSterility = Convert.ToDateTime(row.Cells["ccPet_Sterility"].Value);
-                if (iSterility > DateTime.MinValue)
-                {
-                    CheckBox_Sterility.Checked = true;
-                    //DateTime  iSterility = Convert.ToDateTime(row.Cells["ccPet_Sterility"].Value);
-                    dTP_Sterility.Value = iSterility;
-                }
-                else
-                {
-                    CheckBox_Sterility.Checked = false;
-                }
-                txb_NameOwner.Text = row.Cells["ccOwner_Name"].Value.ToString();
-                Txb_Addr.Text = row.Cells["ccOwner_Addr"].Value.ToString();
-                txb_TelOwner.Text = row.Cells["ccOwner_Tel"].Value.ToString();
+                 UInt64 iStock = idtCheckProduct.Rows[0].Field<UInt64>(10);
+
+                 int iResult = 0;
+                 if (iStock == 0)
+                 {
+                     iResult = 1;
+                 }
+                 else
+                 {
+                     iResult = 1;
+                     string isqlreStock = "UPDATE `tb_Product` SET `Product_Unit_Amt`= Product_Unit_Amt +" + ilbProductUnit + " WHERE `Product_ID`='" + ilbProductID + "'";
+                     iConnect.Insert(isqlreStock);
+                 }
+                 if (iResult == 1)
+                 {
+                     string isqlDelProductSale = "DELETE FROM `tb_ProductSaledetail` WHERE `ProductSale_ID`='" + ilbProductSaleID + "' and `Product_ID`='" + ilbProductID + "'";
+                     iConnect.Insert(isqlDelProductSale);
+                     lb_ProductID.Text = "";
+                     lb_ProductUnit.Text = "";
+                 }
+             }
+        }
+
+        private void dGV_Product_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dGV_Product.SelectedRows)
+            {
+                lb_ProductID.Text = row.Cells["ccProduct_ID"].Value.ToString();
+                lb_ProductUnit.Text = row.Cells["ccProductSale_Unit"].Value.ToString();
             }
         }
 
-        private void dTP_Born_ValueChanged(object sender, EventArgs e)
+        private void txb_ProductSaleDC_TextChanged(object sender, EventArgs e)
         {
-            DateTime ToDate = DateTime.Now;
-
-            DateDifference dDiff = new DateDifference(dTP_Born.Value,ToDate);
-            lb_BirthDay.Text = dDiff.ToString("ปี", "เดือน", "วัน");
+            Calculate();
         }
-
-        
-        
     }
 }

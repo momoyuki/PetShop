@@ -28,7 +28,18 @@ namespace Petshop
                 e.Cancel = true;
             }
         }
-
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            DataTable idtCompany;
+            string isqlCompany = "SELECT * FROM tb_company";
+            idtCompany = iConnect.SelectByCommand(isqlCompany);
+            if (idtCompany.Rows.Count > 0)
+            {
+                string iCompanyName = idtCompany.Rows[0].Field<string>(1);
+                this.Text = iCompanyName;
+            }
+            //โหลด ชิื่อองค์กร
+        }
         private void บรการToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
@@ -58,7 +69,20 @@ namespace Petshop
             iFrmMM12.MdiParent = this;
             iFrmMM12.Show();
         }
-
+        private void หนวยToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmMM13))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmMM13 iFrmMM13 = new FrmMM13();
+            iFrmMM13.MdiParent = this;
+            iFrmMM13.Show();
+        }
         private void พนธสตวToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
@@ -103,8 +127,7 @@ namespace Petshop
             iFrmMM16.MdiParent = this;
             iFrmMM16.Show();
         }
-
-        private void ทำการรกษาToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void จดการสมาชกToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
@@ -114,12 +137,11 @@ namespace Petshop
                     return;
                 }
             }
-            FrmMM21 iFrmMM21 = new FrmMM21();
+            FrmMM21 iFrmMM21 = new FrmMM21(ref _TextBox);
             iFrmMM21.MdiParent = this;
             iFrmMM21.Show();
         }
-
-        private void ทำการรกษายาToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ทำการรกษาToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
@@ -133,7 +155,6 @@ namespace Petshop
             iFrmMM22.MdiParent = this;
             iFrmMM22.Show();
         }
-
         private void ตดตามการรกษาToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
@@ -148,8 +169,7 @@ namespace Petshop
             iFrmMM23.MdiParent = this;
             iFrmMM23.Show();
         }
-        private TextBox _TextBox = new TextBox();
-        private void จดการสมาชกToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ทำการรกษายาToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
@@ -159,25 +179,14 @@ namespace Petshop
                     return;
                 }
             }
-            FrmMM24 iFrmMM24 = new FrmMM24(ref _TextBox);
+            FrmMM24 iFrmMM24 = new FrmMM24();
             iFrmMM24.MdiParent = this;
             iFrmMM24.Show();
         }
 
-        private void หนวยToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM13))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM13 iFrmMM13 = new FrmMM13();
-            iFrmMM13.MdiParent = this;
-            iFrmMM13.Show();
-        }
+    
+        private TextBox _TextBox = new TextBox();
+   
 
         private void ใบเสรจบรการToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -208,17 +217,7 @@ namespace Petshop
             iFrmMM342.Show();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            DataTable idtCompany;
-            string isqlCompany = "SELECT * FROM tb_company";
-            idtCompany = iConnect.SelectByCommand(isqlCompany);
-            if (idtCompany.Rows.Count >0) {
-                string iCompanyName = idtCompany.Rows[0].Field<string>(1);
-                this.Text = iCompanyName;
-            }
-            //โหลด ชิื่อองค์กร
-        }
+
 
         private void ใบนดหมายToolStripMenuItem_Click(object sender, EventArgs e)
         {

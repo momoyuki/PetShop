@@ -28,1037 +28,958 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
-            this.tPService = new System.Windows.Forms.TabPage();
-            this.lb_ServiceAmt = new System.Windows.Forms.Label();
-            this.lb_ServiceA = new System.Windows.Forms.Label();
-            this.lb_ServiceID = new System.Windows.Forms.Label();
-            this.lb_Price = new System.Windows.Forms.Label();
-            this.bt_refService = new System.Windows.Forms.Button();
-            this.cb_Service = new System.Windows.Forms.ComboBox();
-            this.lb_Service = new System.Windows.Forms.Label();
-            this.bt_BuyService = new System.Windows.Forms.Button();
-            this.dGV_Service = new System.Windows.Forms.DataGridView();
-            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tPMedi = new System.Windows.Forms.TabPage();
-            this.lb_MediU = new System.Windows.Forms.Label();
-            this.lb_Unit = new System.Windows.Forms.Label();
-            this.cb_Medi = new System.Windows.Forms.ComboBox();
-            this.lb_MediID = new System.Windows.Forms.Label();
-            this.lb_MediAmt = new System.Windows.Forms.Label();
-            this.lb_MediA = new System.Windows.Forms.Label();
-            this.nUDMediUnit = new System.Windows.Forms.NumericUpDown();
-            this.bt_refMedi = new System.Windows.Forms.Button();
-            this.Lb_MediUnit = new System.Windows.Forms.Label();
-            this.Lb_ListService = new System.Windows.Forms.Label();
-            this.bt_BuyMedi = new System.Windows.Forms.Button();
-            this.dGV_Medi = new System.Windows.Forms.DataGridView();
-            this.ccHealRecord_ID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccMedi_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccMedi_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccMediSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccMedi_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccMediRecord_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_RecordHeal = new System.Windows.Forms.Button();
-            this.txb_HealRecordDC = new System.Windows.Forms.TextBox();
-            this.lb_DC = new System.Windows.Forms.Label();
-            this.bt_PrintDate = new System.Windows.Forms.Button();
-            this.txb_PetID = new System.Windows.Forms.TextBox();
-            this.txb_PetName = new System.Windows.Forms.TextBox();
-            this.lb_PetID = new System.Windows.Forms.Label();
-            this.lbYear = new System.Windows.Forms.Label();
-            this.lbCompanyID = new System.Windows.Forms.Label();
-            this.bt_LoadData = new System.Windows.Forms.Button();
-            this.txb_HealRecordNet = new System.Windows.Forms.TextBox();
-            this.lb_Net = new System.Windows.Forms.Label();
-            this.bt_PrintBill = new System.Windows.Forms.Button();
-            this.txb_HealRecordTotal = new System.Windows.Forms.TextBox();
-            this.lb_Total = new System.Windows.Forms.Label();
-            this.txb_HealRecordRemark = new System.Windows.Forms.TextBox();
-            this.txb_HealRecordSymptom = new System.Windows.Forms.TextBox();
-            this.lb_Remark = new System.Windows.Forms.Label();
-            this.Lb_HealRecordDetail = new System.Windows.Forms.Label();
-            this.txb_OwnerName = new System.Windows.Forms.TextBox();
+            this.gBoxDetail = new System.Windows.Forms.GroupBox();
+            this.lb_BirthDay = new System.Windows.Forms.Label();
+            this.bt_HealDate = new System.Windows.Forms.Button();
+            this.CheckBox_Sterility = new System.Windows.Forms.CheckBox();
+            this.bt_Service = new System.Windows.Forms.Button();
+            this.lbSex = new System.Windows.Forms.Label();
+            this.rb_M = new System.Windows.Forms.RadioButton();
+            this.rb_F = new System.Windows.Forms.RadioButton();
+            this.bt_EditMember = new System.Windows.Forms.Button();
+            this.bt_AddMember = new System.Windows.Forms.Button();
+            this.gBox_OwnerDetail = new System.Windows.Forms.GroupBox();
+            this.bt_LoadProfile = new System.Windows.Forms.Button();
+            this.lb_Tel = new System.Windows.Forms.Label();
+            this.txb_TelOwner = new System.Windows.Forms.TextBox();
+            this.lb_Addr = new System.Windows.Forms.Label();
+            this.Txb_Addr = new System.Windows.Forms.TextBox();
             this.lb_OwnerName = new System.Windows.Forms.Label();
-            this.bt_NewProfile = new System.Windows.Forms.Button();
+            this.lbYear = new System.Windows.Forms.Label();
+            this.lbCompany = new System.Windows.Forms.Label();
+            this.txb_NameOwner = new System.Windows.Forms.TextBox();
             this.lb_PetName = new System.Windows.Forms.Label();
-            this.lb_TempF = new System.Windows.Forms.Label();
-            this.lb_kg = new System.Windows.Forms.Label();
-            this.lb_Temp = new System.Windows.Forms.Label();
-            this.txb_Temp = new System.Windows.Forms.TextBox();
-            this.txb_Weight = new System.Windows.Forms.TextBox();
-            this.lb_Weight = new System.Windows.Forms.Label();
-            this.cb_Em = new System.Windows.Forms.ComboBox();
-            this.lb_Employee = new System.Windows.Forms.Label();
-            this.lb_HealRecordDate = new System.Windows.Forms.Label();
-            this.dTP_HealRecordDate = new System.Windows.Forms.DateTimePicker();
-            this.lb_HealRecord = new System.Windows.Forms.Label();
-            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txb_HR = new System.Windows.Forms.TextBox();
-            this.txb_RR = new System.Windows.Forms.TextBox();
-            this.lb_HealRecordHR = new System.Windows.Forms.Label();
-            this.lb_RR = new System.Windows.Forms.Label();
-            this.lb_HealRecordRR = new System.Windows.Forms.Label();
-            this.lb_HR = new System.Windows.Forms.Label();
+            this.txb_PetName = new System.Windows.Forms.TextBox();
+            this.cb_PetBreed = new System.Windows.Forms.ComboBox();
+            this.lb_Breed = new System.Windows.Forms.Label();
+            this.cb_PetType = new System.Windows.Forms.ComboBox();
+            this.lb_Type = new System.Windows.Forms.Label();
+            this.lb_Sex = new System.Windows.Forms.Label();
+            this.lb_Color = new System.Windows.Forms.Label();
+            this.txb_PetColor = new System.Windows.Forms.TextBox();
+            this.lb_Sterility = new System.Windows.Forms.Label();
+            this.dTP_Sterility = new System.Windows.Forms.DateTimePicker();
+            this.lb_DOB = new System.Windows.Forms.Label();
+            this.dTP_Born = new System.Windows.Forms.DateTimePicker();
+            this.lb_PetID = new System.Windows.Forms.Label();
+            this.txb_PetProfileID = new System.Windows.Forms.TextBox();
+            this.dGV_PetProfile = new System.Windows.Forms.DataGridView();
+            this.ccPet_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOwner_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Sterility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOwner_Addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOwner_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPetType_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPetType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBreed_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPetBreed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txb_SearchPet = new System.Windows.Forms.TextBox();
+            this.bt_Search = new System.Windows.Forms.Button();
+            this.tabC_Pet = new System.Windows.Forms.TabControl();
+            this.tP_ListPeT = new System.Windows.Forms.TabPage();
+            this.tP_LisTDetail = new System.Windows.Forms.TabPage();
             this.lb_HealRecordID = new System.Windows.Forms.Label();
-            this.tabControlServiceMedi.SuspendLayout();
-            this.tPService.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
-            this.tPMedi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nUDMediUnit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_Medi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
+            this.lb_HealRecord = new System.Windows.Forms.Label();
+            this.lb_HealRecordL = new System.Windows.Forms.Label();
+            this.lb_CountHealRecord = new System.Windows.Forms.Label();
+            this.lb_HealRecordList = new System.Windows.Forms.Label();
+            this.bt_HealRecordDetail = new System.Windows.Forms.Button();
+            this.dGV_HealRecord = new System.Windows.Forms.DataGridView();
+            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_IDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Symptom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_HR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_RR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gBoxDetail.SuspendLayout();
+            this.gBox_OwnerDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_PetProfile)).BeginInit();
+            this.tabC_Pet.SuspendLayout();
+            this.tP_ListPeT.SuspendLayout();
+            this.tP_LisTDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_HealRecord)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControlServiceMedi
-            // 
-            this.tabControlServiceMedi.Controls.Add(this.tPService);
-            this.tabControlServiceMedi.Controls.Add(this.tPMedi);
-            this.tabControlServiceMedi.Location = new System.Drawing.Point(15, 333);
-            this.tabControlServiceMedi.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControlServiceMedi.Name = "tabControlServiceMedi";
-            this.tabControlServiceMedi.SelectedIndex = 0;
-            this.tabControlServiceMedi.Size = new System.Drawing.Size(978, 326);
-            this.tabControlServiceMedi.TabIndex = 35;
-            // 
-            // tPService
-            // 
-            this.tPService.Controls.Add(this.lb_ServiceAmt);
-            this.tPService.Controls.Add(this.lb_ServiceA);
-            this.tPService.Controls.Add(this.lb_ServiceID);
-            this.tPService.Controls.Add(this.lb_Price);
-            this.tPService.Controls.Add(this.bt_refService);
-            this.tPService.Controls.Add(this.cb_Service);
-            this.tPService.Controls.Add(this.lb_Service);
-            this.tPService.Controls.Add(this.bt_BuyService);
-            this.tPService.Controls.Add(this.dGV_Service);
-            this.tPService.Location = new System.Drawing.Point(4, 27);
-            this.tPService.Margin = new System.Windows.Forms.Padding(4);
-            this.tPService.Name = "tPService";
-            this.tPService.Padding = new System.Windows.Forms.Padding(4);
-            this.tPService.Size = new System.Drawing.Size(970, 295);
-            this.tPService.TabIndex = 0;
-            this.tPService.Text = "บริการ";
-            this.tPService.UseVisualStyleBackColor = true;
-            // 
-            // lb_ServiceAmt
-            // 
-            this.lb_ServiceAmt.AutoSize = true;
-            this.lb_ServiceAmt.Location = new System.Drawing.Point(791, 107);
-            this.lb_ServiceAmt.Name = "lb_ServiceAmt";
-            this.lb_ServiceAmt.Size = new System.Drawing.Size(0, 18);
-            this.lb_ServiceAmt.TabIndex = 71;
-            this.lb_ServiceAmt.TextChanged += new System.EventHandler(this.lb_ServiceAmt_TextChanged);
-            // 
-            // lb_ServiceA
-            // 
-            this.lb_ServiceA.AutoSize = true;
-            this.lb_ServiceA.Location = new System.Drawing.Point(755, 107);
-            this.lb_ServiceA.Name = "lb_ServiceA";
-            this.lb_ServiceA.Size = new System.Drawing.Size(30, 18);
-            this.lb_ServiceA.TabIndex = 70;
-            this.lb_ServiceA.Text = "รวม";
-            // 
-            // lb_ServiceID
-            // 
-            this.lb_ServiceID.AutoSize = true;
-            this.lb_ServiceID.Location = new System.Drawing.Point(755, 156);
-            this.lb_ServiceID.Name = "lb_ServiceID";
-            this.lb_ServiceID.Size = new System.Drawing.Size(85, 18);
-            this.lb_ServiceID.TabIndex = 69;
-            this.lb_ServiceID.Text = "LbServiceID";
-            // 
-            // lb_Price
-            // 
-            this.lb_Price.AutoSize = true;
-            this.lb_Price.Location = new System.Drawing.Point(656, 11);
-            this.lb_Price.Name = "lb_Price";
-            this.lb_Price.Size = new System.Drawing.Size(48, 18);
-            this.lb_Price.TabIndex = 68;
-            this.lb_Price.Text = "lbPrice";
-            // 
-            // bt_refService
-            // 
-            this.bt_refService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_refService.Location = new System.Drawing.Point(866, 44);
-            this.bt_refService.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_refService.Name = "bt_refService";
-            this.bt_refService.Size = new System.Drawing.Size(100, 32);
-            this.bt_refService.TabIndex = 67;
-            this.bt_refService.Text = "ลบ";
-            this.bt_refService.UseVisualStyleBackColor = true;
-            this.bt_refService.Click += new System.EventHandler(this.bt_refService_Click);
-            // 
-            // cb_Service
-            // 
-            this.cb_Service.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cb_Service.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cb_Service.FormattingEnabled = true;
-            this.cb_Service.Location = new System.Drawing.Point(80, 7);
-            this.cb_Service.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_Service.Name = "cb_Service";
-            this.cb_Service.Size = new System.Drawing.Size(511, 26);
-            this.cb_Service.TabIndex = 65;
-            this.cb_Service.SelectionChangeCommitted += new System.EventHandler(this.cb_Service_SelectionChangeCommitted);
-            this.cb_Service.TextChanged += new System.EventHandler(this.cb_Service_TextChanged);
-            // 
-            // lb_Service
-            // 
-            this.lb_Service.AutoSize = true;
-            this.lb_Service.Location = new System.Drawing.Point(19, 11);
-            this.lb_Service.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Service.Name = "lb_Service";
-            this.lb_Service.Size = new System.Drawing.Size(52, 18);
-            this.lb_Service.TabIndex = 34;
-            this.lb_Service.Text = "รายการ";
-            // 
-            // bt_BuyService
-            // 
-            this.bt_BuyService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_BuyService.Location = new System.Drawing.Point(758, 44);
-            this.bt_BuyService.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_BuyService.Name = "bt_BuyService";
-            this.bt_BuyService.Size = new System.Drawing.Size(100, 32);
-            this.bt_BuyService.TabIndex = 40;
-            this.bt_BuyService.Text = "เพิ่ม";
-            this.bt_BuyService.UseVisualStyleBackColor = true;
-            this.bt_BuyService.Click += new System.EventHandler(this.bt_BuyService_Click);
-            // 
-            // dGV_Service
-            // 
-            this.dGV_Service.AllowUserToAddRows = false;
-            this.dGV_Service.AllowUserToDeleteRows = false;
-            this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ccHealRecord_ID,
-            this.ccService_ID,
-            this.ccService_Des,
-            this.ccService_Price,
-            this.ccService_Amt});
-            this.dGV_Service.Location = new System.Drawing.Point(8, 44);
-            this.dGV_Service.Margin = new System.Windows.Forms.Padding(4);
-            this.dGV_Service.Name = "dGV_Service";
-            this.dGV_Service.ReadOnly = true;
-            this.dGV_Service.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_Service.Size = new System.Drawing.Size(737, 243);
-            this.dGV_Service.TabIndex = 0;
-            this.dGV_Service.SelectionChanged += new System.EventHandler(this.dGV_Service_SelectionChanged);
-            // 
-            // ccHealRecord_ID
-            // 
-            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
-            this.ccHealRecord_ID.HeaderText = "รหัสประวัติรักษา";
-            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
-            this.ccHealRecord_ID.ReadOnly = true;
-            this.ccHealRecord_ID.Visible = false;
-            this.ccHealRecord_ID.Width = 120;
-            // 
-            // ccService_ID
-            // 
-            this.ccService_ID.DataPropertyName = "Service_ID";
-            this.ccService_ID.FillWeight = 140F;
-            this.ccService_ID.HeaderText = "รหัสบริการ";
-            this.ccService_ID.Name = "ccService_ID";
-            this.ccService_ID.ReadOnly = true;
-            this.ccService_ID.Width = 140;
-            // 
-            // ccService_Des
-            // 
-            this.ccService_Des.DataPropertyName = "Service_Des";
-            this.ccService_Des.FillWeight = 250F;
-            this.ccService_Des.HeaderText = "บริการ";
-            this.ccService_Des.Name = "ccService_Des";
-            this.ccService_Des.ReadOnly = true;
-            this.ccService_Des.Width = 250;
-            // 
-            // ccService_Price
-            // 
-            this.ccService_Price.DataPropertyName = "Service_Price";
-            this.ccService_Price.FillWeight = 140F;
-            this.ccService_Price.HeaderText = "ค่าบริการต้น";
-            this.ccService_Price.Name = "ccService_Price";
-            this.ccService_Price.ReadOnly = true;
-            this.ccService_Price.Visible = false;
-            this.ccService_Price.Width = 140;
-            // 
-            // ccService_Amt
-            // 
-            this.ccService_Amt.DataPropertyName = "Service_Amt";
-            this.ccService_Amt.FillWeight = 140F;
-            this.ccService_Amt.HeaderText = "ค่าบริการ";
-            this.ccService_Amt.Name = "ccService_Amt";
-            this.ccService_Amt.ReadOnly = true;
-            this.ccService_Amt.Width = 140;
-            // 
-            // tPMedi
-            // 
-            this.tPMedi.Controls.Add(this.lb_MediU);
-            this.tPMedi.Controls.Add(this.lb_Unit);
-            this.tPMedi.Controls.Add(this.cb_Medi);
-            this.tPMedi.Controls.Add(this.lb_MediID);
-            this.tPMedi.Controls.Add(this.lb_MediAmt);
-            this.tPMedi.Controls.Add(this.lb_MediA);
-            this.tPMedi.Controls.Add(this.nUDMediUnit);
-            this.tPMedi.Controls.Add(this.bt_refMedi);
-            this.tPMedi.Controls.Add(this.Lb_MediUnit);
-            this.tPMedi.Controls.Add(this.Lb_ListService);
-            this.tPMedi.Controls.Add(this.bt_BuyMedi);
-            this.tPMedi.Controls.Add(this.dGV_Medi);
-            this.tPMedi.Location = new System.Drawing.Point(4, 27);
-            this.tPMedi.Margin = new System.Windows.Forms.Padding(4);
-            this.tPMedi.Name = "tPMedi";
-            this.tPMedi.Padding = new System.Windows.Forms.Padding(4);
-            this.tPMedi.Size = new System.Drawing.Size(970, 295);
-            this.tPMedi.TabIndex = 1;
-            this.tPMedi.Text = "ยา";
-            this.tPMedi.UseVisualStyleBackColor = true;
-            // 
-            // lb_MediU
-            // 
-            this.lb_MediU.AutoSize = true;
-            this.lb_MediU.Location = new System.Drawing.Point(752, 185);
-            this.lb_MediU.Name = "lb_MediU";
-            this.lb_MediU.Size = new System.Drawing.Size(71, 18);
-            this.lb_MediU.TabIndex = 79;
-            this.lb_MediU.Text = "Lb_MediU";
-            // 
-            // lb_Unit
-            // 
-            this.lb_Unit.AutoSize = true;
-            this.lb_Unit.Location = new System.Drawing.Point(514, 13);
-            this.lb_Unit.Name = "lb_Unit";
-            this.lb_Unit.Size = new System.Drawing.Size(51, 18);
-            this.lb_Unit.TabIndex = 78;
-            this.lb_Unit.Text = "lb_Unit";
-            // 
-            // cb_Medi
-            // 
-            this.cb_Medi.FormattingEnabled = true;
-            this.cb_Medi.Location = new System.Drawing.Point(78, 9);
-            this.cb_Medi.Name = "cb_Medi";
-            this.cb_Medi.Size = new System.Drawing.Size(416, 26);
-            this.cb_Medi.TabIndex = 77;
-            this.cb_Medi.SelectionChangeCommitted += new System.EventHandler(this.cb_Medi_SelectionChangeCommitted);
-            this.cb_Medi.TextChanged += new System.EventHandler(this.cb_Medi_TextChanged);
-            // 
-            // lb_MediID
-            // 
-            this.lb_MediID.AutoSize = true;
-            this.lb_MediID.Location = new System.Drawing.Point(752, 156);
-            this.lb_MediID.Name = "lb_MediID";
-            this.lb_MediID.Size = new System.Drawing.Size(77, 18);
-            this.lb_MediID.TabIndex = 76;
-            this.lb_MediID.Text = "Lb_MediID";
-            // 
-            // lb_MediAmt
-            // 
-            this.lb_MediAmt.AutoSize = true;
-            this.lb_MediAmt.Location = new System.Drawing.Point(788, 106);
-            this.lb_MediAmt.Name = "lb_MediAmt";
-            this.lb_MediAmt.Size = new System.Drawing.Size(0, 18);
-            this.lb_MediAmt.TabIndex = 75;
-            this.lb_MediAmt.TextChanged += new System.EventHandler(this.lb_MediAmt_TextChanged);
-            // 
-            // lb_MediA
-            // 
-            this.lb_MediA.AutoSize = true;
-            this.lb_MediA.Location = new System.Drawing.Point(752, 106);
-            this.lb_MediA.Name = "lb_MediA";
-            this.lb_MediA.Size = new System.Drawing.Size(30, 18);
-            this.lb_MediA.TabIndex = 74;
-            this.lb_MediA.Text = "รวม";
-            // 
-            // nUDMediUnit
-            // 
-            this.nUDMediUnit.Location = new System.Drawing.Point(681, 9);
-            this.nUDMediUnit.Name = "nUDMediUnit";
-            this.nUDMediUnit.Size = new System.Drawing.Size(64, 26);
-            this.nUDMediUnit.TabIndex = 73;
-            this.nUDMediUnit.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // bt_refMedi
-            // 
-            this.bt_refMedi.BackColor = System.Drawing.SystemColors.Control;
-            this.bt_refMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_refMedi.Location = new System.Drawing.Point(863, 42);
-            this.bt_refMedi.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_refMedi.Name = "bt_refMedi";
-            this.bt_refMedi.Size = new System.Drawing.Size(100, 32);
-            this.bt_refMedi.TabIndex = 70;
-            this.bt_refMedi.Text = "ลบ";
-            this.bt_refMedi.UseVisualStyleBackColor = false;
-            this.bt_refMedi.Click += new System.EventHandler(this.bt_refMedi_Click);
-            // 
-            // Lb_MediUnit
-            // 
-            this.Lb_MediUnit.AutoSize = true;
-            this.Lb_MediUnit.Location = new System.Drawing.Point(626, 13);
-            this.Lb_MediUnit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lb_MediUnit.Name = "Lb_MediUnit";
-            this.Lb_MediUnit.Size = new System.Drawing.Size(48, 18);
-            this.Lb_MediUnit.TabIndex = 65;
-            this.Lb_MediUnit.Text = "จำนวน";
-            // 
-            // Lb_ListService
-            // 
-            this.Lb_ListService.AutoSize = true;
-            this.Lb_ListService.Location = new System.Drawing.Point(19, 13);
-            this.Lb_ListService.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lb_ListService.Name = "Lb_ListService";
-            this.Lb_ListService.Size = new System.Drawing.Size(52, 18);
-            this.Lb_ListService.TabIndex = 41;
-            this.Lb_ListService.Text = "รายการ";
-            // 
-            // bt_BuyMedi
-            // 
-            this.bt_BuyMedi.BackColor = System.Drawing.SystemColors.Control;
-            this.bt_BuyMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_BuyMedi.Location = new System.Drawing.Point(755, 42);
-            this.bt_BuyMedi.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_BuyMedi.Name = "bt_BuyMedi";
-            this.bt_BuyMedi.Size = new System.Drawing.Size(100, 32);
-            this.bt_BuyMedi.TabIndex = 43;
-            this.bt_BuyMedi.Text = "ซื้อ";
-            this.bt_BuyMedi.UseVisualStyleBackColor = false;
-            this.bt_BuyMedi.Click += new System.EventHandler(this.bt_BuyMedi_Click);
-            // 
-            // dGV_Medi
-            // 
-            this.dGV_Medi.AllowUserToAddRows = false;
-            this.dGV_Medi.AllowUserToDeleteRows = false;
-            this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ccHealRecord_ID2,
-            this.ccMedi_ID,
-            this.ccMedi_Des,
-            this.ccMediSale_Unit,
-            this.ccMedi_Sale,
-            this.ccMediRecord_Total});
-            this.dGV_Medi.Location = new System.Drawing.Point(8, 42);
-            this.dGV_Medi.Margin = new System.Windows.Forms.Padding(4);
-            this.dGV_Medi.Name = "dGV_Medi";
-            this.dGV_Medi.ReadOnly = true;
-            this.dGV_Medi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_Medi.Size = new System.Drawing.Size(737, 245);
-            this.dGV_Medi.TabIndex = 1;
-            this.dGV_Medi.SelectionChanged += new System.EventHandler(this.dGV_Medi_SelectionChanged);
-            // 
-            // ccHealRecord_ID2
-            // 
-            this.ccHealRecord_ID2.DataPropertyName = "HealRecord_ID";
-            this.ccHealRecord_ID2.HeaderText = "เลขที่ทำการรักษา";
-            this.ccHealRecord_ID2.Name = "ccHealRecord_ID2";
-            this.ccHealRecord_ID2.ReadOnly = true;
-            this.ccHealRecord_ID2.Visible = false;
-            // 
-            // ccMedi_ID
-            // 
-            this.ccMedi_ID.DataPropertyName = "Medi_ID";
-            this.ccMedi_ID.FillWeight = 130F;
-            this.ccMedi_ID.HeaderText = "รหัสยา";
-            this.ccMedi_ID.Name = "ccMedi_ID";
-            this.ccMedi_ID.ReadOnly = true;
-            this.ccMedi_ID.Width = 130;
-            // 
-            // ccMedi_Des
-            // 
-            this.ccMedi_Des.DataPropertyName = "Medi_Des";
-            this.ccMedi_Des.FillWeight = 240F;
-            this.ccMedi_Des.HeaderText = "ชื่อยา";
-            this.ccMedi_Des.Name = "ccMedi_Des";
-            this.ccMedi_Des.ReadOnly = true;
-            this.ccMedi_Des.Width = 240;
-            // 
-            // ccMediSale_Unit
-            // 
-            this.ccMediSale_Unit.DataPropertyName = "MediSale_Unit";
-            this.ccMediSale_Unit.FillWeight = 80F;
-            this.ccMediSale_Unit.HeaderText = "จำนวน";
-            this.ccMediSale_Unit.Name = "ccMediSale_Unit";
-            this.ccMediSale_Unit.ReadOnly = true;
-            this.ccMediSale_Unit.Width = 80;
-            // 
-            // ccMedi_Sale
-            // 
-            this.ccMedi_Sale.DataPropertyName = "Medi_Sale";
-            this.ccMedi_Sale.FillWeight = 120F;
-            this.ccMedi_Sale.HeaderText = "ค่ายาต่อหน่วย";
-            this.ccMedi_Sale.Name = "ccMedi_Sale";
-            this.ccMedi_Sale.ReadOnly = true;
-            this.ccMedi_Sale.Width = 120;
-            // 
-            // ccMediRecord_Total
-            // 
-            this.ccMediRecord_Total.DataPropertyName = "MediRecord_Total";
-            this.ccMediRecord_Total.FillWeight = 120F;
-            this.ccMediRecord_Total.HeaderText = "ราคารวม";
-            this.ccMediRecord_Total.Name = "ccMediRecord_Total";
-            this.ccMediRecord_Total.ReadOnly = true;
-            this.ccMediRecord_Total.Width = 120;
-            // 
-            // bt_RecordHeal
-            // 
-            this.bt_RecordHeal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_RecordHeal.Location = new System.Drawing.Point(755, 233);
-            this.bt_RecordHeal.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_RecordHeal.Name = "bt_RecordHeal";
-            this.bt_RecordHeal.Size = new System.Drawing.Size(208, 36);
-            this.bt_RecordHeal.TabIndex = 77;
-            this.bt_RecordHeal.Text = "บันทึก";
-            this.bt_RecordHeal.UseVisualStyleBackColor = false;
-            this.bt_RecordHeal.Click += new System.EventHandler(this.Bt_RecordHeal_Click);
-            // 
-            // txb_HealRecordDC
-            // 
-            this.txb_HealRecordDC.Location = new System.Drawing.Point(332, 281);
-            this.txb_HealRecordDC.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_HealRecordDC.Name = "txb_HealRecordDC";
-            this.txb_HealRecordDC.Size = new System.Drawing.Size(59, 26);
-            this.txb_HealRecordDC.TabIndex = 76;
-            this.txb_HealRecordDC.Text = "0.00";
-            this.txb_HealRecordDC.TextChanged += new System.EventHandler(this.txb_DC_TextChanged);
-            // 
-            // lb_DC
-            // 
-            this.lb_DC.AutoSize = true;
-            this.lb_DC.Location = new System.Drawing.Point(266, 285);
-            this.lb_DC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_DC.Name = "lb_DC";
-            this.lb_DC.Size = new System.Drawing.Size(51, 18);
-            this.lb_DC.TabIndex = 75;
-            this.lb_DC.Text = "ส่วนลด";
-            // 
-            // bt_PrintDate
-            // 
-            this.bt_PrintDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_PrintDate.Location = new System.Drawing.Point(755, 277);
-            this.bt_PrintDate.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_PrintDate.Name = "bt_PrintDate";
-            this.bt_PrintDate.Size = new System.Drawing.Size(100, 46);
-            this.bt_PrintDate.TabIndex = 74;
-            this.bt_PrintDate.Text = "พิมพ์ใบนัด";
-            this.bt_PrintDate.UseVisualStyleBackColor = true;
-            this.bt_PrintDate.Click += new System.EventHandler(this.bt_PrintDate_Click);
-            // 
-            // txb_PetID
-            // 
-            this.txb_PetID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txb_PetID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txb_PetID.Enabled = false;
-            this.txb_PetID.Location = new System.Drawing.Point(406, 6);
-            this.txb_PetID.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_PetID.Name = "txb_PetID";
-            this.txb_PetID.Size = new System.Drawing.Size(178, 26);
-            this.txb_PetID.TabIndex = 73;
-            this.txb_PetID.TextChanged += new System.EventHandler(this.txb_PetID_TextChanged);
-            // 
-            // txb_PetName
-            // 
-            this.txb_PetName.Enabled = false;
-            this.txb_PetName.Location = new System.Drawing.Point(132, 82);
-            this.txb_PetName.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_PetName.Name = "txb_PetName";
-            this.txb_PetName.Size = new System.Drawing.Size(188, 26);
-            this.txb_PetName.TabIndex = 71;
-            // 
-            // lb_PetID
-            // 
-            this.lb_PetID.AutoSize = true;
-            this.lb_PetID.Location = new System.Drawing.Point(341, 10);
-            this.lb_PetID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_PetID.Name = "lb_PetID";
-            this.lb_PetID.Size = new System.Drawing.Size(58, 18);
-            this.lb_PetID.TabIndex = 70;
-            this.lb_PetID.Text = "รหัสสัตว์";
-            // 
-            // lbYear
-            // 
-            this.lbYear.AutoSize = true;
-            this.lbYear.Location = new System.Drawing.Point(633, 86);
-            this.lbYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbYear.Name = "lbYear";
-            this.lbYear.Size = new System.Drawing.Size(28, 18);
-            this.lbYear.TabIndex = 68;
-            this.lbYear.Text = "YY";
-            this.lbYear.Visible = false;
-            // 
-            // lbCompanyID
-            // 
-            this.lbCompanyID.AutoSize = true;
-            this.lbCompanyID.Location = new System.Drawing.Point(606, 86);
-            this.lbCompanyID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCompanyID.Name = "lbCompanyID";
-            this.lbCompanyID.Size = new System.Drawing.Size(17, 18);
-            this.lbCompanyID.TabIndex = 67;
-            this.lbCompanyID.Text = "C";
-            this.lbCompanyID.Visible = false;
-            // 
-            // bt_LoadData
-            // 
-            this.bt_LoadData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_LoadData.Location = new System.Drawing.Point(556, 211);
-            this.bt_LoadData.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_LoadData.Name = "bt_LoadData";
-            this.bt_LoadData.Size = new System.Drawing.Size(100, 32);
-            this.bt_LoadData.TabIndex = 65;
-            this.bt_LoadData.Text = "LoadData";
-            this.bt_LoadData.UseVisualStyleBackColor = true;
-            this.bt_LoadData.Visible = false;
-            this.bt_LoadData.Click += new System.EventHandler(this.bt_LoadData_Click);
-            // 
-            // txb_HealRecordNet
-            // 
-            this.txb_HealRecordNet.Enabled = false;
-            this.txb_HealRecordNet.Location = new System.Drawing.Point(457, 281);
-            this.txb_HealRecordNet.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_HealRecordNet.Name = "txb_HealRecordNet";
-            this.txb_HealRecordNet.Size = new System.Drawing.Size(59, 26);
-            this.txb_HealRecordNet.TabIndex = 63;
-            this.txb_HealRecordNet.Text = "0.00";
-            // 
-            // lb_Net
-            // 
-            this.lb_Net.AutoSize = true;
-            this.lb_Net.Location = new System.Drawing.Point(406, 285);
-            this.lb_Net.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Net.Name = "lb_Net";
-            this.lb_Net.Size = new System.Drawing.Size(36, 18);
-            this.lb_Net.TabIndex = 62;
-            this.lb_Net.Text = "สุทธิ";
-            // 
-            // bt_PrintBill
-            // 
-            this.bt_PrintBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_PrintBill.Location = new System.Drawing.Point(863, 277);
-            this.bt_PrintBill.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_PrintBill.Name = "bt_PrintBill";
-            this.bt_PrintBill.Size = new System.Drawing.Size(100, 46);
-            this.bt_PrintBill.TabIndex = 38;
-            this.bt_PrintBill.Text = "พิมพ์ใบเสร็จ";
-            this.bt_PrintBill.UseVisualStyleBackColor = true;
-            this.bt_PrintBill.Click += new System.EventHandler(this.bt_Print_Click);
-            // 
-            // txb_HealRecordTotal
-            // 
-            this.txb_HealRecordTotal.Enabled = false;
-            this.txb_HealRecordTotal.Location = new System.Drawing.Point(192, 281);
-            this.txb_HealRecordTotal.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_HealRecordTotal.Name = "txb_HealRecordTotal";
-            this.txb_HealRecordTotal.Size = new System.Drawing.Size(59, 26);
-            this.txb_HealRecordTotal.TabIndex = 59;
-            this.txb_HealRecordTotal.Text = "0.00";
-            // 
-            // lb_Total
-            // 
-            this.lb_Total.AutoSize = true;
-            this.lb_Total.Location = new System.Drawing.Point(147, 285);
-            this.lb_Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Total.Name = "lb_Total";
-            this.lb_Total.Size = new System.Drawing.Size(30, 18);
-            this.lb_Total.TabIndex = 58;
-            this.lb_Total.Text = "รวม";
-            // 
-            // txb_HealRecordRemark
-            // 
-            this.txb_HealRecordRemark.Location = new System.Drawing.Point(137, 214);
-            this.txb_HealRecordRemark.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_HealRecordRemark.Name = "txb_HealRecordRemark";
-            this.txb_HealRecordRemark.Size = new System.Drawing.Size(411, 26);
-            this.txb_HealRecordRemark.TabIndex = 57;
-            // 
-            // txb_HealRecordSymptom
-            // 
-            this.txb_HealRecordSymptom.Location = new System.Drawing.Point(137, 116);
-            this.txb_HealRecordSymptom.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_HealRecordSymptom.Multiline = true;
-            this.txb_HealRecordSymptom.Name = "txb_HealRecordSymptom";
-            this.txb_HealRecordSymptom.Size = new System.Drawing.Size(552, 90);
-            this.txb_HealRecordSymptom.TabIndex = 56;
-            // 
-            // lb_Remark
-            // 
-            this.lb_Remark.AutoSize = true;
-            this.lb_Remark.Location = new System.Drawing.Point(60, 218);
-            this.lb_Remark.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Remark.Name = "lb_Remark";
-            this.lb_Remark.Size = new System.Drawing.Size(67, 18);
-            this.lb_Remark.TabIndex = 55;
-            this.lb_Remark.Text = "หมายเหตุ";
-            // 
-            // Lb_HealRecordDetail
-            // 
-            this.Lb_HealRecordDetail.AutoSize = true;
-            this.Lb_HealRecordDetail.Location = new System.Drawing.Point(83, 116);
-            this.Lb_HealRecordDetail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lb_HealRecordDetail.Name = "Lb_HealRecordDetail";
-            this.Lb_HealRecordDetail.Size = new System.Drawing.Size(46, 18);
-            this.Lb_HealRecordDetail.TabIndex = 54;
-            this.Lb_HealRecordDetail.Text = "อาการ";
-            // 
-            // txb_OwnerName
-            // 
-            this.txb_OwnerName.Enabled = false;
-            this.txb_OwnerName.Location = new System.Drawing.Point(403, 82);
-            this.txb_OwnerName.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_OwnerName.Name = "txb_OwnerName";
-            this.txb_OwnerName.Size = new System.Drawing.Size(190, 26);
-            this.txb_OwnerName.TabIndex = 49;
+            // gBoxDetail
+            // 
+            this.gBoxDetail.Controls.Add(this.lb_BirthDay);
+            this.gBoxDetail.Controls.Add(this.bt_HealDate);
+            this.gBoxDetail.Controls.Add(this.CheckBox_Sterility);
+            this.gBoxDetail.Controls.Add(this.bt_Service);
+            this.gBoxDetail.Controls.Add(this.lbSex);
+            this.gBoxDetail.Controls.Add(this.rb_M);
+            this.gBoxDetail.Controls.Add(this.rb_F);
+            this.gBoxDetail.Controls.Add(this.bt_EditMember);
+            this.gBoxDetail.Controls.Add(this.bt_AddMember);
+            this.gBoxDetail.Controls.Add(this.gBox_OwnerDetail);
+            this.gBoxDetail.Controls.Add(this.lb_PetName);
+            this.gBoxDetail.Controls.Add(this.txb_PetName);
+            this.gBoxDetail.Controls.Add(this.cb_PetBreed);
+            this.gBoxDetail.Controls.Add(this.lb_Breed);
+            this.gBoxDetail.Controls.Add(this.cb_PetType);
+            this.gBoxDetail.Controls.Add(this.lb_Type);
+            this.gBoxDetail.Controls.Add(this.lb_Sex);
+            this.gBoxDetail.Controls.Add(this.lb_Color);
+            this.gBoxDetail.Controls.Add(this.txb_PetColor);
+            this.gBoxDetail.Controls.Add(this.lb_Sterility);
+            this.gBoxDetail.Controls.Add(this.dTP_Sterility);
+            this.gBoxDetail.Controls.Add(this.lb_DOB);
+            this.gBoxDetail.Controls.Add(this.dTP_Born);
+            this.gBoxDetail.Controls.Add(this.lb_PetID);
+            this.gBoxDetail.Controls.Add(this.txb_PetProfileID);
+            this.gBoxDetail.Location = new System.Drawing.Point(16, 17);
+            this.gBoxDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.gBoxDetail.Name = "gBoxDetail";
+            this.gBoxDetail.Padding = new System.Windows.Forms.Padding(4);
+            this.gBoxDetail.Size = new System.Drawing.Size(979, 285);
+            this.gBoxDetail.TabIndex = 1;
+            this.gBoxDetail.TabStop = false;
+            this.gBoxDetail.Text = "รายละเอียด";
+            // 
+            // lb_BirthDay
+            // 
+            this.lb_BirthDay.AutoSize = true;
+            this.lb_BirthDay.Location = new System.Drawing.Point(764, 29);
+            this.lb_BirthDay.Name = "lb_BirthDay";
+            this.lb_BirthDay.Size = new System.Drawing.Size(33, 18);
+            this.lb_BirthDay.TabIndex = 27;
+            this.lb_BirthDay.Text = "อายุ";
+            // 
+            // bt_HealDate
+            // 
+            this.bt_HealDate.Location = new System.Drawing.Point(177, 168);
+            this.bt_HealDate.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_HealDate.Name = "bt_HealDate";
+            this.bt_HealDate.Size = new System.Drawing.Size(100, 69);
+            this.bt_HealDate.TabIndex = 26;
+            this.bt_HealDate.Text = "นัดหมาย";
+            this.bt_HealDate.UseVisualStyleBackColor = true;
+            this.bt_HealDate.Click += new System.EventHandler(this.bt_HealDate_Click);
+            // 
+            // CheckBox_Sterility
+            // 
+            this.CheckBox_Sterility.AutoSize = true;
+            this.CheckBox_Sterility.Location = new System.Drawing.Point(745, 70);
+            this.CheckBox_Sterility.Name = "CheckBox_Sterility";
+            this.CheckBox_Sterility.Size = new System.Drawing.Size(15, 14);
+            this.CheckBox_Sterility.TabIndex = 25;
+            this.CheckBox_Sterility.UseVisualStyleBackColor = true;
+            // 
+            // bt_Service
+            // 
+            this.bt_Service.Location = new System.Drawing.Point(69, 168);
+            this.bt_Service.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Service.Name = "bt_Service";
+            this.bt_Service.Size = new System.Drawing.Size(100, 69);
+            this.bt_Service.TabIndex = 24;
+            this.bt_Service.Text = "ทำการรักษา";
+            this.bt_Service.UseVisualStyleBackColor = true;
+            this.bt_Service.Click += new System.EventHandler(this.bt_Service_Click);
+            // 
+            // lbSex
+            // 
+            this.lbSex.AutoSize = true;
+            this.lbSex.Location = new System.Drawing.Point(201, 105);
+            this.lbSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSex.Name = "lbSex";
+            this.lbSex.Size = new System.Drawing.Size(42, 18);
+            this.lbSex.TabIndex = 23;
+            this.lbSex.Text = "lbSex";
+            // 
+            // rb_M
+            // 
+            this.rb_M.AutoSize = true;
+            this.rb_M.Location = new System.Drawing.Point(148, 103);
+            this.rb_M.Margin = new System.Windows.Forms.Padding(4);
+            this.rb_M.Name = "rb_M";
+            this.rb_M.Size = new System.Drawing.Size(35, 22);
+            this.rb_M.TabIndex = 22;
+            this.rb_M.TabStop = true;
+            this.rb_M.Text = "ผู้";
+            this.rb_M.UseVisualStyleBackColor = true;
+            this.rb_M.CheckedChanged += new System.EventHandler(this.rb_M_CheckedChanged);
+            // 
+            // rb_F
+            // 
+            this.rb_F.AutoSize = true;
+            this.rb_F.Location = new System.Drawing.Point(81, 103);
+            this.rb_F.Margin = new System.Windows.Forms.Padding(4);
+            this.rb_F.Name = "rb_F";
+            this.rb_F.Size = new System.Drawing.Size(49, 22);
+            this.rb_F.TabIndex = 21;
+            this.rb_F.TabStop = true;
+            this.rb_F.Text = "เมีย";
+            this.rb_F.UseVisualStyleBackColor = true;
+            this.rb_F.CheckedChanged += new System.EventHandler(this.rb_F_CheckedChanged);
+            // 
+            // bt_EditMember
+            // 
+            this.bt_EditMember.Location = new System.Drawing.Point(177, 245);
+            this.bt_EditMember.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_EditMember.Name = "bt_EditMember";
+            this.bt_EditMember.Size = new System.Drawing.Size(100, 32);
+            this.bt_EditMember.TabIndex = 18;
+            this.bt_EditMember.Text = "แก้ไข";
+            this.bt_EditMember.UseVisualStyleBackColor = true;
+            this.bt_EditMember.Click += new System.EventHandler(this.bt_EditMember_Click);
+            // 
+            // bt_AddMember
+            // 
+            this.bt_AddMember.Location = new System.Drawing.Point(69, 245);
+            this.bt_AddMember.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_AddMember.Name = "bt_AddMember";
+            this.bt_AddMember.Size = new System.Drawing.Size(100, 32);
+            this.bt_AddMember.TabIndex = 17;
+            this.bt_AddMember.Text = "เพิ่ม";
+            this.bt_AddMember.UseVisualStyleBackColor = true;
+            this.bt_AddMember.Click += new System.EventHandler(this.bt_AddMember_Click);
+            // 
+            // gBox_OwnerDetail
+            // 
+            this.gBox_OwnerDetail.Controls.Add(this.bt_LoadProfile);
+            this.gBox_OwnerDetail.Controls.Add(this.lb_Tel);
+            this.gBox_OwnerDetail.Controls.Add(this.txb_TelOwner);
+            this.gBox_OwnerDetail.Controls.Add(this.lb_Addr);
+            this.gBox_OwnerDetail.Controls.Add(this.Txb_Addr);
+            this.gBox_OwnerDetail.Controls.Add(this.lb_OwnerName);
+            this.gBox_OwnerDetail.Controls.Add(this.lbYear);
+            this.gBox_OwnerDetail.Controls.Add(this.lbCompany);
+            this.gBox_OwnerDetail.Controls.Add(this.txb_NameOwner);
+            this.gBox_OwnerDetail.Location = new System.Drawing.Point(356, 107);
+            this.gBox_OwnerDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.gBox_OwnerDetail.Name = "gBox_OwnerDetail";
+            this.gBox_OwnerDetail.Padding = new System.Windows.Forms.Padding(4);
+            this.gBox_OwnerDetail.Size = new System.Drawing.Size(615, 170);
+            this.gBox_OwnerDetail.TabIndex = 16;
+            this.gBox_OwnerDetail.TabStop = false;
+            this.gBox_OwnerDetail.Text = "ข้อมูลเจ้าของสัตว์";
+            // 
+            // bt_LoadProfile
+            // 
+            this.bt_LoadProfile.Location = new System.Drawing.Point(5, 130);
+            this.bt_LoadProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_LoadProfile.Name = "bt_LoadProfile";
+            this.bt_LoadProfile.Size = new System.Drawing.Size(100, 32);
+            this.bt_LoadProfile.TabIndex = 19;
+            this.bt_LoadProfile.Text = "LoadProfile";
+            this.bt_LoadProfile.UseVisualStyleBackColor = true;
+            this.bt_LoadProfile.Visible = false;
+            this.bt_LoadProfile.Click += new System.EventHandler(this.bt_LoadProfile_Click);
+            // 
+            // lb_Tel
+            // 
+            this.lb_Tel.AutoSize = true;
+            this.lb_Tel.Location = new System.Drawing.Point(275, 26);
+            this.lb_Tel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Tel.Name = "lb_Tel";
+            this.lb_Tel.Size = new System.Drawing.Size(128, 18);
+            this.lb_Tel.TabIndex = 7;
+            this.lb_Tel.Text = "เบอร์โทรศัพท์ติดต่อ";
+            // 
+            // txb_TelOwner
+            // 
+            this.txb_TelOwner.Location = new System.Drawing.Point(411, 23);
+            this.txb_TelOwner.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_TelOwner.Name = "txb_TelOwner";
+            this.txb_TelOwner.Size = new System.Drawing.Size(185, 26);
+            this.txb_TelOwner.TabIndex = 6;
+            // 
+            // lb_Addr
+            // 
+            this.lb_Addr.AutoSize = true;
+            this.lb_Addr.Location = new System.Drawing.Point(59, 68);
+            this.lb_Addr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Addr.Name = "lb_Addr";
+            this.lb_Addr.Size = new System.Drawing.Size(37, 18);
+            this.lb_Addr.TabIndex = 5;
+            this.lb_Addr.Text = "ที่อยู่";
+            // 
+            // Txb_Addr
+            // 
+            this.Txb_Addr.Location = new System.Drawing.Point(113, 64);
+            this.Txb_Addr.Margin = new System.Windows.Forms.Padding(4);
+            this.Txb_Addr.Multiline = true;
+            this.Txb_Addr.Name = "Txb_Addr";
+            this.Txb_Addr.Size = new System.Drawing.Size(420, 97);
+            this.Txb_Addr.TabIndex = 4;
             // 
             // lb_OwnerName
             // 
             this.lb_OwnerName.AutoSize = true;
-            this.lb_OwnerName.Location = new System.Drawing.Point(326, 86);
+            this.lb_OwnerName.Location = new System.Drawing.Point(9, 32);
             this.lb_OwnerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_OwnerName.Name = "lb_OwnerName";
-            this.lb_OwnerName.Size = new System.Drawing.Size(71, 18);
-            this.lb_OwnerName.TabIndex = 48;
-            this.lb_OwnerName.Text = "เจ้าของชื่อ";
+            this.lb_OwnerName.Size = new System.Drawing.Size(96, 18);
+            this.lb_OwnerName.TabIndex = 3;
+            this.lb_OwnerName.Text = "ชื่อเจ้าของสัตว์";
             // 
-            // bt_NewProfile
+            // lbYear
             // 
-            this.bt_NewProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_NewProfile.Location = new System.Drawing.Point(592, 3);
-            this.bt_NewProfile.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_NewProfile.Name = "bt_NewProfile";
-            this.bt_NewProfile.Size = new System.Drawing.Size(100, 32);
-            this.bt_NewProfile.TabIndex = 46;
-            this.bt_NewProfile.Text = "ค้นหาสัตว์ไข้";
-            this.bt_NewProfile.UseVisualStyleBackColor = true;
-            this.bt_NewProfile.Click += new System.EventHandler(this.bt_NewProfile_Click);
+            this.lbYear.AutoSize = true;
+            this.lbYear.Location = new System.Drawing.Point(570, 68);
+            this.lbYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(37, 18);
+            this.lbYear.TabIndex = 20;
+            this.lbYear.Text = "year";
+            this.lbYear.Visible = false;
+            // 
+            // lbCompany
+            // 
+            this.lbCompany.AutoSize = true;
+            this.lbCompany.Location = new System.Drawing.Point(542, 68);
+            this.lbCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCompany.Name = "lbCompany";
+            this.lbCompany.Size = new System.Drawing.Size(17, 18);
+            this.lbCompany.TabIndex = 19;
+            this.lbCompany.Text = "C";
+            this.lbCompany.Visible = false;
+            // 
+            // txb_NameOwner
+            // 
+            this.txb_NameOwner.Location = new System.Drawing.Point(113, 26);
+            this.txb_NameOwner.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_NameOwner.Name = "txb_NameOwner";
+            this.txb_NameOwner.Size = new System.Drawing.Size(154, 26);
+            this.txb_NameOwner.TabIndex = 2;
             // 
             // lb_PetName
             // 
             this.lb_PetName.AutoSize = true;
-            this.lb_PetName.Location = new System.Drawing.Point(79, 86);
+            this.lb_PetName.Location = new System.Drawing.Point(5, 67);
             this.lb_PetName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_PetName.Name = "lb_PetName";
-            this.lb_PetName.Size = new System.Drawing.Size(50, 18);
-            this.lb_PetName.TabIndex = 44;
-            this.lb_PetName.Text = "สัตว์ไข้";
+            this.lb_PetName.Size = new System.Drawing.Size(76, 18);
+            this.lb_PetName.TabIndex = 15;
+            this.lb_PetName.Text = "ชื่อของสัตว์";
             // 
-            // lb_TempF
+            // txb_PetName
             // 
-            this.lb_TempF.AutoSize = true;
-            this.lb_TempF.Location = new System.Drawing.Point(937, 26);
-            this.lb_TempF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_TempF.Name = "lb_TempF";
-            this.lb_TempF.Size = new System.Drawing.Size(23, 18);
-            this.lb_TempF.TabIndex = 43;
-            this.lb_TempF.Text = "°F";
+            this.txb_PetName.Location = new System.Drawing.Point(83, 63);
+            this.txb_PetName.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_PetName.Name = "txb_PetName";
+            this.txb_PetName.Size = new System.Drawing.Size(160, 26);
+            this.txb_PetName.TabIndex = 14;
             // 
-            // lb_kg
+            // cb_PetBreed
             // 
-            this.lb_kg.AutoSize = true;
-            this.lb_kg.Location = new System.Drawing.Point(937, 58);
-            this.lb_kg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_kg.Name = "lb_kg";
-            this.lb_kg.Size = new System.Drawing.Size(30, 18);
-            this.lb_kg.TabIndex = 40;
-            this.lb_kg.Text = "Kg.";
+            this.cb_PetBreed.FormattingEnabled = true;
+            this.cb_PetBreed.Location = new System.Drawing.Point(477, 63);
+            this.cb_PetBreed.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_PetBreed.Name = "cb_PetBreed";
+            this.cb_PetBreed.Size = new System.Drawing.Size(199, 26);
+            this.cb_PetBreed.TabIndex = 13;
             // 
-            // lb_Temp
+            // lb_Breed
             // 
-            this.lb_Temp.AutoSize = true;
-            this.lb_Temp.Location = new System.Drawing.Point(805, 26);
-            this.lb_Temp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Temp.Name = "lb_Temp";
-            this.lb_Temp.Size = new System.Drawing.Size(58, 18);
-            this.lb_Temp.TabIndex = 42;
-            this.lb_Temp.Text = "อุณหภูมิ";
+            this.lb_Breed.AutoSize = true;
+            this.lb_Breed.Location = new System.Drawing.Point(430, 67);
+            this.lb_Breed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Breed.Name = "lb_Breed";
+            this.lb_Breed.Size = new System.Drawing.Size(36, 18);
+            this.lb_Breed.TabIndex = 12;
+            this.lb_Breed.Text = "พันธุ์";
             // 
-            // txb_Temp
+            // cb_PetType
             // 
-            this.txb_Temp.Location = new System.Drawing.Point(870, 22);
-            this.txb_Temp.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_Temp.Name = "txb_Temp";
-            this.txb_Temp.Size = new System.Drawing.Size(60, 26);
-            this.txb_Temp.TabIndex = 41;
+            this.cb_PetType.FormattingEnabled = true;
+            this.cb_PetType.Location = new System.Drawing.Point(321, 63);
+            this.cb_PetType.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_PetType.Name = "cb_PetType";
+            this.cb_PetType.Size = new System.Drawing.Size(92, 26);
+            this.cb_PetType.TabIndex = 11;
+            this.cb_PetType.SelectionChangeCommitted += new System.EventHandler(this.cb_PetType_SelectionChangeCommitted);
             // 
-            // txb_Weight
+            // lb_Type
             // 
-            this.txb_Weight.Location = new System.Drawing.Point(870, 54);
-            this.txb_Weight.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_Weight.Name = "txb_Weight";
-            this.txb_Weight.Size = new System.Drawing.Size(60, 26);
-            this.txb_Weight.TabIndex = 39;
+            this.lb_Type.AutoSize = true;
+            this.lb_Type.Location = new System.Drawing.Point(254, 67);
+            this.lb_Type.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Type.Name = "lb_Type";
+            this.lb_Type.Size = new System.Drawing.Size(55, 18);
+            this.lb_Type.TabIndex = 10;
+            this.lb_Type.Text = "ประเภท";
             // 
-            // lb_Weight
+            // lb_Sex
             // 
-            this.lb_Weight.AutoSize = true;
-            this.lb_Weight.Location = new System.Drawing.Point(811, 58);
-            this.lb_Weight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Weight.Name = "lb_Weight";
-            this.lb_Weight.Size = new System.Drawing.Size(52, 18);
-            this.lb_Weight.TabIndex = 38;
-            this.lb_Weight.Text = "น้ำหนัก";
+            this.lb_Sex.AutoSize = true;
+            this.lb_Sex.Location = new System.Drawing.Point(36, 105);
+            this.lb_Sex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Sex.Name = "lb_Sex";
+            this.lb_Sex.Size = new System.Drawing.Size(33, 18);
+            this.lb_Sex.TabIndex = 9;
+            this.lb_Sex.Text = "เพศ";
             // 
-            // cb_Em
+            // lb_Color
             // 
-            this.cb_Em.FormattingEnabled = true;
-            this.cb_Em.Location = new System.Drawing.Point(403, 42);
-            this.cb_Em.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_Em.Name = "cb_Em";
-            this.cb_Em.Size = new System.Drawing.Size(190, 26);
-            this.cb_Em.TabIndex = 37;
+            this.lb_Color.AutoSize = true;
+            this.lb_Color.Location = new System.Drawing.Point(235, 29);
+            this.lb_Color.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Color.Name = "lb_Color";
+            this.lb_Color.Size = new System.Drawing.Size(67, 18);
+            this.lb_Color.TabIndex = 7;
+            this.lb_Color.Text = "สีของสัตว์";
             // 
-            // lb_Employee
+            // txb_PetColor
             // 
-            this.lb_Employee.AutoSize = true;
-            this.lb_Employee.Location = new System.Drawing.Point(330, 46);
-            this.lb_Employee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Employee.Name = "lb_Employee";
-            this.lb_Employee.Size = new System.Drawing.Size(65, 18);
-            this.lb_Employee.TabIndex = 36;
-            this.lb_Employee.Text = "เจ้าหน้าที่";
+            this.txb_PetColor.Location = new System.Drawing.Point(303, 25);
+            this.txb_PetColor.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_PetColor.Name = "txb_PetColor";
+            this.txb_PetColor.Size = new System.Drawing.Size(147, 26);
+            this.txb_PetColor.TabIndex = 6;
             // 
-            // lb_HealRecordDate
+            // lb_Sterility
             // 
-            this.lb_HealRecordDate.AutoSize = true;
-            this.lb_HealRecordDate.Location = new System.Drawing.Point(20, 46);
-            this.lb_HealRecordDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_HealRecordDate.Name = "lb_HealRecordDate";
-            this.lb_HealRecordDate.Size = new System.Drawing.Size(108, 18);
-            this.lb_HealRecordDate.TabIndex = 35;
-            this.lb_HealRecordDate.Text = "วันที่ทำการรักษา";
+            this.lb_Sterility.AutoSize = true;
+            this.lb_Sterility.Location = new System.Drawing.Point(684, 67);
+            this.lb_Sterility.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Sterility.Name = "lb_Sterility";
+            this.lb_Sterility.Size = new System.Drawing.Size(54, 18);
+            this.lb_Sterility.TabIndex = 5;
+            this.lb_Sterility.Text = "ทำหมัน";
             // 
-            // dTP_HealRecordDate
+            // dTP_Sterility
             // 
-            this.dTP_HealRecordDate.Location = new System.Drawing.Point(132, 42);
-            this.dTP_HealRecordDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dTP_HealRecordDate.Name = "dTP_HealRecordDate";
-            this.dTP_HealRecordDate.Size = new System.Drawing.Size(188, 26);
-            this.dTP_HealRecordDate.TabIndex = 34;
+            this.dTP_Sterility.Location = new System.Drawing.Point(767, 63);
+            this.dTP_Sterility.Margin = new System.Windows.Forms.Padding(4);
+            this.dTP_Sterility.Name = "dTP_Sterility";
+            this.dTP_Sterility.Size = new System.Drawing.Size(189, 26);
+            this.dTP_Sterility.TabIndex = 4;
             // 
-            // lb_HealRecord
+            // lb_DOB
             // 
-            this.lb_HealRecord.AutoSize = true;
-            this.lb_HealRecord.Location = new System.Drawing.Point(16, 9);
-            this.lb_HealRecord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_HealRecord.Name = "lb_HealRecord";
-            this.lb_HealRecord.Size = new System.Drawing.Size(115, 18);
-            this.lb_HealRecord.TabIndex = 50;
-            this.lb_HealRecord.Text = "เลขที่ทำการรักษา";
+            this.lb_DOB.AutoSize = true;
+            this.lb_DOB.Location = new System.Drawing.Point(454, 29);
+            this.lb_DOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_DOB.Name = "lb_DOB";
+            this.lb_DOB.Size = new System.Drawing.Size(88, 18);
+            this.lb_DOB.TabIndex = 3;
+            this.lb_DOB.Text = "วันเดือนปีเกิด";
             // 
-            // epCheck
+            // dTP_Born
             // 
-            this.epCheck.ContainerControl = this;
+            this.dTP_Born.Location = new System.Drawing.Point(559, 25);
+            this.dTP_Born.Margin = new System.Windows.Forms.Padding(4);
+            this.dTP_Born.Name = "dTP_Born";
+            this.dTP_Born.Size = new System.Drawing.Size(189, 26);
+            this.dTP_Born.TabIndex = 2;
+            this.dTP_Born.ValueChanged += new System.EventHandler(this.dTP_Born_ValueChanged);
             // 
-            // txb_HR
+            // lb_PetID
             // 
-            this.txb_HR.Location = new System.Drawing.Point(870, 86);
-            this.txb_HR.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_HR.Name = "txb_HR";
-            this.txb_HR.Size = new System.Drawing.Size(60, 26);
-            this.txb_HR.TabIndex = 78;
+            this.lb_PetID.AutoSize = true;
+            this.lb_PetID.Location = new System.Drawing.Point(15, 29);
+            this.lb_PetID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_PetID.Name = "lb_PetID";
+            this.lb_PetID.Size = new System.Drawing.Size(58, 18);
+            this.lb_PetID.TabIndex = 1;
+            this.lb_PetID.Text = "รหัสสัตว์";
             // 
-            // txb_RR
+            // txb_PetProfileID
             // 
-            this.txb_RR.Location = new System.Drawing.Point(870, 118);
-            this.txb_RR.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_RR.Name = "txb_RR";
-            this.txb_RR.Size = new System.Drawing.Size(60, 26);
-            this.txb_RR.TabIndex = 79;
+            this.txb_PetProfileID.Enabled = false;
+            this.txb_PetProfileID.Location = new System.Drawing.Point(83, 25);
+            this.txb_PetProfileID.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_PetProfileID.Name = "txb_PetProfileID";
+            this.txb_PetProfileID.Size = new System.Drawing.Size(132, 26);
+            this.txb_PetProfileID.TabIndex = 0;
+            this.txb_PetProfileID.TextChanged += new System.EventHandler(this.txb_PetProfileID_TextChanged);
             // 
-            // lb_HealRecordHR
+            // dGV_PetProfile
             // 
-            this.lb_HealRecordHR.AutoSize = true;
-            this.lb_HealRecordHR.Location = new System.Drawing.Point(747, 90);
-            this.lb_HealRecordHR.Name = "lb_HealRecordHR";
-            this.lb_HealRecordHR.Size = new System.Drawing.Size(116, 18);
-            this.lb_HealRecordHR.TabIndex = 80;
-            this.lb_HealRecordHR.Text = "อัตราการเต้นหัวใจ";
+            this.dGV_PetProfile.AllowUserToAddRows = false;
+            this.dGV_PetProfile.AllowUserToDeleteRows = false;
+            this.dGV_PetProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_PetProfile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ccPet_ID,
+            this.ccOwner_Name,
+            this.ccPet_Name,
+            this.ccPet_Sex,
+            this.ccPet_DOB,
+            this.ccPet_Color,
+            this.ccPet_Sterility,
+            this.ccOwner_Addr,
+            this.ccOwner_Tel,
+            this.ccPetType_ID,
+            this.ccPetType,
+            this.ccBreed_ID,
+            this.ccPetBreed});
+            this.dGV_PetProfile.Location = new System.Drawing.Point(7, 47);
+            this.dGV_PetProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_PetProfile.MultiSelect = false;
+            this.dGV_PetProfile.Name = "dGV_PetProfile";
+            this.dGV_PetProfile.ReadOnly = true;
+            this.dGV_PetProfile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_PetProfile.Size = new System.Drawing.Size(960, 261);
+            this.dGV_PetProfile.TabIndex = 4;
+            this.dGV_PetProfile.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_PetProfile_CellClick);
             // 
-            // lb_RR
+            // ccPet_ID
             // 
-            this.lb_RR.AutoSize = true;
-            this.lb_RR.Location = new System.Drawing.Point(937, 122);
-            this.lb_RR.Name = "lb_RR";
-            this.lb_RR.Size = new System.Drawing.Size(26, 18);
-            this.lb_RR.TabIndex = 81;
-            this.lb_RR.Text = "RR";
+            this.ccPet_ID.DataPropertyName = "Pet_ID";
+            this.ccPet_ID.FillWeight = 120F;
+            this.ccPet_ID.HeaderText = "รหัสสมาชิก";
+            this.ccPet_ID.Name = "ccPet_ID";
+            this.ccPet_ID.ReadOnly = true;
+            this.ccPet_ID.Width = 120;
             // 
-            // lb_HealRecordRR
+            // ccOwner_Name
             // 
-            this.lb_HealRecordRR.AutoSize = true;
-            this.lb_HealRecordRR.Location = new System.Drawing.Point(761, 122);
-            this.lb_HealRecordRR.Name = "lb_HealRecordRR";
-            this.lb_HealRecordRR.Size = new System.Drawing.Size(102, 18);
-            this.lb_HealRecordRR.TabIndex = 82;
-            this.lb_HealRecordRR.Text = "อัตราการหายใจ";
+            this.ccOwner_Name.DataPropertyName = "Owner_Name";
+            this.ccOwner_Name.FillWeight = 200F;
+            this.ccOwner_Name.HeaderText = "ชื่อเจ้าของ";
+            this.ccOwner_Name.Name = "ccOwner_Name";
+            this.ccOwner_Name.ReadOnly = true;
+            this.ccOwner_Name.Width = 200;
             // 
-            // lb_HR
+            // ccPet_Name
             // 
-            this.lb_HR.AutoSize = true;
-            this.lb_HR.Location = new System.Drawing.Point(937, 90);
-            this.lb_HR.Name = "lb_HR";
-            this.lb_HR.Size = new System.Drawing.Size(27, 18);
-            this.lb_HR.TabIndex = 83;
-            this.lb_HR.Text = "HR";
+            this.ccPet_Name.DataPropertyName = "Pet_Name";
+            this.ccPet_Name.FillWeight = 180F;
+            this.ccPet_Name.HeaderText = "ชื่อสัตว์เลี้ยง";
+            this.ccPet_Name.Name = "ccPet_Name";
+            this.ccPet_Name.ReadOnly = true;
+            this.ccPet_Name.Width = 180;
+            // 
+            // ccPet_Sex
+            // 
+            this.ccPet_Sex.DataPropertyName = "Pet_Sex";
+            this.ccPet_Sex.HeaderText = "เพศ";
+            this.ccPet_Sex.Name = "ccPet_Sex";
+            this.ccPet_Sex.ReadOnly = true;
+            this.ccPet_Sex.Visible = false;
+            // 
+            // ccPet_DOB
+            // 
+            this.ccPet_DOB.DataPropertyName = "Pet_DOB";
+            this.ccPet_DOB.HeaderText = "วันเดือนปีเกิด";
+            this.ccPet_DOB.Name = "ccPet_DOB";
+            this.ccPet_DOB.ReadOnly = true;
+            this.ccPet_DOB.Visible = false;
+            // 
+            // ccPet_Color
+            // 
+            this.ccPet_Color.DataPropertyName = "Pet_Color";
+            this.ccPet_Color.FillWeight = 140F;
+            this.ccPet_Color.HeaderText = "สีของสัตว์";
+            this.ccPet_Color.Name = "ccPet_Color";
+            this.ccPet_Color.ReadOnly = true;
+            this.ccPet_Color.Width = 140;
+            // 
+            // ccPet_Sterility
+            // 
+            this.ccPet_Sterility.DataPropertyName = "Pet_Sterility";
+            this.ccPet_Sterility.HeaderText = "ทำหมัน";
+            this.ccPet_Sterility.Name = "ccPet_Sterility";
+            this.ccPet_Sterility.ReadOnly = true;
+            this.ccPet_Sterility.Visible = false;
+            // 
+            // ccOwner_Addr
+            // 
+            this.ccOwner_Addr.DataPropertyName = "Owner_Addr";
+            this.ccOwner_Addr.HeaderText = "ที่อยู่";
+            this.ccOwner_Addr.Name = "ccOwner_Addr";
+            this.ccOwner_Addr.ReadOnly = true;
+            this.ccOwner_Addr.Visible = false;
+            // 
+            // ccOwner_Tel
+            // 
+            this.ccOwner_Tel.DataPropertyName = "Owner_Tel";
+            this.ccOwner_Tel.HeaderText = "เบอร์โทรติดต่อ";
+            this.ccOwner_Tel.Name = "ccOwner_Tel";
+            this.ccOwner_Tel.ReadOnly = true;
+            this.ccOwner_Tel.Visible = false;
+            // 
+            // ccPetType_ID
+            // 
+            this.ccPetType_ID.DataPropertyName = "PetType_ID";
+            this.ccPetType_ID.FillWeight = 120F;
+            this.ccPetType_ID.HeaderText = "รหัสประเภท";
+            this.ccPetType_ID.Name = "ccPetType_ID";
+            this.ccPetType_ID.ReadOnly = true;
+            this.ccPetType_ID.Visible = false;
+            this.ccPetType_ID.Width = 120;
+            // 
+            // ccPetType
+            // 
+            this.ccPetType.DataPropertyName = "PetType_Des";
+            this.ccPetType.FillWeight = 120F;
+            this.ccPetType.HeaderText = "ประเภทสัตว์";
+            this.ccPetType.Name = "ccPetType";
+            this.ccPetType.ReadOnly = true;
+            this.ccPetType.Width = 120;
+            // 
+            // ccBreed_ID
+            // 
+            this.ccBreed_ID.DataPropertyName = "PetBreed_ID";
+            this.ccBreed_ID.HeaderText = "รหัสพันธุ์";
+            this.ccBreed_ID.Name = "ccBreed_ID";
+            this.ccBreed_ID.ReadOnly = true;
+            this.ccBreed_ID.Visible = false;
+            // 
+            // ccPetBreed
+            // 
+            this.ccPetBreed.DataPropertyName = "PetBreed_Des";
+            this.ccPetBreed.FillWeight = 120F;
+            this.ccPetBreed.HeaderText = "พันธุ์สัตว์";
+            this.ccPetBreed.Name = "ccPetBreed";
+            this.ccPetBreed.ReadOnly = true;
+            this.ccPetBreed.Width = 120;
+            // 
+            // txb_SearchPet
+            // 
+            this.txb_SearchPet.Location = new System.Drawing.Point(458, 11);
+            this.txb_SearchPet.Name = "txb_SearchPet";
+            this.txb_SearchPet.Size = new System.Drawing.Size(383, 26);
+            this.txb_SearchPet.TabIndex = 5;
+            // 
+            // bt_Search
+            // 
+            this.bt_Search.Location = new System.Drawing.Point(848, 7);
+            this.bt_Search.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Search.Name = "bt_Search";
+            this.bt_Search.Size = new System.Drawing.Size(100, 32);
+            this.bt_Search.TabIndex = 18;
+            this.bt_Search.Text = "ค้นหา";
+            this.bt_Search.UseVisualStyleBackColor = true;
+            this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
+            // 
+            // tabC_Pet
+            // 
+            this.tabC_Pet.Controls.Add(this.tP_ListPeT);
+            this.tabC_Pet.Controls.Add(this.tP_LisTDetail);
+            this.tabC_Pet.Location = new System.Drawing.Point(16, 314);
+            this.tabC_Pet.Name = "tabC_Pet";
+            this.tabC_Pet.SelectedIndex = 0;
+            this.tabC_Pet.Size = new System.Drawing.Size(980, 346);
+            this.tabC_Pet.TabIndex = 19;
+            // 
+            // tP_ListPeT
+            // 
+            this.tP_ListPeT.Controls.Add(this.txb_SearchPet);
+            this.tP_ListPeT.Controls.Add(this.bt_Search);
+            this.tP_ListPeT.Controls.Add(this.dGV_PetProfile);
+            this.tP_ListPeT.Location = new System.Drawing.Point(4, 27);
+            this.tP_ListPeT.Name = "tP_ListPeT";
+            this.tP_ListPeT.Padding = new System.Windows.Forms.Padding(3);
+            this.tP_ListPeT.Size = new System.Drawing.Size(972, 315);
+            this.tP_ListPeT.TabIndex = 0;
+            this.tP_ListPeT.Text = "รายชื่อทั้งหมด";
+            this.tP_ListPeT.UseVisualStyleBackColor = true;
+            // 
+            // tP_LisTDetail
+            // 
+            this.tP_LisTDetail.Controls.Add(this.lb_HealRecordID);
+            this.tP_LisTDetail.Controls.Add(this.lb_HealRecord);
+            this.tP_LisTDetail.Controls.Add(this.lb_HealRecordL);
+            this.tP_LisTDetail.Controls.Add(this.lb_CountHealRecord);
+            this.tP_LisTDetail.Controls.Add(this.lb_HealRecordList);
+            this.tP_LisTDetail.Controls.Add(this.bt_HealRecordDetail);
+            this.tP_LisTDetail.Controls.Add(this.dGV_HealRecord);
+            this.tP_LisTDetail.Location = new System.Drawing.Point(4, 27);
+            this.tP_LisTDetail.Name = "tP_LisTDetail";
+            this.tP_LisTDetail.Padding = new System.Windows.Forms.Padding(3);
+            this.tP_LisTDetail.Size = new System.Drawing.Size(972, 315);
+            this.tP_LisTDetail.TabIndex = 1;
+            this.tP_LisTDetail.Text = "ประวัติการรักษา";
+            this.tP_LisTDetail.UseVisualStyleBackColor = true;
             // 
             // lb_HealRecordID
             // 
             this.lb_HealRecordID.AutoSize = true;
-            this.lb_HealRecordID.Location = new System.Drawing.Point(138, 9);
+            this.lb_HealRecordID.Location = new System.Drawing.Point(691, 12);
             this.lb_HealRecordID.Name = "lb_HealRecordID";
             this.lb_HealRecordID.Size = new System.Drawing.Size(0, 18);
-            this.lb_HealRecordID.TabIndex = 84;
-            this.lb_HealRecordID.TextChanged += new System.EventHandler(this.lb_HealRecordID_TextChanged);
+            this.lb_HealRecordID.TabIndex = 6;
+            // 
+            // lb_HealRecord
+            // 
+            this.lb_HealRecord.AutoSize = true;
+            this.lb_HealRecord.Location = new System.Drawing.Point(552, 12);
+            this.lb_HealRecord.Name = "lb_HealRecord";
+            this.lb_HealRecord.Size = new System.Drawing.Size(133, 18);
+            this.lb_HealRecord.TabIndex = 5;
+            this.lb_HealRecord.Text = "เลขที่รักษาหมายเลข";
+            // 
+            // lb_HealRecordL
+            // 
+            this.lb_HealRecordL.AutoSize = true;
+            this.lb_HealRecordL.Location = new System.Drawing.Point(296, 12);
+            this.lb_HealRecordL.Name = "lb_HealRecordL";
+            this.lb_HealRecordL.Size = new System.Drawing.Size(52, 18);
+            this.lb_HealRecordL.TabIndex = 4;
+            this.lb_HealRecordL.Text = "รายการ";
+            // 
+            // lb_CountHealRecord
+            // 
+            this.lb_CountHealRecord.AutoSize = true;
+            this.lb_CountHealRecord.Location = new System.Drawing.Point(198, 12);
+            this.lb_CountHealRecord.Name = "lb_CountHealRecord";
+            this.lb_CountHealRecord.Size = new System.Drawing.Size(0, 18);
+            this.lb_CountHealRecord.TabIndex = 3;
+            // 
+            // lb_HealRecordList
+            // 
+            this.lb_HealRecordList.AutoSize = true;
+            this.lb_HealRecordList.Location = new System.Drawing.Point(12, 12);
+            this.lb_HealRecordList.Name = "lb_HealRecordList";
+            this.lb_HealRecordList.Size = new System.Drawing.Size(167, 18);
+            this.lb_HealRecordList.TabIndex = 2;
+            this.lb_HealRecordList.Text = "พบประวัติการรักษาทั้้งหมด";
+            // 
+            // bt_HealRecordDetail
+            // 
+            this.bt_HealRecordDetail.Location = new System.Drawing.Point(848, 6);
+            this.bt_HealRecordDetail.Name = "bt_HealRecordDetail";
+            this.bt_HealRecordDetail.Size = new System.Drawing.Size(100, 31);
+            this.bt_HealRecordDetail.TabIndex = 1;
+            this.bt_HealRecordDetail.Text = "รายละเอียด";
+            this.bt_HealRecordDetail.UseVisualStyleBackColor = true;
+            this.bt_HealRecordDetail.Click += new System.EventHandler(this.bt_HealRecordDetail_Click);
+            // 
+            // dGV_HealRecord
+            // 
+            this.dGV_HealRecord.AllowUserToAddRows = false;
+            this.dGV_HealRecord.AllowUserToDeleteRows = false;
+            this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ccHealRecord_ID,
+            this.ccPet_IDa,
+            this.ccEm_ID,
+            this.ccHealRecord_Symptom,
+            this.ccHealRecord_Remark,
+            this.ccHealRecord_Weight,
+            this.ccHealRecord_Temp,
+            this.ccHealRecord_HR,
+            this.ccHealRecord_RR,
+            this.ccHealRecord_Date,
+            this.ccHealRecord_Total,
+            this.ccHealRecord_DC,
+            this.ccHealRecord_Net});
+            this.dGV_HealRecord.Location = new System.Drawing.Point(7, 47);
+            this.dGV_HealRecord.Name = "dGV_HealRecord";
+            this.dGV_HealRecord.ReadOnly = true;
+            this.dGV_HealRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_HealRecord.Size = new System.Drawing.Size(960, 261);
+            this.dGV_HealRecord.TabIndex = 0;
+            this.dGV_HealRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_HealRecord_CellClick);
+            // 
+            // ccHealRecord_ID
+            // 
+            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
+            this.ccHealRecord_ID.HeaderText = "รหัสรักษา";
+            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
+            this.ccHealRecord_ID.ReadOnly = true;
+            // 
+            // ccPet_IDa
+            // 
+            this.ccPet_IDa.DataPropertyName = "Pet_ID";
+            this.ccPet_IDa.HeaderText = "รหัสสัตว์";
+            this.ccPet_IDa.Name = "ccPet_IDa";
+            this.ccPet_IDa.ReadOnly = true;
+            this.ccPet_IDa.Visible = false;
+            // 
+            // ccEm_ID
+            // 
+            this.ccEm_ID.DataPropertyName = "Em_ID";
+            this.ccEm_ID.HeaderText = "รหัสเจ้าหน้าที่";
+            this.ccEm_ID.Name = "ccEm_ID";
+            this.ccEm_ID.ReadOnly = true;
+            this.ccEm_ID.Visible = false;
+            // 
+            // ccHealRecord_Symptom
+            // 
+            this.ccHealRecord_Symptom.DataPropertyName = "HealRecord_Symptom";
+            this.ccHealRecord_Symptom.FillWeight = 200F;
+            this.ccHealRecord_Symptom.HeaderText = "อาการ";
+            this.ccHealRecord_Symptom.Name = "ccHealRecord_Symptom";
+            this.ccHealRecord_Symptom.ReadOnly = true;
+            this.ccHealRecord_Symptom.Width = 200;
+            // 
+            // ccHealRecord_Remark
+            // 
+            this.ccHealRecord_Remark.DataPropertyName = "HealRecord_Remark";
+            this.ccHealRecord_Remark.HeaderText = "หมายเหตุ";
+            this.ccHealRecord_Remark.Name = "ccHealRecord_Remark";
+            this.ccHealRecord_Remark.ReadOnly = true;
+            this.ccHealRecord_Remark.Visible = false;
+            // 
+            // ccHealRecord_Weight
+            // 
+            this.ccHealRecord_Weight.DataPropertyName = "HealRecord_Weight";
+            this.ccHealRecord_Weight.HeaderText = "น้ำหนัก";
+            this.ccHealRecord_Weight.Name = "ccHealRecord_Weight";
+            this.ccHealRecord_Weight.ReadOnly = true;
+            this.ccHealRecord_Weight.Visible = false;
+            // 
+            // ccHealRecord_Temp
+            // 
+            this.ccHealRecord_Temp.DataPropertyName = "HealRecord_Temp";
+            this.ccHealRecord_Temp.HeaderText = "อณุหภูมิ";
+            this.ccHealRecord_Temp.Name = "ccHealRecord_Temp";
+            this.ccHealRecord_Temp.ReadOnly = true;
+            this.ccHealRecord_Temp.Visible = false;
+            // 
+            // ccHealRecord_HR
+            // 
+            this.ccHealRecord_HR.DataPropertyName = "HealRecord_HR";
+            this.ccHealRecord_HR.HeaderText = "อัตราการเต้นหัวใจ";
+            this.ccHealRecord_HR.Name = "ccHealRecord_HR";
+            this.ccHealRecord_HR.ReadOnly = true;
+            this.ccHealRecord_HR.Visible = false;
+            // 
+            // ccHealRecord_RR
+            // 
+            this.ccHealRecord_RR.DataPropertyName = "HealRecord_RR";
+            this.ccHealRecord_RR.HeaderText = "อัตราการหายใจ";
+            this.ccHealRecord_RR.Name = "ccHealRecord_RR";
+            this.ccHealRecord_RR.ReadOnly = true;
+            this.ccHealRecord_RR.Visible = false;
+            // 
+            // ccHealRecord_Date
+            // 
+            this.ccHealRecord_Date.DataPropertyName = "HealRecord_Date";
+            this.ccHealRecord_Date.FillWeight = 140F;
+            this.ccHealRecord_Date.HeaderText = "วันที่รักษา";
+            this.ccHealRecord_Date.Name = "ccHealRecord_Date";
+            this.ccHealRecord_Date.ReadOnly = true;
+            this.ccHealRecord_Date.Width = 140;
+            // 
+            // ccHealRecord_Total
+            // 
+            this.ccHealRecord_Total.DataPropertyName = "HealRecord_Total";
+            this.ccHealRecord_Total.HeaderText = "รวม";
+            this.ccHealRecord_Total.Name = "ccHealRecord_Total";
+            this.ccHealRecord_Total.ReadOnly = true;
+            // 
+            // ccHealRecord_DC
+            // 
+            this.ccHealRecord_DC.DataPropertyName = "HealRecord_DC";
+            this.ccHealRecord_DC.HeaderText = "ส่วนลด";
+            this.ccHealRecord_DC.Name = "ccHealRecord_DC";
+            this.ccHealRecord_DC.ReadOnly = true;
+            // 
+            // ccHealRecord_Net
+            // 
+            this.ccHealRecord_Net.DataPropertyName = "HealRecord_Net";
+            this.ccHealRecord_Net.HeaderText = "สุทธิ";
+            this.ccHealRecord_Net.Name = "ccHealRecord_Net";
+            this.ccHealRecord_Net.ReadOnly = true;
             // 
             // FrmMM21
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
-            this.Controls.Add(this.lb_HealRecordID);
-            this.Controls.Add(this.tabControlServiceMedi);
-            this.Controls.Add(this.lb_HR);
-            this.Controls.Add(this.lb_HealRecordRR);
-            this.Controls.Add(this.cb_Em);
-            this.Controls.Add(this.lb_RR);
-            this.Controls.Add(this.lb_HealRecord);
-            this.Controls.Add(this.lb_HealRecordHR);
-            this.Controls.Add(this.dTP_HealRecordDate);
-            this.Controls.Add(this.txb_RR);
-            this.Controls.Add(this.lb_HealRecordDate);
-            this.Controls.Add(this.txb_HR);
-            this.Controls.Add(this.lb_Employee);
-            this.Controls.Add(this.bt_RecordHeal);
-            this.Controls.Add(this.lb_Weight);
-            this.Controls.Add(this.txb_HealRecordDC);
-            this.Controls.Add(this.txb_Weight);
-            this.Controls.Add(this.lb_DC);
-            this.Controls.Add(this.txb_Temp);
-            this.Controls.Add(this.bt_PrintDate);
-            this.Controls.Add(this.lb_Temp);
-            this.Controls.Add(this.txb_PetID);
-            this.Controls.Add(this.lb_kg);
-            this.Controls.Add(this.txb_PetName);
-            this.Controls.Add(this.lb_TempF);
-            this.Controls.Add(this.lb_PetID);
-            this.Controls.Add(this.lb_PetName);
-            this.Controls.Add(this.lbYear);
-            this.Controls.Add(this.bt_NewProfile);
-            this.Controls.Add(this.lbCompanyID);
-            this.Controls.Add(this.lb_OwnerName);
-            this.Controls.Add(this.bt_LoadData);
-            this.Controls.Add(this.txb_OwnerName);
-            this.Controls.Add(this.txb_HealRecordNet);
-            this.Controls.Add(this.Lb_HealRecordDetail);
-            this.Controls.Add(this.lb_Net);
-            this.Controls.Add(this.lb_Remark);
-            this.Controls.Add(this.bt_PrintBill);
-            this.Controls.Add(this.txb_HealRecordSymptom);
-            this.Controls.Add(this.txb_HealRecordTotal);
-            this.Controls.Add(this.txb_HealRecordRemark);
-            this.Controls.Add(this.lb_Total);
+            this.Controls.Add(this.tabC_Pet);
+            this.Controls.Add(this.gBoxDetail);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMM21";
-            this.Text = "บันทึกประจำวัน หัตถการและบริการ";
+            this.Text = "บันทึกประจำวัน ทะเบียนสมาชิก";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmMM21_Load);
-            this.tabControlServiceMedi.ResumeLayout(false);
-            this.tPService.ResumeLayout(false);
-            this.tPService.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).EndInit();
-            this.tPMedi.ResumeLayout(false);
-            this.tPMedi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nUDMediUnit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_Medi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
+            this.Load += new System.EventHandler(this.FrmMM24_Load);
+            this.gBoxDetail.ResumeLayout(false);
+            this.gBoxDetail.PerformLayout();
+            this.gBox_OwnerDetail.ResumeLayout(false);
+            this.gBox_OwnerDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_PetProfile)).EndInit();
+            this.tabC_Pet.ResumeLayout(false);
+            this.tP_ListPeT.ResumeLayout(false);
+            this.tP_ListPeT.PerformLayout();
+            this.tP_LisTDetail.ResumeLayout(false);
+            this.tP_LisTDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_HealRecord)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControlServiceMedi;
-        private System.Windows.Forms.TabPage tPService;
-        private System.Windows.Forms.Button bt_refService;
-        private System.Windows.Forms.ComboBox cb_Service;
-        private System.Windows.Forms.Label lb_Service;
-        private System.Windows.Forms.Button bt_BuyService;
-        private System.Windows.Forms.DataGridView dGV_Service;
-        private System.Windows.Forms.TabPage tPMedi;
-        private System.Windows.Forms.Button bt_refMedi;
-        private System.Windows.Forms.Label Lb_MediUnit;
-        private System.Windows.Forms.Label Lb_ListService;
-        private System.Windows.Forms.Button bt_BuyMedi;
-        private System.Windows.Forms.DataGridView dGV_Medi;
-        private System.Windows.Forms.Button bt_PrintDate;
-        private System.Windows.Forms.TextBox txb_PetName;
+        private System.Windows.Forms.GroupBox gBoxDetail;
+        private System.Windows.Forms.Label lb_Color;
+        private System.Windows.Forms.TextBox txb_PetColor;
+        private System.Windows.Forms.Label lb_Sterility;
+        private System.Windows.Forms.DateTimePicker dTP_Sterility;
+        private System.Windows.Forms.Label lb_DOB;
+        private System.Windows.Forms.DateTimePicker dTP_Born;
         private System.Windows.Forms.Label lb_PetID;
-        private System.Windows.Forms.Label lbYear;
-        private System.Windows.Forms.Label lbCompanyID;
-        private System.Windows.Forms.Button bt_LoadData;
-        private System.Windows.Forms.TextBox txb_HealRecordNet;
-        private System.Windows.Forms.Label lb_Net;
-        private System.Windows.Forms.Button bt_PrintBill;
-        private System.Windows.Forms.TextBox txb_HealRecordTotal;
-        private System.Windows.Forms.Label lb_Total;
-        private System.Windows.Forms.TextBox txb_HealRecordRemark;
-        private System.Windows.Forms.TextBox txb_HealRecordSymptom;
-        private System.Windows.Forms.Label lb_Remark;
-        private System.Windows.Forms.Label Lb_HealRecordDetail;
-        private System.Windows.Forms.TextBox txb_OwnerName;
-        private System.Windows.Forms.Label lb_OwnerName;
-        private System.Windows.Forms.Button bt_NewProfile;
+        private System.Windows.Forms.ComboBox cb_PetBreed;
+        private System.Windows.Forms.Label lb_Breed;
+        private System.Windows.Forms.ComboBox cb_PetType;
+        private System.Windows.Forms.Label lb_Type;
+        private System.Windows.Forms.Label lb_Sex;
         private System.Windows.Forms.Label lb_PetName;
-        private System.Windows.Forms.Label lb_TempF;
-        private System.Windows.Forms.Label lb_kg;
-        private System.Windows.Forms.Label lb_Temp;
-        private System.Windows.Forms.TextBox txb_Temp;
-        private System.Windows.Forms.TextBox txb_Weight;
-        private System.Windows.Forms.Label lb_Weight;
-        private System.Windows.Forms.ComboBox cb_Em;
-        private System.Windows.Forms.Label lb_Employee;
-        private System.Windows.Forms.Label lb_HealRecordDate;
-        private System.Windows.Forms.DateTimePicker dTP_HealRecordDate;
+        private System.Windows.Forms.TextBox txb_PetName;
+        private System.Windows.Forms.Button bt_EditMember;
+        private System.Windows.Forms.Button bt_AddMember;
+        private System.Windows.Forms.Label lbCompany;
+        private System.Windows.Forms.Label lbYear;
+        private System.Windows.Forms.RadioButton rb_M;
+        private System.Windows.Forms.RadioButton rb_F;
+        private System.Windows.Forms.Label lbSex;
+        private System.Windows.Forms.DataGridView dGV_PetProfile;
+        private System.Windows.Forms.TextBox txb_SearchPet;
+        private System.Windows.Forms.Button bt_Search;
+        private System.Windows.Forms.Button bt_Service;
+        private System.Windows.Forms.TabControl tabC_Pet;
+        private System.Windows.Forms.TabPage tP_ListPeT;
+        private System.Windows.Forms.TabPage tP_LisTDetail;
+        private System.Windows.Forms.GroupBox gBox_OwnerDetail;
+        private System.Windows.Forms.Button bt_LoadProfile;
+        private System.Windows.Forms.Label lb_Tel;
+        private System.Windows.Forms.TextBox txb_TelOwner;
+        private System.Windows.Forms.Label lb_Addr;
+        private System.Windows.Forms.TextBox Txb_Addr;
+        private System.Windows.Forms.Label lb_OwnerName;
+        private System.Windows.Forms.TextBox txb_NameOwner;
+        private System.Windows.Forms.CheckBox CheckBox_Sterility;
+        private System.Windows.Forms.DataGridView dGV_HealRecord;
+        private System.Windows.Forms.Button bt_HealDate;
+        public System.Windows.Forms.TextBox txb_PetProfileID;
+        private System.Windows.Forms.Label lb_HealRecordID;
         private System.Windows.Forms.Label lb_HealRecord;
-        private System.Windows.Forms.TextBox txb_HealRecordDC;
-        private System.Windows.Forms.Label lb_DC;
-        private System.Windows.Forms.Label lb_Price;
-        private System.Windows.Forms.Label lb_ServiceID;
-        private System.Windows.Forms.NumericUpDown nUDMediUnit;
+        private System.Windows.Forms.Label lb_HealRecordL;
+        private System.Windows.Forms.Label lb_CountHealRecord;
+        private System.Windows.Forms.Label lb_HealRecordList;
+        private System.Windows.Forms.Button bt_HealRecordDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Amt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_ID2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Des;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccMediSale_Unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Sale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccMediRecord_Total;
-        private System.Windows.Forms.Button bt_RecordHeal;
-        internal System.Windows.Forms.TextBox txb_PetID;
-        private System.Windows.Forms.Label lb_ServiceAmt;
-        private System.Windows.Forms.Label lb_ServiceA;
-        private System.Windows.Forms.Label lb_MediAmt;
-        private System.Windows.Forms.Label lb_MediA;
-        private System.Windows.Forms.Label lb_MediID;
-        private System.Windows.Forms.ErrorProvider epCheck;
-        private System.Windows.Forms.Label lb_HR;
-        private System.Windows.Forms.Label lb_HealRecordRR;
-        private System.Windows.Forms.Label lb_RR;
-        private System.Windows.Forms.Label lb_HealRecordHR;
-        private System.Windows.Forms.TextBox txb_RR;
-        private System.Windows.Forms.TextBox txb_HR;
-        public System.Windows.Forms.Label lb_HealRecordID;
-        private System.Windows.Forms.Label lb_Unit;
-        private System.Windows.Forms.ComboBox cb_Medi;
-        private System.Windows.Forms.Label lb_MediU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Symptom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Weight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Temp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_HR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_RR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_DC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Net;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccOwner_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_Sex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_DOB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_Sterility;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccOwner_Addr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccOwner_Tel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccBreed_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed;
+        private System.Windows.Forms.Label lb_BirthDay;
     }
 }
