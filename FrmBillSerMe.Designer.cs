@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmBillreview
+    partial class FrmBillSerMe
     {
         /// <summary>
         /// Required designer variable.

@@ -565,10 +565,10 @@
             // txb_PetName
             // 
             this.txb_PetName.Enabled = false;
-            this.txb_PetName.Location = new System.Drawing.Point(132, 82);
+            this.txb_PetName.Location = new System.Drawing.Point(135, 40);
             this.txb_PetName.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetName.Name = "txb_PetName";
-            this.txb_PetName.Size = new System.Drawing.Size(188, 26);
+            this.txb_PetName.Size = new System.Drawing.Size(178, 26);
             this.txb_PetName.TabIndex = 71;
             // 
             // lb_PetID
@@ -584,7 +584,7 @@
             // lbYear
             // 
             this.lbYear.AutoSize = true;
-            this.lbYear.Location = new System.Drawing.Point(633, 86);
+            this.lbYear.Location = new System.Drawing.Point(632, 76);
             this.lbYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbYear.Name = "lbYear";
             this.lbYear.Size = new System.Drawing.Size(28, 18);
@@ -595,7 +595,7 @@
             // lbCompanyID
             // 
             this.lbCompanyID.AutoSize = true;
-            this.lbCompanyID.Location = new System.Drawing.Point(606, 86);
+            this.lbCompanyID.Location = new System.Drawing.Point(605, 76);
             this.lbCompanyID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCompanyID.Name = "lbCompanyID";
             this.lbCompanyID.Size = new System.Drawing.Size(17, 18);
@@ -708,16 +708,16 @@
             // txb_OwnerName
             // 
             this.txb_OwnerName.Enabled = false;
-            this.txb_OwnerName.Location = new System.Drawing.Point(403, 82);
+            this.txb_OwnerName.Location = new System.Drawing.Point(406, 40);
             this.txb_OwnerName.Margin = new System.Windows.Forms.Padding(4);
             this.txb_OwnerName.Name = "txb_OwnerName";
-            this.txb_OwnerName.Size = new System.Drawing.Size(190, 26);
+            this.txb_OwnerName.Size = new System.Drawing.Size(178, 26);
             this.txb_OwnerName.TabIndex = 49;
             // 
             // lb_OwnerName
             // 
             this.lb_OwnerName.AutoSize = true;
-            this.lb_OwnerName.Location = new System.Drawing.Point(326, 86);
+            this.lb_OwnerName.Location = new System.Drawing.Point(329, 44);
             this.lb_OwnerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_OwnerName.Name = "lb_OwnerName";
             this.lb_OwnerName.Size = new System.Drawing.Size(71, 18);
@@ -739,7 +739,7 @@
             // lb_PetName
             // 
             this.lb_PetName.AutoSize = true;
-            this.lb_PetName.Location = new System.Drawing.Point(79, 86);
+            this.lb_PetName.Location = new System.Drawing.Point(82, 44);
             this.lb_PetName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_PetName.Name = "lb_PetName";
             this.lb_PetName.Size = new System.Drawing.Size(50, 18);
@@ -805,16 +805,16 @@
             // cb_Em
             // 
             this.cb_Em.FormattingEnabled = true;
-            this.cb_Em.Location = new System.Drawing.Point(403, 42);
+            this.cb_Em.Location = new System.Drawing.Point(406, 72);
             this.cb_Em.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Em.Name = "cb_Em";
-            this.cb_Em.Size = new System.Drawing.Size(190, 26);
+            this.cb_Em.Size = new System.Drawing.Size(178, 26);
             this.cb_Em.TabIndex = 37;
             // 
             // lb_Employee
             // 
             this.lb_Employee.AutoSize = true;
-            this.lb_Employee.Location = new System.Drawing.Point(330, 46);
+            this.lb_Employee.Location = new System.Drawing.Point(333, 76);
             this.lb_Employee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Employee.Name = "lb_Employee";
             this.lb_Employee.Size = new System.Drawing.Size(65, 18);
@@ -824,7 +824,7 @@
             // lb_HealRecordDate
             // 
             this.lb_HealRecordDate.AutoSize = true;
-            this.lb_HealRecordDate.Location = new System.Drawing.Point(20, 46);
+            this.lb_HealRecordDate.Location = new System.Drawing.Point(23, 76);
             this.lb_HealRecordDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_HealRecordDate.Name = "lb_HealRecordDate";
             this.lb_HealRecordDate.Size = new System.Drawing.Size(108, 18);
@@ -833,10 +833,10 @@
             // 
             // dTP_HealRecordDate
             // 
-            this.dTP_HealRecordDate.Location = new System.Drawing.Point(132, 42);
+            this.dTP_HealRecordDate.Location = new System.Drawing.Point(135, 72);
             this.dTP_HealRecordDate.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_HealRecordDate.Name = "dTP_HealRecordDate";
-            this.dTP_HealRecordDate.Size = new System.Drawing.Size(188, 26);
+            this.dTP_HealRecordDate.Size = new System.Drawing.Size(178, 26);
             this.dTP_HealRecordDate.TabIndex = 34;
             // 
             // lb_HealRecord

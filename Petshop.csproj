@@ -84,142 +84,112 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Resources\DateDifference.cs" />
-    <Compile Include="Form\FrmMM24.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM24.Designer.cs">
+    <Compile Include="FrmMM24.cs" />
+    <Compile Include="FrmMM24.Designer.cs">
       <DependentUpon>FrmMM24.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM22.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM22.Designer.cs">
+    <Compile Include="FrmMM22.cs" />
+    <Compile Include="FrmMM22.Designer.cs">
       <DependentUpon>FrmMM22.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM32.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM32.Designer.cs">
+    <Compile Include="FrmMM32.cs" />
+    <Compile Include="FrmMM32.Designer.cs">
       <DependentUpon>FrmMM32.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmBillreview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmBillreview.Designer.cs">
+    <Compile Include="FrmBillreview.cs" />
+    <Compile Include="FrmBillreview.Designer.cs">
       <DependentUpon>FrmBillreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM13.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM13.Designer.cs">
+    <Compile Include="FrmMM13.cs" />
+    <Compile Include="FrmMM13.Designer.cs">
       <DependentUpon>FrmMM13.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM31.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM31.Designer.cs">
+    <Compile Include="FrmMM31.cs" />
+    <Compile Include="FrmMM31.Designer.cs">
       <DependentUpon>FrmMM31.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM23.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM23.Designer.cs">
+    <Compile Include="FrmMM23.cs" />
+    <Compile Include="FrmMM23.Designer.cs">
       <DependentUpon>FrmMM23.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM16.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM16.Designer.cs">
+    <Compile Include="FrmMM16.cs" />
+    <Compile Include="FrmMM16.Designer.cs">
       <DependentUpon>FrmMM16.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM15.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM15.Designer.cs">
+    <Compile Include="FrmMM15.cs" />
+    <Compile Include="FrmMM15.Designer.cs">
       <DependentUpon>FrmMM15.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM14.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM14.Designer.cs">
+    <Compile Include="FrmMM14.cs" />
+    <Compile Include="FrmMM14.Designer.cs">
       <DependentUpon>FrmMM14.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM12.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM12.Designer.cs">
+    <Compile Include="FrmMM12.cs" />
+    <Compile Include="FrmMM12.Designer.cs">
       <DependentUpon>FrmMM12.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM11.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM11.Designer.cs">
+    <Compile Include="FrmMM11.cs" />
+    <Compile Include="FrmMM11.Designer.cs">
       <DependentUpon>FrmMM11.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM21.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM21.Designer.cs">
+    <Compile Include="FrmMM21.cs" />
+    <Compile Include="FrmMM21.Designer.cs">
       <DependentUpon>FrmMM21.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMM33.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmMM33.Designer.cs">
+    <Compile Include="FrmMM33.cs" />
+    <Compile Include="FrmMM33.Designer.cs">
       <DependentUpon>FrmMM33.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\MainForm.Designer.cs">
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\MySQLConnect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\FrmMM24.resx">
+    <EmbeddedResource Include="FrmMM24.resx">
       <DependentUpon>FrmMM24.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM22.resx">
+    <EmbeddedResource Include="FrmMM22.resx">
       <DependentUpon>FrmMM22.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM32.resx">
+    <EmbeddedResource Include="FrmMM32.resx">
       <DependentUpon>FrmMM32.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmBillreview.resx">
+    <EmbeddedResource Include="FrmBillreview.resx">
       <DependentUpon>FrmBillreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM13.resx">
+    <EmbeddedResource Include="FrmMM13.resx">
       <DependentUpon>FrmMM13.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM31.resx">
+    <EmbeddedResource Include="FrmMM31.resx">
       <DependentUpon>FrmMM31.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM23.resx">
+    <EmbeddedResource Include="FrmMM23.resx">
       <DependentUpon>FrmMM23.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM16.resx">
+    <EmbeddedResource Include="FrmMM16.resx">
       <DependentUpon>FrmMM16.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM15.resx">
+    <EmbeddedResource Include="FrmMM15.resx">
       <DependentUpon>FrmMM15.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM14.resx">
+    <EmbeddedResource Include="FrmMM14.resx">
       <DependentUpon>FrmMM14.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM11.resx">
+    <EmbeddedResource Include="FrmMM11.resx">
       <DependentUpon>FrmMM11.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM12.resx">
+    <EmbeddedResource Include="FrmMM12.resx">
       <DependentUpon>FrmMM12.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM21.resx">
+    <EmbeddedResource Include="FrmMM21.resx">
       <DependentUpon>FrmMM21.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMM33.resx">
+    <EmbeddedResource Include="FrmMM33.resx">
       <DependentUpon>FrmMM33.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\MainForm.resx">
+    <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -11,10 +11,10 @@ using System.IO;
 
 namespace Petshop
 {
-    public partial class FrmBillreview : Form
+    public partial class FrmBillSerMe : Form
     {
         private MySQLDBConnect iConnect;
-        public FrmBillreview()
+        public FrmBillSerMe()
         {
             InitializeComponent();
             iConnect = new MySQLDBConnect();

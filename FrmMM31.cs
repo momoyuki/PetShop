@@ -110,13 +110,13 @@ namespace Petshop
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    if (form.GetType() == typeof(FrmBillreview))
+                    if (form.GetType() == typeof(FrmBillSerMe))
                     {
                         form.Activate();
                         return;
                     }
                 }
-                FrmBillreview iFrmBill = new FrmBillreview();
+                FrmBillSerMe iFrmBill = new FrmBillSerMe();
                 iFrmBill.MdiParent = MainForm.ActiveForm;
                 iFrmBill.Show();
                 iFrmBill.lb_BillID.Text = Lb_BillID.Text.Trim();
