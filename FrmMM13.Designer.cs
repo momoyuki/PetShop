@@ -39,6 +39,7 @@
             this.txb_UnitName = new System.Windows.Forms.TextBox();
             this.lb_UnitID = new System.Windows.Forms.Label();
             this.lb_UnitName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Uni)).BeginInit();
             this.gBoxUnit.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +78,7 @@
             // 
             // gBoxUnit
             // 
+            this.gBoxUnit.Controls.Add(this.button1);
             this.gBoxUnit.Controls.Add(this.bt_LoadUnit);
             this.gBoxUnit.Controls.Add(this.bt_EditUnit);
             this.gBoxUnit.Controls.Add(this.bt_AddUnit);
@@ -107,10 +109,10 @@
             // 
             // bt_EditUnit
             // 
-            this.bt_EditUnit.Location = new System.Drawing.Point(227, 109);
+            this.bt_EditUnit.Location = new System.Drawing.Point(197, 109);
             this.bt_EditUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditUnit.Name = "bt_EditUnit";
-            this.bt_EditUnit.Size = new System.Drawing.Size(100, 32);
+            this.bt_EditUnit.Size = new System.Drawing.Size(70, 32);
             this.bt_EditUnit.TabIndex = 4;
             this.bt_EditUnit.Text = "แก้ไข";
             this.bt_EditUnit.UseVisualStyleBackColor = true;
@@ -121,7 +123,7 @@
             this.bt_AddUnit.Location = new System.Drawing.Point(119, 109);
             this.bt_AddUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddUnit.Name = "bt_AddUnit";
-            this.bt_AddUnit.Size = new System.Drawing.Size(100, 32);
+            this.bt_AddUnit.Size = new System.Drawing.Size(70, 32);
             this.bt_AddUnit.TabIndex = 3;
             this.bt_AddUnit.Text = "เพิ่ม";
             this.bt_AddUnit.UseVisualStyleBackColor = true;
@@ -165,6 +167,18 @@
             this.lb_UnitName.TabIndex = 0;
             this.lb_UnitName.Text = "เรียกหน่วย";
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(275, 109);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 32);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "ลบ";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmMM13
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -198,5 +212,6 @@
         private System.Windows.Forms.TextBox txb_UnitName;
         private System.Windows.Forms.Label lb_UnitID;
         private System.Windows.Forms.Label lb_UnitName;
+        private System.Windows.Forms.Button button1;
     }
 }

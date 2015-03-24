@@ -48,29 +48,30 @@
             this.lb_ProductName = new System.Windows.Forms.Label();
             this.txb_ProductName = new System.Windows.Forms.TextBox();
             this.gBoxProductPrice = new System.Windows.Forms.GroupBox();
-            this.lb_ProductPrice = new System.Windows.Forms.Label();
-            this.txb_ProductPrice = new System.Windows.Forms.TextBox();
-            this.lb_ProductSale = new System.Windows.Forms.Label();
-            this.txb_ProductSale = new System.Windows.Forms.TextBox();
-            this.lb_Unit = new System.Windows.Forms.Label();
-            this.lb_ProductProduct = new System.Windows.Forms.Label();
-            this.dTP_Product = new System.Windows.Forms.DateTimePicker();
-            this.lb_ProductExpired = new System.Windows.Forms.Label();
-            this.dTP_Expired = new System.Windows.Forms.DateTimePicker();
-            this.gBoxProducttrack = new System.Windows.Forms.GroupBox();
-            this.lb_Product_Unit_Order = new System.Windows.Forms.Label();
-            this.txb_ProductOrder = new System.Windows.Forms.TextBox();
-            this.lb_Product_Unit_Amt = new System.Windows.Forms.Label();
-            this.txb_ProductAmt = new System.Windows.Forms.TextBox();
-            this.Bt_LoadPD = new System.Windows.Forms.Button();
-            this.cb_ProductUnit = new System.Windows.Forms.ComboBox();
-            this.bt_Unit = new System.Windows.Forms.Button();
             this.CheckBox_Stock = new System.Windows.Forms.CheckBox();
+            this.bt_Unit = new System.Windows.Forms.Button();
+            this.cb_ProductUnit = new System.Windows.Forms.ComboBox();
+            this.Bt_LoadPD = new System.Windows.Forms.Button();
+            this.txb_ProductAmt = new System.Windows.Forms.TextBox();
+            this.lb_Product_Unit_Amt = new System.Windows.Forms.Label();
+            this.gBoxProducttrack = new System.Windows.Forms.GroupBox();
+            this.txb_ProductOrder = new System.Windows.Forms.TextBox();
+            this.lb_Product_Unit_Order = new System.Windows.Forms.Label();
+            this.dTP_Expired = new System.Windows.Forms.DateTimePicker();
+            this.lb_ProductExpired = new System.Windows.Forms.Label();
+            this.dTP_Product = new System.Windows.Forms.DateTimePicker();
+            this.lb_ProductProduct = new System.Windows.Forms.Label();
+            this.lb_Unit = new System.Windows.Forms.Label();
+            this.txb_ProductSale = new System.Windows.Forms.TextBox();
+            this.lb_ProductSale = new System.Windows.Forms.Label();
+            this.txb_ProductPrice = new System.Windows.Forms.TextBox();
+            this.lb_ProductPrice = new System.Windows.Forms.Label();
             this.bt_AddProduct = new System.Windows.Forms.Button();
             this.bt_EditProduct = new System.Windows.Forms.Button();
             this.lb_Detail = new System.Windows.Forms.Label();
             this.txb_ProductDetail = new System.Windows.Forms.TextBox();
             this.lb_ProductIDH = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.gBoxProductPrice.SuspendLayout();
@@ -267,91 +268,70 @@
             this.gBoxProductPrice.TabStop = false;
             this.gBoxProductPrice.Text = "ต้นทุนและราคาขาย";
             // 
-            // lb_ProductPrice
+            // CheckBox_Stock
             // 
-            this.lb_ProductPrice.AutoSize = true;
-            this.lb_ProductPrice.Location = new System.Drawing.Point(56, 29);
-            this.lb_ProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_ProductPrice.Name = "lb_ProductPrice";
-            this.lb_ProductPrice.Size = new System.Drawing.Size(75, 18);
-            this.lb_ProductPrice.TabIndex = 2;
-            this.lb_ProductPrice.Text = "ราคาต้นทุน";
+            this.CheckBox_Stock.AutoSize = true;
+            this.CheckBox_Stock.Location = new System.Drawing.Point(422, 215);
+            this.CheckBox_Stock.Name = "CheckBox_Stock";
+            this.CheckBox_Stock.Size = new System.Drawing.Size(104, 22);
+            this.CheckBox_Stock.TabIndex = 16;
+            this.CheckBox_Stock.Text = "ตัดคลังสินค้า";
+            this.CheckBox_Stock.UseVisualStyleBackColor = true;
             // 
-            // txb_ProductPrice
+            // bt_Unit
             // 
-            this.txb_ProductPrice.Location = new System.Drawing.Point(153, 25);
-            this.txb_ProductPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_ProductPrice.MaxLength = 11;
-            this.txb_ProductPrice.Name = "txb_ProductPrice";
-            this.txb_ProductPrice.Size = new System.Drawing.Size(100, 26);
-            this.txb_ProductPrice.TabIndex = 0;
-            this.txb_ProductPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductPrice_KeyDown);
+            this.bt_Unit.Location = new System.Drawing.Point(370, 97);
+            this.bt_Unit.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Unit.Name = "bt_Unit";
+            this.bt_Unit.Size = new System.Drawing.Size(100, 32);
+            this.bt_Unit.TabIndex = 6;
+            this.bt_Unit.Text = "เพิ่มหน่วย";
+            this.bt_Unit.UseVisualStyleBackColor = true;
+            this.bt_Unit.Click += new System.EventHandler(this.bt_Unit_Click);
             // 
-            // lb_ProductSale
+            // cb_ProductUnit
             // 
-            this.lb_ProductSale.AutoSize = true;
-            this.lb_ProductSale.Location = new System.Drawing.Point(27, 67);
-            this.lb_ProductSale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_ProductSale.Name = "lb_ProductSale";
-            this.lb_ProductSale.Size = new System.Drawing.Size(115, 18);
-            this.lb_ProductSale.TabIndex = 4;
-            this.lb_ProductSale.Text = "ราคาขายต่อหน่วย";
+            this.cb_ProductUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cb_ProductUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_ProductUnit.FormattingEnabled = true;
+            this.cb_ProductUnit.Location = new System.Drawing.Point(366, 25);
+            this.cb_ProductUnit.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_ProductUnit.Name = "cb_ProductUnit";
+            this.cb_ProductUnit.Size = new System.Drawing.Size(104, 26);
+            this.cb_ProductUnit.TabIndex = 2;
+            this.cb_ProductUnit.SelectionChangeCommitted += new System.EventHandler(this.cb_ProductUnit_SelectionChangeCommitted);
             // 
-            // txb_ProductSale
+            // Bt_LoadPD
             // 
-            this.txb_ProductSale.Location = new System.Drawing.Point(153, 63);
-            this.txb_ProductSale.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_ProductSale.MaxLength = 11;
-            this.txb_ProductSale.Name = "txb_ProductSale";
-            this.txb_ProductSale.Size = new System.Drawing.Size(100, 26);
-            this.txb_ProductSale.TabIndex = 1;
-            this.txb_ProductSale.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductSale_KeyDown);
+            this.Bt_LoadPD.Location = new System.Drawing.Point(370, 133);
+            this.Bt_LoadPD.Margin = new System.Windows.Forms.Padding(4);
+            this.Bt_LoadPD.Name = "Bt_LoadPD";
+            this.Bt_LoadPD.Size = new System.Drawing.Size(100, 32);
+            this.Bt_LoadPD.TabIndex = 15;
+            this.Bt_LoadPD.Text = "LoadPD";
+            this.Bt_LoadPD.UseVisualStyleBackColor = true;
+            this.Bt_LoadPD.Visible = false;
+            this.Bt_LoadPD.Click += new System.EventHandler(this.Bt_LoadPD_Click);
             // 
-            // lb_Unit
+            // txb_ProductAmt
             // 
-            this.lb_Unit.AutoSize = true;
-            this.lb_Unit.Location = new System.Drawing.Point(263, 29);
-            this.lb_Unit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Unit.Name = "lb_Unit";
-            this.lb_Unit.Size = new System.Drawing.Size(72, 18);
-            this.lb_Unit.TabIndex = 6;
-            this.lb_Unit.Text = "หน่วยเรียก";
+            this.txb_ProductAmt.Location = new System.Drawing.Point(366, 63);
+            this.txb_ProductAmt.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_ProductAmt.MaxLength = 4;
+            this.txb_ProductAmt.Name = "txb_ProductAmt";
+            this.txb_ProductAmt.Size = new System.Drawing.Size(104, 26);
+            this.txb_ProductAmt.TabIndex = 3;
+            this.txb_ProductAmt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductAmt_KeyDown);
             // 
-            // lb_ProductProduct
+            // lb_Product_Unit_Amt
             // 
-            this.lb_ProductProduct.AutoSize = true;
-            this.lb_ProductProduct.Location = new System.Drawing.Point(56, 104);
-            this.lb_ProductProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_ProductProduct.Name = "lb_ProductProduct";
-            this.lb_ProductProduct.Size = new System.Drawing.Size(51, 18);
-            this.lb_ProductProduct.TabIndex = 8;
-            this.lb_ProductProduct.Text = "วันผลิต";
-            // 
-            // dTP_Product
-            // 
-            this.dTP_Product.Location = new System.Drawing.Point(153, 100);
-            this.dTP_Product.Margin = new System.Windows.Forms.Padding(4);
-            this.dTP_Product.Name = "dTP_Product";
-            this.dTP_Product.Size = new System.Drawing.Size(189, 26);
-            this.dTP_Product.TabIndex = 4;
-            // 
-            // lb_ProductExpired
-            // 
-            this.lb_ProductExpired.AutoSize = true;
-            this.lb_ProductExpired.Location = new System.Drawing.Point(56, 140);
-            this.lb_ProductExpired.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_ProductExpired.Name = "lb_ProductExpired";
-            this.lb_ProductExpired.Size = new System.Drawing.Size(88, 18);
-            this.lb_ProductExpired.TabIndex = 10;
-            this.lb_ProductExpired.Text = "วันที่หมดอายุ";
-            // 
-            // dTP_Expired
-            // 
-            this.dTP_Expired.Location = new System.Drawing.Point(153, 136);
-            this.dTP_Expired.Margin = new System.Windows.Forms.Padding(4);
-            this.dTP_Expired.Name = "dTP_Expired";
-            this.dTP_Expired.Size = new System.Drawing.Size(189, 26);
-            this.dTP_Expired.TabIndex = 5;
+            this.lb_Product_Unit_Amt.AutoSize = true;
+            this.lb_Product_Unit_Amt.Location = new System.Drawing.Point(263, 67);
+            this.lb_Product_Unit_Amt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Product_Unit_Amt.Name = "lb_Product_Unit_Amt";
+            this.lb_Product_Unit_Amt.Size = new System.Drawing.Size(97, 18);
+            this.lb_Product_Unit_Amt.TabIndex = 13;
+            this.lb_Product_Unit_Amt.Text = "จำนวนคงเหลือ";
             // 
             // gBoxProducttrack
             // 
@@ -366,16 +346,6 @@
             this.gBoxProducttrack.TabStop = false;
             this.gBoxProducttrack.Text = "การแจ้งเตือน";
             // 
-            // lb_Product_Unit_Order
-            // 
-            this.lb_Product_Unit_Order.AutoSize = true;
-            this.lb_Product_Unit_Order.Location = new System.Drawing.Point(37, 31);
-            this.lb_Product_Unit_Order.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Product_Unit_Order.Name = "lb_Product_Unit_Order";
-            this.lb_Product_Unit_Order.Size = new System.Drawing.Size(212, 18);
-            this.lb_Product_Unit_Order.TabIndex = 13;
-            this.lb_Product_Unit_Order.Text = "จำนวนคงเหลือต่ำสุดเพื่อแจ้งเตือน";
-            // 
             // txb_ProductOrder
             // 
             this.txb_ProductOrder.Location = new System.Drawing.Point(265, 27);
@@ -386,77 +356,108 @@
             this.txb_ProductOrder.TabIndex = 0;
             this.txb_ProductOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductOrder_KeyDown);
             // 
-            // lb_Product_Unit_Amt
+            // lb_Product_Unit_Order
             // 
-            this.lb_Product_Unit_Amt.AutoSize = true;
-            this.lb_Product_Unit_Amt.Location = new System.Drawing.Point(263, 67);
-            this.lb_Product_Unit_Amt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Product_Unit_Amt.Name = "lb_Product_Unit_Amt";
-            this.lb_Product_Unit_Amt.Size = new System.Drawing.Size(97, 18);
-            this.lb_Product_Unit_Amt.TabIndex = 13;
-            this.lb_Product_Unit_Amt.Text = "จำนวนคงเหลือ";
+            this.lb_Product_Unit_Order.AutoSize = true;
+            this.lb_Product_Unit_Order.Location = new System.Drawing.Point(37, 31);
+            this.lb_Product_Unit_Order.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Product_Unit_Order.Name = "lb_Product_Unit_Order";
+            this.lb_Product_Unit_Order.Size = new System.Drawing.Size(212, 18);
+            this.lb_Product_Unit_Order.TabIndex = 13;
+            this.lb_Product_Unit_Order.Text = "จำนวนคงเหลือต่ำสุดเพื่อแจ้งเตือน";
             // 
-            // txb_ProductAmt
+            // dTP_Expired
             // 
-            this.txb_ProductAmt.Location = new System.Drawing.Point(366, 63);
-            this.txb_ProductAmt.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_ProductAmt.MaxLength = 4;
-            this.txb_ProductAmt.Name = "txb_ProductAmt";
-            this.txb_ProductAmt.Size = new System.Drawing.Size(104, 26);
-            this.txb_ProductAmt.TabIndex = 3;
-            this.txb_ProductAmt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductAmt_KeyDown);
+            this.dTP_Expired.Location = new System.Drawing.Point(153, 136);
+            this.dTP_Expired.Margin = new System.Windows.Forms.Padding(4);
+            this.dTP_Expired.Name = "dTP_Expired";
+            this.dTP_Expired.Size = new System.Drawing.Size(189, 26);
+            this.dTP_Expired.TabIndex = 5;
             // 
-            // Bt_LoadPD
+            // lb_ProductExpired
             // 
-            this.Bt_LoadPD.Location = new System.Drawing.Point(370, 133);
-            this.Bt_LoadPD.Margin = new System.Windows.Forms.Padding(4);
-            this.Bt_LoadPD.Name = "Bt_LoadPD";
-            this.Bt_LoadPD.Size = new System.Drawing.Size(100, 32);
-            this.Bt_LoadPD.TabIndex = 15;
-            this.Bt_LoadPD.Text = "LoadPD";
-            this.Bt_LoadPD.UseVisualStyleBackColor = true;
-            this.Bt_LoadPD.Visible = false;
-            this.Bt_LoadPD.Click += new System.EventHandler(this.Bt_LoadPD_Click);
+            this.lb_ProductExpired.AutoSize = true;
+            this.lb_ProductExpired.Location = new System.Drawing.Point(56, 140);
+            this.lb_ProductExpired.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_ProductExpired.Name = "lb_ProductExpired";
+            this.lb_ProductExpired.Size = new System.Drawing.Size(88, 18);
+            this.lb_ProductExpired.TabIndex = 10;
+            this.lb_ProductExpired.Text = "วันที่หมดอายุ";
             // 
-            // cb_ProductUnit
+            // dTP_Product
             // 
-            this.cb_ProductUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cb_ProductUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cb_ProductUnit.FormattingEnabled = true;
-            this.cb_ProductUnit.Location = new System.Drawing.Point(366, 25);
-            this.cb_ProductUnit.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_ProductUnit.Name = "cb_ProductUnit";
-            this.cb_ProductUnit.Size = new System.Drawing.Size(104, 26);
-            this.cb_ProductUnit.TabIndex = 2;
-            this.cb_ProductUnit.SelectionChangeCommitted += new System.EventHandler(this.cb_ProductUnit_SelectionChangeCommitted);
+            this.dTP_Product.Location = new System.Drawing.Point(153, 100);
+            this.dTP_Product.Margin = new System.Windows.Forms.Padding(4);
+            this.dTP_Product.Name = "dTP_Product";
+            this.dTP_Product.Size = new System.Drawing.Size(189, 26);
+            this.dTP_Product.TabIndex = 4;
             // 
-            // bt_Unit
+            // lb_ProductProduct
             // 
-            this.bt_Unit.Location = new System.Drawing.Point(370, 97);
-            this.bt_Unit.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_Unit.Name = "bt_Unit";
-            this.bt_Unit.Size = new System.Drawing.Size(100, 32);
-            this.bt_Unit.TabIndex = 6;
-            this.bt_Unit.Text = "เพิ่มหน่วย";
-            this.bt_Unit.UseVisualStyleBackColor = true;
-            this.bt_Unit.Click += new System.EventHandler(this.bt_Unit_Click);
+            this.lb_ProductProduct.AutoSize = true;
+            this.lb_ProductProduct.Location = new System.Drawing.Point(56, 104);
+            this.lb_ProductProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_ProductProduct.Name = "lb_ProductProduct";
+            this.lb_ProductProduct.Size = new System.Drawing.Size(51, 18);
+            this.lb_ProductProduct.TabIndex = 8;
+            this.lb_ProductProduct.Text = "วันผลิต";
             // 
-            // CheckBox_Stock
+            // lb_Unit
             // 
-            this.CheckBox_Stock.AutoSize = true;
-            this.CheckBox_Stock.Location = new System.Drawing.Point(422, 215);
-            this.CheckBox_Stock.Name = "CheckBox_Stock";
-            this.CheckBox_Stock.Size = new System.Drawing.Size(104, 22);
-            this.CheckBox_Stock.TabIndex = 16;
-            this.CheckBox_Stock.Text = "ตัดคลังสินค้า";
-            this.CheckBox_Stock.UseVisualStyleBackColor = true;
+            this.lb_Unit.AutoSize = true;
+            this.lb_Unit.Location = new System.Drawing.Point(263, 29);
+            this.lb_Unit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Unit.Name = "lb_Unit";
+            this.lb_Unit.Size = new System.Drawing.Size(72, 18);
+            this.lb_Unit.TabIndex = 6;
+            this.lb_Unit.Text = "หน่วยเรียก";
+            // 
+            // txb_ProductSale
+            // 
+            this.txb_ProductSale.Location = new System.Drawing.Point(153, 63);
+            this.txb_ProductSale.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_ProductSale.MaxLength = 11;
+            this.txb_ProductSale.Name = "txb_ProductSale";
+            this.txb_ProductSale.Size = new System.Drawing.Size(100, 26);
+            this.txb_ProductSale.TabIndex = 1;
+            this.txb_ProductSale.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductSale_KeyDown);
+            // 
+            // lb_ProductSale
+            // 
+            this.lb_ProductSale.AutoSize = true;
+            this.lb_ProductSale.Location = new System.Drawing.Point(27, 67);
+            this.lb_ProductSale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_ProductSale.Name = "lb_ProductSale";
+            this.lb_ProductSale.Size = new System.Drawing.Size(115, 18);
+            this.lb_ProductSale.TabIndex = 4;
+            this.lb_ProductSale.Text = "ราคาขายต่อหน่วย";
+            // 
+            // txb_ProductPrice
+            // 
+            this.txb_ProductPrice.Location = new System.Drawing.Point(153, 25);
+            this.txb_ProductPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_ProductPrice.MaxLength = 11;
+            this.txb_ProductPrice.Name = "txb_ProductPrice";
+            this.txb_ProductPrice.Size = new System.Drawing.Size(100, 26);
+            this.txb_ProductPrice.TabIndex = 0;
+            this.txb_ProductPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductPrice_KeyDown);
+            // 
+            // lb_ProductPrice
+            // 
+            this.lb_ProductPrice.AutoSize = true;
+            this.lb_ProductPrice.Location = new System.Drawing.Point(56, 29);
+            this.lb_ProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_ProductPrice.Name = "lb_ProductPrice";
+            this.lb_ProductPrice.Size = new System.Drawing.Size(75, 18);
+            this.lb_ProductPrice.TabIndex = 2;
+            this.lb_ProductPrice.Text = "ราคาต้นทุน";
             // 
             // bt_AddProduct
             // 
-            this.bt_AddProduct.Location = new System.Drawing.Point(109, 235);
+            this.bt_AddProduct.Location = new System.Drawing.Point(116, 217);
             this.bt_AddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddProduct.Name = "bt_AddProduct";
-            this.bt_AddProduct.Size = new System.Drawing.Size(100, 32);
+            this.bt_AddProduct.Size = new System.Drawing.Size(70, 32);
             this.bt_AddProduct.TabIndex = 4;
             this.bt_AddProduct.Text = "เพิ่ม";
             this.bt_AddProduct.UseVisualStyleBackColor = true;
@@ -464,10 +465,10 @@
             // 
             // bt_EditProduct
             // 
-            this.bt_EditProduct.Location = new System.Drawing.Point(239, 235);
+            this.bt_EditProduct.Location = new System.Drawing.Point(194, 217);
             this.bt_EditProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditProduct.Name = "bt_EditProduct";
-            this.bt_EditProduct.Size = new System.Drawing.Size(100, 32);
+            this.bt_EditProduct.Size = new System.Drawing.Size(70, 32);
             this.bt_EditProduct.TabIndex = 5;
             this.bt_EditProduct.Text = "แก้ไข";
             this.bt_EditProduct.UseVisualStyleBackColor = true;
@@ -501,11 +502,24 @@
             this.lb_ProductIDH.Size = new System.Drawing.Size(0, 18);
             this.lb_ProductIDH.TabIndex = 14;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(272, 217);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 32);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "ลบ";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmMM12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lb_ProductIDH);
             this.Controls.Add(this.dGV_PD);
             this.Controls.Add(this.txb_ProductDetail);
@@ -578,5 +592,6 @@
         private System.Windows.Forms.TextBox txb_ProductID;
         private System.Windows.Forms.Label lb_ProductName;
         private System.Windows.Forms.TextBox txb_ProductName;
+        private System.Windows.Forms.Button button1;
     }
 }

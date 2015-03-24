@@ -458,7 +458,7 @@ namespace Petshop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Regex RxDetail = new Regex("[0-9]");
+        
         }
     }
 }

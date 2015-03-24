@@ -64,6 +64,8 @@
             this.lb_PositionID = new System.Windows.Forms.Label();
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -100,6 +102,7 @@
             // 
             // gBoxEmployee
             // 
+            this.gBoxEmployee.Controls.Add(this.button1);
             this.gBoxEmployee.Controls.Add(this.bt_LoadEP);
             this.gBoxEmployee.Controls.Add(this.bt_EditEm);
             this.gBoxEmployee.Controls.Add(this.bt_AddEm);
@@ -133,10 +136,10 @@
             // 
             // bt_EditEm
             // 
-            this.bt_EditEm.Location = new System.Drawing.Point(235, 154);
+            this.bt_EditEm.Location = new System.Drawing.Point(205, 136);
             this.bt_EditEm.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditEm.Name = "bt_EditEm";
-            this.bt_EditEm.Size = new System.Drawing.Size(100, 32);
+            this.bt_EditEm.Size = new System.Drawing.Size(70, 32);
             this.bt_EditEm.TabIndex = 2;
             this.bt_EditEm.Text = "แก้ไข";
             this.bt_EditEm.UseVisualStyleBackColor = true;
@@ -144,10 +147,10 @@
             // 
             // bt_AddEm
             // 
-            this.bt_AddEm.Location = new System.Drawing.Point(127, 154);
+            this.bt_AddEm.Location = new System.Drawing.Point(127, 136);
             this.bt_AddEm.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddEm.Name = "bt_AddEm";
-            this.bt_AddEm.Size = new System.Drawing.Size(100, 32);
+            this.bt_AddEm.Size = new System.Drawing.Size(70, 32);
             this.bt_AddEm.TabIndex = 1;
             this.bt_AddEm.Text = "เพิ่ม";
             this.bt_AddEm.UseVisualStyleBackColor = true;
@@ -380,6 +383,7 @@
             // 
             // gBoxPosition
             // 
+            this.gBoxPosition.Controls.Add(this.button2);
             this.gBoxPosition.Controls.Add(this.bt_LoadPS);
             this.gBoxPosition.Controls.Add(this.bt_EditEmposition);
             this.gBoxPosition.Controls.Add(this.bt_AddEmPosition);
@@ -409,10 +413,10 @@
             // 
             // bt_EditEmposition
             // 
-            this.bt_EditEmposition.Location = new System.Drawing.Point(260, 112);
+            this.bt_EditEmposition.Location = new System.Drawing.Point(230, 112);
             this.bt_EditEmposition.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditEmposition.Name = "bt_EditEmposition";
-            this.bt_EditEmposition.Size = new System.Drawing.Size(100, 32);
+            this.bt_EditEmposition.Size = new System.Drawing.Size(70, 32);
             this.bt_EditEmposition.TabIndex = 3;
             this.bt_EditEmposition.Text = "แก้ไข";
             this.bt_EditEmposition.UseVisualStyleBackColor = true;
@@ -423,7 +427,7 @@
             this.bt_AddEmPosition.Location = new System.Drawing.Point(152, 112);
             this.bt_AddEmPosition.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddEmPosition.Name = "bt_AddEmPosition";
-            this.bt_AddEmPosition.Size = new System.Drawing.Size(100, 32);
+            this.bt_AddEmPosition.Size = new System.Drawing.Size(70, 32);
             this.bt_AddEmPosition.TabIndex = 2;
             this.bt_AddEmPosition.Text = "เพิ่ม";
             this.bt_AddEmPosition.UseVisualStyleBackColor = true;
@@ -468,6 +472,30 @@
             this.lb_EmPosition.Size = new System.Drawing.Size(59, 18);
             this.lb_EmPosition.TabIndex = 6;
             this.lb_EmPosition.Text = "ตำแหน่ง";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(283, 135);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 32);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "ลบ";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(308, 112);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 32);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "ลบ";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmMM15
             // 
@@ -534,6 +562,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEmPosition_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEP_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Position;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
 
 
     }

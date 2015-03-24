@@ -56,6 +56,8 @@
             this.lb_TypeID = new System.Windows.Forms.Label();
             this.txb_TypeID = new System.Windows.Forms.TextBox();
             this.lb_TypeName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControlBreedType.SuspendLayout();
             this.tpBreed.SuspendLayout();
             this.gBoxBreed.SuspendLayout();
@@ -91,6 +93,7 @@
             // 
             // gBoxBreed
             // 
+            this.gBoxBreed.Controls.Add(this.button1);
             this.gBoxBreed.Controls.Add(this.Bt_LoadBreed);
             this.gBoxBreed.Controls.Add(this.bt_EditBreed);
             this.gBoxBreed.Controls.Add(this.bt_AddBreed);
@@ -122,10 +125,10 @@
             // 
             // bt_EditBreed
             // 
-            this.bt_EditBreed.Location = new System.Drawing.Point(233, 136);
+            this.bt_EditBreed.Location = new System.Drawing.Point(205, 134);
             this.bt_EditBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditBreed.Name = "bt_EditBreed";
-            this.bt_EditBreed.Size = new System.Drawing.Size(100, 32);
+            this.bt_EditBreed.Size = new System.Drawing.Size(70, 32);
             this.bt_EditBreed.TabIndex = 5;
             this.bt_EditBreed.Text = "แก้ไข";
             this.bt_EditBreed.UseVisualStyleBackColor = true;
@@ -133,10 +136,10 @@
             // 
             // bt_AddBreed
             // 
-            this.bt_AddBreed.Location = new System.Drawing.Point(125, 136);
+            this.bt_AddBreed.Location = new System.Drawing.Point(127, 134);
             this.bt_AddBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddBreed.Name = "bt_AddBreed";
-            this.bt_AddBreed.Size = new System.Drawing.Size(100, 32);
+            this.bt_AddBreed.Size = new System.Drawing.Size(70, 32);
             this.bt_AddBreed.TabIndex = 4;
             this.bt_AddBreed.Text = "เพิ่ม";
             this.bt_AddBreed.UseVisualStyleBackColor = true;
@@ -287,6 +290,7 @@
             // 
             // gBoxType
             // 
+            this.gBoxType.Controls.Add(this.button2);
             this.gBoxType.Controls.Add(this.bt_LoadType);
             this.gBoxType.Controls.Add(this.bt_EditType);
             this.gBoxType.Controls.Add(this.bt_AddType);
@@ -317,10 +321,10 @@
             // 
             // bt_EditType
             // 
-            this.bt_EditType.Location = new System.Drawing.Point(259, 100);
+            this.bt_EditType.Location = new System.Drawing.Point(229, 98);
             this.bt_EditType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditType.Name = "bt_EditType";
-            this.bt_EditType.Size = new System.Drawing.Size(100, 32);
+            this.bt_EditType.Size = new System.Drawing.Size(70, 32);
             this.bt_EditType.TabIndex = 3;
             this.bt_EditType.Text = "แก้ไข";
             this.bt_EditType.UseVisualStyleBackColor = true;
@@ -328,10 +332,10 @@
             // 
             // bt_AddType
             // 
-            this.bt_AddType.Location = new System.Drawing.Point(151, 100);
+            this.bt_AddType.Location = new System.Drawing.Point(151, 98);
             this.bt_AddType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddType.Name = "bt_AddType";
-            this.bt_AddType.Size = new System.Drawing.Size(100, 32);
+            this.bt_AddType.Size = new System.Drawing.Size(70, 32);
             this.bt_AddType.TabIndex = 2;
             this.bt_AddType.Text = "เพิ่ม";
             this.bt_AddType.UseVisualStyleBackColor = true;
@@ -376,6 +380,30 @@
             this.lb_TypeName.Size = new System.Drawing.Size(55, 18);
             this.lb_TypeName.TabIndex = 6;
             this.lb_TypeName.Text = "ประเภท";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(283, 134);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 32);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "ลบ";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(307, 98);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 32);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "ลบ";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmMM14
             // 
@@ -432,6 +460,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed_Des;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_DesID;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
 
 
     }
