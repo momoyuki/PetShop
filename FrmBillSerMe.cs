@@ -52,13 +52,14 @@ namespace Petshop
             
             ReportDocument rpt = new ReportDocument();
             //string iFolder = Application.ExecutablePath;
-            rpt.Load("E:\\Petshop\\Petshop\\Resources\\CrBill.rpt");
+            rpt.Load("E:\\Petshop\\Resources\\CrBill.rpt");
             /////////////////////////////Main Detail/////////////////////////////////
             rpt.SetDataSource(idtBillDetail);
             /////////////////////////////Sub Company////////////////////////////////
             rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
             ////////////////////////////Sub Bill Master////////////////////////////////
             rpt.Subreports["Bill_Sub_Report"].Database.Tables[0].SetDataSource(idtbill);
+            rpt.Subreports["Bill_Sub_ReportM"].Database.Tables[0].SetDataSource(idtbill);
             this.crystalReportViewer1.ReportSource = rpt;
             this.crystalReportViewer1.Refresh();
         }

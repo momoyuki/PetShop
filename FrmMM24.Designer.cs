@@ -82,7 +82,7 @@
             // lbyear
             // 
             this.lbyear.AutoSize = true;
-            this.lbyear.Location = new System.Drawing.Point(681, 18);
+            this.lbyear.Location = new System.Drawing.Point(13, 168);
             this.lbyear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbyear.Name = "lbyear";
             this.lbyear.Size = new System.Drawing.Size(16, 18);
@@ -97,7 +97,7 @@
             this.bt_CancelBuy.Name = "bt_CancelBuy";
             this.bt_CancelBuy.Size = new System.Drawing.Size(112, 37);
             this.bt_CancelBuy.TabIndex = 129;
-            this.bt_CancelBuy.Text = "ลบ";
+            this.bt_CancelBuy.Text = "ลบรายการ";
             this.bt_CancelBuy.UseVisualStyleBackColor = true;
             this.bt_CancelBuy.Click += new System.EventHandler(this.bt_CancelBuy_Click);
             // 
@@ -250,7 +250,7 @@
             // 
             // dTP_ProductSaleDate
             // 
-            this.dTP_ProductSaleDate.Location = new System.Drawing.Point(449, 14);
+            this.dTP_ProductSaleDate.Location = new System.Drawing.Point(436, 12);
             this.dTP_ProductSaleDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dTP_ProductSaleDate.Name = "dTP_ProductSaleDate";
             this.dTP_ProductSaleDate.Size = new System.Drawing.Size(211, 26);
@@ -275,12 +275,12 @@
             // 
             // bt_AddProductSale
             // 
-            this.bt_AddProductSale.Location = new System.Drawing.Point(763, 155);
+            this.bt_AddProductSale.Location = new System.Drawing.Point(763, 154);
             this.bt_AddProductSale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_AddProductSale.Name = "bt_AddProductSale";
             this.bt_AddProductSale.Size = new System.Drawing.Size(112, 37);
             this.bt_AddProductSale.TabIndex = 110;
-            this.bt_AddProductSale.Text = "ซื้อ";
+            this.bt_AddProductSale.Text = "เพิ่มรายการ";
             this.bt_AddProductSale.UseVisualStyleBackColor = true;
             this.bt_AddProductSale.Click += new System.EventHandler(this.bt_AddProductSale_Click);
             // 
