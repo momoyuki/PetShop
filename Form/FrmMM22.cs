@@ -428,13 +428,13 @@ namespace Petshop
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM341))
+                if (form.GetType() == typeof(FrmMM31))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM341 iFrmMM341 = new FrmMM341();
+            FrmMM31 iFrmMM341 = new FrmMM31();
             iFrmMM341.MdiParent = MainForm.ActiveForm;
             iFrmMM341.txb_ReferID.Text = lb_HealRecordID.Text;
             iFrmMM341.Show(); 

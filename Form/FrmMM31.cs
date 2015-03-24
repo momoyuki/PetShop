@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace Petshop
 {
-    public partial class FrmMM341 : Form
+    public partial class FrmMM31 : Form
     {
         
         private MySQLDBConnect iConnect;
-        public FrmMM341()
+        public FrmMM31()
         {
             InitializeComponent();
             iConnect = new MySQLDBConnect();

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Petshop
 {
-    public partial class FrmMM35 : Form
+    public partial class FrmMM33 : Form
     {
-        public FrmMM35()
+        public FrmMM33()
         {
             InitializeComponent();
         }

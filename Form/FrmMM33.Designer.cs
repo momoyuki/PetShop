@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmMM35
+    partial class FrmMM33
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // FrmMM35
+            // FrmMM33
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
-            this.Name = "FrmMM35";
+            this.Name = "FrmMM33";
             this.Text = "รายงาน ใบนัดหมาย";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);

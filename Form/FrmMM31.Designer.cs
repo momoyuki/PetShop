@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmMM341
+    partial class FrmMM31
     {
         /// <summary>
         /// Required designer variable.
@@ -469,7 +469,7 @@
             this.lb_MediAmtBill.Size = new System.Drawing.Size(0, 18);
             this.lb_MediAmtBill.TabIndex = 141;
             // 
-            // FrmMM341
+            // FrmMM31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -498,7 +498,7 @@
             this.Controls.Add(this.lb_Bill);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM341";
+            this.Name = "FrmMM31";
             this.Text = "ใบเสร็จ ตรวจรักษา บริการ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM341_Load);

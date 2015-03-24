@@ -22,13 +22,13 @@ namespace Petshop
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM35))
+                if (form.GetType() == typeof(FrmMM33))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM35 iFrmMM35 = new FrmMM35();
+            FrmMM33 iFrmMM35 = new FrmMM33();
             iFrmMM35.MdiParent = this;
             iFrmMM35.Show();
         }

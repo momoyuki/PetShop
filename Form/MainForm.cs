@@ -192,13 +192,13 @@ namespace Petshop
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM341))
+                if (form.GetType() == typeof(FrmMM31))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM341 iFrmMM341 = new FrmMM341();
+            FrmMM31 iFrmMM341 = new FrmMM31();
             iFrmMM341.MdiParent = this;
             iFrmMM341.Show();
         }
@@ -206,13 +206,13 @@ namespace Petshop
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM342))
+                if (form.GetType() == typeof(FrmMM32))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM342 iFrmMM342 = new FrmMM342();
+            FrmMM32 iFrmMM342 = new FrmMM32();
             iFrmMM342.MdiParent = this;
             iFrmMM342.Show();
         }
@@ -224,13 +224,13 @@ namespace Petshop
         
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM35))
+                if (form.GetType() == typeof(FrmMM33))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM35 iFrmMM35 = new FrmMM35();
+            FrmMM33 iFrmMM35 = new FrmMM33();
             iFrmMM35.MdiParent = this;
             iFrmMM35.Show();
         

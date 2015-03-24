@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmMM342
+    partial class FrmMM32
     {
         /// <summary>
         /// Required designer variable.
@@ -45,9 +45,6 @@
             this.dTP_ProductSaleDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dGV_Product = new System.Windows.Forms.DataGridView();
-            this.Lb_BillID = new System.Windows.Forms.Label();
-            this.Lb_CoBill = new System.Windows.Forms.Label();
-            this.lbYear = new System.Windows.Forms.Label();
             this.ccCheckBoxProduct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ccProductSale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +52,9 @@
             this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccProductSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccProductSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lb_BillID = new System.Windows.Forms.Label();
+            this.Lb_CoBill = new System.Windows.Forms.Label();
+            this.lbYear = new System.Windows.Forms.Label();
             this.CheckBoxProduct = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
             this.SuspendLayout();
@@ -229,41 +229,13 @@
             this.ccProductSale_Unit,
             this.ccProductSale_Total});
             this.dGV_Product.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dGV_Product.Location = new System.Drawing.Point(27, 173);
+            this.dGV_Product.Location = new System.Drawing.Point(13, 173);
             this.dGV_Product.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_Product.MultiSelect = false;
             this.dGV_Product.Name = "dGV_Product";
             this.dGV_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_Product.Size = new System.Drawing.Size(968, 486);
+            this.dGV_Product.Size = new System.Drawing.Size(982, 486);
             this.dGV_Product.TabIndex = 136;
-            // 
-            // Lb_BillID
-            // 
-            this.Lb_BillID.AutoSize = true;
-            this.Lb_BillID.Location = new System.Drawing.Point(107, 9);
-            this.Lb_BillID.Name = "Lb_BillID";
-            this.Lb_BillID.Size = new System.Drawing.Size(0, 18);
-            this.Lb_BillID.TabIndex = 156;
-            // 
-            // Lb_CoBill
-            // 
-            this.Lb_CoBill.AutoSize = true;
-            this.Lb_CoBill.Location = new System.Drawing.Point(379, 7);
-            this.Lb_CoBill.Name = "Lb_CoBill";
-            this.Lb_CoBill.Size = new System.Drawing.Size(63, 18);
-            this.Lb_CoBill.TabIndex = 157;
-            this.Lb_CoBill.Text = "Lb_CoBill";
-            this.Lb_CoBill.Visible = false;
-            // 
-            // lbYear
-            // 
-            this.lbYear.AutoSize = true;
-            this.lbYear.Location = new System.Drawing.Point(448, 7);
-            this.lbYear.Name = "lbYear";
-            this.lbYear.Size = new System.Drawing.Size(49, 18);
-            this.lbYear.TabIndex = 158;
-            this.lbYear.Text = "lbYear";
-            this.lbYear.Visible = false;
             // 
             // ccCheckBoxProduct
             // 
@@ -319,6 +291,34 @@
             this.ccProductSale_Total.Name = "ccProductSale_Total";
             this.ccProductSale_Total.ReadOnly = true;
             // 
+            // Lb_BillID
+            // 
+            this.Lb_BillID.AutoSize = true;
+            this.Lb_BillID.Location = new System.Drawing.Point(107, 9);
+            this.Lb_BillID.Name = "Lb_BillID";
+            this.Lb_BillID.Size = new System.Drawing.Size(0, 18);
+            this.Lb_BillID.TabIndex = 156;
+            // 
+            // Lb_CoBill
+            // 
+            this.Lb_CoBill.AutoSize = true;
+            this.Lb_CoBill.Location = new System.Drawing.Point(379, 7);
+            this.Lb_CoBill.Name = "Lb_CoBill";
+            this.Lb_CoBill.Size = new System.Drawing.Size(63, 18);
+            this.Lb_CoBill.TabIndex = 157;
+            this.Lb_CoBill.Text = "Lb_CoBill";
+            this.Lb_CoBill.Visible = false;
+            // 
+            // lbYear
+            // 
+            this.lbYear.AutoSize = true;
+            this.lbYear.Location = new System.Drawing.Point(448, 7);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(49, 18);
+            this.lbYear.TabIndex = 158;
+            this.lbYear.Text = "lbYear";
+            this.lbYear.Visible = false;
+            // 
             // CheckBoxProduct
             // 
             this.CheckBoxProduct.AutoSize = true;
@@ -329,7 +329,7 @@
             this.CheckBoxProduct.UseVisualStyleBackColor = true;
             this.CheckBoxProduct.CheckedChanged += new System.EventHandler(this.CheckBoxProduct_CheckedChanged);
             // 
-            // FrmMM342
+            // FrmMM32
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -357,7 +357,7 @@
             this.Controls.Add(this.dGV_Product);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM342";
+            this.Name = "FrmMM32";
             this.Text = "ใบเสร็จ ขายสินค้า";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).EndInit();
