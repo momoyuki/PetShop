@@ -26,6 +26,24 @@ namespace Petshop
         {
             loadData();
             loadCompany();
+            loadBillAmt();
+        }
+
+        private void loadBillAmt()
+        {
+            DataTable idtSumService;
+            string isqlSumService = "SELECT sum(Service_Amt) as ServiceAmt FROM tb_ServiceRecord WHERE tb_ServiceRecord.HealRecord_ID = '" + ilbHealRecordID + "' ";
+            idtSumService = iConnect.SelectByCommand(isqlSumService);
+            lb_ServiceAmt.DataBindings.Clear();
+            Binding b = new Binding("Text", idtSumService, "ServiceAmt");
+            lb_ServiceAmt.DataBindings.Add(b);
+
+            DataTable idtSumMedi;
+            string isqlSumMedi = "SELECT sum(MediRecord_total) as MediAmt  FROM tb_MediRecord WHERE HealRecord_ID = '" + ilbHealRecordID + "' ";
+            idtSumMedi = iConnect.SelectByCommand(isqlSumMedi);
+            lb_MediAmt.DataBindings.Clear();
+            Binding b = new Binding("Text", idtSumMedi, "MediAmt");
+            lb_MediAmt.DataBindings.Add(b);
         }
 
         private void loadCompany()
@@ -122,11 +140,11 @@ namespace Petshop
                 iFrmBill.lb_BillID.Text = Lb_BillID.Text.Trim();
             }
             BillAdd();
+            AddServiceBill();
         }
 
         private void AddServiceBill()
         {
-            //string itxb_ReferID = txb_ReferID.Text.Trim();
             string ilbBillID = Lb_BillID.Text.Trim();
             if ((txb_ReferID.Text != null) && (txb_ReferID.Text != ""))
             {
@@ -138,19 +156,19 @@ namespace Petshop
                         {
                             String iServiceID = dGV_Service.Rows[i].Cells[2].Value.ToString();
                             String iServicePrice = dGV_Service.Rows[i].Cells[3].Value.ToString();
+                            decimal iPrice = Convert.ToDecimal(iServicePrice);
                             DataTable idtServiceBilCheck;
                             string isqlServiceBillCheck = "SELECT * FROM tb_servicebill where Bill_ID = '" + ilbBillID + "'AND Service_ID = '" + iServiceID + "' ";
                             idtServiceBilCheck = iConnect.SelectByCommand(isqlServiceBillCheck);//ลักษณะการทำงานคือ เมื่อเข้าไปเช็คในฐานข้อมูล หากไม่มี ให้ทำการเพิ่ม หากมีอยู่แล้ว ให้ทำการ แก้ไขให้ตรงกับปัจจุบัน
+                            
                             if (idtServiceBilCheck.Rows.Count == 0)
                             {
-                                
                                 string isqlServiceBill = "INSERT INTO `tb_servicebill` (`Bill_ID`, `Service_ID`, `Service_Bill_Unit`, `Service_Bill_Price`, `Service_Bill_Amt`) VALUES ('" + ilbBillID + "', '" + iServiceID + "', '1', '" + iServicePrice + "', '" + iServicePrice + "')";
                                 iConnect.Insert(isqlServiceBill);
                             }
                          }
                         if (Convert.ToBoolean(dGV_Service.Rows[i].Cells[0].Value) == false)
                         {//ถ้าไม่เช็ค
-                            
                             String iServiceID = dGV_Service.Rows[i].Cells[2].Value.ToString();
                             String iServicePrice = dGV_Service.Rows[i].Cells[3].Value.ToString();
                             DataTable idtServiceBilCheck;

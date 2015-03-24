@@ -161,7 +161,6 @@ namespace Petshop
                 DataTable idtSumMedi;
                 string isqlSumMedi = "SELECT sum(MediRecord_total) as MediAmt  FROM tb_MediRecord WHERE HealRecord_ID = '" + ilbHealRecordID + "' ";
                 idtSumMedi = iConnect.SelectByCommand(isqlSumMedi);
-
                 lb_MediAmt.DataBindings.Clear();
                 Binding b = new Binding("Text", idtSumMedi, "MediAmt");
                 lb_MediAmt.DataBindings.Add(b);

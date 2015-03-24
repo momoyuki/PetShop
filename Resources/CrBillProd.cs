@@ -16,14 +16,14 @@ namespace Petshop.Resources {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrBill : ReportClass {
+    public class CrBillProd : ReportClass {
         
-        public CrBill() {
+        public CrBillProd() {
         }
         
         public override string ResourceName {
             get {
-                return "CrBill.rpt";
+                return "CrBillProd.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Petshop.Resources {
         
         public override string FullResourceName {
             get {
-                return "Petshop.Resources.CrBill.rpt";
+                return "Petshop.Resources.CrBillProd.rpt";
             }
             set {
                 // Do nothing
@@ -98,7 +98,7 @@ namespace Petshop.Resources {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section PageFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -106,9 +106,9 @@ namespace Petshop.Resources {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrBill : Component, ICachedReport {
+    public class CachedCrBillProd : Component, ICachedReport {
         
-        public CachedCrBill() {
+        public CachedCrBillProd() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace Petshop.Resources {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrBill rpt = new CrBill();
+            CrBillProd rpt = new CrBillProd();
             rpt.Site = this.Site;
             return rpt;
         }
