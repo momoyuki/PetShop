@@ -418,6 +418,9 @@ namespace Petshop
         private void lb_HealRecordID_TextChanged(object sender, EventArgs e)
         {
             LoadData();
+            if((lb_HealRecordID.Text !=null)&&(lb_HealRecordID.Text !="")){
+                tabControlServiceMedi.Enabled = true;
+            }
         }
         private void txb_PetID_TextChanged(object sender, EventArgs e)
         {

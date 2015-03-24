@@ -51,6 +51,18 @@
             this.rBt_contract = new System.Windows.Forms.RadioButton();
             this.rBt_All = new System.Windows.Forms.RadioButton();
             this.dGV_HealDate = new System.Windows.Forms.DataGridView();
+            this.CheckBoxStats = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ccHealDate_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOwner_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOwner_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHeadDate_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealDate_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealDate_Remind = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealDate_Stats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Detail = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,18 +81,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.CheckBox_Contract = new System.Windows.Forms.CheckBox();
-            this.CheckBoxStats = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ccHealDate_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPet_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPet_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccOwner_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccOwner_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHeadDate_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealDate_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealDate_Remind = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealDate_Stats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tP_All.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDate)).BeginInit();
@@ -350,6 +351,112 @@
             this.dGV_HealDate.TabIndex = 9;
             this.dGV_HealDate.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_HealDate_CellClick);
             // 
+            // CheckBoxStats
+            // 
+            this.CheckBoxStats.FillWeight = 30F;
+            this.CheckBoxStats.HeaderText = "";
+            this.CheckBoxStats.Name = "CheckBoxStats";
+            this.CheckBoxStats.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CheckBoxStats.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.CheckBoxStats.Width = 30;
+            // 
+            // ccHealDate_ID
+            // 
+            this.ccHealDate_ID.DataPropertyName = "HealDate_ID";
+            this.ccHealDate_ID.FillWeight = 120F;
+            this.ccHealDate_ID.HeaderText = "รหัสนัดหมาย";
+            this.ccHealDate_ID.Name = "ccHealDate_ID";
+            this.ccHealDate_ID.ReadOnly = true;
+            this.ccHealDate_ID.Visible = false;
+            this.ccHealDate_ID.Width = 120;
+            // 
+            // ccPet_ID
+            // 
+            this.ccPet_ID.DataPropertyName = "Pet_ID";
+            this.ccPet_ID.FillWeight = 120F;
+            this.ccPet_ID.HeaderText = "รหัสสัตว์";
+            this.ccPet_ID.Name = "ccPet_ID";
+            this.ccPet_ID.ReadOnly = true;
+            this.ccPet_ID.Width = 120;
+            // 
+            // ccPet_Name
+            // 
+            this.ccPet_Name.DataPropertyName = "Pet_Name";
+            this.ccPet_Name.HeaderText = "ชื่อสัตว์";
+            this.ccPet_Name.Name = "ccPet_Name";
+            this.ccPet_Name.ReadOnly = true;
+            // 
+            // ccOwner_Name
+            // 
+            this.ccOwner_Name.DataPropertyName = "Owner_Name";
+            this.ccOwner_Name.FillWeight = 200F;
+            this.ccOwner_Name.HeaderText = "ชื่อเจ้าของ";
+            this.ccOwner_Name.Name = "ccOwner_Name";
+            this.ccOwner_Name.ReadOnly = true;
+            this.ccOwner_Name.Width = 200;
+            // 
+            // ccOwner_Tel
+            // 
+            this.ccOwner_Tel.DataPropertyName = "Owner_Tel";
+            this.ccOwner_Tel.FillWeight = 120F;
+            this.ccOwner_Tel.HeaderText = "เบอร์ติดต่อ";
+            this.ccOwner_Tel.Name = "ccOwner_Tel";
+            this.ccOwner_Tel.ReadOnly = true;
+            this.ccOwner_Tel.Width = 120;
+            // 
+            // ccHealRecord_ID
+            // 
+            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
+            this.ccHealRecord_ID.HeaderText = "รหัสรักษา";
+            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
+            this.ccHealRecord_ID.ReadOnly = true;
+            this.ccHealRecord_ID.Visible = false;
+            // 
+            // ccService_ID
+            // 
+            this.ccService_ID.DataPropertyName = "Service_ID";
+            this.ccService_ID.HeaderText = "รหัสบริการ";
+            this.ccService_ID.Name = "ccService_ID";
+            this.ccService_ID.ReadOnly = true;
+            this.ccService_ID.Visible = false;
+            // 
+            // ccHeadDate_Remark
+            // 
+            this.ccHeadDate_Remark.DataPropertyName = "HealDate_Remark";
+            this.ccHeadDate_Remark.FillWeight = 140F;
+            this.ccHeadDate_Remark.HeaderText = "หมายเหตุ";
+            this.ccHeadDate_Remark.Name = "ccHeadDate_Remark";
+            this.ccHeadDate_Remark.ReadOnly = true;
+            this.ccHeadDate_Remark.Visible = false;
+            this.ccHeadDate_Remark.Width = 140;
+            // 
+            // ccHealDate_Day
+            // 
+            this.ccHealDate_Day.DataPropertyName = "HealDate_Day";
+            this.ccHealDate_Day.FillWeight = 120F;
+            this.ccHealDate_Day.HeaderText = "วันที่นัดหมาย";
+            this.ccHealDate_Day.Name = "ccHealDate_Day";
+            this.ccHealDate_Day.ReadOnly = true;
+            this.ccHealDate_Day.Width = 120;
+            // 
+            // ccHealDate_Remind
+            // 
+            this.ccHealDate_Remind.DataPropertyName = "HealDate_Remind";
+            this.ccHealDate_Remind.HeaderText = "เตือนก่อน";
+            this.ccHealDate_Remind.Name = "ccHealDate_Remind";
+            this.ccHealDate_Remind.ReadOnly = true;
+            this.ccHealDate_Remind.Visible = false;
+            // 
+            // ccHealDate_Stats
+            // 
+            this.ccHealDate_Stats.DataPropertyName = "HealDate_Status";
+            this.ccHealDate_Stats.HeaderText = "สถานะ";
+            this.ccHealDate_Stats.Name = "ccHealDate_Stats";
+            this.ccHealDate_Stats.ReadOnly = true;
+            this.ccHealDate_Stats.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ccHealDate_Stats.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ccHealDate_Stats.Visible = false;
+            // 
             // tP_Detail
             // 
             this.tP_Detail.Controls.Add(this.label9);
@@ -522,117 +629,22 @@
             this.CheckBox_Contract.Text = "ติดต่อแล้ว";
             this.CheckBox_Contract.UseVisualStyleBackColor = true;
             // 
-            // CheckBoxStats
+            // button1
             // 
-            this.CheckBoxStats.FillWeight = 30F;
-            this.CheckBoxStats.HeaderText = "";
-            this.CheckBoxStats.Name = "CheckBoxStats";
-            this.CheckBoxStats.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CheckBoxStats.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.CheckBoxStats.Width = 30;
-            // 
-            // ccHealDate_ID
-            // 
-            this.ccHealDate_ID.DataPropertyName = "HealDate_ID";
-            this.ccHealDate_ID.FillWeight = 120F;
-            this.ccHealDate_ID.HeaderText = "รหัสนัดหมาย";
-            this.ccHealDate_ID.Name = "ccHealDate_ID";
-            this.ccHealDate_ID.ReadOnly = true;
-            this.ccHealDate_ID.Visible = false;
-            this.ccHealDate_ID.Width = 120;
-            // 
-            // ccPet_ID
-            // 
-            this.ccPet_ID.DataPropertyName = "Pet_ID";
-            this.ccPet_ID.FillWeight = 120F;
-            this.ccPet_ID.HeaderText = "รหัสสัตว์";
-            this.ccPet_ID.Name = "ccPet_ID";
-            this.ccPet_ID.ReadOnly = true;
-            this.ccPet_ID.Width = 120;
-            // 
-            // ccPet_Name
-            // 
-            this.ccPet_Name.DataPropertyName = "Pet_Name";
-            this.ccPet_Name.HeaderText = "ชื่อสัตว์";
-            this.ccPet_Name.Name = "ccPet_Name";
-            this.ccPet_Name.ReadOnly = true;
-            // 
-            // ccOwner_Name
-            // 
-            this.ccOwner_Name.DataPropertyName = "Owner_Name";
-            this.ccOwner_Name.FillWeight = 200F;
-            this.ccOwner_Name.HeaderText = "ชื่อเจ้าของ";
-            this.ccOwner_Name.Name = "ccOwner_Name";
-            this.ccOwner_Name.ReadOnly = true;
-            this.ccOwner_Name.Width = 200;
-            // 
-            // ccOwner_Tel
-            // 
-            this.ccOwner_Tel.DataPropertyName = "Owner_Tel";
-            this.ccOwner_Tel.FillWeight = 120F;
-            this.ccOwner_Tel.HeaderText = "เบอร์ติดต่อ";
-            this.ccOwner_Tel.Name = "ccOwner_Tel";
-            this.ccOwner_Tel.ReadOnly = true;
-            this.ccOwner_Tel.Width = 120;
-            // 
-            // ccHealRecord_ID
-            // 
-            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
-            this.ccHealRecord_ID.HeaderText = "รหัสรักษา";
-            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
-            this.ccHealRecord_ID.ReadOnly = true;
-            this.ccHealRecord_ID.Visible = false;
-            // 
-            // ccService_ID
-            // 
-            this.ccService_ID.DataPropertyName = "Service_ID";
-            this.ccService_ID.HeaderText = "รหัสบริการ";
-            this.ccService_ID.Name = "ccService_ID";
-            this.ccService_ID.ReadOnly = true;
-            this.ccService_ID.Visible = false;
-            // 
-            // ccHeadDate_Remark
-            // 
-            this.ccHeadDate_Remark.DataPropertyName = "HealDate_Remark";
-            this.ccHeadDate_Remark.FillWeight = 140F;
-            this.ccHeadDate_Remark.HeaderText = "หมายเหตุ";
-            this.ccHeadDate_Remark.Name = "ccHeadDate_Remark";
-            this.ccHeadDate_Remark.ReadOnly = true;
-            this.ccHeadDate_Remark.Visible = false;
-            this.ccHeadDate_Remark.Width = 140;
-            // 
-            // ccHealDate_Day
-            // 
-            this.ccHealDate_Day.DataPropertyName = "HealDate_Day";
-            this.ccHealDate_Day.FillWeight = 120F;
-            this.ccHealDate_Day.HeaderText = "วันที่นัดหมาย";
-            this.ccHealDate_Day.Name = "ccHealDate_Day";
-            this.ccHealDate_Day.ReadOnly = true;
-            this.ccHealDate_Day.Width = 120;
-            // 
-            // ccHealDate_Remind
-            // 
-            this.ccHealDate_Remind.DataPropertyName = "HealDate_Remind";
-            this.ccHealDate_Remind.HeaderText = "เตือนก่อน";
-            this.ccHealDate_Remind.Name = "ccHealDate_Remind";
-            this.ccHealDate_Remind.ReadOnly = true;
-            this.ccHealDate_Remind.Visible = false;
-            // 
-            // ccHealDate_Stats
-            // 
-            this.ccHealDate_Stats.DataPropertyName = "HealDate_Status";
-            this.ccHealDate_Stats.HeaderText = "สถานะ";
-            this.ccHealDate_Stats.Name = "ccHealDate_Stats";
-            this.ccHealDate_Stats.ReadOnly = true;
-            this.ccHealDate_Stats.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ccHealDate_Stats.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ccHealDate_Stats.Visible = false;
+            this.button1.Location = new System.Drawing.Point(848, 66);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 72);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "พิมพ์ใบเสร็จ";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmMM23
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 672);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CheckBox_Contract);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button8);
@@ -728,5 +740,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remind;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Stats;
+        private System.Windows.Forms.Button button1;
     }
 }

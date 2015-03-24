@@ -119,6 +119,7 @@
             // 
             this.tabControlServiceMedi.Controls.Add(this.tPService);
             this.tabControlServiceMedi.Controls.Add(this.tPMedi);
+            this.tabControlServiceMedi.Enabled = false;
             this.tabControlServiceMedi.Location = new System.Drawing.Point(15, 333);
             this.tabControlServiceMedi.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlServiceMedi.Name = "tabControlServiceMedi";
@@ -734,6 +735,7 @@
             this.bt_NewProfile.TabIndex = 46;
             this.bt_NewProfile.Text = "ค้นหาสัตว์ไข้";
             this.bt_NewProfile.UseVisualStyleBackColor = true;
+            this.bt_NewProfile.Visible = false;
             this.bt_NewProfile.Click += new System.EventHandler(this.bt_NewProfile_Click);
             // 
             // lb_PetName

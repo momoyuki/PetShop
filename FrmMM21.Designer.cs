@@ -82,6 +82,7 @@
             this.tabC_Pet = new System.Windows.Forms.TabControl();
             this.tP_ListPeT = new System.Windows.Forms.TabPage();
             this.tP_LisTDetail = new System.Windows.Forms.TabPage();
+            this.bt_HealDateDetail = new System.Windows.Forms.Button();
             this.lb_HealRecordID = new System.Windows.Forms.Label();
             this.lb_HealRecord = new System.Windows.Forms.Label();
             this.lb_HealRecordL = new System.Windows.Forms.Label();
@@ -117,7 +118,6 @@
             this.gBoxDetail.Controls.Add(this.bt_HealDate);
             this.gBoxDetail.Controls.Add(this.CheckBox_Sterility);
             this.gBoxDetail.Controls.Add(this.bt_Service);
-            this.gBoxDetail.Controls.Add(this.lbSex);
             this.gBoxDetail.Controls.Add(this.rb_M);
             this.gBoxDetail.Controls.Add(this.rb_F);
             this.gBoxDetail.Controls.Add(this.bt_EditMember);
@@ -150,7 +150,7 @@
             // lb_BirthDay
             // 
             this.lb_BirthDay.AutoSize = true;
-            this.lb_BirthDay.Location = new System.Drawing.Point(764, 29);
+            this.lb_BirthDay.Location = new System.Drawing.Point(755, 67);
             this.lb_BirthDay.Name = "lb_BirthDay";
             this.lb_BirthDay.Size = new System.Drawing.Size(33, 18);
             this.lb_BirthDay.TabIndex = 27;
@@ -170,7 +170,7 @@
             // CheckBox_Sterility
             // 
             this.CheckBox_Sterility.AutoSize = true;
-            this.CheckBox_Sterility.Location = new System.Drawing.Point(745, 70);
+            this.CheckBox_Sterility.Location = new System.Drawing.Point(65, 103);
             this.CheckBox_Sterility.Name = "CheckBox_Sterility";
             this.CheckBox_Sterility.Size = new System.Drawing.Size(15, 14);
             this.CheckBox_Sterility.TabIndex = 25;
@@ -190,17 +190,18 @@
             // lbSex
             // 
             this.lbSex.AutoSize = true;
-            this.lbSex.Location = new System.Drawing.Point(201, 105);
+            this.lbSex.Location = new System.Drawing.Point(565, 86);
             this.lbSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSex.Name = "lbSex";
             this.lbSex.Size = new System.Drawing.Size(42, 18);
             this.lbSex.TabIndex = 23;
             this.lbSex.Text = "lbSex";
+            this.lbSex.Visible = false;
             // 
             // rb_M
             // 
             this.rb_M.AutoSize = true;
-            this.rb_M.Location = new System.Drawing.Point(148, 103);
+            this.rb_M.Location = new System.Drawing.Point(380, 65);
             this.rb_M.Margin = new System.Windows.Forms.Padding(4);
             this.rb_M.Name = "rb_M";
             this.rb_M.Size = new System.Drawing.Size(35, 22);
@@ -213,7 +214,7 @@
             // rb_F
             // 
             this.rb_F.AutoSize = true;
-            this.rb_F.Location = new System.Drawing.Point(81, 103);
+            this.rb_F.Location = new System.Drawing.Point(310, 65);
             this.rb_F.Margin = new System.Windows.Forms.Padding(4);
             this.rb_F.Name = "rb_F";
             this.rb_F.Size = new System.Drawing.Size(49, 22);
@@ -251,6 +252,7 @@
             this.gBox_OwnerDetail.Controls.Add(this.lb_Tel);
             this.gBox_OwnerDetail.Controls.Add(this.txb_TelOwner);
             this.gBox_OwnerDetail.Controls.Add(this.lb_Addr);
+            this.gBox_OwnerDetail.Controls.Add(this.lbSex);
             this.gBox_OwnerDetail.Controls.Add(this.Txb_Addr);
             this.gBox_OwnerDetail.Controls.Add(this.lb_OwnerName);
             this.gBox_OwnerDetail.Controls.Add(this.lbYear);
@@ -357,7 +359,7 @@
             // lb_PetName
             // 
             this.lb_PetName.AutoSize = true;
-            this.lb_PetName.Location = new System.Drawing.Point(5, 67);
+            this.lb_PetName.Location = new System.Drawing.Point(233, 28);
             this.lb_PetName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_PetName.Name = "lb_PetName";
             this.lb_PetName.Size = new System.Drawing.Size(76, 18);
@@ -366,7 +368,7 @@
             // 
             // txb_PetName
             // 
-            this.txb_PetName.Location = new System.Drawing.Point(83, 63);
+            this.txb_PetName.Location = new System.Drawing.Point(323, 24);
             this.txb_PetName.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetName.Name = "txb_PetName";
             this.txb_PetName.Size = new System.Drawing.Size(160, 26);
@@ -375,7 +377,7 @@
             // cb_PetBreed
             // 
             this.cb_PetBreed.FormattingEnabled = true;
-            this.cb_PetBreed.Location = new System.Drawing.Point(477, 63);
+            this.cb_PetBreed.Location = new System.Drawing.Point(722, 24);
             this.cb_PetBreed.Margin = new System.Windows.Forms.Padding(4);
             this.cb_PetBreed.Name = "cb_PetBreed";
             this.cb_PetBreed.Size = new System.Drawing.Size(199, 26);
@@ -384,7 +386,7 @@
             // lb_Breed
             // 
             this.lb_Breed.AutoSize = true;
-            this.lb_Breed.Location = new System.Drawing.Point(430, 67);
+            this.lb_Breed.Location = new System.Drawing.Point(672, 28);
             this.lb_Breed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Breed.Name = "lb_Breed";
             this.lb_Breed.Size = new System.Drawing.Size(36, 18);
@@ -394,7 +396,7 @@
             // cb_PetType
             // 
             this.cb_PetType.FormattingEnabled = true;
-            this.cb_PetType.Location = new System.Drawing.Point(321, 63);
+            this.cb_PetType.Location = new System.Drawing.Point(566, 24);
             this.cb_PetType.Margin = new System.Windows.Forms.Padding(4);
             this.cb_PetType.Name = "cb_PetType";
             this.cb_PetType.Size = new System.Drawing.Size(92, 26);
@@ -404,7 +406,7 @@
             // lb_Type
             // 
             this.lb_Type.AutoSize = true;
-            this.lb_Type.Location = new System.Drawing.Point(254, 67);
+            this.lb_Type.Location = new System.Drawing.Point(497, 28);
             this.lb_Type.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Type.Name = "lb_Type";
             this.lb_Type.Size = new System.Drawing.Size(55, 18);
@@ -414,7 +416,7 @@
             // lb_Sex
             // 
             this.lb_Sex.AutoSize = true;
-            this.lb_Sex.Location = new System.Drawing.Point(36, 105);
+            this.lb_Sex.Location = new System.Drawing.Point(256, 67);
             this.lb_Sex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Sex.Name = "lb_Sex";
             this.lb_Sex.Size = new System.Drawing.Size(33, 18);
@@ -424,7 +426,7 @@
             // lb_Color
             // 
             this.lb_Color.AutoSize = true;
-            this.lb_Color.Location = new System.Drawing.Point(235, 29);
+            this.lb_Color.Location = new System.Drawing.Point(20, 67);
             this.lb_Color.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Color.Name = "lb_Color";
             this.lb_Color.Size = new System.Drawing.Size(67, 18);
@@ -433,16 +435,16 @@
             // 
             // txb_PetColor
             // 
-            this.txb_PetColor.Location = new System.Drawing.Point(303, 25);
+            this.txb_PetColor.Location = new System.Drawing.Point(87, 63);
             this.txb_PetColor.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetColor.Name = "txb_PetColor";
-            this.txb_PetColor.Size = new System.Drawing.Size(147, 26);
+            this.txb_PetColor.Size = new System.Drawing.Size(161, 26);
             this.txb_PetColor.TabIndex = 6;
             // 
             // lb_Sterility
             // 
             this.lb_Sterility.AutoSize = true;
-            this.lb_Sterility.Location = new System.Drawing.Point(684, 67);
+            this.lb_Sterility.Location = new System.Drawing.Point(4, 101);
             this.lb_Sterility.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Sterility.Name = "lb_Sterility";
             this.lb_Sterility.Size = new System.Drawing.Size(54, 18);
@@ -451,7 +453,7 @@
             // 
             // dTP_Sterility
             // 
-            this.dTP_Sterility.Location = new System.Drawing.Point(767, 63);
+            this.dTP_Sterility.Location = new System.Drawing.Point(87, 97);
             this.dTP_Sterility.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Sterility.Name = "dTP_Sterility";
             this.dTP_Sterility.Size = new System.Drawing.Size(189, 26);
@@ -460,7 +462,7 @@
             // lb_DOB
             // 
             this.lb_DOB.AutoSize = true;
-            this.lb_DOB.Location = new System.Drawing.Point(454, 29);
+            this.lb_DOB.Location = new System.Drawing.Point(436, 67);
             this.lb_DOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_DOB.Name = "lb_DOB";
             this.lb_DOB.Size = new System.Drawing.Size(88, 18);
@@ -469,7 +471,7 @@
             // 
             // dTP_Born
             // 
-            this.dTP_Born.Location = new System.Drawing.Point(559, 25);
+            this.dTP_Born.Location = new System.Drawing.Point(545, 63);
             this.dTP_Born.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Born.Name = "dTP_Born";
             this.dTP_Born.Size = new System.Drawing.Size(189, 26);
@@ -479,7 +481,7 @@
             // lb_PetID
             // 
             this.lb_PetID.AutoSize = true;
-            this.lb_PetID.Location = new System.Drawing.Point(15, 29);
+            this.lb_PetID.Location = new System.Drawing.Point(22, 28);
             this.lb_PetID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_PetID.Name = "lb_PetID";
             this.lb_PetID.Size = new System.Drawing.Size(58, 18);
@@ -489,7 +491,7 @@
             // txb_PetProfileID
             // 
             this.txb_PetProfileID.Enabled = false;
-            this.txb_PetProfileID.Location = new System.Drawing.Point(83, 25);
+            this.txb_PetProfileID.Location = new System.Drawing.Point(87, 24);
             this.txb_PetProfileID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetProfileID.Name = "txb_PetProfileID";
             this.txb_PetProfileID.Size = new System.Drawing.Size(132, 26);
@@ -680,6 +682,7 @@
             // 
             // tP_LisTDetail
             // 
+            this.tP_LisTDetail.Controls.Add(this.bt_HealDateDetail);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecordID);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecord);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecordL);
@@ -695,10 +698,20 @@
             this.tP_LisTDetail.Text = "ประวัติการรักษา";
             this.tP_LisTDetail.UseVisualStyleBackColor = true;
             // 
+            // bt_HealDateDetail
+            // 
+            this.bt_HealDateDetail.Location = new System.Drawing.Point(741, 6);
+            this.bt_HealDateDetail.Name = "bt_HealDateDetail";
+            this.bt_HealDateDetail.Size = new System.Drawing.Size(100, 31);
+            this.bt_HealDateDetail.TabIndex = 7;
+            this.bt_HealDateDetail.Text = "นัดหมาย";
+            this.bt_HealDateDetail.UseVisualStyleBackColor = true;
+            this.bt_HealDateDetail.Click += new System.EventHandler(this.bt_HealDateDetail_Click);
+            // 
             // lb_HealRecordID
             // 
             this.lb_HealRecordID.AutoSize = true;
-            this.lb_HealRecordID.Location = new System.Drawing.Point(691, 12);
+            this.lb_HealRecordID.Location = new System.Drawing.Point(463, 12);
             this.lb_HealRecordID.Name = "lb_HealRecordID";
             this.lb_HealRecordID.Size = new System.Drawing.Size(0, 18);
             this.lb_HealRecordID.TabIndex = 6;
@@ -706,7 +719,7 @@
             // lb_HealRecord
             // 
             this.lb_HealRecord.AutoSize = true;
-            this.lb_HealRecord.Location = new System.Drawing.Point(552, 12);
+            this.lb_HealRecord.Location = new System.Drawing.Point(324, 12);
             this.lb_HealRecord.Name = "lb_HealRecord";
             this.lb_HealRecord.Size = new System.Drawing.Size(133, 18);
             this.lb_HealRecord.TabIndex = 5;
@@ -715,7 +728,7 @@
             // lb_HealRecordL
             // 
             this.lb_HealRecordL.AutoSize = true;
-            this.lb_HealRecordL.Location = new System.Drawing.Point(296, 12);
+            this.lb_HealRecordL.Location = new System.Drawing.Point(246, 12);
             this.lb_HealRecordL.Name = "lb_HealRecordL";
             this.lb_HealRecordL.Size = new System.Drawing.Size(52, 18);
             this.lb_HealRecordL.TabIndex = 4;
@@ -774,6 +787,7 @@
             this.dGV_HealRecord.Size = new System.Drawing.Size(960, 261);
             this.dGV_HealRecord.TabIndex = 0;
             this.dGV_HealRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_HealRecord_CellClick);
+            this.dGV_HealRecord.SelectionChanged += new System.EventHandler(this.dGV_HealRecord_SelectionChanged);
             // 
             // ccHealRecord_ID
             // 
@@ -981,5 +995,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccBreed_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed;
         private System.Windows.Forms.Label lb_BirthDay;
+        private System.Windows.Forms.Button bt_HealDateDetail;
     }
 }

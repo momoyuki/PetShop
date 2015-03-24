@@ -103,10 +103,10 @@
             // 
             // bt_Print
             // 
-            this.bt_Print.Location = new System.Drawing.Point(883, 50);
+            this.bt_Print.Location = new System.Drawing.Point(883, 55);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Print.Name = "bt_Print";
-            this.bt_Print.Size = new System.Drawing.Size(112, 92);
+            this.bt_Print.Size = new System.Drawing.Size(112, 87);
             this.bt_Print.TabIndex = 127;
             this.bt_Print.Text = "พิมพ์ใบเสร็จ";
             this.bt_Print.UseVisualStyleBackColor = true;
@@ -378,10 +378,10 @@
             // 
             // bt_RecordBuy
             // 
-            this.bt_RecordBuy.Location = new System.Drawing.Point(763, 50);
+            this.bt_RecordBuy.Location = new System.Drawing.Point(763, 55);
             this.bt_RecordBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_RecordBuy.Name = "bt_RecordBuy";
-            this.bt_RecordBuy.Size = new System.Drawing.Size(112, 92);
+            this.bt_RecordBuy.Size = new System.Drawing.Size(112, 87);
             this.bt_RecordBuy.TabIndex = 136;
             this.bt_RecordBuy.Text = "บันทึก";
             this.bt_RecordBuy.UseVisualStyleBackColor = true;
