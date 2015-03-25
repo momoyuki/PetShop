@@ -59,6 +59,7 @@
             this.txb_SearchMedi = new System.Windows.Forms.TextBox();
             this.bt_SearchMedi = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.lb_Medi = new System.Windows.Forms.Label();
             this.lb_MediIDRemark = new System.Windows.Forms.Label();
             this.txb_MediDetail = new System.Windows.Forms.TextBox();
@@ -101,12 +102,9 @@
             this.ccMedi_Unit_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Unit_Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tb_UnitName = new System.Windows.Forms.TextBox();
-            this.tb_UnitID = new System.Windows.Forms.TextBox();
             this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControlServiceMedi.SuspendLayout();
             this.tabService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -410,8 +408,9 @@
             this.lb_Result.AutoSize = true;
             this.lb_Result.Location = new System.Drawing.Point(185, 321);
             this.lb_Result.Name = "lb_Result";
-            this.lb_Result.Size = new System.Drawing.Size(0, 18);
+            this.lb_Result.Size = new System.Drawing.Size(16, 18);
             this.lb_Result.TabIndex = 9;
+            this.lb_Result.Text = "0";
             // 
             // lb_ResultB
             // 
@@ -471,13 +470,27 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "รายละเอียดยา";
             // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(241, 201);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 32);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "ลบ";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // lb_Medi
             // 
             this.lb_Medi.AutoSize = true;
             this.lb_Medi.Location = new System.Drawing.Point(277, 44);
             this.lb_Medi.Name = "lb_Medi";
-            this.lb_Medi.Size = new System.Drawing.Size(0, 18);
+            this.lb_Medi.Size = new System.Drawing.Size(72, 18);
             this.lb_Medi.TabIndex = 16;
+            this.lb_Medi.Text = "lb_MediID";
+            this.lb_Medi.Visible = false;
             // 
             // lb_MediIDRemark
             // 
@@ -908,21 +921,6 @@
             this.ccMedi_Stock.Name = "ccMedi_Stock";
             this.ccMedi_Stock.ReadOnly = true;
             // 
-            // tb_UnitName
-            // 
-            this.tb_UnitName.Location = new System.Drawing.Point(102, 39);
-            this.tb_UnitName.Name = "tb_UnitName";
-            this.tb_UnitName.Size = new System.Drawing.Size(123, 20);
-            this.tb_UnitName.TabIndex = 2;
-            // 
-            // tb_UnitID
-            // 
-            this.tb_UnitID.Location = new System.Drawing.Point(102, 13);
-            this.tb_UnitID.Name = "tb_UnitID";
-            this.tb_UnitID.Size = new System.Drawing.Size(100, 20);
-            this.tb_UnitID.TabIndex = 3;
-            this.tb_UnitID.Visible = false;
-            // 
             // ccUnit_Name
             // 
             this.ccUnit_Name.DataPropertyName = "Unit_Name";
@@ -941,18 +939,6 @@
             // epCheck
             // 
             this.epCheck.ContainerControl = this;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(241, 201);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 32);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "ลบ";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmMM11
             // 
@@ -1036,8 +1022,6 @@
         private System.Windows.Forms.ComboBox cb_MediUnit;
         private System.Windows.Forms.Label lb_RemarkService;
         private System.Windows.Forms.Label lb_MediIDRemark;
-        private System.Windows.Forms.TextBox tb_UnitName;
-        private System.Windows.Forms.TextBox tb_UnitID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_ID;
         private System.Windows.Forms.Label lb_Medi;

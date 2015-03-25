@@ -26,14 +26,15 @@ namespace Petshop
         }
         private void FrmMM21_Load(object sender, EventArgs e)
         {
+            loadCompany(); //รหัสสาขา ปี
+            loadEmployee(); //ข้อมูลรายชื่อพนักงาน
             LoadData();
         }
         private void LoadData()
         {
-            loadCompany(); //รหัสสาขา ปี
+            
             loadMedi(); // รายการยาต่างๆ
             loadService(); //รายการให้บริการต่างๆ
-            loadEmployee(); //ข้อมูลรายชื่อพนักงาน
             loadHealRecord();// บันทึกการรักษา --Master--
             loadServiceRecord(); //Service บันทึกบริการ --Detail--
             loadMediRecord(); //Medi บันทึกยา --Detail--
@@ -130,6 +131,7 @@ namespace Petshop
         }
         private void loadServiceRecord() //โหลดข้อมูลบริการ Detail 
         {
+           
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
             DataTable idtSerivceRecord;
             string isqlServiceRecord = "SELECT tb_ServiceRecord.*,tb_Service.Service_Des FROM tb_service,tb_ServiceRecord WHERE (tb_ServiceRecord.HealRecord_ID = '" + ilbHealRecordID + "' AND tb_service.Service_ID = tb_ServiceRecord.Service_ID)";
@@ -149,6 +151,7 @@ namespace Petshop
         }
         private void loadMediRecord() //โหลดข้อมูลยา Detail 
         {
+            
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
             DataTable idtMediRecord;
             string isqlMediRecord = "SELECT tb_MediRecord.*,tb_medicine.Medi_Des  FROM tb_Medicine,tb_MediRecord WHERE (tb_MediRecord.HealRecord_ID = '" + ilbHealRecordID + "' AND tb_Medicine.Medi_ID = tb_MediRecord.Medi_ID)";
@@ -428,6 +431,7 @@ namespace Petshop
      
         private void bt_Print_Click(object sender, EventArgs e)
         {
+            AddHealRecord();
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
                 if (form.GetType() == typeof(FrmMM31))

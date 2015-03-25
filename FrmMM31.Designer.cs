@@ -30,11 +30,11 @@
         {
             this.bt_Print = new System.Windows.Forms.Button();
             this.bt_Load = new System.Windows.Forms.Button();
-            this.txb_DC = new System.Windows.Forms.TextBox();
+            this.txb_BillDC = new System.Windows.Forms.TextBox();
             this.lb_DC = new System.Windows.Forms.Label();
-            this.txb_Net = new System.Windows.Forms.TextBox();
+            this.txb_BillNet = new System.Windows.Forms.TextBox();
             this.lb_Net = new System.Windows.Forms.Label();
-            this.txb_Total = new System.Windows.Forms.TextBox();
+            this.txb_BillTotal = new System.Windows.Forms.TextBox();
             this.lb_Total = new System.Windows.Forms.Label();
             this.cb_Em = new System.Windows.Forms.ComboBox();
             this.lb_Em = new System.Windows.Forms.Label();
@@ -67,6 +67,8 @@
             this.Lb_CoBill = new System.Windows.Forms.Label();
             this.bt_AddBill = new System.Windows.Forms.Button();
             this.lb_ServiceAmtBill = new System.Windows.Forms.Label();
+            this.lb_MePrice = new System.Windows.Forms.Label();
+            this.lb_SerPrice = new System.Windows.Forms.Label();
             this.TabControlServiceMediBill.SuspendLayout();
             this.tp_Service.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -96,58 +98,59 @@
             this.bt_Load.UseVisualStyleBackColor = true;
             this.bt_Load.Click += new System.EventHandler(this.bt_Load_Click);
             // 
-            // txb_DC
+            // txb_BillDC
             // 
-            this.txb_DC.Location = new System.Drawing.Point(403, 106);
-            this.txb_DC.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_DC.Name = "txb_DC";
-            this.txb_DC.Size = new System.Drawing.Size(70, 26);
-            this.txb_DC.TabIndex = 124;
-            this.txb_DC.Text = "0.00";
+            this.txb_BillDC.Location = new System.Drawing.Point(505, 102);
+            this.txb_BillDC.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_BillDC.Name = "txb_BillDC";
+            this.txb_BillDC.Size = new System.Drawing.Size(70, 26);
+            this.txb_BillDC.TabIndex = 124;
+            this.txb_BillDC.Text = "0.00";
+            this.txb_BillDC.TextChanged += new System.EventHandler(this.txb_BillDC_TextChanged);
             // 
             // lb_DC
             // 
             this.lb_DC.AutoSize = true;
-            this.lb_DC.Location = new System.Drawing.Point(333, 110);
+            this.lb_DC.Location = new System.Drawing.Point(435, 106);
             this.lb_DC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_DC.Name = "lb_DC";
             this.lb_DC.Size = new System.Drawing.Size(51, 18);
             this.lb_DC.TabIndex = 123;
             this.lb_DC.Text = "ส่วนลด";
             // 
-            // txb_Net
+            // txb_BillNet
             // 
-            this.txb_Net.Location = new System.Drawing.Point(547, 106);
-            this.txb_Net.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_Net.Name = "txb_Net";
-            this.txb_Net.Size = new System.Drawing.Size(70, 26);
-            this.txb_Net.TabIndex = 122;
-            this.txb_Net.Text = "0.00";
+            this.txb_BillNet.Location = new System.Drawing.Point(649, 102);
+            this.txb_BillNet.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_BillNet.Name = "txb_BillNet";
+            this.txb_BillNet.Size = new System.Drawing.Size(70, 26);
+            this.txb_BillNet.TabIndex = 122;
+            this.txb_BillNet.Text = "0.00";
             // 
             // lb_Net
             // 
             this.lb_Net.AutoSize = true;
-            this.lb_Net.Location = new System.Drawing.Point(492, 110);
+            this.lb_Net.Location = new System.Drawing.Point(594, 106);
             this.lb_Net.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Net.Name = "lb_Net";
             this.lb_Net.Size = new System.Drawing.Size(36, 18);
             this.lb_Net.TabIndex = 121;
             this.lb_Net.Text = "สุทธิ";
             // 
-            // txb_Total
+            // txb_BillTotal
             // 
-            this.txb_Total.Enabled = false;
-            this.txb_Total.Location = new System.Drawing.Point(244, 106);
-            this.txb_Total.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_Total.Name = "txb_Total";
-            this.txb_Total.Size = new System.Drawing.Size(70, 26);
-            this.txb_Total.TabIndex = 120;
-            this.txb_Total.Text = "0.00";
+            this.txb_BillTotal.Enabled = false;
+            this.txb_BillTotal.Location = new System.Drawing.Point(346, 102);
+            this.txb_BillTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_BillTotal.Name = "txb_BillTotal";
+            this.txb_BillTotal.Size = new System.Drawing.Size(70, 26);
+            this.txb_BillTotal.TabIndex = 120;
+            this.txb_BillTotal.Text = "0.00";
             // 
             // lb_Total
             // 
             this.lb_Total.AutoSize = true;
-            this.lb_Total.Location = new System.Drawing.Point(155, 110);
+            this.lb_Total.Location = new System.Drawing.Point(257, 106);
             this.lb_Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Total.Name = "lb_Total";
             this.lb_Total.Size = new System.Drawing.Size(70, 18);
@@ -176,7 +179,7 @@
             // lb_DateBill
             // 
             this.lb_DateBill.AutoSize = true;
-            this.lb_DateBill.Location = new System.Drawing.Point(254, 51);
+            this.lb_DateBill.Location = new System.Drawing.Point(261, 53);
             this.lb_DateBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_DateBill.Name = "lb_DateBill";
             this.lb_DateBill.Size = new System.Drawing.Size(85, 18);
@@ -185,7 +188,7 @@
             // 
             // dTP_ProductSaleDate
             // 
-            this.dTP_ProductSaleDate.Location = new System.Drawing.Point(346, 47);
+            this.dTP_ProductSaleDate.Location = new System.Drawing.Point(353, 49);
             this.dTP_ProductSaleDate.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_ProductSaleDate.Name = "dTP_ProductSaleDate";
             this.dTP_ProductSaleDate.Size = new System.Drawing.Size(188, 26);
@@ -203,7 +206,7 @@
             // 
             // txb_ReferID
             // 
-            this.txb_ReferID.Location = new System.Drawing.Point(105, 47);
+            this.txb_ReferID.Location = new System.Drawing.Point(112, 49);
             this.txb_ReferID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_ReferID.MaxLength = 9;
             this.txb_ReferID.Name = "txb_ReferID";
@@ -214,7 +217,7 @@
             // lb_ReferID
             // 
             this.lb_ReferID.AutoSize = true;
-            this.lb_ReferID.Location = new System.Drawing.Point(17, 51);
+            this.lb_ReferID.Location = new System.Drawing.Point(24, 53);
             this.lb_ReferID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ReferID.Name = "lb_ReferID";
             this.lb_ReferID.Size = new System.Drawing.Size(81, 18);
@@ -431,6 +434,7 @@
             this.lbYear.Size = new System.Drawing.Size(49, 18);
             this.lbYear.TabIndex = 137;
             this.lbYear.Text = "lbYear";
+            this.lbYear.Visible = false;
             // 
             // Lb_CoBill
             // 
@@ -440,6 +444,7 @@
             this.Lb_CoBill.Size = new System.Drawing.Size(63, 18);
             this.Lb_CoBill.TabIndex = 138;
             this.Lb_CoBill.Text = "Lb_CoBill";
+            this.Lb_CoBill.Visible = false;
             // 
             // bt_AddBill
             // 
@@ -455,16 +460,36 @@
             // lb_ServiceAmtBill
             // 
             this.lb_ServiceAmtBill.AutoSize = true;
-            this.lb_ServiceAmtBill.Location = new System.Drawing.Point(547, 55);
+            this.lb_ServiceAmtBill.Location = new System.Drawing.Point(554, 53);
             this.lb_ServiceAmtBill.Name = "lb_ServiceAmtBill";
             this.lb_ServiceAmtBill.Size = new System.Drawing.Size(0, 18);
             this.lb_ServiceAmtBill.TabIndex = 140;
+            // 
+            // lb_MePrice
+            // 
+            this.lb_MePrice.AutoSize = true;
+            this.lb_MePrice.Location = new System.Drawing.Point(24, 94);
+            this.lb_MePrice.Name = "lb_MePrice";
+            this.lb_MePrice.Size = new System.Drawing.Size(37, 18);
+            this.lb_MePrice.TabIndex = 141;
+            this.lb_MePrice.Text = "0.00";
+            // 
+            // lb_SerPrice
+            // 
+            this.lb_SerPrice.AutoSize = true;
+            this.lb_SerPrice.Location = new System.Drawing.Point(109, 94);
+            this.lb_SerPrice.Name = "lb_SerPrice";
+            this.lb_SerPrice.Size = new System.Drawing.Size(37, 18);
+            this.lb_SerPrice.TabIndex = 142;
+            this.lb_SerPrice.Text = "0.00";
             // 
             // FrmMM31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.lb_SerPrice);
+            this.Controls.Add(this.lb_MePrice);
             this.Controls.Add(this.lb_ServiceAmtBill);
             this.Controls.Add(this.bt_AddBill);
             this.Controls.Add(this.Lb_CoBill);
@@ -475,11 +500,11 @@
             this.Controls.Add(this.lb_ReferID);
             this.Controls.Add(this.bt_Print);
             this.Controls.Add(this.bt_Load);
-            this.Controls.Add(this.txb_DC);
+            this.Controls.Add(this.txb_BillDC);
             this.Controls.Add(this.lb_DC);
-            this.Controls.Add(this.txb_Net);
+            this.Controls.Add(this.txb_BillNet);
             this.Controls.Add(this.lb_Net);
-            this.Controls.Add(this.txb_Total);
+            this.Controls.Add(this.txb_BillTotal);
             this.Controls.Add(this.lb_Total);
             this.Controls.Add(this.cb_Em);
             this.Controls.Add(this.lb_Em);
@@ -508,11 +533,11 @@
 
         private System.Windows.Forms.Button bt_Print;
         private System.Windows.Forms.Button bt_Load;
-        private System.Windows.Forms.TextBox txb_DC;
+        private System.Windows.Forms.TextBox txb_BillDC;
         private System.Windows.Forms.Label lb_DC;
-        private System.Windows.Forms.TextBox txb_Net;
+        private System.Windows.Forms.TextBox txb_BillNet;
         private System.Windows.Forms.Label lb_Net;
-        private System.Windows.Forms.TextBox txb_Total;
+        private System.Windows.Forms.TextBox txb_BillTotal;
         private System.Windows.Forms.Label lb_Total;
         private System.Windows.Forms.ComboBox cb_Em;
         private System.Windows.Forms.Label lb_Em;
@@ -545,5 +570,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Amt;
         private System.Windows.Forms.Button bt_AddBill;
         private System.Windows.Forms.Label lb_ServiceAmtBill;
+        private System.Windows.Forms.Label lb_MePrice;
+        private System.Windows.Forms.Label lb_SerPrice;
     }
 }

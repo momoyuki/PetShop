@@ -155,7 +155,7 @@ namespace Petshop
                 DataGridViewRow row = this.dGV_PD.Rows[e.RowIndex]; //ขาด Combox DateTimePicker 3 ชิ้น 
 
                 txb_ProductID.Text = row.Cells["ccProduct_ID"].Value.ToString();
-                lb_ProductIDH.Text = row.Cells["ccProduct_ID"].Value.ToString();
+                lb_ProductIDh.Text = row.Cells["ccProduct_ID"].Value.ToString();
                 txb_ProductName.Text = row.Cells["ccProduct_Des"].Value.ToString();
                 txb_ProductDetail.Text = row.Cells["ccProduct_Detail"].Value.ToString();
                 txb_ProductPrice.Text = row.Cells["ccProduct_Price"].Value.ToString();
@@ -190,7 +190,7 @@ namespace Petshop
         private void bt_EditProduct_Click(object sender, EventArgs e)
         {
             string itxbProductID = txb_ProductID.Text.Trim();
-            string ilbProductID = lb_ProductIDH.Text.Trim();
+            string ilbProductID = lb_ProductIDh.Text.Trim();
             string itxbProductName = txb_ProductName.Text.Trim();
             string itxbProductDetail = txb_ProductDetail.Text.Trim();
             string itxbProductPrice = txb_ProductPrice.Text.Trim();
@@ -213,17 +213,36 @@ namespace Petshop
             {
                 iStock = 1;
             }
-            string isqlAddProduct = "UPDATE `tb_product` SET `Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "';";
-
-            if ((itxbProductName != null) || (itxbProductName != ""))
+            DataTable idtProductCheck;
+            string isqlProd = "SELECT * FROM tb_product where Product_ID = '"+ilbProductID+"'";
+            idtProductCheck = iConnect.SelectByCommand(isqlProd);
+            if (idtProductCheck.Rows.Count > 0)
             {
-                DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + itxbProductName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
+                if ((itxbProductID != null) || (itxbProductID != ""))
                 {
-                    iConnect.Insert(isqlAddProduct);
-                    LoadProduct();
+                    DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + itxbProductName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                    if (iConfirmResult == DialogResult.Yes)
+                    {
+                        string isqlAddProduct = "UPDATE `tb_product` SET Product_ID = '"+itxbProductID+"',`Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "';";
+                        iConnect.Insert(isqlAddProduct);
+                        
+                        ClearTxtProduct();
+                    }
                 }
-            }
+             }
+            LoadProduct();
+        }
+
+        private void ClearTxtProduct()
+        {
+            lb_ProductIDh.Text = "";
+            txb_ProductID.Clear();
+            txb_ProductName.Clear();
+            txb_ProductDetail.Clear();
+            txb_ProductPrice.Clear();
+            txb_ProductSale.Clear();
+            txb_ProductAmt.Clear();
+            txb_ProductOrder.Clear();
         }
 
         private void bt_Unit_Click(object sender, EventArgs e)

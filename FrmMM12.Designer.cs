@@ -70,7 +70,7 @@
             this.bt_EditProduct = new System.Windows.Forms.Button();
             this.lb_Detail = new System.Windows.Forms.Label();
             this.txb_ProductDetail = new System.Windows.Forms.TextBox();
-            this.lb_ProductIDH = new System.Windows.Forms.Label();
+            this.lb_ProductIDh = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
@@ -494,13 +494,14 @@
             this.txb_ProductDetail.TabIndex = 2;
             this.txb_ProductDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductDetail_KeyDown);
             // 
-            // lb_ProductIDH
+            // lb_ProductIDh
             // 
-            this.lb_ProductIDH.AutoSize = true;
-            this.lb_ProductIDH.Location = new System.Drawing.Point(269, 30);
-            this.lb_ProductIDH.Name = "lb_ProductIDH";
-            this.lb_ProductIDH.Size = new System.Drawing.Size(0, 18);
-            this.lb_ProductIDH.TabIndex = 14;
+            this.lb_ProductIDh.AutoSize = true;
+            this.lb_ProductIDh.Location = new System.Drawing.Point(269, 30);
+            this.lb_ProductIDh.Name = "lb_ProductIDh";
+            this.lb_ProductIDh.Size = new System.Drawing.Size(99, 18);
+            this.lb_ProductIDh.TabIndex = 14;
+            this.lb_ProductIDh.Text = "lb_ProductIDh";
             // 
             // button1
             // 
@@ -520,7 +521,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.lb_ProductIDH);
+            this.Controls.Add(this.lb_ProductIDh);
             this.Controls.Add(this.dGV_PD);
             this.Controls.Add(this.txb_ProductDetail);
             this.Controls.Add(this.lb_Detail);
@@ -564,7 +565,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Unit_Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Stock;
-        private System.Windows.Forms.Label lb_ProductIDH;
+        private System.Windows.Forms.Label lb_ProductIDh;
         private System.Windows.Forms.TextBox txb_ProductDetail;
         private System.Windows.Forms.Label lb_Detail;
         private System.Windows.Forms.GroupBox gBoxProductPrice;

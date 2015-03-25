@@ -233,6 +233,7 @@ namespace Petshop
 
         private void ClearTxtMedi()
         {
+            lb_Medi.Text = "";
             txb_MediID.Clear();
             txb_MediName.Clear();
             txb_MediDetail.Clear();
@@ -299,19 +300,25 @@ namespace Petshop
                 iStock = 1;
             }
             //string isqlAddMedi = "Insert into tb_medicine (Medi_ID,Medi_Des,Medi_Detall,Medi_Price,Medi_Sale,Medi_Unit,Medi_Product,Medi_Expired,Medi_Unit_Amt,Medi_Unit_Order) Values ('" + itbMediID + "','" + itbMediName + "', '" + itbMediDetail + "', '" + itbMediPrice + "', '" + itbMediSale + "', '" + itbMediUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itbMediAmt + "', '" + itbMediOrder + "')";
-            if ((itxbMediID != null) && (itxbMediID != "") &&(ilbMedi !=null) && (ilbMedi !=""))
+            DataTable iMediCheck;
+            string isqlMedi = "SELECT * FROM petshop.tb_medicine where Medi_ID = '"+ilbMedi+"'";
+            iMediCheck = iConnect.SelectByCommand(isqlMedi);
+
+            if (iMediCheck.Rows.Count > 0)
             {
-                DialogResult iConfirmResult = MessageBox.Show("แก้ไข " + itxbMediName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
+                if ((itxbMediID != null) && (itxbMediID != ""))
                 {
-                    string isqlAddMedi = "UPDATE `tb_medicine` SET Medi_ID = '" + itxbMediID + "',`Medi_Des` = '" + itxbMediName + "', `Medi_Detall` = '" + itxbMediDetail + "', `Medi_Price` = '" + itxbMediPrice + "', `Medi_Sale` = '" + itxbMediSale + "', `Unit_ID` = '" + icbMediUnit + "', `Medi_Product` = '" + idtpProduct + "', `Medi_Expired` = '" + idtpExpired + "', `Medi_Unit_Amt` = '" + itxbMediAmt + "', `Medi_Unit_Order` = '" + itxbMediOrder + "', Medi_Stock = b'" + iStock + "' WHERE `tb_medicine`.`Medi_ID` = '" + ilbMedi + "'";
-                    iConnect.Insert(isqlAddMedi);
-                    lb_Medi.Text = "";
-                    ClearTxtMedi();
-                    LoadMedi();
-                    
-                }
+                    DialogResult iConfirmResult = MessageBox.Show("แก้ไข " + itxbMediName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                    if (iConfirmResult == DialogResult.Yes)
+                    {
+                        string isqlAddMedi = "UPDATE `tb_medicine` SET Medi_ID = '" + itxbMediID + "',`Medi_Des` = '" + itxbMediName + "', `Medi_Detall` = '" + itxbMediDetail + "', `Medi_Price` = '" + itxbMediPrice + "', `Medi_Sale` = '" + itxbMediSale + "', `Unit_ID` = '" + icbMediUnit + "', `Medi_Product` = '" + idtpProduct + "', `Medi_Expired` = '" + idtpExpired + "', `Medi_Unit_Amt` = '" + itxbMediAmt + "', `Medi_Unit_Order` = '" + itxbMediOrder + "', Medi_Stock = b'" + iStock + "' WHERE `tb_medicine`.`Medi_ID` = '" + ilbMedi + "'";
+                        iConnect.Insert(isqlAddMedi);
+                        
+                        ClearTxtMedi();
+                    }
+                }            
             }
+            LoadMedi();
         }
 
         private void Bt_Unit_Click(object sender, EventArgs e)

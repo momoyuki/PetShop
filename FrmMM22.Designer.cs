@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tPService = new System.Windows.Forms.TabPage();
-            this.lb_ServiceAmt = new System.Windows.Forms.Label();
-            this.lb_ServiceA = new System.Windows.Forms.Label();
             this.lb_ServiceID = new System.Windows.Forms.Label();
             this.lb_Price = new System.Windows.Forms.Label();
             this.bt_refService = new System.Windows.Forms.Button();
@@ -50,8 +48,6 @@
             this.lb_Unit = new System.Windows.Forms.Label();
             this.cb_Medi = new System.Windows.Forms.ComboBox();
             this.lb_MediID = new System.Windows.Forms.Label();
-            this.lb_MediAmt = new System.Windows.Forms.Label();
-            this.lb_MediA = new System.Windows.Forms.Label();
             this.nUDMediUnit = new System.Windows.Forms.NumericUpDown();
             this.bt_refMedi = new System.Windows.Forms.Button();
             this.Lb_MediUnit = new System.Windows.Forms.Label();
@@ -64,6 +60,10 @@
             this.ccMediSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMediRecord_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lb_ServiceAmt = new System.Windows.Forms.Label();
+            this.lb_ServiceA = new System.Windows.Forms.Label();
+            this.lb_MediAmt = new System.Windows.Forms.Label();
+            this.lb_MediA = new System.Windows.Forms.Label();
             this.bt_RecordHeal = new System.Windows.Forms.Button();
             this.txb_HealRecordDC = new System.Windows.Forms.TextBox();
             this.lb_DC = new System.Windows.Forms.Label();
@@ -129,8 +129,6 @@
             // 
             // tPService
             // 
-            this.tPService.Controls.Add(this.lb_ServiceAmt);
-            this.tPService.Controls.Add(this.lb_ServiceA);
             this.tPService.Controls.Add(this.lb_ServiceID);
             this.tPService.Controls.Add(this.lb_Price);
             this.tPService.Controls.Add(this.bt_refService);
@@ -147,24 +145,6 @@
             this.tPService.Text = "บริการ";
             this.tPService.UseVisualStyleBackColor = true;
             // 
-            // lb_ServiceAmt
-            // 
-            this.lb_ServiceAmt.AutoSize = true;
-            this.lb_ServiceAmt.Location = new System.Drawing.Point(791, 107);
-            this.lb_ServiceAmt.Name = "lb_ServiceAmt";
-            this.lb_ServiceAmt.Size = new System.Drawing.Size(0, 18);
-            this.lb_ServiceAmt.TabIndex = 71;
-            this.lb_ServiceAmt.TextChanged += new System.EventHandler(this.lb_ServiceAmt_TextChanged);
-            // 
-            // lb_ServiceA
-            // 
-            this.lb_ServiceA.AutoSize = true;
-            this.lb_ServiceA.Location = new System.Drawing.Point(755, 107);
-            this.lb_ServiceA.Name = "lb_ServiceA";
-            this.lb_ServiceA.Size = new System.Drawing.Size(30, 18);
-            this.lb_ServiceA.TabIndex = 70;
-            this.lb_ServiceA.Text = "รวม";
-            // 
             // lb_ServiceID
             // 
             this.lb_ServiceID.AutoSize = true;
@@ -173,6 +153,7 @@
             this.lb_ServiceID.Size = new System.Drawing.Size(85, 18);
             this.lb_ServiceID.TabIndex = 69;
             this.lb_ServiceID.Text = "LbServiceID";
+            this.lb_ServiceID.Visible = false;
             // 
             // lb_Price
             // 
@@ -303,8 +284,6 @@
             this.tPMedi.Controls.Add(this.lb_Unit);
             this.tPMedi.Controls.Add(this.cb_Medi);
             this.tPMedi.Controls.Add(this.lb_MediID);
-            this.tPMedi.Controls.Add(this.lb_MediAmt);
-            this.tPMedi.Controls.Add(this.lb_MediA);
             this.tPMedi.Controls.Add(this.nUDMediUnit);
             this.tPMedi.Controls.Add(this.bt_refMedi);
             this.tPMedi.Controls.Add(this.Lb_MediUnit);
@@ -328,6 +307,7 @@
             this.lb_MediU.Size = new System.Drawing.Size(71, 18);
             this.lb_MediU.TabIndex = 79;
             this.lb_MediU.Text = "Lb_MediU";
+            this.lb_MediU.Visible = false;
             // 
             // lb_Unit
             // 
@@ -356,24 +336,7 @@
             this.lb_MediID.Size = new System.Drawing.Size(77, 18);
             this.lb_MediID.TabIndex = 76;
             this.lb_MediID.Text = "Lb_MediID";
-            // 
-            // lb_MediAmt
-            // 
-            this.lb_MediAmt.AutoSize = true;
-            this.lb_MediAmt.Location = new System.Drawing.Point(788, 106);
-            this.lb_MediAmt.Name = "lb_MediAmt";
-            this.lb_MediAmt.Size = new System.Drawing.Size(0, 18);
-            this.lb_MediAmt.TabIndex = 75;
-            this.lb_MediAmt.TextChanged += new System.EventHandler(this.lb_MediAmt_TextChanged);
-            // 
-            // lb_MediA
-            // 
-            this.lb_MediA.AutoSize = true;
-            this.lb_MediA.Location = new System.Drawing.Point(752, 106);
-            this.lb_MediA.Name = "lb_MediA";
-            this.lb_MediA.Size = new System.Drawing.Size(30, 18);
-            this.lb_MediA.TabIndex = 74;
-            this.lb_MediA.Text = "รวม";
+            this.lb_MediID.Visible = false;
             // 
             // nUDMediUnit
             // 
@@ -507,6 +470,44 @@
             this.ccMediRecord_Total.ReadOnly = true;
             this.ccMediRecord_Total.Width = 120;
             // 
+            // lb_ServiceAmt
+            // 
+            this.lb_ServiceAmt.AutoSize = true;
+            this.lb_ServiceAmt.Location = new System.Drawing.Point(372, 247);
+            this.lb_ServiceAmt.Name = "lb_ServiceAmt";
+            this.lb_ServiceAmt.Size = new System.Drawing.Size(37, 18);
+            this.lb_ServiceAmt.TabIndex = 71;
+            this.lb_ServiceAmt.Text = "0.00";
+            this.lb_ServiceAmt.TextChanged += new System.EventHandler(this.lb_ServiceAmt_TextChanged);
+            // 
+            // lb_ServiceA
+            // 
+            this.lb_ServiceA.AutoSize = true;
+            this.lb_ServiceA.Location = new System.Drawing.Point(295, 247);
+            this.lb_ServiceA.Name = "lb_ServiceA";
+            this.lb_ServiceA.Size = new System.Drawing.Size(61, 18);
+            this.lb_ServiceA.TabIndex = 70;
+            this.lb_ServiceA.Text = "ค่าบริการ";
+            // 
+            // lb_MediAmt
+            // 
+            this.lb_MediAmt.AutoSize = true;
+            this.lb_MediAmt.Location = new System.Drawing.Point(372, 275);
+            this.lb_MediAmt.Name = "lb_MediAmt";
+            this.lb_MediAmt.Size = new System.Drawing.Size(37, 18);
+            this.lb_MediAmt.TabIndex = 75;
+            this.lb_MediAmt.Text = "0.00";
+            this.lb_MediAmt.TextChanged += new System.EventHandler(this.lb_MediAmt_TextChanged);
+            // 
+            // lb_MediA
+            // 
+            this.lb_MediA.AutoSize = true;
+            this.lb_MediA.Location = new System.Drawing.Point(316, 275);
+            this.lb_MediA.Name = "lb_MediA";
+            this.lb_MediA.Size = new System.Drawing.Size(40, 18);
+            this.lb_MediA.TabIndex = 74;
+            this.lb_MediA.Text = "ค่ายา";
+            // 
             // bt_RecordHeal
             // 
             this.bt_RecordHeal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -521,7 +522,7 @@
             // 
             // txb_HealRecordDC
             // 
-            this.txb_HealRecordDC.Location = new System.Drawing.Point(332, 281);
+            this.txb_HealRecordDC.Location = new System.Drawing.Point(505, 299);
             this.txb_HealRecordDC.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HealRecordDC.Name = "txb_HealRecordDC";
             this.txb_HealRecordDC.Size = new System.Drawing.Size(59, 26);
@@ -532,7 +533,7 @@
             // lb_DC
             // 
             this.lb_DC.AutoSize = true;
-            this.lb_DC.Location = new System.Drawing.Point(266, 285);
+            this.lb_DC.Location = new System.Drawing.Point(439, 303);
             this.lb_DC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_DC.Name = "lb_DC";
             this.lb_DC.Size = new System.Drawing.Size(51, 18);
@@ -620,7 +621,7 @@
             // txb_HealRecordNet
             // 
             this.txb_HealRecordNet.Enabled = false;
-            this.txb_HealRecordNet.Location = new System.Drawing.Point(457, 281);
+            this.txb_HealRecordNet.Location = new System.Drawing.Point(630, 299);
             this.txb_HealRecordNet.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HealRecordNet.Name = "txb_HealRecordNet";
             this.txb_HealRecordNet.Size = new System.Drawing.Size(59, 26);
@@ -630,7 +631,7 @@
             // lb_Net
             // 
             this.lb_Net.AutoSize = true;
-            this.lb_Net.Location = new System.Drawing.Point(406, 285);
+            this.lb_Net.Location = new System.Drawing.Point(579, 303);
             this.lb_Net.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Net.Name = "lb_Net";
             this.lb_Net.Size = new System.Drawing.Size(36, 18);
@@ -652,7 +653,7 @@
             // txb_HealRecordTotal
             // 
             this.txb_HealRecordTotal.Enabled = false;
-            this.txb_HealRecordTotal.Location = new System.Drawing.Point(192, 281);
+            this.txb_HealRecordTotal.Location = new System.Drawing.Point(365, 299);
             this.txb_HealRecordTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HealRecordTotal.Name = "txb_HealRecordTotal";
             this.txb_HealRecordTotal.Size = new System.Drawing.Size(59, 26);
@@ -662,7 +663,7 @@
             // lb_Total
             // 
             this.lb_Total.AutoSize = true;
-            this.lb_Total.Location = new System.Drawing.Point(147, 285);
+            this.lb_Total.Location = new System.Drawing.Point(320, 303);
             this.lb_Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Total.Name = "lb_Total";
             this.lb_Total.Size = new System.Drawing.Size(30, 18);
@@ -921,9 +922,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.lb_ServiceAmt);
             this.Controls.Add(this.lb_HealRecordID);
+            this.Controls.Add(this.lb_MediAmt);
             this.Controls.Add(this.tabControlServiceMedi);
             this.Controls.Add(this.lb_HR);
+            this.Controls.Add(this.lb_ServiceA);
+            this.Controls.Add(this.lb_MediA);
             this.Controls.Add(this.lb_HealRecordRR);
             this.Controls.Add(this.cb_Em);
             this.Controls.Add(this.lb_RR);
