@@ -72,7 +72,7 @@ namespace Petshop
         /// 
         /// ส่วนโหลดข้อมูลขึ้นตารางต่างๆของโปรแกรม  //จบ
         ///
-        /// 
+        
         /// 
         /// ส่วนของ Service เพิ่ม แก้ไข 
         /// 
@@ -313,12 +313,12 @@ namespace Petshop
                     {
                         string isqlAddMedi = "UPDATE `tb_medicine` SET Medi_ID = '" + itxbMediID + "',`Medi_Des` = '" + itxbMediName + "', `Medi_Detall` = '" + itxbMediDetail + "', `Medi_Price` = '" + itxbMediPrice + "', `Medi_Sale` = '" + itxbMediSale + "', `Unit_ID` = '" + icbMediUnit + "', `Medi_Product` = '" + idtpProduct + "', `Medi_Expired` = '" + idtpExpired + "', `Medi_Unit_Amt` = '" + itxbMediAmt + "', `Medi_Unit_Order` = '" + itxbMediOrder + "', Medi_Stock = b'" + iStock + "' WHERE `tb_medicine`.`Medi_ID` = '" + ilbMedi + "'";
                         iConnect.Insert(isqlAddMedi);
-                        
+                        LoadMedi();
                         ClearTxtMedi();
                     }
                 }            
             }
-            LoadMedi();
+            
         }
 
         private void Bt_Unit_Click(object sender, EventArgs e)
@@ -417,10 +417,7 @@ namespace Petshop
             }
         }
 
-        private void cb_MediUnit_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            txb_MediAmt.Focus();
-        }
+       
 
         private void txb_MediAmt_KeyDown(object sender, KeyEventArgs e)
         {
@@ -461,11 +458,6 @@ namespace Petshop
             {
                 LoadMedi();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        
         }
     }
 }

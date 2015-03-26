@@ -98,6 +98,7 @@
             this.ccProduct_Stock});
             this.dGV_PD.Location = new System.Drawing.Point(13, 298);
             this.dGV_PD.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_PD.MultiSelect = false;
             this.dGV_PD.Name = "dGV_PD";
             this.dGV_PD.ReadOnly = true;
             this.dGV_PD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -299,7 +300,6 @@
             this.cb_ProductUnit.Name = "cb_ProductUnit";
             this.cb_ProductUnit.Size = new System.Drawing.Size(104, 26);
             this.cb_ProductUnit.TabIndex = 2;
-            this.cb_ProductUnit.SelectionChangeCommitted += new System.EventHandler(this.cb_ProductUnit_SelectionChangeCommitted);
             // 
             // Bt_LoadPD
             // 
@@ -502,6 +502,7 @@
             this.lb_ProductIDh.Size = new System.Drawing.Size(99, 18);
             this.lb_ProductIDh.TabIndex = 14;
             this.lb_ProductIDh.Text = "lb_ProductIDh";
+            this.lb_ProductIDh.Visible = false;
             // 
             // button1
             // 

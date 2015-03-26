@@ -315,6 +315,7 @@
             // rBt_All
             // 
             this.rBt_All.AutoSize = true;
+            this.rBt_All.Checked = true;
             this.rBt_All.Location = new System.Drawing.Point(239, 12);
             this.rBt_All.Name = "rBt_All";
             this.rBt_All.Size = new System.Drawing.Size(72, 22);
@@ -500,8 +501,10 @@
             this.ccServiceMedi_ID,
             this.ccServiceMedi_Des});
             this.dGV_HealRecord.Location = new System.Drawing.Point(7, 55);
+            this.dGV_HealRecord.MultiSelect = false;
             this.dGV_HealRecord.Name = "dGV_HealRecord";
             this.dGV_HealRecord.ReadOnly = true;
+            this.dGV_HealRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_HealRecord.Size = new System.Drawing.Size(934, 342);
             this.dGV_HealRecord.TabIndex = 3;
             // 

@@ -31,6 +31,7 @@
             this.tabControlEmployee = new System.Windows.Forms.TabControl();
             this.tpEmployee = new System.Windows.Forms.TabPage();
             this.gBoxEmployee = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.bt_LoadEP = new System.Windows.Forms.Button();
             this.bt_EditEm = new System.Windows.Forms.Button();
             this.bt_AddEm = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.ccEP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccEm_Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxPosition = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.bt_LoadPS = new System.Windows.Forms.Button();
             this.bt_EditEmposition = new System.Windows.Forms.Button();
             this.bt_AddEmPosition = new System.Windows.Forms.Button();
@@ -64,8 +66,6 @@
             this.lb_PositionID = new System.Windows.Forms.Label();
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -121,6 +121,18 @@
             this.gBoxEmployee.TabIndex = 1;
             this.gBoxEmployee.TabStop = false;
             this.gBoxEmployee.Text = "รายละเอียด";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(283, 135);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 32);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "ลบ";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // bt_LoadEP
             // 
@@ -284,6 +296,7 @@
             this.ccEmPosition_ID});
             this.dGV_Ep.Location = new System.Drawing.Point(8, 222);
             this.dGV_Ep.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_Ep.MultiSelect = false;
             this.dGV_Ep.Name = "dGV_Ep";
             this.dGV_Ep.ReadOnly = true;
             this.dGV_Ep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -359,6 +372,7 @@
             this.ccEm_Position});
             this.dGV_PS.Location = new System.Drawing.Point(8, 186);
             this.dGV_PS.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_PS.MultiSelect = false;
             this.dGV_PS.Name = "dGV_PS";
             this.dGV_PS.ReadOnly = true;
             this.dGV_PS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -399,6 +413,18 @@
             this.gBoxPosition.TabIndex = 0;
             this.gBoxPosition.TabStop = false;
             this.gBoxPosition.Text = "รายละเอียด";
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(308, 112);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 32);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "ลบ";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // bt_LoadPS
             // 
@@ -472,30 +498,6 @@
             this.lb_EmPosition.Size = new System.Drawing.Size(59, 18);
             this.lb_EmPosition.TabIndex = 6;
             this.lb_EmPosition.Text = "ตำแหน่ง";
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(283, 135);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "ลบ";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(308, 112);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 32);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "ลบ";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmMM15
             // 

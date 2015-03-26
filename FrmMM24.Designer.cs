@@ -367,6 +367,7 @@
             this.lb_ProductID.Size = new System.Drawing.Size(91, 18);
             this.lb_ProductID.TabIndex = 134;
             this.lb_ProductID.Text = "lb_ProductID";
+            this.lb_ProductID.Visible = false;
             // 
             // lb_ProductSaleID
             // 
@@ -394,6 +395,7 @@
             this.lb_ProductUnit.Size = new System.Drawing.Size(100, 18);
             this.lb_ProductUnit.TabIndex = 137;
             this.lb_ProductUnit.Text = "lb_ProductUnit";
+            this.lb_ProductUnit.Visible = false;
             // 
             // lb_PriceAmt
             // 

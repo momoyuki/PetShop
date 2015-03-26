@@ -31,6 +31,7 @@
             this.tabControlBreedType = new System.Windows.Forms.TabControl();
             this.tpBreed = new System.Windows.Forms.TabPage();
             this.gBoxBreed = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.Bt_LoadBreed = new System.Windows.Forms.Button();
             this.bt_EditBreed = new System.Windows.Forms.Button();
             this.bt_AddBreed = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@
             this.ccPT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPetType_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxType = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.bt_LoadType = new System.Windows.Forms.Button();
             this.bt_EditType = new System.Windows.Forms.Button();
             this.bt_AddType = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.lb_TypeID = new System.Windows.Forms.Label();
             this.txb_TypeID = new System.Windows.Forms.TextBox();
             this.lb_TypeName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControlBreedType.SuspendLayout();
             this.tpBreed.SuspendLayout();
             this.gBoxBreed.SuspendLayout();
@@ -111,6 +111,18 @@
             this.gBoxBreed.TabIndex = 0;
             this.gBoxBreed.TabStop = false;
             this.gBoxBreed.Text = "รายละเอียด";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(283, 134);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 32);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "ลบ";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Bt_LoadBreed
             // 
@@ -216,6 +228,7 @@
             this.ccPetType_DesID});
             this.dGV_Breed.Location = new System.Drawing.Point(8, 224);
             this.dGV_Breed.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_Breed.MultiSelect = false;
             this.dGV_Breed.Name = "dGV_Breed";
             this.dGV_Breed.ReadOnly = true;
             this.dGV_Breed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -267,6 +280,7 @@
             this.ccPetType_Des});
             this.dGV_Type.Location = new System.Drawing.Point(8, 224);
             this.dGV_Type.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_Type.MultiSelect = false;
             this.dGV_Type.Name = "dGV_Type";
             this.dGV_Type.ReadOnly = true;
             this.dGV_Type.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -306,6 +320,18 @@
             this.gBoxType.TabIndex = 0;
             this.gBoxType.TabStop = false;
             this.gBoxType.Text = "รายละเอียด";
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(307, 98);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 32);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "ลบ";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // bt_LoadType
             // 
@@ -380,30 +406,6 @@
             this.lb_TypeName.Size = new System.Drawing.Size(55, 18);
             this.lb_TypeName.TabIndex = 6;
             this.lb_TypeName.Text = "ประเภท";
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(283, 134);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "ลบ";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(307, 98);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 32);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "ลบ";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmMM14
             // 

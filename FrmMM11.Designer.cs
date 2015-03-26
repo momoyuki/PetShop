@@ -228,7 +228,6 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "ลบ";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lb_RemarkService
             // 
@@ -607,7 +606,6 @@
             this.cb_MediUnit.Name = "cb_MediUnit";
             this.cb_MediUnit.Size = new System.Drawing.Size(104, 26);
             this.cb_MediUnit.TabIndex = 2;
-            this.cb_MediUnit.SelectionChangeCommitted += new System.EventHandler(this.cb_MediUnit_SelectionChangeCommitted);
             // 
             // Bt_LoadMedi
             // 
@@ -823,6 +821,7 @@
             this.ccMedi_Stock});
             this.dGV_Medi.Location = new System.Drawing.Point(8, 347);
             this.dGV_Medi.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_Medi.MultiSelect = false;
             this.dGV_Medi.Name = "dGV_Medi";
             this.dGV_Medi.ReadOnly = true;
             this.dGV_Medi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

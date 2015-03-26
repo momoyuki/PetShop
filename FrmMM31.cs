@@ -37,22 +37,47 @@ namespace Petshop
             loadBillAmt();
             calculator();
         }
+        decimal iSerPrice = 0;
+        decimal iMePrice = 0;
+        private void loadBillAmt()
+        {
+            string ilbBillID = Lb_BillID.Text.Trim();
+            DataTable idtSumService;
+            string isqlSumService = "SELECT sum(service_Bill_Amt) as ServiceAmt FROM tb_servicebill where Bill_ID = '" + ilbBillID + "'";
+            idtSumService = iConnect.SelectByCommand(isqlSumService);
+            foreach (DataRow row in idtSumService.Rows)
+            {
+                object value = row["ServiceAmt"];
+                if (value == DBNull.Value)
+                {
+                }      
+                else
+                {
+                    iSerPrice = idtSumService.Rows[0].Field<decimal>(0);
+                }
+            }
+            DataTable idtSumMedi;
+            string isqlSumMedi = "SELECT sum(Medi_Bill_Amt) as MediAmt FROM tb_medibill where Bill_ID = '" + ilbBillID + "'";
+            idtSumMedi = iConnect.SelectByCommand(isqlSumMedi);
+            foreach (DataRow row in idtSumMedi.Rows)
+            {
+                object value = row["MediAmt"];
+                if (value == DBNull.Value)
+                {
 
+                }
+                 else
+                {
+                    iMePrice =idtSumMedi.Rows[0].Field<decimal>(0);
+                }
+            }
+     
+        }
+        
         private void calculator()
         {
-            decimal iMediAmt = 0;
-            decimal iServiceAmt = 0;
-            if ((lb_SerPrice.Text != null) && (lb_SerPrice.Text != ""))
-            {
-                iServiceAmt = Convert.ToDecimal(lb_SerPrice.Text);
-            }
-            if ((lb_MePrice.Text != null) && (lb_MePrice.Text != ""))
-            {
-                iMediAmt = Convert.ToDecimal(lb_MePrice.Text);
-            }
-            decimal iTotal = iMediAmt + iServiceAmt;
+            decimal iTotal = iMePrice + iSerPrice;
             txb_BillTotal.Text = iTotal.ToString();
-
 
             decimal iDC = 0;
             decimal iNet = 0;
@@ -104,24 +129,6 @@ namespace Petshop
             }
         }
         
-        private void loadBillAmt()
-        {
-            string ilbBillID = Lb_BillID.Text.Trim();
-
-            DataTable idtSumService;
-            string isqlSumService = "SELECT sum(service_Bill_Amt) as ServiceAmt FROM tb_servicebill where Bill_ID = '"+ilbBillID+"'";
-            idtSumService = iConnect.SelectByCommand(isqlSumService);
-            lb_SerPrice.DataBindings.Clear();
-            Binding s = new Binding("Text", idtSumService, "ServiceAmt");
-            lb_SerPrice.DataBindings.Add(s);
-
-            DataTable idtSumMedi;
-            string isqlSumMedi = "SELECT sum(Medi_Bill_Amt) as MediAmt FROM tb_medibill where Bill_ID = '" + ilbBillID + "'";
-            idtSumMedi = iConnect.SelectByCommand(isqlSumMedi);
-            lb_MePrice.DataBindings.Clear();
-            Binding m = new Binding("Text", idtSumMedi, "MediAmt");
-            lb_MePrice.DataBindings.Add(m);
-        }
 
         private void loadCompany()
         {

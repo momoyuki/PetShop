@@ -88,7 +88,7 @@ namespace Petshop
 
             string idtpProduct = dTP_Product.Value.ToString("yyyy-MM-dd");
             string idtpExpired = dTP_Expired.Value.ToString("yyyy-MM-dd");
-            if ((txb_ProductAmt.Text == "")||(txb_ProductAmt.Text ==null))
+            if ((txb_ProductAmt.Text == "") || (txb_ProductAmt.Text == null))
             {
                 txb_ProductAmt.Text = "0";
             }
@@ -105,7 +105,7 @@ namespace Petshop
                 iStock = 1;
             }
 
-            string isqlAddProduct = "INSERT INTO `tb_product` (`Product_ID`, `Product_Des`, `Product_Detail`, `Product_Price`, `Product_Sale`, `Unit_ID`, `Product_Product`, `Product_Expired`, `Product_Unit_Amt`, `Product_Unit_Order`,Product_Stock) "+
+            string isqlAddProduct = "INSERT INTO `tb_product` (`Product_ID`, `Product_Des`, `Product_Detail`, `Product_Price`, `Product_Sale`, `Unit_ID`, `Product_Product`, `Product_Expired`, `Product_Unit_Amt`, `Product_Unit_Order`,Product_Stock) " +
                 "VALUES ('" + itxbProductID + "','" + itxbProductName + "', '" + itxbProductDetail + "', '" + itxbProductPrice + "', '" + itxbProductSale + "', '" + icbProductUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itxbProductAmt + "', '" + itxbProductOrder + "',b'" + iStock + "')";
 
             //string isqlAddProduct = "INSERT INTO `tb_product` (`Product_ID`, `Product_Des`, `Product_Detail`, `Product_Price`, `Product_Sale`, `Unit_ID`, `Product_Product`, `Product_Expired`, `Product_Unit_Amt`, `Product_Unit_Order`) VALUES (CONCAT('P',LPAD((SELECT SUBSTR(`Product_ID`, 2) FROM `tb_product` as `alias` Order By Product_ID DESC Limit 1)+1,5,'0')), '" + itbProductName + "', '" + itbProductDetail + "', '" + itbProductPrice + "', '" + itbProductSale + "', '" + icbProductUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itbProductAmt + "', '" + itbProductOrder + "')";
@@ -134,17 +134,6 @@ namespace Petshop
 
                     }
                 }
-                else
-                {
-                    epCheck.SetError(txb_ProductName, "กรุณาใส่ชื่อสินค้า");
-                }
-            }
-            else if (txb_ProductID.Text.Length > 16)
-            {
-                epCheck.SetError(txb_ProductID, "กรุณาใส่รหัสสินค้า ไม่เกิน 16 ตัว!!");
-            }
-            else {
-                epCheck.SetError(txb_ProductID, "กรุณาใส่รหัสสินค้า ไม่เกิน 16 ตัว!!");
             }
         }
 
@@ -180,13 +169,11 @@ namespace Petshop
                 }
             }
         }
-
         private void FrmMM12_Load(object sender, EventArgs e)
         {
             LoadProduct();
             LoadUnit();
         }
-
         private void bt_EditProduct_Click(object sender, EventArgs e)
         {
             string itxbProductID = txb_ProductID.Text.Trim();
@@ -225,14 +212,12 @@ namespace Petshop
                     {
                         string isqlAddProduct = "UPDATE `tb_product` SET Product_ID = '"+itxbProductID+"',`Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "';";
                         iConnect.Insert(isqlAddProduct);
-                        
+                        LoadProduct();
                         ClearTxtProduct();
                     }
                 }
              }
-            LoadProduct();
-        }
-
+         }
         private void ClearTxtProduct()
         {
             lb_ProductIDh.Text = "";
@@ -244,7 +229,6 @@ namespace Petshop
             txb_ProductAmt.Clear();
             txb_ProductOrder.Clear();
         }
-
         private void bt_Unit_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
@@ -271,7 +255,6 @@ namespace Petshop
                 txb_ProductName.Focus();
             }
         }
-
         private void txb_ProductName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -301,12 +284,6 @@ namespace Petshop
                cb_ProductUnit.Focus();
             }
         }
-
-        private void cb_ProductUnit_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            txb_ProductAmt.Focus();
-        }
-
         private void txb_ProductAmt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -322,11 +299,5 @@ namespace Petshop
                 bt_AddProduct.Select();
             }
         }
-
-        
-
-       
-
-        
-    }
+     }
 }

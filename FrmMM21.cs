@@ -76,10 +76,8 @@ namespace Petshop
             string icbTypeID = cb_PetType.SelectedValue.ToString();
             if ((icbTypeID != "") || (icbTypeID != null))
             {
-                
                 DataTable idtPetBreed;
                 string isqlCommand = "SELECT * FROM `tb_petbreed` where PetType_ID = " + icbTypeID + "";
-
                 idtPetBreed = iConnect.SelectByCommand(isqlCommand);
                 cb_PetBreed.DisplayMember = idtPetBreed.Columns["PetBreed_Des"].ColumnName;
                 cb_PetBreed.ValueMember = idtPetBreed.Columns["PetBreed_ID"].ColumnName;

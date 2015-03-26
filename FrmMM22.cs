@@ -32,7 +32,6 @@ namespace Petshop
         }
         private void LoadData()
         {
-            
             loadMedi(); // รายการยาต่างๆ
             loadService(); //รายการให้บริการต่างๆ
             loadHealRecord();// บันทึกการรักษา --Master--
@@ -70,7 +69,6 @@ namespace Petshop
                     cb_Medi.DisplayMember = idtmedicine.Columns["Medi_Des"].ColumnName;
                     cb_Medi.ValueMember = idtmedicine.Columns["Medi_ID"].ColumnName;
                     cb_Medi.DataSource = idtmedicine;
-               
             }
         }
         private void loadService() // โหลดข้อมูลบริการขึ้น Combo
@@ -277,7 +275,7 @@ namespace Petshop
                                             "VALUES (CONCAT('" + ilbyear + ilbcompany + "', LPAD(  IFNULL( (SELECT SUBSTR(`healrecord_Id`, 5) FROM `tb_healrecord` AS `alias` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) "+
                                             " ,'" + itxbPetID + "', '" + icbEmID + "', '" + itxbHealRecordSymptom + "', '" + itxbHealRecordRemark + "', '" + itxbWeight + "', '" + itxbTemp + "','"+itxbHR+"','"+itxbRR+"', '" + idtpHealRecordDate + "', '" + itbHealTotal + "', '" + itbHealDC + "','" + itbHealNet + "')";
                 iConnect.Insert(isqlHealthRecord);
- 
+
                 DataTable idtHealRecordID;
                 string isqlHealRecordID = "SELECT healrecord_Id FROM `tb_healrecord` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1";
                 idtHealRecordID = iConnect.SelectByCommand(isqlHealRecordID);
@@ -294,7 +292,9 @@ namespace Petshop
             else {
                 epCheck.SetError(txb_PetID, "ไม่พบรหัสสัตว์");
             }
-            LoadData();
+            loadHealRecord();
+            loadServiceRecord();
+            loadMediRecord();
         }
         private void bt_BuyService_Click(object sender, EventArgs e)
         {
@@ -323,14 +323,17 @@ namespace Petshop
                     {
                         string isqlServiceRecord = "INSERT INTO `tb_servicerecord` (`HealRecord_ID`, `Service_ID`, `Service_Amt`) VALUES ('" + ilbHealRecordID + "', '" + icbServiceID + "', '" + ilbPrice + "')";
                         iConnect.Insert(isqlServiceRecord);
+                        
                     }
                 }
             }
             else {
                 AddHealRecord();
             }
-                LoadData();
-                    }
+            loadHealRecord();
+            loadServiceRecord();
+            loadMediRecord();
+        }
         
 
         private void bt_BuyMedi_Click(object sender, EventArgs e)
@@ -474,7 +477,7 @@ namespace Petshop
                 iConnect.Insert(isqlDelService);
                 lb_ServiceID.Text = "";
             }
-            LoadData();
+            loadServiceRecord();
         }
         private void bt_refMedi_Click(object sender, EventArgs e)
         {
@@ -509,7 +512,7 @@ namespace Petshop
                         lb_MediU.Text = "";
                     }
             }
-            LoadData();
+            loadMediRecord();
         }
         private void dGV_Service_SelectionChanged(object sender, EventArgs e)
         {

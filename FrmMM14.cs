@@ -17,6 +17,11 @@ namespace Petshop
             InitializeComponent();
             iConnect = new MySQLDBConnect();
         }
+        private void FrmMM13_Load(object sender, EventArgs e)
+        {
+            LoadBreed();
+            LoadType();
+        }
 
         private void Bt_LoadBreed_Click(object sender, EventArgs e)
         {
@@ -105,11 +110,6 @@ namespace Petshop
             }
         }
 
-        private void FrmMM13_Load(object sender, EventArgs e)
-        {
-            LoadBreed();
-            LoadType();
-        }
 
         private void bt_EditBreed_Click(object sender, EventArgs e)
         {

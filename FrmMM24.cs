@@ -23,10 +23,17 @@ namespace Petshop
         {
             loadData();
         }
-
-        private void loadData()
+        private void FrmMM22_Load(object sender, EventArgs e)
         {
             loadEmployee();
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH"); //ดึงข้อมูล ปี และกำหนดให้เป็นแบบไทย
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            lbyear.Text = DateTime.Now.ToString("yy");
+            loadData();
+        }
+        private void loadData()
+        {
             loadProductSaleDetail();
             Calculate();
         }
@@ -57,14 +64,7 @@ namespace Petshop
             iNet = iTotal - iDC;
             txb_ProductSaleNet.Text = iNet.ToString();
         }
-        private void FrmMM22_Load(object sender, EventArgs e)
-        {
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH"); //ดึงข้อมูล ปี และกำหนดให้เป็นแบบไทย
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            lbyear.Text = DateTime.Now.ToString("yy");
-            loadData();
-        }
+
 
         private void loadProductSaleDetail()
         {
@@ -118,6 +118,7 @@ namespace Petshop
                     DataTable idtProductSaleID; //เรียกไอดีเดิมขึ้นมาโชว์
                     string isqProductSaleID = "SELECT ProductSale_ID FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  ORDER BY `ProductSale_ID` DESC LIMIT 1";
                     idtProductSaleID = iConnect.SelectByCommand(isqProductSaleID);
+                    loadData();
                     lb_ProductSaleID.Text = idtProductSaleID.Rows[0].Field<string>(0);
                 }
             }
@@ -232,10 +233,10 @@ namespace Petshop
                     return;
                 }
             }
-            FrmMM32 iFrmMM342 = new FrmMM32();
-            iFrmMM342.MdiParent = this;
-            iFrmMM342.Show();
-            iFrmMM342.txb_ReferID.Text = lb_ProductSaleID.Text.Trim();
+            FrmMM32 iFrmMM32 = new FrmMM32();
+            iFrmMM32.MdiParent = MainForm.ActiveForm;
+            iFrmMM32.Show();
+            iFrmMM32.txb_ReferID.Text = lb_ProductSaleID.Text.Trim();
         }
 
         private void bt_AddProductSale_Click(object sender, EventArgs e)

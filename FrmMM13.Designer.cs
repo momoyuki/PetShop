@@ -32,6 +32,7 @@
             this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxUnit = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.bt_LoadUnit = new System.Windows.Forms.Button();
             this.bt_EditUnit = new System.Windows.Forms.Button();
             this.bt_AddUnit = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.txb_UnitName = new System.Windows.Forms.TextBox();
             this.lb_UnitID = new System.Windows.Forms.Label();
             this.lb_UnitName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Uni)).BeginInit();
             this.gBoxUnit.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             this.ccUnit_Name});
             this.dGV_Uni.Location = new System.Drawing.Point(16, 190);
             this.dGV_Uni.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_Uni.MultiSelect = false;
             this.dGV_Uni.Name = "dGV_Uni";
             this.dGV_Uni.ReadOnly = true;
             this.dGV_Uni.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -94,6 +95,18 @@
             this.gBoxUnit.TabIndex = 0;
             this.gBoxUnit.TabStop = false;
             this.gBoxUnit.Text = "รายละเอียด";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(275, 109);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 32);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "ลบ";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // bt_LoadUnit
             // 
@@ -166,18 +179,6 @@
             this.lb_UnitName.Size = new System.Drawing.Size(72, 18);
             this.lb_UnitName.TabIndex = 0;
             this.lb_UnitName.Text = "เรียกหน่วย";
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(275, 109);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "ลบ";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmMM13
             // 

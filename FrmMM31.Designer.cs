@@ -67,8 +67,6 @@
             this.Lb_CoBill = new System.Windows.Forms.Label();
             this.bt_AddBill = new System.Windows.Forms.Button();
             this.lb_ServiceAmtBill = new System.Windows.Forms.Label();
-            this.lb_MePrice = new System.Windows.Forms.Label();
-            this.lb_SerPrice = new System.Windows.Forms.Label();
             this.TabControlServiceMediBill.SuspendLayout();
             this.tp_Service.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -465,31 +463,11 @@
             this.lb_ServiceAmtBill.Size = new System.Drawing.Size(0, 18);
             this.lb_ServiceAmtBill.TabIndex = 140;
             // 
-            // lb_MePrice
-            // 
-            this.lb_MePrice.AutoSize = true;
-            this.lb_MePrice.Location = new System.Drawing.Point(24, 94);
-            this.lb_MePrice.Name = "lb_MePrice";
-            this.lb_MePrice.Size = new System.Drawing.Size(37, 18);
-            this.lb_MePrice.TabIndex = 141;
-            this.lb_MePrice.Text = "0.00";
-            // 
-            // lb_SerPrice
-            // 
-            this.lb_SerPrice.AutoSize = true;
-            this.lb_SerPrice.Location = new System.Drawing.Point(109, 94);
-            this.lb_SerPrice.Name = "lb_SerPrice";
-            this.lb_SerPrice.Size = new System.Drawing.Size(37, 18);
-            this.lb_SerPrice.TabIndex = 142;
-            this.lb_SerPrice.Text = "0.00";
-            // 
             // FrmMM31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
-            this.Controls.Add(this.lb_SerPrice);
-            this.Controls.Add(this.lb_MePrice);
             this.Controls.Add(this.lb_ServiceAmtBill);
             this.Controls.Add(this.bt_AddBill);
             this.Controls.Add(this.Lb_CoBill);
@@ -570,7 +548,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Amt;
         private System.Windows.Forms.Button bt_AddBill;
         private System.Windows.Forms.Label lb_ServiceAmtBill;
-        private System.Windows.Forms.Label lb_MePrice;
-        private System.Windows.Forms.Label lb_SerPrice;
     }
 }

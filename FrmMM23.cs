@@ -39,11 +39,12 @@ namespace Petshop
         }
         private void FrmMM23_Load(object sender, EventArgs e) //เมื่อมีการเปิดหน้าตานี้ครั้งแรก จะทำการโหลดข้อมูลทั้งหมด
         {
+            
             loadData();
         }
         private void loadData()
         {
-            LoadService(); 
+            LoadService();
             loadHealDate();
         }
         private void loadHealDate()
