@@ -469,7 +469,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_CompanyRow AddDT_CompanyRow(string Company_Name, string Company_Addr, string Company_Tel, string Company_Own, string CoLogo) {
+            public DT_CompanyRow AddDT_CompanyRow(string Company_Name, string Company_Addr, string Company_Tel, string Company_Own, byte[] CoLogo) {
                 DT_CompanyRow rowDT_CompanyRow = ((DT_CompanyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Company_Name,
@@ -517,7 +517,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnCompany_Tel);
                 this.columnCompany_Own = new global::System.Data.DataColumn("Company_Own", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCompany_Own);
-                this.columnCoLogo = new global::System.Data.DataColumn("CoLogo", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCoLogo = new global::System.Data.DataColumn("CoLogo", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCoLogo);
             }
             
@@ -792,7 +792,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_BillRow AddDT_BillRow(string Bill_ID, string Refer_ID, string Em_Name, string Bill_Date, string BillSale_Total, string BillSale_DC, string BillSale_Net) {
+            public DT_BillRow AddDT_BillRow(string Bill_ID, string Refer_ID, string Em_Name, System.DateTime Bill_Date, string BillSale_Total, string BillSale_DC, string BillSale_Net) {
                 DT_BillRow rowDT_BillRow = ((DT_BillRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Bill_ID,
@@ -842,7 +842,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnRefer_ID);
                 this.columnEm_Name = new global::System.Data.DataColumn("Em_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEm_Name);
-                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBill_Date);
                 this.columnBillSale_Total = new global::System.Data.DataColumn("BillSale_Total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBillSale_Total);
@@ -993,6 +993,16 @@ namespace Petshop.Resources {
             
             private global::System.Data.DataColumn columnServiceMedi_Amt;
             
+            private global::System.Data.DataColumn columnProduct_ID;
+            
+            private global::System.Data.DataColumn columnProduct_Des;
+            
+            private global::System.Data.DataColumn columnProductSale_Bill_Unit;
+            
+            private global::System.Data.DataColumn columnProductSale_Bill_Price;
+            
+            private global::System.Data.DataColumn columnProductSale_Bill_Amt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DT_BillDetailDataTable() {
@@ -1068,6 +1078,46 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Product_IDColumn {
+                get {
+                    return this.columnProduct_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Product_DesColumn {
+                get {
+                    return this.columnProduct_Des;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProductSale_Bill_UnitColumn {
+                get {
+                    return this.columnProductSale_Bill_Unit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProductSale_Bill_PriceColumn {
+                get {
+                    return this.columnProductSale_Bill_Price;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProductSale_Bill_AmtColumn {
+                get {
+                    return this.columnProductSale_Bill_Amt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1103,14 +1153,19 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_BillDetailRow AddDT_BillDetailRow(string ServiceMedi_ID, string ServiceMedi_Des, string ServiceMedi_Price, string ServiceMedi_Unit, string ServiceMedi_Amt) {
+            public DT_BillDetailRow AddDT_BillDetailRow(string ServiceMedi_ID, string ServiceMedi_Des, string ServiceMedi_Price, string ServiceMedi_Unit, string ServiceMedi_Amt, string Product_ID, string Product_Des, string ProductSale_Bill_Unit, string ProductSale_Bill_Price, string ProductSale_Bill_Amt) {
                 DT_BillDetailRow rowDT_BillDetailRow = ((DT_BillDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ServiceMedi_ID,
                         ServiceMedi_Des,
                         ServiceMedi_Price,
                         ServiceMedi_Unit,
-                        ServiceMedi_Amt};
+                        ServiceMedi_Amt,
+                        Product_ID,
+                        Product_Des,
+                        ProductSale_Bill_Unit,
+                        ProductSale_Bill_Price,
+                        ProductSale_Bill_Amt};
                 rowDT_BillDetailRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_BillDetailRow);
                 return rowDT_BillDetailRow;
@@ -1138,6 +1193,11 @@ namespace Petshop.Resources {
                 this.columnServiceMedi_Price = base.Columns["ServiceMedi_Price"];
                 this.columnServiceMedi_Unit = base.Columns["ServiceMedi_Unit"];
                 this.columnServiceMedi_Amt = base.Columns["ServiceMedi_Amt"];
+                this.columnProduct_ID = base.Columns["Product_ID"];
+                this.columnProduct_Des = base.Columns["Product_Des"];
+                this.columnProductSale_Bill_Unit = base.Columns["ProductSale_Bill_Unit"];
+                this.columnProductSale_Bill_Price = base.Columns["ProductSale_Bill_Price"];
+                this.columnProductSale_Bill_Amt = base.Columns["ProductSale_Bill_Amt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1153,6 +1213,16 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnServiceMedi_Unit);
                 this.columnServiceMedi_Amt = new global::System.Data.DataColumn("ServiceMedi_Amt", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnServiceMedi_Amt);
+                this.columnProduct_ID = new global::System.Data.DataColumn("Product_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProduct_ID);
+                this.columnProduct_Des = new global::System.Data.DataColumn("Product_Des", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProduct_Des);
+                this.columnProductSale_Bill_Unit = new global::System.Data.DataColumn("ProductSale_Bill_Unit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductSale_Bill_Unit);
+                this.columnProductSale_Bill_Price = new global::System.Data.DataColumn("ProductSale_Bill_Price", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductSale_Bill_Price);
+                this.columnProductSale_Bill_Amt = new global::System.Data.DataColumn("ProductSale_Bill_Amt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductSale_Bill_Amt);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1359,10 +1429,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CoLogo {
+            public byte[] CoLogo {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Company.CoLogoColumn]));
+                        return ((byte[])(this[this.tableDT_Company.CoLogoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CoLogo\' in table \'DT_Company\' is DBNull.", e);
@@ -1498,10 +1568,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Bill_Date {
+            public System.DateTime Bill_Date {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Bill.Bill_DateColumn]));
+                        return ((global::System.DateTime)(this[this.tableDT_Bill.Bill_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Bill_Date\' in table \'DT_Bill\' is DBNull.", e);
@@ -1741,6 +1811,87 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Product_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_BillDetail.Product_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Product_ID\' in table \'DT_BillDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_BillDetail.Product_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Product_Des {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_BillDetail.Product_DesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Product_Des\' in table \'DT_BillDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_BillDetail.Product_DesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ProductSale_Bill_Unit {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_BillDetail.ProductSale_Bill_UnitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductSale_Bill_Unit\' in table \'DT_BillDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_BillDetail.ProductSale_Bill_UnitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ProductSale_Bill_Price {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_BillDetail.ProductSale_Bill_PriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductSale_Bill_Price\' in table \'DT_BillDetail\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_BillDetail.ProductSale_Bill_PriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ProductSale_Bill_Amt {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_BillDetail.ProductSale_Bill_AmtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductSale_Bill_Amt\' in table \'DT_BillDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_BillDetail.ProductSale_Bill_AmtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsServiceMedi_IDNull() {
                 return this.IsNull(this.tableDT_BillDetail.ServiceMedi_IDColumn);
             }
@@ -1797,6 +1948,66 @@ namespace Petshop.Resources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetServiceMedi_AmtNull() {
                 this[this.tableDT_BillDetail.ServiceMedi_AmtColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProduct_IDNull() {
+                return this.IsNull(this.tableDT_BillDetail.Product_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProduct_IDNull() {
+                this[this.tableDT_BillDetail.Product_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProduct_DesNull() {
+                return this.IsNull(this.tableDT_BillDetail.Product_DesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProduct_DesNull() {
+                this[this.tableDT_BillDetail.Product_DesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProductSale_Bill_UnitNull() {
+                return this.IsNull(this.tableDT_BillDetail.ProductSale_Bill_UnitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProductSale_Bill_UnitNull() {
+                this[this.tableDT_BillDetail.ProductSale_Bill_UnitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProductSale_Bill_PriceNull() {
+                return this.IsNull(this.tableDT_BillDetail.ProductSale_Bill_PriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProductSale_Bill_PriceNull() {
+                this[this.tableDT_BillDetail.ProductSale_Bill_PriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProductSale_Bill_AmtNull() {
+                return this.IsNull(this.tableDT_BillDetail.ProductSale_Bill_AmtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProductSale_Bill_AmtNull() {
+                this[this.tableDT_BillDetail.ProductSale_Bill_AmtColumn] = global::System.Convert.DBNull;
             }
         }
         

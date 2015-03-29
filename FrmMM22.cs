@@ -11,9 +11,9 @@ namespace Petshop
 {
     public partial class FrmMM22 : Form
     {
-        DataTable idtmedicine ,idtService;
+        DataTable idtmedicine, idtService;
         private MySQLDBConnect iConnect;
-        
+
         public FrmMM22()
         {
             InitializeComponent();
@@ -64,16 +64,15 @@ namespace Petshop
         {
             string isqlMedi = "Select tb_medicine.*,tb_unit.Unit_Name,concat(Medi_Sale,'-./',Unit_Name) as Price from tb_medicine,tb_Unit where tb_Unit.Unit_ID = tb_medicine.Unit_ID And tb_medicine.Medi_Unit_Amt > 0";
             idtmedicine = iConnect.SelectByCommand(isqlMedi);
-            if ((idtmedicine != null)&&(idtmedicine.Rows.Count > 0))
+            if ((idtmedicine != null) && (idtmedicine.Rows.Count > 0))
             {
-                    cb_Medi.DisplayMember = idtmedicine.Columns["Medi_Des"].ColumnName;
-                    cb_Medi.ValueMember = idtmedicine.Columns["Medi_ID"].ColumnName;
-                    cb_Medi.DataSource = idtmedicine;
+                cb_Medi.DisplayMember = idtmedicine.Columns["Medi_Des"].ColumnName;
+                cb_Medi.ValueMember = idtmedicine.Columns["Medi_ID"].ColumnName;
+                cb_Medi.DataSource = idtmedicine;
             }
         }
         private void loadService() // โหลดข้อมูลบริการขึ้น Combo
         {
-            
             string isqlService = "SELECT * FROM `tb_service`"; //โหลดข้อมูลบริการ ให้เลือกแบบ Combobox
             idtService = iConnect.SelectByCommand(isqlService);
             if (idtService != null)
@@ -129,43 +128,41 @@ namespace Petshop
         }
         private void loadServiceRecord() //โหลดข้อมูลบริการ Detail 
         {
-           
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
             DataTable idtSerivceRecord;
             string isqlServiceRecord = "SELECT tb_ServiceRecord.*,tb_Service.Service_Des FROM tb_service,tb_ServiceRecord WHERE (tb_ServiceRecord.HealRecord_ID = '" + ilbHealRecordID + "' AND tb_service.Service_ID = tb_ServiceRecord.Service_ID)";
             idtSerivceRecord = iConnect.SelectByCommand(isqlServiceRecord);
             //if ((idtSerivceRecord != null) && (idtSerivceRecord.Rows.Count > 0))
-           // {
-                dGV_Service.DataSource = idtSerivceRecord;
-                dGV_Service.Refresh();
+            // {
+            dGV_Service.DataSource = idtSerivceRecord;
+            dGV_Service.Refresh();
 
-                DataTable idtSumService;
-                string isqlSumService = "SELECT sum(Service_Amt) as ServiceAmt FROM tb_ServiceRecord WHERE tb_ServiceRecord.HealRecord_ID = '" + ilbHealRecordID + "' ";
-                idtSumService = iConnect.SelectByCommand(isqlSumService);
-                lb_ServiceAmt.DataBindings.Clear();
-                Binding b = new Binding("Text", idtSumService, "ServiceAmt");
-                lb_ServiceAmt.DataBindings.Add(b);
-           // }
+            DataTable idtSumService;
+            string isqlSumService = "SELECT sum(Service_Amt) as ServiceAmt FROM tb_ServiceRecord WHERE tb_ServiceRecord.HealRecord_ID = '" + ilbHealRecordID + "' ";
+            idtSumService = iConnect.SelectByCommand(isqlSumService);
+            lb_ServiceAmt.DataBindings.Clear();
+            Binding b = new Binding("Text", idtSumService, "ServiceAmt");
+            lb_ServiceAmt.DataBindings.Add(b);
+            // }
         }
         private void loadMediRecord() //โหลดข้อมูลยา Detail 
         {
-            
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
             DataTable idtMediRecord;
             string isqlMediRecord = "SELECT tb_MediRecord.*,tb_medicine.Medi_Des  FROM tb_Medicine,tb_MediRecord WHERE (tb_MediRecord.HealRecord_ID = '" + ilbHealRecordID + "' AND tb_Medicine.Medi_ID = tb_MediRecord.Medi_ID)";
             idtMediRecord = iConnect.SelectByCommand(isqlMediRecord);
-           // if ((idtMediRecord != null) && (idtMediRecord.Rows.Count > 0))
-          //  {
-                dGV_Medi.DataSource = idtMediRecord;
-                dGV_Medi.Refresh();
+            // if ((idtMediRecord != null) && (idtMediRecord.Rows.Count > 0))
+            //  {
+            dGV_Medi.DataSource = idtMediRecord;
+            dGV_Medi.Refresh();
 
-                DataTable idtSumMedi;
-                string isqlSumMedi = "SELECT sum(MediRecord_total) as MediAmt  FROM tb_MediRecord WHERE HealRecord_ID = '" + ilbHealRecordID + "' ";
-                idtSumMedi = iConnect.SelectByCommand(isqlSumMedi);
-                lb_MediAmt.DataBindings.Clear();
-                Binding b = new Binding("Text", idtSumMedi, "MediAmt");
-                lb_MediAmt.DataBindings.Add(b);
-           // }
+            DataTable idtSumMedi;
+            string isqlSumMedi = "SELECT sum(MediRecord_total) as MediAmt  FROM tb_MediRecord WHERE HealRecord_ID = '" + ilbHealRecordID + "' ";
+            idtSumMedi = iConnect.SelectByCommand(isqlSumMedi);
+            lb_MediAmt.DataBindings.Clear();
+            Binding b = new Binding("Text", idtSumMedi, "MediAmt");
+            lb_MediAmt.DataBindings.Add(b);
+            // }
         }
         private void loadPetProfiles()// โหลดข้อมูลสมาชิก จากเลขรหัสสัตว์  Master
         {
@@ -182,7 +179,6 @@ namespace Petshop
         private void cb_Medi_SelectionChangeCommitted(object sender, EventArgs e)
         {
             BindMedi();
-            
         }
         private void cb_Medi_TextChanged(object sender, EventArgs e)
         {
@@ -207,7 +203,7 @@ namespace Petshop
         {
             lb_Price.DataBindings.Clear();
             Binding b = new Binding("Text", idtService, "Service_Price");
-            lb_Price.DataBindings.Add(b);     
+            lb_Price.DataBindings.Add(b);
         }
         private void bt_NewProfile_Click(object sender, EventArgs e) // เปิดหน้าต่าง ค้นข้อมูลรหัสสัตว์
         {
@@ -223,13 +219,13 @@ namespace Petshop
             iFrmMM24.MdiParent = MainForm.ActiveForm;
             iFrmMM24.Show();
         }
-        
+
 
         private void Bt_RecordHeal_Click(object sender, EventArgs e)
         {
             AddHealRecord();
         }
-        
+
         private void AddHealRecord()
         {
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
@@ -265,31 +261,32 @@ namespace Petshop
             string itbHealDC = txb_HealRecordDC.Text.Trim();
             string itbHealNet = txb_HealRecordNet.Text.Trim();
 
-           
+
             if ((ilbHealRecordID == null) || (ilbHealRecordID == "") && (itxbPetID != null) && (itxbPetID != ""))
             {
                 DialogResult iConfirmResult = MessageBox.Show("ต้องการบันทึกข้อมูลการรักษาใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
-                   {
-                string isqlHealthRecord = "INSERT INTO `tb_healrecord` (`HealRecord_ID`, `Pet_ID`, `Em_ID`, `HealRecord_Symptom`, `HealRecord_Remark`, `HealRecord_Weight`, `HealRecord_Temp`,HealRecord_HR,HealRecord_RR, `HealRecord_Date`, `HealRecord_Total`, `HealRecord_DC`, `HealRecord_Net`) "+
-                                            "VALUES (CONCAT('" + ilbyear + ilbcompany + "', LPAD(  IFNULL( (SELECT SUBSTR(`healrecord_Id`, 5) FROM `tb_healrecord` AS `alias` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) "+
-                                            " ,'" + itxbPetID + "', '" + icbEmID + "', '" + itxbHealRecordSymptom + "', '" + itxbHealRecordRemark + "', '" + itxbWeight + "', '" + itxbTemp + "','"+itxbHR+"','"+itxbRR+"', '" + idtpHealRecordDate + "', '" + itbHealTotal + "', '" + itbHealDC + "','" + itbHealNet + "')";
-                iConnect.Insert(isqlHealthRecord);
+                {
+                    string isqlHealthRecord = "INSERT INTO `tb_healrecord` (`HealRecord_ID`, `Pet_ID`, `Em_ID`, `HealRecord_Symptom`, `HealRecord_Remark`, `HealRecord_Weight`, `HealRecord_Temp`,HealRecord_HR,HealRecord_RR, `HealRecord_Date`, `HealRecord_Total`, `HealRecord_DC`, `HealRecord_Net`) " +
+                                                "VALUES (CONCAT('" + ilbyear + ilbcompany + "', LPAD(  IFNULL( (SELECT SUBSTR(`healrecord_Id`, 5) FROM `tb_healrecord` AS `alias` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) " +
+                                                " ,'" + itxbPetID + "', '" + icbEmID + "', '" + itxbHealRecordSymptom + "', '" + itxbHealRecordRemark + "', '" + itxbWeight + "', '" + itxbTemp + "','" + itxbHR + "','" + itxbRR + "', '" + idtpHealRecordDate + "', '" + itbHealTotal + "', '" + itbHealDC + "','" + itbHealNet + "')";
+                    iConnect.Insert(isqlHealthRecord);
 
-                DataTable idtHealRecordID;
-                string isqlHealRecordID = "SELECT healrecord_Id FROM `tb_healrecord` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1";
-                idtHealRecordID = iConnect.SelectByCommand(isqlHealRecordID);
-                lb_HealRecordID.Text = idtHealRecordID.Rows[0].Field<string>(0);
-                MessageBox.Show("สร้างเลขที่ทำการรักษาแล้ว");
+                    DataTable idtHealRecordID;
+                    string isqlHealRecordID = "SELECT healrecord_Id FROM `tb_healrecord` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1";
+                    idtHealRecordID = iConnect.SelectByCommand(isqlHealRecordID);
+                    lb_HealRecordID.Text = idtHealRecordID.Rows[0].Field<string>(0);
+                    MessageBox.Show("สร้างเลขที่ทำการรักษาแล้ว");
                 }
             }
-            else if ((ilbHealRecordID != null) && (ilbHealRecordID !="") && (itxbPetID != null) && (itxbPetID != ""))
+            else if ((ilbHealRecordID != null) && (ilbHealRecordID != "") && (itxbPetID != null) && (itxbPetID != ""))
             {
-                string isqlHealRecordUpdate = "UPDATE `tb_healrecord` SET `Em_ID`='"+icbEmID+"', `HealRecord_Symptom`='"+itxbHealRecordSymptom+"', `HealRecord_Remark`='"+itxbHealRecordRemark+"', `HealRecord_Weight`='"+itxbWeight+"', `HealRecord_Temp`='"+itxbTemp+"',HealRecord_HR='"+itxbHR+"',HealRecord_RR='"+itxbRR+"',HealRecord_Date = '"+idtpHealRecordDate+"', `HealRecord_Total`='"+itbHealTotal+"', `HealRecord_DC`='"+itbHealDC+"', `HealRecord_Net`='"+itbHealNet+"' WHERE `HealRecord_ID`='"+ilbHealRecordID+"'";
+                string isqlHealRecordUpdate = "UPDATE `tb_healrecord` SET `Em_ID`='" + icbEmID + "', `HealRecord_Symptom`='" + itxbHealRecordSymptom + "', `HealRecord_Remark`='" + itxbHealRecordRemark + "', `HealRecord_Weight`='" + itxbWeight + "', `HealRecord_Temp`='" + itxbTemp + "',HealRecord_HR='" + itxbHR + "',HealRecord_RR='" + itxbRR + "',HealRecord_Date = '" + idtpHealRecordDate + "', `HealRecord_Total`='" + itbHealTotal + "', `HealRecord_DC`='" + itbHealDC + "', `HealRecord_Net`='" + itbHealNet + "' WHERE `HealRecord_ID`='" + ilbHealRecordID + "'";
                 iConnect.Insert(isqlHealRecordUpdate);
                 MessageBox.Show("ทำการบันทึกข้อมูลแล้ว");
             }
-            else {
+            else
+            {
                 epCheck.SetError(txb_PetID, "ไม่พบรหัสสัตว์");
             }
             loadHealRecord();
@@ -323,18 +320,19 @@ namespace Petshop
                     {
                         string isqlServiceRecord = "INSERT INTO `tb_servicerecord` (`HealRecord_ID`, `Service_ID`, `Service_Amt`) VALUES ('" + ilbHealRecordID + "', '" + icbServiceID + "', '" + ilbPrice + "')";
                         iConnect.Insert(isqlServiceRecord);
-                        
+
                     }
                 }
             }
-            else {
+            else
+            {
                 AddHealRecord();
             }
             loadHealRecord();
             loadServiceRecord();
             loadMediRecord();
         }
-        
+
 
         private void bt_BuyMedi_Click(object sender, EventArgs e)
         {
@@ -345,7 +343,7 @@ namespace Petshop
         {
             string itxbMedi = cb_Medi.SelectedValue.ToString();
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
-               
+
             string inUDMediUnit = nUDMediUnit.Text.Trim();
 
             if ((ilbHealRecordID != null) && (ilbHealRecordID != ""))
@@ -371,22 +369,22 @@ namespace Petshop
                     }
                     else
                     {
-                        if ((iMediUnitAmt > iUnit)||(iMediUnitAmt == iUnit))
+                        if ((iMediUnitAmt > iUnit) || (iMediUnitAmt == iUnit))
                         {
                             iResult = 1;
                             if ((iMediUnitAmt < iMediUnitOrder) || (iMediUnitAmt == iMediUnitOrder))
                             {
-                                MessageBox.Show("สินค้า " + iMediName + " ใกล้หมด เหลือเพียง "+iMediUnitAmt+"");
+                                MessageBox.Show("สินค้า " + iMediName + " ใกล้หมด เหลือเพียง " + iMediUnitAmt + "");
                             }
                             string isqlreStock = "UPDATE `tb_medicine` SET `Medi_Unit_Amt`= Medi_Unit_Amt -" + iUnit + " WHERE `Medi_ID`='" + itxbMedi + "'";
                             iConnect.Insert(isqlreStock);
                         }
-                        else 
+                        else
                         {
-                            MessageBox.Show("สินค้า "+iMediName+" มีไม่เพียงพอ เหลือเพียง "+iMediUnitAmt+"");
+                            MessageBox.Show("สินค้า " + iMediName + " มีไม่เพียงพอ เหลือเพียง " + iMediUnitAmt + "");
                         }
                     }
-                    
+
 
                     if (iResult == 1)
                     {
@@ -395,26 +393,27 @@ namespace Petshop
                         idtMediRecordCheck = iConnect.SelectByCommand(isqlMediRecordCheck);
                         if ((idtMediRecordCheck != null) && (idtMediRecordCheck.Rows.Count > 0))
                         {
-                            string isqlMediRecordUpdate = "UPDATE `tb_medirecord` SET `MediSale_Unit`= MediSale_Unit+" + iUnit + " ,MediRecord_Total=MediRecord_Total+" + iMediRecord_total + " "+
+                            string isqlMediRecordUpdate = "UPDATE `tb_medirecord` SET `MediSale_Unit`= MediSale_Unit+" + iUnit + " ,MediRecord_Total=MediRecord_Total+" + iMediRecord_total + " " +
                             "WHERE `HealRecord_ID`='" + ilbHealRecordID + "' and`Medi_ID`='" + itxbMedi + "'";
                             iConnect.Insert(isqlMediRecordUpdate);
                         }
                         else
                         {
-                            string isqlMediRecord = "INSERT INTO `tb_medirecord` (`HealRecord_ID`, `Medi_ID`, `MediSale_Unit`, `Medi_sale`, `MediRecord_Total`) "+
+                            string isqlMediRecord = "INSERT INTO `tb_medirecord` (`HealRecord_ID`, `Medi_ID`, `MediSale_Unit`, `Medi_sale`, `MediRecord_Total`) " +
                                 "VALUES ('" + ilbHealRecordID + "', '" + itxbMedi + "', '" + inUDMediUnit + "', '" + iPrice + "', '" + iMediRecord_total + "')";
                             iConnect.Insert(isqlMediRecord);
                         }
                         nUDMediUnit.Text = "1";
                     }
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("ไม่พบข้อมูล รหัสยา");
                 }
             }
-            else {
+            else
+            {
                 AddHealRecord();
                 Buy_Medi();
             }
@@ -423,15 +422,18 @@ namespace Petshop
         private void lb_HealRecordID_TextChanged(object sender, EventArgs e)
         {
             LoadData();
-            if((lb_HealRecordID.Text !=null)&&(lb_HealRecordID.Text !="")){
+            if ((lb_HealRecordID.Text != null) && (lb_HealRecordID.Text != ""))
+            {
                 tabControlServiceMedi.Enabled = true;
+                bt_PrintBill.Enabled = true;
+                bt_PrintDate.Enabled = true;
             }
         }
         private void txb_PetID_TextChanged(object sender, EventArgs e)
         {
             LoadData();
         }
-     
+
         private void bt_Print_Click(object sender, EventArgs e)
         {
             AddHealRecord();
@@ -446,7 +448,7 @@ namespace Petshop
             FrmMM31 iFrmMM341 = new FrmMM31();
             iFrmMM341.MdiParent = MainForm.ActiveForm;
             iFrmMM341.txb_ReferID.Text = lb_HealRecordID.Text;
-            iFrmMM341.Show(); 
+            iFrmMM341.Show();
         }
 
         private void bt_PrintDate_Click(object sender, EventArgs e)
@@ -469,7 +471,7 @@ namespace Petshop
         {
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
             string iServiceID = lb_ServiceID.Text.Trim();
-            
+
             DialogResult iConfirmResult = MessageBox.Show("ต้องการยกเลิกบริการ ?", "ยกเลิกบริการ..", MessageBoxButtons.YesNo);
             if (iConfirmResult == DialogResult.Yes)
             {
@@ -493,24 +495,24 @@ namespace Petshop
 
                 UInt64 iStock = idtCheckMedi.Rows[0].Field<UInt64>(10);
 
-                 int iResult = 0;
-                    if (iStock == 0)
-                    {
-                        iResult = 1;
-                    }
-                    else
-                    {
-                        iResult = 1;
-                        string isqlreStock = "UPDATE `tb_medicine` SET `Medi_Unit_Amt`= Medi_Unit_Amt +" + iMediU + " WHERE `Medi_ID`='" + iMediID + "'";
-                        iConnect.Insert(isqlreStock);
-                    }
-                    if (iResult == 1)
-                    {
-                        string isqlDelServiceRecord = "DELETE FROM `tb_medirecord` WHERE `HealRecord_ID`='" + ilbHealRecordID + "' and`Medi_ID`='" + iMediID + "'";
-                        iConnect.Insert(isqlDelServiceRecord);
-                        lb_MediID.Text = "";
-                        lb_MediU.Text = "";
-                    }
+                int iResult = 0;
+                if (iStock == 0)
+                {
+                    iResult = 1;
+                }
+                else
+                {
+                    iResult = 1;
+                    string isqlreStock = "UPDATE `tb_medicine` SET `Medi_Unit_Amt`= Medi_Unit_Amt +" + iMediU + " WHERE `Medi_ID`='" + iMediID + "'";
+                    iConnect.Insert(isqlreStock);
+                }
+                if (iResult == 1)
+                {
+                    string isqlDelServiceRecord = "DELETE FROM `tb_medirecord` WHERE `HealRecord_ID`='" + ilbHealRecordID + "' and`Medi_ID`='" + iMediID + "'";
+                    iConnect.Insert(isqlDelServiceRecord);
+                    lb_MediID.Text = "";
+                    lb_MediU.Text = "";
+                }
             }
             loadMediRecord();
         }
@@ -544,18 +546,19 @@ namespace Petshop
         {
             decimal iMediAmt = 0;
             decimal iServiceAmt = 0;
-            if((lb_ServiceAmt.Text !=null)&&(lb_ServiceAmt.Text !="")){
-                
+            if ((lb_ServiceAmt.Text != null) && (lb_ServiceAmt.Text != ""))
+            {
+
                 iServiceAmt = Convert.ToDecimal(lb_ServiceAmt.Text);
             }
-            if ((lb_MediAmt.Text != null)&&(lb_MediAmt.Text != ""))
+            if ((lb_MediAmt.Text != null) && (lb_MediAmt.Text != ""))
             {
                 iMediAmt = Convert.ToDecimal(lb_MediAmt.Text);
             }
             decimal iTotal = iMediAmt + iServiceAmt;
             txb_HealRecordTotal.Text = iTotal.ToString();
 
-            
+
             decimal iDC = 0;
             decimal iNet = 0;
             if ((txb_HealRecordTotal.Text != null) && (txb_HealRecordTotal.Text != ""))
@@ -579,5 +582,15 @@ namespace Petshop
         {
             Calcuator();
         }
+
+        private void FrmMM22_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                MessageBox.Show("F555555");
+
+            }
+        }
+        
     }
 }

@@ -37,14 +37,9 @@ namespace Petshop
             loadProductSaleDetail();
             Calculate();
         }
-
+        decimal iProductAmt = 0;
         private void Calculate()
         {
-            decimal iProductAmt = 0;
-            if ((lb_PriceAmt.Text != null) && (lb_PriceAmt.Text != ""))
-            {
-                iProductAmt = Convert.ToDecimal(lb_PriceAmt.Text);
-            }
             txb_ProductSaleTotal.Text = iProductAmt.ToString();
             decimal iTotal = 0;
             if ((txb_ProductSaleTotal.Text != null) && (txb_ProductSaleTotal.Text != ""))
@@ -64,11 +59,9 @@ namespace Petshop
             iNet = iTotal - iDC;
             txb_ProductSaleNet.Text = iNet.ToString();
         }
-
-
+       
         private void loadProductSaleDetail()
         {
-            
             string ilbproductSaleID = lb_ProductSaleID.Text.Trim();
             string isqlProductSaleDetail = "SELECT tb_productsaledetail.*,tb_Product.Product_Des  FROM tb_Product,tb_productsaledetail "+
             "WHERE (tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' AND tb_Product.Product_ID = tb_productsaledetail.Product_ID)";
@@ -79,9 +72,21 @@ namespace Petshop
             DataTable idtSumProduct;
             string isqlSumProduct = "SELECT sum(ProductSale_Total) as ProductSaleTotal FROM tb_productsaledetail WHERE tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' ";
             idtSumProduct = iConnect.SelectByCommand(isqlSumProduct);
-            lb_PriceAmt.DataBindings.Clear();
-            Binding b = new Binding("Text", idtSumProduct, "ProductSaleTotal");
-            lb_PriceAmt.DataBindings.Add(b);
+
+            foreach (DataRow row in idtSumProduct.Rows)
+            {
+                object value = row["ProductSaleTotal"];
+                if (value == DBNull.Value)
+                {
+                }
+                else
+                {
+                    iProductAmt = idtSumProduct.Rows[0].Field<decimal>(0);
+                }
+            }
+          //  lb_PriceAmt.DataBindings.Clear();
+          //  Binding b = new Binding("Text", idtSumProduct, "ProductSaleTotal");
+          //  lb_PriceAmt.DataBindings.Add(b);
         }
 
         private void loadEmployee()
@@ -97,9 +102,9 @@ namespace Petshop
             string ilbProductSaleID = lb_ProductSaleID.Text.Trim();
             string icb_Em = cb_Em.SelectedValue.ToString();
             string itxbRemark = txb_Remark.Text.Trim();
-            string itxbTotal = txb_ProductSaleTotal.Text.Trim();
-            string itxbDC = txb_ProductSaleDC.Text.Trim();
-            string itxbNet = txb_ProductSaleNet.Text.Trim();
+            string itxbProductSaletotal = txb_ProductSaleTotal.Text.Trim();
+            string itxbProductSaleDC = txb_ProductSaleDC.Text.Trim();
+            string itxbProductSaleNet = txb_ProductSaleNet.Text.Trim();
 
             string ilbyear = lbyear.Text.Trim();
             System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
@@ -112,7 +117,7 @@ namespace Petshop
                 {
                     string isqlProductSale = "INSERT INTO `tb_productsale` (`ProductSale_ID`, `Em_ID`, `ProductSale_Date`, `Productsale_Total`, `Productsale_DC`, `Productsale_Net`, `Productsale_Remark`) "+
                         "VALUES (CONCAT('" + ilbyear + "99', LPAD(  IFNULL( (SELECT SUBSTR(`ProductSale_ID`, 5) FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  "+
-                        "ORDER BY `ProductSale_ID` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) , '" + icb_Em + "', '" + idTP_ProductSaleDate + "', '" + itxbTotal + "', '" + itxbDC + "', '" + itxbNet + "', '" + itxbRemark + "')";
+                        "ORDER BY `ProductSale_ID` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) , '" + icb_Em + "', '" + idTP_ProductSaleDate + "', '" + itxbProductSaletotal + "', '" + itxbProductSaleDC + "', '" + itxbProductSaleNet + "', '" + itxbRemark + "')";
                     iConnect.Insert(isqlProductSale);
 
                     DataTable idtProductSaleID; //เรียกไอดีเดิมขึ้นมาโชว์
@@ -125,10 +130,9 @@ namespace Petshop
             else
             {
                 //ส่วนอัพเดต
-                string isqlUpdate = "";
+                string isqlUpdate = "UPDATE `petshop`.`tb_productsale` SET `Em_ID`='"+icb_Em+"', `Productsale_Total`='"+itxbProductSaletotal+"', `Productsale_DC`='"+itxbProductSaleDC+"', `Productsale_Net`='"+itxbProductSaleNet+"', `Productsale_Remark`='"+itxbRemark+"' WHERE `ProductSale_ID`='"+ilbProductSaleID+"'";
                 //iConnect.Insert(isqlUpdate);
-                MessageBox.Show("Update");
-
+                MessageBox.Show("บันทึกข้อมูลแล้ว");
             }
            
         }
@@ -225,6 +229,7 @@ namespace Petshop
 
         private void bt_Print_Click(object sender, EventArgs e)
         {
+            AddRecordProductSale();
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
                 if (form.GetType() == typeof(FrmMM32))
@@ -273,6 +278,7 @@ namespace Petshop
                  {
                      string isqlDelProductSale = "DELETE FROM `tb_ProductSaledetail` WHERE `ProductSale_ID`='" + ilbProductSaleID + "' and `Product_ID`='" + ilbProductID + "'";
                      iConnect.Insert(isqlDelProductSale);
+                     loadProductSaleDetail();
                      lb_ProductID.Text = "";
                      lb_ProductUnit.Text = "";
                  }
@@ -291,6 +297,25 @@ namespace Petshop
         private void txb_ProductSaleDC_TextChanged(object sender, EventArgs e)
         {
             Calculate();
+        }
+
+        private void bt_RecordBuy_Click(object sender, EventArgs e)
+        {
+            AddRecordProductSale();
+        }
+
+        private void lb_ProductSaleID_TextChanged(object sender, EventArgs e)
+        {
+            if ((lb_ProductSaleID.Text != null) && (lb_ProductSaleID.Text != ""))
+            {
+                txb_ProductID.Enabled = true;
+                nUD_ProductUnit.Enabled = true;
+                bt_AddProductSale.Enabled = true;
+                bt_CancelBuy.Enabled = true;
+                bt_Print.Enabled = true;
+               // txb_ProductID.Enabled = true;
+                bt_RecordBuy.Enabled = false;
+            }
         }
     }
 }

@@ -542,6 +542,7 @@
             // 
             // bt_PrintDate
             // 
+            this.bt_PrintDate.Enabled = false;
             this.bt_PrintDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_PrintDate.Location = new System.Drawing.Point(755, 277);
             this.bt_PrintDate.Margin = new System.Windows.Forms.Padding(4);
@@ -640,6 +641,7 @@
             // 
             // bt_PrintBill
             // 
+            this.bt_PrintBill.Enabled = false;
             this.bt_PrintBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_PrintBill.Location = new System.Drawing.Point(863, 277);
             this.bt_PrintBill.Margin = new System.Windows.Forms.Padding(4);
@@ -974,6 +976,7 @@
             this.Text = "บันทึกประจำวัน หัตถการและบริการ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM21_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMM22_KeyDown);
             this.tabControlServiceMedi.ResumeLayout(false);
             this.tPService.ResumeLayout(false);
             this.tPService.PerformLayout();

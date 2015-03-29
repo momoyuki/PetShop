@@ -47,8 +47,14 @@ namespace Petshop
             {
                 iConnect.Insert(isqlUnit);
                 loadData();
-
+                clearTxb();
             }
+        }
+
+        private void clearTxb()
+        {
+            txb_UnitID.Clear();
+            txb_UnitName.Clear();
         }
 
         private void bt_EditUnit_Click(object sender, EventArgs e)
@@ -67,6 +73,7 @@ namespace Petshop
             {
                 iConnect.Insert(isqlUnit);
                 loadData();
+                clearTxb();
             }
         }
 

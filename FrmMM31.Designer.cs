@@ -45,6 +45,7 @@
             this.lb_ReferID = new System.Windows.Forms.Label();
             this.Lb_BillID = new System.Windows.Forms.Label();
             this.TabControlServiceMediBill = new System.Windows.Forms.TabControl();
+            this.tp_BillDetail = new System.Windows.Forms.TabPage();
             this.tp_Service = new System.Windows.Forms.TabPage();
             this.CheckBoxService = new System.Windows.Forms.CheckBox();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
@@ -76,6 +77,7 @@
             // 
             // bt_Print
             // 
+            this.bt_Print.Enabled = false;
             this.bt_Print.Location = new System.Drawing.Point(892, 49);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Print.Name = "bt_Print";
@@ -229,16 +231,29 @@
             this.Lb_BillID.Name = "Lb_BillID";
             this.Lb_BillID.Size = new System.Drawing.Size(0, 18);
             this.Lb_BillID.TabIndex = 135;
+            this.Lb_BillID.TextChanged += new System.EventHandler(this.Lb_BillID_TextChanged);
             // 
             // TabControlServiceMediBill
             // 
             this.TabControlServiceMediBill.Controls.Add(this.tp_Service);
             this.TabControlServiceMediBill.Controls.Add(this.tp_Medi);
+            this.TabControlServiceMediBill.Controls.Add(this.tp_BillDetail);
+            this.TabControlServiceMediBill.Enabled = false;
             this.TabControlServiceMediBill.Location = new System.Drawing.Point(12, 135);
             this.TabControlServiceMediBill.Name = "TabControlServiceMediBill";
             this.TabControlServiceMediBill.SelectedIndex = 0;
             this.TabControlServiceMediBill.Size = new System.Drawing.Size(984, 525);
             this.TabControlServiceMediBill.TabIndex = 136;
+            // 
+            // tp_BillDetail
+            // 
+            this.tp_BillDetail.Location = new System.Drawing.Point(4, 27);
+            this.tp_BillDetail.Name = "tp_BillDetail";
+            this.tp_BillDetail.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_BillDetail.Size = new System.Drawing.Size(976, 494);
+            this.tp_BillDetail.TabIndex = 3;
+            this.tp_BillDetail.Text = "ใบเสร็จ";
+            this.tp_BillDetail.UseVisualStyleBackColor = true;
             // 
             // tp_Service
             // 
@@ -548,5 +563,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Amt;
         private System.Windows.Forms.Button bt_AddBill;
         private System.Windows.Forms.Label lb_ServiceAmtBill;
+        private System.Windows.Forms.TabPage tp_BillDetail;
     }
 }

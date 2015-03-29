@@ -71,17 +71,19 @@ namespace Petshop
         }
         private void bt_Print_Click(object sender, EventArgs e)
         {
+            BillAdd();
+            AddProductBill();
             if ((Lb_BillID.Text != null) && (Lb_BillID.Text != ""))
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    if (form.GetType() == typeof(FrmBillSerMe))
+                    if (form.GetType() == typeof(FrmBillProd))
                     {
                         form.Activate();
                         return;
                     }
                 }
-                FrmBillSerMe iFrmBill = new FrmBillSerMe();
+                FrmBillProd iFrmBill = new FrmBillProd();
                 iFrmBill.MdiParent = MainForm.ActiveForm;
                 iFrmBill.Show();
                 iFrmBill.lb_BillID.Text = Lb_BillID.Text.Trim();

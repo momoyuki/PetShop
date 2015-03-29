@@ -68,6 +68,7 @@
             // 
             // nUD_ProductUnit
             // 
+            this.nUD_ProductUnit.Enabled = false;
             this.nUD_ProductUnit.Location = new System.Drawing.Point(561, 160);
             this.nUD_ProductUnit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nUD_ProductUnit.Name = "nUD_ProductUnit";
@@ -92,6 +93,7 @@
             // 
             // bt_CancelBuy
             // 
+            this.bt_CancelBuy.Enabled = false;
             this.bt_CancelBuy.Location = new System.Drawing.Point(883, 155);
             this.bt_CancelBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_CancelBuy.Name = "bt_CancelBuy";
@@ -103,6 +105,7 @@
             // 
             // bt_Print
             // 
+            this.bt_Print.Enabled = false;
             this.bt_Print.Location = new System.Drawing.Point(883, 55);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Print.Name = "bt_Print";
@@ -275,7 +278,8 @@
             // 
             // bt_AddProductSale
             // 
-            this.bt_AddProductSale.Location = new System.Drawing.Point(763, 154);
+            this.bt_AddProductSale.Enabled = false;
+            this.bt_AddProductSale.Location = new System.Drawing.Point(763, 155);
             this.bt_AddProductSale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_AddProductSale.Name = "bt_AddProductSale";
             this.bt_AddProductSale.Size = new System.Drawing.Size(112, 37);
@@ -288,6 +292,7 @@
             // 
             this.txb_ProductID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txb_ProductID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txb_ProductID.Enabled = false;
             this.txb_ProductID.Location = new System.Drawing.Point(161, 160);
             this.txb_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_ProductID.Name = "txb_ProductID";
@@ -328,6 +333,7 @@
             this.ccProduct_Sale,
             this.ccProductSale_Unit,
             this.ccProductSale_Total});
+            this.dGV_Product.Enabled = false;
             this.dGV_Product.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dGV_Product.Location = new System.Drawing.Point(13, 202);
             this.dGV_Product.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -362,7 +368,7 @@
             // lb_ProductID
             // 
             this.lb_ProductID.AutoSize = true;
-            this.lb_ProductID.Location = new System.Drawing.Point(640, 127);
+            this.lb_ProductID.Location = new System.Drawing.Point(640, 128);
             this.lb_ProductID.Name = "lb_ProductID";
             this.lb_ProductID.Size = new System.Drawing.Size(91, 18);
             this.lb_ProductID.TabIndex = 134;
@@ -376,6 +382,7 @@
             this.lb_ProductSaleID.Name = "lb_ProductSaleID";
             this.lb_ProductSaleID.Size = new System.Drawing.Size(0, 18);
             this.lb_ProductSaleID.TabIndex = 135;
+            this.lb_ProductSaleID.TextChanged += new System.EventHandler(this.lb_ProductSaleID_TextChanged);
             // 
             // bt_RecordBuy
             // 
@@ -386,6 +393,7 @@
             this.bt_RecordBuy.TabIndex = 136;
             this.bt_RecordBuy.Text = "บันทึก";
             this.bt_RecordBuy.UseVisualStyleBackColor = true;
+            this.bt_RecordBuy.Click += new System.EventHandler(this.bt_RecordBuy_Click);
             // 
             // lb_ProductUnit
             // 
@@ -405,6 +413,7 @@
             this.lb_PriceAmt.Size = new System.Drawing.Size(83, 18);
             this.lb_PriceAmt.TabIndex = 138;
             this.lb_PriceAmt.Text = "lb_PriceAmt";
+            this.lb_PriceAmt.Visible = false;
             // 
             // FrmMM24
             // 

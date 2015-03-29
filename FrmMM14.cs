@@ -72,19 +72,34 @@ namespace Petshop
             {
                 iConnect.Insert(isqlBreed);
                 LoadBreed();
+                clearTxb();
             }
         }
 
         private void bt_AddType_Click(object sender, EventArgs e)
         {
+            AddType();
+        }
+
+        private void AddType()
+        {
             string itxbType = txb_TypeName.Text.Trim();
-            string isqlType = "INSERT INTO `petshop`.`tb_pettype` (`PetType_ID`, `PetType_Des`) VALUES (NULL, '"+itxbType+"')";
+            string isqlType = "INSERT INTO `petshop`.`tb_pettype` (`PetType_ID`, `PetType_Des`) VALUES (NULL, '" + itxbType + "')";
             DialogResult iConfirmResult = MessageBox.Show("เพิ่มประเภท " + itxbType + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
             if (iConfirmResult == DialogResult.Yes)
             {
                 iConnect.Insert(isqlType);
                 LoadType();
+                clearTxb();
             }
+        }
+
+        private void clearTxb()
+        {
+            txb_BreedID.Clear();
+            txb_BreedName.Clear();
+            txb_TypeID.Clear();
+            txb_TypeName.Clear();
         }
 
         private void dGV_Breed_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -123,19 +138,26 @@ namespace Petshop
             {
                 iConnect.Insert(isqlBreed);
                 LoadBreed();
+                clearTxb();
             }
         }
 
         private void bt_EditType_Click(object sender, EventArgs e)
         {
+            EditType();
+        }
+
+        private void EditType()
+        {
             string itxbTypeID = txb_TypeID.Text.Trim();
             string itxbType = txb_TypeName.Text.Trim();
-            string isqlType = "UPDATE `petshop`.`tb_pettype` SET `PetType_Des` = '"+itxbType+"' WHERE `tb_pettype`.`PetType_ID` = "+itxbTypeID+"";
+            string isqlType = "UPDATE `petshop`.`tb_pettype` SET `PetType_Des` = '" + itxbType + "' WHERE `tb_pettype`.`PetType_ID` = " + itxbTypeID + "";
             DialogResult iConfirmResult = MessageBox.Show("แก้ไขประเภท " + itxbType + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
             if (iConfirmResult == DialogResult.Yes)
             {
                 iConnect.Insert(isqlType);
                 LoadType();
+                clearTxb();
             }
         }
 
@@ -148,7 +170,7 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if ((txb_BreedID.Text == "") || (txb_BreedID.Text == null))
+                if ((txb_BreedID.Text == "") && (txb_BreedID.Text == null))
                 {
                     bt_AddBreed.Select();
                 }
@@ -164,7 +186,7 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if ((txb_TypeID.Text == "") || (txb_TypeID.Text == null))
+                if((txb_TypeID.Text !=null)&&(txb_TypeID.Text !=""))
                 {
                     bt_AddType.Select();
                 }
@@ -172,8 +194,8 @@ namespace Petshop
                 {
                     bt_EditType.Select();
                 }
-            }
-
+            } 
+            
         }
     }
 }
