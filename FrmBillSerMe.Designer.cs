@@ -36,7 +36,7 @@
             // 
             // Bt_Report
             // 
-            this.Bt_Report.Location = new System.Drawing.Point(263, 13);
+            this.Bt_Report.Location = new System.Drawing.Point(264, 13);
             this.Bt_Report.Margin = new System.Windows.Forms.Padding(4);
             this.Bt_Report.Name = "Bt_Report";
             this.Bt_Report.Size = new System.Drawing.Size(100, 32);
@@ -48,7 +48,7 @@
             // lb_Bill
             // 
             this.lb_Bill.AutoSize = true;
-            this.lb_Bill.Location = new System.Drawing.Point(21, 20);
+            this.lb_Bill.Location = new System.Drawing.Point(22, 20);
             this.lb_Bill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Bill.Name = "lb_Bill";
             this.lb_Bill.Size = new System.Drawing.Size(86, 18);
@@ -70,12 +70,12 @@
             // lb_BillID
             // 
             this.lb_BillID.AutoSize = true;
-            this.lb_BillID.Location = new System.Drawing.Point(115, 20);
+            this.lb_BillID.Location = new System.Drawing.Point(116, 20);
             this.lb_BillID.Name = "lb_BillID";
             this.lb_BillID.Size = new System.Drawing.Size(0, 18);
             this.lb_BillID.TabIndex = 4;
             // 
-            // FrmBillreview
+            // FrmBillSerMe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,7 +86,7 @@
             this.Controls.Add(this.Bt_Report);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmBillreview";
+            this.Name = "FrmBillSerMe";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBillreview_Load);

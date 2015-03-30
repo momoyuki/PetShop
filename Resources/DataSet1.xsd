@@ -52,6 +52,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DT_HealDate" msprop:Generator_TableClassName="DT_HealDateDataTable" msprop:Generator_TableVarName="tableDT_HealDate" msprop:Generator_RowChangedName="DT_HealDateRowChanged" msprop:Generator_TablePropName="DT_HealDate" msprop:Generator_RowDeletingName="DT_HealDateRowDeleting" msprop:Generator_RowChangingName="DT_HealDateRowChanging" msprop:Generator_RowEvHandlerName="DT_HealDateRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_HealDateRowDeleted" msprop:Generator_RowClassName="DT_HealDateRow" msprop:Generator_UserTableName="DT_HealDate" msprop:Generator_RowEvArgName="DT_HealDateRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Pet_ID" msprop:Generator_ColumnVarNameInTable="columnPet_ID" msprop:Generator_ColumnPropNameInRow="Pet_ID" msprop:Generator_ColumnPropNameInTable="Pet_IDColumn" msprop:Generator_UserColumnName="Pet_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Pet_Name" msprop:Generator_ColumnVarNameInTable="columnPet_Name" msprop:Generator_ColumnPropNameInRow="Pet_Name" msprop:Generator_ColumnPropNameInTable="Pet_NameColumn" msprop:Generator_UserColumnName="Pet_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Owner_Name" msprop:Generator_ColumnVarNameInTable="columnOwner_Name" msprop:Generator_ColumnPropNameInRow="Owner_Name" msprop:Generator_ColumnPropNameInTable="Owner_NameColumn" msprop:Generator_UserColumnName="Owner_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Owner_Tel" msprop:Generator_ColumnVarNameInTable="columnOwner_Tel" msprop:Generator_ColumnPropNameInRow="Owner_Tel" msprop:Generator_ColumnPropNameInTable="Owner_TelColumn" msprop:Generator_UserColumnName="Owner_Tel" type="xs:string" minOccurs="0" />
+              <xs:element name="Service_Des" msprop:Generator_ColumnVarNameInTable="columnService_Des" msprop:Generator_ColumnPropNameInRow="Service_Des" msprop:Generator_ColumnPropNameInTable="Service_DesColumn" msprop:Generator_UserColumnName="Service_Des" type="xs:string" minOccurs="0" />
+              <xs:element name="HealDate_Day" msprop:Generator_ColumnVarNameInTable="columnHealDate_Day" msprop:Generator_ColumnPropNameInRow="HealDate_Day" msprop:Generator_ColumnPropNameInTable="HealDate_DayColumn" msprop:Generator_UserColumnName="HealDate_Day" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HealRecord_ID" msprop:Generator_ColumnVarNameInTable="columnHealRecord_ID" msprop:Generator_ColumnPropNameInRow="HealRecord_ID" msprop:Generator_ColumnPropNameInTable="HealRecord_IDColumn" msprop:Generator_UserColumnName="HealRecord_ID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

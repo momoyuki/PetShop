@@ -89,6 +89,7 @@
             this.txb_BillDC.Size = new System.Drawing.Size(59, 26);
             this.txb_BillDC.TabIndex = 148;
             this.txb_BillDC.Text = "0.00";
+            this.txb_BillDC.TextChanged += new System.EventHandler(this.txb_BillDC_TextChanged);
             // 
             // lb_ProductSaleDC
             // 
@@ -129,6 +130,7 @@
             this.txb_BillTotal.Size = new System.Drawing.Size(132, 26);
             this.txb_BillTotal.TabIndex = 144;
             this.txb_BillTotal.Text = "0.00";
+            this.txb_BillTotal.TextChanged += new System.EventHandler(this.txb_BillTotal_TextChanged);
             // 
             // lb_ProductSaleAmt
             // 

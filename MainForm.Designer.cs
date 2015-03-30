@@ -40,6 +40,7 @@
             this.ตงคาหนวยงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ทำการรกษาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.จดการสมาชกToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ตดตามการรกษาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ทำการรกษายาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.รายงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,6 +137,7 @@
             // 
             this.ทำการรกษาToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.จดการสมาชกToolStripMenuItem1,
+            this.ตดตามการรกษาToolStripMenuItem,
             this.toolStripSeparator3,
             this.ทำการรกษายาToolStripMenuItem});
             this.ทำการรกษาToolStripMenuItem.Name = "ทำการรกษาToolStripMenuItem";
@@ -145,20 +147,27 @@
             // จดการสมาชกToolStripMenuItem1
             // 
             this.จดการสมาชกToolStripMenuItem1.Name = "จดการสมาชกToolStripMenuItem1";
-            this.จดการสมาชกToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.จดการสมาชกToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
             this.จดการสมาชกToolStripMenuItem1.Text = "&1.ทะเบียนสมาชิก";
             this.จดการสมาชกToolStripMenuItem1.Click += new System.EventHandler(this.จดการสมาชกToolStripMenuItem1_Click);
+            // 
+            // ตดตามการรกษาToolStripMenuItem
+            // 
+            this.ตดตามการรกษาToolStripMenuItem.Name = "ตดตามการรกษาToolStripMenuItem";
+            this.ตดตามการรกษาToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.ตดตามการรกษาToolStripMenuItem.Text = "&2.ติดตามการรักษา";
+            this.ตดตามการรกษาToolStripMenuItem.Click += new System.EventHandler(this.ตดตามการรกษาToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(151, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(157, 6);
             // 
             // ทำการรกษายาToolStripMenuItem
             // 
             this.ทำการรกษายาToolStripMenuItem.Name = "ทำการรกษายาToolStripMenuItem";
-            this.ทำการรกษายาToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.ทำการรกษายาToolStripMenuItem.Text = "&2.ขายสินค้า";
+            this.ทำการรกษายาToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.ทำการรกษายาToolStripMenuItem.Text = "&3.ขายสินค้า";
             this.ทำการรกษายาToolStripMenuItem.Click += new System.EventHandler(this.ทำการรกษายาToolStripMenuItem_Click);
             // 
             // รายงานToolStripMenuItem
@@ -227,7 +236,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "ระบบติดตามการรักษาสัตว์ กรณีศึกษา โรงพยาบาลน่านปิยะมิตร";
-            this.TransparencyKey = System.Drawing.SystemColors.ActiveCaption;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -261,6 +269,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem ตดตามการรกษาToolStripMenuItem;
     }
 }
 

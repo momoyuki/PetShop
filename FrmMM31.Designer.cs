@@ -45,7 +45,6 @@
             this.lb_ReferID = new System.Windows.Forms.Label();
             this.Lb_BillID = new System.Windows.Forms.Label();
             this.TabControlServiceMediBill = new System.Windows.Forms.TabControl();
-            this.tp_BillDetail = new System.Windows.Forms.TabPage();
             this.tp_Service = new System.Windows.Forms.TabPage();
             this.CheckBoxService = new System.Windows.Forms.CheckBox();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
@@ -68,6 +67,7 @@
             this.Lb_CoBill = new System.Windows.Forms.Label();
             this.bt_AddBill = new System.Windows.Forms.Button();
             this.lb_ServiceAmtBill = new System.Windows.Forms.Label();
+            this.lb_Remark = new System.Windows.Forms.Label();
             this.TabControlServiceMediBill.SuspendLayout();
             this.tp_Service.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -237,23 +237,12 @@
             // 
             this.TabControlServiceMediBill.Controls.Add(this.tp_Service);
             this.TabControlServiceMediBill.Controls.Add(this.tp_Medi);
-            this.TabControlServiceMediBill.Controls.Add(this.tp_BillDetail);
             this.TabControlServiceMediBill.Enabled = false;
             this.TabControlServiceMediBill.Location = new System.Drawing.Point(12, 135);
             this.TabControlServiceMediBill.Name = "TabControlServiceMediBill";
             this.TabControlServiceMediBill.SelectedIndex = 0;
             this.TabControlServiceMediBill.Size = new System.Drawing.Size(984, 525);
             this.TabControlServiceMediBill.TabIndex = 136;
-            // 
-            // tp_BillDetail
-            // 
-            this.tp_BillDetail.Location = new System.Drawing.Point(4, 27);
-            this.tp_BillDetail.Name = "tp_BillDetail";
-            this.tp_BillDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_BillDetail.Size = new System.Drawing.Size(976, 494);
-            this.tp_BillDetail.TabIndex = 3;
-            this.tp_BillDetail.Text = "ใบเสร็จ";
-            this.tp_BillDetail.UseVisualStyleBackColor = true;
             // 
             // tp_Service
             // 
@@ -478,11 +467,21 @@
             this.lb_ServiceAmtBill.Size = new System.Drawing.Size(0, 18);
             this.lb_ServiceAmtBill.TabIndex = 140;
             // 
+            // lb_Remark
+            // 
+            this.lb_Remark.AutoSize = true;
+            this.lb_Remark.Location = new System.Drawing.Point(24, 106);
+            this.lb_Remark.Name = "lb_Remark";
+            this.lb_Remark.Size = new System.Drawing.Size(182, 18);
+            this.lb_Remark.TabIndex = 141;
+            this.lb_Remark.Text = "*เลือกไม่รายการเพื่อไม่พิมพ์";
+            // 
             // FrmMM31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.lb_Remark);
             this.Controls.Add(this.lb_ServiceAmtBill);
             this.Controls.Add(this.bt_AddBill);
             this.Controls.Add(this.Lb_CoBill);
@@ -563,6 +562,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Amt;
         private System.Windows.Forms.Button bt_AddBill;
         private System.Windows.Forms.Label lb_ServiceAmtBill;
-        private System.Windows.Forms.TabPage tp_BillDetail;
+        private System.Windows.Forms.Label lb_Remark;
     }
 }

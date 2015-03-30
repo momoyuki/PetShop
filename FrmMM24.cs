@@ -78,6 +78,7 @@ namespace Petshop
                 object value = row["ProductSaleTotal"];
                 if (value == DBNull.Value)
                 {
+                    iProductAmt = 0;
                 }
                 else
                 {

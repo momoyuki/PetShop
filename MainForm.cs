@@ -224,16 +224,31 @@ namespace Petshop
         
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM33))
+                if (form.GetType() == typeof(FrmBillDate))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM33 iFrmMM35 = new FrmMM33();
-            iFrmMM35.MdiParent = this;
-            iFrmMM35.Show();
+            FrmBillDate iFrmMMBill = new FrmBillDate();
+            iFrmMMBill.MdiParent = this;
+            iFrmMMBill.Show();
         
+        }
+
+        private void ตดตามการรกษาToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmMM23))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmMM23 iFrmMM23 = new FrmMM23();
+            iFrmMM23.MdiParent = this;
+            iFrmMM23.Show();
         }
     }
 }

@@ -81,9 +81,11 @@ namespace Petshop
         {
             AddService();
         }
-
+        //ทดสอบ
+        //Regex RegID = new Regex("^[0-9]{}");
         private void AddService()
         {
+
             string itxbserviceID = txb_ServiceID.Text.Trim();
             string itxbService = txb_ServiceDetail.Text.Trim();
             string itxbServicePrice = txb_ServicePrice.Text.Trim();

@@ -206,6 +206,28 @@ namespace Petshop
                             {
                                 String iServiceID = dGV_Service.Rows[i].Cells[2].Value.ToString();
                                 String iServicePrice = dGV_Service.Rows[i].Cells[3].Value.ToString();
+                                DataTable idtServiceBilCheck;
+                                string isqlServiceBillCheck = "SELECT * FROM tb_servicebill where Bill_ID = '" + ilbBillID + "'AND Service_ID = '" + iServiceID + "' ";
+                                idtServiceBilCheck = iConnect.SelectByCommand(isqlServiceBillCheck);//ลักษณะการทำงานคือ เมื่อเข้าไปเช็คในฐานข้อมูล หากมี ให้ทำการดอรป์ออก
+                                foreach (DataRow row in idtServiceBilCheck.Rows)
+                                {
+                                    object value = row["Service_ID"];
+                                    if (value == DBNull.Value)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        string isqlServiceBill = "DELETE FROM `tb_servicebill` WHERE `Bill_ID`='" + ilbBillID + "' and`Service_ID`='" + iServiceID + "'";
+                                        iConnect.Insert(isqlServiceBill);
+                                    }
+                                }
+                             /////////////////////////////////
+                            }
+                            if (Convert.ToBoolean(dGV_Service.Rows[i].Cells[0].Value) == false)
+                            {//ถ้าไม่เช็ค
+                                String iServiceID = dGV_Service.Rows[i].Cells[2].Value.ToString();
+                                String iServicePrice = dGV_Service.Rows[i].Cells[3].Value.ToString();
                                 decimal iPrice = Convert.ToDecimal(iServicePrice);
                                 DataTable idtServiceBilCheck;
                                 string isqlServiceBillCheck = "SELECT * FROM tb_servicebill where Bill_ID = '" + ilbBillID + "'AND Service_ID = '" + iServiceID + "' ";
@@ -217,27 +239,6 @@ namespace Petshop
                                     iConnect.Insert(isqlServiceBill);
                                 }
                             }
-                            if (Convert.ToBoolean(dGV_Service.Rows[i].Cells[0].Value) == false)
-                            {//ถ้าไม่เช็ค
-                                String iServiceID = dGV_Service.Rows[i].Cells[2].Value.ToString();
-                                String iServicePrice = dGV_Service.Rows[i].Cells[3].Value.ToString();
-                                DataTable idtServiceBilCheck;
-                                string isqlServiceBillCheck = "SELECT * FROM tb_servicebill where Bill_ID = '" + ilbBillID + "'AND Service_ID = '" + iServiceID + "' ";
-                                idtServiceBilCheck = iConnect.SelectByCommand(isqlServiceBillCheck);//ลักษณะการทำงานคือ เมื่อเข้าไปเช็คในฐานข้อมูล หากมี ให้ทำการดอรป์ออก
-                                foreach (DataRow row in idtServiceBilCheck.Rows)
-                                {
-                                    object value = row["Service_ID"];
-                                    if (value == DBNull.Value)
-                                    {
-                                       
-                                    }
-                                    else
-                                    {
-                                        string isqlServiceBill = "DELETE FROM `tb_servicebill` WHERE `Bill_ID`='" + ilbBillID + "' and`Service_ID`='" + iServiceID + "'";
-                                        iConnect.Insert(isqlServiceBill);
-                                    }
-                                }
-                            }
                             //เรียกผลรวมมาแสดง
                         }
                         ///////////////////////////////////////////MediBill////////////////////////////////////////////////////
@@ -245,21 +246,6 @@ namespace Petshop
                         {
                             if (dGV_Medi.Rows[i].Cells[0].Value != null)
                             {
-                                String iMediID = dGV_Medi.Rows[i].Cells[2].Value.ToString();
-                                String iMediUnit = dGV_Medi.Rows[i].Cells[3].Value.ToString();
-                                String iMediPrice = dGV_Medi.Rows[i].Cells[4].Value.ToString();
-                                String iMediAmt = dGV_Medi.Rows[i].Cells[5].Value.ToString();
-                                DataTable idtMediBillCheck;
-                                string isqlMediBillCheck = "SELECT * FROM tb_medibill where Bill_ID = '" + ilbBillID + "'AND Medi_ID = '" + iMediID + "' ";
-                                idtMediBillCheck = iConnect.SelectByCommand(isqlMediBillCheck);
-                                if (idtMediBillCheck.Rows.Count == 0)
-                                {
-                                    string isqlMediBill = "INSERT INTO `petshop`.`tb_medibill` (`Bill_ID`, `Medi_ID`, `Medi_Bill_Unit`, `Medi_Bill_Price`, `Medi_Bill_Amt`) VALUES ('" + ilbBillID + "', '" + iMediID + "', '" + iMediUnit + "', '" + iMediPrice + "', '" + iMediAmt + "')";
-                                    iConnect.Insert(isqlMediBill);
-                                }
-                            }
-                            if (Convert.ToBoolean(dGV_Medi.Rows[i].Cells[0].Value) == false)
-                            {// ถ้าไม่เช็ค
                                 String iMediID = dGV_Medi.Rows[i].Cells[2].Value.ToString();
                                 String iMediUnit = dGV_Medi.Rows[i].Cells[3].Value.ToString();
                                 String iMediPrice = dGV_Medi.Rows[i].Cells[4].Value.ToString();
@@ -279,7 +265,22 @@ namespace Petshop
                                         string isqlMediBill = "DELETE FROM `petshop`.`tb_medibill` WHERE `Bill_ID`='" + ilbBillID + "' and`Medi_ID`='" + iMediID + "'";
                                         iConnect.Insert(isqlMediBill);
                                     }
-                                }   
+                                }  
+                            }
+                            if (Convert.ToBoolean(dGV_Medi.Rows[i].Cells[0].Value) == false)
+                            {// ถ้าไม่เช็ค
+                                String iMediID = dGV_Medi.Rows[i].Cells[2].Value.ToString();
+                                String iMediUnit = dGV_Medi.Rows[i].Cells[3].Value.ToString();
+                                String iMediPrice = dGV_Medi.Rows[i].Cells[4].Value.ToString();
+                                String iMediAmt = dGV_Medi.Rows[i].Cells[5].Value.ToString();
+                                DataTable idtMediBillCheck;
+                                string isqlMediBillCheck = "SELECT * FROM tb_medibill where Bill_ID = '" + ilbBillID + "'AND Medi_ID = '" + iMediID + "' ";
+                                idtMediBillCheck = iConnect.SelectByCommand(isqlMediBillCheck);
+                                if (idtMediBillCheck.Rows.Count == 0)
+                                {
+                                    string isqlMediBill = "INSERT INTO `petshop`.`tb_medibill` (`Bill_ID`, `Medi_ID`, `Medi_Bill_Unit`, `Medi_Bill_Price`, `Medi_Bill_Amt`) VALUES ('" + ilbBillID + "', '" + iMediID + "', '" + iMediUnit + "', '" + iMediPrice + "', '" + iMediAmt + "')";
+                                    iConnect.Insert(isqlMediBill);
+                                }
                              }
                             //เรียกผลรวมมาแสดง
                         }

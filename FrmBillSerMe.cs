@@ -63,9 +63,6 @@ namespace Petshop
             this.crystalReportViewer1.ReportSource = rpt;
             this.crystalReportViewer1.Refresh();
         }
-
-
- 
         private void FrmBillreview_Load(object sender, EventArgs e)
         {
         }

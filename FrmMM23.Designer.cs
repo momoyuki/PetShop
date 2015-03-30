@@ -39,7 +39,7 @@
             this.bt_AddHealDate = new System.Windows.Forms.Button();
             this.bt_HealDateEdit = new System.Windows.Forms.Button();
             this.lb_Service = new System.Windows.Forms.Label();
-            this.Bt_Print = new System.Windows.Forms.Button();
+            this.bt_PrintDate = new System.Windows.Forms.Button();
             this.txb_Search = new System.Windows.Forms.TextBox();
             this.lb_Search = new System.Windows.Forms.Label();
             this.bt_Search = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.CheckBox_Contract = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_PrintBill = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tP_All.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDate)).BeginInit();
@@ -111,6 +111,7 @@
             // 
             // Txb_Remark
             // 
+            this.Txb_Remark.Enabled = false;
             this.Txb_Remark.Location = new System.Drawing.Point(124, 120);
             this.Txb_Remark.Margin = new System.Windows.Forms.Padding(4);
             this.Txb_Remark.MaxLength = 400;
@@ -131,6 +132,7 @@
             // 
             // dTP_HealDate
             // 
+            this.dTP_HealDate.Enabled = false;
             this.dTP_HealDate.Location = new System.Drawing.Point(124, 86);
             this.dTP_HealDate.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_HealDate.Name = "dTP_HealDate";
@@ -149,6 +151,7 @@
             // 
             // cb_Service
             // 
+            this.cb_Service.Enabled = false;
             this.cb_Service.FormattingEnabled = true;
             this.cb_Service.Location = new System.Drawing.Point(126, 52);
             this.cb_Service.Margin = new System.Windows.Forms.Padding(4);
@@ -170,6 +173,7 @@
             // 
             // bt_AddHealDate
             // 
+            this.bt_AddHealDate.Enabled = false;
             this.bt_AddHealDate.Location = new System.Drawing.Point(743, 106);
             this.bt_AddHealDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddHealDate.Name = "bt_AddHealDate";
@@ -181,6 +185,7 @@
             // 
             // bt_HealDateEdit
             // 
+            this.bt_HealDateEdit.Enabled = false;
             this.bt_HealDateEdit.Location = new System.Drawing.Point(743, 146);
             this.bt_HealDateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_HealDateEdit.Name = "bt_HealDateEdit";
@@ -200,16 +205,17 @@
             this.lb_Service.TabIndex = 13;
             this.lb_Service.Text = "เรื่อง";
             // 
-            // Bt_Print
+            // bt_PrintDate
             // 
-            this.Bt_Print.Location = new System.Drawing.Point(848, 146);
-            this.Bt_Print.Margin = new System.Windows.Forms.Padding(4);
-            this.Bt_Print.Name = "Bt_Print";
-            this.Bt_Print.Size = new System.Drawing.Size(100, 72);
-            this.Bt_Print.TabIndex = 15;
-            this.Bt_Print.Text = "พิมพ์ใบนัด";
-            this.Bt_Print.UseVisualStyleBackColor = true;
-            this.Bt_Print.Click += new System.EventHandler(this.Bt_Print_Click);
+            this.bt_PrintDate.Enabled = false;
+            this.bt_PrintDate.Location = new System.Drawing.Point(848, 146);
+            this.bt_PrintDate.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_PrintDate.Name = "bt_PrintDate";
+            this.bt_PrintDate.Size = new System.Drawing.Size(100, 72);
+            this.bt_PrintDate.TabIndex = 15;
+            this.bt_PrintDate.Text = "พิมพ์ใบนัด";
+            this.bt_PrintDate.UseVisualStyleBackColor = true;
+            this.bt_PrintDate.Click += new System.EventHandler(this.bt_PrintDate_Click);
             // 
             // txb_Search
             // 
@@ -552,6 +558,7 @@
             // 
             // txb_Remind
             // 
+            this.txb_Remind.Enabled = false;
             this.txb_Remind.Location = new System.Drawing.Point(395, 88);
             this.txb_Remind.Name = "txb_Remind";
             this.txb_Remind.Size = new System.Drawing.Size(51, 26);
@@ -593,6 +600,7 @@
             this.lb_PetID.Name = "lb_PetID";
             this.lb_PetID.Size = new System.Drawing.Size(0, 18);
             this.lb_PetID.TabIndex = 26;
+            this.lb_PetID.TextChanged += new System.EventHandler(this.lb_PetID_TextChanged);
             // 
             // lb_HealRecordID
             // 
@@ -605,6 +613,7 @@
             // 
             // button8
             // 
+            this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(743, 186);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
@@ -625,6 +634,7 @@
             // CheckBox_Contract
             // 
             this.CheckBox_Contract.AutoSize = true;
+            this.CheckBox_Contract.Enabled = false;
             this.CheckBox_Contract.Location = new System.Drawing.Point(483, 200);
             this.CheckBox_Contract.Name = "CheckBox_Contract";
             this.CheckBox_Contract.Size = new System.Drawing.Size(88, 22);
@@ -632,22 +642,24 @@
             this.CheckBox_Contract.Text = "ติดต่อแล้ว";
             this.CheckBox_Contract.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // bt_PrintBill
             // 
-            this.button1.Location = new System.Drawing.Point(848, 66);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 72);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "พิมพ์ใบเสร็จ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_PrintBill.Enabled = false;
+            this.bt_PrintBill.Location = new System.Drawing.Point(848, 66);
+            this.bt_PrintBill.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_PrintBill.Name = "bt_PrintBill";
+            this.bt_PrintBill.Size = new System.Drawing.Size(100, 72);
+            this.bt_PrintBill.TabIndex = 32;
+            this.bt_PrintBill.Text = "พิมพ์ใบเสร็จ";
+            this.bt_PrintBill.UseVisualStyleBackColor = true;
+            this.bt_PrintBill.Click += new System.EventHandler(this.bt_PrintBill_Click);
             // 
             // FrmMM23
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 672);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bt_PrintBill);
             this.Controls.Add(this.CheckBox_Contract);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button8);
@@ -658,7 +670,7 @@
             this.Controls.Add(this.lb_Pet);
             this.Controls.Add(this.txb_Remind);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.Bt_Print);
+            this.Controls.Add(this.bt_PrintDate);
             this.Controls.Add(this.lb_Service);
             this.Controls.Add(this.bt_HealDateEdit);
             this.Controls.Add(this.bt_AddHealDate);
@@ -701,7 +713,7 @@
         private System.Windows.Forms.Button bt_AddHealDate;
         private System.Windows.Forms.Button bt_HealDateEdit;
         private System.Windows.Forms.Label lb_Service;
-        private System.Windows.Forms.Button Bt_Print;
+        private System.Windows.Forms.Button bt_PrintDate;
         private System.Windows.Forms.TextBox txb_Search;
         private System.Windows.Forms.Label lb_Search;
         private System.Windows.Forms.Button bt_Search;
@@ -743,6 +755,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remind;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Stats;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_PrintBill;
     }
 }

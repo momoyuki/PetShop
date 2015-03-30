@@ -215,9 +215,9 @@ namespace Petshop
                     return;
                 }
             }
-            FrmMM21 iFrmMM24 = new FrmMM21(ref txb_PetID);
-            iFrmMM24.MdiParent = MainForm.ActiveForm;
-            iFrmMM24.Show();
+            FrmMM21 iFrmMM21 = new FrmMM21(ref txb_PetID);
+            iFrmMM21.MdiParent = MainForm.ActiveForm;
+            iFrmMM21.Show();
         }
 
 

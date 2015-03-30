@@ -18,21 +18,6 @@ namespace Petshop
             iConnect = new MySQLDBConnect();
         }
 
-        private void Bt_Print_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM33))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM33 iFrmMM35 = new FrmMM33();
-            iFrmMM35.MdiParent = this;
-            iFrmMM35.Show();
-        }
-
         private void bt_Load_Click(object sender, EventArgs e)
         {
             loadData();
@@ -251,6 +236,57 @@ namespace Petshop
         private void rBt_contracted_CheckedChanged(object sender, EventArgs e)
         {
             loadHealDate();
+        }
+
+        private void lb_PetID_TextChanged(object sender, EventArgs e)
+        {
+            if ((lb_PetID.Text != null) && (lb_PetID.Text != ""))
+            {
+                cb_Service.Enabled = true;
+                dTP_HealDate.Enabled = true;
+                txb_Remind.Enabled = true;
+                Txb_Remark.Enabled = true;
+                CheckBox_Contract.Enabled = true;
+                bt_AddHealDate.Enabled = true;
+                bt_HealDateEdit.Enabled = true;
+                bt_PrintBill.Enabled = true;
+                bt_PrintDate.Enabled = true;
+            }
+            else
+            {
+                cb_Service.Enabled = false;
+                dTP_HealDate.Enabled = false;
+                txb_Remind.Enabled = false;
+                Txb_Remark.Enabled = false;
+                CheckBox_Contract.Enabled = false;
+                bt_AddHealDate.Enabled = false;
+                bt_HealDateEdit.Enabled = false;
+                bt_PrintBill.Enabled = false;
+                bt_PrintDate.Enabled = false;
+            }
+        }
+
+
+        private void bt_PrintDate_Click(object sender, EventArgs e)
+        {
+            
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmBillDate))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmBillDate iFrmMMDateBill = new FrmBillDate();
+            iFrmMMDateBill.MdiParent = MainForm.ActiveForm;
+            iFrmMMDateBill.Show();
+            iFrmMMDateBill.lb_HealDateID.Text = lb_PetID.Text;
+        }
+
+        private void bt_PrintBill_Click(object sender, EventArgs e)
+        {
+
         }
 
       

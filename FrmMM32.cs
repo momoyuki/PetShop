@@ -20,13 +20,68 @@ namespace Petshop
 
         private void bt_Load_Click(object sender, EventArgs e)
         {
-            
+            loadEmployee();
+            loadCompany();
+            loadProductSale();
+            loadProductSaleBill();
         }
         private void FrmMM32_Load(object sender, EventArgs e)
         {
             loadEmployee();
             loadCompany();
             loadProductSale();
+            loadProductSaleBill();
+            loaddata();
+        }
+
+        private void loaddata()
+        {
+            loadProductSaleBill();
+            Calculate();
+        }
+       
+        decimal iProductAmt = 0;
+
+        private void Calculate()
+        {
+            txb_BillTotal.Text = iProductAmt.ToString();
+            decimal iTotal = 0;
+            if ((txb_BillTotal.Text != null) && (txb_BillTotal.Text != ""))
+            {
+                iTotal = Convert.ToDecimal(txb_BillTotal.Text);
+            }
+            decimal iDC = 0;
+            if ((txb_BillDC.Text != null) && (txb_BillDC.Text != ""))
+            {
+                iDC = Convert.ToDecimal(txb_BillDC.Text);
+            }
+            decimal iNet = 0;
+            if ((txb_BillNet.Text != null) && (txb_BillNet.Text != ""))
+            {
+                iNet = Convert.ToDecimal(txb_BillNet.Text);
+            }
+            iNet = iTotal - iDC;
+            txb_BillNet.Text = iNet.ToString();
+        }      
+
+        private void loadProductSaleBill()
+        {
+            string ilbBillID = Lb_BillID.Text.Trim();
+            DataTable idtSumBill;
+            string isqlSumDetail = "SELECT sum(ProductSale_Bill_Amt) as ProductAmt FROM tb_productsalebill where Bill_ID = '"+ilbBillID+"'";
+            idtSumBill = iConnect.SelectByCommand(isqlSumDetail);
+            foreach (DataRow row in idtSumBill.Rows)
+            {
+                object value = row["ProductAmt"];
+                if (value == DBNull.Value)
+                {
+                    iProductAmt = 0;
+                }
+                else
+                {
+                   iProductAmt = idtSumBill.Rows[0].Field<decimal>(0);
+                }
+            }
         }
 
         private void loadProductSale()
@@ -37,7 +92,10 @@ namespace Petshop
             idtProduct = iConnect.SelectByCommand(isqlProduct);
             dGV_Product.DataSource = idtProduct;
             dGV_Product.Refresh();
-        }
+         }
+        
+
+        
         private void loadCompany()
         {
             DataTable idtCompany;
@@ -116,23 +174,6 @@ namespace Petshop
                     {
                         if (dGV_Product.Rows[i].Cells[0].Value != null)
                         {
-                            String iProductID = dGV_Product.Rows[i].Cells[2].Value.ToString();
-                            String iProductPrice = dGV_Product.Rows[i].Cells[3].Value.ToString();
-                            String iProductUnit = dGV_Product.Rows[i].Cells[4].Value.ToString();
-                            string iProductAmt = dGV_Product.Rows[i].Cells[5].Value.ToString();
-                            decimal iPrice = Convert.ToDecimal(iProductPrice);
-                            DataTable idtProductBilCheck;
-                            string isqlProductBillCheck = "SELECT * FROM tb_productsalebill where Bill_ID = '" + ilbBillID + "'AND Product_ID = '" + iProductID + "' ";
-                            idtProductBilCheck = iConnect.SelectByCommand(isqlProductBillCheck);//ลักษณะการทำงานคือ เมื่อเข้าไปเช็คในฐานข้อมูล หากไม่มี ให้ทำการเพิ่ม หากมีอยู่แล้ว ให้ทำการ แก้ไขให้ตรงกับปัจจุบัน
-
-                            if (idtProductBilCheck.Rows.Count == 0)
-                            {
-                                string isqlProductBill = "INSERT INTO `tb_productsalebill` (`Bill_ID`, `Product_ID`, `Productsale_Bill_Unit`, `Productsale_Bill_Price`, `Productsale_Bill_Amt`) VALUES ('" + ilbBillID + "', '" + iProductID + "', '" + iProductUnit + "', '" + iProductPrice + "', '" + iProductAmt + "')";
-                                iConnect.Insert(isqlProductBill);
-                            }
-                        }
-                        if (Convert.ToBoolean(dGV_Product.Rows[i].Cells[0].Value) == false)
-                        {//ถ้าไม่เช็ค
                             String iServiceID = dGV_Product.Rows[i].Cells[2].Value.ToString();
                             String iServicePrice = dGV_Product.Rows[i].Cells[3].Value.ToString();
                             DataTable idtServiceBilCheck;
@@ -143,13 +184,30 @@ namespace Petshop
                                 string isqlServiceBill = "DELETE FROM `tb_productsalebill` WHERE `Bill_ID`='" + ilbBillID + "' and`Product_ID`='" + iServiceID + "'";
                                 iConnect.Insert(isqlServiceBill);
                             }
-                        }
+                         }
+                        if (Convert.ToBoolean(dGV_Product.Rows[i].Cells[0].Value) == false)
+                            {                   
+                            //ถ้าไม่เช็ค
+                            String iProductID = dGV_Product.Rows[i].Cells[2].Value.ToString();
+                            String iProductPrice = dGV_Product.Rows[i].Cells[3].Value.ToString();
+                            String iProductUnit = dGV_Product.Rows[i].Cells[4].Value.ToString();
+                            string iProductAmt = dGV_Product.Rows[i].Cells[5].Value.ToString();
+                            decimal iPrice = Convert.ToDecimal(iProductPrice);
+                            DataTable idtProductBilCheck;
+                            string isqlProductBillCheck = "SELECT * FROM tb_productsalebill where Bill_ID = '" + ilbBillID + "'AND Product_ID = '" + iProductID + "' ";
+                            idtProductBilCheck = iConnect.SelectByCommand(isqlProductBillCheck);//ลักษณะการทำงานคือ เมื่อเข้าไปเช็คในฐานข้อมูล หากไม่มี ให้ทำการเพิ่ม หากมีอยู่แล้ว ให้ทำการ แก้ไขให้ตรงกับปัจจุบัน
+                            if (idtProductBilCheck.Rows.Count == 0)
+                            {
+                                string isqlProductBill = "INSERT INTO `tb_productsalebill` (`Bill_ID`, `Product_ID`, `Productsale_Bill_Unit`, `Productsale_Bill_Price`, `Productsale_Bill_Amt`) VALUES ('" + ilbBillID + "', '" + iProductID + "', '" + iProductUnit + "', '" + iProductPrice + "', '" + iProductAmt + "')";
+                                iConnect.Insert(isqlProductBill);
+                            }
+                         }
                         //เรียกผลรวมมาแสดง
                     }
                 }
             }
-        }      
-
+            loaddata();
+          }
         private void BillAdd()
         {
             string ilbyear = lbYear.Text.Trim(); //Year 
@@ -190,6 +248,16 @@ namespace Petshop
         private void txb_ReferID_TextChanged(object sender, EventArgs e)
         {
             loadProductSale();
+        }
+
+        private void txb_BillTotal_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void txb_BillDC_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
         }
 
     }
