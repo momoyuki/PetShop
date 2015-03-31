@@ -31,7 +31,7 @@
             this.tabControlEmployee = new System.Windows.Forms.TabControl();
             this.tpEmployee = new System.Windows.Forms.TabPage();
             this.gBoxEmployee = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_DelEm = new System.Windows.Forms.Button();
             this.bt_LoadEP = new System.Windows.Forms.Button();
             this.bt_EditEm = new System.Windows.Forms.Button();
             this.bt_AddEm = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.ccEP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccEm_Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxPosition = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bt_DelPosition = new System.Windows.Forms.Button();
             this.bt_LoadPS = new System.Windows.Forms.Button();
             this.bt_EditEmposition = new System.Windows.Forms.Button();
             this.bt_AddEmPosition = new System.Windows.Forms.Button();
@@ -102,7 +102,7 @@
             // 
             // gBoxEmployee
             // 
-            this.gBoxEmployee.Controls.Add(this.button1);
+            this.gBoxEmployee.Controls.Add(this.bt_DelEm);
             this.gBoxEmployee.Controls.Add(this.bt_LoadEP);
             this.gBoxEmployee.Controls.Add(this.bt_EditEm);
             this.gBoxEmployee.Controls.Add(this.bt_AddEm);
@@ -122,20 +122,21 @@
             this.gBoxEmployee.TabStop = false;
             this.gBoxEmployee.Text = "รายละเอียด";
             // 
-            // button1
+            // bt_DelEm
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(283, 135);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "ลบ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_DelEm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelEm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelEm.Location = new System.Drawing.Point(283, 135);
+            this.bt_DelEm.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelEm.Name = "bt_DelEm";
+            this.bt_DelEm.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelEm.TabIndex = 15;
+            this.bt_DelEm.Text = "ลบ";
+            this.bt_DelEm.UseVisualStyleBackColor = true;
             // 
             // bt_LoadEP
             // 
+            this.bt_LoadEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_LoadEP.Location = new System.Drawing.Point(267, 95);
             this.bt_LoadEP.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadEP.Name = "bt_LoadEP";
@@ -148,6 +149,7 @@
             // 
             // bt_EditEm
             // 
+            this.bt_EditEm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditEm.Location = new System.Drawing.Point(205, 136);
             this.bt_EditEm.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditEm.Name = "bt_EditEm";
@@ -159,6 +161,7 @@
             // 
             // bt_AddEm
             // 
+            this.bt_AddEm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddEm.Location = new System.Drawing.Point(127, 136);
             this.bt_AddEm.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddEm.Name = "bt_AddEm";
@@ -230,7 +233,6 @@
             this.cb_EmPosition.Name = "cb_EmPosition";
             this.cb_EmPosition.Size = new System.Drawing.Size(132, 26);
             this.cb_EmPosition.TabIndex = 2;
-            this.cb_EmPosition.SelectionChangeCommitted += new System.EventHandler(this.cb_EmPosition_SelectionChangeCommitted);
             // 
             // lb_EmName
             // 
@@ -397,7 +399,7 @@
             // 
             // gBoxPosition
             // 
-            this.gBoxPosition.Controls.Add(this.button2);
+            this.gBoxPosition.Controls.Add(this.bt_DelPosition);
             this.gBoxPosition.Controls.Add(this.bt_LoadPS);
             this.gBoxPosition.Controls.Add(this.bt_EditEmposition);
             this.gBoxPosition.Controls.Add(this.bt_AddEmPosition);
@@ -414,20 +416,21 @@
             this.gBoxPosition.TabStop = false;
             this.gBoxPosition.Text = "รายละเอียด";
             // 
-            // button2
+            // bt_DelPosition
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(308, 112);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 32);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "ลบ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bt_DelPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelPosition.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelPosition.Location = new System.Drawing.Point(308, 112);
+            this.bt_DelPosition.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelPosition.Name = "bt_DelPosition";
+            this.bt_DelPosition.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelPosition.TabIndex = 15;
+            this.bt_DelPosition.Text = "ลบ";
+            this.bt_DelPosition.UseVisualStyleBackColor = true;
             // 
             // bt_LoadPS
             // 
+            this.bt_LoadPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_LoadPS.Location = new System.Drawing.Point(289, 24);
             this.bt_LoadPS.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadPS.Name = "bt_LoadPS";
@@ -435,10 +438,12 @@
             this.bt_LoadPS.TabIndex = 4;
             this.bt_LoadPS.Text = "LoadPS";
             this.bt_LoadPS.UseVisualStyleBackColor = true;
+            this.bt_LoadPS.Visible = false;
             this.bt_LoadPS.Click += new System.EventHandler(this.bt_LoadPS_Click);
             // 
             // bt_EditEmposition
             // 
+            this.bt_EditEmposition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditEmposition.Location = new System.Drawing.Point(230, 112);
             this.bt_EditEmposition.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditEmposition.Name = "bt_EditEmposition";
@@ -450,6 +455,7 @@
             // 
             // bt_AddEmPosition
             // 
+            this.bt_AddEmPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddEmPosition.Location = new System.Drawing.Point(152, 112);
             this.bt_AddEmPosition.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddEmPosition.Name = "bt_AddEmPosition";
@@ -564,8 +570,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEmPosition_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEP_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Position;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bt_DelEm;
+        private System.Windows.Forms.Button bt_DelPosition;
 
 
     }

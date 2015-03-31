@@ -39,9 +39,12 @@ namespace Petshop
             txb_CoSale.Text = idtCompany.Rows[0]["CoSale"].ToString();
             txb_CoBill.Text = idtCompany.Rows[0]["CoBill"].ToString();
             lb_CoIDH.Text = idtCompany.Rows[0]["Company_ID"].ToString();
+                
             string FP = idtCompany.Rows[0]["CoLogo"].ToString();
-            picBoxLogo.Image = Image.FromFile(FP);
+                if((FP!=null)&&(FP!="")){
+                    picBoxLogo.Image = Image.FromFile(FP);
                 }
+            }
         }
         private void bt_Update_Click(object sender, EventArgs e)
         {

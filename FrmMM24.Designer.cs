@@ -94,6 +94,7 @@
             // bt_CancelBuy
             // 
             this.bt_CancelBuy.Enabled = false;
+            this.bt_CancelBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_CancelBuy.Location = new System.Drawing.Point(883, 155);
             this.bt_CancelBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_CancelBuy.Name = "bt_CancelBuy";
@@ -106,6 +107,7 @@
             // bt_Print
             // 
             this.bt_Print.Enabled = false;
+            this.bt_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Print.Location = new System.Drawing.Point(883, 55);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Print.Name = "bt_Print";
@@ -117,6 +119,7 @@
             // 
             // bt_Load
             // 
+            this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Load.Location = new System.Drawing.Point(883, 8);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Load.Name = "bt_Load";
@@ -279,6 +282,7 @@
             // bt_AddProductSale
             // 
             this.bt_AddProductSale.Enabled = false;
+            this.bt_AddProductSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddProductSale.Location = new System.Drawing.Point(763, 155);
             this.bt_AddProductSale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_AddProductSale.Name = "bt_AddProductSale";
@@ -386,6 +390,7 @@
             // 
             // bt_RecordBuy
             // 
+            this.bt_RecordBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_RecordBuy.Location = new System.Drawing.Point(763, 55);
             this.bt_RecordBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_RecordBuy.Name = "bt_RecordBuy";

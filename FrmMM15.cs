@@ -58,6 +58,7 @@ namespace Petshop
             {
                 iConnect.Insert(isqlEmposition);
                 LoadEP();
+                LoadPS();
             }
         }
 
@@ -174,13 +175,13 @@ namespace Petshop
 
         private void txb_EmName_KeyDown(object sender, KeyEventArgs e)
         {
-            cb_EmPosition.Focus();
+            if (e.KeyCode == Keys.Enter)
+            {
+                cb_EmPosition.Focus();
+            }
         }
 
-        private void cb_EmPosition_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-             txb_UserName.Focus();
-        }
+
 
         private void txb_UserName_KeyDown(object sender, KeyEventArgs e)
         {

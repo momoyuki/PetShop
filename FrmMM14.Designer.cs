@@ -126,6 +126,7 @@
             // 
             // Bt_LoadBreed
             // 
+            this.Bt_LoadBreed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_LoadBreed.Location = new System.Drawing.Point(291, 53);
             this.Bt_LoadBreed.Margin = new System.Windows.Forms.Padding(4);
             this.Bt_LoadBreed.Name = "Bt_LoadBreed";
@@ -137,6 +138,7 @@
             // 
             // bt_EditBreed
             // 
+            this.bt_EditBreed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditBreed.Location = new System.Drawing.Point(205, 134);
             this.bt_EditBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditBreed.Name = "bt_EditBreed";
@@ -148,6 +150,7 @@
             // 
             // bt_AddBreed
             // 
+            this.bt_AddBreed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddBreed.Location = new System.Drawing.Point(127, 134);
             this.bt_AddBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddBreed.Name = "bt_AddBreed";
@@ -221,6 +224,7 @@
             // 
             this.dGV_Breed.AllowUserToAddRows = false;
             this.dGV_Breed.AllowUserToDeleteRows = false;
+            this.dGV_Breed.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Breed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Breed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccPetBreed_ID,
@@ -274,6 +278,7 @@
             // 
             this.dGV_Type.AllowUserToAddRows = false;
             this.dGV_Type.AllowUserToDeleteRows = false;
+            this.dGV_Type.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Type.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Type.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccPT_ID,
@@ -335,6 +340,7 @@
             // 
             // bt_LoadType
             // 
+            this.bt_LoadType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_LoadType.Location = new System.Drawing.Point(279, 24);
             this.bt_LoadType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadType.Name = "bt_LoadType";
@@ -347,6 +353,7 @@
             // 
             // bt_EditType
             // 
+            this.bt_EditType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditType.Location = new System.Drawing.Point(229, 98);
             this.bt_EditType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditType.Name = "bt_EditType";
@@ -358,6 +365,7 @@
             // 
             // bt_AddType
             // 
+            this.bt_AddType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddType.Location = new System.Drawing.Point(151, 98);
             this.bt_AddType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddType.Name = "bt_AddType";

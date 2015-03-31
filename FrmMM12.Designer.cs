@@ -71,7 +71,7 @@
             this.lb_Detail = new System.Windows.Forms.Label();
             this.txb_ProductDetail = new System.Windows.Forms.TextBox();
             this.lb_ProductIDh = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_DelProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.gBoxProductPrice.SuspendLayout();
@@ -82,6 +82,7 @@
             // 
             this.dGV_PD.AllowUserToAddRows = false;
             this.dGV_PD.AllowUserToDeleteRows = false;
+            this.dGV_PD.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_PD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_PD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccProduct_ID,
@@ -281,6 +282,7 @@
             // 
             // bt_Unit
             // 
+            this.bt_Unit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Unit.Location = new System.Drawing.Point(370, 97);
             this.bt_Unit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Unit.Name = "bt_Unit";
@@ -303,6 +305,7 @@
             // 
             // Bt_LoadPD
             // 
+            this.Bt_LoadPD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_LoadPD.Location = new System.Drawing.Point(370, 133);
             this.Bt_LoadPD.Margin = new System.Windows.Forms.Padding(4);
             this.Bt_LoadPD.Name = "Bt_LoadPD";
@@ -454,6 +457,7 @@
             // 
             // bt_AddProduct
             // 
+            this.bt_AddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddProduct.Location = new System.Drawing.Point(116, 217);
             this.bt_AddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddProduct.Name = "bt_AddProduct";
@@ -465,6 +469,7 @@
             // 
             // bt_EditProduct
             // 
+            this.bt_EditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditProduct.Location = new System.Drawing.Point(194, 217);
             this.bt_EditProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditProduct.Name = "bt_EditProduct";
@@ -504,24 +509,24 @@
             this.lb_ProductIDh.Text = "lb_ProductIDh";
             this.lb_ProductIDh.Visible = false;
             // 
-            // button1
+            // bt_DelProduct
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(272, 217);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "ลบ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_DelProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelProduct.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelProduct.Location = new System.Drawing.Point(272, 217);
+            this.bt_DelProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelProduct.Name = "bt_DelProduct";
+            this.bt_DelProduct.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelProduct.TabIndex = 15;
+            this.bt_DelProduct.Text = "ลบ";
+            this.bt_DelProduct.UseVisualStyleBackColor = true;
             // 
             // FrmMM12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bt_DelProduct);
             this.Controls.Add(this.lb_ProductIDh);
             this.Controls.Add(this.dGV_PD);
             this.Controls.Add(this.txb_ProductDetail);
@@ -594,6 +599,6 @@
         private System.Windows.Forms.TextBox txb_ProductID;
         private System.Windows.Forms.Label lb_ProductName;
         private System.Windows.Forms.TextBox txb_ProductName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_DelProduct;
     }
 }

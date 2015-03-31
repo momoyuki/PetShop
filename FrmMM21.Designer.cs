@@ -33,7 +33,6 @@
             this.bt_HealDate = new System.Windows.Forms.Button();
             this.CheckBox_Sterility = new System.Windows.Forms.CheckBox();
             this.bt_Service = new System.Windows.Forms.Button();
-            this.lbSex = new System.Windows.Forms.Label();
             this.rb_M = new System.Windows.Forms.RadioButton();
             this.rb_F = new System.Windows.Forms.RadioButton();
             this.bt_EditMember = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@
             this.lb_Tel = new System.Windows.Forms.Label();
             this.txb_TelOwner = new System.Windows.Forms.TextBox();
             this.lb_Addr = new System.Windows.Forms.Label();
+            this.lbSex = new System.Windows.Forms.Label();
             this.Txb_Addr = new System.Windows.Forms.TextBox();
             this.lb_OwnerName = new System.Windows.Forms.Label();
             this.lbYear = new System.Windows.Forms.Label();
@@ -158,6 +158,7 @@
             // 
             // bt_HealDate
             // 
+            this.bt_HealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_HealDate.Location = new System.Drawing.Point(177, 168);
             this.bt_HealDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_HealDate.Name = "bt_HealDate";
@@ -178,6 +179,7 @@
             // 
             // bt_Service
             // 
+            this.bt_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Service.Location = new System.Drawing.Point(69, 168);
             this.bt_Service.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Service.Name = "bt_Service";
@@ -186,17 +188,6 @@
             this.bt_Service.Text = "ทำการรักษา";
             this.bt_Service.UseVisualStyleBackColor = true;
             this.bt_Service.Click += new System.EventHandler(this.bt_Service_Click);
-            // 
-            // lbSex
-            // 
-            this.lbSex.AutoSize = true;
-            this.lbSex.Location = new System.Drawing.Point(565, 86);
-            this.lbSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbSex.Name = "lbSex";
-            this.lbSex.Size = new System.Drawing.Size(42, 18);
-            this.lbSex.TabIndex = 23;
-            this.lbSex.Text = "lbSex";
-            this.lbSex.Visible = false;
             // 
             // rb_M
             // 
@@ -226,6 +217,7 @@
             // 
             // bt_EditMember
             // 
+            this.bt_EditMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditMember.Location = new System.Drawing.Point(177, 245);
             this.bt_EditMember.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditMember.Name = "bt_EditMember";
@@ -237,6 +229,7 @@
             // 
             // bt_AddMember
             // 
+            this.bt_AddMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddMember.Location = new System.Drawing.Point(69, 245);
             this.bt_AddMember.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddMember.Name = "bt_AddMember";
@@ -269,6 +262,7 @@
             // 
             // bt_LoadProfile
             // 
+            this.bt_LoadProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_LoadProfile.Location = new System.Drawing.Point(5, 130);
             this.bt_LoadProfile.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadProfile.Name = "bt_LoadProfile";
@@ -306,6 +300,17 @@
             this.lb_Addr.Size = new System.Drawing.Size(37, 18);
             this.lb_Addr.TabIndex = 5;
             this.lb_Addr.Text = "ที่อยู่";
+            // 
+            // lbSex
+            // 
+            this.lbSex.AutoSize = true;
+            this.lbSex.Location = new System.Drawing.Point(565, 86);
+            this.lbSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSex.Name = "lbSex";
+            this.lbSex.Size = new System.Drawing.Size(42, 18);
+            this.lbSex.TabIndex = 23;
+            this.lbSex.Text = "lbSex";
+            this.lbSex.Visible = false;
             // 
             // Txb_Addr
             // 
@@ -648,6 +653,7 @@
             // 
             // bt_Search
             // 
+            this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Search.Location = new System.Drawing.Point(848, 7);
             this.bt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Search.Name = "bt_Search";
@@ -700,6 +706,7 @@
             // 
             // bt_HealDateDetail
             // 
+            this.bt_HealDateDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_HealDateDetail.Location = new System.Drawing.Point(741, 6);
             this.bt_HealDateDetail.Name = "bt_HealDateDetail";
             this.bt_HealDateDetail.Size = new System.Drawing.Size(100, 31);
@@ -753,6 +760,7 @@
             // 
             // bt_HealRecordDetail
             // 
+            this.bt_HealRecordDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_HealRecordDetail.Location = new System.Drawing.Point(848, 6);
             this.bt_HealRecordDetail.Name = "bt_HealRecordDetail";
             this.bt_HealRecordDetail.Size = new System.Drawing.Size(100, 31);

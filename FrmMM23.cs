@@ -269,7 +269,6 @@ namespace Petshop
 
         private void bt_PrintDate_Click(object sender, EventArgs e)
         {
-            
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
                 if (form.GetType() == typeof(FrmBillDate))
@@ -286,9 +285,39 @@ namespace Petshop
 
         private void bt_PrintBill_Click(object sender, EventArgs e)
         {
-
+            string ilbHealDateID = lb_HealDateID.Text.Trim();
+            if((ilbHealDateID !=null)&&(ilbHealDateID !=""))
+            {
+                
+            }
         }
 
-      
+        private void bt_contracted_Click(object sender, EventArgs e)
+        {
+          for (int i = 0; dGV_HealDate.Rows.Count > i; i++)
+                {
+                    if (dGV_HealDate.Rows[i].Cells[0].Value != null)
+                    {
+                        String iHealDateID = dGV_HealDate.Rows[i].Cells[1].Value.ToString();
+                        string isqlHealDate = "UPDATE `tb_healdate` SET `HealDate_Status`=1 WHERE `HealDate_ID`='"+iHealDateID+"'";
+                        iConnect.Insert(isqlHealDate);
+                    }
+                }
+          loadHealDate();
+         }
+
+        private void bt_contract_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; dGV_HealDate.Rows.Count > i; i++)
+            {
+                if (dGV_HealDate.Rows[i].Cells[0].Value != null)
+                {
+                    String iHealDateID = dGV_HealDate.Rows[i].Cells[1].Value.ToString();
+                    string isqlHealDate = "UPDATE `tb_healdate` SET `HealDate_Status`=0 WHERE `HealDate_ID`='" + iHealDateID + "'";
+                    iConnect.Insert(isqlHealDate);
+                }
+            }
+            loadHealDate();
+        }
     }
 }

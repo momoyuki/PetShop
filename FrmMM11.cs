@@ -163,7 +163,17 @@ namespace Petshop
             string itxbMediID = txb_MediID.Text.Trim();
             string itxbMediName = txb_MediName.Text.Trim();
             string itxbMediDetail = txb_MediDetail.Text.Trim();
-            string itbMediUnit = cb_MediUnit.SelectedValue.ToString();
+            string icbMediUnit = "";
+            if (cb_MediUnit.SelectedValue != null)
+            {
+                icbMediUnit = cb_MediUnit.SelectedValue.ToString();
+            }
+            else
+            {
+                LoadUnit();
+                icbMediUnit = cb_MediUnit.SelectedValue.ToString();
+            }
+           
 
             System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
@@ -214,7 +224,7 @@ namespace Petshop
                             else
                             {
                                 string isqlAddMedi = "Insert into tb_medicine (Medi_ID,Medi_Des,Medi_Detall,Medi_Price,Medi_Sale,Unit_ID,Medi_Product,Medi_Expired,Medi_Unit_Amt,Medi_Unit_Order,Medi_Stock) "+
-                                                    "Values ('" + itxbMediID + "','" + itxbMediName + "', '" + itxbMediDetail + "', '" + itxbMediPrice + "', '" + itxbMediSale + "', '" + itbMediUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itxbMediAmt + "', '" + itxbMediOrder + "',b'" + iStock + "')";
+                                                    "Values ('" + itxbMediID + "','" + itxbMediName + "', '" + itxbMediDetail + "', '" + itxbMediPrice + "', '" + itxbMediSale + "', '" + icbMediUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itxbMediAmt + "', '" + itxbMediOrder + "',b'" + iStock + "')";
                                 iConnect.Insert(isqlAddMedi);
                                 MessageBox.Show("ทำการเพิ่ม '" + itxbMediID + "' - '" + itxbMediName + " แล้ว");
                                 ClearTxtMedi();
@@ -458,6 +468,71 @@ namespace Petshop
             }
             else
             {
+                LoadMedi();
+            }
+        }
+
+        private void bt_DelService_Click(object sender, EventArgs e)
+        {
+            string iServiceID = txb_ServiceID.Text.Trim();
+            string iServiceName = txb_ServiceDetail.Text.Trim();
+            if ((iServiceID != null) && (iServiceID != ""))
+            {
+                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + iServiceName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                    if (iConfirmResult == DialogResult.Yes)
+                    {
+                        DataTable idtServiceRecordCheck;
+                        string isqlServiceCheck = "SELECT tb_servicerecord.Service_ID FROM tb_servicerecord where Service_ID = '"+iServiceID+"'";
+                        idtServiceRecordCheck = iConnect.SelectByCommand(isqlServiceCheck);
+                        DataTable idtHealDateCheck;
+                        string isqlHealDateCheck = "SELECT * FROM tb_healdate where Service_ID='"+iServiceID+"'";
+                        idtHealDateCheck = iConnect.SelectByCommand(isqlHealDateCheck);
+                        if ((idtServiceRecordCheck.Rows.Count == 0)&&(idtHealDateCheck.Rows.Count ==0))
+                        {
+                            string isqlDelService = "DELETE FROM `tb_service` WHERE `Service_ID`='"+iServiceID+"'";
+                            iConnect.Insert(isqlDelService);
+                            MessageBox.Show("ทำการลบบริการแล้ว");
+                            ClearTxtService();
+                        }
+                        else
+                        {
+                            MessageBox.Show("ไม่สามารถลบได้");
+                        }
+                    }
+                    LoadService();
+            }
+
+
+
+
+
+        }
+
+        private void bt_DelMedi_Click(object sender, EventArgs e)
+        {
+            string iMediID = txb_MediID.Text.Trim();
+            string iMediName = txb_MediName.Text.Trim();
+            if ((iMediID != null) && (iMediID != ""))
+            {
+                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + iMediName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    DataTable idtMediRecordCheck;
+                    string isqlServiceCheck = "SELECT tb_MediRecord.Medi_ID FROM tb_MediRecord where Medi_ID = '" + iMediID + "'";
+                    idtMediRecordCheck = iConnect.SelectByCommand(isqlServiceCheck);
+                    if (idtMediRecordCheck.Rows.Count == 0)
+                    {
+                        string isqlDelMedi = "DELETE FROM `tb_medicine` WHERE `Medi_ID`='" + iMediID + "'";
+                        iConnect.Insert(isqlDelMedi);
+                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                        ClearTxtMedi();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถลบได้");
+                    }
+                }
+                
                 LoadMedi();
             }
         }

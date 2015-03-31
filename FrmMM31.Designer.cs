@@ -78,6 +78,7 @@
             // bt_Print
             // 
             this.bt_Print.Enabled = false;
+            this.bt_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Print.Location = new System.Drawing.Point(892, 49);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Print.Name = "bt_Print";
@@ -89,6 +90,7 @@
             // 
             // bt_Load
             // 
+            this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Load.Location = new System.Drawing.Point(891, 6);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Load.Name = "bt_Load";
@@ -450,6 +452,7 @@
             // 
             // bt_AddBill
             // 
+            this.bt_AddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddBill.Location = new System.Drawing.Point(784, 94);
             this.bt_AddBill.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddBill.Name = "bt_AddBill";

@@ -61,6 +61,7 @@
             // 
             // bt_Print
             // 
+            this.bt_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Print.Location = new System.Drawing.Point(895, 47);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Print.Name = "bt_Print";
@@ -72,6 +73,7 @@
             // 
             // bt_Load
             // 
+            this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Load.Location = new System.Drawing.Point(895, 7);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Load.Name = "bt_Load";
@@ -307,6 +309,7 @@
             // 
             // bt_Submit
             // 
+            this.bt_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Submit.Location = new System.Drawing.Point(787, 72);
             this.bt_Submit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Submit.Name = "bt_Submit";

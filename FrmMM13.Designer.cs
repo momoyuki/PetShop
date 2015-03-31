@@ -32,7 +32,7 @@
             this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxUnit = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_DelJnit = new System.Windows.Forms.Button();
             this.bt_LoadUnit = new System.Windows.Forms.Button();
             this.bt_EditUnit = new System.Windows.Forms.Button();
             this.bt_AddUnit = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             // 
             this.dGV_Uni.AllowUserToAddRows = false;
             this.dGV_Uni.AllowUserToDeleteRows = false;
+            this.dGV_Uni.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Uni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Uni.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccUnit_ID,
@@ -79,7 +80,7 @@
             // 
             // gBoxUnit
             // 
-            this.gBoxUnit.Controls.Add(this.button1);
+            this.gBoxUnit.Controls.Add(this.bt_DelJnit);
             this.gBoxUnit.Controls.Add(this.bt_LoadUnit);
             this.gBoxUnit.Controls.Add(this.bt_EditUnit);
             this.gBoxUnit.Controls.Add(this.bt_AddUnit);
@@ -96,20 +97,21 @@
             this.gBoxUnit.TabStop = false;
             this.gBoxUnit.Text = "รายละเอียด";
             // 
-            // button1
+            // bt_DelJnit
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(275, 109);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "ลบ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_DelJnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelJnit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelJnit.Location = new System.Drawing.Point(275, 109);
+            this.bt_DelJnit.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelJnit.Name = "bt_DelJnit";
+            this.bt_DelJnit.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelJnit.TabIndex = 17;
+            this.bt_DelJnit.Text = "ลบ";
+            this.bt_DelJnit.UseVisualStyleBackColor = true;
             // 
             // bt_LoadUnit
             // 
+            this.bt_LoadUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_LoadUnit.Location = new System.Drawing.Point(491, 16);
             this.bt_LoadUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadUnit.Name = "bt_LoadUnit";
@@ -122,6 +124,7 @@
             // 
             // bt_EditUnit
             // 
+            this.bt_EditUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditUnit.Location = new System.Drawing.Point(197, 109);
             this.bt_EditUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditUnit.Name = "bt_EditUnit";
@@ -133,6 +136,7 @@
             // 
             // bt_AddUnit
             // 
+            this.bt_AddUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddUnit.Location = new System.Drawing.Point(119, 109);
             this.bt_AddUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddUnit.Name = "bt_AddUnit";
@@ -213,6 +217,6 @@
         private System.Windows.Forms.TextBox txb_UnitName;
         private System.Windows.Forms.Label lb_UnitID;
         private System.Windows.Forms.Label lb_UnitName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_DelJnit;
     }
 }

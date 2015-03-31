@@ -160,6 +160,7 @@
             // 
             // bt_Update
             // 
+            this.bt_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Update.Location = new System.Drawing.Point(339, 421);
             this.bt_Update.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Update.Name = "bt_Update";
@@ -231,6 +232,7 @@
             // 
             // bt_LoadCompany
             // 
+            this.bt_LoadCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_LoadCompany.Location = new System.Drawing.Point(788, 427);
             this.bt_LoadCompany.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadCompany.Name = "bt_LoadCompany";
@@ -300,6 +302,7 @@
             // 
             // bt_UseImage
             // 
+            this.bt_UseImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_UseImage.Location = new System.Drawing.Point(332, 351);
             this.bt_UseImage.Name = "bt_UseImage";
             this.bt_UseImage.Size = new System.Drawing.Size(75, 33);
@@ -319,6 +322,7 @@
             // 
             // bt_Browse
             // 
+            this.bt_Browse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Browse.Location = new System.Drawing.Point(307, 56);
             this.bt_Browse.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Browse.Name = "bt_Browse";

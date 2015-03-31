@@ -64,16 +64,29 @@ namespace Petshop
         private void AddBreed()
         {
             string itxbBreed = txb_BreedName.Text.Trim();
-            string icbType = cb_Type.SelectedValue.ToString();
 
-            string isqlBreed = "INSERT INTO `tb_petbreed` (`PetBreed_ID`, `PetType_ID`, `PetBreed_Des`) VALUES (NULL, '"+icbType+"', '"+itxbBreed+"');";
-            DialogResult iConfirmResult = MessageBox.Show("เพิ่มพันธุ์ " + itxbBreed + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
-            if (iConfirmResult == DialogResult.Yes)
+            string icbType = "";
+            if(cb_Type.SelectedValue !=null)
             {
-                iConnect.Insert(isqlBreed);
-                LoadBreed();
-                clearTxb();
+                icbType = cb_Type.SelectedValue.ToString();
             }
+            else
+            {
+                LoadType();
+                icbType = cb_Type.SelectedValue.ToString();
+            }
+            if ((itxbBreed != null) && (itxbBreed != ""))
+            {
+                string isqlBreed = "INSERT INTO `tb_petbreed` (`PetBreed_ID`, `PetType_ID`, `PetBreed_Des`) VALUES (NULL, '" + icbType + "', '" + itxbBreed + "');";
+                DialogResult iConfirmResult = MessageBox.Show("เพิ่มพันธุ์ " + itxbBreed + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    iConnect.Insert(isqlBreed);
+                    LoadBreed();
+                    clearTxb();
+                }
+            }
+            
         }
 
         private void bt_AddType_Click(object sender, EventArgs e)
@@ -188,11 +201,12 @@ namespace Petshop
             {
                 if((txb_TypeID.Text !=null)&&(txb_TypeID.Text !=""))
                 {
-                    bt_AddType.Select();
+                    bt_EditType.Select();
                 }
                 else
                 {
-                    bt_EditType.Select();
+                    bt_AddType.Select();
+                  
                 }
             } 
             

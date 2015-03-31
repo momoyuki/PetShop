@@ -162,6 +162,7 @@
             // 
             // bt_Load
             // 
+            this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Load.Location = new System.Drawing.Point(14, 154);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Load.Name = "bt_Load";
@@ -174,6 +175,7 @@
             // bt_AddHealDate
             // 
             this.bt_AddHealDate.Enabled = false;
+            this.bt_AddHealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddHealDate.Location = new System.Drawing.Point(743, 106);
             this.bt_AddHealDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddHealDate.Name = "bt_AddHealDate";
@@ -186,6 +188,7 @@
             // bt_HealDateEdit
             // 
             this.bt_HealDateEdit.Enabled = false;
+            this.bt_HealDateEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_HealDateEdit.Location = new System.Drawing.Point(743, 146);
             this.bt_HealDateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_HealDateEdit.Name = "bt_HealDateEdit";
@@ -208,6 +211,7 @@
             // bt_PrintDate
             // 
             this.bt_PrintDate.Enabled = false;
+            this.bt_PrintDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_PrintDate.Location = new System.Drawing.Point(848, 146);
             this.bt_PrintDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_PrintDate.Name = "bt_PrintDate";
@@ -237,6 +241,7 @@
             // 
             // bt_Search
             // 
+            this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Search.Location = new System.Drawing.Point(841, 7);
             this.bt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Search.Name = "bt_Search";
@@ -276,13 +281,15 @@
             // 
             // bt_contract
             // 
+            this.bt_contract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_contract.Location = new System.Drawing.Point(119, 7);
             this.bt_contract.Margin = new System.Windows.Forms.Padding(4);
             this.bt_contract.Name = "bt_contract";
             this.bt_contract.Size = new System.Drawing.Size(97, 32);
             this.bt_contract.TabIndex = 28;
-            this.bt_contract.Text = "ยังไม่ได้อ่าน";
+            this.bt_contract.Text = "ยังไม่ติดต่อ";
             this.bt_contract.UseVisualStyleBackColor = true;
+            this.bt_contract.Click += new System.EventHandler(this.bt_contract_Click);
             // 
             // rBt_contracted
             // 
@@ -298,13 +305,15 @@
             // 
             // bt_contracted
             // 
+            this.bt_contracted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_contracted.Location = new System.Drawing.Point(14, 7);
             this.bt_contracted.Margin = new System.Windows.Forms.Padding(4);
             this.bt_contracted.Name = "bt_contracted";
             this.bt_contracted.Size = new System.Drawing.Size(97, 32);
             this.bt_contracted.TabIndex = 20;
-            this.bt_contracted.Text = "อ่านแล้ว";
+            this.bt_contracted.Text = "ติดต่อแล้ว";
             this.bt_contracted.UseVisualStyleBackColor = true;
+            this.bt_contracted.Click += new System.EventHandler(this.bt_contracted_Click);
             // 
             // rBt_contract
             // 
@@ -335,6 +344,7 @@
             // 
             this.dGV_HealDate.AllowUserToAddRows = false;
             this.dGV_HealDate.AllowUserToDeleteRows = false;
+            this.dGV_HealDate.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CheckBoxStats,
@@ -501,6 +511,7 @@
             // 
             this.dGV_HealRecord.AllowUserToAddRows = false;
             this.dGV_HealRecord.AllowUserToDeleteRows = false;
+            this.dGV_HealRecord.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccHealRecord_ID2,
@@ -614,6 +625,7 @@
             // button8
             // 
             this.button8.Enabled = false;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Location = new System.Drawing.Point(743, 186);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
@@ -645,6 +657,7 @@
             // bt_PrintBill
             // 
             this.bt_PrintBill.Enabled = false;
+            this.bt_PrintBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_PrintBill.Location = new System.Drawing.Point(848, 66);
             this.bt_PrintBill.Margin = new System.Windows.Forms.Padding(4);
             this.bt_PrintBill.Name = "bt_PrintBill";

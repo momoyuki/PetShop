@@ -37,7 +37,7 @@
             this.coService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coService_DuringDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBox_Service = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_DelService = new System.Windows.Forms.Button();
             this.lb_RemarkService = new System.Windows.Forms.Label();
             this.Bt_LoadService = new System.Windows.Forms.Button();
             this.bt_EditService = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             this.txb_SearchMedi = new System.Windows.Forms.TextBox();
             this.bt_SearchMedi = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bt_DelMedi = new System.Windows.Forms.Button();
             this.lb_Medi = new System.Windows.Forms.Label();
             this.lb_MediIDRemark = new System.Windows.Forms.Label();
             this.txb_MediDetail = new System.Windows.Forms.TextBox();
@@ -195,7 +195,7 @@
             // 
             // gBox_Service
             // 
-            this.gBox_Service.Controls.Add(this.button1);
+            this.gBox_Service.Controls.Add(this.bt_DelService);
             this.gBox_Service.Controls.Add(this.lb_RemarkService);
             this.gBox_Service.Controls.Add(this.Bt_LoadService);
             this.gBox_Service.Controls.Add(this.bt_EditService);
@@ -217,17 +217,18 @@
             this.gBox_Service.TabStop = false;
             this.gBox_Service.Text = "รายละเอียดบริการ";
             // 
-            // button1
+            // bt_DelService
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(242, 150);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "ลบ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_DelService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelService.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelService.Location = new System.Drawing.Point(242, 150);
+            this.bt_DelService.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelService.Name = "bt_DelService";
+            this.bt_DelService.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelService.TabIndex = 14;
+            this.bt_DelService.Text = "ลบ";
+            this.bt_DelService.UseVisualStyleBackColor = true;
+            this.bt_DelService.Click += new System.EventHandler(this.bt_DelService_Click);
             // 
             // lb_RemarkService
             // 
@@ -438,6 +439,7 @@
             // 
             // bt_SearchMedi
             // 
+            this.bt_SearchMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_SearchMedi.Location = new System.Drawing.Point(827, 310);
             this.bt_SearchMedi.Name = "bt_SearchMedi";
             this.bt_SearchMedi.Size = new System.Drawing.Size(101, 32);
@@ -448,7 +450,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.bt_DelMedi);
             this.groupBox4.Controls.Add(this.lb_Medi);
             this.groupBox4.Controls.Add(this.lb_MediIDRemark);
             this.groupBox4.Controls.Add(this.txb_MediDetail);
@@ -469,17 +471,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "รายละเอียดยา";
             // 
-            // button2
+            // bt_DelMedi
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(241, 201);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 32);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "ลบ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bt_DelMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelMedi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelMedi.Location = new System.Drawing.Point(241, 201);
+            this.bt_DelMedi.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelMedi.Name = "bt_DelMedi";
+            this.bt_DelMedi.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelMedi.TabIndex = 17;
+            this.bt_DelMedi.Text = "ลบ";
+            this.bt_DelMedi.UseVisualStyleBackColor = true;
+            this.bt_DelMedi.Click += new System.EventHandler(this.bt_DelMedi_Click);
             // 
             // lb_Medi
             // 
@@ -500,7 +503,6 @@
             this.lb_MediIDRemark.Size = new System.Drawing.Size(186, 18);
             this.lb_MediIDRemark.TabIndex = 15;
             this.lb_MediIDRemark.Text = "*รหัสยาสามารถกำหนดเองได้";
-            this.lb_MediIDRemark.Visible = false;
             // 
             // txb_MediDetail
             // 
@@ -1049,8 +1051,8 @@
         private System.Windows.Forms.Label lb_ResultB;
         private System.Windows.Forms.Label lb_ResultA;
         private System.Windows.Forms.Label lb_Result;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bt_DelService;
+        private System.Windows.Forms.Button bt_DelMedi;
 
 
     }
