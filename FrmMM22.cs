@@ -168,7 +168,7 @@ namespace Petshop
         {
             DataTable idtPetProfile;
             string itb_PetID = txb_PetID.Text.Trim();
-            string isqlPetProfile = "SELECT * FROM `tb_petprofile` where Pet_ID ='" + itb_PetID + "'";  //โหลดข้อมูลสัตว์เจ้าของสัตว์ จากการค้นหารายชื่อ
+            string isqlPetProfile = "SELECT * FROM petshop.`tb_petprofile` where Pet_ID ='" + itb_PetID + "'";  //โหลดข้อมูลสัตว์เจ้าของสัตว์ จากการค้นหารายชื่อ
             idtPetProfile = iConnect.SelectByCommand(isqlPetProfile);
             if ((idtPetProfile != null) && (idtPetProfile.Rows.Count > 0))
             {

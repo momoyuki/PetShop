@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Petshop.Resources {
+namespace Petshop {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace Petshop.Resources {
         
         public override string FullResourceName {
             get {
-                return "Petshop.Resources.CrBillProd.rpt";
+                return "Petshop.CrBillProd.rpt";
             }
             set {
                 // Do nothing

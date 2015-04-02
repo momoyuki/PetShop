@@ -72,6 +72,7 @@
             this.txb_ProductDetail = new System.Windows.Forms.TextBox();
             this.lb_ProductIDh = new System.Windows.Forms.Label();
             this.bt_DelProduct = new System.Windows.Forms.Button();
+            this.bt_reSetProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.gBoxProductPrice.SuspendLayout();
@@ -220,6 +221,7 @@
             this.txb_ProductID.Name = "txb_ProductID";
             this.txb_ProductID.Size = new System.Drawing.Size(166, 26);
             this.txb_ProductID.TabIndex = 0;
+            this.txb_ProductID.TextChanged += new System.EventHandler(this.txb_ProductID_TextChanged);
             this.txb_ProductID.Enter += new System.EventHandler(this.txb_ProductID_Enter);
             this.txb_ProductID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductID_KeyDown);
             // 
@@ -469,6 +471,7 @@
             // 
             // bt_EditProduct
             // 
+            this.bt_EditProduct.Enabled = false;
             this.bt_EditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditProduct.Location = new System.Drawing.Point(194, 217);
             this.bt_EditProduct.Margin = new System.Windows.Forms.Padding(4);
@@ -502,7 +505,7 @@
             // lb_ProductIDh
             // 
             this.lb_ProductIDh.AutoSize = true;
-            this.lb_ProductIDh.Location = new System.Drawing.Point(269, 30);
+            this.lb_ProductIDh.Location = new System.Drawing.Point(343, 272);
             this.lb_ProductIDh.Name = "lb_ProductIDh";
             this.lb_ProductIDh.Size = new System.Drawing.Size(99, 18);
             this.lb_ProductIDh.TabIndex = 14;
@@ -511,6 +514,7 @@
             // 
             // bt_DelProduct
             // 
+            this.bt_DelProduct.Enabled = false;
             this.bt_DelProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_DelProduct.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_DelProduct.Location = new System.Drawing.Point(272, 217);
@@ -521,11 +525,25 @@
             this.bt_DelProduct.Text = "ลบ";
             this.bt_DelProduct.UseVisualStyleBackColor = true;
             // 
+            // bt_reSetProduct
+            // 
+            this.bt_reSetProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_reSetProduct.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_reSetProduct.Location = new System.Drawing.Point(272, 22);
+            this.bt_reSetProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_reSetProduct.Name = "bt_reSetProduct";
+            this.bt_reSetProduct.Size = new System.Drawing.Size(70, 32);
+            this.bt_reSetProduct.TabIndex = 16;
+            this.bt_reSetProduct.Text = "ลบ";
+            this.bt_reSetProduct.UseVisualStyleBackColor = true;
+            this.bt_reSetProduct.Click += new System.EventHandler(this.bt_reSetProduct_Click);
+            // 
             // FrmMM12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.bt_reSetProduct);
             this.Controls.Add(this.bt_DelProduct);
             this.Controls.Add(this.lb_ProductIDh);
             this.Controls.Add(this.dGV_PD);
@@ -600,5 +618,6 @@
         private System.Windows.Forms.Label lb_ProductName;
         private System.Windows.Forms.TextBox txb_ProductName;
         private System.Windows.Forms.Button bt_DelProduct;
+        private System.Windows.Forms.Button bt_reSetProduct;
     }
 }

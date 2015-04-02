@@ -115,7 +115,6 @@
             // gBoxDetail
             // 
             this.gBoxDetail.Controls.Add(this.lb_BirthDay);
-            this.gBoxDetail.Controls.Add(this.bt_HealDate);
             this.gBoxDetail.Controls.Add(this.CheckBox_Sterility);
             this.gBoxDetail.Controls.Add(this.bt_Service);
             this.gBoxDetail.Controls.Add(this.rb_M);
@@ -159,13 +158,14 @@
             // bt_HealDate
             // 
             this.bt_HealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_HealDate.Location = new System.Drawing.Point(177, 168);
+            this.bt_HealDate.Location = new System.Drawing.Point(5, 92);
             this.bt_HealDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_HealDate.Name = "bt_HealDate";
-            this.bt_HealDate.Size = new System.Drawing.Size(100, 69);
+            this.bt_HealDate.Size = new System.Drawing.Size(100, 30);
             this.bt_HealDate.TabIndex = 26;
             this.bt_HealDate.Text = "นัดหมาย";
             this.bt_HealDate.UseVisualStyleBackColor = true;
+            this.bt_HealDate.Visible = false;
             this.bt_HealDate.Click += new System.EventHandler(this.bt_HealDate_Click);
             // 
             // CheckBox_Sterility
@@ -183,7 +183,7 @@
             this.bt_Service.Location = new System.Drawing.Point(69, 168);
             this.bt_Service.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Service.Name = "bt_Service";
-            this.bt_Service.Size = new System.Drawing.Size(100, 69);
+            this.bt_Service.Size = new System.Drawing.Size(208, 69);
             this.bt_Service.TabIndex = 24;
             this.bt_Service.Text = "ทำการรักษา";
             this.bt_Service.UseVisualStyleBackColor = true;
@@ -242,6 +242,7 @@
             // gBox_OwnerDetail
             // 
             this.gBox_OwnerDetail.Controls.Add(this.bt_LoadProfile);
+            this.gBox_OwnerDetail.Controls.Add(this.bt_HealDate);
             this.gBox_OwnerDetail.Controls.Add(this.lb_Tel);
             this.gBox_OwnerDetail.Controls.Add(this.txb_TelOwner);
             this.gBox_OwnerDetail.Controls.Add(this.lb_Addr);

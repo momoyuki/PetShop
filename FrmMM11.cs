@@ -311,6 +311,8 @@ namespace Petshop
             txb_MediSale.Clear();
             txb_MediAmt.Clear();
             txb_MediOrder.Clear();
+            dTP_Product.Value = DateTime.Today;
+            dTP_Expired.Value = DateTime.Today;
         }
         private void dGV_Medi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -324,13 +326,13 @@ namespace Petshop
                 txb_MediPrice.Text = row.Cells["ccMedi_Price"].Value.ToString();
                 txb_MediSale.Text = row.Cells["ccMedi_Sale"].Value.ToString();
 
-                //string iUnit = Convert.ToString(row.Cells["coUnit_ID"].Value);
+                
                 cb_MediUnit.SelectedValue = row.Cells["coUnit_ID"].Value;
-                //cb_MediUnit.ValueMember = row.Cells["coUnit_ID"].Value.ToString();
-                //cb_MediUnit.SelectedIndex = row.Cells["coUnit_ID"]
                 txb_MediAmt.Text = row.Cells["ccMedi_Unit_Amt"].Value.ToString();
-                //string dtpProduct = row.Cells["ccMedi_Product"].Value.ToString();
-                //string dtpExpired = row.Cells["ccMedi_Expired"].Value.ToString();
+                DateTime dtpProduct = Convert.ToDateTime(row.Cells["ccMedi_Product"].Value);
+                dTP_Product.Value = dtpProduct;
+                DateTime dtpExpired = Convert.ToDateTime(row.Cells["ccMedi_Expired"].Value);
+                dTP_Expired.Value = dtpExpired;
                 txb_MediOrder.Text = row.Cells["ccMedi_Unit_Order"].Value.ToString();
                 int iStock = Convert.ToInt32(row.Cells["ccMedi_Stock"].Value); 
                 if (iStock == 1)

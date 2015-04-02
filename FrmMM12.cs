@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Petshop
 {
@@ -43,59 +44,118 @@ namespace Petshop
             dGV_PD.DataSource = idtProduct;
             dGV_PD.Refresh();
         }
+        string iAddEditProduct; 
         private void bt_AddProduct_Click(object sender, EventArgs e)
         {
-            AddProduct();
+            iAddEditProduct = "AddProduct";
+            AddEditProduct();
         }
 
-        private void AddProduct()
+        private void AddEditProduct()
         {
-            string itxbProductID = txb_ProductID.Text.Trim();
-            string itxbProductName = txb_ProductName.Text.Trim();
-            string itxbProductDetail = txb_ProductDetail.Text.Trim();
-            string itxbProductPrice = txb_ProductPrice.Text.Trim();
-            string itxbProductSale = txb_ProductSale.Text.Trim();
-            string icbProductUnit = cb_ProductUnit.SelectedValue.ToString();
-
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-
-            string idtpProduct = dTP_Product.Value.ToString("yyyy-MM-dd");
-            string idtpExpired = dTP_Expired.Value.ToString("yyyy-MM-dd");
-            string itxbProductAmt = txb_ProductAmt.Text.Trim();
-            string itxbProductOrder = txb_ProductOrder.Text.Trim();
-
-            int iStock = 0;
-            if (CheckBox_Stock.Checked == true)
+             epCheck.Clear();
+            Regex RegID = new Regex(@"[a-zA-Z0-9]{6,16}$");
+            Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
+            Regex RegInt = new Regex(@"^(\d{1,3})$");
+            //Regex RegDate = new Regex(@"^\d{1,3}$");
+            if (!RegID.IsMatch(txb_ProductID.Text))
             {
-                iStock = 1;
+                epCheck.SetError(txb_ProductID, "***กรุณากรอกรหัสสินค้าอย่างน้อย 6 หลัก *ตัวอย่าง Aa0001");
             }
+            else if (txb_ProductName.Text == string.Empty)
+            {
+                epCheck.SetError(txb_ProductName, "***กรุณากรอกชื่อสินค้า");
+            }
+            else if (!RegMoney.IsMatch(txb_ProductPrice.Text))
+            {
+                epCheck.SetError(txb_ProductPrice, "***กรุณาใส่ค่าให้ถูกต้อง เช่น 777 หรือ 777.25");
+            }
+            else if (!RegMoney.IsMatch(txb_ProductSale.Text))
+            {
+                epCheck.SetError(txb_ProductSale, "***กรุณาใส่ค่าให้ถูกต้อง เช่น 777 หรือ 777.25");
+            }
+            else if (!RegInt.IsMatch(txb_ProductAmt.Text))
+            {
+                epCheck.SetError(txb_ProductAmt, "***คุณกรอกจำนวนไม่ถูกต้อง");
+                txb_ProductAmt.Text = "10";
+            }
+            else if (!RegInt.IsMatch(txb_ProductOrder.Text))
+            {
+                epCheck.SetError(txb_ProductOrder, "***คุณกรอกจำนวนไม่ถูกต้อง");
+                txb_ProductOrder.Text = "5";
+            }
+            else
+            {
+                string itxbProductID = txb_ProductID.Text.Trim();
+                string itxbProductName = txb_ProductName.Text.Trim();
+                string itxbProductDetail = txb_ProductDetail.Text.Trim();
+                string itxbProductPrice = txb_ProductPrice.Text.Trim();
+                string itxbProductSale = txb_ProductSale.Text.Trim();
+                string icbProductUnit = cb_ProductUnit.SelectedValue.ToString();
 
-            string isqlAddProduct = "INSERT INTO `tb_product` (`Product_ID`, `Product_Des`, `Product_Detail`, `Product_Price`, `Product_Sale`, `Unit_ID`, `Product_Product`, `Product_Expired`, `Product_Unit_Amt`, `Product_Unit_Order`,Product_Stock) " +
-                "VALUES ('" + itxbProductID + "','" + itxbProductName + "', '" + itxbProductDetail + "', '" + itxbProductPrice + "', '" + itxbProductSale + "', '" + icbProductUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itxbProductAmt + "', '" + itxbProductOrder + "',b'" + iStock + "')";
+                System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+                System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
 
-            //string isqlAddProduct = "INSERT INTO `tb_product` (`Product_ID`, `Product_Des`, `Product_Detail`, `Product_Price`, `Product_Sale`, `Unit_ID`, `Product_Product`, `Product_Expired`, `Product_Unit_Amt`, `Product_Unit_Order`) VALUES (CONCAT('P',LPAD((SELECT SUBSTR(`Product_ID`, 2) FROM `tb_product` as `alias` Order By Product_ID DESC Limit 1)+1,5,'0')), '" + itbProductName + "', '" + itbProductDetail + "', '" + itbProductPrice + "', '" + itbProductSale + "', '" + icbProductUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itbProductAmt + "', '" + itbProductOrder + "')";
-            
-                    DataTable idtProductCheck;
-                    string isqlProductCheck = "SELECT * FROM petshop.tb_product where Product_ID = '" + itxbProductID + " '";
-                    idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
-                    if (idtProductCheck != null)
+                string idtpProduct = dTP_Product.Value.ToString("yyyy-MM-dd");
+                string idtpExpired = dTP_Expired.Value.ToString("yyyy-MM-dd");
+                string itxbProductAmt = txb_ProductAmt.Text.Trim();
+                string itxbProductOrder = txb_ProductOrder.Text.Trim();
+                string ilbProductID = lb_ProductIDh.Text.Trim();
+                int iStock = 0;
+                if (CheckBox_Stock.Checked == true)
+                {
+                    iStock = 1;
+                    
+                }
+                else
+                {
+                    txb_ProductOrder.Text = "0";
+                }
+
+                DataTable idtProductCheck;
+                string isqlProductCheck = "SELECT * FROM petshop.tb_product where Product_ID = '" + itxbProductID + " '";
+                idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
+
+                if (iAddEditProduct == "AddProduct")
+                {
+                    if (idtProductCheck.Rows.Count > 0)
                     {
-                        if (idtProductCheck.Rows.Count > 0)
+                        MessageBox.Show("มีสินค้ารหัส " + itxbProductID + " อยู่ในระบบแล้ว");
+                    }
+                    else
+                    {
+                        DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + itxbProductName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                        if (iConfirmResult == DialogResult.Yes)
                         {
-                            MessageBox.Show("มีสินค้ารหัส " + itxbProductID + " อยู่ในระบบแล้ว");
+                            string isqlAddProduct = "INSERT INTO `tb_product` (`Product_ID`, `Product_Des`, `Product_Detail`, `Product_Price`, `Product_Sale`, `Unit_ID`, `Product_Product`, `Product_Expired`, `Product_Unit_Amt`, `Product_Unit_Order`,Product_Stock) " +
+                            "VALUES ('" + itxbProductID + "','" + itxbProductName + "', '" + itxbProductDetail + "', '" + itxbProductPrice + "', '" + itxbProductSale + "', '" + icbProductUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itxbProductAmt + "', '" + itxbProductOrder + "',b'" + iStock + "')";
+                            iConnect.Insert(isqlAddProduct);
+                            LoadProduct();
+                            ClearTxtProduct();
+                            iAddEditProduct = string.Empty;
                         }
-                        else
+                    }
+                }
+                else if (iAddEditProduct == "EditProduct")
+                {
+                    if (idtProductCheck.Rows.Count > 0)
+                    {
+                        if ((itxbProductID != null) || (itxbProductID != string.Empty))
                         {
                             DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + itxbProductName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
                             if (iConfirmResult == DialogResult.Yes)
                             {
+                                string isqlAddProduct = "UPDATE `tb_product` SET Product_ID = '" + itxbProductID + "',`Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "';";
                                 iConnect.Insert(isqlAddProduct);
                                 LoadProduct();
+                                ClearTxtProduct();
+                                iAddEditProduct = string.Empty;
                             }
                         }
                     }
+                }
+            }
         }
 
         private void dGV_PD_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -137,56 +197,20 @@ namespace Petshop
         }
         private void bt_EditProduct_Click(object sender, EventArgs e)
         {
-            string itxbProductID = txb_ProductID.Text.Trim();
-            string ilbProductID = lb_ProductIDh.Text.Trim();
-            string itxbProductName = txb_ProductName.Text.Trim();
-            string itxbProductDetail = txb_ProductDetail.Text.Trim();
-            string itxbProductPrice = txb_ProductPrice.Text.Trim();
-            string itxbProductSale = txb_ProductSale.Text.Trim();
-            //string itbProductUnit = tb_ProductUnit.Text.Trim();
-            string icbProductUnit = cb_ProductUnit.SelectedValue.ToString();
-
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-
-            string idtpProduct = dTP_Product.Value.ToString("yyyy-MM-dd");
-            string idtpExpired = dTP_Expired.Value.ToString("yyyy-MM-dd");
-
-            string itxbProductAmt = txb_ProductAmt.Text.Trim();
-            string itxbProductOrder = txb_ProductOrder.Text.Trim();
-
-            int iStock = 0;
-            if (CheckBox_Stock.Checked == true)
-            {
-                iStock = 1;
-            }
-            DataTable idtProductCheck;
-            string isqlProd = "SELECT * FROM tb_product where Product_ID = '"+ilbProductID+"'";
-            idtProductCheck = iConnect.SelectByCommand(isqlProd);
-            if (idtProductCheck.Rows.Count > 0)
-            {
-                if ((itxbProductID != null) || (itxbProductID != ""))
-                {
-                    DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + itxbProductName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
-                    if (iConfirmResult == DialogResult.Yes)
-                    {
-                        string isqlAddProduct = "UPDATE `tb_product` SET Product_ID = '"+itxbProductID+"',`Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "';";
-                        iConnect.Insert(isqlAddProduct);
-                        LoadProduct();
-                        ClearTxtProduct();
-                    }
-                }
-             }
-         }
+            iAddEditProduct = "EditProduct";
+            AddEditProduct();
+        }
         private void ClearTxtProduct()
         {
+            txb_ProductID.Focus();
             lb_ProductIDh.Text = "";
             txb_ProductID.Clear();
             txb_ProductName.Clear();
             txb_ProductDetail.Clear();
             txb_ProductPrice.Clear();
             txb_ProductSale.Clear();
+            dTP_Product.Value = DateTime.Today;
+            dTP_Expired.Value = DateTime.Today;
             txb_ProductAmt.Clear();
             txb_ProductOrder.Clear();
         }
@@ -259,6 +283,25 @@ namespace Petshop
             {
                 bt_AddProduct.Select();
             }
+        }
+
+        private void txb_ProductID_TextChanged(object sender, EventArgs e)
+        {
+            if((txb_ProductID.Text == null)||(txb_ProductID.Text == string.Empty)){
+
+                bt_EditProduct.Enabled = false;
+                bt_DelProduct.Enabled = false;
+            }
+            else
+            {
+                bt_EditProduct.Enabled = true;
+                bt_DelProduct.Enabled = true;
+            }
+        }
+
+        private void bt_reSetProduct_Click(object sender, EventArgs e)
+        {
+            ClearTxtProduct();
         }
      }
 }

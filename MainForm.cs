@@ -17,16 +17,15 @@ namespace Petshop
             InitializeComponent();
             iConnect = new MySQLDBConnect(); //กำหนดค่า iconnect เป็น Class MySQLDBConnect
         }
-
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("ต้องการออกจากโปรแกรม?",
+                if (MessageBox.Show("ต้องการออกจากโปรแกรม?",
                        "กำลังปิดโปรแกรม",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Information) == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+                {
+                    e.Cancel = true;
+                }
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
