@@ -50,36 +50,11 @@ namespace Petshop
 
         private void AddProduct()
         {
-            /*tb_ProductID.Enabled = true; //อย่าลืมปิด
-            tb_ProductName.Enabled = true;
-            tb_ProductDetail.Enabled = true;
-            tb_ProductPrice.Enabled = true;
-            tb_ProductSale.Enabled = true;
-            tb_ProductUnit.Enabled = true;
-          
-            dTP_Product.Enabled = true;
-            dTP_Expired.Enabled = true;
-
-            tb_ProductAmt.Enabled = true;
-            tb_ProductOrder.Enabled = true;
-
-            tb_ProductName.Focus(); */
-
             string itxbProductID = txb_ProductID.Text.Trim();
             string itxbProductName = txb_ProductName.Text.Trim();
             string itxbProductDetail = txb_ProductDetail.Text.Trim();
-            if ((txb_ProductPrice.Text == "") || (txb_ProductPrice.Text == null))
-            {
-                txb_ProductPrice.Text = "0.00";
-            }
             string itxbProductPrice = txb_ProductPrice.Text.Trim();
-            if ((txb_ProductSale.Text == "") || (txb_ProductSale.Text == null))
-            {
-                txb_ProductSale.Text = "0.00";
-            }
             string itxbProductSale = txb_ProductSale.Text.Trim();
-
-            //string itbProductUnit = tb_ProductUnit.Text.Trim();
             string icbProductUnit = cb_ProductUnit.SelectedValue.ToString();
 
             System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
@@ -88,15 +63,7 @@ namespace Petshop
 
             string idtpProduct = dTP_Product.Value.ToString("yyyy-MM-dd");
             string idtpExpired = dTP_Expired.Value.ToString("yyyy-MM-dd");
-            if ((txb_ProductAmt.Text == "") || (txb_ProductAmt.Text == null))
-            {
-                txb_ProductAmt.Text = "0";
-            }
             string itxbProductAmt = txb_ProductAmt.Text.Trim();
-            if ((txb_ProductOrder.Text == "") || (txb_ProductOrder.Text == null))
-            {
-                txb_ProductOrder.Text = "0";
-            }
             string itxbProductOrder = txb_ProductOrder.Text.Trim();
 
             int iStock = 0;
@@ -109,10 +76,7 @@ namespace Petshop
                 "VALUES ('" + itxbProductID + "','" + itxbProductName + "', '" + itxbProductDetail + "', '" + itxbProductPrice + "', '" + itxbProductSale + "', '" + icbProductUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itxbProductAmt + "', '" + itxbProductOrder + "',b'" + iStock + "')";
 
             //string isqlAddProduct = "INSERT INTO `tb_product` (`Product_ID`, `Product_Des`, `Product_Detail`, `Product_Price`, `Product_Sale`, `Unit_ID`, `Product_Product`, `Product_Expired`, `Product_Unit_Amt`, `Product_Unit_Order`) VALUES (CONCAT('P',LPAD((SELECT SUBSTR(`Product_ID`, 2) FROM `tb_product` as `alias` Order By Product_ID DESC Limit 1)+1,5,'0')), '" + itbProductName + "', '" + itbProductDetail + "', '" + itbProductPrice + "', '" + itbProductSale + "', '" + icbProductUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itbProductAmt + "', '" + itbProductOrder + "')";
-            if ((itxbProductID != null) || (itxbProductID != ""))
-            {
-                if ((itxbProductName != null) || (itxbProductName != ""))
-                {
+            
                     DataTable idtProductCheck;
                     string isqlProductCheck = "SELECT * FROM petshop.tb_product where Product_ID = '" + itxbProductID + " '";
                     idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
@@ -131,10 +95,7 @@ namespace Petshop
                                 LoadProduct();
                             }
                         }
-
                     }
-                }
-            }
         }
 
         private void dGV_PD_CellClick(object sender, DataGridViewCellEventArgs e)

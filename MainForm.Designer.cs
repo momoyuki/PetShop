@@ -50,6 +50,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ใบนดหมายToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.ดใบเสรจToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,7 +140,8 @@
             this.จดการสมาชกToolStripMenuItem1,
             this.ตดตามการรกษาToolStripMenuItem,
             this.toolStripSeparator3,
-            this.ทำการรกษายาToolStripMenuItem});
+            this.ทำการรกษายาToolStripMenuItem,
+            this.ดใบเสรจToolStripMenuItem});
             this.ทำการรกษาToolStripMenuItem.Name = "ทำการรกษาToolStripMenuItem";
             this.ทำการรกษาToolStripMenuItem.Size = new System.Drawing.Size(100, 19);
             this.ทำการรกษาToolStripMenuItem.Text = "&2.บันทึกประจำวัน";
@@ -223,6 +225,12 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // ดใบเสรจToolStripMenuItem
+            // 
+            this.ดใบเสรจToolStripMenuItem.Name = "ดใบเสรจToolStripMenuItem";
+            this.ดใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.ดใบเสรจToolStripMenuItem.Text = "&4.ดูใบเสร็จ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -270,6 +278,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem ตดตามการรกษาToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ดใบเสรจToolStripMenuItem;
     }
 }
 

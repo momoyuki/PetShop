@@ -37,6 +37,7 @@
             this.coService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coService_DuringDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBox_Service = new System.Windows.Forms.GroupBox();
+            this.bt_ResetService = new System.Windows.Forms.Button();
             this.bt_DelService = new System.Windows.Forms.Button();
             this.lb_RemarkService = new System.Windows.Forms.Label();
             this.Bt_LoadService = new System.Windows.Forms.Button();
@@ -59,8 +60,9 @@
             this.txb_SearchMedi = new System.Windows.Forms.TextBox();
             this.bt_SearchMedi = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.bt_ReSetMedi = new System.Windows.Forms.Button();
             this.bt_DelMedi = new System.Windows.Forms.Button();
-            this.lb_Medi = new System.Windows.Forms.Label();
+            this.lb_MediIDH = new System.Windows.Forms.Label();
             this.lb_MediIDRemark = new System.Windows.Forms.Label();
             this.txb_MediDetail = new System.Windows.Forms.TextBox();
             this.lb_MediDetail = new System.Windows.Forms.Label();
@@ -88,7 +90,7 @@
             this.txb_MediName = new System.Windows.Forms.TextBox();
             this.lb_MediName = new System.Windows.Forms.Label();
             this.txb_MediID = new System.Windows.Forms.TextBox();
-            this.lb_MediID = new System.Windows.Forms.Label();
+            this.lb_MediS = new System.Windows.Forms.Label();
             this.dGV_Medi = new System.Windows.Forms.DataGridView();
             this.ccMedi_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -195,6 +197,7 @@
             // 
             // gBox_Service
             // 
+            this.gBox_Service.Controls.Add(this.bt_ResetService);
             this.gBox_Service.Controls.Add(this.bt_DelService);
             this.gBox_Service.Controls.Add(this.lb_RemarkService);
             this.gBox_Service.Controls.Add(this.Bt_LoadService);
@@ -217,8 +220,22 @@
             this.gBox_Service.TabStop = false;
             this.gBox_Service.Text = "รายละเอียดบริการ";
             // 
+            // bt_ResetService
+            // 
+            this.bt_ResetService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_ResetService.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_ResetService.Location = new System.Drawing.Point(304, 36);
+            this.bt_ResetService.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_ResetService.Name = "bt_ResetService";
+            this.bt_ResetService.Size = new System.Drawing.Size(70, 32);
+            this.bt_ResetService.TabIndex = 19;
+            this.bt_ResetService.Text = "เริ่มใหม่";
+            this.bt_ResetService.UseVisualStyleBackColor = true;
+            this.bt_ResetService.Click += new System.EventHandler(this.bt_ResetService_Click);
+            // 
             // bt_DelService
             // 
+            this.bt_DelService.Enabled = false;
             this.bt_DelService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_DelService.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_DelService.Location = new System.Drawing.Point(242, 150);
@@ -255,6 +272,7 @@
             // 
             // bt_EditService
             // 
+            this.bt_EditService.Enabled = false;
             this.bt_EditService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditService.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_EditService.Location = new System.Drawing.Point(164, 150);
@@ -285,11 +303,11 @@
             this.gBoxTimeService.Controls.Add(this.txb_ServiceDate);
             this.gBoxTimeService.Controls.Add(this.lb_ServiceDate);
             this.gBoxTimeService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gBoxTimeService.Location = new System.Drawing.Point(400, 40);
+            this.gBoxTimeService.Location = new System.Drawing.Point(432, 40);
             this.gBoxTimeService.Margin = new System.Windows.Forms.Padding(4);
             this.gBoxTimeService.Name = "gBoxTimeService";
             this.gBoxTimeService.Padding = new System.Windows.Forms.Padding(4);
-            this.gBoxTimeService.Size = new System.Drawing.Size(231, 76);
+            this.gBoxTimeService.Size = new System.Drawing.Size(282, 76);
             this.gBoxTimeService.TabIndex = 4;
             this.gBoxTimeService.TabStop = false;
             this.gBoxTimeService.Text = "ติดตามการรักษา";
@@ -297,7 +315,7 @@
             // lb_Day
             // 
             this.lb_Day.AutoSize = true;
-            this.lb_Day.Location = new System.Drawing.Point(199, 34);
+            this.lb_Day.Location = new System.Drawing.Point(198, 34);
             this.lb_Day.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Day.Name = "lb_Day";
             this.lb_Day.Size = new System.Drawing.Size(24, 18);
@@ -374,6 +392,7 @@
             this.txb_ServiceID.Name = "txb_ServiceID";
             this.txb_ServiceID.Size = new System.Drawing.Size(140, 26);
             this.txb_ServiceID.TabIndex = 1;
+            this.txb_ServiceID.TextChanged += new System.EventHandler(this.txb_ServiceID_TextChanged);
             // 
             // lb_ServiceID
             // 
@@ -450,8 +469,9 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.bt_ReSetMedi);
             this.groupBox4.Controls.Add(this.bt_DelMedi);
-            this.groupBox4.Controls.Add(this.lb_Medi);
+            this.groupBox4.Controls.Add(this.lb_MediIDH);
             this.groupBox4.Controls.Add(this.lb_MediIDRemark);
             this.groupBox4.Controls.Add(this.txb_MediDetail);
             this.groupBox4.Controls.Add(this.lb_MediDetail);
@@ -461,7 +481,7 @@
             this.groupBox4.Controls.Add(this.txb_MediName);
             this.groupBox4.Controls.Add(this.lb_MediName);
             this.groupBox4.Controls.Add(this.txb_MediID);
-            this.groupBox4.Controls.Add(this.lb_MediID);
+            this.groupBox4.Controls.Add(this.lb_MediS);
             this.groupBox4.Location = new System.Drawing.Point(8, 8);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
@@ -470,6 +490,19 @@
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "รายละเอียดยา";
+            // 
+            // bt_ReSetMedi
+            // 
+            this.bt_ReSetMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_ReSetMedi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_ReSetMedi.Location = new System.Drawing.Point(278, 36);
+            this.bt_ReSetMedi.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_ReSetMedi.Name = "bt_ReSetMedi";
+            this.bt_ReSetMedi.Size = new System.Drawing.Size(70, 32);
+            this.bt_ReSetMedi.TabIndex = 18;
+            this.bt_ReSetMedi.Text = "เริ่มใหม่";
+            this.bt_ReSetMedi.UseVisualStyleBackColor = true;
+            this.bt_ReSetMedi.Click += new System.EventHandler(this.bt_ReSetMedi_Click);
             // 
             // bt_DelMedi
             // 
@@ -484,15 +517,15 @@
             this.bt_DelMedi.UseVisualStyleBackColor = true;
             this.bt_DelMedi.Click += new System.EventHandler(this.bt_DelMedi_Click);
             // 
-            // lb_Medi
+            // lb_MediIDH
             // 
-            this.lb_Medi.AutoSize = true;
-            this.lb_Medi.Location = new System.Drawing.Point(277, 44);
-            this.lb_Medi.Name = "lb_Medi";
-            this.lb_Medi.Size = new System.Drawing.Size(72, 18);
-            this.lb_Medi.TabIndex = 16;
-            this.lb_Medi.Text = "lb_MediID";
-            this.lb_Medi.Visible = false;
+            this.lb_MediIDH.AutoSize = true;
+            this.lb_MediIDH.Location = new System.Drawing.Point(238, 255);
+            this.lb_MediIDH.Name = "lb_MediIDH";
+            this.lb_MediIDH.Size = new System.Drawing.Size(72, 18);
+            this.lb_MediIDH.TabIndex = 16;
+            this.lb_MediIDH.Text = "lb_MediID";
+            this.lb_MediIDH.Visible = false;
             // 
             // lb_MediIDRemark
             // 
@@ -792,15 +825,15 @@
             this.txb_MediID.Enter += new System.EventHandler(this.tb_MediID_Enter);
             this.txb_MediID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_MediID_KeyDown);
             // 
-            // lb_MediID
+            // lb_MediS
             // 
-            this.lb_MediID.AutoSize = true;
-            this.lb_MediID.Location = new System.Drawing.Point(27, 44);
-            this.lb_MediID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_MediID.Name = "lb_MediID";
-            this.lb_MediID.Size = new System.Drawing.Size(57, 18);
-            this.lb_MediID.TabIndex = 0;
-            this.lb_MediID.Text = "รหัสยา*";
+            this.lb_MediS.AutoSize = true;
+            this.lb_MediS.Location = new System.Drawing.Point(27, 44);
+            this.lb_MediS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_MediS.Name = "lb_MediS";
+            this.lb_MediS.Size = new System.Drawing.Size(57, 18);
+            this.lb_MediS.TabIndex = 0;
+            this.lb_MediS.Text = "รหัสยา*";
             // 
             // dGV_Medi
             // 
@@ -1018,14 +1051,14 @@
         private System.Windows.Forms.TextBox txb_MediName;
         private System.Windows.Forms.Label lb_MediName;
         private System.Windows.Forms.TextBox txb_MediID;
-        private System.Windows.Forms.Label lb_MediID;
+        private System.Windows.Forms.Label lb_MediS;
         private System.Windows.Forms.DataGridView dGV_Medi;
         private System.Windows.Forms.ComboBox cb_MediUnit;
         private System.Windows.Forms.Label lb_RemarkService;
         private System.Windows.Forms.Label lb_MediIDRemark;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_ID;
-        private System.Windows.Forms.Label lb_Medi;
+        private System.Windows.Forms.Label lb_MediIDH;
         private System.Windows.Forms.Button Bt_Unit;
         private System.Windows.Forms.ErrorProvider epCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn coService_ID;
@@ -1053,6 +1086,8 @@
         private System.Windows.Forms.Label lb_Result;
         private System.Windows.Forms.Button bt_DelService;
         private System.Windows.Forms.Button bt_DelMedi;
+        private System.Windows.Forms.Button bt_ReSetMedi;
+        private System.Windows.Forms.Button bt_ResetService;
 
 
     }

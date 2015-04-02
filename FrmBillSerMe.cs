@@ -52,7 +52,7 @@ namespace Petshop
             
             ReportDocument rpt = new ReportDocument();
             //string iFolder = Application.ExecutablePath;
-            rpt.Load("E:\\Petshop\\Resources\\CrBillSerMe.rpt");
+            rpt.Load("D:\\Petshop\\Resources\\CrBillSerMe.rpt");
             /////////////////////////////Main Detail/////////////////////////////////
             rpt.SetDataSource(idtBillDetail);
             /////////////////////////////Sub Company////////////////////////////////
