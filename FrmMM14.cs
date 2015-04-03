@@ -37,7 +37,7 @@ namespace Petshop
         private void LoadBreed()
         {
             DataTable idtBreed;
-            string isqlCommand = "SELECT tb_petbreed.PetBreed_ID,tb_pettype.PetType_Des,tb_petbreed.PetBreed_Des FROM tb_petbreed,tb_pettype WHERE (tb_petbreed.PetType_ID = tb_pettype.PetType_ID)";
+            string isqlCommand = "SELECT tb_petbreed.*,tb_pettype.PetType_Des FROM tb_petbreed,tb_pettype WHERE (tb_petbreed.PetType_ID = tb_pettype.PetType_ID)";
             idtBreed = iConnect.SelectByCommand(isqlCommand);
             dGV_Breed.DataSource = idtBreed;
             dGV_Breed.Refresh();
@@ -75,16 +75,20 @@ namespace Petshop
                 LoadType();
                 icbType = cb_Type.SelectedValue.ToString();
             }
-            if ((itxbBreed != null) && (itxbBreed != ""))
+            if ((itxbBreed != null) || (itxbBreed != string.Empty))
             {
                 string isqlBreed = "INSERT INTO `tb_petbreed` (`PetBreed_ID`, `PetType_ID`, `PetBreed_Des`) VALUES (NULL, '" + icbType + "', '" + itxbBreed + "');";
-                DialogResult iConfirmResult = MessageBox.Show("เพิ่มพันธุ์ " + itxbBreed + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                DialogResult iConfirmResult = MessageBox.Show("เพิ่มพันธุ์ " + itxbBreed + " มั๊ย?", "เพิ่มพันธุ์สัตว์..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
                     iConnect.Insert(isqlBreed);
                     LoadBreed();
                     clearTxb();
                 }
+            }
+            else
+            {
+                epCheck.SetError(txb_BreedName, "กรุณากรอกพันธุ์สัตว์");
             }
             
         }
@@ -96,15 +100,24 @@ namespace Petshop
 
         private void AddType()
         {
+            epCheck.Clear();
             string itxbType = txb_TypeName.Text.Trim();
-            string isqlType = "INSERT INTO `petshop`.`tb_pettype` (`PetType_ID`, `PetType_Des`) VALUES (NULL, '" + itxbType + "')";
-            DialogResult iConfirmResult = MessageBox.Show("เพิ่มประเภท " + itxbType + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
-            if (iConfirmResult == DialogResult.Yes)
+            if ((itxbType != null) || (itxbType != string.Empty))
             {
-                iConnect.Insert(isqlType);
-                LoadType();
-                clearTxb();
+                DialogResult iConfirmResult = MessageBox.Show("เพิ่มประเภท " + itxbType + " มั๊ย?", "เพิ่มประเภทสัตว์..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    string isqlType = "INSERT INTO `petshop`.`tb_pettype` (`PetType_ID`, `PetType_Des`) VALUES (NULL, '" + itxbType + "')";
+                    iConnect.Insert(isqlType);
+                    LoadType();
+                    clearTxb();
+                }
             }
+            else
+            {
+                epCheck.SetError(txb_TypeName, "กรุณาใส่ประเภทสัตว์");
+            }
+            
         }
 
         private void clearTxb()
@@ -123,7 +136,7 @@ namespace Petshop
                 txb_BreedID.Text = row.Cells["ccPetBreed_ID"].Value.ToString();
                 //cb_Type
                 txb_BreedName.Text = row.Cells["ccPetBreed_Des"].Value.ToString();
-                
+                cb_Type.SelectedValue = row.Cells["ccPetType_ID"].Value.ToString(); ;
             }
         }
 
@@ -141,17 +154,24 @@ namespace Petshop
 
         private void bt_EditBreed_Click(object sender, EventArgs e)
         {
+            epCheck.Clear();
             string itxbBreedID = txb_BreedID.Text.Trim();
             string itxbBreed = txb_BreedName.Text.Trim();
             string icbType = cb_Type.SelectedValue.ToString();
-
-            string isqlBreed = "UPDATE `tb_petbreed` SET `PetType_ID` = '" + icbType + "', `PetBreed_Des` = '" + itxbBreed + "' WHERE `tb_petbreed`.`PetBreed_ID` = " + itxbBreedID + "";
-            DialogResult iConfirmResult = MessageBox.Show("แก้ไขพันธุ์ " + itxbBreed + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
-            if (iConfirmResult == DialogResult.Yes)
+            if ((itxbBreed != null) || (itxbBreed != string.Empty))
             {
-                iConnect.Insert(isqlBreed);
-                LoadBreed();
-                clearTxb();
+                DialogResult iConfirmResult = MessageBox.Show("แก้ไขพันธุ์ " + itxbBreed + " มั๊ย?", "แก้ไขพันธุ์สัตว์..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    string isqlBreed = "UPDATE `tb_petbreed` SET `PetType_ID` = '" + icbType + "', `PetBreed_Des` = '" + itxbBreed + "' WHERE `tb_petbreed`.`PetBreed_ID` = " + itxbBreedID + "";
+                    iConnect.Insert(isqlBreed);
+                    LoadBreed();
+                    clearTxb();
+                }
+            }
+            else
+            {
+                epCheck.SetError(txb_BreedName, "กรุณาใส่พันธุ์สัตว์");
             }
         }
 
@@ -162,15 +182,23 @@ namespace Petshop
 
         private void EditType()
         {
+            epCheck.Clear();
             string itxbTypeID = txb_TypeID.Text.Trim();
             string itxbType = txb_TypeName.Text.Trim();
-            string isqlType = "UPDATE `petshop`.`tb_pettype` SET `PetType_Des` = '" + itxbType + "' WHERE `tb_pettype`.`PetType_ID` = " + itxbTypeID + "";
-            DialogResult iConfirmResult = MessageBox.Show("แก้ไขประเภท " + itxbType + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
-            if (iConfirmResult == DialogResult.Yes)
+            if ((itxbType != null) || (itxbType != string.Empty))
             {
-                iConnect.Insert(isqlType);
-                LoadType();
-                clearTxb();
+                DialogResult iConfirmResult = MessageBox.Show("แก้ไขประเภท " + itxbType + " มั๊ย?", "แก้ไขประเภทสัตว์..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    string isqlType = "UPDATE `petshop`.`tb_pettype` SET `PetType_Des` = '" + itxbType + "' WHERE `tb_pettype`.`PetType_ID` = " + itxbTypeID + "";
+                    iConnect.Insert(isqlType);
+                    LoadType();
+                    clearTxb();
+                }
+            }
+            else
+            {
+                epCheck.SetError(txb_TypeName, "กรุณาใส่ประเภทสัตว์");
             }
         }
 
@@ -183,7 +211,7 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if ((txb_BreedID.Text == "") && (txb_BreedID.Text == null))
+                if ((txb_BreedID.Text == "") || (txb_BreedID.Text == null))
                 {
                     bt_AddBreed.Select();
                 }
@@ -199,7 +227,7 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if((txb_TypeID.Text !=null)&&(txb_TypeID.Text !=""))
+                if((txb_TypeID.Text !=null) || (txb_TypeID.Text !=""))
                 {
                     bt_EditType.Select();
                 }
@@ -210,6 +238,60 @@ namespace Petshop
                 }
             } 
             
+        }
+
+        private void bt_DelType_Click(object sender, EventArgs e)
+        {
+            string itxbTypeID = txb_TypeID.Text.Trim();
+            string itxbTypeName = txb_TypeName.Text.Trim();
+            if ((itxbTypeID != null) && (itxbTypeID != string.Empty))
+            {
+                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbTypeName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    DataTable idtType;
+                    string isqlType = "SELECT tb_petbreed.PetType_ID FROM petshop.tb_petbreed where PetType_ID = '"+itxbTypeID+"'";
+                    idtType = iConnect.SelectByCommand(isqlType);
+                    if (idtType.Rows.Count == 0)
+                    {
+                        string isqlDelType = "DELETE FROM `petshop`.`tb_pettype` WHERE `PetType_ID`='" + itxbTypeID + "'";
+                        iConnect.Insert(isqlDelType);
+                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถลบได้");
+                    }
+                }
+                LoadType();
+            }
+        }
+
+        private void bt_DelBreed_Click(object sender, EventArgs e)
+        {
+            string itxbBreedID = txb_BreedID.Text.Trim();
+            string itxbBreedName = txb_BreedName.Text.Trim();
+            if ((itxbBreedID != null) && (itxbBreedID != string.Empty))
+            {
+                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbBreedName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    DataTable idtPetProfiles;
+                    string isqlBreed = "SELECT tb_petprofile.PetBreed_ID FROM petshop.tb_petprofile where PetBreed_ID = '"+itxbBreedID+"'";
+                    idtPetProfiles = iConnect.SelectByCommand(isqlBreed);
+                    if (idtPetProfiles.Rows.Count == 0)
+                    {
+                        string isqlDelBreed = "DELETE FROM `petshop`.`tb_petbreed` WHERE `PetBreed_ID`='" + itxbBreedID + "'";
+                        iConnect.Insert(isqlDelBreed);
+                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถลบได้");
+                    }
+                }
+                LoadBreed();
+            }
         }
     }
 }

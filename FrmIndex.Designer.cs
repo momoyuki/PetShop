@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.bt_Login = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.txb_Username = new MetroFramework.Controls.MetroTextBox();
             this.txb_Pwd = new MetroFramework.Controls.MetroTextBox();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_Login
@@ -48,7 +51,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 98);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 100);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(78, 19);
             this.metroLabel1.TabIndex = 1;
@@ -75,6 +78,7 @@
             this.txb_Username.Size = new System.Drawing.Size(179, 23);
             this.txb_Username.TabIndex = 3;
             this.txb_Username.UseSelectable = true;
+            this.txb_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Username_KeyDown);
             // 
             // txb_Pwd
             // 
@@ -88,6 +92,11 @@
             this.txb_Pwd.Size = new System.Drawing.Size(179, 23);
             this.txb_Pwd.TabIndex = 4;
             this.txb_Pwd.UseSelectable = true;
+            this.txb_Pwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Pwd_KeyDown);
+            // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
             // 
             // FrmIndex
             // 
@@ -102,6 +111,7 @@
             this.Name = "FrmIndex";
             this.Text = "เข้าระบบ";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +124,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox txb_Username;
         private MetroFramework.Controls.MetroTextBox txb_Pwd;
+        private System.Windows.Forms.ErrorProvider epCheck;
     }
 }

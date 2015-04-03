@@ -38,6 +38,7 @@ namespace Petshop
         idtService= iConnect.SelectByCommand(isqlCommand);
         dGV_Service.DataSource = idtService;
         dGV_Service.Refresh();
+        lb_SearchService.Text = idtService.Rows.Count.ToString();
         
         }
 
@@ -108,7 +109,7 @@ namespace Petshop
                 string itxbServiceDate = txb_ServiceDate.Text.Trim();
                 if (iaddEditService == "AddService")
                 {
-                    DialogResult iConfirmResult = MessageBox.Show("เพิ่มบริการ " + itxbServiceDetail + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                    DialogResult iConfirmResult = MessageBox.Show("เพิ่มบริการ " + itxbServiceDetail + " มั๊ย?", "เพิ่มบริการ..", MessageBoxButtons.YesNo);
                     if (iConfirmResult == DialogResult.Yes)
                     {
                         string isqlAddService = "Insert into tb_service (Service_ID,Service_Des,Service_Price,Service_DuringDate) " +
@@ -125,7 +126,7 @@ namespace Petshop
                 {
                     if ((itxbserviceID != null)&&(itxbserviceID != string.Empty))
                     {
-                        DialogResult iConfirmResult = MessageBox.Show("แก้ไขบริการ " + itxbServiceDetail + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                        DialogResult iConfirmResult = MessageBox.Show("แก้ไขบริการ " + itxbServiceDetail + " มั๊ย?", "แก้ไขบริการ..", MessageBoxButtons.YesNo);
                         if (iConfirmResult == DialogResult.Yes)
                         {
                             string isqlAddService = "UPDATE `tb_service` SET `Service_Des` = '" + itxbServiceDetail + "', `Service_Price` = '" + itxbServicePrice + "', `Service_DuringDate` = '" + itxbServiceDate + "' WHERE `tb_service`.`Service_ID` = '" + itxbserviceID + "'";
@@ -255,7 +256,7 @@ namespace Petshop
 
                 if (iAddEditMedi == "AddMedi")
                 {
-                    DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + itxbMediName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                    DialogResult iConfirmResult = MessageBox.Show("เพิ่มยา " + itxbMediName + " มั๊ย?", "เพิ่มยา..", MessageBoxButtons.YesNo);
                     if (iConfirmResult == DialogResult.Yes)
                     {
                         DataTable iCheckMedi;
@@ -264,7 +265,7 @@ namespace Petshop
                         if (iCheckMedi.Rows.Count > 0)
                         {
                             string iMedi = iCheckMedi.Rows[0].Field<string>(1);
-                            MessageBox.Show("มีรหัส " + itxbMediID + " - " + iMedi + " อยู่ในระบบแล้ว", "ตรวจสอบ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("มียารหัส " + itxbMediID + " - " + iMedi + " อยู่ในระบบแล้ว", "ตรวจสอบ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
@@ -286,15 +287,16 @@ namespace Petshop
                     iMediCheck = iConnect.SelectByCommand(isqlMedi);
                     if (iMediCheck.Rows.Count > 0)
                     {
-                            DialogResult iConfirmResult = MessageBox.Show("แก้ไข " + itxbMediName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                            DialogResult iConfirmResult = MessageBox.Show("แก้ไขข้อมูลยา " + itxbMediName + " มั๊ย?", "แก้ไข..", MessageBoxButtons.YesNo);
                             if (iConfirmResult == DialogResult.Yes)
                             {
-                                string isqlAddMedi = "UPDATE `tb_medicine` SET Medi_ID = '" + itxbMediID + "',`Medi_Des` = '" + itxbMediName + "', `Medi_Detall` = '" + itxbMediDetail + "', `Medi_Price` = '" + itxbMediPrice + "', `Medi_Sale` = '" + itxbMediSale + "', `Unit_ID` = '" + icbMediUnit + "', `Medi_Product` = '" + idtpProduct + "', `Medi_Expired` = '" + idtpExpired + "', `Medi_Unit_Amt` = '" + itxbMediAmt + "', `Medi_Unit_Order` = '" + itxbMediOrder + "', Medi_Stock = b'" + iStock + "' WHERE `tb_medicine`.`Medi_ID` = '" + ilbMediID + "'";
+                                //string isqlAddMedi = "UPDATE `tb_medicine` SET Medi_ID = '" + itxbMediID + "',`Medi_Des` = '" + itxbMediName + "', `Medi_Detall` = '" + itxbMediDetail + "', `Medi_Price` = '" + itxbMediPrice + "', `Medi_Sale` = '" + itxbMediSale + "', `Unit_ID` = '" + icbMediUnit + "', `Medi_Product` = '" + idtpProduct + "', `Medi_Expired` = '" + idtpExpired + "', `Medi_Unit_Amt` = '" + itxbMediAmt + "', `Medi_Unit_Order` = '" + itxbMediOrder + "', Medi_Stock = b'" + iStock + "' WHERE `tb_medicine`.`Medi_ID` = '" + ilbMediID + "'";
+                                string isqlAddMedi = "UPDATE `tb_medicine` SET `Medi_Des` = '" + itxbMediName + "', `Medi_Detall` = '" + itxbMediDetail + "', `Medi_Price` = '" + itxbMediPrice + "', `Medi_Sale` = '" + itxbMediSale + "', `Unit_ID` = '" + icbMediUnit + "', `Medi_Product` = '" + idtpProduct + "', `Medi_Expired` = '" + idtpExpired + "', `Medi_Unit_Amt` = '" + itxbMediAmt + "', `Medi_Unit_Order` = '" + itxbMediOrder + "', Medi_Stock = b'" + iStock + "' WHERE `tb_medicine`.`Medi_ID` = '" + ilbMediID + "'";
                                 iConnect.Insert(isqlAddMedi);
                                 LoadMedi();
                                 ClearTxtMedi();
                                 iAddEditMedi = string.Empty;
-                     }
+                            }
                     }
                 }
                 
@@ -475,18 +477,20 @@ namespace Petshop
 
         private void bt_SearchMedi_Click(object sender, EventArgs e)
         {
-            string iSearchMedi = txb_SearchMedi.Text.Trim();
-            if((iSearchMedi !=null)||(iSearchMedi !="")){
+            Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            if (RegSearch.IsMatch(txb_SearchMedi.Text))
+            {
+                string iSearchMedi = txb_SearchMedi.Text.Trim();
                 DataTable idtMedicine;
-                string isqlCommand = "SELECT * FROM `tb_Medicine` where Medi_ID like '%"+iSearchMedi+"%' OR Medi_Des like '%"+iSearchMedi+"%' OR Medi_ID like '%"+iSearchMedi+"%' ";
-                idtMedicine = iConnect.SelectByCommand(isqlCommand);
-                dGV_Medi.DataSource = idtMedicine;
-                dGV_Medi.Refresh();
-               lb_Result.Text =  idtMedicine.Rows.Count.ToString();
+                    string isqlCommand = "SELECT * FROM `tb_Medicine` where Medi_Des like '%" + iSearchMedi + "%' OR Medi_ID like '%" + iSearchMedi + "%' ";
+                    idtMedicine = iConnect.SelectByCommand(isqlCommand);
+                    dGV_Medi.DataSource = idtMedicine;
+                    dGV_Medi.Refresh();
+                    lb_Result.Text = idtMedicine.Rows.Count.ToString();
             }
             else
             {
-                LoadMedi();
+             LoadMedi();
             }
         }
 
@@ -496,7 +500,7 @@ namespace Petshop
             string iServiceName = txb_ServiceDetail.Text.Trim();
             if ((iServiceID != null) && (iServiceID != ""))
             {
-                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + iServiceName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + iServiceName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                     if (iConfirmResult == DialogResult.Yes)
                     {
                         DataTable idtServiceRecordCheck;
@@ -519,12 +523,7 @@ namespace Petshop
                     }
                     LoadService();
             }
-
-
-
-
-
-        }
+          }
 
         private void bt_DelMedi_Click(object sender, EventArgs e)
         {
@@ -532,12 +531,12 @@ namespace Petshop
             string iMediName = txb_MediName.Text.Trim();
             if ((iMediID != null) && (iMediID != ""))
             {
-                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + iMediName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + iMediName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    DataTable idtMediRecordCheck;
-                    string isqlServiceCheck = "SELECT tb_MediRecord.Medi_ID FROM tb_MediRecord where Medi_ID = '" + iMediID + "'";
-                    idtMediRecordCheck = iConnect.SelectByCommand(isqlServiceCheck);
+                        DataTable idtMediRecordCheck;
+                        string isqlServiceCheck = "SELECT tb_MediRecord.Medi_ID FROM tb_MediRecord where Medi_ID = '" + iMediID + "'";
+                        idtMediRecordCheck = iConnect.SelectByCommand(isqlServiceCheck);
                     if (idtMediRecordCheck.Rows.Count == 0)
                     {
                         string isqlDelMedi = "DELETE FROM `tb_medicine` WHERE `Medi_ID`='" + iMediID + "'";
@@ -576,6 +575,25 @@ namespace Petshop
             {
                 bt_EditService.Enabled = true;
                 bt_DelService.Enabled = true;
+            }
+        }
+
+        private void bt_SearchService_Click(object sender, EventArgs e)
+        {
+            Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            if (RegSearch.IsMatch(txb_SearchService.Text))
+            {
+                string iSearchService = txb_SearchService.Text.Trim();
+                DataTable idtService;
+                string isqlCommand = "SELECT * FROM `tb_Medicine` where Service_Des like '%" + iSearchService + "%' OR Service_ID like '%" + iSearchService + "%' ";
+                idtService = iConnect.SelectByCommand(isqlCommand);
+                dGV_Service.DataSource = idtService;
+                dGV_Service.Refresh();
+                lb_SearchService.Text = idtService.Rows.Count.ToString();
+            }
+            else
+            {
+                LoadMedi();
             }
         }
     }

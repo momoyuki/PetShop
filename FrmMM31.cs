@@ -120,7 +120,7 @@ namespace Petshop
         private void loadEmployee() //โหลดข้อมูลเจ้าหน้าที่
         {
             DataTable idtEmployee;
-            string isqlEmployee = "SELECT * FROM `tb_employee`"; //โหลดรายชื่อ เจ้าหน้าที่
+            string isqlEmployee = "SELECT * FROM `tb_employee` where Em_Status = 1"; //โหลดรายชื่อ เจ้าหน้าที่
             idtEmployee = iConnect.SelectByCommand(isqlEmployee);
             if ((idtEmployee != null) && (idtEmployee.Rows.Count > 0))
             {

@@ -37,6 +37,11 @@
             this.coService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coService_DuringDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBox_Service = new System.Windows.Forms.GroupBox();
+            this.lb_SearchService = new System.Windows.Forms.Label();
+            this.lb_SearchServiceB = new System.Windows.Forms.Label();
+            this.lb_SearchServiceA = new System.Windows.Forms.Label();
+            this.txb_SearchService = new System.Windows.Forms.TextBox();
+            this.bt_SearchService = new System.Windows.Forms.Button();
             this.bt_ResetService = new System.Windows.Forms.Button();
             this.bt_DelService = new System.Windows.Forms.Button();
             this.lb_RemarkService = new System.Windows.Forms.Label();
@@ -197,6 +202,11 @@
             // 
             // gBox_Service
             // 
+            this.gBox_Service.Controls.Add(this.lb_SearchService);
+            this.gBox_Service.Controls.Add(this.lb_SearchServiceB);
+            this.gBox_Service.Controls.Add(this.lb_SearchServiceA);
+            this.gBox_Service.Controls.Add(this.txb_SearchService);
+            this.gBox_Service.Controls.Add(this.bt_SearchService);
             this.gBox_Service.Controls.Add(this.bt_ResetService);
             this.gBox_Service.Controls.Add(this.bt_DelService);
             this.gBox_Service.Controls.Add(this.lb_RemarkService);
@@ -219,6 +229,51 @@
             this.gBox_Service.TabIndex = 0;
             this.gBox_Service.TabStop = false;
             this.gBox_Service.Text = "รายละเอียดบริการ";
+            // 
+            // lb_SearchService
+            // 
+            this.lb_SearchService.AutoSize = true;
+            this.lb_SearchService.Location = new System.Drawing.Point(193, 219);
+            this.lb_SearchService.Name = "lb_SearchService";
+            this.lb_SearchService.Size = new System.Drawing.Size(16, 18);
+            this.lb_SearchService.TabIndex = 24;
+            this.lb_SearchService.Text = "0";
+            // 
+            // lb_SearchServiceB
+            // 
+            this.lb_SearchServiceB.AutoSize = true;
+            this.lb_SearchServiceB.Location = new System.Drawing.Point(264, 219);
+            this.lb_SearchServiceB.Name = "lb_SearchServiceB";
+            this.lb_SearchServiceB.Size = new System.Drawing.Size(52, 18);
+            this.lb_SearchServiceB.TabIndex = 23;
+            this.lb_SearchServiceB.Text = "รายการ";
+            // 
+            // lb_SearchServiceA
+            // 
+            this.lb_SearchServiceA.AutoSize = true;
+            this.lb_SearchServiceA.Location = new System.Drawing.Point(82, 219);
+            this.lb_SearchServiceA.Name = "lb_SearchServiceA";
+            this.lb_SearchServiceA.Size = new System.Drawing.Size(74, 18);
+            this.lb_SearchServiceA.TabIndex = 22;
+            this.lb_SearchServiceA.Text = "พบทั้งหมด";
+            // 
+            // txb_SearchService
+            // 
+            this.txb_SearchService.Location = new System.Drawing.Point(582, 209);
+            this.txb_SearchService.Name = "txb_SearchService";
+            this.txb_SearchService.Size = new System.Drawing.Size(262, 26);
+            this.txb_SearchService.TabIndex = 21;
+            // 
+            // bt_SearchService
+            // 
+            this.bt_SearchService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_SearchService.Location = new System.Drawing.Point(850, 205);
+            this.bt_SearchService.Name = "bt_SearchService";
+            this.bt_SearchService.Size = new System.Drawing.Size(101, 32);
+            this.bt_SearchService.TabIndex = 20;
+            this.bt_SearchService.Text = "ค้นหา";
+            this.bt_SearchService.UseVisualStyleBackColor = true;
+            this.bt_SearchService.Click += new System.EventHandler(this.bt_SearchService_Click);
             // 
             // bt_ResetService
             // 
@@ -250,7 +305,7 @@
             // lb_RemarkService
             // 
             this.lb_RemarkService.AutoSize = true;
-            this.lb_RemarkService.Location = new System.Drawing.Point(8, 205);
+            this.lb_RemarkService.Location = new System.Drawing.Point(239, 120);
             this.lb_RemarkService.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_RemarkService.Name = "lb_RemarkService";
             this.lb_RemarkService.Size = new System.Drawing.Size(283, 18);
@@ -260,7 +315,7 @@
             // Bt_LoadService
             // 
             this.Bt_LoadService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_LoadService.Location = new System.Drawing.Point(400, 191);
+            this.Bt_LoadService.Location = new System.Drawing.Point(690, 56);
             this.Bt_LoadService.Margin = new System.Windows.Forms.Padding(4);
             this.Bt_LoadService.Name = "Bt_LoadService";
             this.Bt_LoadService.Size = new System.Drawing.Size(100, 32);
@@ -303,7 +358,7 @@
             this.gBoxTimeService.Controls.Add(this.txb_ServiceDate);
             this.gBoxTimeService.Controls.Add(this.lb_ServiceDate);
             this.gBoxTimeService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gBoxTimeService.Location = new System.Drawing.Point(432, 40);
+            this.gBoxTimeService.Location = new System.Drawing.Point(400, 36);
             this.gBoxTimeService.Margin = new System.Windows.Forms.Padding(4);
             this.gBoxTimeService.Name = "gBoxTimeService";
             this.gBoxTimeService.Padding = new System.Windows.Forms.Padding(4);
@@ -954,6 +1009,7 @@
             this.ccMedi_Stock.HeaderText = "สต็อก";
             this.ccMedi_Stock.Name = "ccMedi_Stock";
             this.ccMedi_Stock.ReadOnly = true;
+            this.ccMedi_Stock.Visible = false;
             // 
             // ccUnit_Name
             // 
@@ -1068,6 +1124,14 @@
         private System.Windows.Forms.TextBox txb_SearchMedi;
         private System.Windows.Forms.Button bt_SearchMedi;
         private System.Windows.Forms.CheckBox CheckBox_Stock;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lb_ResultB;
+        private System.Windows.Forms.Label lb_ResultA;
+        private System.Windows.Forms.Label lb_Result;
+        private System.Windows.Forms.Button bt_DelService;
+        private System.Windows.Forms.Button bt_DelMedi;
+        private System.Windows.Forms.Button bt_ReSetMedi;
+        private System.Windows.Forms.Button bt_ResetService;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Des;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Detall;
@@ -1080,14 +1144,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Unit_Amt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Unit_Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Stock;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label lb_ResultB;
-        private System.Windows.Forms.Label lb_ResultA;
-        private System.Windows.Forms.Label lb_Result;
-        private System.Windows.Forms.Button bt_DelService;
-        private System.Windows.Forms.Button bt_DelMedi;
-        private System.Windows.Forms.Button bt_ReSetMedi;
-        private System.Windows.Forms.Button bt_ResetService;
+        private System.Windows.Forms.TextBox txb_SearchService;
+        private System.Windows.Forms.Button bt_SearchService;
+        private System.Windows.Forms.Label lb_SearchService;
+        private System.Windows.Forms.Label lb_SearchServiceB;
+        private System.Windows.Forms.Label lb_SearchServiceA;
 
 
     }

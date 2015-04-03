@@ -121,7 +121,7 @@ namespace Petshop
         private void loadEmployee()
         {
             DataTable idtEmployee;
-            string isqlEmployee = "SELECT * FROM petshop.tb_employee";
+            string isqlEmployee = "SELECT * FROM petshop.tb_employee where Em_Status = 1";
             idtEmployee = iConnect.SelectByCommand(isqlEmployee);
             cb_Em.DisplayMember = idtEmployee.Columns["Em_Name"].ColumnName;
             cb_Em.ValueMember = idtEmployee.Columns["Em_ID"].ColumnName;

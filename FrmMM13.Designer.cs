@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dGV_Uni = new System.Windows.Forms.DataGridView();
             this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxUnit = new System.Windows.Forms.GroupBox();
-            this.bt_DelJnit = new System.Windows.Forms.Button();
+            this.bt_DelUnit = new System.Windows.Forms.Button();
             this.bt_LoadUnit = new System.Windows.Forms.Button();
             this.bt_EditUnit = new System.Windows.Forms.Button();
             this.bt_AddUnit = new System.Windows.Forms.Button();
@@ -40,8 +41,10 @@
             this.txb_UnitName = new System.Windows.Forms.TextBox();
             this.lb_UnitID = new System.Windows.Forms.Label();
             this.lb_UnitName = new System.Windows.Forms.Label();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Uni)).BeginInit();
             this.gBoxUnit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // dGV_Uni
@@ -80,7 +83,7 @@
             // 
             // gBoxUnit
             // 
-            this.gBoxUnit.Controls.Add(this.bt_DelJnit);
+            this.gBoxUnit.Controls.Add(this.bt_DelUnit);
             this.gBoxUnit.Controls.Add(this.bt_LoadUnit);
             this.gBoxUnit.Controls.Add(this.bt_EditUnit);
             this.gBoxUnit.Controls.Add(this.bt_AddUnit);
@@ -97,17 +100,18 @@
             this.gBoxUnit.TabStop = false;
             this.gBoxUnit.Text = "รายละเอียด";
             // 
-            // bt_DelJnit
+            // bt_DelUnit
             // 
-            this.bt_DelJnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_DelJnit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bt_DelJnit.Location = new System.Drawing.Point(275, 109);
-            this.bt_DelJnit.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_DelJnit.Name = "bt_DelJnit";
-            this.bt_DelJnit.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelJnit.TabIndex = 17;
-            this.bt_DelJnit.Text = "ลบ";
-            this.bt_DelJnit.UseVisualStyleBackColor = true;
+            this.bt_DelUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelUnit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelUnit.Location = new System.Drawing.Point(275, 109);
+            this.bt_DelUnit.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelUnit.Name = "bt_DelUnit";
+            this.bt_DelUnit.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelUnit.TabIndex = 17;
+            this.bt_DelUnit.Text = "ลบ";
+            this.bt_DelUnit.UseVisualStyleBackColor = true;
+            this.bt_DelUnit.Click += new System.EventHandler(this.bt_DelUnit_Click);
             // 
             // bt_LoadUnit
             // 
@@ -184,6 +188,10 @@
             this.lb_UnitName.TabIndex = 0;
             this.lb_UnitName.Text = "เรียกหน่วย";
             // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
             // FrmMM13
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -200,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Uni)).EndInit();
             this.gBoxUnit.ResumeLayout(false);
             this.gBoxUnit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,6 +226,7 @@
         private System.Windows.Forms.TextBox txb_UnitName;
         private System.Windows.Forms.Label lb_UnitID;
         private System.Windows.Forms.Label lb_UnitName;
-        private System.Windows.Forms.Button bt_DelJnit;
+        private System.Windows.Forms.Button bt_DelUnit;
+        private System.Windows.Forms.ErrorProvider epCheck;
     }
 }

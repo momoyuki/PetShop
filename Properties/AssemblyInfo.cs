@@ -9,7 +9,7 @@ using System.Resources;
 [assembly: AssemblyTitle("Petshop")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Kuroko")]
 [assembly: AssemblyProduct("Petshop")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]

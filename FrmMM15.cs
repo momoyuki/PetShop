@@ -69,9 +69,14 @@ namespace Petshop
             string icbEmPosition = cb_EmPosition.SelectedValue.ToString();
             string itxbUser = txb_UserName.Text.Trim();
             string itxbPwd = txb_Pwd.Text.Trim();
-           
+            int iStatus;
+                if(CheckBox_Status.Checked == true){
+                    iStatus = 1;
+                }else{
+                    iStatus = 0;
+                }
             // ยังไม่เสร็จ
-            string isqlEmployee = "INSERT INTO `tb_employee` (`Em_ID`, `Em_Name`, `EmPosition_ID`) VALUES ('"+itxbEmID+"', '"+itxbEm+"', '"+icbEmPosition+"');";
+            string isqlEmployee = "INSERT INTO `tb_employee` (`Em_ID`, `Em_Name`, `EmPosition_ID`,Em_Status) VALUES ('"+itxbEmID+"', '"+itxbEm+"', '"+icbEmPosition+"',b'"+iStatus+"');";
             string isqlEmLogin = "INSERT INTO `tb_emlogin` (`Em_ID`, `Em_User`, `Em_Pwd`) VALUES ('"+itxbEmID+"', '"+itxbUser+"', '"+itxbPwd+"')";
 
             if ((itxbEmID != null)||(itxbEmID !=""))
@@ -103,7 +108,16 @@ namespace Petshop
                 //cb_Type
                 txb_UserName.Text = row.Cells["ccEm_User"].Value.ToString();
                 txb_Pwd.Text = row.Cells["ccEm_Pwd"].Value.ToString();
-
+                int iStatus = Convert.ToInt32(row.Cells["ccEm_Status"].Value);
+                if (iStatus == 0)
+                {
+                    CheckBox_Status.Checked = false;
+                }
+                else
+                {
+                    CheckBox_Status.Checked = true;
+                }
+                
             }
         }
 
@@ -124,13 +138,21 @@ namespace Petshop
             string icbEmPosition = cb_EmPosition.SelectedValue.ToString();
             string itxbUser = txb_UserName.Text.Trim();
             string itxbPwd = txb_Pwd.Text.Trim();
-
+            int iStatus;
+            if (CheckBox_Status.Checked == true)
+            {
+                iStatus = 1;
+            }
+            else
+            {
+                iStatus = 0;
+            }
             // ยังไม่เสร็จ
-            string isqlEmployee = "UPDATE `tb_employee` SET `Em_ID` = '"+itxbEmID+"', `Em_Name` = '"+itxbEm+"', `EmPosition_ID` = '"+icbEmPosition+"' WHERE `tb_employee`.`Em_ID` = '"+itxbEmID+"'";
-            string isqlEmLogin = "UPDATE `tb_emlogin` SET `Em_User`='"+itxbUser+"', `Em_Pwd`='"+itxbPwd+"' WHERE `Em_ID`='"+itxbEmID+"'";
             DialogResult iConfirmResult = MessageBox.Show("แก้ไขตำแหน่ง " + itxbEm + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
             if (iConfirmResult == DialogResult.Yes)
             {
+                string isqlEmployee = "UPDATE `tb_employee` SET `Em_ID` = '" + itxbEmID + "', `Em_Name` = '" + itxbEm + "', `EmPosition_ID` = '" + icbEmPosition + "' ,Em_Status = b'" + iStatus + "' WHERE `tb_employee`.`Em_ID` = '" + itxbEmID + "'";
+                string isqlEmLogin = "UPDATE `tb_emlogin` SET `Em_User`='" + itxbUser + "', `Em_Pwd`='" + itxbPwd + "' WHERE `Em_ID`='" + itxbEmID + "'";
                 iConnect.Insert(isqlEmployee);
                 iConnect.Insert(isqlEmLogin);
                 LoadEP();
@@ -195,8 +217,41 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                
+                bt_AddEm.Select();
             }
+        }
+
+        private void bt_DelPosition_Click(object sender, EventArgs e)
+        {
+            string itxbPositionID = txb_EmpositionID.Text.Trim();
+            string itxbEmposition = txb_Emposition.Text.Trim();
+            if ((itxbPositionID != null) && (itxbPositionID != string.Empty))
+            {
+                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbEmposition + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    DataTable idtEmposition;
+                    string isqlEmposition = "SELECT EmPosition_ID FROM petshop.tb_employee where Emposition_ID = '"+itxbPositionID+"'";
+                    idtEmposition = iConnect.SelectByCommand(isqlEmposition);
+                    if (idtEmposition.Rows.Count == 0)
+                    {
+                        string isqlDelEmposition = "DELETE FROM `petshop`.`tb_emposition` WHERE `EmPosition_ID`='"+itxbPositionID+"'";
+                        iConnect.Insert(isqlDelEmposition);
+                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถลบได้");
+                    }
+                }
+                LoadPS();
+                LoadEP();
+            }
+        }
+
+        private void bt_DelEm_Click(object sender, EventArgs e)
+        {
+            
         }
 
 

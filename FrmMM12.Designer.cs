@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dGV_PD = new System.Windows.Forms.DataGridView();
+            this.dGV_Product = new System.Windows.Forms.DataGridView();
             this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccProduct_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,19 +73,24 @@
             this.lb_ProductIDh = new System.Windows.Forms.Label();
             this.bt_DelProduct = new System.Windows.Forms.Button();
             this.bt_reSetProduct = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_PD)).BeginInit();
+            this.lb_SearchProduct = new System.Windows.Forms.Label();
+            this.lb_SearchProductB = new System.Windows.Forms.Label();
+            this.lb_SearchProductA = new System.Windows.Forms.Label();
+            this.txb_SearchProduct = new System.Windows.Forms.TextBox();
+            this.bt_SearchProduct = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.gBoxProductPrice.SuspendLayout();
             this.gBoxProducttrack.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dGV_PD
+            // dGV_Product
             // 
-            this.dGV_PD.AllowUserToAddRows = false;
-            this.dGV_PD.AllowUserToDeleteRows = false;
-            this.dGV_PD.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dGV_PD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_PD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGV_Product.AllowUserToAddRows = false;
+            this.dGV_Product.AllowUserToDeleteRows = false;
+            this.dGV_Product.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dGV_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_Product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccProduct_ID,
             this.ccProduct_Des,
             this.ccProduct_Detail,
@@ -98,15 +103,15 @@
             this.ccProduct_Unit_Order,
             this.ccUnit_ID,
             this.ccProduct_Stock});
-            this.dGV_PD.Location = new System.Drawing.Point(13, 298);
-            this.dGV_PD.Margin = new System.Windows.Forms.Padding(4);
-            this.dGV_PD.MultiSelect = false;
-            this.dGV_PD.Name = "dGV_PD";
-            this.dGV_PD.ReadOnly = true;
-            this.dGV_PD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_PD.Size = new System.Drawing.Size(982, 361);
-            this.dGV_PD.TabIndex = 1;
-            this.dGV_PD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_PD_CellClick);
+            this.dGV_Product.Location = new System.Drawing.Point(13, 333);
+            this.dGV_Product.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_Product.MultiSelect = false;
+            this.dGV_Product.Name = "dGV_Product";
+            this.dGV_Product.ReadOnly = true;
+            this.dGV_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_Product.Size = new System.Drawing.Size(982, 326);
+            this.dGV_Product.TabIndex = 1;
+            this.dGV_Product.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_PD_CellClick);
             // 
             // ccProduct_ID
             // 
@@ -505,7 +510,7 @@
             // lb_ProductIDh
             // 
             this.lb_ProductIDh.AutoSize = true;
-            this.lb_ProductIDh.Location = new System.Drawing.Point(343, 272);
+            this.lb_ProductIDh.Location = new System.Drawing.Point(346, 22);
             this.lb_ProductIDh.Name = "lb_ProductIDh";
             this.lb_ProductIDh.Size = new System.Drawing.Size(99, 18);
             this.lb_ProductIDh.TabIndex = 14;
@@ -524,6 +529,7 @@
             this.bt_DelProduct.TabIndex = 15;
             this.bt_DelProduct.Text = "ลบ";
             this.bt_DelProduct.UseVisualStyleBackColor = true;
+            this.bt_DelProduct.Click += new System.EventHandler(this.bt_DelProduct_Click);
             // 
             // bt_reSetProduct
             // 
@@ -534,19 +540,69 @@
             this.bt_reSetProduct.Name = "bt_reSetProduct";
             this.bt_reSetProduct.Size = new System.Drawing.Size(70, 32);
             this.bt_reSetProduct.TabIndex = 16;
-            this.bt_reSetProduct.Text = "ลบ";
+            this.bt_reSetProduct.Text = "เริ่มใหม่";
             this.bt_reSetProduct.UseVisualStyleBackColor = true;
             this.bt_reSetProduct.Click += new System.EventHandler(this.bt_reSetProduct_Click);
+            // 
+            // lb_SearchProduct
+            // 
+            this.lb_SearchProduct.AutoSize = true;
+            this.lb_SearchProduct.Location = new System.Drawing.Point(161, 301);
+            this.lb_SearchProduct.Name = "lb_SearchProduct";
+            this.lb_SearchProduct.Size = new System.Drawing.Size(16, 18);
+            this.lb_SearchProduct.TabIndex = 29;
+            this.lb_SearchProduct.Text = "0";
+            // 
+            // lb_SearchProductB
+            // 
+            this.lb_SearchProductB.AutoSize = true;
+            this.lb_SearchProductB.Location = new System.Drawing.Point(232, 301);
+            this.lb_SearchProductB.Name = "lb_SearchProductB";
+            this.lb_SearchProductB.Size = new System.Drawing.Size(52, 18);
+            this.lb_SearchProductB.TabIndex = 28;
+            this.lb_SearchProductB.Text = "รายการ";
+            // 
+            // lb_SearchProductA
+            // 
+            this.lb_SearchProductA.AutoSize = true;
+            this.lb_SearchProductA.Location = new System.Drawing.Point(50, 301);
+            this.lb_SearchProductA.Name = "lb_SearchProductA";
+            this.lb_SearchProductA.Size = new System.Drawing.Size(74, 18);
+            this.lb_SearchProductA.TabIndex = 27;
+            this.lb_SearchProductA.Text = "พบทั้งหมด";
+            // 
+            // txb_SearchProduct
+            // 
+            this.txb_SearchProduct.Location = new System.Drawing.Point(550, 297);
+            this.txb_SearchProduct.Name = "txb_SearchProduct";
+            this.txb_SearchProduct.Size = new System.Drawing.Size(262, 26);
+            this.txb_SearchProduct.TabIndex = 26;
+            // 
+            // bt_SearchProduct
+            // 
+            this.bt_SearchProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_SearchProduct.Location = new System.Drawing.Point(818, 294);
+            this.bt_SearchProduct.Name = "bt_SearchProduct";
+            this.bt_SearchProduct.Size = new System.Drawing.Size(101, 32);
+            this.bt_SearchProduct.TabIndex = 25;
+            this.bt_SearchProduct.Text = "ค้นหา";
+            this.bt_SearchProduct.UseVisualStyleBackColor = true;
+            this.bt_SearchProduct.Click += new System.EventHandler(this.bt_SearchProduct_Click);
             // 
             // FrmMM12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.lb_SearchProduct);
+            this.Controls.Add(this.lb_SearchProductB);
+            this.Controls.Add(this.lb_SearchProductA);
+            this.Controls.Add(this.txb_SearchProduct);
+            this.Controls.Add(this.bt_SearchProduct);
             this.Controls.Add(this.bt_reSetProduct);
             this.Controls.Add(this.bt_DelProduct);
             this.Controls.Add(this.lb_ProductIDh);
-            this.Controls.Add(this.dGV_PD);
+            this.Controls.Add(this.dGV_Product);
             this.Controls.Add(this.txb_ProductDetail);
             this.Controls.Add(this.lb_Detail);
             this.Controls.Add(this.gBoxProductPrice);
@@ -562,7 +618,7 @@
             this.Text = "ตั้งค่า สินค้า";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM12_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_PD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.gBoxProductPrice.ResumeLayout(false);
             this.gBoxProductPrice.PerformLayout();
@@ -575,7 +631,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dGV_PD;
+        private System.Windows.Forms.DataGridView dGV_Product;
         private System.Windows.Forms.ErrorProvider epCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Des;
@@ -619,5 +675,10 @@
         private System.Windows.Forms.TextBox txb_ProductName;
         private System.Windows.Forms.Button bt_DelProduct;
         private System.Windows.Forms.Button bt_reSetProduct;
+        private System.Windows.Forms.Label lb_SearchProduct;
+        private System.Windows.Forms.Label lb_SearchProductB;
+        private System.Windows.Forms.Label lb_SearchProductA;
+        private System.Windows.Forms.TextBox txb_SearchProduct;
+        private System.Windows.Forms.Button bt_SearchProduct;
     }
 }

@@ -44,7 +44,8 @@ namespace Petshop
 
             ReportDocument rpt = new ReportDocument();
             //string iFolder = Application.ExecutablePath;
-            rpt.Load("D:\\Petshop\\Resources\\CrBillDate.rpt");
+            //rpt.Load("D:\\Petshop\\Resources\\CrBillDate.rpt");
+            rpt.Load("CrBillDate.rpt"); 
             /////////////////////////////Main Detail/////////////////////////////////
             rpt.SetDataSource(idtBillDetail);
             /////////////////////////////Sub Company////////////////////////////////

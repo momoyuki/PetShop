@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlBreedType = new System.Windows.Forms.TabControl();
             this.tpBreed = new System.Windows.Forms.TabPage();
             this.gBoxBreed = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_DelBreed = new System.Windows.Forms.Button();
             this.Bt_LoadBreed = new System.Windows.Forms.Button();
             this.bt_EditBreed = new System.Windows.Forms.Button();
             this.bt_AddBreed = new System.Windows.Forms.Button();
@@ -44,13 +45,14 @@
             this.dGV_Breed = new System.Windows.Forms.DataGridView();
             this.ccPetBreed_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPetBreed_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPetType_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPetType_DesID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpType = new System.Windows.Forms.TabPage();
             this.dGV_Type = new System.Windows.Forms.DataGridView();
             this.ccPT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPetType_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxType = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bt_DelType = new System.Windows.Forms.Button();
             this.bt_LoadType = new System.Windows.Forms.Button();
             this.bt_EditType = new System.Windows.Forms.Button();
             this.bt_AddType = new System.Windows.Forms.Button();
@@ -58,6 +60,7 @@
             this.lb_TypeID = new System.Windows.Forms.Label();
             this.txb_TypeID = new System.Windows.Forms.TextBox();
             this.lb_TypeName = new System.Windows.Forms.Label();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControlBreedType.SuspendLayout();
             this.tpBreed.SuspendLayout();
             this.gBoxBreed.SuspendLayout();
@@ -65,6 +68,7 @@
             this.tpType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Type)).BeginInit();
             this.gBoxType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlBreedType
@@ -93,7 +97,7 @@
             // 
             // gBoxBreed
             // 
-            this.gBoxBreed.Controls.Add(this.button1);
+            this.gBoxBreed.Controls.Add(this.bt_DelBreed);
             this.gBoxBreed.Controls.Add(this.Bt_LoadBreed);
             this.gBoxBreed.Controls.Add(this.bt_EditBreed);
             this.gBoxBreed.Controls.Add(this.bt_AddBreed);
@@ -112,17 +116,18 @@
             this.gBoxBreed.TabStop = false;
             this.gBoxBreed.Text = "รายละเอียด";
             // 
-            // button1
+            // bt_DelBreed
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(283, 134);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 32);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "ลบ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_DelBreed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelBreed.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelBreed.Location = new System.Drawing.Point(283, 134);
+            this.bt_DelBreed.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelBreed.Name = "bt_DelBreed";
+            this.bt_DelBreed.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelBreed.TabIndex = 15;
+            this.bt_DelBreed.Text = "ลบ";
+            this.bt_DelBreed.UseVisualStyleBackColor = true;
+            this.bt_DelBreed.Click += new System.EventHandler(this.bt_DelBreed_Click);
             // 
             // Bt_LoadBreed
             // 
@@ -229,6 +234,7 @@
             this.dGV_Breed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccPetBreed_ID,
             this.ccPetBreed_Des,
+            this.ccPetType_ID,
             this.ccPetType_DesID});
             this.dGV_Breed.Location = new System.Drawing.Point(8, 224);
             this.dGV_Breed.Margin = new System.Windows.Forms.Padding(4);
@@ -253,6 +259,14 @@
             this.ccPetBreed_Des.HeaderText = "ชื่อพันธุ์";
             this.ccPetBreed_Des.Name = "ccPetBreed_Des";
             this.ccPetBreed_Des.ReadOnly = true;
+            // 
+            // ccPetType_ID
+            // 
+            this.ccPetType_ID.DataPropertyName = "PetType_ID";
+            this.ccPetType_ID.HeaderText = "รหัสประเภท";
+            this.ccPetType_ID.Name = "ccPetType_ID";
+            this.ccPetType_ID.ReadOnly = true;
+            this.ccPetType_ID.Visible = false;
             // 
             // ccPetType_DesID
             // 
@@ -309,7 +323,7 @@
             // 
             // gBoxType
             // 
-            this.gBoxType.Controls.Add(this.button2);
+            this.gBoxType.Controls.Add(this.bt_DelType);
             this.gBoxType.Controls.Add(this.bt_LoadType);
             this.gBoxType.Controls.Add(this.bt_EditType);
             this.gBoxType.Controls.Add(this.bt_AddType);
@@ -326,17 +340,18 @@
             this.gBoxType.TabStop = false;
             this.gBoxType.Text = "รายละเอียด";
             // 
-            // button2
+            // bt_DelType
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(307, 98);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 32);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "ลบ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bt_DelType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DelType.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_DelType.Location = new System.Drawing.Point(307, 98);
+            this.bt_DelType.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_DelType.Name = "bt_DelType";
+            this.bt_DelType.Size = new System.Drawing.Size(70, 32);
+            this.bt_DelType.TabIndex = 15;
+            this.bt_DelType.Text = "ลบ";
+            this.bt_DelType.UseVisualStyleBackColor = true;
+            this.bt_DelType.Click += new System.EventHandler(this.bt_DelType_Click);
             // 
             // bt_LoadType
             // 
@@ -415,6 +430,10 @@
             this.lb_TypeName.TabIndex = 6;
             this.lb_TypeName.Text = "ประเภท";
             // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
             // FrmMM14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -436,6 +455,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Type)).EndInit();
             this.gBoxType.ResumeLayout(false);
             this.gBoxType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -467,11 +487,13 @@
         private System.Windows.Forms.Label lb_TypeID;
         private System.Windows.Forms.TextBox txb_TypeID;
         private System.Windows.Forms.Label lb_TypeName;
+        private System.Windows.Forms.Button bt_DelBreed;
+        private System.Windows.Forms.Button bt_DelType;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed_Des;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_DesID;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider epCheck;
 
 
     }

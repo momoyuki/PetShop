@@ -41,8 +41,9 @@ namespace Petshop
             DataTable idtProduct;
             string isqlCommand = "SELECT tb_product.*,tb_unit.Unit_Name FROM `tb_product`,tb_unit where tb_product.unit_Id = tb_unit.Unit_ID";
             idtProduct = iConnect.SelectByCommand(isqlCommand);
-            dGV_PD.DataSource = idtProduct;
-            dGV_PD.Refresh();
+            dGV_Product.DataSource = idtProduct;
+            dGV_Product.Refresh();
+            lb_SearchProduct.Text = idtProduct.Rows.Count.ToString();
         }
         string iAddEditProduct; 
         private void bt_AddProduct_Click(object sender, EventArgs e)
@@ -125,7 +126,7 @@ namespace Petshop
                     }
                     else
                     {
-                        DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + itxbProductName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                        DialogResult iConfirmResult = MessageBox.Show("เพิ่มสินค้า " + itxbProductName + " มั๊ย?", "เพิ่มสินค้า..", MessageBoxButtons.YesNo);
                         if (iConfirmResult == DialogResult.Yes)
                         {
                             string isqlAddProduct = "INSERT INTO `tb_product` (`Product_ID`, `Product_Des`, `Product_Detail`, `Product_Price`, `Product_Sale`, `Unit_ID`, `Product_Product`, `Product_Expired`, `Product_Unit_Amt`, `Product_Unit_Order`,Product_Stock) " +
@@ -143,10 +144,11 @@ namespace Petshop
                     {
                         if ((itxbProductID != null) || (itxbProductID != string.Empty))
                         {
-                            DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + itxbProductName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
+                            DialogResult iConfirmResult = MessageBox.Show("แก้ไข " + itxbProductName + " มั๊ย?", "แก้ไขสินค้า..", MessageBoxButtons.YesNo);
                             if (iConfirmResult == DialogResult.Yes)
                             {
-                                string isqlAddProduct = "UPDATE `tb_product` SET Product_ID = '" + itxbProductID + "',`Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "';";
+                                string isqlAddProduct = "UPDATE `tb_product` SET `Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "'";                
+                                //string isqlAddProduct = "UPDATE `tb_product` SET Product_ID = '" + itxbProductID + "',`Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "';";
                                 iConnect.Insert(isqlAddProduct);
                                 LoadProduct();
                                 ClearTxtProduct();
@@ -162,7 +164,7 @@ namespace Petshop
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dGV_PD.Rows[e.RowIndex]; //ขาด Combox DateTimePicker 3 ชิ้น 
+                DataGridViewRow row = this.dGV_Product.Rows[e.RowIndex]; //ขาด Combox DateTimePicker 3 ชิ้น 
 
                 txb_ProductID.Text = row.Cells["ccProduct_ID"].Value.ToString();
                 lb_ProductIDh.Text = row.Cells["ccProduct_ID"].Value.ToString();
@@ -302,6 +304,53 @@ namespace Petshop
         private void bt_reSetProduct_Click(object sender, EventArgs e)
         {
             ClearTxtProduct();
+        }
+
+        private void bt_DelProduct_Click(object sender, EventArgs e)
+        {
+            string itxbProductID = lb_ProductIDh.Text.Trim();
+            string itxbProductName = txb_ProductName.Text.Trim();
+            if ((itxbProductID != null) && (itxbProductID != ""))
+            {
+                DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbProductName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    DataTable idtProductCheck;
+                    string isqlProductCheck = "SELECT tb_ProductSale.Product_ID FROM petshop.tb_productsale where Product_ID = '"+itxbProductID+"'";
+                    idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
+                    if (idtProductCheck.Rows.Count == 0)
+                    {
+                        string isqlDelProduct = "DELETE FROM `tb_Product` WHERE `Product_ID`='" + itxbProductID + "'";
+                        iConnect.Insert(isqlDelProduct);
+                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                        ClearTxtProduct();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถลบได้");
+                    }
+                }
+                LoadProduct();
+            }
+        }
+
+        private void bt_SearchProduct_Click(object sender, EventArgs e)
+        {
+            Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            if (RegSearch.IsMatch(txb_SearchProduct.Text))
+            {
+                string iSearchProduct = txb_SearchProduct.Text.Trim();
+                DataTable idtProduct;
+                string isqlCommand = "SELECT * FROM `tb_Product` where Product_Des like '%" + iSearchProduct + "%' OR Product_ID like '%" + iSearchProduct + "%' ";
+                idtProduct = iConnect.SelectByCommand(isqlCommand);
+                dGV_Product.DataSource = idtProduct;
+                dGV_Product.Refresh();
+                lb_SearchProduct.Text = idtProduct.Rows.Count.ToString();
+            }
+            else
+            {
+                LoadProduct();
+            }
         }
      }
 }

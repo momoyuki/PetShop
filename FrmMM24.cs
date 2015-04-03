@@ -92,7 +92,7 @@ namespace Petshop
 
         private void loadEmployee()
         {
-            string isqlEmployee = "SELECT * FROM tb_employee";
+            string isqlEmployee = "SELECT * FROM tb_employee where Em_Status = 1";
             idtEmployee = iConnect.SelectByCommand(isqlEmployee);
             cb_Em.DisplayMember = idtEmployee.Columns["Em_Name"].ColumnName;
             cb_Em.ValueMember = idtEmployee.Columns["Em_ID"].ColumnName;

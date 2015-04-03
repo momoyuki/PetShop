@@ -51,9 +51,7 @@ namespace Petshop
             idtbill = iConnect.SelectByCommand(isqlBill);
             
             ReportDocument rpt = new ReportDocument();
-
-            //rpt.Load(Application.StartupPath + "CrBillSerMe.rpt");
-            //MessageBox.Show(Application.ExecutablePath.ToString());
+            
             rpt.Load("CrBillSerMe.rpt");
             /////////////////////////////Main Detail/////////////////////////////////
             rpt.SetDataSource(idtBillDetail);
