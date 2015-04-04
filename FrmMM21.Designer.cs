@@ -81,6 +81,9 @@
             this.bt_Search = new System.Windows.Forms.Button();
             this.tabC_Pet = new System.Windows.Forms.TabControl();
             this.tP_ListPeT = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tP_LisTDetail = new System.Windows.Forms.TabPage();
             this.bt_HealDateDetail = new System.Windows.Forms.Button();
             this.lb_HealRecordID = new System.Windows.Forms.Label();
@@ -104,9 +107,6 @@
             this.ccHealRecord_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealRecord_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.gBoxDetail.SuspendLayout();
             this.gBox_OwnerDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PetProfile)).BeginInit();
@@ -681,6 +681,33 @@
             this.tP_ListPeT.Text = "รายชื่อทั้งหมด";
             this.tP_ListPeT.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(252, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 18);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "รายการ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(205, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 18);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(48, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 18);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "พบสมาชิกทั้งหมด";
+            // 
             // tP_LisTDetail
             // 
             this.tP_LisTDetail.Controls.Add(this.bt_HealDateDetail);
@@ -898,33 +925,6 @@
             // epCheck
             // 
             this.epCheck.ContainerControl = this;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "รายการ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(205, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 18);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 18);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "พบสมาชิกทั้งหมด";
             // 
             // FrmMM21
             // 

@@ -504,7 +504,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_CompanyRow AddDT_CompanyRow(string Company_Name, string Company_Addr, string Company_Tel, string Company_Own, byte[] CoLogo) {
+            public DT_CompanyRow AddDT_CompanyRow(string Company_Name, string Company_Addr, string Company_Tel, string Company_Own, string CoLogo) {
                 DT_CompanyRow rowDT_CompanyRow = ((DT_CompanyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Company_Name,
@@ -552,7 +552,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnCompany_Tel);
                 this.columnCompany_Own = new global::System.Data.DataColumn("Company_Own", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCompany_Own);
-                this.columnCoLogo = new global::System.Data.DataColumn("CoLogo", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnCoLogo = new global::System.Data.DataColumn("CoLogo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCoLogo);
             }
             
@@ -1795,10 +1795,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] CoLogo {
+            public string CoLogo {
                 get {
                     try {
-                        return ((byte[])(this[this.tableDT_Company.CoLogoColumn]));
+                        return ((string)(this[this.tableDT_Company.CoLogoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CoLogo\' in table \'DT_Company\' is DBNull.", e);

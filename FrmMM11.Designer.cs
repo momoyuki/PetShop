@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMM11));
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tabService = new System.Windows.Forms.TabPage();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
@@ -37,6 +38,7 @@
             this.coService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coService_DuringDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBox_Service = new System.Windows.Forms.GroupBox();
+            this.bt_ServiceRefresh = new System.Windows.Forms.Button();
             this.lb_SearchService = new System.Windows.Forms.Label();
             this.lb_SearchServiceB = new System.Windows.Forms.Label();
             this.lb_SearchServiceA = new System.Windows.Forms.Label();
@@ -74,6 +76,7 @@
             this.bt_EditMedi = new System.Windows.Forms.Button();
             this.bt_AddMedi = new System.Windows.Forms.Button();
             this.gBoxMediSale = new System.Windows.Forms.GroupBox();
+            this.bt_MediRefresh = new System.Windows.Forms.Button();
             this.CheckBox_Stock = new System.Windows.Forms.CheckBox();
             this.Bt_Unit = new System.Windows.Forms.Button();
             this.cb_MediUnit = new System.Windows.Forms.ComboBox();
@@ -202,6 +205,7 @@
             // 
             // gBox_Service
             // 
+            this.gBox_Service.Controls.Add(this.bt_ServiceRefresh);
             this.gBox_Service.Controls.Add(this.lb_SearchService);
             this.gBox_Service.Controls.Add(this.lb_SearchServiceB);
             this.gBox_Service.Controls.Add(this.lb_SearchServiceA);
@@ -229,6 +233,16 @@
             this.gBox_Service.TabIndex = 0;
             this.gBox_Service.TabStop = false;
             this.gBox_Service.Text = "รายละเอียดบริการ";
+            // 
+            // bt_ServiceRefresh
+            // 
+            this.bt_ServiceRefresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_ServiceRefresh.Image")));
+            this.bt_ServiceRefresh.Location = new System.Drawing.Point(915, 26);
+            this.bt_ServiceRefresh.Name = "bt_ServiceRefresh";
+            this.bt_ServiceRefresh.Size = new System.Drawing.Size(36, 36);
+            this.bt_ServiceRefresh.TabIndex = 25;
+            this.bt_ServiceRefresh.UseVisualStyleBackColor = true;
+            this.bt_ServiceRefresh.Click += new System.EventHandler(this.bt_ServiceRefresh_Click);
             // 
             // lb_SearchService
             // 
@@ -642,6 +656,7 @@
             // 
             // gBoxMediSale
             // 
+            this.gBoxMediSale.Controls.Add(this.bt_MediRefresh);
             this.gBoxMediSale.Controls.Add(this.CheckBox_Stock);
             this.gBoxMediSale.Controls.Add(this.Bt_Unit);
             this.gBoxMediSale.Controls.Add(this.cb_MediUnit);
@@ -667,6 +682,16 @@
             this.gBoxMediSale.TabIndex = 3;
             this.gBoxMediSale.TabStop = false;
             this.gBoxMediSale.Text = "ต้นทุนและราคาขาย";
+            // 
+            // bt_MediRefresh
+            // 
+            this.bt_MediRefresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_MediRefresh.Image")));
+            this.bt_MediRefresh.Location = new System.Drawing.Point(509, 19);
+            this.bt_MediRefresh.Name = "bt_MediRefresh";
+            this.bt_MediRefresh.Size = new System.Drawing.Size(36, 36);
+            this.bt_MediRefresh.TabIndex = 26;
+            this.bt_MediRefresh.UseVisualStyleBackColor = true;
+            this.bt_MediRefresh.Click += new System.EventHandler(this.bt_MediRefresh_Click);
             // 
             // CheckBox_Stock
             // 
@@ -1155,6 +1180,8 @@
         private System.Windows.Forms.Label lb_SearchService;
         private System.Windows.Forms.Label lb_SearchServiceB;
         private System.Windows.Forms.Label lb_SearchServiceA;
+        private System.Windows.Forms.Button bt_ServiceRefresh;
+        private System.Windows.Forms.Button bt_MediRefresh;
 
 
     }

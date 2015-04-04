@@ -19,7 +19,7 @@
               <xs:element name="Company_Addr" msprop:Generator_ColumnVarNameInTable="columnCompany_Addr" msprop:Generator_ColumnPropNameInRow="Company_Addr" msprop:Generator_ColumnPropNameInTable="Company_AddrColumn" msprop:Generator_UserColumnName="Company_Addr" type="xs:string" minOccurs="0" />
               <xs:element name="Company_Tel" msprop:Generator_ColumnVarNameInTable="columnCompany_Tel" msprop:Generator_ColumnPropNameInRow="Company_Tel" msprop:Generator_ColumnPropNameInTable="Company_TelColumn" msprop:Generator_UserColumnName="Company_Tel" type="xs:string" minOccurs="0" />
               <xs:element name="Company_Own" msprop:Generator_ColumnVarNameInTable="columnCompany_Own" msprop:Generator_ColumnPropNameInRow="Company_Own" msprop:Generator_ColumnPropNameInTable="Company_OwnColumn" msprop:Generator_UserColumnName="Company_Own" type="xs:string" minOccurs="0" />
-              <xs:element name="CoLogo" msprop:Generator_ColumnVarNameInTable="columnCoLogo" msprop:Generator_ColumnPropNameInRow="CoLogo" msprop:Generator_ColumnPropNameInTable="CoLogoColumn" msprop:Generator_UserColumnName="CoLogo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CoLogo" msprop:Generator_ColumnVarNameInTable="columnCoLogo" msprop:Generator_ColumnPropNameInRow="CoLogo" msprop:Generator_ColumnPropNameInTable="CoLogoColumn" msprop:Generator_UserColumnName="CoLogo" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

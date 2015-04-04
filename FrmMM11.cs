@@ -672,5 +672,14 @@ namespace Petshop
                 txb_MediAmt.Focus();
             }
         }
+        private void bt_ServiceRefresh_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void bt_MediRefresh_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
     }
 }

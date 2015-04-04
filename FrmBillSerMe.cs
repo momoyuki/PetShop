@@ -45,6 +45,8 @@ namespace Petshop
             DataTable idtCompany;
             string isqlCompany = "SELECT * FROM petshop.tb_company";
             idtCompany = iConnect.SelectByCommand(isqlCompany);
+            //////////////////////////////////////////////////////////////////////////
+            
             ////////////////////////////////////////////Load Bill Master//////////////////////////////////////////////////////////////
             DataTable idtbill;
             string isqlBill = "SELECT tb_bill.*,tb_employee.Em_Name FROM tb_bill,tb_employee where Bill_ID ='" + ilbBillid +"' AND tb_bill.Em_ID = tb_employee.Em_ID";

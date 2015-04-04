@@ -69,6 +69,7 @@
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bt_Update = new System.Windows.Forms.Button();
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -176,6 +177,7 @@
             // 
             // gBoxIDPass
             // 
+            this.gBoxIDPass.Controls.Add(this.bt_Update);
             this.gBoxIDPass.Controls.Add(this.txb_Pwd);
             this.gBoxIDPass.Controls.Add(this.lb_Pwd);
             this.gBoxIDPass.Controls.Add(this.txb_UserName);
@@ -523,6 +525,17 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
+            // bt_Update
+            // 
+            this.bt_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Update.Location = new System.Drawing.Point(165, 115);
+            this.bt_Update.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Update.Name = "bt_Update";
+            this.bt_Update.Size = new System.Drawing.Size(70, 32);
+            this.bt_Update.TabIndex = 5;
+            this.bt_Update.Text = "บันทึก";
+            this.bt_Update.UseVisualStyleBackColor = true;
+            // 
             // FrmMM15
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -593,6 +606,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEmPosition_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Status;
         private System.Windows.Forms.ErrorProvider epCheck;
+        private System.Windows.Forms.Button bt_Update;
 
 
     }

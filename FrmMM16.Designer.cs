@@ -124,6 +124,7 @@
             this.txb_CoID.Size = new System.Drawing.Size(49, 26);
             this.txb_CoID.TabIndex = 5;
             this.txb_CoID.Text = "01";
+            this.txb_CoID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CoID_KeyDown);
             // 
             // txb_Company_Name
             // 
@@ -133,6 +134,7 @@
             this.txb_Company_Name.Name = "txb_Company_Name";
             this.txb_Company_Name.Size = new System.Drawing.Size(239, 26);
             this.txb_Company_Name.TabIndex = 6;
+            this.txb_Company_Name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Company_Name_KeyDown);
             // 
             // txb_CompanyAddr
             // 
@@ -143,6 +145,7 @@
             this.txb_CompanyAddr.Name = "txb_CompanyAddr";
             this.txb_CompanyAddr.Size = new System.Drawing.Size(289, 130);
             this.txb_CompanyAddr.TabIndex = 7;
+            this.txb_CompanyAddr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CompanyAddr_KeyDown);
             // 
             // txb_CompanyTel
             // 
@@ -152,6 +155,7 @@
             this.txb_CompanyTel.Name = "txb_CompanyTel";
             this.txb_CompanyTel.Size = new System.Drawing.Size(245, 26);
             this.txb_CompanyTel.TabIndex = 8;
+            this.txb_CompanyTel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CompanyTel_KeyDown);
             // 
             // txb_CompanyOwner
             // 
@@ -161,6 +165,7 @@
             this.txb_CompanyOwner.Name = "txb_CompanyOwner";
             this.txb_CompanyOwner.Size = new System.Drawing.Size(239, 26);
             this.txb_CompanyOwner.TabIndex = 9;
+            this.txb_CompanyOwner.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CompanyOwner_KeyDown);
             // 
             // bt_Update
             // 
@@ -183,6 +188,7 @@
             this.txb_CoService.Size = new System.Drawing.Size(49, 26);
             this.txb_CoService.TabIndex = 19;
             this.txb_CoService.Text = "99";
+            this.txb_CoService.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CoService_KeyDown);
             // 
             // lb_CoService
             // 
@@ -203,6 +209,7 @@
             this.txb_CoBill.Size = new System.Drawing.Size(49, 26);
             this.txb_CoBill.TabIndex = 21;
             this.txb_CoBill.Text = "55";
+            this.txb_CoBill.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CoBill_KeyDown);
             // 
             // lb_CoBill
             // 
@@ -353,9 +360,9 @@
             this.lb_LogoRemark.Location = new System.Drawing.Point(13, 90);
             this.lb_LogoRemark.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_LogoRemark.Name = "lb_LogoRemark";
-            this.lb_LogoRemark.Size = new System.Drawing.Size(161, 18);
+            this.lb_LogoRemark.Size = new System.Drawing.Size(258, 18);
             this.lb_LogoRemark.TabIndex = 32;
-            this.lb_LogoRemark.Text = "ภาพควรมีขนาด 200*200";
+            this.lb_LogoRemark.Text = "**ภาพควรมี DPI 600 เพื่อใช้สำหรับพิมพ์";
             // 
             // txb_Image
             // 

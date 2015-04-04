@@ -37,6 +37,25 @@ namespace Petshop
             DataTable idtCompany;
             string isqlCompany = "SELECT * FROM petshop.tb_company";
             idtCompany = iConnect.SelectByCommand(isqlCompany);
+
+            //*** for Logo Sub Report (Start) ***'
+            DataRow dr = null;
+            idtCompany.Columns.Add(new DataColumn("Logo", typeof(System.Byte[])));
+            
+            string iPath = idtCompany.Rows[0].Field<string>(8).ToString();
+            FileStream fiStream = new FileStream((iPath), FileMode.Open);
+            BinaryReader binReader = new BinaryReader(fiStream);
+            byte[] pic = { };
+            pic = binReader.ReadBytes((int)fiStream.Length);
+
+            dr = idtCompany.NewRow();
+            dr["Logo"] = pic;
+            idtCompany.Rows.Add(dr);
+
+            fiStream.Close();
+            binReader.Close();
+            //*** for Logo Sub Report (End) ***
+
             ////////////////////////////////////////////Load Bill Master//////////////////////////////////////////////////////////////
             //DataTable idtbill;
            // string isqlBill = "";

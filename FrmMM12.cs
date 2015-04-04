@@ -21,8 +21,12 @@ namespace Petshop
 
         private void Bt_LoadPD_Click(object sender, EventArgs e)
         {
-            LoadProduct();
+            LoadData();
+        }
+        private void LoadData()
+        {
             LoadUnit();
+            LoadProduct();
         }
 
         private void LoadUnit()
@@ -396,5 +400,12 @@ namespace Petshop
                 txb_ProductAmt.Focus();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        
      }
 }

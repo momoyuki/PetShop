@@ -175,7 +175,7 @@ namespace Petshop
                 txb_EmName.Text = row.Cells["ccEm_Name"].Value.ToString();
                 //cb_Type
                 txb_UserName.Text = row.Cells["ccEm_User"].Value.ToString();
-                txb_Pwd.Text = row.Cells["ccEm_Pwd"].Value.ToString();
+                //txb_Pwd.Text = row.Cells["ccEm_Pwd"].Value.ToString();
                 int iStatus = Convert.ToInt32(row.Cells["ccEm_Status"].Value);
                 if (iStatus == 0)
                 {

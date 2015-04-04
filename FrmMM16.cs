@@ -51,54 +51,86 @@ namespace Petshop
         {
             epCheck.Clear();
             Regex RegInt = new Regex(@"^(\d{2})$");
-            if (!RegInt.IsMatch(txb_CoID.Text)) 
+            if (txb_Company_Name.Text == string.Empty) {
+                epCheck.SetError(txb_Company_Name,"กรุณาระบุชื่อองค์กร");
+                txb_Company_Name.Focus();
+            }
+            else if(txb_CompanyAddr.Text == string.Empty)
+            {
+                epCheck.SetError(txb_Company_Name, "กรุณาระบุที่อยู่");
+                txb_Company_Name.Focus();
+            }
+            else if(txb_CompanyTel.Text == string.Empty)
+            {
+                epCheck.SetError(txb_CompanyTel, "กรุณาระบุเบอร์โทรศัพท์");
+                txb_CompanyTel.Focus();
+            }
+            else if (!RegInt.IsMatch(txb_CoID.Text)) 
             {
                 epCheck.SetError(txb_CoID, "กรุณาระบุรหัสสาขา 2 ตำแหน่ง");
                 txb_CoID.Focus();
             }
-            if (!RegInt.IsMatch(txb_CoService.Text))
+            else if (!RegInt.IsMatch(txb_CoService.Text))
             {
                 epCheck.SetError(txb_CoService, "กรุณาระบุรหัสบริการ 2 ตำแหน่ง");
                 txb_CoService.Focus();
             }
-            if (!RegInt.IsMatch(txb_CoSale.Text))
+            else if (!RegInt.IsMatch(txb_CoSale.Text))
             {
                 epCheck.SetError(txb_CoSale, "กรุณาระบุรหัสขายสินค้า 2 ตำแหน่ง");
                 txb_CoSale.Focus();
             }
-            if (!RegInt.IsMatch(txb_CoBill.Text))
+            else if (!RegInt.IsMatch(txb_CoBill.Text))
             {
                 epCheck.SetError(txb_CoBill, "กรุณาระบุรหัสใบเสร็จ 2 ตำแหน่ง");
                 txb_CoBill.Focus();
             }
+            else
+            {
+                string itxbCompanyID = txb_CoID.Text.Trim();
+                string ilbCoID = lb_CoIDH.Text.Trim();
+                string itxbCompanyName = txb_Company_Name.Text.Trim();
+                string itxbCompanyAddr = txb_CompanyAddr.Text.Trim();
+                string itxbCompanyTel = txb_CompanyTel.Text.Trim();
+                string itxbCompanyOwner = txb_CompanyOwner.Text.Trim();
+                string itxbCoService = txb_CoService.Text.Trim();
+                string itxbCoSale = txb_CoSale.Text.Trim();
+                string itxbCoBill = txb_CoBill.Text.Trim();
 
-            string itxbCompanyID = txb_CoID.Text.Trim();
-            string ilbCoID = lb_CoIDH.Text.Trim();
-            string itxbCompanyName = txb_Company_Name.Text.Trim();
-            string itxbCompanyAddr = txb_CompanyAddr.Text.Trim();
-            string itxbCompanyTel = txb_CompanyTel.Text.Trim();
-            string itxbCompanyOwner = txb_CompanyOwner.Text.Trim(); 
-            string itxbCoService= txb_CoService.Text.Trim(); 
-            string itxbCoSale= txb_CoSale.Text.Trim();
-            string itxbCoBill = txb_CoBill.Text.Trim();
-           
-            DialogResult iConfirmResult = MessageBox.Show("บันทึกข้อมูลองค์กร?", "Insert..", MessageBoxButtons.YesNo);
-             if (iConfirmResult == DialogResult.Yes)
-             {
-                     if (idtCompany.Rows.Count > 0)
-                     {
-                         string isqlCompanyUpdate = "UPDATE `tb_company` SET `Company_ID`='" + itxbCompanyID + "', `Company_Name`='" + itxbCompanyName + "', `Company_Addr`='" + itxbCompanyAddr + "', `Company_Tel`='" + itxbCompanyTel + "', `Company_Own`='" + itxbCompanyOwner + "', `CoService`='" + itxbCoService + "', `CoSale`='" + itxbCoSale + "', `CoBill`='" + itxbCoBill + "' WHERE `Company_ID`='" + ilbCoID + "'";
-                         iConnect.Insert(isqlCompanyUpdate);
-                         MessageBox.Show("ทำการปรับข้อมูลแล้ว");
-                     }
-                 else
-                 {
-                     string isqlCompanyAdd = "INSERT INTO `tb_company` (`Company_ID`, `Company_Name`, `Company_Addr`, `Company_Tel`, `Company_Own`, `CoService`, `CoSale`, `CoBill`) VALUES ('" + itxbCompanyID + "', '" + itxbCompanyName + "', '" + itxbCompanyAddr + "', '" + itxbCompanyTel + "', '" + itxbCompanyOwner + "', '" + itxbCoService + "', '" + itxbCoSale + "', '" + itxbCoBill + "')";
-                     iConnect.Insert(isqlCompanyAdd);
-                     MessageBox.Show("ทำการเพิ่มข้อมูลแล้ว");
-                 } 
-             }
-             LoadData();
+                DialogResult iConfirmResult = MessageBox.Show("บันทึกข้อมูลองค์กร?", "Insert..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    if (idtCompany.Rows.Count > 0)
+                    {
+                        string isqlCompanyUpdate = "UPDATE `tb_company` SET `Company_ID`='" + itxbCompanyID + "', `Company_Name`='" + itxbCompanyName + "', `Company_Addr`='" + itxbCompanyAddr + "', `Company_Tel`='" + itxbCompanyTel + "', `Company_Own`='" + itxbCompanyOwner + "', `CoService`='" + itxbCoService + "', `CoSale`='" + itxbCoSale + "', `CoBill`='" + itxbCoBill + "' WHERE `Company_ID`='" + ilbCoID + "'";
+                        iConnect.Insert(isqlCompanyUpdate);
+                        MessageBox.Show("ทำการปรับข้อมูลแล้ว");
+                        ClearTxb();
+                        LoadData();
+                    }
+                    else
+                    {
+                        string isqlCompanyAdd = "INSERT INTO `tb_company` (`Company_ID`, `Company_Name`, `Company_Addr`, `Company_Tel`, `Company_Own`, `CoService`, `CoSale`, `CoBill`) VALUES ('" + itxbCompanyID + "', '" + itxbCompanyName + "', '" + itxbCompanyAddr + "', '" + itxbCompanyTel + "', '" + itxbCompanyOwner + "', '" + itxbCoService + "', '" + itxbCoSale + "', '" + itxbCoBill + "')";
+                        iConnect.Insert(isqlCompanyAdd);
+                        MessageBox.Show("ทำการเพิ่มข้อมูลแล้ว");
+                        ClearTxb();
+                        LoadData();
+                    }
+                }
+            }
+        }
+
+        private void ClearTxb()
+        {
+            txb_Company_Name.Clear();
+            txb_CompanyAddr.Clear();
+            txb_CompanyTel.Clear();
+            txb_CompanyOwner.Clear();
+            txb_CoID.Clear();
+            txb_CoBill.Clear();
+            txb_CoSale.Clear();
+            txb_CoService.Clear();
+            txb_Image.Clear();
         }
 
         private void FrmMM16_Load(object sender, EventArgs e)
@@ -132,5 +164,61 @@ namespace Petshop
                 iConnect.Insert(isqlAddLogo);
             }
         }
+
+        private void txb_Company_Name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_CompanyAddr.Focus();
+            }
+        }
+
+        private void txb_CompanyAddr_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_CompanyTel.Focus();
+            }
+        }
+
+        private void txb_CompanyTel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_CompanyOwner.Focus();
+            }
+        }
+        private void txb_CompanyOwner_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_CoID.Focus();
+            }
+        }
+        private void txb_CoID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode ==Keys.Enter)
+            {
+                txb_CoBill.Focus();
+            }
+        }
+
+        private void txb_CoBill_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_CoSale.Focus();
+            }
+        }
+
+        private void txb_CoService_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Update.Select();
+            }
+        }
+
+        
     }
 }

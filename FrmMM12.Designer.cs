@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMM12));
             this.dGV_Product = new System.Windows.Forms.DataGridView();
             this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +49,7 @@
             this.lb_ProductName = new System.Windows.Forms.Label();
             this.txb_ProductName = new System.Windows.Forms.TextBox();
             this.gBoxProductPrice = new System.Windows.Forms.GroupBox();
+            this.bt_ProductRefresh = new System.Windows.Forms.Button();
             this.CheckBox_Stock = new System.Windows.Forms.CheckBox();
             this.bt_Unit = new System.Windows.Forms.Button();
             this.cb_ProductUnit = new System.Windows.Forms.ComboBox();
@@ -252,6 +254,7 @@
             // 
             // gBoxProductPrice
             // 
+            this.gBoxProductPrice.Controls.Add(this.bt_ProductRefresh);
             this.gBoxProductPrice.Controls.Add(this.CheckBox_Stock);
             this.gBoxProductPrice.Controls.Add(this.bt_Unit);
             this.gBoxProductPrice.Controls.Add(this.cb_ProductUnit);
@@ -276,6 +279,16 @@
             this.gBoxProductPrice.TabIndex = 3;
             this.gBoxProductPrice.TabStop = false;
             this.gBoxProductPrice.Text = "ต้นทุนและราคาขาย";
+            // 
+            // bt_ProductRefresh
+            // 
+            this.bt_ProductRefresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_ProductRefresh.Image")));
+            this.bt_ProductRefresh.Location = new System.Drawing.Point(490, 19);
+            this.bt_ProductRefresh.Name = "bt_ProductRefresh";
+            this.bt_ProductRefresh.Size = new System.Drawing.Size(36, 36);
+            this.bt_ProductRefresh.TabIndex = 26;
+            this.bt_ProductRefresh.UseVisualStyleBackColor = true;
+            this.bt_ProductRefresh.Click += new System.EventHandler(this.button1_Click);
             // 
             // CheckBox_Stock
             // 
@@ -682,5 +695,6 @@
         private System.Windows.Forms.Label lb_SearchProductA;
         private System.Windows.Forms.TextBox txb_SearchProduct;
         private System.Windows.Forms.Button bt_SearchProduct;
+        private System.Windows.Forms.Button bt_ProductRefresh;
     }
 }
