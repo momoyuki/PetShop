@@ -92,14 +92,17 @@ namespace Petshop
             if (txb_ServiceDetail.Text == string.Empty)
             {
                 epCheck.SetError(txb_ServiceDetail, "***กรุณากรอกชื่อบริการ");
+                txb_ServiceDetail.Focus();
             }
             else if (!RegDate.IsMatch(txb_ServiceDate.Text))
             {
                 epCheck.SetError(txb_ServiceDate, "***กรุณาใส่จำนวนวันให้ถูกต้อง");
+                txb_ServiceDate.Focus();
             }
             else if (!RegMoney.IsMatch(txb_ServicePrice.Text))
             {
                 epCheck.SetError(txb_ServicePrice, "***กรุณาใส่ค่าให้ถูกต้อง เช่น 777 หรือ 777.25");
+                txb_ServicePrice.Focus();
             }
             else
             {
@@ -139,6 +142,7 @@ namespace Petshop
                     else
                     {
                         epCheck.SetError(txb_MediID, "ไม่ได้ระบุรหัสบริการ");
+                        txb_MediID.Focus();
                     }
                 }
                 
@@ -189,32 +193,64 @@ namespace Petshop
             Regex RegID = new Regex(@"[a-zA-Z0-9]{6,16}$");
             Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
             Regex RegInt = new Regex(@"^(\d{1,3})$");
+
+            int iStock = 0;
+            if (CheckBox_Stock.Checked == true)
+            {
+                iStock = 1;
+            }
+            else
+            {
+                txb_MediOrder.Text = "0";
+            }
             //Regex RegDate = new Regex(@"^\d{1,3}$");
             if (!RegID.IsMatch(txb_MediID.Text))
             {
                 epCheck.SetError(txb_MediID, "***กรุณากรอกรหัสยาอย่างน้อย 6 หลัก *ตัวอย่าง Aa0001");
+                txb_MediID.Focus();
             }
             else if (txb_MediName.Text == string.Empty)
             {
                 epCheck.SetError(txb_MediName, "***กรุณากรอกชื่อยา");
+                txb_MediName.Focus();
             }
             else if (!RegMoney.IsMatch(txb_MediPrice.Text))
             {
                 epCheck.SetError(txb_MediPrice, "***กรุณาใส่ค่าให้ถูกต้อง เช่น 777 หรือ 777.25");
+                txb_MediPrice.Focus();
             }
             else if (!RegMoney.IsMatch(txb_MediSale.Text))
             {
                 epCheck.SetError(txb_MediSale, "***กรุณาใส่ค่าให้ถูกต้อง เช่น 777 หรือ 777.25");
+                txb_MediSale.Focus();
+            }
+            else if(cb_MediUnit.SelectedValue == null)
+            {
+                MessageBox.Show("ไม่พบหน่วย กรุณาเพิ่มหน่วย");
+                epCheck.SetError(cb_MediUnit,"กรุณาเลือกหน่วย");
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmMM13))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmMM13 iFrmMM13 = new FrmMM13();
+                iFrmMM13.MdiParent = MainForm.ActiveForm;
+                iFrmMM13.Show();
+                cb_MediUnit.Focus();
             }
             else if (!RegInt.IsMatch(txb_MediAmt.Text))
             {
                 epCheck.SetError(txb_MediAmt, "***คุณกรอกจำนวนไม่ถูกต้อง");
-                txb_MediAmt.Text = "10";
+                txb_MediAmt.Focus();
             }
+            
             else if (!RegInt.IsMatch(txb_MediOrder.Text))
             {
                 epCheck.SetError(txb_MediOrder, "***คุณกรอกจำนวนไม่ถูกต้อง");
-                txb_MediOrder.Text = "5";
+                txb_MediOrder.Focus();
             }
             else
             {
@@ -240,15 +276,7 @@ namespace Petshop
                 string idtpProduct = dTP_Product.Value.ToString("yyyy-MM-dd");
                 string idtpExpired = dTP_Expired.Value.ToString("yyyy-MM-dd");
                 string itxbMediAmt = txb_MediAmt.Text.Trim();
-                int iStock = 0;
-                if (CheckBox_Stock.Checked == true)
-                {
-                    iStock = 1;
-                }
-                else
-                {
-                    txb_MediOrder.Text = "0";
-                }
+                
                 string itxbMediOrder = txb_MediOrder.Text.Trim();
                 string itxbMediPrice = txb_MediPrice.Text.Trim();
                 string itxbMediSale = txb_MediSale.Text.Trim();
@@ -304,7 +332,6 @@ namespace Petshop
         }
         private void ClearTxtMedi()
         {
-            txb_MediID.Focus();
             lb_MediIDH.Text = string.Empty;
             txb_MediID.Clear();
             txb_MediName.Clear();
@@ -314,7 +341,8 @@ namespace Petshop
             txb_MediAmt.Clear();
             txb_MediOrder.Clear();
             dTP_Product.Value = DateTime.Today;
-            dTP_Expired.Value = DateTime.Today;
+            dTP_Expired.Value = DateTime.Today; 
+            txb_MediID.Focus();
         }
         private void dGV_Medi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -477,20 +505,25 @@ namespace Petshop
 
         private void bt_SearchMedi_Click(object sender, EventArgs e)
         {
+            SearchMedi();
+        }
+
+        private void SearchMedi()
+        {
             Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
             if (RegSearch.IsMatch(txb_SearchMedi.Text))
             {
                 string iSearchMedi = txb_SearchMedi.Text.Trim();
                 DataTable idtMedicine;
-                    string isqlCommand = "SELECT * FROM `tb_Medicine` where Medi_Des like '%" + iSearchMedi + "%' OR Medi_ID like '%" + iSearchMedi + "%' ";
-                    idtMedicine = iConnect.SelectByCommand(isqlCommand);
-                    dGV_Medi.DataSource = idtMedicine;
-                    dGV_Medi.Refresh();
-                    lb_Result.Text = idtMedicine.Rows.Count.ToString();
+                string isqlCommand = "SELECT * FROM `tb_Medicine` where Medi_Des like '%" + iSearchMedi + "%' OR Medi_ID like '%" + iSearchMedi + "%' ";
+                idtMedicine = iConnect.SelectByCommand(isqlCommand);
+                dGV_Medi.DataSource = idtMedicine;
+                dGV_Medi.Refresh();
+                lb_Result.Text = idtMedicine.Rows.Count.ToString();
             }
             else
             {
-             LoadMedi();
+                LoadMedi();
             }
         }
 
@@ -580,12 +613,18 @@ namespace Petshop
 
         private void bt_SearchService_Click(object sender, EventArgs e)
         {
+            SearchServicce();
+           
+        }
+
+        private void SearchServicce()
+        {
             Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
             if (RegSearch.IsMatch(txb_SearchService.Text))
             {
                 string iSearchService = txb_SearchService.Text.Trim();
                 DataTable idtService;
-                string isqlCommand = "SELECT * FROM `tb_Medicine` where Service_Des like '%" + iSearchService + "%' OR Service_ID like '%" + iSearchService + "%' ";
+                string isqlCommand = "SELECT * FROM `tb_Service` where Service_Des like '%" + iSearchService + "%' OR Service_ID like '%" + iSearchService + "%' ";
                 idtService = iConnect.SelectByCommand(isqlCommand);
                 dGV_Service.DataSource = idtService;
                 dGV_Service.Refresh();
@@ -594,6 +633,43 @@ namespace Petshop
             else
             {
                 LoadMedi();
+            }
+        }
+
+        private void txb_MediID_TextChanged(object sender, EventArgs e)
+        {
+            if((txb_MediID.Text !=null)||(txb_MediID.Text !=string.Empty)){
+                bt_EditMedi.Enabled = true;
+                bt_DelMedi.Enabled = true;
+            }
+            else
+            {
+                bt_EditMedi.Enabled = false;
+                bt_DelMedi.Enabled = false;
+            }
+        }
+
+        private void txb_SearchService_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchServicce();
+            }
+        }
+
+        private void txb_SearchMedi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchMedi();
+            }
+        }
+
+        private void cb_MediUnit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_MediAmt.Focus();
             }
         }
     }

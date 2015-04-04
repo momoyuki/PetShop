@@ -59,31 +59,62 @@ namespace Petshop
             Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
             Regex RegInt = new Regex(@"^(\d{1,3})$");
             //Regex RegDate = new Regex(@"^\d{1,3}$");
+            int iStock = 0;
+            if (CheckBox_Stock.Checked == true)
+            {
+                iStock = 1;
+
+            }
+            else
+            {
+                txb_ProductOrder.Text = "0";
+            }
             if (!RegID.IsMatch(txb_ProductID.Text))
             {
                 epCheck.SetError(txb_ProductID, "***กรุณากรอกรหัสสินค้าอย่างน้อย 6 หลัก *ตัวอย่าง Aa0001");
+                txb_ProductID.Focus();
             }
             else if (txb_ProductName.Text == string.Empty)
             {
                 epCheck.SetError(txb_ProductName, "***กรุณากรอกชื่อสินค้า");
+                txb_ProductName.Focus();
             }
             else if (!RegMoney.IsMatch(txb_ProductPrice.Text))
             {
                 epCheck.SetError(txb_ProductPrice, "***กรุณาใส่ค่าให้ถูกต้อง เช่น 777 หรือ 777.25");
+                txb_ProductPrice.Focus();
             }
             else if (!RegMoney.IsMatch(txb_ProductSale.Text))
             {
                 epCheck.SetError(txb_ProductSale, "***กรุณาใส่ค่าให้ถูกต้อง เช่น 777 หรือ 777.25");
+                txb_ProductSale.Focus();
+            }
+            else if (cb_ProductUnit.SelectedValue == null)
+            {
+                MessageBox.Show("ไม่พบหน่วย กรุณาเพิ่มหน่วย");
+                epCheck.SetError(cb_ProductUnit, "กรุณาเลือกหน่วย");
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmMM13))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmMM13 iFrmMM13 = new FrmMM13();
+                iFrmMM13.MdiParent = MainForm.ActiveForm;
+                iFrmMM13.Show();
+                cb_ProductUnit.Focus();
             }
             else if (!RegInt.IsMatch(txb_ProductAmt.Text))
             {
                 epCheck.SetError(txb_ProductAmt, "***คุณกรอกจำนวนไม่ถูกต้อง");
-                txb_ProductAmt.Text = "10";
+                txb_ProductAmt.Focus();
             }
             else if (!RegInt.IsMatch(txb_ProductOrder.Text))
             {
                 epCheck.SetError(txb_ProductOrder, "***คุณกรอกจำนวนไม่ถูกต้อง");
-                txb_ProductOrder.Text = "5";
+                txb_ProductOrder.Focus();
             }
             else
             {
@@ -103,16 +134,7 @@ namespace Petshop
                 string itxbProductAmt = txb_ProductAmt.Text.Trim();
                 string itxbProductOrder = txb_ProductOrder.Text.Trim();
                 string ilbProductID = lb_ProductIDh.Text.Trim();
-                int iStock = 0;
-                if (CheckBox_Stock.Checked == true)
-                {
-                    iStock = 1;
-                    
-                }
-                else
-                {
-                    txb_ProductOrder.Text = "0";
-                }
+                
 
                 DataTable idtProductCheck;
                 string isqlProductCheck = "SELECT * FROM petshop.tb_product where Product_ID = '" + itxbProductID + " '";
@@ -122,7 +144,7 @@ namespace Petshop
                 {
                     if (idtProductCheck.Rows.Count > 0)
                     {
-                        MessageBox.Show("มีสินค้ารหัส " + itxbProductID + " อยู่ในระบบแล้ว");
+                        MessageBox.Show("มีสินค้ารหัส " + itxbProductID + " อยู่ในระบบแล้ว","ตรวจสอบ",MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -204,7 +226,6 @@ namespace Petshop
         }
         private void ClearTxtProduct()
         {
-            txb_ProductID.Focus();
             lb_ProductIDh.Text = "";
             txb_ProductID.Clear();
             txb_ProductName.Clear();
@@ -215,6 +236,7 @@ namespace Petshop
             dTP_Expired.Value = DateTime.Today;
             txb_ProductAmt.Clear();
             txb_ProductOrder.Clear();
+            txb_ProductID.Focus();
         }
         private void bt_Unit_Click(object sender, EventArgs e)
         {
@@ -316,7 +338,7 @@ namespace Petshop
                 if (iConfirmResult == DialogResult.Yes)
                 {
                     DataTable idtProductCheck;
-                    string isqlProductCheck = "SELECT tb_ProductSale.Product_ID FROM petshop.tb_productsale where Product_ID = '"+itxbProductID+"'";
+                    string isqlProductCheck = "SELECT tb_productsalebill.Product_ID FROM petshop.tb_productsalebill where Product_ID = '" + itxbProductID + "'";
                     idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
                     if (idtProductCheck.Rows.Count == 0)
                     {
@@ -336,6 +358,12 @@ namespace Petshop
 
         private void bt_SearchProduct_Click(object sender, EventArgs e)
         {
+            SearchProduct();
+            
+        }
+
+        private void SearchProduct()
+        {
             Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
             if (RegSearch.IsMatch(txb_SearchProduct.Text))
             {
@@ -350,6 +378,22 @@ namespace Petshop
             else
             {
                 LoadProduct();
+            }
+        }
+
+        private void txb_SearchProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchProduct();
+            }
+        }
+
+        private void cb_ProductUnit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_ProductAmt.Focus();
             }
         }
      }

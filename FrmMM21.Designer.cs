@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gBoxDetail = new System.Windows.Forms.GroupBox();
             this.lb_BirthDay = new System.Windows.Forms.Label();
-            this.bt_HealDate = new System.Windows.Forms.Button();
             this.CheckBox_Sterility = new System.Windows.Forms.CheckBox();
             this.bt_Service = new System.Windows.Forms.Button();
             this.rb_M = new System.Windows.Forms.RadioButton();
@@ -103,6 +103,10 @@
             this.ccHealRecord_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealRecord_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealRecord_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.gBoxDetail.SuspendLayout();
             this.gBox_OwnerDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PetProfile)).BeginInit();
@@ -110,6 +114,7 @@
             this.tP_ListPeT.SuspendLayout();
             this.tP_LisTDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxDetail
@@ -154,19 +159,6 @@
             this.lb_BirthDay.Size = new System.Drawing.Size(33, 18);
             this.lb_BirthDay.TabIndex = 27;
             this.lb_BirthDay.Text = "อายุ";
-            // 
-            // bt_HealDate
-            // 
-            this.bt_HealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_HealDate.Location = new System.Drawing.Point(5, 92);
-            this.bt_HealDate.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_HealDate.Name = "bt_HealDate";
-            this.bt_HealDate.Size = new System.Drawing.Size(100, 30);
-            this.bt_HealDate.TabIndex = 26;
-            this.bt_HealDate.Text = "นัดหมาย";
-            this.bt_HealDate.UseVisualStyleBackColor = true;
-            this.bt_HealDate.Visible = false;
-            this.bt_HealDate.Click += new System.EventHandler(this.bt_HealDate_Click);
             // 
             // CheckBox_Sterility
             // 
@@ -242,7 +234,6 @@
             // gBox_OwnerDetail
             // 
             this.gBox_OwnerDetail.Controls.Add(this.bt_LoadProfile);
-            this.gBox_OwnerDetail.Controls.Add(this.bt_HealDate);
             this.gBox_OwnerDetail.Controls.Add(this.lb_Tel);
             this.gBox_OwnerDetail.Controls.Add(this.txb_TelOwner);
             this.gBox_OwnerDetail.Controls.Add(this.lb_Addr);
@@ -252,11 +243,11 @@
             this.gBox_OwnerDetail.Controls.Add(this.lbYear);
             this.gBox_OwnerDetail.Controls.Add(this.lbCompany);
             this.gBox_OwnerDetail.Controls.Add(this.txb_NameOwner);
-            this.gBox_OwnerDetail.Location = new System.Drawing.Point(356, 107);
+            this.gBox_OwnerDetail.Location = new System.Drawing.Point(323, 107);
             this.gBox_OwnerDetail.Margin = new System.Windows.Forms.Padding(4);
             this.gBox_OwnerDetail.Name = "gBox_OwnerDetail";
             this.gBox_OwnerDetail.Padding = new System.Windows.Forms.Padding(4);
-            this.gBox_OwnerDetail.Size = new System.Drawing.Size(615, 170);
+            this.gBox_OwnerDetail.Size = new System.Drawing.Size(648, 170);
             this.gBox_OwnerDetail.TabIndex = 16;
             this.gBox_OwnerDetail.TabStop = false;
             this.gBox_OwnerDetail.Text = "ข้อมูลเจ้าของสัตว์";
@@ -277,19 +268,19 @@
             // lb_Tel
             // 
             this.lb_Tel.AutoSize = true;
-            this.lb_Tel.Location = new System.Drawing.Point(275, 26);
+            this.lb_Tel.Location = new System.Drawing.Point(329, 31);
             this.lb_Tel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Tel.Name = "lb_Tel";
-            this.lb_Tel.Size = new System.Drawing.Size(128, 18);
+            this.lb_Tel.Size = new System.Drawing.Size(136, 18);
             this.lb_Tel.TabIndex = 7;
-            this.lb_Tel.Text = "เบอร์โทรศัพท์ติดต่อ";
+            this.lb_Tel.Text = "เบอร์โทรศัพท์ติดต่อ*";
             // 
             // txb_TelOwner
             // 
-            this.txb_TelOwner.Location = new System.Drawing.Point(411, 23);
+            this.txb_TelOwner.Location = new System.Drawing.Point(473, 27);
             this.txb_TelOwner.Margin = new System.Windows.Forms.Padding(4);
             this.txb_TelOwner.Name = "txb_TelOwner";
-            this.txb_TelOwner.Size = new System.Drawing.Size(185, 26);
+            this.txb_TelOwner.Size = new System.Drawing.Size(145, 26);
             this.txb_TelOwner.TabIndex = 6;
             // 
             // lb_Addr
@@ -325,12 +316,12 @@
             // lb_OwnerName
             // 
             this.lb_OwnerName.AutoSize = true;
-            this.lb_OwnerName.Location = new System.Drawing.Point(9, 32);
+            this.lb_OwnerName.Location = new System.Drawing.Point(8, 31);
             this.lb_OwnerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_OwnerName.Name = "lb_OwnerName";
-            this.lb_OwnerName.Size = new System.Drawing.Size(96, 18);
+            this.lb_OwnerName.Size = new System.Drawing.Size(104, 18);
             this.lb_OwnerName.TabIndex = 3;
-            this.lb_OwnerName.Text = "ชื่อเจ้าของสัตว์";
+            this.lb_OwnerName.Text = "ชื่อเจ้าของสัตว์*";
             // 
             // lbYear
             // 
@@ -356,10 +347,10 @@
             // 
             // txb_NameOwner
             // 
-            this.txb_NameOwner.Location = new System.Drawing.Point(113, 26);
+            this.txb_NameOwner.Location = new System.Drawing.Point(120, 27);
             this.txb_NameOwner.Margin = new System.Windows.Forms.Padding(4);
             this.txb_NameOwner.Name = "txb_NameOwner";
-            this.txb_NameOwner.Size = new System.Drawing.Size(154, 26);
+            this.txb_NameOwner.Size = new System.Drawing.Size(194, 26);
             this.txb_NameOwner.TabIndex = 2;
             // 
             // lb_PetName
@@ -368,9 +359,9 @@
             this.lb_PetName.Location = new System.Drawing.Point(233, 28);
             this.lb_PetName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_PetName.Name = "lb_PetName";
-            this.lb_PetName.Size = new System.Drawing.Size(76, 18);
+            this.lb_PetName.Size = new System.Drawing.Size(84, 18);
             this.lb_PetName.TabIndex = 15;
-            this.lb_PetName.Text = "ชื่อของสัตว์";
+            this.lb_PetName.Text = "ชื่อของสัตว์*";
             // 
             // txb_PetName
             // 
@@ -432,12 +423,12 @@
             // lb_Color
             // 
             this.lb_Color.AutoSize = true;
-            this.lb_Color.Location = new System.Drawing.Point(20, 67);
+            this.lb_Color.Location = new System.Drawing.Point(8, 66);
             this.lb_Color.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Color.Name = "lb_Color";
-            this.lb_Color.Size = new System.Drawing.Size(67, 18);
+            this.lb_Color.Size = new System.Drawing.Size(75, 18);
             this.lb_Color.TabIndex = 7;
-            this.lb_Color.Text = "สีของสัตว์";
+            this.lb_Color.Text = "สีของสัตว์*";
             // 
             // txb_PetColor
             // 
@@ -676,6 +667,9 @@
             // 
             // tP_ListPeT
             // 
+            this.tP_ListPeT.Controls.Add(this.label1);
+            this.tP_ListPeT.Controls.Add(this.label2);
+            this.tP_ListPeT.Controls.Add(this.label3);
             this.tP_ListPeT.Controls.Add(this.txb_SearchPet);
             this.tP_ListPeT.Controls.Add(this.bt_Search);
             this.tP_ListPeT.Controls.Add(this.dGV_PetProfile);
@@ -745,10 +739,11 @@
             // lb_CountHealRecord
             // 
             this.lb_CountHealRecord.AutoSize = true;
-            this.lb_CountHealRecord.Location = new System.Drawing.Point(198, 12);
+            this.lb_CountHealRecord.Location = new System.Drawing.Point(199, 12);
             this.lb_CountHealRecord.Name = "lb_CountHealRecord";
-            this.lb_CountHealRecord.Size = new System.Drawing.Size(0, 18);
+            this.lb_CountHealRecord.Size = new System.Drawing.Size(16, 18);
             this.lb_CountHealRecord.TabIndex = 3;
+            this.lb_CountHealRecord.Text = "0";
             // 
             // lb_HealRecordList
             // 
@@ -900,6 +895,37 @@
             this.ccHealRecord_Net.Name = "ccHealRecord_Net";
             this.ccHealRecord_Net.ReadOnly = true;
             // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(252, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 18);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "รายการ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(205, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 18);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(48, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 18);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "พบสมาชิกทั้งหมด";
+            // 
             // FrmMM21
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -924,6 +950,7 @@
             this.tP_LisTDetail.ResumeLayout(false);
             this.tP_LisTDetail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -969,7 +996,6 @@
         private System.Windows.Forms.TextBox txb_NameOwner;
         private System.Windows.Forms.CheckBox CheckBox_Sterility;
         private System.Windows.Forms.DataGridView dGV_HealRecord;
-        private System.Windows.Forms.Button bt_HealDate;
         public System.Windows.Forms.TextBox txb_PetProfileID;
         private System.Windows.Forms.Label lb_HealRecordID;
         private System.Windows.Forms.Label lb_HealRecord;
@@ -1005,5 +1031,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed;
         private System.Windows.Forms.Label lb_BirthDay;
         private System.Windows.Forms.Button bt_HealDateDetail;
+        private System.Windows.Forms.ErrorProvider epCheck;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

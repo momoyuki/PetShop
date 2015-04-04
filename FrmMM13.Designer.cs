@@ -108,7 +108,7 @@
             this.bt_DelUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelUnit.Name = "bt_DelUnit";
             this.bt_DelUnit.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelUnit.TabIndex = 17;
+            this.bt_DelUnit.TabIndex = 5;
             this.bt_DelUnit.Text = "ลบ";
             this.bt_DelUnit.UseVisualStyleBackColor = true;
             this.bt_DelUnit.Click += new System.EventHandler(this.bt_DelUnit_Click);
@@ -163,6 +163,7 @@
             // 
             this.txb_UnitName.Location = new System.Drawing.Point(116, 63);
             this.txb_UnitName.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_UnitName.MaxLength = 140;
             this.txb_UnitName.Name = "txb_UnitName";
             this.txb_UnitName.Size = new System.Drawing.Size(163, 26);
             this.txb_UnitName.TabIndex = 2;
@@ -184,9 +185,9 @@
             this.lb_UnitName.Location = new System.Drawing.Point(32, 66);
             this.lb_UnitName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_UnitName.Name = "lb_UnitName";
-            this.lb_UnitName.Size = new System.Drawing.Size(72, 18);
+            this.lb_UnitName.Size = new System.Drawing.Size(80, 18);
             this.lb_UnitName.TabIndex = 0;
-            this.lb_UnitName.Text = "เรียกหน่วย";
+            this.lb_UnitName.Text = "เรียกหน่วย*";
             // 
             // epCheck
             // 

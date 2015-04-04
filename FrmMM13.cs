@@ -56,6 +56,7 @@ namespace Petshop
             else
             {
                 epCheck.SetError(txb_UnitName, "กรุณากรอกหน่วย");
+                txb_UnitName.Focus();
             }
            
         }
@@ -65,6 +66,7 @@ namespace Petshop
             txb_UnitID.Clear();
             txb_UnitName.Clear();
             epCheck.Clear();
+            txb_UnitName.Focus();
         }
 
         private void bt_EditUnit_Click(object sender, EventArgs e)
@@ -80,8 +82,10 @@ namespace Petshop
             if ((txb_UnitName.Text == null) || (txb_UnitName.Text == string.Empty))
             {
                  epCheck.SetError(txb_UnitName, "กรุณากรอกหน่วย");
+                 txb_UnitName.Focus();
             } else if((txb_UnitID.Text == null)||(txb_UnitID.Text == string.Empty)){
                 epCheck.SetError(txb_UnitID,"คุณยังไม่ได้เลือกหน่วยที่จะแก้ไข");
+                txb_UnitID.Focus();
             }
             else
             {
@@ -146,6 +150,7 @@ namespace Petshop
                     {
                         string isqlDelUnit = "DELETE FROM `petshop`.`tb_unit` WHERE `Unit_ID`='" + itxbUnitID + "'";
                         iConnect.Insert(isqlDelUnit);
+                        clearTxb();
                         MessageBox.Show("ทำการลบยาออกแล้ว");
                     }
                     else
@@ -158,6 +163,7 @@ namespace Petshop
             else
             {
                 epCheck.SetError(txb_UnitID, "กรุณาเลือกหน่วยที่ต้องการลบ");
+                txb_UnitID.Focus();
             }
         }
     }

@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlEmployee = new System.Windows.Forms.TabControl();
             this.tpEmployee = new System.Windows.Forms.TabPage();
             this.gBoxEmployee = new System.Windows.Forms.GroupBox();
+            this.CheckBox_Status = new System.Windows.Forms.CheckBox();
             this.bt_LoadEP = new System.Windows.Forms.Button();
             this.bt_EditEm = new System.Windows.Forms.Button();
             this.bt_AddEm = new System.Windows.Forms.Button();
@@ -46,6 +48,13 @@
             this.txb_EmID = new System.Windows.Forms.TextBox();
             this.lb_EmID = new System.Windows.Forms.Label();
             this.dGV_Ep = new System.Windows.Forms.DataGridView();
+            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_Pwd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEmPosition_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpPosition = new System.Windows.Forms.TabPage();
             this.dGV_PS = new System.Windows.Forms.DataGridView();
             this.ccEP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,14 +68,7 @@
             this.lb_PositionID = new System.Windows.Forms.Label();
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
-            this.CheckBox_Status = new System.Windows.Forms.CheckBox();
-            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_User = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_Pwd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEmPosition_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -75,6 +77,7 @@
             this.tpPosition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PS)).BeginInit();
             this.gBoxPosition.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlEmployee
@@ -122,6 +125,17 @@
             this.gBoxEmployee.TabIndex = 1;
             this.gBoxEmployee.TabStop = false;
             this.gBoxEmployee.Text = "รายละเอียด";
+            // 
+            // CheckBox_Status
+            // 
+            this.CheckBox_Status.AutoSize = true;
+            this.CheckBox_Status.Location = new System.Drawing.Point(282, 141);
+            this.CheckBox_Status.Name = "CheckBox_Status";
+            this.CheckBox_Status.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CheckBox_Status.Size = new System.Drawing.Size(109, 22);
+            this.CheckBox_Status.TabIndex = 5;
+            this.CheckBox_Status.Text = "สถานะทำงาน";
+            this.CheckBox_Status.UseVisualStyleBackColor = true;
             // 
             // bt_LoadEP
             // 
@@ -229,9 +243,9 @@
             this.lb_EmName.Location = new System.Drawing.Point(35, 66);
             this.lb_EmName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_EmName.Name = "lb_EmName";
-            this.lb_EmName.Size = new System.Drawing.Size(83, 18);
+            this.lb_EmName.Size = new System.Drawing.Size(91, 18);
             this.lb_EmName.TabIndex = 4;
-            this.lb_EmName.Text = "ชื่อเจ้าหน้าที่";
+            this.lb_EmName.Text = "ชื่อเจ้าหน้าที่*";
             // 
             // txb_EmName
             // 
@@ -269,14 +283,15 @@
             this.lb_EmID.Location = new System.Drawing.Point(27, 30);
             this.lb_EmID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_EmID.Name = "lb_EmID";
-            this.lb_EmID.Size = new System.Drawing.Size(90, 18);
+            this.lb_EmID.Size = new System.Drawing.Size(98, 18);
             this.lb_EmID.TabIndex = 0;
-            this.lb_EmID.Text = "รหัสเจ้าหน้าที่";
+            this.lb_EmID.Text = "รหัสเจ้าหน้าที่*";
             // 
             // dGV_Ep
             // 
             this.dGV_Ep.AllowUserToAddRows = false;
             this.dGV_Ep.AllowUserToDeleteRows = false;
+            this.dGV_Ep.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Ep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Ep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccEm_ID,
@@ -296,6 +311,59 @@
             this.dGV_Ep.TabIndex = 1;
             this.dGV_Ep.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Ep_CellClick);
             // 
+            // ccEm_ID
+            // 
+            this.ccEm_ID.DataPropertyName = "Em_ID";
+            this.ccEm_ID.HeaderText = "รหัส";
+            this.ccEm_ID.Name = "ccEm_ID";
+            this.ccEm_ID.ReadOnly = true;
+            // 
+            // ccEm_Name
+            // 
+            this.ccEm_Name.DataPropertyName = "Em_Name";
+            this.ccEm_Name.HeaderText = "ชื่อ";
+            this.ccEm_Name.Name = "ccEm_Name";
+            this.ccEm_Name.ReadOnly = true;
+            // 
+            // ccPosition
+            // 
+            this.ccPosition.DataPropertyName = "Em_Position";
+            this.ccPosition.HeaderText = "ตำแหน่ง";
+            this.ccPosition.Name = "ccPosition";
+            this.ccPosition.ReadOnly = true;
+            // 
+            // ccEm_User
+            // 
+            this.ccEm_User.DataPropertyName = "Em_User";
+            this.ccEm_User.HeaderText = "Username";
+            this.ccEm_User.Name = "ccEm_User";
+            this.ccEm_User.ReadOnly = true;
+            // 
+            // ccEm_Pwd
+            // 
+            this.ccEm_Pwd.DataPropertyName = "Em_Pwd";
+            this.ccEm_Pwd.HeaderText = "Password";
+            this.ccEm_Pwd.Name = "ccEm_Pwd";
+            this.ccEm_Pwd.ReadOnly = true;
+            this.ccEm_Pwd.Visible = false;
+            // 
+            // ccEmPosition_ID
+            // 
+            this.ccEmPosition_ID.DataPropertyName = "EmPosition_ID";
+            this.ccEmPosition_ID.HeaderText = "รหัสตำแหน่งพนักงาน";
+            this.ccEmPosition_ID.Name = "ccEmPosition_ID";
+            this.ccEmPosition_ID.ReadOnly = true;
+            this.ccEmPosition_ID.Visible = false;
+            this.ccEmPosition_ID.Width = 150;
+            // 
+            // ccEm_Status
+            // 
+            this.ccEm_Status.DataPropertyName = "Em_Status";
+            this.ccEm_Status.HeaderText = "สถานะ";
+            this.ccEm_Status.Name = "ccEm_Status";
+            this.ccEm_Status.ReadOnly = true;
+            this.ccEm_Status.Visible = false;
+            // 
             // tpPosition
             // 
             this.tpPosition.Controls.Add(this.dGV_PS);
@@ -313,6 +381,7 @@
             // 
             this.dGV_PS.AllowUserToAddRows = false;
             this.dGV_PS.AllowUserToDeleteRows = false;
+            this.dGV_PS.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_PS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_PS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccEP_ID,
@@ -415,7 +484,7 @@
             // 
             this.txb_Emposition.Location = new System.Drawing.Point(161, 62);
             this.txb_Emposition.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_Emposition.MaxLength = 50;
+            this.txb_Emposition.MaxLength = 100;
             this.txb_Emposition.Name = "txb_Emposition";
             this.txb_Emposition.Size = new System.Drawing.Size(253, 26);
             this.txb_Emposition.TabIndex = 1;
@@ -436,7 +505,6 @@
             this.txb_EmpositionID.Enabled = false;
             this.txb_EmpositionID.Location = new System.Drawing.Point(161, 26);
             this.txb_EmpositionID.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_EmpositionID.MaxLength = 3;
             this.txb_EmpositionID.Name = "txb_EmpositionID";
             this.txb_EmpositionID.Size = new System.Drawing.Size(119, 26);
             this.txb_EmpositionID.TabIndex = 0;
@@ -447,72 +515,13 @@
             this.lb_EmPosition.Location = new System.Drawing.Point(91, 66);
             this.lb_EmPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_EmPosition.Name = "lb_EmPosition";
-            this.lb_EmPosition.Size = new System.Drawing.Size(59, 18);
+            this.lb_EmPosition.Size = new System.Drawing.Size(67, 18);
             this.lb_EmPosition.TabIndex = 6;
-            this.lb_EmPosition.Text = "ตำแหน่ง";
+            this.lb_EmPosition.Text = "ตำแหน่ง*";
             // 
-            // CheckBox_Status
+            // epCheck
             // 
-            this.CheckBox_Status.AutoSize = true;
-            this.CheckBox_Status.Location = new System.Drawing.Point(282, 141);
-            this.CheckBox_Status.Name = "CheckBox_Status";
-            this.CheckBox_Status.Size = new System.Drawing.Size(68, 22);
-            this.CheckBox_Status.TabIndex = 5;
-            this.CheckBox_Status.Text = "ทำงาน";
-            this.CheckBox_Status.UseVisualStyleBackColor = true;
-            // 
-            // ccEm_ID
-            // 
-            this.ccEm_ID.DataPropertyName = "Em_ID";
-            this.ccEm_ID.HeaderText = "รหัส";
-            this.ccEm_ID.Name = "ccEm_ID";
-            this.ccEm_ID.ReadOnly = true;
-            // 
-            // ccEm_Name
-            // 
-            this.ccEm_Name.DataPropertyName = "Em_Name";
-            this.ccEm_Name.HeaderText = "ชื่อ";
-            this.ccEm_Name.Name = "ccEm_Name";
-            this.ccEm_Name.ReadOnly = true;
-            // 
-            // ccPosition
-            // 
-            this.ccPosition.DataPropertyName = "Em_Position";
-            this.ccPosition.HeaderText = "ตำแหน่ง";
-            this.ccPosition.Name = "ccPosition";
-            this.ccPosition.ReadOnly = true;
-            // 
-            // ccEm_User
-            // 
-            this.ccEm_User.DataPropertyName = "Em_User";
-            this.ccEm_User.HeaderText = "Username";
-            this.ccEm_User.Name = "ccEm_User";
-            this.ccEm_User.ReadOnly = true;
-            // 
-            // ccEm_Pwd
-            // 
-            this.ccEm_Pwd.DataPropertyName = "Em_Pwd";
-            this.ccEm_Pwd.HeaderText = "Password";
-            this.ccEm_Pwd.Name = "ccEm_Pwd";
-            this.ccEm_Pwd.ReadOnly = true;
-            this.ccEm_Pwd.Visible = false;
-            // 
-            // ccEmPosition_ID
-            // 
-            this.ccEmPosition_ID.DataPropertyName = "EmPosition_ID";
-            this.ccEmPosition_ID.HeaderText = "รหัสตำแหน่งพนักงาน";
-            this.ccEmPosition_ID.Name = "ccEmPosition_ID";
-            this.ccEmPosition_ID.ReadOnly = true;
-            this.ccEmPosition_ID.Visible = false;
-            this.ccEmPosition_ID.Width = 150;
-            // 
-            // ccEm_Status
-            // 
-            this.ccEm_Status.DataPropertyName = "Em_Status";
-            this.ccEm_Status.HeaderText = "สถานะ";
-            this.ccEm_Status.Name = "ccEm_Status";
-            this.ccEm_Status.ReadOnly = true;
-            this.ccEm_Status.Visible = false;
+            this.epCheck.ContainerControl = this;
             // 
             // FrmMM15
             // 
@@ -537,6 +546,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PS)).EndInit();
             this.gBoxPosition.ResumeLayout(false);
             this.gBoxPosition.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -582,6 +592,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Pwd;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEmPosition_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Status;
+        private System.Windows.Forms.ErrorProvider epCheck;
 
 
     }

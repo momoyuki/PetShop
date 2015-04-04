@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lb_CoName = new System.Windows.Forms.Label();
             this.lb_CoID = new System.Windows.Forms.Label();
             this.lb_CoAddr = new System.Windows.Forms.Label();
@@ -56,10 +57,12 @@
             this.lb_ExLogo = new System.Windows.Forms.Label();
             this.lb_LogoRemark = new System.Windows.Forms.Label();
             this.txb_Image = new System.Windows.Forms.TextBox();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.gBoxCoDetail.SuspendLayout();
             this.gBoxCompanyCode.SuspendLayout();
             this.gBoxLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_CoName
@@ -135,6 +138,7 @@
             // 
             this.txb_CompanyAddr.Location = new System.Drawing.Point(172, 58);
             this.txb_CompanyAddr.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_CompanyAddr.MaxLength = 140;
             this.txb_CompanyAddr.Multiline = true;
             this.txb_CompanyAddr.Name = "txb_CompanyAddr";
             this.txb_CompanyAddr.Size = new System.Drawing.Size(289, 130);
@@ -284,6 +288,7 @@
             this.lb_CoIDH.Name = "lb_CoIDH";
             this.lb_CoIDH.Size = new System.Drawing.Size(0, 18);
             this.lb_CoIDH.TabIndex = 10;
+            this.lb_CoIDH.Visible = false;
             // 
             // gBoxLogo
             // 
@@ -361,6 +366,10 @@
             this.txb_Image.Size = new System.Drawing.Size(281, 26);
             this.txb_Image.TabIndex = 31;
             // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
             // FrmMM16
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -384,6 +393,7 @@
             this.gBoxLogo.ResumeLayout(false);
             this.gBoxLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -418,5 +428,6 @@
         private System.Windows.Forms.TextBox txb_Image;
         private System.Windows.Forms.Label lb_CoIDH;
         private System.Windows.Forms.Button bt_UseImage;
+        private System.Windows.Forms.ErrorProvider epCheck;
     }
 }

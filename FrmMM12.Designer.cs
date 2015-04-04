@@ -110,7 +110,7 @@
             this.dGV_Product.ReadOnly = true;
             this.dGV_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Product.Size = new System.Drawing.Size(982, 326);
-            this.dGV_Product.TabIndex = 1;
+            this.dGV_Product.TabIndex = 9;
             this.dGV_Product.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_PD_CellClick);
             // 
             // ccProduct_ID
@@ -211,12 +211,12 @@
             // lb_ProductID
             // 
             this.lb_ProductID.AutoSize = true;
-            this.lb_ProductID.Location = new System.Drawing.Point(23, 30);
+            this.lb_ProductID.Location = new System.Drawing.Point(13, 29);
             this.lb_ProductID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ProductID.Name = "lb_ProductID";
-            this.lb_ProductID.Size = new System.Drawing.Size(67, 18);
+            this.lb_ProductID.Size = new System.Drawing.Size(75, 18);
             this.lb_ProductID.TabIndex = 0;
-            this.lb_ProductID.Text = "รหัสสินค้า";
+            this.lb_ProductID.Text = "รหัสสินค้า*";
             // 
             // txb_ProductID
             // 
@@ -236,9 +236,9 @@
             this.lb_ProductName.Location = new System.Drawing.Point(27, 66);
             this.lb_ProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ProductName.Name = "lb_ProductName";
-            this.lb_ProductName.Size = new System.Drawing.Size(60, 18);
+            this.lb_ProductName.Size = new System.Drawing.Size(68, 18);
             this.lb_ProductName.TabIndex = 2;
-            this.lb_ProductName.Text = "ชื่อสินค้า";
+            this.lb_ProductName.Text = "ชื่อสินค้า*";
             // 
             // txb_ProductName
             // 
@@ -283,7 +283,7 @@
             this.CheckBox_Stock.Location = new System.Drawing.Point(422, 215);
             this.CheckBox_Stock.Name = "CheckBox_Stock";
             this.CheckBox_Stock.Size = new System.Drawing.Size(104, 22);
-            this.CheckBox_Stock.TabIndex = 16;
+            this.CheckBox_Stock.TabIndex = 7;
             this.CheckBox_Stock.Text = "ตัดคลังสินค้า";
             this.CheckBox_Stock.UseVisualStyleBackColor = true;
             // 
@@ -309,6 +309,7 @@
             this.cb_ProductUnit.Name = "cb_ProductUnit";
             this.cb_ProductUnit.Size = new System.Drawing.Size(104, 26);
             this.cb_ProductUnit.TabIndex = 2;
+            this.cb_ProductUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_ProductUnit_KeyDown);
             // 
             // Bt_LoadPD
             // 
@@ -339,9 +340,9 @@
             this.lb_Product_Unit_Amt.Location = new System.Drawing.Point(263, 67);
             this.lb_Product_Unit_Amt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Product_Unit_Amt.Name = "lb_Product_Unit_Amt";
-            this.lb_Product_Unit_Amt.Size = new System.Drawing.Size(97, 18);
+            this.lb_Product_Unit_Amt.Size = new System.Drawing.Size(105, 18);
             this.lb_Product_Unit_Amt.TabIndex = 13;
-            this.lb_Product_Unit_Amt.Text = "จำนวนคงเหลือ";
+            this.lb_Product_Unit_Amt.Text = "จำนวนคงเหลือ*";
             // 
             // gBoxProducttrack
             // 
@@ -352,7 +353,7 @@
             this.gBoxProducttrack.Name = "gBoxProducttrack";
             this.gBoxProducttrack.Padding = new System.Windows.Forms.Padding(4);
             this.gBoxProducttrack.Size = new System.Drawing.Size(388, 70);
-            this.gBoxProducttrack.TabIndex = 12;
+            this.gBoxProducttrack.TabIndex = 6;
             this.gBoxProducttrack.TabStop = false;
             this.gBoxProducttrack.Text = "การแจ้งเตือน";
             // 
@@ -438,9 +439,9 @@
             this.lb_ProductSale.Location = new System.Drawing.Point(27, 67);
             this.lb_ProductSale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ProductSale.Name = "lb_ProductSale";
-            this.lb_ProductSale.Size = new System.Drawing.Size(115, 18);
+            this.lb_ProductSale.Size = new System.Drawing.Size(123, 18);
             this.lb_ProductSale.TabIndex = 4;
-            this.lb_ProductSale.Text = "ราคาขายต่อหน่วย";
+            this.lb_ProductSale.Text = "ราคาขายต่อหน่วย*";
             // 
             // txb_ProductPrice
             // 
@@ -458,9 +459,9 @@
             this.lb_ProductPrice.Location = new System.Drawing.Point(56, 29);
             this.lb_ProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ProductPrice.Name = "lb_ProductPrice";
-            this.lb_ProductPrice.Size = new System.Drawing.Size(75, 18);
+            this.lb_ProductPrice.Size = new System.Drawing.Size(83, 18);
             this.lb_ProductPrice.TabIndex = 2;
-            this.lb_ProductPrice.Text = "ราคาต้นทุน";
+            this.lb_ProductPrice.Text = "ราคาต้นทุน*";
             // 
             // bt_AddProduct
             // 
@@ -510,7 +511,7 @@
             // lb_ProductIDh
             // 
             this.lb_ProductIDh.AutoSize = true;
-            this.lb_ProductIDh.Location = new System.Drawing.Point(346, 22);
+            this.lb_ProductIDh.Location = new System.Drawing.Point(346, 34);
             this.lb_ProductIDh.Name = "lb_ProductIDh";
             this.lb_ProductIDh.Size = new System.Drawing.Size(99, 18);
             this.lb_ProductIDh.TabIndex = 14;
@@ -526,7 +527,7 @@
             this.bt_DelProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelProduct.Name = "bt_DelProduct";
             this.bt_DelProduct.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelProduct.TabIndex = 15;
+            this.bt_DelProduct.TabIndex = 6;
             this.bt_DelProduct.Text = "ลบ";
             this.bt_DelProduct.UseVisualStyleBackColor = true;
             this.bt_DelProduct.Click += new System.EventHandler(this.bt_DelProduct_Click);
@@ -576,7 +577,8 @@
             this.txb_SearchProduct.Location = new System.Drawing.Point(550, 297);
             this.txb_SearchProduct.Name = "txb_SearchProduct";
             this.txb_SearchProduct.Size = new System.Drawing.Size(262, 26);
-            this.txb_SearchProduct.TabIndex = 26;
+            this.txb_SearchProduct.TabIndex = 7;
+            this.txb_SearchProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchProduct_KeyDown);
             // 
             // bt_SearchProduct
             // 
@@ -584,7 +586,7 @@
             this.bt_SearchProduct.Location = new System.Drawing.Point(818, 294);
             this.bt_SearchProduct.Name = "bt_SearchProduct";
             this.bt_SearchProduct.Size = new System.Drawing.Size(101, 32);
-            this.bt_SearchProduct.TabIndex = 25;
+            this.bt_SearchProduct.TabIndex = 8;
             this.bt_SearchProduct.Text = "ค้นหา";
             this.bt_SearchProduct.UseVisualStyleBackColor = true;
             this.bt_SearchProduct.Click += new System.EventHandler(this.bt_SearchProduct_Click);

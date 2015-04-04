@@ -124,7 +124,7 @@
             this.bt_DelBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelBreed.Name = "bt_DelBreed";
             this.bt_DelBreed.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelBreed.TabIndex = 15;
+            this.bt_DelBreed.TabIndex = 6;
             this.bt_DelBreed.Text = "ลบ";
             this.bt_DelBreed.UseVisualStyleBackColor = true;
             this.bt_DelBreed.Click += new System.EventHandler(this.bt_DelBreed_Click);
@@ -136,9 +136,10 @@
             this.Bt_LoadBreed.Margin = new System.Windows.Forms.Padding(4);
             this.Bt_LoadBreed.Name = "Bt_LoadBreed";
             this.Bt_LoadBreed.Size = new System.Drawing.Size(100, 32);
-            this.Bt_LoadBreed.TabIndex = 6;
+            this.Bt_LoadBreed.TabIndex = 7;
             this.Bt_LoadBreed.Text = "LoadBreed";
             this.Bt_LoadBreed.UseVisualStyleBackColor = true;
+            this.Bt_LoadBreed.Visible = false;
             this.Bt_LoadBreed.Click += new System.EventHandler(this.Bt_LoadBreed_Click);
             // 
             // bt_EditBreed
@@ -201,16 +202,15 @@
             this.lb_BreedName.Location = new System.Drawing.Point(35, 100);
             this.lb_BreedName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_BreedName.Name = "lb_BreedName";
-            this.lb_BreedName.Size = new System.Drawing.Size(54, 18);
+            this.lb_BreedName.Size = new System.Drawing.Size(62, 18);
             this.lb_BreedName.TabIndex = 2;
-            this.lb_BreedName.Text = "ชื่อพันธุ์";
+            this.lb_BreedName.Text = "ชื่อพันธุ์*";
             // 
             // txb_BreedID
             // 
             this.txb_BreedID.Enabled = false;
             this.txb_BreedID.Location = new System.Drawing.Point(127, 26);
             this.txb_BreedID.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_BreedID.MaxLength = 6;
             this.txb_BreedID.Name = "txb_BreedID";
             this.txb_BreedID.Size = new System.Drawing.Size(132, 26);
             this.txb_BreedID.TabIndex = 1;
@@ -348,7 +348,7 @@
             this.bt_DelType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelType.Name = "bt_DelType";
             this.bt_DelType.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelType.TabIndex = 15;
+            this.bt_DelType.TabIndex = 4;
             this.bt_DelType.Text = "ลบ";
             this.bt_DelType.UseVisualStyleBackColor = true;
             this.bt_DelType.Click += new System.EventHandler(this.bt_DelType_Click);
@@ -360,7 +360,7 @@
             this.bt_LoadType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadType.Name = "bt_LoadType";
             this.bt_LoadType.Size = new System.Drawing.Size(100, 32);
-            this.bt_LoadType.TabIndex = 4;
+            this.bt_LoadType.TabIndex = 5;
             this.bt_LoadType.Text = "LoadType";
             this.bt_LoadType.UseVisualStyleBackColor = true;
             this.bt_LoadType.Visible = false;
@@ -415,7 +415,6 @@
             this.txb_TypeID.Enabled = false;
             this.txb_TypeID.Location = new System.Drawing.Point(152, 26);
             this.txb_TypeID.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_TypeID.MaxLength = 6;
             this.txb_TypeID.Name = "txb_TypeID";
             this.txb_TypeID.Size = new System.Drawing.Size(119, 26);
             this.txb_TypeID.TabIndex = 0;
@@ -426,9 +425,9 @@
             this.lb_TypeName.Location = new System.Drawing.Point(85, 67);
             this.lb_TypeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_TypeName.Name = "lb_TypeName";
-            this.lb_TypeName.Size = new System.Drawing.Size(55, 18);
+            this.lb_TypeName.Size = new System.Drawing.Size(63, 18);
             this.lb_TypeName.TabIndex = 6;
-            this.lb_TypeName.Text = "ประเภท";
+            this.lb_TypeName.Text = "ประเภท*";
             // 
             // epCheck
             // 

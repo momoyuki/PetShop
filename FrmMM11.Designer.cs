@@ -262,7 +262,8 @@
             this.txb_SearchService.Location = new System.Drawing.Point(582, 209);
             this.txb_SearchService.Name = "txb_SearchService";
             this.txb_SearchService.Size = new System.Drawing.Size(262, 26);
-            this.txb_SearchService.TabIndex = 21;
+            this.txb_SearchService.TabIndex = 9;
+            this.txb_SearchService.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchService_KeyDown);
             // 
             // bt_SearchService
             // 
@@ -270,7 +271,7 @@
             this.bt_SearchService.Location = new System.Drawing.Point(850, 205);
             this.bt_SearchService.Name = "bt_SearchService";
             this.bt_SearchService.Size = new System.Drawing.Size(101, 32);
-            this.bt_SearchService.TabIndex = 20;
+            this.bt_SearchService.TabIndex = 10;
             this.bt_SearchService.Text = "ค้นหา";
             this.bt_SearchService.UseVisualStyleBackColor = true;
             this.bt_SearchService.Click += new System.EventHandler(this.bt_SearchService_Click);
@@ -297,7 +298,7 @@
             this.bt_DelService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelService.Name = "bt_DelService";
             this.bt_DelService.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelService.TabIndex = 14;
+            this.bt_DelService.TabIndex = 8;
             this.bt_DelService.Text = "ลบ";
             this.bt_DelService.UseVisualStyleBackColor = true;
             this.bt_DelService.Click += new System.EventHandler(this.bt_DelService_Click);
@@ -309,7 +310,7 @@
             this.lb_RemarkService.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_RemarkService.Name = "lb_RemarkService";
             this.lb_RemarkService.Size = new System.Drawing.Size(283, 18);
-            this.lb_RemarkService.TabIndex = 13;
+            this.lb_RemarkService.TabIndex = 0;
             this.lb_RemarkService.Text = "*รหัสบริการจะทำการสร้างขึ้นใหม่โดยอัตโนมัติ";
             // 
             // Bt_LoadService
@@ -334,7 +335,7 @@
             this.bt_EditService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditService.Name = "bt_EditService";
             this.bt_EditService.Size = new System.Drawing.Size(70, 32);
-            this.bt_EditService.TabIndex = 6;
+            this.bt_EditService.TabIndex = 7;
             this.bt_EditService.Text = "แก้ไข";
             this.bt_EditService.UseVisualStyleBackColor = true;
             this.bt_EditService.Click += new System.EventHandler(this.bt_EditService_Click);
@@ -347,7 +348,7 @@
             this.bt_AddService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddService.Name = "bt_AddService";
             this.bt_AddService.Size = new System.Drawing.Size(70, 32);
-            this.bt_AddService.TabIndex = 5;
+            this.bt_AddService.TabIndex = 6;
             this.bt_AddService.Text = "เพิ่ม";
             this.bt_AddService.UseVisualStyleBackColor = true;
             this.bt_AddService.Click += new System.EventHandler(this.Bt_AddService_Click);
@@ -363,7 +364,7 @@
             this.gBoxTimeService.Name = "gBoxTimeService";
             this.gBoxTimeService.Padding = new System.Windows.Forms.Padding(4);
             this.gBoxTimeService.Size = new System.Drawing.Size(282, 76);
-            this.gBoxTimeService.TabIndex = 4;
+            this.gBoxTimeService.TabIndex = 5;
             this.gBoxTimeService.TabStop = false;
             this.gBoxTimeService.Text = "ติดตามการรักษา";
             // 
@@ -374,7 +375,7 @@
             this.lb_Day.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Day.Name = "lb_Day";
             this.lb_Day.Size = new System.Drawing.Size(24, 18);
-            this.lb_Day.TabIndex = 11;
+            this.lb_Day.TabIndex = 0;
             this.lb_Day.Text = "วัน";
             // 
             // txb_ServiceDate
@@ -394,9 +395,9 @@
             this.lb_ServiceDate.Location = new System.Drawing.Point(35, 34);
             this.lb_ServiceDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ServiceDate.Name = "lb_ServiceDate";
-            this.lb_ServiceDate.Size = new System.Drawing.Size(95, 18);
-            this.lb_ServiceDate.TabIndex = 8;
-            this.lb_ServiceDate.Text = "นัดหมายในอีก";
+            this.lb_ServiceDate.Size = new System.Drawing.Size(103, 18);
+            this.lb_ServiceDate.TabIndex = 0;
+            this.lb_ServiceDate.Text = "นัดหมายในอีก*";
             // 
             // txb_ServicePrice
             // 
@@ -414,9 +415,9 @@
             this.lb_ServicePrice.Location = new System.Drawing.Point(11, 116);
             this.lb_ServicePrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ServicePrice.Name = "lb_ServicePrice";
-            this.lb_ServicePrice.Size = new System.Drawing.Size(61, 18);
-            this.lb_ServicePrice.TabIndex = 4;
-            this.lb_ServicePrice.Text = "ค่าบริการ";
+            this.lb_ServicePrice.Size = new System.Drawing.Size(69, 18);
+            this.lb_ServicePrice.TabIndex = 0;
+            this.lb_ServicePrice.Text = "ค่าบริการ*";
             // 
             // txb_ServiceDetail
             // 
@@ -434,9 +435,9 @@
             this.lb_Service.Location = new System.Drawing.Point(27, 80);
             this.lb_Service.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Service.Name = "lb_Service";
-            this.lb_Service.Size = new System.Drawing.Size(45, 18);
-            this.lb_Service.TabIndex = 2;
-            this.lb_Service.Text = "บริการ";
+            this.lb_Service.Size = new System.Drawing.Size(53, 18);
+            this.lb_Service.TabIndex = 0;
+            this.lb_Service.Text = "บริการ*";
             // 
             // txb_ServiceID
             // 
@@ -509,7 +510,8 @@
             this.txb_SearchMedi.Location = new System.Drawing.Point(559, 314);
             this.txb_SearchMedi.Name = "txb_SearchMedi";
             this.txb_SearchMedi.Size = new System.Drawing.Size(262, 26);
-            this.txb_SearchMedi.TabIndex = 6;
+            this.txb_SearchMedi.TabIndex = 5;
+            this.txb_SearchMedi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchMedi_KeyDown);
             // 
             // bt_SearchMedi
             // 
@@ -517,7 +519,7 @@
             this.bt_SearchMedi.Location = new System.Drawing.Point(827, 310);
             this.bt_SearchMedi.Name = "bt_SearchMedi";
             this.bt_SearchMedi.Size = new System.Drawing.Size(101, 32);
-            this.bt_SearchMedi.TabIndex = 5;
+            this.bt_SearchMedi.TabIndex = 6;
             this.bt_SearchMedi.Text = "ค้นหา";
             this.bt_SearchMedi.UseVisualStyleBackColor = true;
             this.bt_SearchMedi.Click += new System.EventHandler(this.bt_SearchMedi_Click);
@@ -561,13 +563,14 @@
             // 
             // bt_DelMedi
             // 
+            this.bt_DelMedi.Enabled = false;
             this.bt_DelMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_DelMedi.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_DelMedi.Location = new System.Drawing.Point(241, 201);
             this.bt_DelMedi.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelMedi.Name = "bt_DelMedi";
             this.bt_DelMedi.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelMedi.TabIndex = 17;
+            this.bt_DelMedi.TabIndex = 6;
             this.bt_DelMedi.Text = "ลบ";
             this.bt_DelMedi.UseVisualStyleBackColor = true;
             this.bt_DelMedi.Click += new System.EventHandler(this.bt_DelMedi_Click);
@@ -588,9 +591,9 @@
             this.lb_MediIDRemark.Location = new System.Drawing.Point(12, 255);
             this.lb_MediIDRemark.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_MediIDRemark.Name = "lb_MediIDRemark";
-            this.lb_MediIDRemark.Size = new System.Drawing.Size(186, 18);
+            this.lb_MediIDRemark.Size = new System.Drawing.Size(194, 18);
             this.lb_MediIDRemark.TabIndex = 15;
-            this.lb_MediIDRemark.Text = "*รหัสยาสามารถกำหนดเองได้";
+            this.lb_MediIDRemark.Text = "**รหัสยาสามารถกำหนดเองได้";
             // 
             // txb_MediDetail
             // 
@@ -614,6 +617,7 @@
             // 
             // bt_EditMedi
             // 
+            this.bt_EditMedi.Enabled = false;
             this.bt_EditMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditMedi.Location = new System.Drawing.Point(163, 201);
             this.bt_EditMedi.Margin = new System.Windows.Forms.Padding(4);
@@ -670,7 +674,7 @@
             this.CheckBox_Stock.Location = new System.Drawing.Point(441, 205);
             this.CheckBox_Stock.Name = "CheckBox_Stock";
             this.CheckBox_Stock.Size = new System.Drawing.Size(104, 22);
-            this.CheckBox_Stock.TabIndex = 16;
+            this.CheckBox_Stock.TabIndex = 7;
             this.CheckBox_Stock.Text = "ตัดคลังสินค้า";
             this.CheckBox_Stock.UseVisualStyleBackColor = true;
             // 
@@ -696,6 +700,7 @@
             this.cb_MediUnit.Name = "cb_MediUnit";
             this.cb_MediUnit.Size = new System.Drawing.Size(104, 26);
             this.cb_MediUnit.TabIndex = 2;
+            this.cb_MediUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_MediUnit_KeyDown);
             // 
             // Bt_LoadMedi
             // 
@@ -726,9 +731,9 @@
             this.lb_MediAmt.Location = new System.Drawing.Point(263, 66);
             this.lb_MediAmt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_MediAmt.Name = "lb_MediAmt";
-            this.lb_MediAmt.Size = new System.Drawing.Size(97, 18);
+            this.lb_MediAmt.Size = new System.Drawing.Size(105, 18);
             this.lb_MediAmt.TabIndex = 13;
-            this.lb_MediAmt.Text = "จำนวนคงเหลือ";
+            this.lb_MediAmt.Text = "จำนวนคงเหลือ*";
             // 
             // gBoxMediTrack
             // 
@@ -739,7 +744,7 @@
             this.gBoxMediTrack.Name = "gBoxMediTrack";
             this.gBoxMediTrack.Padding = new System.Windows.Forms.Padding(4);
             this.gBoxMediTrack.Size = new System.Drawing.Size(388, 72);
-            this.gBoxMediTrack.TabIndex = 12;
+            this.gBoxMediTrack.TabIndex = 6;
             this.gBoxMediTrack.TabStop = false;
             this.gBoxMediTrack.Text = "การแจ้งเตือน";
             // 
@@ -750,7 +755,7 @@
             this.txb_MediOrder.MaxLength = 4;
             this.txb_MediOrder.Name = "txb_MediOrder";
             this.txb_MediOrder.Size = new System.Drawing.Size(104, 26);
-            this.txb_MediOrder.TabIndex = 0;
+            this.txb_MediOrder.TabIndex = 1;
             this.txb_MediOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_MediOrder_KeyDown);
             // 
             // lb_MediOrder
@@ -825,9 +830,9 @@
             this.lb_MediSale.Location = new System.Drawing.Point(27, 66);
             this.lb_MediSale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_MediSale.Name = "lb_MediSale";
-            this.lb_MediSale.Size = new System.Drawing.Size(115, 18);
+            this.lb_MediSale.Size = new System.Drawing.Size(123, 18);
             this.lb_MediSale.TabIndex = 4;
-            this.lb_MediSale.Text = "ราคาขายต่อหน่วย";
+            this.lb_MediSale.Text = "ราคาขายต่อหน่วย*";
             // 
             // txb_MediPrice
             // 
@@ -845,9 +850,9 @@
             this.lb_MediPrice.Location = new System.Drawing.Point(56, 30);
             this.lb_MediPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_MediPrice.Name = "lb_MediPrice";
-            this.lb_MediPrice.Size = new System.Drawing.Size(75, 18);
+            this.lb_MediPrice.Size = new System.Drawing.Size(83, 18);
             this.lb_MediPrice.TabIndex = 2;
-            this.lb_MediPrice.Text = "ราคาต้นทุน";
+            this.lb_MediPrice.Text = "ราคาต้นทุน*";
             // 
             // txb_MediName
             // 
@@ -865,9 +870,9 @@
             this.lb_MediName.Location = new System.Drawing.Point(35, 80);
             this.lb_MediName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_MediName.Name = "lb_MediName";
-            this.lb_MediName.Size = new System.Drawing.Size(42, 18);
+            this.lb_MediName.Size = new System.Drawing.Size(50, 18);
             this.lb_MediName.TabIndex = 2;
-            this.lb_MediName.Text = "ชื่อยา";
+            this.lb_MediName.Text = "ชื่อยา*";
             // 
             // txb_MediID
             // 
@@ -877,18 +882,19 @@
             this.txb_MediID.Name = "txb_MediID";
             this.txb_MediID.Size = new System.Drawing.Size(185, 26);
             this.txb_MediID.TabIndex = 0;
+            this.txb_MediID.TextChanged += new System.EventHandler(this.txb_MediID_TextChanged);
             this.txb_MediID.Enter += new System.EventHandler(this.tb_MediID_Enter);
             this.txb_MediID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_MediID_KeyDown);
             // 
             // lb_MediS
             // 
             this.lb_MediS.AutoSize = true;
-            this.lb_MediS.Location = new System.Drawing.Point(27, 44);
+            this.lb_MediS.Location = new System.Drawing.Point(12, 43);
             this.lb_MediS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_MediS.Name = "lb_MediS";
-            this.lb_MediS.Size = new System.Drawing.Size(57, 18);
+            this.lb_MediS.Size = new System.Drawing.Size(65, 18);
             this.lb_MediS.TabIndex = 0;
-            this.lb_MediS.Text = "รหัสยา*";
+            this.lb_MediS.Text = "รหัสยา**";
             // 
             // dGV_Medi
             // 

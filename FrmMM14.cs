@@ -63,8 +63,8 @@ namespace Petshop
 
         private void AddBreed()
         {
+            epCheck.Clear();
             string itxbBreed = txb_BreedName.Text.Trim();
-
             string icbType = "";
             if(cb_Type.SelectedValue !=null)
             {
@@ -73,7 +73,7 @@ namespace Petshop
             else
             {
                 LoadType();
-                icbType = cb_Type.SelectedValue.ToString();
+                epCheck.GetError(cb_Type);
             }
             if ((itxbBreed != null) || (itxbBreed != string.Empty))
             {
@@ -89,6 +89,7 @@ namespace Petshop
             else
             {
                 epCheck.SetError(txb_BreedName, "กรุณากรอกพันธุ์สัตว์");
+                txb_BreedID.Focus();
             }
             
         }
@@ -116,6 +117,7 @@ namespace Petshop
             else
             {
                 epCheck.SetError(txb_TypeName, "กรุณาใส่ประเภทสัตว์");
+                txb_TypeName.Focus();
             }
             
         }
@@ -172,6 +174,7 @@ namespace Petshop
             else
             {
                 epCheck.SetError(txb_BreedName, "กรุณาใส่พันธุ์สัตว์");
+                txb_BreedName.Focus();
             }
         }
 
@@ -199,6 +202,7 @@ namespace Petshop
             else
             {
                 epCheck.SetError(txb_TypeName, "กรุณาใส่ประเภทสัตว์");
+                txb_TypeName.Focus();
             }
         }
 

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Petshop
 {
@@ -93,44 +94,97 @@ namespace Petshop
             dGV_PetProfile.DataSource = itbPetProfile;
             dGV_PetProfile.Refresh();
         }
-
+        string iAddEditMember;    
         private void bt_AddMember_Click(object sender, EventArgs e)
         {
-            string itbPetID = txb_PetProfileID.Text.Trim();
-            string itbPetName = txb_PetName.Text.Trim();
-            string ilbSex = lbSex.Text.Trim();
-           // string icbPetSex = cb_Sex.SelectedValue.ToString();
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            string idTPBorn = dTP_Born.Value.ToString("yyyy-MM-dd");
-            string itbPetColor = txb_PetColor.Text.Trim();
-            string icbPetTypeID = cb_PetType.SelectedValue.ToString();
-            string icbPetBreedID = cb_PetBreed.SelectedValue.ToString();
-            string iSterility = "0000-00-00";
-            if(CheckBox_Sterility.Checked == true) {
-                iSterility = dTP_Sterility.Value.ToString("yyyy-MM-dd");
-            }
-            string idTPSterility = iSterility;
-            string itbOwnerName = txb_NameOwner.Text.Trim();
-            string itbOwnerAddr = Txb_Addr.Text.Trim();
-            string itbOwnerTel = txb_TelOwner.Text.Trim();
-            string ilbyear = lbYear.Text.Trim();
-            string ilbCompany = lbCompany.Text.Trim();
+            iAddEditMember = "AddMember";
+            AddEditMember();
+        }
 
-           // if ((itbPetID == null) || (itbPetID == ""))
-            //{
-                DialogResult iConfirmResult = MessageBox.Show("ต้องการเพิ่มข้อมูลสัตว์ใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
+        private void AddEditMember()
+        {
+            epCheck.Clear();
+            Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            Regex RegTel = new Regex(@"^\(\d{3}\) ?\d{3}( |-)?\d{4}|^\d{3}( |-)?\d{3}( |-)?\d{4}");
+            
+            if (!RegString.IsMatch(txb_PetName.Text))
+            {
+                epCheck.SetError(txb_PetName, "***กรุณาระบุชื่อสัตว์เลี้ยง");
+            }
+            else if (!RegString.IsMatch(txb_PetColor.Text))
+            {
+                epCheck.SetError(txb_PetColor, "***กรุณาระบุสีของสัตว์");
+            }
+            else if ((rb_M.Checked != true) && (rb_F.Checked != true))
+            {
+                epCheck.SetError(lb_Sex, "กรุณาเลือกเพศของสัตว์");
+            }
+            else if (!RegString.IsMatch(txb_NameOwner.Text))
+            {
+                epCheck.SetError(txb_NameOwner, "***กรุณาระบุชื่อเจ้าของสัตว์");
+            }
+            else if (!RegTel.IsMatch(txb_TelOwner.Text))
+            {
+                epCheck.SetError(txb_TelOwner, "***กรุณาระบุเบอร์โทรศัพท์ติดต่อ ตัวอย่าง(658)154-1122 | 6581541122 | 658-154-1122) ");
+            }
+            else
+            {
+                string itbPetID = txb_PetProfileID.Text.Trim();
+                string itbPetName = txb_PetName.Text.Trim();
+                string ilbSex = lbSex.Text.Trim();
+                // string icbPetSex = cb_Sex.SelectedValue.ToString();
+                System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+                System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                string idTPBorn = dTP_Born.Value.ToString("yyyy-MM-dd");
+                string itbPetColor = txb_PetColor.Text.Trim();
+                string icbPetTypeID = cb_PetType.SelectedValue.ToString();
+                string icbPetBreedID = cb_PetBreed.SelectedValue.ToString();
+                string iSterility = "0000-00-00";
+                if (CheckBox_Sterility.Checked == true)
                 {
-                    string isqlCommand = "INSERT INTO `tb_petprofile` (`Pet_ID`, `Pet_Name`, `Pet_Sex`, `Pet_DOB`, `Pet_Color`, `PetType_ID`, `PetBreed_ID`, `Pet_Sterility`, `Owner_Name`, `Owner_Addr`, `Owner_Tel`) "+
-                        "VALUES (CONCAT('" + ilbyear + ilbCompany + "', LPAD(  IFNULL( (SELECT SUBSTR(`pet_Id`, 5) FROM `tb_petProfile` AS `alias` WHERE SUBSTR(`pet_Id`, 1, 2) = ('" + ilbyear + "')  "+
-                        "ORDER BY `pet_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )),'" + itbPetName + "', b'" + ilbSex + "', '" + idTPBorn + "', '" + itbPetColor + "', '" + icbPetTypeID + "', '" + icbPetBreedID + "', '" + idTPSterility + "', '" + itbOwnerName + "', '" + itbOwnerAddr + "', '" + itbOwnerTel + "')";
-                    iConnect.Insert(isqlCommand);
-                    cleatTxb();
+                    iSterility = dTP_Sterility.Value.ToString("yyyy-MM-dd");
                 }
-                LoadPetProfile();
-            //}
+                string idTPSterility = iSterility;
+                string itbOwnerName = txb_NameOwner.Text.Trim();
+                string itbOwnerAddr = Txb_Addr.Text.Trim();
+                string itbOwnerTel = txb_TelOwner.Text.Trim();
+                string ilbyear = lbYear.Text.Trim();
+                string ilbCompany = lbCompany.Text.Trim();
+
+                if (iAddEditMember == "AddMember")
+                {
+                    DialogResult iConfirmResult = MessageBox.Show("ต้องการเพิ่มข้อมูลสัตว์ใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
+                    if (iConfirmResult == DialogResult.Yes)
+                    {
+                        string isqlCommand = "INSERT INTO `tb_petprofile` (`Pet_ID`, `Pet_Name`, `Pet_Sex`, `Pet_DOB`, `Pet_Color`, `PetType_ID`, `PetBreed_ID`, `Pet_Sterility`, `Owner_Name`, `Owner_Addr`, `Owner_Tel`) " +
+                            "VALUES (CONCAT('" + ilbyear + ilbCompany + "', LPAD(  IFNULL( (SELECT SUBSTR(`pet_Id`, 5) FROM `tb_petProfile` AS `alias` WHERE SUBSTR(`pet_Id`, 1, 2) = ('" + ilbyear + "')  " +
+                            "ORDER BY `pet_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )),'" + itbPetName + "', b'" + ilbSex + "', '" + idTPBorn + "', '" + itbPetColor + "', '" + icbPetTypeID + "', '" + icbPetBreedID + "', '" + idTPSterility + "', '" + itbOwnerName + "', '" + itbOwnerAddr + "', '" + itbOwnerTel + "')";
+                        iConnect.Insert(isqlCommand);
+                        iAddEditMember = string.Empty;
+                        cleatTxb();
+                    }
+                }
+                else if (iAddEditMember == "EditMember")
+                {
+                    if (txb_PetProfileID.Text == string.Empty)
+                    {
+                        epCheck.SetError(txb_PetProfileID, "***กรุณาระบุชื่อสัตว์");
+                    }
+                    else
+                    {
+                        DialogResult iConfirmResult = MessageBox.Show("ต้องการแก้ไขข้อมูลสัตว์ใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
+                        if (iConfirmResult == DialogResult.Yes)
+                        {
+                            string isqlCommand = "UPDATE `tb_petprofile` SET `Pet_Name` = '" + itbPetName + "', `Pet_Sex` = b'" + ilbSex + "', `Pet_DOB` = '" + idTPBorn + "', `Pet_Color` = '" + itbPetColor + "', `PetType_ID` = '" + icbPetTypeID + "', `PetBreed_ID` = '" + icbPetBreedID + "', `Pet_Sterility` = '" + idTPSterility + "', `Owner_Name` = '" + itbOwnerName + "', `Owner_Addr` = '" + itbOwnerAddr + "', `Owner_Tel` = '" + itbOwnerTel + "' WHERE `tb_petprofile`.`Pet_ID` = '" + itbPetID + "'";
+                            iAddEditMember = string.Empty;
+                            iConnect.Insert(isqlCommand);
+                        }
+                    }
+
+                }
+            }
+            LoadPetProfile();
         }
 
         private void cleatTxb()
@@ -155,39 +209,8 @@ namespace Petshop
 
         private void bt_EditMember_Click(object sender, EventArgs e)
         {
-            string itbPetID = txb_PetProfileID.Text.Trim();
-            string itbPetName = txb_PetName.Text.Trim();
-            //string icbPetSex = cb_Sex.SelectedValue.ToString();
-            string ilbSex = lbSex.Text.Trim();
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            string idTPBorn = dTP_Born.Value.ToString("yyyy-MM-dd");
-            string itbPetColor = txb_PetColor.Text.Trim();
-            string icbPetTypeID = cb_PetType.SelectedValue.ToString();
-            string icbPetBreedID = cb_PetBreed.SelectedValue.ToString();
-            string iSterility = "0000-00-00";
-            if (CheckBox_Sterility.Checked == true)
-            {
-                iSterility = dTP_Sterility.Value.ToString("yyyy-MM-dd");
-            }
-            string idTPSterility = iSterility;
-            string itbOwnerName = txb_NameOwner.Text.Trim();
-            string itbOwnerAddr = Txb_Addr.Text.Trim();
-            string itbOwnerTel = txb_TelOwner.Text.Trim();
-            string ilbyear = lbYear.Text.Trim();
-            string ilbCompany = lbCompany.Text.Trim();
-
-            if ((itbPetID != null) || (itbPetID != ""))
-            {
-                DialogResult iConfirmResult = MessageBox.Show("ต้องการแก้ไขข้อมูลสัตว์ใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
-                {
-                    string isqlCommand = "UPDATE `tb_petprofile` SET `Pet_Name` = '" + itbPetName + "', `Pet_Sex` = b'" + ilbSex + "', `Pet_DOB` = '" + idTPBorn + "', `Pet_Color` = '" + itbPetColor + "', `PetType_ID` = '" + icbPetTypeID + "', `PetBreed_ID` = '" + icbPetBreedID + "', `Pet_Sterility` = '" + idTPSterility + "', `Owner_Name` = '" + itbOwnerName + "', `Owner_Addr` = '" + itbOwnerAddr + "', `Owner_Tel` = '" + itbOwnerTel + "' WHERE `tb_petprofile`.`Pet_ID` = '" + itbPetID + "'";
-                    iConnect.Insert(isqlCommand);
-                }
-                LoadPetProfile();
-            }
+            iAddEditMember = "EditMember";
+            AddEditMember();
         }
 
         private void rb_F_CheckedChanged(object sender, EventArgs e)
@@ -211,6 +234,7 @@ namespace Petshop
                         return;
                     }
                 }
+                
                 FrmMM22 iFrmMM21 = new FrmMM22();
                 iFrmMM21.MdiParent = MainForm.ActiveForm;
                 iFrmMM21.Show();
@@ -249,8 +273,9 @@ namespace Petshop
         private void bt_Search_Click(object sender, EventArgs e)
         {
             string iSearchBox = txb_SearchPet.Text.Trim();
-            if((iSearchBox !="")||(iSearchBox !=null)){
+            Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
 
+            if(RegString.IsMatch(txb_SearchPet.Text)){
                 DataTable itbPetProfile;
                 string isqlCommand = "SELECT tb_petprofile.*,tb_petbreed.petbreed_des,tb_pettype.pettype_des "+
                     "FROM `tb_petprofile`,tb_petbreed,tb_pettype where ( Pet_ID like '%"+iSearchBox+"%' OR Pet_Name like '%"+iSearchBox+"%' OR Owner_Name like '"+iSearchBox+"' ) AND (tb_petprofile.petbreed_ID = tb_petbreed.petbreed_id) AND (tb_petprofile.pettype_id = tb_pettype.pettype_id)";
@@ -279,6 +304,7 @@ namespace Petshop
                 FrmMM23 iFrmMM23 = new FrmMM23();
                 iFrmMM23.MdiParent = MainForm.ActiveForm;
                 iFrmMM23.Show();
+                iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
                 iFrmMM23.lb_PetID.Text = txb_PetProfileID.Text;
                 this.Close();
             }
@@ -419,8 +445,5 @@ namespace Petshop
                 txb_TelOwner.Text = row.Cells["ccOwner_Tel"].Value.ToString();
             }
         }
-
-
-
     }
 }

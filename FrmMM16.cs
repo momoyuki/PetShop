@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Petshop
 {
@@ -48,6 +49,29 @@ namespace Petshop
         }
         private void bt_Update_Click(object sender, EventArgs e)
         {
+            epCheck.Clear();
+            Regex RegInt = new Regex(@"^(\d{2})$");
+            if (!RegInt.IsMatch(txb_CoID.Text)) 
+            {
+                epCheck.SetError(txb_CoID, "กรุณาระบุรหัสสาขา 2 ตำแหน่ง");
+                txb_CoID.Focus();
+            }
+            if (!RegInt.IsMatch(txb_CoService.Text))
+            {
+                epCheck.SetError(txb_CoService, "กรุณาระบุรหัสบริการ 2 ตำแหน่ง");
+                txb_CoService.Focus();
+            }
+            if (!RegInt.IsMatch(txb_CoSale.Text))
+            {
+                epCheck.SetError(txb_CoSale, "กรุณาระบุรหัสขายสินค้า 2 ตำแหน่ง");
+                txb_CoSale.Focus();
+            }
+            if (!RegInt.IsMatch(txb_CoBill.Text))
+            {
+                epCheck.SetError(txb_CoBill, "กรุณาระบุรหัสใบเสร็จ 2 ตำแหน่ง");
+                txb_CoBill.Focus();
+            }
+
             string itxbCompanyID = txb_CoID.Text.Trim();
             string ilbCoID = lb_CoIDH.Text.Trim();
             string itxbCompanyName = txb_Company_Name.Text.Trim();
@@ -67,14 +91,12 @@ namespace Petshop
                          iConnect.Insert(isqlCompanyUpdate);
                          MessageBox.Show("ทำการปรับข้อมูลแล้ว");
                      }
-                 
                  else
                  {
                      string isqlCompanyAdd = "INSERT INTO `tb_company` (`Company_ID`, `Company_Name`, `Company_Addr`, `Company_Tel`, `Company_Own`, `CoService`, `CoSale`, `CoBill`) VALUES ('" + itxbCompanyID + "', '" + itxbCompanyName + "', '" + itxbCompanyAddr + "', '" + itxbCompanyTel + "', '" + itxbCompanyOwner + "', '" + itxbCoService + "', '" + itxbCoSale + "', '" + itxbCoBill + "')";
                      iConnect.Insert(isqlCompanyAdd);
                      MessageBox.Show("ทำการเพิ่มข้อมูลแล้ว");
-                 }
-                 
+                 } 
              }
              LoadData();
         }

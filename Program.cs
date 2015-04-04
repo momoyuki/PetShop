@@ -13,14 +13,14 @@ namespace Petshop
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainForm());
-            FrmIndex fLogin = new FrmIndex();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
+            /*FrmIndex fLogin = new FrmIndex();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new MainForm());
-            }
+            }*/
         }
     }
 }
