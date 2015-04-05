@@ -350,7 +350,13 @@ namespace Petshop
             {
                 TabControlServiceMediBill.Enabled = true;
                 bt_Print.Enabled = true;
-
+                txb_BillDC.Enabled = true;
+            }
+            else
+            {
+                TabControlServiceMediBill.Enabled = false;
+                bt_Print.Enabled = false;
+                txb_BillDC.Enabled = false;
             }
         }        
     }

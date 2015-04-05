@@ -54,7 +54,7 @@ namespace Petshop
         private void bt_AddEmPosition_Click(object sender, EventArgs e)
         {
             epCheck.Clear();
-            if ((txb_Emposition.Text != null)||(txb_Emposition.Text != string.Empty))
+            if ((txb_Emposition.Text != null)&&(txb_Emposition.Text != string.Empty))
             {
                 string itxbEmposition = txb_Emposition.Text.Trim();
                 DialogResult iConfirmResult = MessageBox.Show("เพิ่มตำแหน่ง " + itxbEmposition + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
@@ -112,6 +112,7 @@ namespace Petshop
                     hash = md5.ComputeHash(Encoding.UTF8.GetBytes(itxbPwd));
                 }
                 string ipwd = Convert.ToBase64String(hash);
+
                 int iStatus;
                 if (CheckBox_Status.Checked == true)
                 {
@@ -128,8 +129,8 @@ namespace Petshop
                     {
                         string isqlEmployee = "INSERT INTO `tb_employee` (`Em_ID`, `Em_Name`, `EmPosition_ID`,Em_Status) VALUES ('" + itxbEmID + "', '" + itxbEmName + "', '" + icbEmPosition + "',b'" + iStatus + "');";
                         iConnect.Insert(isqlEmployee);
-                        string isqlEmLogin = "INSERT INTO `tb_emlogin` (`Em_ID`, `Em_User`, `Em_Pwd`) VALUES ('" + itxbEmID + "', '" + itxbUser + "', '" + ipwd + "')";
-                        iConnect.Insert(isqlEmLogin);
+                        //string isqlEmLogin = "INSERT INTO `tb_emlogin` (`Em_ID`, `Em_User`, `Em_Pwd`) VALUES ('" + itxbEmID + "', '" + itxbUser + "', '" + ipwd + "')";
+                        //iConnect.Insert(isqlEmLogin);
                         ClearTxbEmployee();
                     }
                 }
@@ -139,9 +140,9 @@ namespace Petshop
                     if (iConfirmResult == DialogResult.Yes)
                     {
                         string isqlEmployee = "UPDATE `tb_employee` SET `Em_ID` = '" + itxbEmID + "', `Em_Name` = '" + itxbEmName + "', `EmPosition_ID` = '" + icbEmPosition + "' ,Em_Status = b'" + iStatus + "' WHERE `tb_employee`.`Em_ID` = '" + itxbEmID + "'";
-                        string isqlEmLogin = "UPDATE `tb_emlogin` SET `Em_User`='" + itxbUser + "', `Em_Pwd`='" + ipwd + "' WHERE `Em_ID`='" + itxbEmID + "'";
                         iConnect.Insert(isqlEmployee);
-                        iConnect.Insert(isqlEmLogin);
+                        //string isqlEmLogin = "UPDATE `tb_emlogin` SET `Em_User`='" + itxbUser + "', `Em_Pwd`='" + ipwd + "' WHERE `Em_ID`='" + itxbEmID + "'";
+                        //iConnect.Insert(isqlEmLogin);
                         ClearTxbEmployee();
                     }
                 }
@@ -208,7 +209,7 @@ namespace Petshop
         private void bt_EditEmposition_Click(object sender, EventArgs e)
         {
             epCheck.Clear();
-            if ((txb_Emposition.Text != null) || (txb_Emposition.Text != string.Empty))
+            if ((txb_Emposition.Text != null) && (txb_Emposition.Text != string.Empty))
             {
                 string itbEmpostionID = txb_EmpositionID.Text.Trim();
                 string itbEmposition = txb_Emposition.Text.Trim();
@@ -302,6 +303,19 @@ namespace Petshop
                 LoadEmpoition();
                 LoadEmPloyee();
             }
+        }
+
+        private void cb_EmPosition_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_AddEm.Select();
+            }
+        }
+
+        private void bt_Update_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -176,7 +176,7 @@
             this.bt_Service.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Service.Name = "bt_Service";
             this.bt_Service.Size = new System.Drawing.Size(208, 69);
-            this.bt_Service.TabIndex = 24;
+            this.bt_Service.TabIndex = 7;
             this.bt_Service.Text = "ทำการรักษา";
             this.bt_Service.UseVisualStyleBackColor = true;
             this.bt_Service.Click += new System.EventHandler(this.bt_Service_Click);
@@ -214,7 +214,7 @@
             this.bt_EditMember.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditMember.Name = "bt_EditMember";
             this.bt_EditMember.Size = new System.Drawing.Size(100, 32);
-            this.bt_EditMember.TabIndex = 18;
+            this.bt_EditMember.TabIndex = 9;
             this.bt_EditMember.Text = "แก้ไข";
             this.bt_EditMember.UseVisualStyleBackColor = true;
             this.bt_EditMember.Click += new System.EventHandler(this.bt_EditMember_Click);
@@ -226,7 +226,7 @@
             this.bt_AddMember.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddMember.Name = "bt_AddMember";
             this.bt_AddMember.Size = new System.Drawing.Size(100, 32);
-            this.bt_AddMember.TabIndex = 17;
+            this.bt_AddMember.TabIndex = 8;
             this.bt_AddMember.Text = "เพิ่ม";
             this.bt_AddMember.UseVisualStyleBackColor = true;
             this.bt_AddMember.Click += new System.EventHandler(this.bt_AddMember_Click);
@@ -281,7 +281,8 @@
             this.txb_TelOwner.Margin = new System.Windows.Forms.Padding(4);
             this.txb_TelOwner.Name = "txb_TelOwner";
             this.txb_TelOwner.Size = new System.Drawing.Size(145, 26);
-            this.txb_TelOwner.TabIndex = 6;
+            this.txb_TelOwner.TabIndex = 1;
+            this.txb_TelOwner.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_TelOwner_KeyDown);
             // 
             // lb_Addr
             // 
@@ -311,7 +312,8 @@
             this.Txb_Addr.Multiline = true;
             this.Txb_Addr.Name = "Txb_Addr";
             this.Txb_Addr.Size = new System.Drawing.Size(420, 97);
-            this.Txb_Addr.TabIndex = 4;
+            this.Txb_Addr.TabIndex = 2;
+            this.Txb_Addr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txb_Addr_KeyDown);
             // 
             // lb_OwnerName
             // 
@@ -351,7 +353,8 @@
             this.txb_NameOwner.Margin = new System.Windows.Forms.Padding(4);
             this.txb_NameOwner.Name = "txb_NameOwner";
             this.txb_NameOwner.Size = new System.Drawing.Size(194, 26);
-            this.txb_NameOwner.TabIndex = 2;
+            this.txb_NameOwner.TabIndex = 0;
+            this.txb_NameOwner.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_NameOwner_KeyDown);
             // 
             // lb_PetName
             // 
@@ -369,7 +372,8 @@
             this.txb_PetName.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetName.Name = "txb_PetName";
             this.txb_PetName.Size = new System.Drawing.Size(160, 26);
-            this.txb_PetName.TabIndex = 14;
+            this.txb_PetName.TabIndex = 1;
+            this.txb_PetName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_PetName_KeyDown);
             // 
             // cb_PetBreed
             // 
@@ -378,7 +382,8 @@
             this.cb_PetBreed.Margin = new System.Windows.Forms.Padding(4);
             this.cb_PetBreed.Name = "cb_PetBreed";
             this.cb_PetBreed.Size = new System.Drawing.Size(199, 26);
-            this.cb_PetBreed.TabIndex = 13;
+            this.cb_PetBreed.TabIndex = 3;
+            this.cb_PetBreed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_PetBreed_KeyDown);
             // 
             // lb_Breed
             // 
@@ -397,8 +402,9 @@
             this.cb_PetType.Margin = new System.Windows.Forms.Padding(4);
             this.cb_PetType.Name = "cb_PetType";
             this.cb_PetType.Size = new System.Drawing.Size(92, 26);
-            this.cb_PetType.TabIndex = 11;
+            this.cb_PetType.TabIndex = 2;
             this.cb_PetType.SelectionChangeCommitted += new System.EventHandler(this.cb_PetType_SelectionChangeCommitted);
+            this.cb_PetType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_PetType_KeyDown);
             // 
             // lb_Type
             // 
@@ -436,7 +442,8 @@
             this.txb_PetColor.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetColor.Name = "txb_PetColor";
             this.txb_PetColor.Size = new System.Drawing.Size(161, 26);
-            this.txb_PetColor.TabIndex = 6;
+            this.txb_PetColor.TabIndex = 4;
+            this.txb_PetColor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_PetColor_KeyDown);
             // 
             // lb_Sterility
             // 
@@ -454,7 +461,7 @@
             this.dTP_Sterility.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Sterility.Name = "dTP_Sterility";
             this.dTP_Sterility.Size = new System.Drawing.Size(189, 26);
-            this.dTP_Sterility.TabIndex = 4;
+            this.dTP_Sterility.TabIndex = 6;
             // 
             // lb_DOB
             // 
@@ -472,7 +479,7 @@
             this.dTP_Born.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Born.Name = "dTP_Born";
             this.dTP_Born.Size = new System.Drawing.Size(189, 26);
-            this.dTP_Born.TabIndex = 2;
+            this.dTP_Born.TabIndex = 5;
             this.dTP_Born.ValueChanged += new System.EventHandler(this.dTP_Born_ValueChanged);
             // 
             // lb_PetID
@@ -641,7 +648,7 @@
             this.txb_SearchPet.Location = new System.Drawing.Point(458, 11);
             this.txb_SearchPet.Name = "txb_SearchPet";
             this.txb_SearchPet.Size = new System.Drawing.Size(383, 26);
-            this.txb_SearchPet.TabIndex = 5;
+            this.txb_SearchPet.TabIndex = 0;
             // 
             // bt_Search
             // 
@@ -650,7 +657,7 @@
             this.bt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Search.Name = "bt_Search";
             this.bt_Search.Size = new System.Drawing.Size(100, 32);
-            this.bt_Search.TabIndex = 18;
+            this.bt_Search.TabIndex = 1;
             this.bt_Search.Text = "ค้นหา";
             this.bt_Search.UseVisualStyleBackColor = true;
             this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
@@ -732,7 +739,7 @@
             this.bt_HealDateDetail.Location = new System.Drawing.Point(741, 6);
             this.bt_HealDateDetail.Name = "bt_HealDateDetail";
             this.bt_HealDateDetail.Size = new System.Drawing.Size(100, 31);
-            this.bt_HealDateDetail.TabIndex = 7;
+            this.bt_HealDateDetail.TabIndex = 0;
             this.bt_HealDateDetail.Text = "นัดหมาย";
             this.bt_HealDateDetail.UseVisualStyleBackColor = true;
             this.bt_HealDateDetail.Click += new System.EventHandler(this.bt_HealDateDetail_Click);

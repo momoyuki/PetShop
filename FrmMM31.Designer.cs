@@ -102,6 +102,7 @@
             // 
             // txb_BillDC
             // 
+            this.txb_BillDC.Enabled = false;
             this.txb_BillDC.Location = new System.Drawing.Point(505, 102);
             this.txb_BillDC.Margin = new System.Windows.Forms.Padding(4);
             this.txb_BillDC.Name = "txb_BillDC";
@@ -122,6 +123,7 @@
             // 
             // txb_BillNet
             // 
+            this.txb_BillNet.Enabled = false;
             this.txb_BillNet.Location = new System.Drawing.Point(649, 102);
             this.txb_BillNet.Margin = new System.Windows.Forms.Padding(4);
             this.txb_BillNet.Name = "txb_BillNet";
@@ -208,6 +210,7 @@
             // 
             // txb_ReferID
             // 
+            this.txb_ReferID.Enabled = false;
             this.txb_ReferID.Location = new System.Drawing.Point(112, 49);
             this.txb_ReferID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_ReferID.MaxLength = 9;

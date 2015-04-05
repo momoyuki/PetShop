@@ -400,7 +400,6 @@
             this.txb_ServiceDate.Name = "txb_ServiceDate";
             this.txb_ServiceDate.Size = new System.Drawing.Size(52, 26);
             this.txb_ServiceDate.TabIndex = 1;
-            this.txb_ServiceDate.Text = "0";
             this.txb_ServiceDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ServiceDate_KeyDown);
             // 
             // lb_ServiceDate

@@ -522,6 +522,7 @@
             // 
             // txb_HealRecordDC
             // 
+            this.txb_HealRecordDC.Enabled = false;
             this.txb_HealRecordDC.Location = new System.Drawing.Point(505, 299);
             this.txb_HealRecordDC.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HealRecordDC.Name = "txb_HealRecordDC";

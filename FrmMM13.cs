@@ -42,7 +42,7 @@ namespace Petshop
             epCheck.Clear();
             string itxbUnitID = txb_UnitID.Text.Trim();
             string itxbUnitName = txb_UnitName.Text.Trim();
-            if ((txb_UnitName.Text != null) || (txb_UnitName.Text != string.Empty))
+            if ((txb_UnitName.Text != null) && (txb_UnitName.Text != string.Empty))
             {
                 string isqlUnit = "INSERT INTO `petshop`.`tb_unit` (`Unit_ID`, `Unit_Name`) VALUES (NULL, '" + itxbUnitName + "')";
                 DialogResult iConfirmResult = MessageBox.Show("เพิ่มบริการ " + itxbUnitName + " มั๊ย?", "เพิ่มหน่วย..", MessageBoxButtons.YesNo);

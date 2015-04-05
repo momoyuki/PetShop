@@ -168,7 +168,7 @@ namespace Petshop
                 {
                     if (idtProductCheck.Rows.Count > 0)
                     {
-                        if ((itxbProductID != null) || (itxbProductID != string.Empty))
+                        if ((itxbProductID != null) && (itxbProductID != string.Empty))
                         {
                             DialogResult iConfirmResult = MessageBox.Show("แก้ไข " + itxbProductName + " มั๊ย?", "แก้ไขสินค้า..", MessageBoxButtons.YesNo);
                             if (iConfirmResult == DialogResult.Yes)

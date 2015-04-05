@@ -34,6 +34,7 @@
             this.Bt_Report = new System.Windows.Forms.Button();
             this.tb_UnitList = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CheckBox_Print = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lb_HealDateID
@@ -95,11 +96,22 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "รายการ";
             // 
+            // CheckBox_Print
+            // 
+            this.CheckBox_Print.AutoSize = true;
+            this.CheckBox_Print.Location = new System.Drawing.Point(500, 20);
+            this.CheckBox_Print.Name = "CheckBox_Print";
+            this.CheckBox_Print.Size = new System.Drawing.Size(64, 22);
+            this.CheckBox_Print.TabIndex = 11;
+            this.CheckBox_Print.Text = "สำเนา";
+            this.CheckBox_Print.UseVisualStyleBackColor = true;
+            // 
             // FrmBillDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.CheckBox_Print);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_UnitList);
             this.Controls.Add(this.lb_HealDateID);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.Button Bt_Report;
         private System.Windows.Forms.TextBox tb_UnitList;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox CheckBox_Print;
     }
 }

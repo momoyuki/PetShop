@@ -37,6 +37,7 @@
             this.bt_EditEm = new System.Windows.Forms.Button();
             this.bt_AddEm = new System.Windows.Forms.Button();
             this.gBoxIDPass = new System.Windows.Forms.GroupBox();
+            this.bt_Update = new System.Windows.Forms.Button();
             this.txb_Pwd = new System.Windows.Forms.TextBox();
             this.lb_Pwd = new System.Windows.Forms.Label();
             this.txb_UserName = new System.Windows.Forms.TextBox();
@@ -69,7 +70,6 @@
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bt_Update = new System.Windows.Forms.Button();
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -190,6 +190,19 @@
             this.gBoxIDPass.TabIndex = 0;
             this.gBoxIDPass.TabStop = false;
             this.gBoxIDPass.Text = "รายละเอียดเข้าระบบ";
+            this.gBoxIDPass.Visible = false;
+            // 
+            // bt_Update
+            // 
+            this.bt_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Update.Location = new System.Drawing.Point(165, 115);
+            this.bt_Update.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Update.Name = "bt_Update";
+            this.bt_Update.Size = new System.Drawing.Size(70, 32);
+            this.bt_Update.TabIndex = 5;
+            this.bt_Update.Text = "บันทึก";
+            this.bt_Update.UseVisualStyleBackColor = true;
+            this.bt_Update.Click += new System.EventHandler(this.bt_Update_Click);
             // 
             // txb_Pwd
             // 
@@ -238,6 +251,7 @@
             this.cb_EmPosition.Name = "cb_EmPosition";
             this.cb_EmPosition.Size = new System.Drawing.Size(132, 26);
             this.cb_EmPosition.TabIndex = 2;
+            this.cb_EmPosition.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_EmPosition_KeyDown);
             // 
             // lb_EmName
             // 
@@ -524,17 +538,6 @@
             // epCheck
             // 
             this.epCheck.ContainerControl = this;
-            // 
-            // bt_Update
-            // 
-            this.bt_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Update.Location = new System.Drawing.Point(165, 115);
-            this.bt_Update.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_Update.Name = "bt_Update";
-            this.bt_Update.Size = new System.Drawing.Size(70, 32);
-            this.bt_Update.TabIndex = 5;
-            this.bt_Update.Text = "บันทึก";
-            this.bt_Update.UseVisualStyleBackColor = true;
             // 
             // FrmMM15
             // 

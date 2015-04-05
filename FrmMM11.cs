@@ -88,16 +88,16 @@ namespace Petshop
         {
             epCheck.Clear();
             Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
-            Regex RegDate = new Regex(@"^\d{1,3}$");
+            Regex Regint = new Regex(@"^\d{1,3}$");
             if (txb_ServiceDetail.Text == string.Empty)
             {
                 epCheck.SetError(txb_ServiceDetail, "***กรุณากรอกชื่อบริการ");
                 txb_ServiceDetail.Focus();
             }
-            else if (!RegDate.IsMatch(txb_ServiceDate.Text))
+            else if (!Regint.IsMatch(txb_ServiceDate.Text))
             {
-                epCheck.SetError(txb_ServiceDate, "***กรุณาใส่จำนวนวันให้ถูกต้อง");
-                txb_ServiceDate.Focus();
+                epCheck.SetError(txb_ServiceDate, "***คุณลืมใส่วัน");
+                txb_ServiceDate.Text = "0";
             }
             else if (!RegMoney.IsMatch(txb_ServicePrice.Text))
             {
@@ -406,7 +406,7 @@ namespace Petshop
         private void txb_ServiceDetail_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) {
-                if((txb_ServiceDetail.Text !=null)||(txb_ServiceDetail.Text !=string.Empty)){
+                if((txb_ServiceDetail.Text !=null)&&(txb_ServiceDetail.Text !=string.Empty)){
                     txb_ServicePrice.Focus();
                 }
                 }
@@ -416,7 +416,7 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if ((txb_ServicePrice.Text != null) || (txb_ServicePrice.Text !=string.Empty))
+                if ((txb_ServicePrice.Text != null) && (txb_ServicePrice.Text !=string.Empty))
                 {
                     txb_ServiceDate.Focus();
                 }
@@ -492,7 +492,7 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if ((txb_MediID.Text == null) && (txb_MediID.Text ==string.Empty))
+                if ((txb_MediID.Text == null) || (txb_MediID.Text ==string.Empty))
                 {
                     bt_EditMedi.Select();
                 }
@@ -599,7 +599,7 @@ namespace Petshop
 
         private void txb_ServiceID_TextChanged(object sender, EventArgs e)
         {
-            if ((txb_ServiceID.Text ==null)||(txb_ServiceID.Text == string.Empty))
+            if ((txb_ServiceID.Text == null)||(txb_ServiceID.Text == string.Empty))
             {
                 bt_EditService.Enabled = false;
                 bt_DelService.Enabled = false;
@@ -638,7 +638,7 @@ namespace Petshop
 
         private void txb_MediID_TextChanged(object sender, EventArgs e)
         {
-            if((txb_MediID.Text !=null)||(txb_MediID.Text !=string.Empty)){
+            if((txb_MediID.Text !=null)&&(txb_MediID.Text !=string.Empty)){
                 bt_EditMedi.Enabled = true;
                 bt_DelMedi.Enabled = true;
             }

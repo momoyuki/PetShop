@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.nUD_ProductUnit = new System.Windows.Forms.NumericUpDown();
             this.lbyear = new System.Windows.Forms.Label();
             this.bt_CancelBuy = new System.Windows.Forms.Button();
@@ -62,8 +63,10 @@
             this.bt_RecordBuy = new System.Windows.Forms.Button();
             this.lb_ProductUnit = new System.Windows.Forms.Label();
             this.lb_PriceAmt = new System.Windows.Forms.Label();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nUD_ProductUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // nUD_ProductUnit
@@ -127,6 +130,7 @@
             this.bt_Load.TabIndex = 125;
             this.bt_Load.Text = "LoadProduct";
             this.bt_Load.UseVisualStyleBackColor = true;
+            this.bt_Load.Visible = false;
             this.bt_Load.Click += new System.EventHandler(this.bt_Load_Click);
             // 
             // txb_ProductSaleNet
@@ -351,6 +355,7 @@
             // 
             // txb_ProductSaleDC
             // 
+            this.txb_ProductSaleDC.Enabled = false;
             this.txb_ProductSaleDC.Location = new System.Drawing.Point(449, 124);
             this.txb_ProductSaleDC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_ProductSaleDC.Name = "txb_ProductSaleDC";
@@ -420,6 +425,10 @@
             this.lb_PriceAmt.Text = "lb_PriceAmt";
             this.lb_PriceAmt.Visible = false;
             // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
             // FrmMM24
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -461,6 +470,7 @@
             this.Load += new System.EventHandler(this.FrmMM22_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nUD_ProductUnit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,5 +512,6 @@
         private System.Windows.Forms.Button bt_RecordBuy;
         private System.Windows.Forms.Label lb_ProductUnit;
         private System.Windows.Forms.Label lb_PriceAmt;
+        private System.Windows.Forms.ErrorProvider epCheck;
     }
 }

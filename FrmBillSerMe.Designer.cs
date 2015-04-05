@@ -32,6 +32,7 @@
             this.lb_Bill = new System.Windows.Forms.Label();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.lb_BillID = new System.Windows.Forms.Label();
+            this.CheckBox_Print = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Bt_Report
@@ -75,11 +76,22 @@
             this.lb_BillID.Size = new System.Drawing.Size(0, 18);
             this.lb_BillID.TabIndex = 4;
             // 
+            // CheckBox_Print
+            // 
+            this.CheckBox_Print.AutoSize = true;
+            this.CheckBox_Print.Location = new System.Drawing.Point(371, 19);
+            this.CheckBox_Print.Name = "CheckBox_Print";
+            this.CheckBox_Print.Size = new System.Drawing.Size(64, 22);
+            this.CheckBox_Print.TabIndex = 13;
+            this.CheckBox_Print.Text = "สำเนา";
+            this.CheckBox_Print.UseVisualStyleBackColor = true;
+            // 
             // FrmBillSerMe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.CheckBox_Print);
             this.Controls.Add(this.lb_BillID);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.lb_Bill);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.Label lb_Bill;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         public System.Windows.Forms.Label lb_BillID;
+        private System.Windows.Forms.CheckBox CheckBox_Print;
     }
 }

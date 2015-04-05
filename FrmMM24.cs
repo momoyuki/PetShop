@@ -62,80 +62,95 @@ namespace Petshop
        
         private void loadProductSaleDetail()
         {
-            string ilbproductSaleID = lb_ProductSaleID.Text.Trim();
-            string isqlProductSaleDetail = "SELECT tb_productsaledetail.*,tb_Product.Product_Des  FROM tb_Product,tb_productsaledetail "+
-            "WHERE (tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' AND tb_Product.Product_ID = tb_productsaledetail.Product_ID)";
-            idtProductSaleDetail = iConnect.SelectByCommand(isqlProductSaleDetail);
-            dGV_Product.DataSource = idtProductSaleDetail;
-            dGV_Product.Refresh();
-
-            DataTable idtSumProduct;
-            string isqlSumProduct = "SELECT sum(ProductSale_Total) as ProductSaleTotal FROM tb_productsaledetail WHERE tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' ";
-            idtSumProduct = iConnect.SelectByCommand(isqlSumProduct);
-
-            foreach (DataRow row in idtSumProduct.Rows)
+            if ((lb_ProductSaleID.Text != null)&&(lb_ProductSaleID.Text !=string.Empty))
             {
-                object value = row["ProductSaleTotal"];
-                if (value == DBNull.Value)
+                string ilbproductSaleID = lb_ProductSaleID.Text.Trim();
+                string isqlProductSaleDetail = "SELECT tb_productsaledetail.*,tb_Product.Product_Des  FROM tb_Product,tb_productsaledetail " +
+                "WHERE (tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' AND tb_Product.Product_ID = tb_productsaledetail.Product_ID)";
+                idtProductSaleDetail = iConnect.SelectByCommand(isqlProductSaleDetail);
+                dGV_Product.DataSource = idtProductSaleDetail;
+                dGV_Product.Refresh();
+
+                DataTable idtSumProduct;
+                string isqlSumProduct = "SELECT sum(ProductSale_Total) as ProductSaleTotal FROM tb_productsaledetail WHERE tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' ";
+                idtSumProduct = iConnect.SelectByCommand(isqlSumProduct);
+
+                foreach (DataRow row in idtSumProduct.Rows)
                 {
-                    iProductAmt = 0;
+                    object value = row["ProductSaleTotal"];
+                    if (value == DBNull.Value)
+                    {
+                        iProductAmt = 0;
+                    }
+                    else
+                    {
+                        iProductAmt = idtSumProduct.Rows[0].Field<decimal>(0);
+                    }
                 }
-                else
-                {
-                    iProductAmt = idtSumProduct.Rows[0].Field<decimal>(0);
-                }
+                //  lb_PriceAmt.DataBindings.Clear();
+                //  Binding b = new Binding("Text", idtSumProduct, "ProductSaleTotal");
+                //  lb_PriceAmt.DataBindings.Add(b);
             }
-          //  lb_PriceAmt.DataBindings.Clear();
-          //  Binding b = new Binding("Text", idtSumProduct, "ProductSaleTotal");
-          //  lb_PriceAmt.DataBindings.Add(b);
         }
 
         private void loadEmployee()
         {
             string isqlEmployee = "SELECT * FROM tb_employee where Em_Status = 1";
             idtEmployee = iConnect.SelectByCommand(isqlEmployee);
-            cb_Em.DisplayMember = idtEmployee.Columns["Em_Name"].ColumnName;
-            cb_Em.ValueMember = idtEmployee.Columns["Em_ID"].ColumnName;
-            cb_Em.DataSource = idtEmployee;
+            if (idtEmployee.Rows.Count > 0)
+            {
+                cb_Em.DisplayMember = idtEmployee.Columns["Em_Name"].ColumnName;
+                cb_Em.ValueMember = idtEmployee.Columns["Em_ID"].ColumnName;
+                cb_Em.DataSource = idtEmployee;
+            }
+            
         }
         private void AddRecordProductSale() //สร้างรหัส และ อัพเดต Total DC Net
         {
+            epCheck.Clear();
             string ilbProductSaleID = lb_ProductSaleID.Text.Trim();
-            string icb_Em = cb_Em.SelectedValue.ToString();
-            string itxbRemark = txb_Remark.Text.Trim();
-            string itxbProductSaletotal = txb_ProductSaleTotal.Text.Trim();
-            string itxbProductSaleDC = txb_ProductSaleDC.Text.Trim();
-            string itxbProductSaleNet = txb_ProductSaleNet.Text.Trim();
-
-            string ilbyear = lbyear.Text.Trim();
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            string idTP_ProductSaleDate = dTP_ProductSaleDate.Value.ToString("yyyy-MM-dd");
-            if ((lb_ProductSaleID.Text == "")||(lb_ProductSaleID.Text == null)) {
-                DialogResult iConfirmResult = MessageBox.Show("ต้องการบันทึกข้อมูลการรักษาใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
-                {
-                    string isqlProductSale = "INSERT INTO `tb_productsale` (`ProductSale_ID`, `Em_ID`, `ProductSale_Date`, `Productsale_Total`, `Productsale_DC`, `Productsale_Net`, `Productsale_Remark`) "+
-                        "VALUES (CONCAT('" + ilbyear + "99', LPAD(  IFNULL( (SELECT SUBSTR(`ProductSale_ID`, 5) FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  "+
-                        "ORDER BY `ProductSale_ID` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) , '" + icb_Em + "', '" + idTP_ProductSaleDate + "', '" + itxbProductSaletotal + "', '" + itxbProductSaleDC + "', '" + itxbProductSaleNet + "', '" + itxbRemark + "')";
-                    iConnect.Insert(isqlProductSale);
-
-                    DataTable idtProductSaleID; //เรียกไอดีเดิมขึ้นมาโชว์
-                    string isqProductSaleID = "SELECT ProductSale_ID FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  ORDER BY `ProductSale_ID` DESC LIMIT 1";
-                    idtProductSaleID = iConnect.SelectByCommand(isqProductSaleID);
-                    loadData();
-                    lb_ProductSaleID.Text = idtProductSaleID.Rows[0].Field<string>(0);
-                }
+            if (cb_Em.SelectedValue == null)
+            {
+                epCheck.SetError(cb_Em, "ไม่ได้เลือกเจ้าหน้าที่");
             }
             else
             {
-                //ส่วนอัพเดต
-                string isqlUpdate = "UPDATE `petshop`.`tb_productsale` SET `Em_ID`='"+icb_Em+"', `Productsale_Total`='"+itxbProductSaletotal+"', `Productsale_DC`='"+itxbProductSaleDC+"', `Productsale_Net`='"+itxbProductSaleNet+"', `Productsale_Remark`='"+itxbRemark+"' WHERE `ProductSale_ID`='"+ilbProductSaleID+"'";
-                //iConnect.Insert(isqlUpdate);
-                MessageBox.Show("บันทึกข้อมูลแล้ว");
+                string icb_Em = cb_Em.SelectedValue.ToString();
+                string itxbRemark = txb_Remark.Text.Trim();
+                string itxbProductSaletotal = txb_ProductSaleTotal.Text.Trim();
+                string itxbProductSaleDC = txb_ProductSaleDC.Text.Trim();
+                string itxbProductSaleNet = txb_ProductSaleNet.Text.Trim();
+
+                string ilbyear = lbyear.Text.Trim();
+                System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+                System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                string idTP_ProductSaleDate = dTP_ProductSaleDate.Value.ToString("yyyy-MM-dd");
+                if ((lb_ProductSaleID.Text == "") || (lb_ProductSaleID.Text == null))
+                {
+                    DialogResult iConfirmResult = MessageBox.Show("ต้องการบันทึกข้อมูลการรักษาใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
+                    if (iConfirmResult == DialogResult.Yes)
+                    {
+                        string isqlProductSale = "INSERT INTO `tb_productsale` (`ProductSale_ID`, `Em_ID`, `ProductSale_Date`, `Productsale_Total`, `Productsale_DC`, `Productsale_Net`, `Productsale_Remark`) " +
+                            "VALUES (CONCAT('" + ilbyear + "99', LPAD(  IFNULL( (SELECT SUBSTR(`ProductSale_ID`, 5) FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  " +
+                            "ORDER BY `ProductSale_ID` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) , '" + icb_Em + "', '" + idTP_ProductSaleDate + "', '" + itxbProductSaletotal + "', '" + itxbProductSaleDC + "', '" + itxbProductSaleNet + "', '" + itxbRemark + "')";
+                        iConnect.Insert(isqlProductSale);
+
+                        DataTable idtProductSaleID; //เรียกไอดีเดิมขึ้นมาโชว์
+                        string isqProductSaleID = "SELECT ProductSale_ID FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  ORDER BY `ProductSale_ID` DESC LIMIT 1";
+                        idtProductSaleID = iConnect.SelectByCommand(isqProductSaleID);
+                        loadData();
+                        lb_ProductSaleID.Text = idtProductSaleID.Rows[0].Field<string>(0);
+                    }
+                }
+                else
+                {
+                    //ส่วนอัพเดต
+                    string isqlUpdate = "UPDATE `petshop`.`tb_productsale` SET `Em_ID`='" + icb_Em + "', `Productsale_Total`='" + itxbProductSaletotal + "', `Productsale_DC`='" + itxbProductSaleDC + "', `Productsale_Net`='" + itxbProductSaleNet + "', `Productsale_Remark`='" + itxbRemark + "' WHERE `ProductSale_ID`='" + ilbProductSaleID + "'";
+                    //iConnect.Insert(isqlUpdate);
+                    MessageBox.Show("บันทึกข้อมูลแล้ว");
+                }
             }
-           
         }
         private void BuyProduct()
         {
@@ -314,7 +329,19 @@ namespace Petshop
                 bt_AddProductSale.Enabled = true;
                 bt_CancelBuy.Enabled = true;
                 bt_Print.Enabled = true;
+                txb_ProductSaleDC.Enabled = true;
                // txb_ProductID.Enabled = true;
+                bt_RecordBuy.Enabled = false;
+            }
+            else
+            {
+                txb_ProductID.Enabled = false;
+                nUD_ProductUnit.Enabled = false;
+                bt_AddProductSale.Enabled = false;
+                bt_CancelBuy.Enabled = false;
+                bt_Print.Enabled = false;
+                txb_ProductSaleDC.Enabled = false;
+                // txb_ProductID.Enabled = true;
                 bt_RecordBuy.Enabled = false;
             }
         }

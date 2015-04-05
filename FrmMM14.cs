@@ -75,7 +75,7 @@ namespace Petshop
                 LoadType();
                 epCheck.GetError(cb_Type);
             }
-            if ((itxbBreed != null) || (itxbBreed != string.Empty))
+            if ((itxbBreed != null) && (itxbBreed != string.Empty))
             {
                 string isqlBreed = "INSERT INTO `tb_petbreed` (`PetBreed_ID`, `PetType_ID`, `PetBreed_Des`) VALUES (NULL, '" + icbType + "', '" + itxbBreed + "');";
                 DialogResult iConfirmResult = MessageBox.Show("เพิ่มพันธุ์ " + itxbBreed + " มั๊ย?", "เพิ่มพันธุ์สัตว์..", MessageBoxButtons.YesNo);
@@ -103,7 +103,7 @@ namespace Petshop
         {
             epCheck.Clear();
             string itxbType = txb_TypeName.Text.Trim();
-            if ((itxbType != null) || (itxbType != string.Empty))
+            if ((itxbType != null) && (itxbType != string.Empty))
             {
                 DialogResult iConfirmResult = MessageBox.Show("เพิ่มประเภท " + itxbType + " มั๊ย?", "เพิ่มประเภทสัตว์..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
@@ -160,7 +160,7 @@ namespace Petshop
             string itxbBreedID = txb_BreedID.Text.Trim();
             string itxbBreed = txb_BreedName.Text.Trim();
             string icbType = cb_Type.SelectedValue.ToString();
-            if ((itxbBreed != null) || (itxbBreed != string.Empty))
+            if ((itxbBreed != null) && (itxbBreed != string.Empty))
             {
                 DialogResult iConfirmResult = MessageBox.Show("แก้ไขพันธุ์ " + itxbBreed + " มั๊ย?", "แก้ไขพันธุ์สัตว์..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
@@ -188,7 +188,7 @@ namespace Petshop
             epCheck.Clear();
             string itxbTypeID = txb_TypeID.Text.Trim();
             string itxbType = txb_TypeName.Text.Trim();
-            if ((itxbType != null) || (itxbType != string.Empty))
+            if ((itxbType != null) && (itxbType != string.Empty))
             {
                 DialogResult iConfirmResult = MessageBox.Show("แก้ไขประเภท " + itxbType + " มั๊ย?", "แก้ไขประเภทสัตว์..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
@@ -231,14 +231,13 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if((txb_TypeID.Text !=null) || (txb_TypeID.Text !=""))
+                if((txb_TypeID.Text !=null) && (txb_TypeID.Text !=string.Empty))
                 {
                     bt_EditType.Select();
                 }
                 else
                 {
                     bt_AddType.Select();
-                  
                 }
             } 
             

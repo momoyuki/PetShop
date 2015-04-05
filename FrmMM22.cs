@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Petshop
 {
@@ -228,66 +229,84 @@ namespace Petshop
 
         private void AddHealRecord()
         {
-            string ilbHealRecordID = lb_HealRecordID.Text.Trim();
-            string itxbPetID = txb_PetID.Text.Trim();
-            string icbEmID = cb_Em.SelectedValue.ToString();
+            Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            //Regex Regint = new Regex(@"^\d{1,3}$");
+            Regex Regdecimal = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
 
-            string itxbHealRecordSymptom = txb_HealRecordSymptom.Text.Trim();
-            string itxbHealRecordRemark = txb_HealRecordRemark.Text.Trim();
-            if ((txb_Weight.Text == null) || (txb_Weight.Text == "")) //ไว้แก้เป็นเตือนขึ้นว่ายังไม่ได้ใส่ข้อมูล
+            if ((txb_PetID.Text == null) || (txb_PetID.Text ==""))
             {
-                txb_Weight.Text = "0";
-                epCheck.SetError(txb_Weight, "ไม่ได้ใส่ค่า");
+                epCheck.SetError(txb_PetID, "ไม่พบรหัสสัตว์");
             }
-            string itxbWeight = txb_Weight.Text.Trim();
-            if ((txb_Temp.Text == null) || (txb_Temp.Text == "")) //ไว้แก้เป็นเตือนขึ้นว่ายังไม่ได้ใส่ข้อมูล
+            else if(cb_Em.SelectedValue == null)
             {
-                txb_Temp.Text = "0";
-                epCheck.SetError(txb_Temp, "ไม่ได้ใส่ค่า");
+                epCheck.SetError(cb_Em, "กรุณาเลือกเจ้าหน้าที่");
             }
-            string itxbTemp = txb_Temp.Text.Trim();
-
-            string itxbHR = txb_HR.Text.Trim();
-            string itxbRR = txb_RR.Text.Trim();
-
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            string idtpHealRecordDate = dTP_HealRecordDate.Value.ToString("yyyy-MM-dd");
-
-            string ilbcompany = lbCompanyID.Text.ToString();
-            string ilbyear = lbYear.Text.ToString();
-            string itbHealTotal = txb_HealRecordTotal.Text.Trim();
-            string itbHealDC = txb_HealRecordDC.Text.Trim();
-            string itbHealNet = txb_HealRecordNet.Text.Trim();
-
-
-            if ((ilbHealRecordID == null) || (ilbHealRecordID == "") && (itxbPetID != null) && (itxbPetID != ""))
+            /*else if ((txb_HealRecordSymptom.Text == null) && (txb_HealRecordSymptom.Text == string.Empty)) 
             {
-                DialogResult iConfirmResult = MessageBox.Show("ต้องการบันทึกข้อมูลการรักษาใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
-                {
-                    string isqlHealthRecord = "INSERT INTO `tb_healrecord` (`HealRecord_ID`, `Pet_ID`, `Em_ID`, `HealRecord_Symptom`, `HealRecord_Remark`, `HealRecord_Weight`, `HealRecord_Temp`,HealRecord_HR,HealRecord_RR, `HealRecord_Date`, `HealRecord_Total`, `HealRecord_DC`, `HealRecord_Net`) " +
-                                                "VALUES (CONCAT('" + ilbyear + ilbcompany + "', LPAD(  IFNULL( (SELECT SUBSTR(`healrecord_Id`, 5) FROM `tb_healrecord` AS `alias` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) " +
-                                                " ,'" + itxbPetID + "', '" + icbEmID + "', '" + itxbHealRecordSymptom + "', '" + itxbHealRecordRemark + "', '" + itxbWeight + "', '" + itxbTemp + "','" + itxbHR + "','" + itxbRR + "', '" + idtpHealRecordDate + "', '" + itbHealTotal + "', '" + itbHealDC + "','" + itbHealNet + "')";
-                    iConnect.Insert(isqlHealthRecord);
-
-                    DataTable idtHealRecordID;
-                    string isqlHealRecordID = "SELECT healrecord_Id FROM `tb_healrecord` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1";
-                    idtHealRecordID = iConnect.SelectByCommand(isqlHealRecordID);
-                    lb_HealRecordID.Text = idtHealRecordID.Rows[0].Field<string>(0);
-                    MessageBox.Show("สร้างเลขที่ทำการรักษาแล้ว");
-                }
+                epCheck.SetError(txb_HealRecordSymptom, "กรุณาระบุอาการ");
+            }*/
+            else if (!Regdecimal.IsMatch(txb_Temp.Text))
+            {
+                epCheck.SetError(txb_Temp, "กรุณาระบุอณุหภูมิสัตว์");
             }
-            else if ((ilbHealRecordID != null) && (ilbHealRecordID != "") && (itxbPetID != null) && (itxbPetID != ""))
+            else if (!Regdecimal.IsMatch(txb_Weight.Text)) 
             {
-                string isqlHealRecordUpdate = "UPDATE `tb_healrecord` SET `Em_ID`='" + icbEmID + "', `HealRecord_Symptom`='" + itxbHealRecordSymptom + "', `HealRecord_Remark`='" + itxbHealRecordRemark + "', `HealRecord_Weight`='" + itxbWeight + "', `HealRecord_Temp`='" + itxbTemp + "',HealRecord_HR='" + itxbHR + "',HealRecord_RR='" + itxbRR + "',HealRecord_Date = '" + idtpHealRecordDate + "', `HealRecord_Total`='" + itbHealTotal + "', `HealRecord_DC`='" + itbHealDC + "', `HealRecord_Net`='" + itbHealNet + "' WHERE `HealRecord_ID`='" + ilbHealRecordID + "'";
-                iConnect.Insert(isqlHealRecordUpdate);
-                MessageBox.Show("ทำการบันทึกข้อมูลแล้ว");
+                epCheck.SetError(txb_Weight, "กรุณาระบุน้ำหนักสัตว์");
+            }
+
+            else if (!Regdecimal.IsMatch(txb_HR.Text))
+            {
+                epCheck.SetError(txb_HR, "กรุณาระบุอัตราการเต้นหัวใจ");
+            }
+            else if (!Regdecimal.IsMatch(txb_RR.Text)) 
+            {
+                epCheck.SetError(txb_RR, "กรุณาระบุอัตราการหายใจ");
             }
             else
             {
-                epCheck.SetError(txb_PetID, "ไม่พบรหัสสัตว์");
+                string ilbHealRecordID = lb_HealRecordID.Text.Trim();
+                string itxbPetID = txb_PetID.Text.Trim();
+                string icbEmID = cb_Em.SelectedValue.ToString();
+                string itxbHealRecordSymptom = txb_HealRecordSymptom.Text.Trim();
+                string itxbHealRecordRemark = txb_HealRecordRemark.Text.Trim();
+                string itxbWeight = txb_Weight.Text.Trim();
+                string itxbTemp = txb_Temp.Text.Trim();
+                string itxbHR = txb_HR.Text.Trim();
+                string itxbRR = txb_RR.Text.Trim();
+
+                System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+                System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                string idtpHealRecordDate = dTP_HealRecordDate.Value.ToString("yyyy-MM-dd");
+
+                string ilbcompany = lbCompanyID.Text.ToString();
+                string ilbyear = lbYear.Text.ToString();
+                string itbHealTotal = txb_HealRecordTotal.Text.Trim();
+                string itbHealDC = txb_HealRecordDC.Text.Trim();
+                string itbHealNet = txb_HealRecordNet.Text.Trim();
+                if ((lb_HealRecordID.Text == null) || (lb_HealRecordID.Text == ""))
+                {
+                    DialogResult iConfirmResult = MessageBox.Show("ต้องการบันทึกข้อมูลการรักษาใช่หรือไม่?", "บันทึกข้อมูล..", MessageBoxButtons.YesNo);
+                    if (iConfirmResult == DialogResult.Yes)
+                    {
+                        string isqlHealthRecord = "INSERT INTO `tb_healrecord` (`HealRecord_ID`, `Pet_ID`, `Em_ID`, `HealRecord_Symptom`, `HealRecord_Remark`, `HealRecord_Weight`, `HealRecord_Temp`,HealRecord_HR,HealRecord_RR, `HealRecord_Date`, `HealRecord_Total`, `HealRecord_DC`, `HealRecord_Net`) " +
+                                                    "VALUES (CONCAT('" + ilbyear + ilbcompany + "', LPAD(  IFNULL( (SELECT SUBSTR(`healrecord_Id`, 5) FROM `tb_healrecord` AS `alias` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )) " +
+                                                    " ,'" + itxbPetID + "', '" + icbEmID + "', '" + itxbHealRecordSymptom + "', '" + itxbHealRecordRemark + "', '" + itxbWeight + "', '" + itxbTemp + "','" + itxbHR + "','" + itxbRR + "', '" + idtpHealRecordDate + "', '" + itbHealTotal + "', '" + itbHealDC + "','" + itbHealNet + "')";
+                        iConnect.Insert(isqlHealthRecord);
+
+                        DataTable idtHealRecordID;
+                        string isqlHealRecordID = "SELECT healrecord_Id FROM `tb_healrecord` WHERE SUBSTR(`healrecord_Id`, 1, 2) = ('" + ilbyear + "')  ORDER BY `healrecord_Id` DESC LIMIT 1";
+                        idtHealRecordID = iConnect.SelectByCommand(isqlHealRecordID);
+                        lb_HealRecordID.Text = idtHealRecordID.Rows[0].Field<string>(0);
+                        MessageBox.Show("สร้างเลขที่ทำการรักษาแล้ว");
+                    }
+                }
+                else
+                {
+                    string isqlHealRecordUpdate = "UPDATE `tb_healrecord` SET `Em_ID`='" + icbEmID + "', `HealRecord_Symptom`='" + itxbHealRecordSymptom + "', `HealRecord_Remark`='" + itxbHealRecordRemark + "', `HealRecord_Weight`='" + itxbWeight + "', `HealRecord_Temp`='" + itxbTemp + "',HealRecord_HR='" + itxbHR + "',HealRecord_RR='" + itxbRR + "',HealRecord_Date = '" + idtpHealRecordDate + "', `HealRecord_Total`='" + itbHealTotal + "', `HealRecord_DC`='" + itbHealDC + "', `HealRecord_Net`='" + itbHealNet + "' WHERE `HealRecord_ID`='" + ilbHealRecordID + "'";
+                    iConnect.Insert(isqlHealRecordUpdate);
+                    MessageBox.Show("ทำการบันทึกข้อมูลแล้ว");
+                }
             }
             loadHealRecord();
             loadServiceRecord();
@@ -427,6 +446,14 @@ namespace Petshop
                 tabControlServiceMedi.Enabled = true;
                 bt_PrintBill.Enabled = true;
                 bt_PrintDate.Enabled = true;
+                txb_HealRecordDC.Enabled = true;
+            }
+            else
+            {
+                tabControlServiceMedi.Enabled = false;
+                bt_PrintBill.Enabled = false;
+                bt_PrintDate.Enabled = false;
+                txb_HealRecordDC.Enabled = false;
             }
         }
         private void txb_PetID_TextChanged(object sender, EventArgs e)
@@ -544,14 +571,15 @@ namespace Petshop
 
         private void Calcuator()
         {
+            Regex Regint = new Regex(@"^\d{1,3}$");
+            Regex Regdecimal = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
             decimal iMediAmt = 0;
             decimal iServiceAmt = 0;
-            if ((lb_ServiceAmt.Text != null) && (lb_ServiceAmt.Text != ""))
+            if (Regdecimal.IsMatch(lb_ServiceAmt.Text))
             {
-
                 iServiceAmt = Convert.ToDecimal(lb_ServiceAmt.Text);
             }
-            if ((lb_MediAmt.Text != null) && (lb_MediAmt.Text != ""))
+            if (Regdecimal.IsMatch(lb_MediAmt.Text))
             {
                 iMediAmt = Convert.ToDecimal(lb_MediAmt.Text);
             }
@@ -561,15 +589,15 @@ namespace Petshop
 
             decimal iDC = 0;
             decimal iNet = 0;
-            if ((txb_HealRecordTotal.Text != null) && (txb_HealRecordTotal.Text != ""))
+            if (Regdecimal.IsMatch(txb_HealRecordTotal.Text))
             {
                 iTotal = Convert.ToDecimal(txb_HealRecordTotal.Text);
             }
-            if ((txb_HealRecordDC.Text != null) && (txb_HealRecordDC.Text != ""))
+            if (Regdecimal.IsMatch(txb_HealRecordDC.Text))
             {
                 iDC = Convert.ToDecimal(txb_HealRecordDC.Text);
             }
-            if ((txb_HealRecordNet.Text != null) && (txb_HealRecordNet.Text != ""))
+            if (Regdecimal.IsMatch(txb_HealRecordNet.Text))
             {
                 iNet = Convert.ToDecimal(txb_HealRecordNet.Text);
             }
@@ -585,11 +613,7 @@ namespace Petshop
 
         private void FrmMM22_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F5)
-            {
-                MessageBox.Show("F555555");
-
-            }
+          
         }
         
     }

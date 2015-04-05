@@ -48,18 +48,24 @@ namespace Petshop
                 lbSex.Text = "1";
             }
         }
-
+        private void FrmMM24_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
         private void LoadCompany()
         {
             DataTable idtCompany;
             string isqlCommand = "SELECT * FROM `tb_company`";
             idtCompany = iConnect.SelectByCommand(isqlCommand);
-            lbCompany.Text = idtCompany.Rows[0]["Company_ID"].ToString();
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
-            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            lbYear.Text = DateTime.Now.ToString("yy");
-            lbCompany.Text = idtCompany.Rows[0]["Company_ID"].ToString();
+            if (idtCompany.Rows.Count > 0)
+            {
+                lbCompany.Text = idtCompany.Rows[0]["Company_ID"].ToString();
+                System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+                System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                lbYear.Text = DateTime.Now.ToString("yy");
+                lbCompany.Text = idtCompany.Rows[0]["Company_ID"].ToString();
+            }
         }
 
         private void LoadPetType()
@@ -67,32 +73,47 @@ namespace Petshop
             DataTable idtPetType;
             string isqlCommand = "SELECT * FROM `tb_pettype`";
             idtPetType = iConnect.SelectByCommand(isqlCommand);
+            if (idtPetType.Rows.Count > 0)
+            {
             cb_PetType.DisplayMember = idtPetType.Columns["PetType_Des"].ColumnName;
             cb_PetType.ValueMember = idtPetType.Columns["PetType_ID"].ColumnName;
             cb_PetType.DataSource = idtPetType;
+            }
+            
          }
 
         private void LoadPetBreed()
         {
-            string icbTypeID = cb_PetType.SelectedValue.ToString();
-            if ((icbTypeID != "") || (icbTypeID != null))
+            if (cb_PetType.SelectedValue != null)
             {
-                DataTable idtPetBreed;
-                string isqlCommand = "SELECT * FROM `tb_petbreed` where PetType_ID = " + icbTypeID + "";
-                idtPetBreed = iConnect.SelectByCommand(isqlCommand);
-                cb_PetBreed.DisplayMember = idtPetBreed.Columns["PetBreed_Des"].ColumnName;
-                cb_PetBreed.ValueMember = idtPetBreed.Columns["PetBreed_ID"].ColumnName;
-                cb_PetBreed.DataSource = idtPetBreed;
+                string icbTypeID = cb_PetType.SelectedValue.ToString();
+                if ((icbTypeID != "") && (icbTypeID != null))
+                {
+                    DataTable idtPetBreed;
+                    string isqlCommand = "SELECT * FROM `tb_petbreed` where PetType_ID = " + icbTypeID + "";
+                    idtPetBreed = iConnect.SelectByCommand(isqlCommand);
+                    if (idtPetBreed.Rows.Count > 0)
+                    {
+                        cb_PetBreed.DisplayMember = idtPetBreed.Columns["PetBreed_Des"].ColumnName;
+                        cb_PetBreed.ValueMember = idtPetBreed.Columns["PetBreed_ID"].ColumnName;
+                        cb_PetBreed.DataSource = idtPetBreed;
+                    }
+                }
             }
+            
         }
         private void LoadPetProfile()
         {
             string itxbSearch = txb_SearchPet.Text.Trim();
-            DataTable itbPetProfile;
+            DataTable idtPetProfile;
             string isqlCommand = "SELECT tb_petprofile.*,tb_petbreed.petbreed_des,tb_pettype.pettype_des FROM `tb_petprofile`,tb_petbreed,tb_pettype where tb_petprofile.petbreed_ID = tb_petbreed.petbreed_id AND tb_petprofile.pettype_id = tb_pettype.pettype_id";
-            itbPetProfile = iConnect.SelectByCommand(isqlCommand);
-            dGV_PetProfile.DataSource = itbPetProfile;
-            dGV_PetProfile.Refresh();
+            idtPetProfile = iConnect.SelectByCommand(isqlCommand);
+            if (idtPetProfile.Rows.Count > 0)
+            {
+                dGV_PetProfile.DataSource = idtPetProfile;
+                dGV_PetProfile.Refresh();
+            }
+            
         }
         string iAddEditMember;    
         private void bt_AddMember_Click(object sender, EventArgs e)
@@ -169,7 +190,7 @@ namespace Petshop
                 {
                     if (txb_PetProfileID.Text == string.Empty)
                     {
-                        epCheck.SetError(txb_PetProfileID, "***กรุณาระบุชื่อสัตว์");
+                        epCheck.SetError(txb_PetProfileID, "***กรุณาระบุรหัสสัตว์");
                     }
                     else
                     {
@@ -202,10 +223,7 @@ namespace Petshop
         {
             LoadPetBreed();
         }
-        private void FrmMM24_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
+       
 
         private void bt_EditMember_Click(object sender, EventArgs e)
         {
@@ -224,7 +242,7 @@ namespace Petshop
         }
         private void bt_Service_Click(object sender, EventArgs e)
         {
-            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != ""))
+            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
@@ -371,23 +389,27 @@ namespace Petshop
 
         private void bt_HealRecordDetail_Click(object sender, EventArgs e)
         {
-            //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            if ((lb_HealRecordID.Text != string.Empty)&&(lb_HealRecordID.Text != null))
             {
-                if (form.GetType() == typeof(FrmMM22))
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    form.Activate();
-                    return;
+                    if (form.GetType() == typeof(FrmMM22))
+                    {
+                        form.Activate();
+                        return;
+                    }
                 }
+                FrmMM22 iFrmMM21 = new FrmMM22();
+                iFrmMM21.MdiParent = MainForm.ActiveForm;
+                iFrmMM21.Show();
+                iFrmMM21.lb_HealRecordID.Text = lb_HealRecordID.Text;
             }
-            FrmMM22 iFrmMM21 = new FrmMM22();
-            iFrmMM21.MdiParent = MainForm.ActiveForm;
-            iFrmMM21.Show();
-            iFrmMM21.lb_HealRecordID.Text = lb_HealRecordID.Text;
+            //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
+            
         }
         private void bt_HealDateDetail_Click(object sender, EventArgs e)
         {
-            if ((lb_HealRecordID.Text != "") && (lb_HealRecordID.Text != null))
+            if ((lb_HealRecordID.Text != string.Empty) && (lb_HealRecordID.Text != null))
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
@@ -443,6 +465,62 @@ namespace Petshop
                 txb_NameOwner.Text = row.Cells["ccOwner_Name"].Value.ToString();
                 Txb_Addr.Text = row.Cells["ccOwner_Addr"].Value.ToString();
                 txb_TelOwner.Text = row.Cells["ccOwner_Tel"].Value.ToString();
+            }
+        }
+
+        private void txb_PetName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cb_PetType.Focus();
+            }
+        }
+
+        private void cb_PetType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                cb_PetBreed.Focus();
+            }
+        }
+
+        private void cb_PetBreed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_PetColor.Focus();
+            }
+        }
+
+        private void txb_PetColor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                rb_F.Select();
+            }
+        }
+
+        private void txb_NameOwner_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_TelOwner.Focus();
+            }
+        }
+
+        private void txb_TelOwner_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Txb_Addr.Focus();
+            }
+        }
+
+        private void Txb_Addr_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_AddMember.Select();
             }
         }
     }

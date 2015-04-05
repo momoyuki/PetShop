@@ -23,14 +23,13 @@ namespace Petshop
             loadEmployee();
             loadCompany();
             loadProductSale();
-            loadProductSaleBill();
+            loaddata();
         }
         private void FrmMM32_Load(object sender, EventArgs e)
         {
             loadEmployee();
             loadCompany();
             loadProductSale();
-            loadProductSaleBill();
             loaddata();
         }
 
@@ -66,33 +65,38 @@ namespace Petshop
 
         private void loadProductSaleBill()
         {
-            string ilbBillID = Lb_BillID.Text.Trim();
-            DataTable idtSumBill;
-            string isqlSumDetail = "SELECT sum(ProductSale_Bill_Amt) as ProductAmt FROM tb_productsalebill where Bill_ID = '"+ilbBillID+"'";
-            idtSumBill = iConnect.SelectByCommand(isqlSumDetail);
-            foreach (DataRow row in idtSumBill.Rows)
+            if ((Lb_BillID.Text != null)&&(Lb_BillID.Text != string.Empty))
             {
-                object value = row["ProductAmt"];
-                if (value == DBNull.Value)
+                string ilbBillID = Lb_BillID.Text.Trim();
+                DataTable idtSumBill;
+                string isqlSumDetail = "SELECT sum(ProductSale_Bill_Amt) as ProductAmt FROM tb_productsalebill where Bill_ID = '" + ilbBillID + "'";
+                idtSumBill = iConnect.SelectByCommand(isqlSumDetail);
+                foreach (DataRow row in idtSumBill.Rows)
                 {
-                    iProductAmt = 0;
-                }
-                else
-                {
-                   iProductAmt = idtSumBill.Rows[0].Field<decimal>(0);
+                    object value = row["ProductAmt"];
+                    if (value == DBNull.Value)
+                    {
+                        iProductAmt = 0;
+                    }
+                    else
+                    {
+                        iProductAmt = idtSumBill.Rows[0].Field<decimal>(0);
+                    }
                 }
             }
         }
 
         private void loadProductSale()
         {
-            DataTable idtProduct;
-            string itxbReferID = txb_ReferID.Text.Trim();
-            string isqlProduct = "SELECT tb_productsaledetail.*,tb_product.Product_Des FROM tb_productsaledetail,tb_product where tb_productsaledetail.Product_ID = tb_product.Product_ID AND tb_productsaledetail.ProductSale_ID ='"+itxbReferID+"'";
-            idtProduct = iConnect.SelectByCommand(isqlProduct);
-            dGV_Product.DataSource = idtProduct;
-            dGV_Product.Refresh();
-         }
+            if((txb_ReferID.Text !=null)&&(txb_ReferID.Text !=string.Empty)){
+                DataTable idtProduct;
+                string itxbReferID = txb_ReferID.Text.Trim();
+                string isqlProduct = "SELECT tb_productsaledetail.*,tb_product.Product_Des FROM tb_productsaledetail,tb_product where tb_productsaledetail.Product_ID = tb_product.Product_ID AND tb_productsaledetail.ProductSale_ID ='" + itxbReferID + "'";
+                idtProduct = iConnect.SelectByCommand(isqlProduct);
+                dGV_Product.DataSource = idtProduct;
+                dGV_Product.Refresh();
+                            }
+                     }
         
 
         
@@ -123,9 +127,13 @@ namespace Petshop
             DataTable idtEmployee;
             string isqlEmployee = "SELECT * FROM petshop.tb_employee where Em_Status = 1";
             idtEmployee = iConnect.SelectByCommand(isqlEmployee);
-            cb_Em.DisplayMember = idtEmployee.Columns["Em_Name"].ColumnName;
-            cb_Em.ValueMember = idtEmployee.Columns["Em_ID"].ColumnName;
-            cb_Em.DataSource = idtEmployee;
+            if (idtEmployee.Rows.Count > 0)
+            {
+                cb_Em.DisplayMember = idtEmployee.Columns["Em_Name"].ColumnName;
+                cb_Em.ValueMember = idtEmployee.Columns["Em_ID"].ColumnName;
+                cb_Em.DataSource = idtEmployee;
+            }
+            
         }
         private void bt_Print_Click(object sender, EventArgs e)
         {

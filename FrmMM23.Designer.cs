@@ -170,6 +170,7 @@
             this.bt_Load.TabIndex = 10;
             this.bt_Load.Text = "Load";
             this.bt_Load.UseVisualStyleBackColor = true;
+            this.bt_Load.Visible = false;
             this.bt_Load.Click += new System.EventHandler(this.bt_Load_Click);
             // 
             // bt_AddHealDate
