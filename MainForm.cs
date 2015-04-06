@@ -43,211 +43,182 @@ namespace Petshop
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM11))
+                if (form.GetType() == typeof(FrmSetting11))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM11 iFrmMM11 = new FrmMM11();
-            iFrmMM11.MdiParent = this;
-            iFrmMM11.Show();
+            FrmSetting11 iFrmSetting11 = new FrmSetting11();
+            iFrmSetting11.MdiParent = this;
+            iFrmSetting11.Show();
         }
 
         private void ตงคาสนคาToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM12))
+                if (form.GetType() == typeof(FrmSetting12))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM12 iFrmMM12 = new FrmMM12();
-            iFrmMM12.MdiParent = this;
-            iFrmMM12.Show();
+            FrmSetting12 iFrmSetting12 = new FrmSetting12();
+            iFrmSetting12.MdiParent = this;
+            iFrmSetting12.Show();
+        }
+        private void รายจายToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmSetting13))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmSetting13 iFrmSetting13 = new FrmSetting13();
+            iFrmSetting13.MdiParent = this;
+            iFrmSetting13.Show();
         }
         private void หนวยToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM13))
+                if (form.GetType() == typeof(FrmSetting14))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM13 iFrmMM13 = new FrmMM13();
-            iFrmMM13.MdiParent = this;
-            iFrmMM13.Show();
+            FrmSetting14 iFrmSetting14 = new FrmSetting14();
+            iFrmSetting14.MdiParent = this;
+            iFrmSetting14.Show();
         }
         private void พนธสตวToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM14))
+                if (form.GetType() == typeof(FrmSetting15))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM14 iFrmMM14 = new FrmMM14();
-            iFrmMM14.MdiParent = this;
-            iFrmMM14.Show();
+            FrmSetting15 iFrmSetting15 = new FrmSetting15();
+            iFrmSetting15.MdiParent = this;
+            iFrmSetting15.Show();
         }
 
         private void พนกงานToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM15))
+                if (form.GetType() == typeof(FrmSetting16))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM15 iFrmMM15 = new FrmMM15();
-            iFrmMM15.MdiParent = this;
-            iFrmMM15.Show();
+            FrmSetting16 iFrmSetting16 = new FrmSetting16();
+            iFrmSetting16.MdiParent = this;
+            iFrmSetting16.Show();
         }
 
         private void ตงคาหนวยงานToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM16))
+                if (form.GetType() == typeof(FrmSetting17))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM16 iFrmMM16 = new FrmMM16();
-            iFrmMM16.MdiParent = this;
-            iFrmMM16.Show();
+            FrmSetting17 iFrmSetting17 = new FrmSetting17();
+            iFrmSetting17.MdiParent = this;
+            iFrmSetting17.Show();
         }
         private void จดการสมาชกToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM21))
+                if (form.GetType() == typeof(FrmRecorD21))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM21 iFrmMM21 = new FrmMM21(ref _TextBox);
-            iFrmMM21.MdiParent = this;
-            iFrmMM21.Show();
-        }
-        private void ทำการรกษาToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM22))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM22 iFrmMM22 = new FrmMM22();
-            iFrmMM22.MdiParent = this;
-            iFrmMM22.Show();
-        }
-        private void ตดตามการรกษาToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM23))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM23 iFrmMM23 = new FrmMM23();
-            iFrmMM23.MdiParent = this;
-            iFrmMM23.Show();
-        }
-        private void ทำการรกษายาToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM24))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM24 iFrmMM24 = new FrmMM24();
-            iFrmMM24.MdiParent = this;
-            iFrmMM24.Show();
-        }
-
-    
-        private TextBox _TextBox = new TextBox();
-   
-
-        private void ใบเสรจบรการToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM31))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM31 iFrmMM341 = new FrmMM31();
-            iFrmMM341.MdiParent = this;
-            iFrmMM341.Show();
-        }
-        private void ขายสนคาToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmMM32))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmMM32 iFrmMM342 = new FrmMM32();
-            iFrmMM342.MdiParent = this;
-            iFrmMM342.Show();
-        }
-
-
-
-        private void ใบนดหมายToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmBillDate))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmBillDate iFrmMMBill = new FrmBillDate();
-            iFrmMMBill.MdiParent = this;
-            iFrmMMBill.Show();
-        
+            FrmRecorD21 iFrmRecorD21 = new FrmRecorD21(ref _TextBox);
+            iFrmRecorD21.MdiParent = this;
+            iFrmRecorD21.Show();
         }
 
         private void ตดตามการรกษาToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmMM23))
+                if (form.GetType() == typeof(FrmRecorD22))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmMM23 iFrmMM23 = new FrmMM23();
-            iFrmMM23.MdiParent = this;
-            iFrmMM23.Show();
+            FrmRecorD22 iFrmRecorD22 = new FrmRecorD22();
+            iFrmRecorD22.MdiParent = this;
+            iFrmRecorD22.Show();
         }
+        private void ทำการรกษายาToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmRecorD23))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmRecorD23 iFrmRecorD23 = new FrmRecorD23();
+            iFrmRecorD23.MdiParent = this;
+            iFrmRecorD23.Show();
+        }
+        private void บนทกรายจายToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmRecorD24))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmRecorD24 iFrmRecorD24 = new FrmRecorD24();
+            iFrmRecorD24.MdiParent = this;
+            iFrmRecorD24.Show();
+        }
+    
+        private TextBox _TextBox = new TextBox();
+   
+
+        private void ใบเสรจบรการToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void ขายสนคาToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+    
+
+        private void xออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+
+
     }
 }

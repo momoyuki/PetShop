@@ -18,7 +18,7 @@ namespace Petshop
             Application.Run(new MainForm());
 
 
-            /*FrmIndex fLogin = new FrmIndex();
+           /* FrmIndex fLogin = new FrmIndex();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new MainForm());

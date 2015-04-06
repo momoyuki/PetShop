@@ -32,6 +32,7 @@
             this.ทำการกษาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.บรการToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ตงคาสนคาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.รายจายToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.หนวยToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.พนธสตวToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,12 +44,13 @@
             this.ตดตามการรกษาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ทำการรกษายาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.บนทกรายจายToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.รายงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ใบเสรจToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ใบเสรจบรการToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ขายสนคาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.รายงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ใบนดหมายToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xออกจากโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ทำการกษาToolStripMenuItem,
             this.ทำการรกษาToolStripMenuItem,
-            this.รายงานToolStripMenuItem});
+            this.รายงานToolStripMenuItem,
+            this.xออกจากโปรแกรมToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
@@ -70,6 +73,7 @@
             this.ทำการกษาToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.บรการToolStripMenuItem,
             this.ตงคาสนคาToolStripMenuItem,
+            this.รายจายToolStripMenuItem,
             this.หนวยToolStripMenuItem,
             this.toolStripSeparator2,
             this.พนธสตวToolStripMenuItem,
@@ -94,11 +98,18 @@
             this.ตงคาสนคาToolStripMenuItem.Text = "&2.สินค้า";
             this.ตงคาสนคาToolStripMenuItem.Click += new System.EventHandler(this.ตงคาสนคาToolStripMenuItem_Click);
             // 
+            // รายจายToolStripMenuItem
+            // 
+            this.รายจายToolStripMenuItem.Name = "รายจายToolStripMenuItem";
+            this.รายจายToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.รายจายToolStripMenuItem.Text = "&3.รายจ่าย";
+            this.รายจายToolStripMenuItem.Click += new System.EventHandler(this.รายจายToolStripMenuItem_Click);
+            // 
             // หนวยToolStripMenuItem
             // 
             this.หนวยToolStripMenuItem.Name = "หนวยToolStripMenuItem";
             this.หนวยToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.หนวยToolStripMenuItem.Text = "&3.หน่วย";
+            this.หนวยToolStripMenuItem.Text = "&4.หน่วย";
             this.หนวยToolStripMenuItem.Click += new System.EventHandler(this.หนวยToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
@@ -110,7 +121,7 @@
             // 
             this.พนธสตวToolStripMenuItem.Name = "พนธสตวToolStripMenuItem";
             this.พนธสตวToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.พนธสตวToolStripMenuItem.Text = "&4.ชนิดและประเภทสัตว์";
+            this.พนธสตวToolStripMenuItem.Text = "&5.ชนิดและประเภทสัตว์";
             this.พนธสตวToolStripMenuItem.Click += new System.EventHandler(this.พนธสตวToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
@@ -122,14 +133,14 @@
             // 
             this.พนกงานToolStripMenuItem.Name = "พนกงานToolStripMenuItem";
             this.พนกงานToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.พนกงานToolStripMenuItem.Text = "&5.พนักงาน";
+            this.พนกงานToolStripMenuItem.Text = "&6.พนักงาน";
             this.พนกงานToolStripMenuItem.Click += new System.EventHandler(this.พนกงานToolStripMenuItem_Click);
             // 
             // ตงคาหนวยงานToolStripMenuItem
             // 
             this.ตงคาหนวยงานToolStripMenuItem.Name = "ตงคาหนวยงานToolStripMenuItem";
             this.ตงคาหนวยงานToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ตงคาหนวยงานToolStripMenuItem.Text = "&6.หน่วยงาน";
+            this.ตงคาหนวยงานToolStripMenuItem.Text = "&7.หน่วยงาน";
             this.ตงคาหนวยงานToolStripMenuItem.Click += new System.EventHandler(this.ตงคาหนวยงานToolStripMenuItem_Click);
             // 
             // ทำการรกษาToolStripMenuItem
@@ -138,7 +149,8 @@
             this.จดการสมาชกToolStripMenuItem1,
             this.ตดตามการรกษาToolStripMenuItem,
             this.toolStripSeparator3,
-            this.ทำการรกษายาToolStripMenuItem});
+            this.ทำการรกษายาToolStripMenuItem,
+            this.บนทกรายจายToolStripMenuItem});
             this.ทำการรกษาToolStripMenuItem.Name = "ทำการรกษาToolStripMenuItem";
             this.ทำการรกษาToolStripMenuItem.Size = new System.Drawing.Size(100, 19);
             this.ทำการรกษาToolStripMenuItem.Text = "&2.บันทึกประจำวัน";
@@ -169,13 +181,29 @@
             this.ทำการรกษายาToolStripMenuItem.Text = "&3.ขายสินค้า";
             this.ทำการรกษายาToolStripMenuItem.Click += new System.EventHandler(this.ทำการรกษายาToolStripMenuItem_Click);
             // 
+            // บนทกรายจายToolStripMenuItem
+            // 
+            this.บนทกรายจายToolStripMenuItem.Name = "บนทกรายจายToolStripMenuItem";
+            this.บนทกรายจายToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.บนทกรายจายToolStripMenuItem.Text = "&4.บันทึกรายจ่าย";
+            this.บนทกรายจายToolStripMenuItem.Click += new System.EventHandler(this.บนทกรายจายToolStripMenuItem_Click);
+            // 
+            // รายงานToolStripMenuItem
+            // 
+            this.รายงานToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ใบเสรจToolStripMenuItem,
+            this.toolStripSeparator4});
+            this.รายงานToolStripMenuItem.Name = "รายงานToolStripMenuItem";
+            this.รายงานToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
+            this.รายงานToolStripMenuItem.Text = "&3.รายงาน";
+            // 
             // ใบเสรจToolStripMenuItem
             // 
             this.ใบเสรจToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ใบเสรจบรการToolStripMenuItem,
             this.ขายสนคาToolStripMenuItem});
             this.ใบเสรจToolStripMenuItem.Name = "ใบเสรจToolStripMenuItem";
-            this.ใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.ใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.ใบเสรจToolStripMenuItem.Text = "&1.พิมพ์ใบเสร็จ";
             // 
             // ใบเสรจบรการToolStripMenuItem
@@ -195,24 +223,14 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(139, 6);
             // 
-            // รายงานToolStripMenuItem
+            // xออกจากโปรแกรมToolStripMenuItem
             // 
-            this.รายงานToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ใบเสรจToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.ใบนดหมายToolStripMenuItem});
-            this.รายงานToolStripMenuItem.Name = "รายงานToolStripMenuItem";
-            this.รายงานToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
-            this.รายงานToolStripMenuItem.Text = "&3.รายงาน";
-            // 
-            // ใบนดหมายToolStripMenuItem
-            // 
-            this.ใบนดหมายToolStripMenuItem.Name = "ใบนดหมายToolStripMenuItem";
-            this.ใบนดหมายToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.ใบนดหมายToolStripMenuItem.Text = "&2.พิมพ์ใบนัดหมาย";
-            this.ใบนดหมายToolStripMenuItem.Click += new System.EventHandler(this.ใบนดหมายToolStripMenuItem_Click);
+            this.xออกจากโปรแกรมToolStripMenuItem.Name = "xออกจากโปรแกรมToolStripMenuItem";
+            this.xออกจากโปรแกรมToolStripMenuItem.Size = new System.Drawing.Size(115, 19);
+            this.xออกจากโปรแกรมToolStripMenuItem.Text = "&X. ออกจากโปรแกรม";
+            this.xออกจากโปรแกรมToolStripMenuItem.Click += new System.EventHandler(this.xออกจากโปรแกรมToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -225,7 +243,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.Text = "ระบบติดตามการรักษาสัตว์ กรณีศึกษา โรงพยาบาลน่านปิยะมิตร";
+            this.Text = "ระบบติดตามการรักษาสัตว์ กรณีศึกษา โรงพยาบาลสัตว์น่านปิยะมิตร";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -258,7 +276,9 @@
         private System.Windows.Forms.ToolStripMenuItem ใบเสรจบรการToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ขายสนคาToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem ใบนดหมายToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xออกจากโปรแกรมToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem รายจายToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem บนทกรายจายToolStripMenuItem;
     }
 }
 
