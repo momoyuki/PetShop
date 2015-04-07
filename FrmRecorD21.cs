@@ -34,25 +34,28 @@ namespace Petshop
             LoadPetProfile();
             LoadPetType();
             LoadPetBreed();
-            LoadHealDetail();
+           
             
         }
 
         private void LoadHealDetail()
         {
-            string itxbpetname = txb_PetName.Text.ToString();
-            DataTable idtHealDetail;
-            /*string isqlCommand = "SELECT HealRecord_ID as HealRecord_ID,tb_medirecord.Medi_ID as ServiceMedi_ID, "
-                                   + "tb_medicine.Medi_Des as ServiceMedi_Des "
-                                   + "FROM tb_medirecord,tb_medicine where tb_medirecord.HealRecord_ID = '" + lbHealRecordID + "' AND tb_medirecord.Medi_ID = tb_medicine.Medi_ID "
-                                   + "UNION "
-                                   + " SELECT HealRecord_ID as HealRecord_ID,tb_servicerecord.Service_ID as ServiceMedi_ID , "
-                                   + "tb_service.service_Des AS ServiceMedi_Des "
-                                   + "FROM tb_servicerecord,tb_service where tb_servicerecord.HealRecord_ID = '" + lbHealRecordID + "' AND tb_servicerecord.Service_ID = tb_service.Service_ID";
+            if((txb_PetProfileID.Text !=null)&&(txb_PetProfileID.Text != string.Empty)){
+                string itxbPetProfileID = txb_PetProfileID.Text.ToString();
+                DataTable idtHealDetail;
+                string isqlCommand = "SELECT  tb_healrecord.Pet_ID as Pet_ID,tb_medirecord.HealRecord_ID as HealRecord_ID,tb_healrecord.HealRecord_Date as HealRecord_Date,tb_medirecord.Medi_ID as ServiceMedi_ID, "
+                                     + "tb_medicine.Medi_Des as ServiceMedi_Des "
+                                     + "FROM tb_healrecord,tb_medirecord,tb_medicine where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_medirecord.Medi_ID = tb_medicine.Medi_ID "
+                                     + "UNION "
+                                     + "SELECT tb_healrecord.Pet_ID as Pet_ID ,tb_servicerecord.HealRecord_ID as HealRecord_ID,tb_healrecord.HealRecord_Date as HealRecord_Date,tb_servicerecord.Service_ID as ServiceMedi_ID, "
+                                     + "tb_service.service_Des AS ServiceMedi_Des "
+                                     + "FROM tb_healrecord,tb_servicerecord,tb_service where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_servicerecord.Service_ID = tb_service.Service_ID";
 
-            idtHealDetail = iConnect.SelectByCommand(isqlCommand);
-            dGV_HealDetail.DataSource = idtHealDetail;
-            dGV_HealDetail.Refresh();*/
+                idtHealDetail = iConnect.SelectByCommand(isqlCommand);
+                dGV_HealDetail.DataSource = idtHealDetail;
+                dGV_HealDetail.Refresh();
+                lb_HealDetailCount.Text = idtHealDetail.Rows.Count.ToString();
+            }
         }
 
         private void LoadSex() // ญังไม่ได้เสร็จ มีปัญหา ในการ เพิ่ม เพศ ชาย หญิง
@@ -138,7 +141,7 @@ namespace Petshop
             {
                 dGV_PetProfile.DataSource = idtPetProfile;
                 dGV_PetProfile.Refresh();
-                lb_CountHealRecord.Text = idtPetProfile.Rows.Count.ToString();
+                lb_PetCount.Text = idtPetProfile.Rows.Count.ToString();
             }
             
         }
@@ -302,11 +305,12 @@ namespace Petshop
         {
             _Textbox.Text = txb_PetProfileID.Text;
             loadHealRecord();
+            LoadHealDetail();
         }
 
         private void loadHealRecord()
         {
-           string  iPetID = txb_PetProfileID.Text.Trim();
+            string  iPetID = txb_PetProfileID.Text.Trim();
             DataTable idtHealRecord;
             string isqlHealRecord = "SELECT * FROM petshop.tb_healrecord where pet_ID = " + iPetID + "";
             idtHealRecord = iConnect.SelectByCommand(isqlHealRecord);
@@ -548,6 +552,15 @@ namespace Petshop
             if (e.KeyCode == Keys.Enter)
             {
                 bt_AddMember.Select();
+            }
+        }
+
+        private void dGV_HealDetail_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dGV_HealDetail.SelectedRows)
+            {
+                lb_HealDetailID.Text = row.Cells["ccHealRecord_IDd"].Value.ToString();
+
             }
         }
 

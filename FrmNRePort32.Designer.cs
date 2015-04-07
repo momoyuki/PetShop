@@ -359,7 +359,7 @@
             this.lb_Remark.Text = "*เลือกไม่รายการเพื่อไม่พิมพ์";
             this.lb_Remark.UseCompatibleTextRendering = true;
             // 
-            // FrmMM32
+            // FrmNRePort32
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -389,7 +389,8 @@
             this.Controls.Add(this.dGV_Product);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM32";
+            this.Name = "FrmNRePort32";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ใบเสร็จ ขายสินค้า";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM32_Load);

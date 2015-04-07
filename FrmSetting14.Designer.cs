@@ -196,7 +196,7 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
-            // FrmMM13
+            // FrmSetting14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -205,7 +205,8 @@
             this.Controls.Add(this.gBoxUnit);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM13";
+            this.Name = "FrmSetting14";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ตั้งค่า หน่วย";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM13_Load);

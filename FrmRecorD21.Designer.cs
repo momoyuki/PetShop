@@ -83,17 +83,17 @@
             this.bt_Search = new System.Windows.Forms.Button();
             this.tabC_Pet = new System.Windows.Forms.TabControl();
             this.tP_ListPeT = new System.Windows.Forms.TabPage();
-            this.lb_HealRecordCountL = new System.Windows.Forms.Label();
-            this.lb_HealRecordCount = new System.Windows.Forms.Label();
-            this.lb_HealRecordCountA = new System.Windows.Forms.Label();
+            this.lb_PetCountB = new System.Windows.Forms.Label();
+            this.lb_PetCount = new System.Windows.Forms.Label();
+            this.lb_PetCountA = new System.Windows.Forms.Label();
             this.tP_LisTDetail = new System.Windows.Forms.TabPage();
-            this.bt_HealDateDetail = new System.Windows.Forms.Button();
+            this.bt_HealDate = new System.Windows.Forms.Button();
             this.lb_HealRecordID = new System.Windows.Forms.Label();
             this.lb_HealRecord = new System.Windows.Forms.Label();
             this.lb_HealRecordL = new System.Windows.Forms.Label();
             this.lb_CountHealRecord = new System.Windows.Forms.Label();
             this.lb_HealRecordList = new System.Windows.Forms.Label();
-            this.bt_HealRecordDetail = new System.Windows.Forms.Button();
+            this.bt_HealRecord = new System.Windows.Forms.Button();
             this.dGV_HealRecord = new System.Windows.Forms.DataGridView();
             this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPet_IDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,9 +108,21 @@
             this.ccHealRecord_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealRecord_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealRecord_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.tp_HealDetail = new System.Windows.Forms.TabPage();
+            this.bt_HealDateDetail = new System.Windows.Forms.Button();
+            this.lb_HealDetailID = new System.Windows.Forms.Label();
+            this.lb_HealDetail = new System.Windows.Forms.Label();
+            this.lb_HealDetailCountb = new System.Windows.Forms.Label();
+            this.lb_HealDetailCount = new System.Windows.Forms.Label();
+            this.lb_HealDetailCounta = new System.Windows.Forms.Label();
+            this.bt_HealRecordDetail = new System.Windows.Forms.Button();
             this.dGV_HealDetail = new System.Windows.Forms.DataGridView();
+            this.ccPet_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Dated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccServiceMedi_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccServiceMedi_Desd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.gBoxDetail.SuspendLayout();
             this.gBox_OwnerDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_PetProfile)).BeginInit();
@@ -118,9 +130,9 @@
             this.tP_ListPeT.SuspendLayout();
             this.tP_LisTDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealRecord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.tp_HealDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxDetail
@@ -693,9 +705,9 @@
             // 
             // tP_ListPeT
             // 
-            this.tP_ListPeT.Controls.Add(this.lb_HealRecordCountL);
-            this.tP_ListPeT.Controls.Add(this.lb_HealRecordCount);
-            this.tP_ListPeT.Controls.Add(this.lb_HealRecordCountA);
+            this.tP_ListPeT.Controls.Add(this.lb_PetCountB);
+            this.tP_ListPeT.Controls.Add(this.lb_PetCount);
+            this.tP_ListPeT.Controls.Add(this.lb_PetCountA);
             this.tP_ListPeT.Controls.Add(this.txb_SearchPet);
             this.tP_ListPeT.Controls.Add(this.bt_Search);
             this.tP_ListPeT.Controls.Add(this.dGV_PetProfile);
@@ -707,42 +719,42 @@
             this.tP_ListPeT.Text = "รายชื่อทั้งหมด";
             this.tP_ListPeT.UseVisualStyleBackColor = true;
             // 
-            // lb_HealRecordCountL
+            // lb_PetCountB
             // 
-            this.lb_HealRecordCountL.AutoSize = true;
-            this.lb_HealRecordCountL.Location = new System.Drawing.Point(252, 14);
-            this.lb_HealRecordCountL.Name = "lb_HealRecordCountL";
-            this.lb_HealRecordCountL.Size = new System.Drawing.Size(52, 18);
-            this.lb_HealRecordCountL.TabIndex = 21;
-            this.lb_HealRecordCountL.Text = "รายการ";
+            this.lb_PetCountB.AutoSize = true;
+            this.lb_PetCountB.Location = new System.Drawing.Point(252, 14);
+            this.lb_PetCountB.Name = "lb_PetCountB";
+            this.lb_PetCountB.Size = new System.Drawing.Size(52, 18);
+            this.lb_PetCountB.TabIndex = 21;
+            this.lb_PetCountB.Text = "รายการ";
             // 
-            // lb_HealRecordCount
+            // lb_PetCount
             // 
-            this.lb_HealRecordCount.AutoSize = true;
-            this.lb_HealRecordCount.Location = new System.Drawing.Point(205, 14);
-            this.lb_HealRecordCount.Name = "lb_HealRecordCount";
-            this.lb_HealRecordCount.Size = new System.Drawing.Size(16, 18);
-            this.lb_HealRecordCount.TabIndex = 20;
-            this.lb_HealRecordCount.Text = "0";
+            this.lb_PetCount.AutoSize = true;
+            this.lb_PetCount.Location = new System.Drawing.Point(205, 14);
+            this.lb_PetCount.Name = "lb_PetCount";
+            this.lb_PetCount.Size = new System.Drawing.Size(16, 18);
+            this.lb_PetCount.TabIndex = 20;
+            this.lb_PetCount.Text = "0";
             // 
-            // lb_HealRecordCountA
+            // lb_PetCountA
             // 
-            this.lb_HealRecordCountA.AutoSize = true;
-            this.lb_HealRecordCountA.Location = new System.Drawing.Point(48, 14);
-            this.lb_HealRecordCountA.Name = "lb_HealRecordCountA";
-            this.lb_HealRecordCountA.Size = new System.Drawing.Size(117, 18);
-            this.lb_HealRecordCountA.TabIndex = 19;
-            this.lb_HealRecordCountA.Text = "พบสมาชิกทั้งหมด";
+            this.lb_PetCountA.AutoSize = true;
+            this.lb_PetCountA.Location = new System.Drawing.Point(48, 14);
+            this.lb_PetCountA.Name = "lb_PetCountA";
+            this.lb_PetCountA.Size = new System.Drawing.Size(117, 18);
+            this.lb_PetCountA.TabIndex = 19;
+            this.lb_PetCountA.Text = "พบสมาชิกทั้งหมด";
             // 
             // tP_LisTDetail
             // 
-            this.tP_LisTDetail.Controls.Add(this.bt_HealDateDetail);
+            this.tP_LisTDetail.Controls.Add(this.bt_HealDate);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecordID);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecord);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecordL);
             this.tP_LisTDetail.Controls.Add(this.lb_CountHealRecord);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecordList);
-            this.tP_LisTDetail.Controls.Add(this.bt_HealRecordDetail);
+            this.tP_LisTDetail.Controls.Add(this.bt_HealRecord);
             this.tP_LisTDetail.Controls.Add(this.dGV_HealRecord);
             this.tP_LisTDetail.Location = new System.Drawing.Point(4, 27);
             this.tP_LisTDetail.Name = "tP_LisTDetail";
@@ -752,16 +764,16 @@
             this.tP_LisTDetail.Text = "ประวัติการรักษา";
             this.tP_LisTDetail.UseVisualStyleBackColor = true;
             // 
-            // bt_HealDateDetail
+            // bt_HealDate
             // 
-            this.bt_HealDateDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_HealDateDetail.Location = new System.Drawing.Point(741, 6);
-            this.bt_HealDateDetail.Name = "bt_HealDateDetail";
-            this.bt_HealDateDetail.Size = new System.Drawing.Size(100, 31);
-            this.bt_HealDateDetail.TabIndex = 0;
-            this.bt_HealDateDetail.Text = "นัดหมาย";
-            this.bt_HealDateDetail.UseVisualStyleBackColor = true;
-            this.bt_HealDateDetail.Click += new System.EventHandler(this.bt_HealDateDetail_Click);
+            this.bt_HealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_HealDate.Location = new System.Drawing.Point(741, 6);
+            this.bt_HealDate.Name = "bt_HealDate";
+            this.bt_HealDate.Size = new System.Drawing.Size(100, 31);
+            this.bt_HealDate.TabIndex = 0;
+            this.bt_HealDate.Text = "นัดหมาย";
+            this.bt_HealDate.UseVisualStyleBackColor = true;
+            this.bt_HealDate.Click += new System.EventHandler(this.bt_HealDateDetail_Click);
             // 
             // lb_HealRecordID
             // 
@@ -807,16 +819,16 @@
             this.lb_HealRecordList.TabIndex = 2;
             this.lb_HealRecordList.Text = "พบประวัติการรักษาทั้้งหมด";
             // 
-            // bt_HealRecordDetail
+            // bt_HealRecord
             // 
-            this.bt_HealRecordDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_HealRecordDetail.Location = new System.Drawing.Point(848, 6);
-            this.bt_HealRecordDetail.Name = "bt_HealRecordDetail";
-            this.bt_HealRecordDetail.Size = new System.Drawing.Size(100, 31);
-            this.bt_HealRecordDetail.TabIndex = 1;
-            this.bt_HealRecordDetail.Text = "รายละเอียด";
-            this.bt_HealRecordDetail.UseVisualStyleBackColor = true;
-            this.bt_HealRecordDetail.Click += new System.EventHandler(this.bt_HealRecordDetail_Click);
+            this.bt_HealRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_HealRecord.Location = new System.Drawing.Point(848, 6);
+            this.bt_HealRecord.Name = "bt_HealRecord";
+            this.bt_HealRecord.Size = new System.Drawing.Size(100, 31);
+            this.bt_HealRecord.TabIndex = 1;
+            this.bt_HealRecord.Text = "รายละเอียด";
+            this.bt_HealRecord.UseVisualStyleBackColor = true;
+            this.bt_HealRecord.Click += new System.EventHandler(this.bt_HealRecordDetail_Click);
             // 
             // dGV_HealRecord
             // 
@@ -948,12 +960,15 @@
             this.ccHealRecord_Net.Name = "ccHealRecord_Net";
             this.ccHealRecord_Net.ReadOnly = true;
             // 
-            // epCheck
-            // 
-            this.epCheck.ContainerControl = this;
-            // 
             // tp_HealDetail
             // 
+            this.tp_HealDetail.Controls.Add(this.bt_HealDateDetail);
+            this.tp_HealDetail.Controls.Add(this.lb_HealDetailID);
+            this.tp_HealDetail.Controls.Add(this.lb_HealDetail);
+            this.tp_HealDetail.Controls.Add(this.lb_HealDetailCountb);
+            this.tp_HealDetail.Controls.Add(this.lb_HealDetailCount);
+            this.tp_HealDetail.Controls.Add(this.lb_HealDetailCounta);
+            this.tp_HealDetail.Controls.Add(this.bt_HealRecordDetail);
             this.tp_HealDetail.Controls.Add(this.dGV_HealDetail);
             this.tp_HealDetail.Location = new System.Drawing.Point(4, 27);
             this.tp_HealDetail.Name = "tp_HealDetail";
@@ -963,15 +978,138 @@
             this.tp_HealDetail.Text = "รายละเอียด";
             this.tp_HealDetail.UseVisualStyleBackColor = true;
             // 
+            // bt_HealDateDetail
+            // 
+            this.bt_HealDateDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_HealDateDetail.Location = new System.Drawing.Point(747, 4);
+            this.bt_HealDateDetail.Name = "bt_HealDateDetail";
+            this.bt_HealDateDetail.Size = new System.Drawing.Size(100, 31);
+            this.bt_HealDateDetail.TabIndex = 7;
+            this.bt_HealDateDetail.Text = "นัดหมาย";
+            this.bt_HealDateDetail.UseVisualStyleBackColor = true;
+            // 
+            // lb_HealDetailID
+            // 
+            this.lb_HealDetailID.AutoSize = true;
+            this.lb_HealDetailID.Location = new System.Drawing.Point(469, 10);
+            this.lb_HealDetailID.Name = "lb_HealDetailID";
+            this.lb_HealDetailID.Size = new System.Drawing.Size(0, 18);
+            this.lb_HealDetailID.TabIndex = 13;
+            // 
+            // lb_HealDetail
+            // 
+            this.lb_HealDetail.AutoSize = true;
+            this.lb_HealDetail.Location = new System.Drawing.Point(321, 10);
+            this.lb_HealDetail.Name = "lb_HealDetail";
+            this.lb_HealDetail.Size = new System.Drawing.Size(133, 18);
+            this.lb_HealDetail.TabIndex = 12;
+            this.lb_HealDetail.Text = "เลขที่รักษาหมายเลข";
+            // 
+            // lb_HealDetailCountb
+            // 
+            this.lb_HealDetailCountb.AutoSize = true;
+            this.lb_HealDetailCountb.Location = new System.Drawing.Point(252, 10);
+            this.lb_HealDetailCountb.Name = "lb_HealDetailCountb";
+            this.lb_HealDetailCountb.Size = new System.Drawing.Size(52, 18);
+            this.lb_HealDetailCountb.TabIndex = 11;
+            this.lb_HealDetailCountb.Text = "รายการ";
+            // 
+            // lb_HealDetailCount
+            // 
+            this.lb_HealDetailCount.AutoSize = true;
+            this.lb_HealDetailCount.Location = new System.Drawing.Point(205, 10);
+            this.lb_HealDetailCount.Name = "lb_HealDetailCount";
+            this.lb_HealDetailCount.Size = new System.Drawing.Size(16, 18);
+            this.lb_HealDetailCount.TabIndex = 10;
+            this.lb_HealDetailCount.Text = "0";
+            // 
+            // lb_HealDetailCounta
+            // 
+            this.lb_HealDetailCounta.AutoSize = true;
+            this.lb_HealDetailCounta.Location = new System.Drawing.Point(18, 10);
+            this.lb_HealDetailCounta.Name = "lb_HealDetailCounta";
+            this.lb_HealDetailCounta.Size = new System.Drawing.Size(151, 18);
+            this.lb_HealDetailCounta.TabIndex = 9;
+            this.lb_HealDetailCounta.Text = "พบรายการรักษาทั้งหมด";
+            // 
+            // bt_HealRecordDetail
+            // 
+            this.bt_HealRecordDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_HealRecordDetail.Location = new System.Drawing.Point(854, 4);
+            this.bt_HealRecordDetail.Name = "bt_HealRecordDetail";
+            this.bt_HealRecordDetail.Size = new System.Drawing.Size(100, 31);
+            this.bt_HealRecordDetail.TabIndex = 8;
+            this.bt_HealRecordDetail.Text = "รายละเอียด";
+            this.bt_HealRecordDetail.UseVisualStyleBackColor = true;
+            // 
             // dGV_HealDetail
             // 
+            this.dGV_HealDetail.AllowUserToAddRows = false;
+            this.dGV_HealDetail.AllowUserToDeleteRows = false;
+            this.dGV_HealDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_HealDetail.Location = new System.Drawing.Point(6, 42);
+            this.dGV_HealDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ccPet_IDd,
+            this.ccHealRecord_Dated,
+            this.ccHealRecord_IDd,
+            this.ccServiceMedi_IDd,
+            this.ccServiceMedi_Desd});
+            this.dGV_HealDetail.Location = new System.Drawing.Point(7, 39);
             this.dGV_HealDetail.Name = "dGV_HealDetail";
+            this.dGV_HealDetail.ReadOnly = true;
+            this.dGV_HealDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_HealDetail.Size = new System.Drawing.Size(960, 270);
             this.dGV_HealDetail.TabIndex = 0;
+            this.dGV_HealDetail.SelectionChanged += new System.EventHandler(this.dGV_HealDetail_SelectionChanged);
             // 
-            // FrmMM21
+            // ccPet_IDd
+            // 
+            this.ccPet_IDd.DataPropertyName = "Pet_ID";
+            this.ccPet_IDd.HeaderText = "รหัสสัตว์";
+            this.ccPet_IDd.Name = "ccPet_IDd";
+            this.ccPet_IDd.ReadOnly = true;
+            this.ccPet_IDd.Visible = false;
+            // 
+            // ccHealRecord_Dated
+            // 
+            this.ccHealRecord_Dated.DataPropertyName = "HealRecord_Date";
+            this.ccHealRecord_Dated.FillWeight = 120F;
+            this.ccHealRecord_Dated.HeaderText = "วันที่รับบริการ";
+            this.ccHealRecord_Dated.Name = "ccHealRecord_Dated";
+            this.ccHealRecord_Dated.ReadOnly = true;
+            this.ccHealRecord_Dated.Width = 120;
+            // 
+            // ccHealRecord_IDd
+            // 
+            this.ccHealRecord_IDd.DataPropertyName = "HealRecord_ID";
+            this.ccHealRecord_IDd.HeaderText = "เลขที่การรักษา";
+            this.ccHealRecord_IDd.Name = "ccHealRecord_IDd";
+            this.ccHealRecord_IDd.ReadOnly = true;
+            this.ccHealRecord_IDd.Visible = false;
+            // 
+            // ccServiceMedi_IDd
+            // 
+            this.ccServiceMedi_IDd.DataPropertyName = "ServiceMedi_ID";
+            this.ccServiceMedi_IDd.FillWeight = 150F;
+            this.ccServiceMedi_IDd.HeaderText = "รหัสบริการและยา";
+            this.ccServiceMedi_IDd.Name = "ccServiceMedi_IDd";
+            this.ccServiceMedi_IDd.ReadOnly = true;
+            this.ccServiceMedi_IDd.Width = 150;
+            // 
+            // ccServiceMedi_Desd
+            // 
+            this.ccServiceMedi_Desd.DataPropertyName = "ServiceMedi_Des";
+            this.ccServiceMedi_Desd.FillWeight = 240F;
+            this.ccServiceMedi_Desd.HeaderText = "รายละเอียด";
+            this.ccServiceMedi_Desd.Name = "ccServiceMedi_Desd";
+            this.ccServiceMedi_Desd.ReadOnly = true;
+            this.ccServiceMedi_Desd.Width = 240;
+            // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
+            // FrmRecorD21
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -980,7 +1118,8 @@
             this.Controls.Add(this.gBoxDetail);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM21";
+            this.Name = "FrmRecorD21";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "บันทึกประจำวัน ทะเบียนสมาชิก";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM24_Load);
@@ -995,9 +1134,10 @@
             this.tP_LisTDetail.ResumeLayout(false);
             this.tP_LisTDetail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealRecord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.tp_HealDetail.ResumeLayout(false);
+            this.tp_HealDetail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1049,7 +1189,7 @@
         private System.Windows.Forms.Label lb_HealRecordL;
         private System.Windows.Forms.Label lb_CountHealRecord;
         private System.Windows.Forms.Label lb_HealRecordList;
-        private System.Windows.Forms.Button bt_HealRecordDetail;
+        private System.Windows.Forms.Button bt_HealRecord;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_ID;
@@ -1077,13 +1217,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccBreed_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed;
         private System.Windows.Forms.Label lb_BirthDay;
-        private System.Windows.Forms.Button bt_HealDateDetail;
+        private System.Windows.Forms.Button bt_HealDate;
         private System.Windows.Forms.ErrorProvider epCheck;
-        private System.Windows.Forms.Label lb_HealRecordCountL;
-        private System.Windows.Forms.Label lb_HealRecordCount;
-        private System.Windows.Forms.Label lb_HealRecordCountA;
+        private System.Windows.Forms.Label lb_PetCountB;
+        private System.Windows.Forms.Label lb_PetCount;
+        private System.Windows.Forms.Label lb_PetCountA;
         private System.Windows.Forms.Button bt_Refresh;
         private System.Windows.Forms.TabPage tp_HealDetail;
         private System.Windows.Forms.DataGridView dGV_HealDetail;
+        private System.Windows.Forms.Button bt_HealDateDetail;
+        private System.Windows.Forms.Label lb_HealDetailID;
+        private System.Windows.Forms.Label lb_HealDetail;
+        private System.Windows.Forms.Label lb_HealDetailCountb;
+        private System.Windows.Forms.Label lb_HealDetailCount;
+        private System.Windows.Forms.Label lb_HealDetailCounta;
+        private System.Windows.Forms.Button bt_HealRecordDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Dated;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_IDd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_IDd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_Desd;
     }
 }

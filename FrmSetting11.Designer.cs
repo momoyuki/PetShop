@@ -571,7 +571,7 @@
             this.lb_count.Name = "lb_count";
             this.lb_count.Size = new System.Drawing.Size(24, 18);
             this.lb_count.TabIndex = 19;
-            this.lb_count.Text = "xx";
+            this.lb_count.Text = "16";
             // 
             // bt_ReSetMedi
             // 
@@ -1073,7 +1073,7 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
-            // FrmMM11
+            // FrmSetting11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1082,7 +1082,8 @@
             this.Controls.Add(this.tabControlServiceMedi);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM11";
+            this.Name = "FrmSetting11";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ตั้งค่า บริการ ยา";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM11_Load);

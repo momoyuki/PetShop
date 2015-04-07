@@ -622,7 +622,7 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
-            // FrmMM15
+            // FrmSetting16
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -630,7 +630,8 @@
             this.Controls.Add(this.tabControlEmployee);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM15";
+            this.Name = "FrmSetting16";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ตั้งค่า พนักงาน";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM14_Load);

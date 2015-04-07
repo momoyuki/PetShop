@@ -47,8 +47,6 @@
             this.บนทกรายจายToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.รายงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ใบเสรจToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ใบเสรจบรการToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ขายสนคาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.xออกจากโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -199,31 +197,15 @@
             // 
             // ใบเสรจToolStripMenuItem
             // 
-            this.ใบเสรจToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ใบเสรจบรการToolStripMenuItem,
-            this.ขายสนคาToolStripMenuItem});
             this.ใบเสรจToolStripMenuItem.Name = "ใบเสรจToolStripMenuItem";
-            this.ใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.ใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ใบเสรจToolStripMenuItem.Text = "&1.พิมพ์ใบเสร็จ";
-            // 
-            // ใบเสรจบรการToolStripMenuItem
-            // 
-            this.ใบเสรจบรการToolStripMenuItem.Name = "ใบเสรจบรการToolStripMenuItem";
-            this.ใบเสรจบรการToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.ใบเสรจบรการToolStripMenuItem.Text = "&1.ตรวจรักษา บริการ";
-            this.ใบเสรจบรการToolStripMenuItem.Click += new System.EventHandler(this.ใบเสรจบรการToolStripMenuItem_Click);
-            // 
-            // ขายสนคาToolStripMenuItem
-            // 
-            this.ขายสนคาToolStripMenuItem.Name = "ขายสนคาToolStripMenuItem";
-            this.ขายสนคาToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.ขายสนคาToolStripMenuItem.Text = "&2.ขายสินค้า";
-            this.ขายสนคาToolStripMenuItem.Click += new System.EventHandler(this.ขายสนคาToolStripMenuItem_Click);
+            this.ใบเสรจToolStripMenuItem.Click += new System.EventHandler(this.ใบเสรจToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // xออกจากโปรแกรมToolStripMenuItem
             // 
@@ -243,6 +225,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ระบบติดตามการรักษาสัตว์ กรณีศึกษา โรงพยาบาลสัตว์น่านปิยะมิตร";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -273,8 +256,6 @@
         private System.Windows.Forms.ToolStripMenuItem ตดตามการรกษาToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem รายงานToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ใบเสรจToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ใบเสรจบรการToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ขายสนคาToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem xออกจากโปรแกรมToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem รายจายToolStripMenuItem;

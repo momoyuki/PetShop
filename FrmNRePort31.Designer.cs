@@ -494,7 +494,7 @@
             this.pictureBox1.TabIndex = 142;
             this.pictureBox1.TabStop = false;
             // 
-            // FrmMM31
+            // FrmNRePort31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -524,7 +524,8 @@
             this.Controls.Add(this.lb_Bill);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM31";
+            this.Name = "FrmNRePort31";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ใบเสร็จ ตรวจรักษา บริการ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM341_Load);

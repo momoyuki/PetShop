@@ -200,21 +200,24 @@ namespace Petshop
     
         private TextBox _TextBox = new TextBox();
    
-
-        private void ใบเสรจบรการToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void ขายสนคาToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-    
-
         private void xออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ใบเสรจToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmRePort31))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmRePort31 iFrmRePort31 = new FrmRePort31();
+            iFrmRePort31.MdiParent = this;
+            iFrmRePort31.Show();
         }
 
 

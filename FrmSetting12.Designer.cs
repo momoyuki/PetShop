@@ -615,7 +615,7 @@
             this.lb_count.TabIndex = 30;
             this.lb_count.Text = "xx";
             // 
-            // FrmMM12
+            // FrmSetting12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -641,7 +641,8 @@
             this.Controls.Add(this.txb_ProductName);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmMM12";
+            this.Name = "FrmSetting12";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ตั้งค่า สินค้า";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMM12_Load);

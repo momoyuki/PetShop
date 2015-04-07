@@ -58,7 +58,6 @@ namespace Petshop
                 epCheck.SetError(txb_UnitName, "กรุณากรอกหน่วย");
                 txb_UnitName.Focus();
             }
-           
         }
 
         private void clearTxb()
@@ -85,7 +84,6 @@ namespace Petshop
                  txb_UnitName.Focus();
             } else if((txb_UnitID.Text == null)||(txb_UnitID.Text == string.Empty)){
                 epCheck.SetError(txb_UnitID,"คุณยังไม่ได้เลือกหน่วยที่จะแก้ไข");
-                txb_UnitID.Focus();
             }
             else
             {
@@ -163,7 +161,7 @@ namespace Petshop
             else
             {
                 epCheck.SetError(txb_UnitID, "กรุณาเลือกหน่วยที่ต้องการลบ");
-                txb_UnitID.Focus();
+             
             }
         }
 
