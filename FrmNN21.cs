@@ -47,17 +47,17 @@ namespace Petshop
             string isqlCompany = "SELECT * FROM `tb_company`";
             idtCompany = iConnect.SelectByCommand(isqlCompany);
 
-            if ((idtCompany.Rows.Count > 0) && (idtCompany != null))
+            if (idtCompany.Rows.Count > 0)
             {
                 System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
                 System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
                 System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
                 lbYear.Text = DateTime.Now.ToString("yy");
-                lbCompanyID.Text = idtCompany.Rows[0]["Company_ID"].ToString();
+                lbCompanyID.Text = idtCompany.Rows[0]["CoService"].ToString();
             }
             else
             {
-                lbCompanyID.Text = "01";
+                lbCompanyID.Text = "99";
             }
         }
 
@@ -229,6 +229,7 @@ namespace Petshop
 
         private void AddHealRecord()
         {
+            epCheck.Clear();
             Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
             //Regex Regint = new Regex(@"^\d{1,3}$");
             Regex Regdecimal = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
@@ -318,38 +319,40 @@ namespace Petshop
         }
         private void AddServiceRecord()
         {
-            string ilbHealRecordID = lb_HealRecordID.Text.Trim();
-            string icbServiceID = cb_Service.SelectedValue.ToString();
-            string icbService = cb_Service.Text.Trim();
-            string ilbPrice = lb_Price.Text.Trim();
-
-            if ((ilbHealRecordID != null) && (ilbHealRecordID != ""))
+            if ((cb_Service.SelectedValue != null) && (cb_Service.SelectedValue != string.Empty))
             {
-                DataTable idtCheckServiceRecord;
-                string isqlCheckServiceRecord = "SELECT * FROM tb_servicerecord where HealRecord_ID = '" + ilbHealRecordID + "' AND Service_ID ='" + icbServiceID + "'";
-                idtCheckServiceRecord = iConnect.SelectByCommand(isqlCheckServiceRecord);
-                if ((idtCheckServiceRecord != null) && (idtCheckServiceRecord.Rows.Count > 0))
+                string ilbHealRecordID = lb_HealRecordID.Text.Trim();
+                string icbServiceID = cb_Service.SelectedValue.ToString();
+                string icbService = cb_Service.Text.Trim();
+                string ilbPrice = lb_Price.Text.Trim();
+
+                if ((ilbHealRecordID != null) && (ilbHealRecordID != ""))
                 {
-                    MessageBox.Show("ได้เพิ่ม " + icbService + " แล้ว");
+                    DataTable idtCheckServiceRecord;
+                    string isqlCheckServiceRecord = "SELECT * FROM tb_servicerecord where HealRecord_ID = '" + ilbHealRecordID + "' AND Service_ID ='" + icbServiceID + "'";
+                    idtCheckServiceRecord = iConnect.SelectByCommand(isqlCheckServiceRecord);
+                    if ((idtCheckServiceRecord != null) && (idtCheckServiceRecord.Rows.Count > 0))
+                    {
+                        MessageBox.Show("ได้เพิ่ม " + icbService + " แล้ว");
+                    }
+                    else
+                    {
+                        DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + icbService + " มั๊ย?", "กำลังเพิ่มข้อมูล..", MessageBoxButtons.YesNo);
+                        if (iConfirmResult == DialogResult.Yes)
+                        {
+                            string isqlServiceRecord = "INSERT INTO `tb_servicerecord` (`HealRecord_ID`, `Service_ID`, `Service_Amt`) VALUES ('" + ilbHealRecordID + "', '" + icbServiceID + "', '" + ilbPrice + "')";
+                            iConnect.Insert(isqlServiceRecord);
+                        }
+                    }
                 }
                 else
                 {
-                    DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + icbService + " มั๊ย?", "กำลังเพิ่มข้อมูล..", MessageBoxButtons.YesNo);
-                    if (iConfirmResult == DialogResult.Yes)
-                    {
-                        string isqlServiceRecord = "INSERT INTO `tb_servicerecord` (`HealRecord_ID`, `Service_ID`, `Service_Amt`) VALUES ('" + ilbHealRecordID + "', '" + icbServiceID + "', '" + ilbPrice + "')";
-                        iConnect.Insert(isqlServiceRecord);
-
-                    }
+                    AddHealRecord();
                 }
+                loadHealRecord();
+                loadServiceRecord();
+                loadMediRecord();
             }
-            else
-            {
-                AddHealRecord();
-            }
-            loadHealRecord();
-            loadServiceRecord();
-            loadMediRecord();
         }
 
 
@@ -480,6 +483,7 @@ namespace Petshop
 
         private void bt_PrintDate_Click(object sender, EventArgs e)
         {
+            AddHealRecord();
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
                 if (form.GetType() == typeof(FrmRecorD22))

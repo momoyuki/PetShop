@@ -49,6 +49,7 @@
             this.ใบเสรจToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.xออกจากโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,14 +199,14 @@
             // ใบเสรจToolStripMenuItem
             // 
             this.ใบเสรจToolStripMenuItem.Name = "ใบเสรจToolStripMenuItem";
-            this.ใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.ใบเสรจToolStripMenuItem.Text = "&1.พิมพ์ใบเสร็จ";
             this.ใบเสรจToolStripMenuItem.Click += new System.EventHandler(this.ใบเสรจToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(139, 6);
             // 
             // xออกจากโปรแกรมToolStripMenuItem
             // 
@@ -214,11 +215,20 @@
             this.xออกจากโปรแกรมToolStripMenuItem.Text = "&X. ออกจากโปรแกรม";
             this.xออกจากโปรแกรมToolStripMenuItem.Click += new System.EventHandler(this.xออกจากโปรแกรมToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 708);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.IsMdiContainer = true;
@@ -260,6 +270,7 @@
         private System.Windows.Forms.ToolStripMenuItem xออกจากโปรแกรมToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem รายจายToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem บนทกรายจายToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 

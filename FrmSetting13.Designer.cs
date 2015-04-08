@@ -49,7 +49,7 @@
             this.dGV_outlay = new System.Windows.Forms.DataGridView();
             this.ccoutlay_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccoutlay_detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccincome_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlay_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_outlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
@@ -87,7 +87,7 @@
             this.txb_Searchoutlay.Location = new System.Drawing.Point(586, 182);
             this.txb_Searchoutlay.Name = "txb_Searchoutlay";
             this.txb_Searchoutlay.Size = new System.Drawing.Size(262, 26);
-            this.txb_Searchoutlay.TabIndex = 36;
+            this.txb_Searchoutlay.TabIndex = 6;
             // 
             // bt_Searchoutlay
             // 
@@ -95,7 +95,7 @@
             this.bt_Searchoutlay.Location = new System.Drawing.Point(854, 178);
             this.bt_Searchoutlay.Name = "bt_Searchoutlay";
             this.bt_Searchoutlay.Size = new System.Drawing.Size(101, 32);
-            this.bt_Searchoutlay.TabIndex = 37;
+            this.bt_Searchoutlay.TabIndex = 7;
             this.bt_Searchoutlay.Text = "ค้นหา";
             this.bt_Searchoutlay.UseVisualStyleBackColor = true;
             // 
@@ -107,10 +107,10 @@
             this.bt_Resetoutlay.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Resetoutlay.Name = "bt_Resetoutlay";
             this.bt_Resetoutlay.Size = new System.Drawing.Size(70, 32);
-            this.bt_Resetoutlay.TabIndex = 39;
+            this.bt_Resetoutlay.TabIndex = 8;
             this.bt_Resetoutlay.Text = "เริ่มใหม่";
             this.bt_Resetoutlay.UseVisualStyleBackColor = true;
-            this.bt_Resetoutlay.Click += new System.EventHandler(this.bt_Resetincome_Click);
+            this.bt_Resetoutlay.Click += new System.EventHandler(this.bt_Resetoutlay_Click);
             // 
             // bt_Deloutlay
             // 
@@ -121,10 +121,10 @@
             this.bt_Deloutlay.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Deloutlay.Name = "bt_Deloutlay";
             this.bt_Deloutlay.Size = new System.Drawing.Size(70, 32);
-            this.bt_Deloutlay.TabIndex = 35;
+            this.bt_Deloutlay.TabIndex = 5;
             this.bt_Deloutlay.Text = "ลบ";
             this.bt_Deloutlay.UseVisualStyleBackColor = true;
-            this.bt_Deloutlay.Click += new System.EventHandler(this.bt_Delincome_Click);
+            this.bt_Deloutlay.Click += new System.EventHandler(this.bt_Deloutlay_Click);
             // 
             // lb_Remarkincomeid
             // 
@@ -147,7 +147,7 @@
             this.Bt_Loadoutlay.Text = "LoadService";
             this.Bt_Loadoutlay.UseVisualStyleBackColor = true;
             this.Bt_Loadoutlay.Visible = false;
-            this.Bt_Loadoutlay.Click += new System.EventHandler(this.Bt_Loadincome_Click);
+            this.Bt_Loadoutlay.Click += new System.EventHandler(this.Bt_Loadoutlay_Click);
             // 
             // bt_Editoutlay
             // 
@@ -158,10 +158,10 @@
             this.bt_Editoutlay.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Editoutlay.Name = "bt_Editoutlay";
             this.bt_Editoutlay.Size = new System.Drawing.Size(70, 32);
-            this.bt_Editoutlay.TabIndex = 34;
+            this.bt_Editoutlay.TabIndex = 4;
             this.bt_Editoutlay.Text = "แก้ไข";
             this.bt_Editoutlay.UseVisualStyleBackColor = true;
-            this.bt_Editoutlay.Click += new System.EventHandler(this.bt_Editincome_Click);
+            this.bt_Editoutlay.Click += new System.EventHandler(this.bt_Editoutlay_Click);
             // 
             // bt_Addoutlay
             // 
@@ -171,10 +171,10 @@
             this.bt_Addoutlay.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Addoutlay.Name = "bt_Addoutlay";
             this.bt_Addoutlay.Size = new System.Drawing.Size(70, 32);
-            this.bt_Addoutlay.TabIndex = 33;
+            this.bt_Addoutlay.TabIndex = 3;
             this.bt_Addoutlay.Text = "เพิ่ม";
             this.bt_Addoutlay.UseVisualStyleBackColor = true;
-            this.bt_Addoutlay.Click += new System.EventHandler(this.bt_Addincome_Click);
+            this.bt_Addoutlay.Click += new System.EventHandler(this.bt_Addoutlay_Click);
             // 
             // txb_outlayRemark
             // 
@@ -184,7 +184,7 @@
             this.txb_outlayRemark.Multiline = true;
             this.txb_outlayRemark.Name = "txb_outlayRemark";
             this.txb_outlayRemark.Size = new System.Drawing.Size(289, 76);
-            this.txb_outlayRemark.TabIndex = 31;
+            this.txb_outlayRemark.TabIndex = 2;
             // 
             // lb_Remarkoutlay
             // 
@@ -203,7 +203,7 @@
             this.txb_outlayDetail.MaxLength = 100;
             this.txb_outlayDetail.Name = "txb_outlayDetail";
             this.txb_outlayDetail.Size = new System.Drawing.Size(289, 26);
-            this.txb_outlayDetail.TabIndex = 30;
+            this.txb_outlayDetail.TabIndex = 1;
             // 
             // lb_outlay
             // 
@@ -223,8 +223,8 @@
             this.txb_outlayID.MaxLength = 16;
             this.txb_outlayID.Name = "txb_outlayID";
             this.txb_outlayID.Size = new System.Drawing.Size(140, 26);
-            this.txb_outlayID.TabIndex = 29;
-            this.txb_outlayID.TextChanged += new System.EventHandler(this.txb_incomeID_TextChanged);
+            this.txb_outlayID.TabIndex = 0;
+            this.txb_outlayID.TextChanged += new System.EventHandler(this.txb_outlayID_TextChanged);
             // 
             // lb_incomeID
             // 
@@ -245,7 +245,7 @@
             this.dGV_outlay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccoutlay_ID,
             this.ccoutlay_detail,
-            this.ccincome_Remark});
+            this.ccoutlay_Remark});
             this.dGV_outlay.Location = new System.Drawing.Point(13, 217);
             this.dGV_outlay.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_outlay.MultiSelect = false;
@@ -254,32 +254,32 @@
             this.dGV_outlay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_outlay.Size = new System.Drawing.Size(982, 442);
             this.dGV_outlay.TabIndex = 43;
-            this.dGV_outlay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_income_CellClick);
+            this.dGV_outlay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_outlay_CellClick);
             // 
             // ccoutlay_ID
             // 
-            this.ccoutlay_ID.DataPropertyName = "income_ID";
+            this.ccoutlay_ID.DataPropertyName = "outlay_ID";
             this.ccoutlay_ID.HeaderText = "รหัส";
             this.ccoutlay_ID.Name = "ccoutlay_ID";
             this.ccoutlay_ID.ReadOnly = true;
             // 
             // ccoutlay_detail
             // 
-            this.ccoutlay_detail.DataPropertyName = "income_detail";
+            this.ccoutlay_detail.DataPropertyName = "outlay_detail";
             this.ccoutlay_detail.FillWeight = 240F;
             this.ccoutlay_detail.HeaderText = "รายละเอียด";
             this.ccoutlay_detail.Name = "ccoutlay_detail";
             this.ccoutlay_detail.ReadOnly = true;
             this.ccoutlay_detail.Width = 240;
             // 
-            // ccincome_Remark
+            // ccoutlay_Remark
             // 
-            this.ccincome_Remark.DataPropertyName = "income_Remark";
-            this.ccincome_Remark.FillWeight = 250F;
-            this.ccincome_Remark.HeaderText = "หมายเหตุ";
-            this.ccincome_Remark.Name = "ccincome_Remark";
-            this.ccincome_Remark.ReadOnly = true;
-            this.ccincome_Remark.Width = 250;
+            this.ccoutlay_Remark.DataPropertyName = "outlay_Remark";
+            this.ccoutlay_Remark.FillWeight = 250F;
+            this.ccoutlay_Remark.HeaderText = "หมายเหตุ";
+            this.ccoutlay_Remark.Name = "ccoutlay_Remark";
+            this.ccoutlay_Remark.ReadOnly = true;
+            this.ccoutlay_Remark.Width = 250;
             // 
             // epCheck
             // 
@@ -345,6 +345,6 @@
         private System.Windows.Forms.ErrorProvider epCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlay_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlay_detail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccincome_Remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlay_Remark;
     }
 }

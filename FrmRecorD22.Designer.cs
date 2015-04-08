@@ -45,7 +45,7 @@
             this.bt_Search = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tP_All = new System.Windows.Forms.TabPage();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rBt_Today = new System.Windows.Forms.RadioButton();
             this.bt_contract = new System.Windows.Forms.Button();
             this.rBt_contracted = new System.Windows.Forms.RadioButton();
             this.bt_contracted = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@
             this.lb_HealDateID = new System.Windows.Forms.Label();
             this.lb_PetID = new System.Windows.Forms.Label();
             this.lb_HealRecordID = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.bt_HealDateDel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.CheckBox_Contract = new System.Windows.Forms.CheckBox();
             this.bt_PrintBill = new System.Windows.Forms.Button();
@@ -265,7 +265,7 @@
             // 
             // tP_All
             // 
-            this.tP_All.Controls.Add(this.radioButton1);
+            this.tP_All.Controls.Add(this.rBt_Today);
             this.tP_All.Controls.Add(this.bt_contract);
             this.tP_All.Controls.Add(this.rBt_contracted);
             this.tP_All.Controls.Add(this.bt_contracted);
@@ -283,17 +283,18 @@
             this.tP_All.Text = "ทั้งหมด";
             this.tP_All.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rBt_Today
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(255, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(51, 22);
-            this.radioButton1.TabIndex = 29;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "วันนี้";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rBt_Today.AutoSize = true;
+            this.rBt_Today.Checked = true;
+            this.rBt_Today.Location = new System.Drawing.Point(255, 12);
+            this.rBt_Today.Name = "rBt_Today";
+            this.rBt_Today.Size = new System.Drawing.Size(51, 22);
+            this.rBt_Today.TabIndex = 29;
+            this.rBt_Today.TabStop = true;
+            this.rBt_Today.Text = "วันนี้";
+            this.rBt_Today.UseVisualStyleBackColor = true;
+            this.rBt_Today.CheckedChanged += new System.EventHandler(this.rBt_Today_CheckedChanged);
             // 
             // bt_contract
             // 
@@ -615,6 +616,7 @@
             this.lb_HealDateID.Name = "lb_HealDateID";
             this.lb_HealDateID.Size = new System.Drawing.Size(0, 18);
             this.lb_HealDateID.TabIndex = 25;
+            this.lb_HealDateID.TextChanged += new System.EventHandler(this.lb_HealDateID_TextChanged);
             // 
             // lb_PetID
             // 
@@ -634,17 +636,17 @@
             this.lb_HealRecordID.TabIndex = 27;
             this.lb_HealRecordID.TextChanged += new System.EventHandler(this.lb_HealRecordID_TextChanged);
             // 
-            // button8
+            // bt_HealDateDel
             // 
-            this.button8.Enabled = false;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(743, 186);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(97, 32);
-            this.button8.TabIndex = 29;
-            this.button8.Text = "ลบ";
-            this.button8.UseVisualStyleBackColor = true;
+            this.bt_HealDateDel.Enabled = false;
+            this.bt_HealDateDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_HealDateDel.Location = new System.Drawing.Point(743, 186);
+            this.bt_HealDateDel.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_HealDateDel.Name = "bt_HealDateDel";
+            this.bt_HealDateDel.Size = new System.Drawing.Size(97, 32);
+            this.bt_HealDateDel.TabIndex = 29;
+            this.bt_HealDateDel.Text = "ลบ";
+            this.bt_HealDateDel.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -687,7 +689,7 @@
             this.Controls.Add(this.bt_PrintBill);
             this.Controls.Add(this.CheckBox_Contract);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.bt_HealDateDel);
             this.Controls.Add(this.lb_HealRecordID);
             this.Controls.Add(this.lb_PetID);
             this.Controls.Add(this.lb_HealDateID);
@@ -754,7 +756,7 @@
         public System.Windows.Forms.Label lb_HealRecordID;
         private System.Windows.Forms.Button bt_contract;
         private System.Windows.Forms.Button bt_contracted;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button bt_HealDateDel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage tP_Detail;
         private System.Windows.Forms.DataGridView dGV_HealRecord;
@@ -782,6 +784,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remind;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Stats;
         private System.Windows.Forms.Button bt_PrintBill;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rBt_Today;
     }
 }

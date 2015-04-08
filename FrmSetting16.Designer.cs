@@ -66,8 +66,6 @@
             this.ccEm_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpPosition = new System.Windows.Forms.TabPage();
             this.dGV_PS = new System.Windows.Forms.DataGridView();
-            this.ccEP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxPosition = new System.Windows.Forms.GroupBox();
             this.bt_DelPosition = new System.Windows.Forms.Button();
             this.bt_LoadPS = new System.Windows.Forms.Button();
@@ -78,6 +76,8 @@
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ccEP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -495,21 +495,6 @@
             this.dGV_PS.TabIndex = 1;
             this.dGV_PS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_PS_CellClick);
             // 
-            // ccEP_ID
-            // 
-            this.ccEP_ID.DataPropertyName = "EmPosition_ID";
-            this.ccEP_ID.HeaderText = "รหัสตำแหน่ง";
-            this.ccEP_ID.Name = "ccEP_ID";
-            this.ccEP_ID.ReadOnly = true;
-            this.ccEP_ID.Width = 120;
-            // 
-            // ccEm_Position
-            // 
-            this.ccEm_Position.DataPropertyName = "Em_Position";
-            this.ccEm_Position.HeaderText = "ตำแหน่ง";
-            this.ccEm_Position.Name = "ccEm_Position";
-            this.ccEm_Position.ReadOnly = true;
-            // 
             // gBoxPosition
             // 
             this.gBoxPosition.Controls.Add(this.bt_DelPosition);
@@ -622,6 +607,23 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
+            // ccEP_ID
+            // 
+            this.ccEP_ID.DataPropertyName = "EmPosition_ID";
+            this.ccEP_ID.HeaderText = "รหัสตำแหน่ง";
+            this.ccEP_ID.Name = "ccEP_ID";
+            this.ccEP_ID.ReadOnly = true;
+            this.ccEP_ID.Width = 120;
+            // 
+            // ccEm_Position
+            // 
+            this.ccEm_Position.DataPropertyName = "Em_Position";
+            this.ccEm_Position.FillWeight = 240F;
+            this.ccEm_Position.HeaderText = "ตำแหน่ง";
+            this.ccEm_Position.Name = "ccEm_Position";
+            this.ccEm_Position.ReadOnly = true;
+            this.ccEm_Position.Width = 240;
+            // 
             // FrmSetting16
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -678,8 +680,6 @@
         private System.Windows.Forms.Label lb_PositionID;
         private System.Windows.Forms.TextBox txb_EmpositionID;
         private System.Windows.Forms.Label lb_EmPosition;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccEP_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Position;
         private System.Windows.Forms.Button bt_DelPosition;
         private System.Windows.Forms.ErrorProvider epCheck;
         private System.Windows.Forms.RadioButton rB_NotWork;
@@ -700,6 +700,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEmDOB;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Addr;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Tel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccEP_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Position;
 
 
     }

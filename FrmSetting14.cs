@@ -161,7 +161,6 @@ namespace Petshop
             else
             {
                 epCheck.SetError(txb_UnitID, "กรุณาเลือกหน่วยที่ต้องการลบ");
-             
             }
         }
 

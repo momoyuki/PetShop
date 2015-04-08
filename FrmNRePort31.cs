@@ -374,6 +374,11 @@ namespace Petshop
             }
         }
 
+        private void TabControlServiceMediBill_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
 
     }
 }

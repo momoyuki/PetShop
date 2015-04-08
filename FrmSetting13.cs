@@ -18,12 +18,16 @@ namespace Petshop
             iConnect = new MySQLDBConnect(); //กำหนดค่า iconnect เป็น Class MySQLDBConnect
         }
 
-        private void bt_Addincome_Click(object sender, EventArgs e)
+        private void bt_Addoutlay_Click(object sender, EventArgs e)
         {
-            Addincome();
+            Addoutlay();
+        }
+        private void bt_Editoutlay_Click(object sender, EventArgs e)
+        {
+            Editoutlay();
         }
 
-        private void Addincome()
+        private void Addoutlay()
         {
             epCheck.Clear();
             string itxboutlayID = txb_outlayID.Text.Trim();
@@ -53,12 +57,6 @@ namespace Petshop
             txb_outlayDetail.Clear();
             txb_outlayRemark.Clear();
         }
-
-        private void Bt_Loadincome_Click(object sender, EventArgs e)
-        {
-            loadData();
-        }
-
         private void loadData()
         {
             DataTable idtoutlay;
@@ -73,31 +71,12 @@ namespace Petshop
             loadData();
         }
 
-        private void txb_incomeID_TextChanged(object sender, EventArgs e)
-        {
-            if ((txb_outlayID.Text != null) && (txb_outlayID.Text != string.Empty)) 
-            {
-                bt_Editoutlay.Enabled = true;
-                bt_Deloutlay.Enabled = true;
-            }
-            else
-            {
-                bt_Editoutlay.Enabled = false;
-                bt_Deloutlay.Enabled = false;
-            }
-        }
-
-        private void bt_Resetincome_Click(object sender, EventArgs e)
+        private void bt_Resetoutlay_Click(object sender, EventArgs e)
         {
             clearTxb();
         }
 
-        private void bt_Editincome_Click(object sender, EventArgs e)
-        {
-            Editincome();
-        }
-
-        private void Editincome()
+        private void Editoutlay()
         {
             epCheck.Clear();
             string itxboutlayID = txb_outlayID.Text.Trim();
@@ -125,7 +104,26 @@ namespace Petshop
             }
         }
 
-        private void bt_Delincome_Click(object sender, EventArgs e)
+        private void txb_outlayID_TextChanged(object sender, EventArgs e)
+        {
+            if ((txb_outlayID.Text != null) && (txb_outlayID.Text != string.Empty))
+            {
+                bt_Editoutlay.Enabled = true;
+                bt_Deloutlay.Enabled = true;
+            }
+            else
+            {
+                bt_Editoutlay.Enabled = false;
+                bt_Deloutlay.Enabled = false;
+            }
+        }
+
+        private void bt_Deloutlay_Click(object sender, EventArgs e)
+        {
+            Deloulay();
+        }
+
+        private void Deloulay()
         {
             epCheck.Clear();
             string itxboutlayID = txb_outlayID.Text.Trim();
@@ -136,15 +134,15 @@ namespace Petshop
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxboutlayDetail + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    DataTable idtoutlay;
-                    string isqloutlay = "SELECT * FROM petshop.tb_outlaydetail where outlay_ID = '" + itxboutlayID + "'";
-                    idtoutlay = iConnect.SelectByCommand(isqloutlay);
-                      if (idtoutlay.Rows.Count == 0)
+                    DataTable idtoutlayDetail;
+                    string isqloutlayDetail = "SELECT * FROM petshop.tb_outlaydetail where outlay_ID = '"+itxboutlayID+"'";
+                    idtoutlayDetail = iConnect.SelectByCommand(isqloutlayDetail);
+                    if (idtoutlayDetail.Rows.Count == 0)
                     {
-                        string isqlDelUnit = "DELETE FROM `petshop`.`tb_outlay` WHERE `outlay_ID`='" + itxboutlayID + "'";
-                        iConnect.Insert(isqlDelUnit);
+                        string isqlDeloutlay = "DELETE FROM `petshop`.`tb_outlay` WHERE `outlay_ID`='"+itxboutlayID+"'";
+                        iConnect.Insert(isqlDeloutlay);
                         clearTxb();
-                        MessageBox.Show("ทำการลบรายการออกแล้ว");
+                        MessageBox.Show("ทำการลบยาออกแล้ว");
                     }
                     else
                     {
@@ -159,7 +157,12 @@ namespace Petshop
             }
         }
 
-        private void dGV_income_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Bt_Loadoutlay_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void dGV_outlay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -169,5 +172,11 @@ namespace Petshop
                 txb_outlayRemark.Text = row.Cells["ccoutlay_Remark"].Value.ToString();
             }
         }
+
+
+
+
+
+   
     }
 }

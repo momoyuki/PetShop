@@ -171,7 +171,7 @@
             this.dGV_Service.ReadOnly = true;
             this.dGV_Service.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Service.Size = new System.Drawing.Size(958, 343);
-            this.dGV_Service.TabIndex = 1;
+            this.dGV_Service.TabIndex = 0;
             this.dGV_Service.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Service_CellClick);
             // 
             // coService_ID
@@ -278,7 +278,7 @@
             this.txb_SearchService.Location = new System.Drawing.Point(582, 209);
             this.txb_SearchService.Name = "txb_SearchService";
             this.txb_SearchService.Size = new System.Drawing.Size(262, 26);
-            this.txb_SearchService.TabIndex = 9;
+            this.txb_SearchService.TabIndex = 8;
             this.txb_SearchService.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchService_KeyDown);
             // 
             // bt_SearchService
@@ -287,7 +287,7 @@
             this.bt_SearchService.Location = new System.Drawing.Point(850, 205);
             this.bt_SearchService.Name = "bt_SearchService";
             this.bt_SearchService.Size = new System.Drawing.Size(101, 32);
-            this.bt_SearchService.TabIndex = 10;
+            this.bt_SearchService.TabIndex = 9;
             this.bt_SearchService.Text = "ค้นหา";
             this.bt_SearchService.UseVisualStyleBackColor = true;
             this.bt_SearchService.Click += new System.EventHandler(this.bt_SearchService_Click);
@@ -314,7 +314,7 @@
             this.bt_DelService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelService.Name = "bt_DelService";
             this.bt_DelService.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelService.TabIndex = 8;
+            this.bt_DelService.TabIndex = 7;
             this.bt_DelService.Text = "ลบ";
             this.bt_DelService.UseVisualStyleBackColor = true;
             this.bt_DelService.Click += new System.EventHandler(this.bt_DelService_Click);
@@ -351,7 +351,7 @@
             this.bt_EditService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditService.Name = "bt_EditService";
             this.bt_EditService.Size = new System.Drawing.Size(70, 32);
-            this.bt_EditService.TabIndex = 7;
+            this.bt_EditService.TabIndex = 6;
             this.bt_EditService.Text = "แก้ไข";
             this.bt_EditService.UseVisualStyleBackColor = true;
             this.bt_EditService.Click += new System.EventHandler(this.bt_EditService_Click);
@@ -364,7 +364,7 @@
             this.bt_AddService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddService.Name = "bt_AddService";
             this.bt_AddService.Size = new System.Drawing.Size(70, 32);
-            this.bt_AddService.TabIndex = 6;
+            this.bt_AddService.TabIndex = 5;
             this.bt_AddService.Text = "เพิ่ม";
             this.bt_AddService.UseVisualStyleBackColor = true;
             this.bt_AddService.Click += new System.EventHandler(this.Bt_AddService_Click);
@@ -380,7 +380,7 @@
             this.gBoxTimeService.Name = "gBoxTimeService";
             this.gBoxTimeService.Padding = new System.Windows.Forms.Padding(4);
             this.gBoxTimeService.Size = new System.Drawing.Size(282, 76);
-            this.gBoxTimeService.TabIndex = 5;
+            this.gBoxTimeService.TabIndex = 4;
             this.gBoxTimeService.TabStop = false;
             this.gBoxTimeService.Text = "ติดตามการรักษา";
             // 
@@ -525,7 +525,7 @@
             this.txb_SearchMedi.Location = new System.Drawing.Point(559, 314);
             this.txb_SearchMedi.Name = "txb_SearchMedi";
             this.txb_SearchMedi.Size = new System.Drawing.Size(262, 26);
-            this.txb_SearchMedi.TabIndex = 5;
+            this.txb_SearchMedi.TabIndex = 0;
             this.txb_SearchMedi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchMedi_KeyDown);
             // 
             // bt_SearchMedi
@@ -534,7 +534,7 @@
             this.bt_SearchMedi.Location = new System.Drawing.Point(827, 310);
             this.bt_SearchMedi.Name = "bt_SearchMedi";
             this.bt_SearchMedi.Size = new System.Drawing.Size(101, 32);
-            this.bt_SearchMedi.TabIndex = 6;
+            this.bt_SearchMedi.TabIndex = 1;
             this.bt_SearchMedi.Text = "ค้นหา";
             this.bt_SearchMedi.UseVisualStyleBackColor = true;
             this.bt_SearchMedi.Click += new System.EventHandler(this.bt_SearchMedi_Click);
@@ -701,7 +701,7 @@
             this.bt_MediRefresh.Location = new System.Drawing.Point(509, 19);
             this.bt_MediRefresh.Name = "bt_MediRefresh";
             this.bt_MediRefresh.Size = new System.Drawing.Size(36, 36);
-            this.bt_MediRefresh.TabIndex = 26;
+            this.bt_MediRefresh.TabIndex = 9;
             this.bt_MediRefresh.UseVisualStyleBackColor = true;
             this.bt_MediRefresh.Click += new System.EventHandler(this.bt_MediRefresh_Click);
             // 
@@ -711,7 +711,7 @@
             this.CheckBox_Stock.Location = new System.Drawing.Point(441, 205);
             this.CheckBox_Stock.Name = "CheckBox_Stock";
             this.CheckBox_Stock.Size = new System.Drawing.Size(104, 22);
-            this.CheckBox_Stock.TabIndex = 7;
+            this.CheckBox_Stock.TabIndex = 8;
             this.CheckBox_Stock.Text = "ตัดคลังสินค้า";
             this.CheckBox_Stock.UseVisualStyleBackColor = true;
             // 
@@ -736,7 +736,7 @@
             this.cb_MediUnit.Margin = new System.Windows.Forms.Padding(4);
             this.cb_MediUnit.Name = "cb_MediUnit";
             this.cb_MediUnit.Size = new System.Drawing.Size(104, 26);
-            this.cb_MediUnit.TabIndex = 2;
+            this.cb_MediUnit.TabIndex = 3;
             this.cb_MediUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_MediUnit_KeyDown);
             // 
             // Bt_LoadMedi
@@ -759,7 +759,7 @@
             this.txb_MediAmt.MaxLength = 4;
             this.txb_MediAmt.Name = "txb_MediAmt";
             this.txb_MediAmt.Size = new System.Drawing.Size(104, 26);
-            this.txb_MediAmt.TabIndex = 3;
+            this.txb_MediAmt.TabIndex = 4;
             this.txb_MediAmt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_MediAmt_KeyDown);
             // 
             // lb_MediAmt
@@ -781,7 +781,7 @@
             this.gBoxMediTrack.Name = "gBoxMediTrack";
             this.gBoxMediTrack.Padding = new System.Windows.Forms.Padding(4);
             this.gBoxMediTrack.Size = new System.Drawing.Size(388, 72);
-            this.gBoxMediTrack.TabIndex = 6;
+            this.gBoxMediTrack.TabIndex = 7;
             this.gBoxMediTrack.TabStop = false;
             this.gBoxMediTrack.Text = "การแจ้งเตือน";
             // 
@@ -811,7 +811,7 @@
             this.dTP_Expired.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Expired.Name = "dTP_Expired";
             this.dTP_Expired.Size = new System.Drawing.Size(189, 26);
-            this.dTP_Expired.TabIndex = 5;
+            this.dTP_Expired.TabIndex = 6;
             // 
             // lb_MediExpired
             // 
@@ -829,7 +829,7 @@
             this.dTP_Product.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Product.Name = "dTP_Product";
             this.dTP_Product.Size = new System.Drawing.Size(189, 26);
-            this.dTP_Product.TabIndex = 4;
+            this.dTP_Product.TabIndex = 5;
             // 
             // lb_MediProduct
             // 

@@ -122,7 +122,7 @@
             this.txb_CoID.MaxLength = 2;
             this.txb_CoID.Name = "txb_CoID";
             this.txb_CoID.Size = new System.Drawing.Size(49, 26);
-            this.txb_CoID.TabIndex = 5;
+            this.txb_CoID.TabIndex = 0;
             this.txb_CoID.Text = "01";
             this.txb_CoID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CoID_KeyDown);
             // 
@@ -133,7 +133,7 @@
             this.txb_Company_Name.MaxLength = 120;
             this.txb_Company_Name.Name = "txb_Company_Name";
             this.txb_Company_Name.Size = new System.Drawing.Size(239, 26);
-            this.txb_Company_Name.TabIndex = 6;
+            this.txb_Company_Name.TabIndex = 0;
             this.txb_Company_Name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Company_Name_KeyDown);
             // 
             // txb_CompanyAddr
@@ -143,8 +143,8 @@
             this.txb_CompanyAddr.MaxLength = 140;
             this.txb_CompanyAddr.Multiline = true;
             this.txb_CompanyAddr.Name = "txb_CompanyAddr";
-            this.txb_CompanyAddr.Size = new System.Drawing.Size(289, 130);
-            this.txb_CompanyAddr.TabIndex = 7;
+            this.txb_CompanyAddr.Size = new System.Drawing.Size(255, 130);
+            this.txb_CompanyAddr.TabIndex = 1;
             this.txb_CompanyAddr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CompanyAddr_KeyDown);
             // 
             // txb_CompanyTel
@@ -153,8 +153,8 @@
             this.txb_CompanyTel.Margin = new System.Windows.Forms.Padding(4);
             this.txb_CompanyTel.MaxLength = 42;
             this.txb_CompanyTel.Name = "txb_CompanyTel";
-            this.txb_CompanyTel.Size = new System.Drawing.Size(245, 26);
-            this.txb_CompanyTel.TabIndex = 8;
+            this.txb_CompanyTel.Size = new System.Drawing.Size(211, 26);
+            this.txb_CompanyTel.TabIndex = 2;
             this.txb_CompanyTel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CompanyTel_KeyDown);
             // 
             // txb_CompanyRemark
@@ -163,8 +163,8 @@
             this.txb_CompanyRemark.Margin = new System.Windows.Forms.Padding(4);
             this.txb_CompanyRemark.MaxLength = 140;
             this.txb_CompanyRemark.Name = "txb_CompanyRemark";
-            this.txb_CompanyRemark.Size = new System.Drawing.Size(239, 26);
-            this.txb_CompanyRemark.TabIndex = 9;
+            this.txb_CompanyRemark.Size = new System.Drawing.Size(205, 26);
+            this.txb_CompanyRemark.TabIndex = 3;
             this.txb_CompanyRemark.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CompanyRemark_KeyDown);
             // 
             // bt_Update
@@ -174,7 +174,7 @@
             this.bt_Update.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Update.Name = "bt_Update";
             this.bt_Update.Size = new System.Drawing.Size(100, 32);
-            this.bt_Update.TabIndex = 16;
+            this.bt_Update.TabIndex = 0;
             this.bt_Update.Text = "บันทึก";
             this.bt_Update.UseVisualStyleBackColor = true;
             this.bt_Update.Click += new System.EventHandler(this.bt_Update_Click);
@@ -186,7 +186,7 @@
             this.txb_CoService.MaxLength = 2;
             this.txb_CoService.Name = "txb_CoService";
             this.txb_CoService.Size = new System.Drawing.Size(49, 26);
-            this.txb_CoService.TabIndex = 19;
+            this.txb_CoService.TabIndex = 3;
             this.txb_CoService.Text = "99";
             this.txb_CoService.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CoService_KeyDown);
             // 
@@ -207,7 +207,7 @@
             this.txb_CoBill.MaxLength = 2;
             this.txb_CoBill.Name = "txb_CoBill";
             this.txb_CoBill.Size = new System.Drawing.Size(49, 26);
-            this.txb_CoBill.TabIndex = 21;
+            this.txb_CoBill.TabIndex = 1;
             this.txb_CoBill.Text = "55";
             this.txb_CoBill.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CoBill_KeyDown);
             // 
@@ -228,8 +228,9 @@
             this.txb_CoSale.MaxLength = 2;
             this.txb_CoSale.Name = "txb_CoSale";
             this.txb_CoSale.Size = new System.Drawing.Size(49, 26);
-            this.txb_CoSale.TabIndex = 23;
+            this.txb_CoSale.TabIndex = 2;
             this.txb_CoSale.Text = "98";
+            this.txb_CoSale.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CoSale_KeyDown);
             // 
             // lb_CoSale
             // 
@@ -251,6 +252,7 @@
             this.bt_LoadCompany.TabIndex = 24;
             this.bt_LoadCompany.Text = "LoadCompany";
             this.bt_LoadCompany.UseVisualStyleBackColor = true;
+            this.bt_LoadCompany.Visible = false;
             this.bt_LoadCompany.Click += new System.EventHandler(this.bt_LoadCompany_Click);
             // 
             // gBoxCoDetail
@@ -318,7 +320,7 @@
             this.bt_UseImage.Location = new System.Drawing.Point(332, 351);
             this.bt_UseImage.Name = "bt_UseImage";
             this.bt_UseImage.Size = new System.Drawing.Size(75, 33);
-            this.bt_UseImage.TabIndex = 35;
+            this.bt_UseImage.TabIndex = 2;
             this.bt_UseImage.Text = "ใช้ภาพนี้";
             this.bt_UseImage.UseVisualStyleBackColor = true;
             this.bt_UseImage.Click += new System.EventHandler(this.bt_UseImage_Click);
@@ -339,7 +341,7 @@
             this.bt_Browse.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Browse.Name = "bt_Browse";
             this.bt_Browse.Size = new System.Drawing.Size(100, 32);
-            this.bt_Browse.TabIndex = 29;
+            this.bt_Browse.TabIndex = 1;
             this.bt_Browse.Text = "เลือก";
             this.bt_Browse.UseVisualStyleBackColor = true;
             this.bt_Browse.Click += new System.EventHandler(this.bt_Browse_Click);
@@ -371,7 +373,7 @@
             this.txb_Image.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Image.Name = "txb_Image";
             this.txb_Image.Size = new System.Drawing.Size(281, 26);
-            this.txb_Image.TabIndex = 31;
+            this.txb_Image.TabIndex = 0;
             // 
             // epCheck
             // 

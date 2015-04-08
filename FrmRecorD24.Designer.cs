@@ -43,13 +43,22 @@
             this.dTP_outlayDate = new System.Windows.Forms.DateTimePicker();
             this.lb_outlayDetail = new System.Windows.Forms.Label();
             this.bt_AddoutlayDetail = new System.Windows.Forms.Button();
+            this.lb_outlayID = new System.Windows.Forms.Label();
+            this.ccoutlayDetail_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccem_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOutlay_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlay_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_outlay)).BeginInit();
             this.SuspendLayout();
             // 
             // cb_outlay
             // 
             this.cb_outlay.FormattingEnabled = true;
-            this.cb_outlay.Location = new System.Drawing.Point(125, 142);
+            this.cb_outlay.Location = new System.Drawing.Point(124, 71);
             this.cb_outlay.Name = "cb_outlay";
             this.cb_outlay.Size = new System.Drawing.Size(408, 26);
             this.cb_outlay.TabIndex = 87;
@@ -57,7 +66,7 @@
             // Lb_ListService
             // 
             this.Lb_ListService.AutoSize = true;
-            this.Lb_ListService.Location = new System.Drawing.Point(66, 147);
+            this.Lb_ListService.Location = new System.Drawing.Point(68, 74);
             this.Lb_ListService.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lb_ListService.Name = "Lb_ListService";
             this.Lb_ListService.Size = new System.Drawing.Size(52, 18);
@@ -69,6 +78,15 @@
             this.dGV_outlay.AllowUserToAddRows = false;
             this.dGV_outlay.AllowUserToDeleteRows = false;
             this.dGV_outlay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_outlay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ccoutlayDetail_ID,
+            this.ccEm_ID,
+            this.ccoutlayDetail_Date,
+            this.ccem_Name,
+            this.ccOutlay_ID,
+            this.ccoutlay_Detail,
+            this.ccoutlayDetail_Amt,
+            this.ccoutlayDetail_Remark});
             this.dGV_outlay.Location = new System.Drawing.Point(13, 184);
             this.dGV_outlay.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_outlay.Name = "dGV_outlay";
@@ -76,18 +94,19 @@
             this.dGV_outlay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_outlay.Size = new System.Drawing.Size(982, 368);
             this.dGV_outlay.TabIndex = 80;
+            this.dGV_outlay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_outlay_CellClick);
             // 
             // bt_DeloutlayDetail
             // 
-            this.bt_DeloutlayDetail.Enabled = false;
             this.bt_DeloutlayDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_DeloutlayDetail.Location = new System.Drawing.Point(803, 136);
+            this.bt_DeloutlayDetail.Location = new System.Drawing.Point(661, 126);
             this.bt_DeloutlayDetail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_DeloutlayDetail.Name = "bt_DeloutlayDetail";
             this.bt_DeloutlayDetail.Size = new System.Drawing.Size(112, 37);
             this.bt_DeloutlayDetail.TabIndex = 156;
             this.bt_DeloutlayDetail.Text = "ลบรายการ";
             this.bt_DeloutlayDetail.UseVisualStyleBackColor = true;
+            this.bt_DeloutlayDetail.Click += new System.EventHandler(this.bt_DeloutlayDetail_Click);
             // 
             // bt_Load
             // 
@@ -104,8 +123,7 @@
             // 
             // txb_outlayAmt
             // 
-            this.txb_outlayAmt.Enabled = false;
-            this.txb_outlayAmt.Location = new System.Drawing.Point(605, 143);
+            this.txb_outlayAmt.Location = new System.Drawing.Point(582, 71);
             this.txb_outlayAmt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_outlayAmt.Name = "txb_outlayAmt";
             this.txb_outlayAmt.Size = new System.Drawing.Size(66, 26);
@@ -115,7 +133,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(561, 147);
+            this.label16.Location = new System.Drawing.Point(538, 75);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(36, 18);
@@ -124,7 +142,7 @@
             // 
             // txb_outlayRemark
             // 
-            this.txb_outlayRemark.Location = new System.Drawing.Point(125, 76);
+            this.txb_outlayRemark.Location = new System.Drawing.Point(124, 105);
             this.txb_outlayRemark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_outlayRemark.Multiline = true;
             this.txb_outlayRemark.Name = "txb_outlayRemark";
@@ -134,7 +152,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(50, 79);
+            this.label13.Location = new System.Drawing.Point(53, 105);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 18);
@@ -190,21 +208,95 @@
             // 
             // bt_AddoutlayDetail
             // 
-            this.bt_AddoutlayDetail.Enabled = false;
             this.bt_AddoutlayDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_AddoutlayDetail.Location = new System.Drawing.Point(683, 136);
+            this.bt_AddoutlayDetail.Location = new System.Drawing.Point(541, 126);
             this.bt_AddoutlayDetail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_AddoutlayDetail.Name = "bt_AddoutlayDetail";
             this.bt_AddoutlayDetail.Size = new System.Drawing.Size(112, 37);
             this.bt_AddoutlayDetail.TabIndex = 142;
             this.bt_AddoutlayDetail.Text = "เพิ่มรายการ";
             this.bt_AddoutlayDetail.UseVisualStyleBackColor = true;
+            this.bt_AddoutlayDetail.Click += new System.EventHandler(this.bt_AddoutlayDetail_Click);
+            // 
+            // lb_outlayID
+            // 
+            this.lb_outlayID.AutoSize = true;
+            this.lb_outlayID.Location = new System.Drawing.Point(127, 13);
+            this.lb_outlayID.Name = "lb_outlayID";
+            this.lb_outlayID.Size = new System.Drawing.Size(0, 18);
+            this.lb_outlayID.TabIndex = 157;
+            // 
+            // ccoutlayDetail_ID
+            // 
+            this.ccoutlayDetail_ID.DataPropertyName = "outlayDetail_ID";
+            this.ccoutlayDetail_ID.HeaderText = "รหัสบันทึกรายจ่าย";
+            this.ccoutlayDetail_ID.Name = "ccoutlayDetail_ID";
+            this.ccoutlayDetail_ID.ReadOnly = true;
+            this.ccoutlayDetail_ID.Visible = false;
+            // 
+            // ccEm_ID
+            // 
+            this.ccEm_ID.DataPropertyName = "Em_ID";
+            this.ccEm_ID.HeaderText = "รหัสพนักงาน";
+            this.ccEm_ID.Name = "ccEm_ID";
+            this.ccEm_ID.ReadOnly = true;
+            this.ccEm_ID.Visible = false;
+            // 
+            // ccoutlayDetail_Date
+            // 
+            this.ccoutlayDetail_Date.DataPropertyName = "outlayDetail_Date";
+            this.ccoutlayDetail_Date.HeaderText = "วันที่บันทึก";
+            this.ccoutlayDetail_Date.Name = "ccoutlayDetail_Date";
+            this.ccoutlayDetail_Date.ReadOnly = true;
+            // 
+            // ccem_Name
+            // 
+            this.ccem_Name.DataPropertyName = "em_Name";
+            this.ccem_Name.FillWeight = 180F;
+            this.ccem_Name.HeaderText = "ผู้บันทึก";
+            this.ccem_Name.Name = "ccem_Name";
+            this.ccem_Name.ReadOnly = true;
+            this.ccem_Name.Width = 180;
+            // 
+            // ccOutlay_ID
+            // 
+            this.ccOutlay_ID.DataPropertyName = "Outlay_ID";
+            this.ccOutlay_ID.HeaderText = "รหัสรายจ่าย";
+            this.ccOutlay_ID.Name = "ccOutlay_ID";
+            this.ccOutlay_ID.ReadOnly = true;
+            this.ccOutlay_ID.Visible = false;
+            // 
+            // ccoutlay_Detail
+            // 
+            this.ccoutlay_Detail.DataPropertyName = "outlay_Detail";
+            this.ccoutlay_Detail.FillWeight = 240F;
+            this.ccoutlay_Detail.HeaderText = "รายการ";
+            this.ccoutlay_Detail.Name = "ccoutlay_Detail";
+            this.ccoutlay_Detail.ReadOnly = true;
+            this.ccoutlay_Detail.Width = 240;
+            // 
+            // ccoutlayDetail_Amt
+            // 
+            this.ccoutlayDetail_Amt.DataPropertyName = "outlayDetail_Amt";
+            this.ccoutlayDetail_Amt.HeaderText = "จำนวน";
+            this.ccoutlayDetail_Amt.Name = "ccoutlayDetail_Amt";
+            this.ccoutlayDetail_Amt.ReadOnly = true;
+            // 
+            // ccoutlayDetail_Remark
+            // 
+            this.ccoutlayDetail_Remark.DataPropertyName = "outlayDetail_Remark";
+            this.ccoutlayDetail_Remark.FillWeight = 200F;
+            this.ccoutlayDetail_Remark.HeaderText = "หมายเหตุ";
+            this.ccoutlayDetail_Remark.Name = "ccoutlayDetail_Remark";
+            this.ccoutlayDetail_Remark.ReadOnly = true;
+            this.ccoutlayDetail_Remark.Width = 200;
             // 
             // FrmRecorD24
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.lb_outlayID);
             this.Controls.Add(this.bt_DeloutlayDetail);
             this.Controls.Add(this.bt_Load);
             this.Controls.Add(this.txb_outlayAmt);
@@ -226,6 +318,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmincomeDetail";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmRecorD24_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_outlay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,5 +342,14 @@
         private System.Windows.Forms.DateTimePicker dTP_outlayDate;
         private System.Windows.Forms.Label lb_outlayDetail;
         private System.Windows.Forms.Button bt_AddoutlayDetail;
+        private System.Windows.Forms.Label lb_outlayID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccem_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccOutlay_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlay_Detail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_Amt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_Remark;
     }
 }

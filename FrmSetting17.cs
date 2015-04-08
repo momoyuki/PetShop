@@ -57,8 +57,8 @@ namespace Petshop
             }
             else if(txb_CompanyAddr.Text == string.Empty)
             {
-                epCheck.SetError(txb_Company_Name, "กรุณาระบุที่อยู่");
-                txb_Company_Name.Focus();
+                epCheck.SetError(txb_CompanyAddr, "กรุณาระบุที่อยู่");
+                txb_CompanyAddr.Focus();
             }
             else if(txb_CompanyTel.Text == string.Empty)
             {
@@ -210,7 +210,13 @@ namespace Petshop
                 txb_CoSale.Focus();
             }
         }
-
+        private void txb_CoSale_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_CoService.Focus();
+            }
+        }
         private void txb_CoService_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -218,6 +224,8 @@ namespace Petshop
                 bt_Update.Select();
             }
         }
+
+       
 
    
 

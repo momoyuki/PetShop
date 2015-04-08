@@ -24,7 +24,6 @@ namespace Petshop
         }
         private void FrmMM23_Load(object sender, EventArgs e) //เมื่อมีการเปิดหน้าตานี้ครั้งแรก จะทำการโหลดข้อมูลทั้งหมด
         {
-            
             loadData();
         }
         private void loadData()
@@ -43,7 +42,7 @@ namespace Petshop
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
             }
-            if (rBt_contract.Checked == true)
+            else if (rBt_contract.Checked == true)
             {
                 string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "+
                     "FROM tb_healdate,tb_petprofile where tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 order by HealDate_Status,HealDate_Day";
@@ -52,7 +51,7 @@ namespace Petshop
                 dGV_HealDate.Refresh();
 
             }
-            if (rBt_contracted.Checked == true)
+            else if (rBt_contracted.Checked == true)
             {
                 string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "+
                     "FROM tb_healdate,tb_petprofile where tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 1 order by HealDate_Status,HealDate_Day";
@@ -60,10 +59,25 @@ namespace Petshop
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
             }
+            else if (rBt_Today.Checked == true)
+            {
+               
+            }
         }
         private void lb_HealRecordID_TextChanged(object sender, EventArgs e)
         {
             string lbHealRecordID = lb_HealRecordID.Text.Trim();
+
+            if ((lb_PetID.Text != null) && (lb_PetID.Text != string.Empty))
+            {
+                bt_AddHealDate.Enabled = true;
+                bt_PrintBill.Enabled = true;
+            }
+            else
+            {
+                bt_AddHealDate.Enabled = false;
+                bt_PrintBill.Enabled = false;
+            }
 
             if ((lbHealRecordID != null)&&(lbHealRecordID !=""))
             {
@@ -237,36 +251,10 @@ namespace Petshop
         {
             loadHealDate();
         }
-
-        private void lb_PetID_TextChanged(object sender, EventArgs e)
+        private void rBt_Today_CheckedChanged(object sender, EventArgs e)
         {
-            if ((lb_PetID.Text != null) && (lb_PetID.Text != ""))
-            {
-                cb_Service.Enabled = true;
-                dTP_HealDate.Enabled = true;
-                txb_Remind.Enabled = true;
-                Txb_Remark.Enabled = true;
-                CheckBox_Contract.Enabled = true;
-                bt_AddHealDate.Enabled = true;
-                bt_HealDateEdit.Enabled = true;
-                bt_PrintBill.Enabled = true;
-                bt_PrintDate.Enabled = true;
-            }
-            else
-            {
-                cb_Service.Enabled = false;
-                dTP_HealDate.Enabled = false;
-                txb_Remind.Enabled = false;
-                Txb_Remark.Enabled = false;
-                CheckBox_Contract.Enabled = false;
-                bt_AddHealDate.Enabled = false;
-                bt_HealDateEdit.Enabled = false;
-                bt_PrintBill.Enabled = false;
-                bt_PrintDate.Enabled = false;
-            }
+            loadHealDate();
         }
-
-
         private void bt_PrintDate_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
@@ -323,6 +311,27 @@ namespace Petshop
         private void bt_Search_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lb_HealDateID_TextChanged(object sender, EventArgs e)
+        {
+            if((lb_HealDateID.Text !=null)&&(lb_HealDateID.Text != string.Empty))
+            {
+                bt_HealDateEdit.Enabled = true;
+                bt_HealDateDel.Enabled = true;
+                bt_PrintDate.Enabled = true;
+            }
+            else
+            {
+                bt_HealDateEdit.Enabled = false;
+                bt_HealDateDel.Enabled = false;
+                bt_PrintDate.Enabled = false;
+            }
+        }
+
+        private void lb_PetID_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

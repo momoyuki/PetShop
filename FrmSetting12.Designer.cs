@@ -288,7 +288,7 @@
             this.bt_ProductRefresh.Location = new System.Drawing.Point(490, 19);
             this.bt_ProductRefresh.Name = "bt_ProductRefresh";
             this.bt_ProductRefresh.Size = new System.Drawing.Size(36, 36);
-            this.bt_ProductRefresh.TabIndex = 26;
+            this.bt_ProductRefresh.TabIndex = 8;
             this.bt_ProductRefresh.UseVisualStyleBackColor = true;
             this.bt_ProductRefresh.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -613,7 +613,7 @@
             this.lb_count.Name = "lb_count";
             this.lb_count.Size = new System.Drawing.Size(24, 18);
             this.lb_count.TabIndex = 30;
-            this.lb_count.Text = "xx";
+            this.lb_count.Text = "16";
             // 
             // FrmSetting12
             // 
