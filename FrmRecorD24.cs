@@ -17,7 +17,7 @@ namespace Petshop
             InitializeComponent();
             iConnect = new MySQLDBConnect();
         }
-
+        DataTable idtoutlay;
         private void bt_Load_Click(object sender, EventArgs e)
         {
             loadEmployee();
@@ -44,7 +44,7 @@ namespace Petshop
 
         private void loadoutlay()
         {
-            DataTable idtoutlay;
+           
             string isqloutlay = "SELECT * FROM petshop.tb_outlay";
             idtoutlay = iConnect.SelectByCommand(isqloutlay);
             if (idtoutlay.Rows.Count > 0)
@@ -97,7 +97,9 @@ namespace Petshop
 
         private void clearTxb()
         {
-            txb_outlayAmt.Clear();
+            lb_outlayID.Text = "";
+            dTP_outlayDate.Value = DateTime.Now;
+            txb_outlayAmt.Text = "0.00";
             txb_outlayRemark.Clear();
         }
 
@@ -127,6 +129,23 @@ namespace Petshop
                 txb_outlayRemark.Text = row.Cells["ccoutlayDetail_Remark"].Value.ToString();
                 txb_outlayAmt.Text = row.Cells["ccoutlayDetail_Amt"].Value.ToString();
             }
+        }
+
+        private void cb_outlay_TextChanged(object sender, EventArgs e)
+        {
+            loadBindPrice();
+        }
+
+        private void loadBindPrice()
+        {
+            txb_outlayAmt.DataBindings.Clear();
+            Binding b = new Binding("Text", idtoutlay, "outlay_Price");
+            txb_outlayAmt.DataBindings.Add(b);
+        }
+
+        private void bt_Reset_Click(object sender, EventArgs e)
+        {
+            clearTxb();
         }
     }
 }

@@ -31,6 +31,14 @@
             this.cb_outlay = new System.Windows.Forms.ComboBox();
             this.Lb_ListService = new System.Windows.Forms.Label();
             this.dGV_outlay = new System.Windows.Forms.DataGridView();
+            this.ccoutlayDetail_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccem_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOutlay_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlay_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_DeloutlayDetail = new System.Windows.Forms.Button();
             this.bt_Load = new System.Windows.Forms.Button();
             this.txb_outlayAmt = new System.Windows.Forms.TextBox();
@@ -44,14 +52,7 @@
             this.lb_outlayDetail = new System.Windows.Forms.Label();
             this.bt_AddoutlayDetail = new System.Windows.Forms.Button();
             this.lb_outlayID = new System.Windows.Forms.Label();
-            this.ccoutlayDetail_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccoutlayDetail_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccem_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccOutlay_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccoutlay_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccoutlayDetail_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccoutlayDetail_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_Reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_outlay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             this.cb_outlay.Name = "cb_outlay";
             this.cb_outlay.Size = new System.Drawing.Size(408, 26);
             this.cb_outlay.TabIndex = 87;
+            this.cb_outlay.TextChanged += new System.EventHandler(this.cb_outlay_TextChanged);
             // 
             // Lb_ListService
             // 
@@ -95,136 +97,6 @@
             this.dGV_outlay.Size = new System.Drawing.Size(982, 368);
             this.dGV_outlay.TabIndex = 80;
             this.dGV_outlay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_outlay_CellClick);
-            // 
-            // bt_DeloutlayDetail
-            // 
-            this.bt_DeloutlayDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_DeloutlayDetail.Location = new System.Drawing.Point(661, 126);
-            this.bt_DeloutlayDetail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bt_DeloutlayDetail.Name = "bt_DeloutlayDetail";
-            this.bt_DeloutlayDetail.Size = new System.Drawing.Size(112, 37);
-            this.bt_DeloutlayDetail.TabIndex = 156;
-            this.bt_DeloutlayDetail.Text = "ลบรายการ";
-            this.bt_DeloutlayDetail.UseVisualStyleBackColor = true;
-            this.bt_DeloutlayDetail.Click += new System.EventHandler(this.bt_DeloutlayDetail_Click);
-            // 
-            // bt_Load
-            // 
-            this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Load.Location = new System.Drawing.Point(804, 4);
-            this.bt_Load.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bt_Load.Name = "bt_Load";
-            this.bt_Load.Size = new System.Drawing.Size(111, 37);
-            this.bt_Load.TabIndex = 154;
-            this.bt_Load.Text = "LoadProduct";
-            this.bt_Load.UseVisualStyleBackColor = true;
-            this.bt_Load.Visible = false;
-            this.bt_Load.Click += new System.EventHandler(this.bt_Load_Click);
-            // 
-            // txb_outlayAmt
-            // 
-            this.txb_outlayAmt.Location = new System.Drawing.Point(582, 71);
-            this.txb_outlayAmt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txb_outlayAmt.Name = "txb_outlayAmt";
-            this.txb_outlayAmt.Size = new System.Drawing.Size(66, 26);
-            this.txb_outlayAmt.TabIndex = 153;
-            this.txb_outlayAmt.Text = "0.00";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(538, 75);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(36, 18);
-            this.label16.TabIndex = 152;
-            this.label16.Text = "สุทธิ";
-            // 
-            // txb_outlayRemark
-            // 
-            this.txb_outlayRemark.Location = new System.Drawing.Point(124, 105);
-            this.txb_outlayRemark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txb_outlayRemark.Multiline = true;
-            this.txb_outlayRemark.Name = "txb_outlayRemark";
-            this.txb_outlayRemark.Size = new System.Drawing.Size(408, 58);
-            this.txb_outlayRemark.TabIndex = 149;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(53, 105);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 18);
-            this.label13.TabIndex = 148;
-            this.label13.Text = "หมายเหตุ";
-            // 
-            // cb_Em
-            // 
-            this.cb_Em.FormattingEnabled = true;
-            this.cb_Em.Location = new System.Drawing.Point(125, 40);
-            this.cb_Em.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cb_Em.Name = "cb_Em";
-            this.cb_Em.Size = new System.Drawing.Size(238, 26);
-            this.cb_Em.TabIndex = 146;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 43);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 18);
-            this.label3.TabIndex = 145;
-            this.label3.Text = "ผู้ทำการขาย";
-            // 
-            // lb_Date
-            // 
-            this.lb_Date.AutoSize = true;
-            this.lb_Date.Location = new System.Drawing.Point(373, 13);
-            this.lb_Date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Date.Name = "lb_Date";
-            this.lb_Date.Size = new System.Drawing.Size(100, 18);
-            this.lb_Date.TabIndex = 144;
-            this.lb_Date.Text = "วันที่ทำการขาย";
-            // 
-            // dTP_outlayDate
-            // 
-            this.dTP_outlayDate.Location = new System.Drawing.Point(481, 7);
-            this.dTP_outlayDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dTP_outlayDate.Name = "dTP_outlayDate";
-            this.dTP_outlayDate.Size = new System.Drawing.Size(211, 26);
-            this.dTP_outlayDate.TabIndex = 143;
-            // 
-            // lb_outlayDetail
-            // 
-            this.lb_outlayDetail.AutoSize = true;
-            this.lb_outlayDetail.Location = new System.Drawing.Point(13, 13);
-            this.lb_outlayDetail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_outlayDetail.Name = "lb_outlayDetail";
-            this.lb_outlayDetail.Size = new System.Drawing.Size(107, 18);
-            this.lb_outlayDetail.TabIndex = 147;
-            this.lb_outlayDetail.Text = "เลขที่ทำการขาย";
-            // 
-            // bt_AddoutlayDetail
-            // 
-            this.bt_AddoutlayDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_AddoutlayDetail.Location = new System.Drawing.Point(541, 126);
-            this.bt_AddoutlayDetail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bt_AddoutlayDetail.Name = "bt_AddoutlayDetail";
-            this.bt_AddoutlayDetail.Size = new System.Drawing.Size(112, 37);
-            this.bt_AddoutlayDetail.TabIndex = 142;
-            this.bt_AddoutlayDetail.Text = "เพิ่มรายการ";
-            this.bt_AddoutlayDetail.UseVisualStyleBackColor = true;
-            this.bt_AddoutlayDetail.Click += new System.EventHandler(this.bt_AddoutlayDetail_Click);
-            // 
-            // lb_outlayID
-            // 
-            this.lb_outlayID.AutoSize = true;
-            this.lb_outlayID.Location = new System.Drawing.Point(127, 13);
-            this.lb_outlayID.Name = "lb_outlayID";
-            this.lb_outlayID.Size = new System.Drawing.Size(0, 18);
-            this.lb_outlayID.TabIndex = 157;
             // 
             // ccoutlayDetail_ID
             // 
@@ -291,11 +163,155 @@
             this.ccoutlayDetail_Remark.ReadOnly = true;
             this.ccoutlayDetail_Remark.Width = 200;
             // 
+            // bt_DeloutlayDetail
+            // 
+            this.bt_DeloutlayDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_DeloutlayDetail.Location = new System.Drawing.Point(661, 126);
+            this.bt_DeloutlayDetail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_DeloutlayDetail.Name = "bt_DeloutlayDetail";
+            this.bt_DeloutlayDetail.Size = new System.Drawing.Size(112, 37);
+            this.bt_DeloutlayDetail.TabIndex = 156;
+            this.bt_DeloutlayDetail.Text = "ลบรายการ";
+            this.bt_DeloutlayDetail.UseVisualStyleBackColor = true;
+            this.bt_DeloutlayDetail.Click += new System.EventHandler(this.bt_DeloutlayDetail_Click);
+            // 
+            // bt_Load
+            // 
+            this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Load.Location = new System.Drawing.Point(884, 4);
+            this.bt_Load.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_Load.Name = "bt_Load";
+            this.bt_Load.Size = new System.Drawing.Size(111, 37);
+            this.bt_Load.TabIndex = 154;
+            this.bt_Load.Text = "LoadProduct";
+            this.bt_Load.UseVisualStyleBackColor = true;
+            this.bt_Load.Visible = false;
+            this.bt_Load.Click += new System.EventHandler(this.bt_Load_Click);
+            // 
+            // txb_outlayAmt
+            // 
+            this.txb_outlayAmt.Location = new System.Drawing.Point(582, 71);
+            this.txb_outlayAmt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_outlayAmt.Name = "txb_outlayAmt";
+            this.txb_outlayAmt.Size = new System.Drawing.Size(66, 26);
+            this.txb_outlayAmt.TabIndex = 153;
+            this.txb_outlayAmt.Text = "0.00";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(538, 75);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(36, 18);
+            this.label16.TabIndex = 152;
+            this.label16.Text = "สุทธิ";
+            // 
+            // txb_outlayRemark
+            // 
+            this.txb_outlayRemark.Location = new System.Drawing.Point(124, 105);
+            this.txb_outlayRemark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_outlayRemark.Multiline = true;
+            this.txb_outlayRemark.Name = "txb_outlayRemark";
+            this.txb_outlayRemark.Size = new System.Drawing.Size(408, 58);
+            this.txb_outlayRemark.TabIndex = 149;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(53, 105);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 18);
+            this.label13.TabIndex = 148;
+            this.label13.Text = "หมายเหตุ";
+            // 
+            // cb_Em
+            // 
+            this.cb_Em.FormattingEnabled = true;
+            this.cb_Em.Location = new System.Drawing.Point(125, 40);
+            this.cb_Em.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cb_Em.Name = "cb_Em";
+            this.cb_Em.Size = new System.Drawing.Size(238, 26);
+            this.cb_Em.TabIndex = 146;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 43);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 18);
+            this.label3.TabIndex = 145;
+            this.label3.Text = "ผู้ทำการบันทึก";
+            // 
+            // lb_Date
+            // 
+            this.lb_Date.AutoSize = true;
+            this.lb_Date.Location = new System.Drawing.Point(373, 13);
+            this.lb_Date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Date.Name = "lb_Date";
+            this.lb_Date.Size = new System.Drawing.Size(100, 18);
+            this.lb_Date.TabIndex = 144;
+            this.lb_Date.Text = "วันที่ทำการขาย";
+            // 
+            // dTP_outlayDate
+            // 
+            this.dTP_outlayDate.Location = new System.Drawing.Point(481, 7);
+            this.dTP_outlayDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dTP_outlayDate.Name = "dTP_outlayDate";
+            this.dTP_outlayDate.Size = new System.Drawing.Size(211, 26);
+            this.dTP_outlayDate.TabIndex = 143;
+            // 
+            // lb_outlayDetail
+            // 
+            this.lb_outlayDetail.AutoSize = true;
+            this.lb_outlayDetail.Location = new System.Drawing.Point(13, 13);
+            this.lb_outlayDetail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_outlayDetail.Name = "lb_outlayDetail";
+            this.lb_outlayDetail.Size = new System.Drawing.Size(106, 18);
+            this.lb_outlayDetail.TabIndex = 147;
+            this.lb_outlayDetail.Text = "เลขที่ทำการจ่าย";
+            // 
+            // bt_AddoutlayDetail
+            // 
+            this.bt_AddoutlayDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_AddoutlayDetail.Location = new System.Drawing.Point(541, 126);
+            this.bt_AddoutlayDetail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_AddoutlayDetail.Name = "bt_AddoutlayDetail";
+            this.bt_AddoutlayDetail.Size = new System.Drawing.Size(112, 37);
+            this.bt_AddoutlayDetail.TabIndex = 142;
+            this.bt_AddoutlayDetail.Text = "เพิ่มรายการ";
+            this.bt_AddoutlayDetail.UseVisualStyleBackColor = true;
+            this.bt_AddoutlayDetail.Click += new System.EventHandler(this.bt_AddoutlayDetail_Click);
+            // 
+            // lb_outlayID
+            // 
+            this.lb_outlayID.AutoSize = true;
+            this.lb_outlayID.Location = new System.Drawing.Point(127, 13);
+            this.lb_outlayID.Name = "lb_outlayID";
+            this.lb_outlayID.Size = new System.Drawing.Size(0, 18);
+            this.lb_outlayID.TabIndex = 157;
+            // 
+            // bt_Reset
+            // 
+            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_Reset.Location = new System.Drawing.Point(700, 6);
+            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Reset.Name = "bt_Reset";
+            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
+            this.bt_Reset.TabIndex = 158;
+            this.bt_Reset.Text = "เริ่มใหม่";
+            this.bt_Reset.UseVisualStyleBackColor = true;
+            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
+            // 
             // FrmRecorD24
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.bt_Reset);
             this.Controls.Add(this.lb_outlayID);
             this.Controls.Add(this.bt_DeloutlayDetail);
             this.Controls.Add(this.bt_Load);
@@ -316,7 +332,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRecorD24";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmincomeDetail";
+            this.Text = "บันทึกรายจ่าย";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmRecorD24_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_outlay)).EndInit();
@@ -351,5 +367,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlay_Detail;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_Amt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_Remark;
+        private System.Windows.Forms.Button bt_Reset;
     }
 }

@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlEmployee = new System.Windows.Forms.TabControl();
             this.tpEmployee = new System.Windows.Forms.TabPage();
             this.gBoxEmployee = new System.Windows.Forms.GroupBox();
+            this.bt_Reset = new System.Windows.Forms.Button();
             this.lb_EmAddr = new System.Windows.Forms.Label();
             this.bt_LoadEP = new System.Windows.Forms.Button();
             this.txb_EmAddr = new System.Windows.Forms.TextBox();
@@ -66,7 +68,10 @@
             this.ccEm_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpPosition = new System.Windows.Forms.TabPage();
             this.dGV_PS = new System.Windows.Forms.DataGridView();
+            this.ccEP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxPosition = new System.Windows.Forms.GroupBox();
+            this.bt_ResetPosition = new System.Windows.Forms.Button();
             this.bt_DelPosition = new System.Windows.Forms.Button();
             this.bt_LoadPS = new System.Windows.Forms.Button();
             this.bt_EditEmposition = new System.Windows.Forms.Button();
@@ -76,8 +81,6 @@
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ccEP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -114,6 +117,7 @@
             // 
             // gBoxEmployee
             // 
+            this.gBoxEmployee.Controls.Add(this.bt_Reset);
             this.gBoxEmployee.Controls.Add(this.lb_EmAddr);
             this.gBoxEmployee.Controls.Add(this.bt_LoadEP);
             this.gBoxEmployee.Controls.Add(this.txb_EmAddr);
@@ -143,6 +147,19 @@
             this.gBoxEmployee.TabIndex = 1;
             this.gBoxEmployee.TabStop = false;
             this.gBoxEmployee.Text = "รายละเอียด";
+            // 
+            // bt_Reset
+            // 
+            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_Reset.Location = new System.Drawing.Point(279, 23);
+            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Reset.Name = "bt_Reset";
+            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
+            this.bt_Reset.TabIndex = 14;
+            this.bt_Reset.Text = "เริ่มใหม่";
+            this.bt_Reset.UseVisualStyleBackColor = true;
+            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
             // 
             // lb_EmAddr
             // 
@@ -235,6 +252,7 @@
             // 
             // bt_EditEm
             // 
+            this.bt_EditEm.Enabled = false;
             this.bt_EditEm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditEm.Location = new System.Drawing.Point(414, 194);
             this.bt_EditEm.Margin = new System.Windows.Forms.Padding(4);
@@ -346,6 +364,7 @@
             this.txb_EmID.Name = "txb_EmID";
             this.txb_EmID.Size = new System.Drawing.Size(144, 26);
             this.txb_EmID.TabIndex = 0;
+            this.txb_EmID.TextChanged += new System.EventHandler(this.txb_EmID_TextChanged);
             this.txb_EmID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_EmID_KeyDown);
             // 
             // lb_EmID
@@ -362,6 +381,8 @@
             // 
             this.dGV_Ep.AllowUserToAddRows = false;
             this.dGV_Ep.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
+            this.dGV_Ep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Ep.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Ep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Ep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -495,8 +516,26 @@
             this.dGV_PS.TabIndex = 1;
             this.dGV_PS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_PS_CellClick);
             // 
+            // ccEP_ID
+            // 
+            this.ccEP_ID.DataPropertyName = "EmPosition_ID";
+            this.ccEP_ID.HeaderText = "รหัสตำแหน่ง";
+            this.ccEP_ID.Name = "ccEP_ID";
+            this.ccEP_ID.ReadOnly = true;
+            this.ccEP_ID.Width = 120;
+            // 
+            // ccEm_Position
+            // 
+            this.ccEm_Position.DataPropertyName = "Em_Position";
+            this.ccEm_Position.FillWeight = 240F;
+            this.ccEm_Position.HeaderText = "ตำแหน่ง";
+            this.ccEm_Position.Name = "ccEm_Position";
+            this.ccEm_Position.ReadOnly = true;
+            this.ccEm_Position.Width = 240;
+            // 
             // gBoxPosition
             // 
+            this.gBoxPosition.Controls.Add(this.bt_ResetPosition);
             this.gBoxPosition.Controls.Add(this.bt_DelPosition);
             this.gBoxPosition.Controls.Add(this.bt_LoadPS);
             this.gBoxPosition.Controls.Add(this.bt_EditEmposition);
@@ -514,8 +553,22 @@
             this.gBoxPosition.TabStop = false;
             this.gBoxPosition.Text = "รายละเอียด";
             // 
+            // bt_ResetPosition
+            // 
+            this.bt_ResetPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_ResetPosition.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_ResetPosition.Location = new System.Drawing.Point(288, 22);
+            this.bt_ResetPosition.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_ResetPosition.Name = "bt_ResetPosition";
+            this.bt_ResetPosition.Size = new System.Drawing.Size(70, 32);
+            this.bt_ResetPosition.TabIndex = 16;
+            this.bt_ResetPosition.Text = "เริ่มใหม่";
+            this.bt_ResetPosition.UseVisualStyleBackColor = true;
+            this.bt_ResetPosition.Click += new System.EventHandler(this.bt_ResetPosition_Click);
+            // 
             // bt_DelPosition
             // 
+            this.bt_DelPosition.Enabled = false;
             this.bt_DelPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_DelPosition.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_DelPosition.Location = new System.Drawing.Point(308, 112);
@@ -530,7 +583,7 @@
             // bt_LoadPS
             // 
             this.bt_LoadPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_LoadPS.Location = new System.Drawing.Point(289, 24);
+            this.bt_LoadPS.Location = new System.Drawing.Point(11, 88);
             this.bt_LoadPS.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadPS.Name = "bt_LoadPS";
             this.bt_LoadPS.Size = new System.Drawing.Size(100, 32);
@@ -542,6 +595,7 @@
             // 
             // bt_EditEmposition
             // 
+            this.bt_EditEmposition.Enabled = false;
             this.bt_EditEmposition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditEmposition.Location = new System.Drawing.Point(230, 112);
             this.bt_EditEmposition.Margin = new System.Windows.Forms.Padding(4);
@@ -592,6 +646,7 @@
             this.txb_EmpositionID.Name = "txb_EmpositionID";
             this.txb_EmpositionID.Size = new System.Drawing.Size(119, 26);
             this.txb_EmpositionID.TabIndex = 0;
+            this.txb_EmpositionID.TextChanged += new System.EventHandler(this.txb_EmpositionID_TextChanged);
             // 
             // lb_EmPosition
             // 
@@ -606,23 +661,6 @@
             // epCheck
             // 
             this.epCheck.ContainerControl = this;
-            // 
-            // ccEP_ID
-            // 
-            this.ccEP_ID.DataPropertyName = "EmPosition_ID";
-            this.ccEP_ID.HeaderText = "รหัสตำแหน่ง";
-            this.ccEP_ID.Name = "ccEP_ID";
-            this.ccEP_ID.ReadOnly = true;
-            this.ccEP_ID.Width = 120;
-            // 
-            // ccEm_Position
-            // 
-            this.ccEm_Position.DataPropertyName = "Em_Position";
-            this.ccEm_Position.FillWeight = 240F;
-            this.ccEm_Position.HeaderText = "ตำแหน่ง";
-            this.ccEm_Position.Name = "ccEm_Position";
-            this.ccEm_Position.ReadOnly = true;
-            this.ccEm_Position.Width = 240;
             // 
             // FrmSetting16
             // 
@@ -702,6 +740,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Tel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEP_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Position;
+        private System.Windows.Forms.Button bt_Reset;
+        private System.Windows.Forms.Button bt_ResetPosition;
 
 
     }

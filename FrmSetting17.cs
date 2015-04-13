@@ -158,10 +158,11 @@ namespace Petshop
             string ImagePath = txb_Image.Text;
             string escapedPath = ImagePath.Replace(@"\", @"\\").Replace("'", @"\'");    
             
-            if ((ImagePath != null) && (ImagePath !=""))
+            if ((ImagePath != null) && (ImagePath !=string.Empty))
             {
                 string isqlAddLogo = "UPDATE `tb_company` SET CoLogo ='" + escapedPath + "'";
                 iConnect.Insert(isqlAddLogo);
+                MessageBox.Show("บันทึกภาพนี้แล้ว");
             }
         }
 
@@ -223,12 +224,6 @@ namespace Petshop
             {
                 bt_Update.Select();
             }
-        }
-
-       
-
-   
-
-        
+        }        
     }
 }

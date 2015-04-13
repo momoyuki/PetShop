@@ -48,6 +48,7 @@
             this.รายงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ใบเสรจToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.ดรายรบรายจายToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xออกจากโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
@@ -191,7 +192,8 @@
             // 
             this.รายงานToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ใบเสรจToolStripMenuItem,
-            this.toolStripSeparator4});
+            this.toolStripSeparator4,
+            this.ดรายรบรายจายToolStripMenuItem});
             this.รายงานToolStripMenuItem.Name = "รายงานToolStripMenuItem";
             this.รายงานToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
             this.รายงานToolStripMenuItem.Text = "&3.รายงาน";
@@ -199,14 +201,21 @@
             // ใบเสรจToolStripMenuItem
             // 
             this.ใบเสรจToolStripMenuItem.Name = "ใบเสรจToolStripMenuItem";
-            this.ใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.ใบเสรจToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.ใบเสรจToolStripMenuItem.Text = "&1.พิมพ์ใบเสร็จ";
             this.ใบเสรจToolStripMenuItem.Click += new System.EventHandler(this.ใบเสรจToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(158, 6);
+            // 
+            // ดรายรบรายจายToolStripMenuItem
+            // 
+            this.ดรายรบรายจายToolStripMenuItem.Name = "ดรายรบรายจายToolStripMenuItem";
+            this.ดรายรบรายจายToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.ดรายรบรายจายToolStripMenuItem.Text = "&2.ดูรายรับ-รายจ่าย";
+            this.ดรายรบรายจายToolStripMenuItem.Click += new System.EventHandler(this.ดรายรบรายจายToolStripMenuItem_Click);
             // 
             // xออกจากโปรแกรมToolStripMenuItem
             // 
@@ -271,6 +280,7 @@
         private System.Windows.Forms.ToolStripMenuItem รายจายToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem บนทกรายจายToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ดรายรบรายจายToolStripMenuItem;
     }
 }
 

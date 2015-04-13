@@ -155,17 +155,18 @@ namespace Petshop
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    if (form.GetType() == typeof(FrmBillProd))
+                    if (form.GetType() == typeof(FrmBillSerMe))
                     {
                         form.Activate();
                         return;
                     }
                 }
-                FrmBillProd iFrmBill = new FrmBillProd();
+                FrmBillSerMe iFrmBill = new FrmBillSerMe();
                 iFrmBill.MdiParent = MainForm.ActiveForm;
                 iFrmBill.Show();
                 iFrmBill.lb_BillID.Text = Lb_BillID.Text.Trim();
             }
+
         }
         private void CheckBoxProduct_CheckedChanged(object sender, EventArgs e)
         {

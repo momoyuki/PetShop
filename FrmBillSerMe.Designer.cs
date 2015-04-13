@@ -100,7 +100,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBillSerMe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "ตัวอย่างก่อนพิมพ์ ใบเสร็จบริการ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBillreview_Load);
             this.ResumeLayout(false);

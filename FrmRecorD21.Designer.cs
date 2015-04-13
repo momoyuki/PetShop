@@ -40,6 +40,7 @@
             this.bt_EditMember = new System.Windows.Forms.Button();
             this.bt_AddMember = new System.Windows.Forms.Button();
             this.gBox_OwnerDetail = new System.Windows.Forms.GroupBox();
+            this.bt_ResetProfile = new System.Windows.Forms.Button();
             this.bt_LoadProfile = new System.Windows.Forms.Button();
             this.lb_Tel = new System.Windows.Forms.Label();
             this.txb_TelOwner = new System.Windows.Forms.TextBox();
@@ -201,6 +202,7 @@
             // 
             // bt_Service
             // 
+            this.bt_Service.Enabled = false;
             this.bt_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Service.Location = new System.Drawing.Point(69, 168);
             this.bt_Service.Margin = new System.Windows.Forms.Padding(4);
@@ -239,6 +241,7 @@
             // 
             // bt_EditMember
             // 
+            this.bt_EditMember.Enabled = false;
             this.bt_EditMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditMember.Location = new System.Drawing.Point(177, 245);
             this.bt_EditMember.Margin = new System.Windows.Forms.Padding(4);
@@ -263,6 +266,7 @@
             // 
             // gBox_OwnerDetail
             // 
+            this.gBox_OwnerDetail.Controls.Add(this.bt_ResetProfile);
             this.gBox_OwnerDetail.Controls.Add(this.bt_LoadProfile);
             this.gBox_OwnerDetail.Controls.Add(this.lb_Tel);
             this.gBox_OwnerDetail.Controls.Add(this.txb_TelOwner);
@@ -281,6 +285,19 @@
             this.gBox_OwnerDetail.TabIndex = 16;
             this.gBox_OwnerDetail.TabStop = false;
             this.gBox_OwnerDetail.Text = "ข้อมูลเจ้าของสัตว์";
+            // 
+            // bt_ResetProfile
+            // 
+            this.bt_ResetProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_ResetProfile.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_ResetProfile.Location = new System.Drawing.Point(541, 64);
+            this.bt_ResetProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_ResetProfile.Name = "bt_ResetProfile";
+            this.bt_ResetProfile.Size = new System.Drawing.Size(70, 32);
+            this.bt_ResetProfile.TabIndex = 24;
+            this.bt_ResetProfile.Text = "เริ่มใหม่";
+            this.bt_ResetProfile.UseVisualStyleBackColor = true;
+            this.bt_ResetProfile.Click += new System.EventHandler(this.bt_ResetProfile_Click);
             // 
             // bt_LoadProfile
             // 
@@ -327,7 +344,7 @@
             // lbSex
             // 
             this.lbSex.AutoSize = true;
-            this.lbSex.Location = new System.Drawing.Point(565, 86);
+            this.lbSex.Location = new System.Drawing.Point(565, 140);
             this.lbSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSex.Name = "lbSex";
             this.lbSex.Size = new System.Drawing.Size(42, 18);
@@ -358,7 +375,7 @@
             // lbYear
             // 
             this.lbYear.AutoSize = true;
-            this.lbYear.Location = new System.Drawing.Point(570, 68);
+            this.lbYear.Location = new System.Drawing.Point(570, 122);
             this.lbYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbYear.Name = "lbYear";
             this.lbYear.Size = new System.Drawing.Size(37, 18);
@@ -369,7 +386,7 @@
             // lbCompany
             // 
             this.lbCompany.AutoSize = true;
-            this.lbCompany.Location = new System.Drawing.Point(542, 68);
+            this.lbCompany.Location = new System.Drawing.Point(542, 122);
             this.lbCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCompany.Name = "lbCompany";
             this.lbCompany.Size = new System.Drawing.Size(17, 18);
@@ -697,10 +714,10 @@
             this.tabC_Pet.Controls.Add(this.tP_ListPeT);
             this.tabC_Pet.Controls.Add(this.tP_LisTDetail);
             this.tabC_Pet.Controls.Add(this.tp_HealDetail);
-            this.tabC_Pet.Location = new System.Drawing.Point(16, 314);
+            this.tabC_Pet.Location = new System.Drawing.Point(16, 309);
             this.tabC_Pet.Name = "tabC_Pet";
             this.tabC_Pet.SelectedIndex = 0;
-            this.tabC_Pet.Size = new System.Drawing.Size(980, 346);
+            this.tabC_Pet.Size = new System.Drawing.Size(980, 351);
             this.tabC_Pet.TabIndex = 19;
             // 
             // tP_ListPeT
@@ -714,7 +731,7 @@
             this.tP_ListPeT.Location = new System.Drawing.Point(4, 27);
             this.tP_ListPeT.Name = "tP_ListPeT";
             this.tP_ListPeT.Padding = new System.Windows.Forms.Padding(3);
-            this.tP_ListPeT.Size = new System.Drawing.Size(972, 315);
+            this.tP_ListPeT.Size = new System.Drawing.Size(972, 320);
             this.tP_ListPeT.TabIndex = 0;
             this.tP_ListPeT.Text = "รายชื่อทั้งหมด";
             this.tP_ListPeT.UseVisualStyleBackColor = true;
@@ -759,7 +776,7 @@
             this.tP_LisTDetail.Location = new System.Drawing.Point(4, 27);
             this.tP_LisTDetail.Name = "tP_LisTDetail";
             this.tP_LisTDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tP_LisTDetail.Size = new System.Drawing.Size(972, 315);
+            this.tP_LisTDetail.Size = new System.Drawing.Size(972, 320);
             this.tP_LisTDetail.TabIndex = 1;
             this.tP_LisTDetail.Text = "ประวัติการรักษา";
             this.tP_LisTDetail.UseVisualStyleBackColor = true;
@@ -767,7 +784,7 @@
             // bt_HealDate
             // 
             this.bt_HealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_HealDate.Location = new System.Drawing.Point(741, 6);
+            this.bt_HealDate.Location = new System.Drawing.Point(742, 6);
             this.bt_HealDate.Name = "bt_HealDate";
             this.bt_HealDate.Size = new System.Drawing.Size(100, 31);
             this.bt_HealDate.TabIndex = 0;
@@ -849,11 +866,11 @@
             this.ccHealRecord_Total,
             this.ccHealRecord_DC,
             this.ccHealRecord_Net});
-            this.dGV_HealRecord.Location = new System.Drawing.Point(7, 47);
+            this.dGV_HealRecord.Location = new System.Drawing.Point(6, 43);
             this.dGV_HealRecord.Name = "dGV_HealRecord";
             this.dGV_HealRecord.ReadOnly = true;
             this.dGV_HealRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_HealRecord.Size = new System.Drawing.Size(960, 261);
+            this.dGV_HealRecord.Size = new System.Drawing.Size(960, 270);
             this.dGV_HealRecord.TabIndex = 0;
             this.dGV_HealRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_HealRecord_CellClick);
             this.dGV_HealRecord.SelectionChanged += new System.EventHandler(this.dGV_HealRecord_SelectionChanged);
@@ -973,7 +990,7 @@
             this.tp_HealDetail.Location = new System.Drawing.Point(4, 27);
             this.tp_HealDetail.Name = "tp_HealDetail";
             this.tp_HealDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_HealDetail.Size = new System.Drawing.Size(972, 315);
+            this.tp_HealDetail.Size = new System.Drawing.Size(972, 320);
             this.tp_HealDetail.TabIndex = 2;
             this.tp_HealDetail.Text = "รายละเอียด";
             this.tp_HealDetail.UseVisualStyleBackColor = true;
@@ -1054,7 +1071,7 @@
             this.ccHealRecord_IDd,
             this.ccServiceMedi_IDd,
             this.ccServiceMedi_Desd});
-            this.dGV_HealDetail.Location = new System.Drawing.Point(7, 39);
+            this.dGV_HealDetail.Location = new System.Drawing.Point(6, 41);
             this.dGV_HealDetail.Name = "dGV_HealDetail";
             this.dGV_HealDetail.ReadOnly = true;
             this.dGV_HealDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1237,5 +1254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_IDd;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_IDd;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_Desd;
+        private System.Windows.Forms.Button bt_ResetProfile;
     }
 }

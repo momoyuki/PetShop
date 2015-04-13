@@ -45,7 +45,7 @@ namespace Petshop
             if ((txb_UnitName.Text != null) && (txb_UnitName.Text != string.Empty))
             {
                 string isqlUnit = "INSERT INTO `petshop`.`tb_unit` (`Unit_ID`, `Unit_Name`) VALUES (NULL, '" + itxbUnitName + "')";
-                DialogResult iConfirmResult = MessageBox.Show("เพิ่มบริการ " + itxbUnitName + " มั๊ย?", "เพิ่มหน่วย..", MessageBoxButtons.YesNo);
+                DialogResult iConfirmResult = MessageBox.Show("เพิ่มหน่วย " + itxbUnitName + " มั๊ย?", "เพิ่มหน่วย..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
                     iConnect.Insert(isqlUnit);
@@ -149,7 +149,7 @@ namespace Petshop
                         string isqlDelUnit = "DELETE FROM `petshop`.`tb_unit` WHERE `Unit_ID`='" + itxbUnitID + "'";
                         iConnect.Insert(isqlDelUnit);
                         clearTxb();
-                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                        MessageBox.Show("ทำการลบหน่วยออกแล้ว");
                     }
                     else
                     {
@@ -176,6 +176,11 @@ namespace Petshop
                 bt_EditUnit.Enabled = false;
                 bt_DelUnit.Enabled = false;
             }
+        }
+
+        private void bt_Reset_Click(object sender, EventArgs e)
+        {
+            clearTxb();
         }
     }
 }

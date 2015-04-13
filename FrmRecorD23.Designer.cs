@@ -64,6 +64,7 @@
             this.lb_ProductUnit = new System.Windows.Forms.Label();
             this.lb_PriceAmt = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bt_Reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nUD_ProductUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
@@ -429,11 +430,25 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
+            // bt_Reset
+            // 
+            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_Reset.Location = new System.Drawing.Point(655, 8);
+            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Reset.Name = "bt_Reset";
+            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
+            this.bt_Reset.TabIndex = 139;
+            this.bt_Reset.Text = "เริ่มใหม่";
+            this.bt_Reset.UseVisualStyleBackColor = true;
+            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
+            // 
             // FrmRecorD23
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.bt_Reset);
             this.Controls.Add(this.lb_PriceAmt);
             this.Controls.Add(this.lb_ProductUnit);
             this.Controls.Add(this.bt_RecordBuy);
@@ -514,5 +529,6 @@
         private System.Windows.Forms.Label lb_ProductUnit;
         private System.Windows.Forms.Label lb_PriceAmt;
         private System.Windows.Forms.ErrorProvider epCheck;
+        private System.Windows.Forms.Button bt_Reset;
     }
 }

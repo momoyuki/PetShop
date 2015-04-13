@@ -220,6 +220,11 @@ namespace Petshop
             iFrmRePort31.Show();
         }
 
+        private void ดรายรบรายจายToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

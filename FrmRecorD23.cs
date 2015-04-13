@@ -62,8 +62,8 @@ namespace Petshop
        
         private void loadProductSaleDetail()
         {
-            if ((lb_ProductSaleID.Text != null)&&(lb_ProductSaleID.Text !=string.Empty))
-            {
+         //   if ((lb_ProductSaleID.Text != null)&&(lb_ProductSaleID.Text !=string.Empty))
+           // {
                 string ilbproductSaleID = lb_ProductSaleID.Text.Trim();
                 string isqlProductSaleDetail = "SELECT tb_productsaledetail.*,tb_Product.Product_Des  FROM tb_Product,tb_productsaledetail " +
                 "WHERE (tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' AND tb_Product.Product_ID = tb_productsaledetail.Product_ID)";
@@ -87,10 +87,7 @@ namespace Petshop
                         iProductAmt = idtSumProduct.Rows[0].Field<decimal>(0);
                     }
                 }
-                //  lb_PriceAmt.DataBindings.Clear();
-                //  Binding b = new Binding("Text", idtSumProduct, "ProductSaleTotal");
-                //  lb_PriceAmt.DataBindings.Add(b);
-            }
+           // }
         }
 
         private void loadEmployee()
@@ -342,8 +339,25 @@ namespace Petshop
                 bt_Print.Enabled = false;
                 txb_ProductSaleDC.Enabled = false;
                 // txb_ProductID.Enabled = true;
-                bt_RecordBuy.Enabled = false;
+                bt_RecordBuy.Enabled = true;
             }
+        }
+
+        private void bt_Reset_Click(object sender, EventArgs e)
+        {
+            lb_ProductSaleID.Text = "";
+            dTP_ProductSaleDate.Value = DateTime.Now;
+            txb_Remark.Clear();
+            txb_ProductSaleTotal.Text = "0.00";
+            txb_ProductSaleDC.Text = "0.00";
+            txb_ProductSaleNet.Text = "0.00";
+            txb_ProductID.Clear();
+            nUD_ProductUnit.Value = 1;
+            lb_ProductUnit.Text = "1";
+            lb_ProductSaleID.Text = "";
+            dGV_Product.DataSource = null;
+            dGV_Product.Rows.Clear();
+            dGV_Product.Refresh();
         }
     }
 }

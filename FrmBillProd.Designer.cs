@@ -100,7 +100,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBillProd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBillProd";
+            this.Text = "ตัวอย่างก่อนพิมพ์ ใบเสร็จสินค้า";
             this.ResumeLayout(false);
             this.PerformLayout();
 

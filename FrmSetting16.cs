@@ -331,7 +331,7 @@ namespace Petshop
                     {
                         string isqlDelEmposition = "DELETE FROM `petshop`.`tb_emposition` WHERE `EmPosition_ID`='"+itxbPositionID+"'";
                         iConnect.Insert(isqlDelEmposition);
-                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                        MessageBox.Show("ทำการลบตำแหน่งออกแล้ว");
                         ClearTxbPosition();
                     }
                     else
@@ -350,6 +350,40 @@ namespace Petshop
             {
                 bt_AddEm.Select();
             }
+        }
+
+        private void txb_EmID_TextChanged(object sender, EventArgs e)
+        {
+            if((txb_EmID.Text != string.Empty)&&(txb_EmID.Text != null)){
+                bt_EditEm.Enabled = true;
+            }
+            else
+            {
+                bt_EditEm.Enabled = false;
+            }
+        }
+
+        private void txb_EmpositionID_TextChanged(object sender, EventArgs e)
+        {
+            if((txb_EmpositionID.Text !=string.Empty)&&(txb_EmpositionID.Text != null)){
+                bt_EditEmposition.Enabled = true;
+                bt_DelPosition.Enabled = true;
+            }
+            else
+            {
+                bt_EditEmposition.Enabled = false;
+                bt_DelPosition.Enabled = false;
+            }
+        }
+
+        private void bt_Reset_Click(object sender, EventArgs e)
+        {
+            ClearTxbEmployee();
+        }
+
+        private void bt_ResetPosition_Click(object sender, EventArgs e)
+        {
+            ClearTxbPosition();
         }
     }
 }

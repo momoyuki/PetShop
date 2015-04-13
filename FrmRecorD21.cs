@@ -213,7 +213,7 @@ namespace Petshop
                             "ORDER BY `pet_Id` DESC LIMIT 1 ) + 1, 1 ),  5, '0' )),'" + itbPetName + "', b'" + ilbSex + "', '" + idTPBorn + "', '" + itbPetColor + "', '" + icbPetTypeID + "', '" + icbPetBreedID + "', '" + idTPSterility + "', '" + itbOwnerName + "', '" + itbOwnerAddr + "', '" + itbOwnerTel + "')";
                         iConnect.Insert(isqlCommand);
                         iAddEditMember = string.Empty;
-                        cleatTxb();
+                        clearTxb();
                     }
                 }
                 else if (iAddEditMember == "EditMember")
@@ -238,7 +238,7 @@ namespace Petshop
             LoadPetProfile();
         }
 
-        private void cleatTxb()
+        private void clearTxb()
         {
             txb_PetProfileID.Clear();
             txb_PetName.Clear();
@@ -306,13 +306,23 @@ namespace Petshop
             _Textbox.Text = txb_PetProfileID.Text;
             loadHealRecord();
             LoadHealDetail();
+            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
+            {
+                bt_Service.Enabled = true;
+                bt_EditMember.Enabled = true;
+            }
+            else
+            {
+                bt_Service.Enabled = false;
+                bt_EditMember.Enabled = false;
+            }
         }
 
         private void loadHealRecord()
         {
-            string  iPetID = txb_PetProfileID.Text.Trim();
+            string  itxbPetID = txb_PetProfileID.Text.Trim();
             DataTable idtHealRecord;
-            string isqlHealRecord = "SELECT * FROM petshop.tb_healrecord where pet_ID = " + iPetID + "";
+            string isqlHealRecord = "SELECT * FROM petshop.tb_healrecord where pet_ID='" + itxbPetID + "'";
             idtHealRecord = iConnect.SelectByCommand(isqlHealRecord);
             dGV_HealRecord.DataSource = idtHealRecord;
             dGV_HealRecord.Refresh();
@@ -463,6 +473,7 @@ namespace Petshop
             if (e.RowIndex >= 0)
             {
                 lb_HealRecordID.Text = "";
+                lb_HealDetailID.Text = "";
                 DataGridViewRow row = this.dGV_PetProfile.Rows[e.RowIndex];
                 txb_PetProfileID.Text = row.Cells["ccPet_ID"].Value.ToString();
                 txb_PetName.Text = row.Cells["ccPet_Name"].Value.ToString();
@@ -560,8 +571,12 @@ namespace Petshop
             foreach (DataGridViewRow row in dGV_HealDetail.SelectedRows)
             {
                 lb_HealDetailID.Text = row.Cells["ccHealRecord_IDd"].Value.ToString();
-
             }
+        }
+
+        private void bt_ResetProfile_Click(object sender, EventArgs e)
+        {
+            clearTxb();
         }
 
 

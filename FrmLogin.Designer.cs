@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmIndex
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -98,7 +98,7 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
-            // FrmIndex
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,7 +108,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.bt_Login);
-            this.Name = "FrmIndex";
+            this.Name = "FrmLogin";
             this.Text = "เข้าระบบ";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();

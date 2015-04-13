@@ -42,6 +42,7 @@
             this.lb_UnitID = new System.Windows.Forms.Label();
             this.lb_UnitName = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bt_Reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Uni)).BeginInit();
             this.gBoxUnit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
@@ -83,6 +84,7 @@
             // 
             // gBoxUnit
             // 
+            this.gBoxUnit.Controls.Add(this.bt_Reset);
             this.gBoxUnit.Controls.Add(this.bt_DelUnit);
             this.gBoxUnit.Controls.Add(this.bt_LoadUnit);
             this.gBoxUnit.Controls.Add(this.bt_EditUnit);
@@ -196,6 +198,19 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
+            // bt_Reset
+            // 
+            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_Reset.Location = new System.Drawing.Point(256, 23);
+            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Reset.Name = "bt_Reset";
+            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
+            this.bt_Reset.TabIndex = 17;
+            this.bt_Reset.Text = "เริ่มใหม่";
+            this.bt_Reset.UseVisualStyleBackColor = true;
+            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
+            // 
             // FrmSetting14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -233,5 +248,6 @@
         private System.Windows.Forms.Label lb_UnitName;
         private System.Windows.Forms.Button bt_DelUnit;
         private System.Windows.Forms.ErrorProvider epCheck;
+        private System.Windows.Forms.Button bt_Reset;
     }
 }

@@ -83,7 +83,7 @@ namespace Petshop
                 {
                     iConnect.Insert(isqlBreed);
                     LoadBreed();
-                    clearTxb();
+                    clearBreedTxb();
                     txb_BreedName.Focus();
                 }
             }
@@ -112,7 +112,7 @@ namespace Petshop
                     string isqlType = "INSERT INTO `petshop`.`tb_pettype` (`PetType_ID`, `PetType_Des`) VALUES (NULL, '" + itxbType + "')";
                     iConnect.Insert(isqlType);
                     LoadType();
-                    clearTxb();
+                    clearTypeTxb();
                     txb_TypeName.Focus();
                 }
             }
@@ -124,12 +124,16 @@ namespace Petshop
             
         }
 
-        private void clearTxb()
+        private void clearTypeTxb()
         {
-            txb_BreedID.Clear();
-            txb_BreedName.Clear();
             txb_TypeID.Clear();
             txb_TypeName.Clear();
+        }
+
+        private void clearBreedTxb()
+        {
+            txb_BreedID.Clear();
+            txb_BreedName.Clear();  
         }
 
         private void dGV_Breed_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -170,7 +174,7 @@ namespace Petshop
                     string isqlBreed = "UPDATE `tb_petbreed` SET `PetType_ID` = '" + icbType + "', `PetBreed_Des` = '" + itxbBreed + "' WHERE `tb_petbreed`.`PetBreed_ID` = " + itxbBreedID + "";
                     iConnect.Insert(isqlBreed);
                     LoadBreed();
-                    clearTxb();
+                    clearBreedTxb();
                 }
             }
             else
@@ -198,7 +202,7 @@ namespace Petshop
                     string isqlType = "UPDATE `petshop`.`tb_pettype` SET `PetType_Des` = '" + itxbType + "' WHERE `tb_pettype`.`PetType_ID` = " + itxbTypeID + "";
                     iConnect.Insert(isqlType);
                     LoadType();
-                    clearTxb();
+                    clearTypeTxb();
                 }
             }
             else
@@ -261,8 +265,8 @@ namespace Petshop
                     {
                         string isqlDelType = "DELETE FROM `petshop`.`tb_pettype` WHERE `PetType_ID`='" + itxbTypeID + "'";
                         iConnect.Insert(isqlDelType);
-                        clearTxb();
-                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                        clearTypeTxb();
+                        MessageBox.Show("ทำการลบประเภทสัตว์ออกแล้ว");
                     }
                     else
                     {
@@ -290,7 +294,7 @@ namespace Petshop
                         string isqlDelBreed = "DELETE FROM `petshop`.`tb_petbreed` WHERE `PetBreed_ID`='" + itxbBreedID + "'";
                         iConnect.Insert(isqlDelBreed);
                         MessageBox.Show("ทำการพันธุ์สัตว์ออกแล้ว");
-                        clearTxb();
+                        clearBreedTxb();
                     }
                     else
                     {
@@ -313,6 +317,29 @@ namespace Petshop
                 bt_EditType.Enabled = false;
                 bt_DelType.Enabled = false;
             }
+        }
+
+        private void txb_BreedID_TextChanged(object sender, EventArgs e)
+        {
+            if((txb_BreedID.Text !=null)&&(txb_BreedID.Text != string.Empty)){
+                bt_EditBreed.Enabled = true;
+                bt_DelBreed.Enabled = true;
+            }
+            else
+            {
+                bt_EditBreed.Enabled = false;
+                bt_DelBreed.Enabled = false;
+            }
+        }
+
+        private void bt_ResetBreed_Click(object sender, EventArgs e)
+        {
+            clearBreedTxb();
+        }
+
+        private void bt_Reset_Click(object sender, EventArgs e)
+        {
+            clearTypeTxb();
         }
     }
 }

@@ -363,12 +363,16 @@ namespace Petshop
             if ((Lb_BillID.Text !="")&&(Lb_BillID.Text != null))
             {
                 TabControlServiceMediBill.Enabled = true;
+                dGV_Medi.Enabled = true;
+                dGV_Service.Enabled = true;
                 bt_Print.Enabled = true;
                 txb_BillDC.Enabled = true;
             }
             else
             {
                 TabControlServiceMediBill.Enabled = false;
+                dGV_Medi.Enabled = false;
+                dGV_Service.Enabled = false;
                 bt_Print.Enabled = false;
                 txb_BillDC.Enabled = false;
             }

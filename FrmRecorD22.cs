@@ -61,7 +61,21 @@ namespace Petshop
             }
             else if (rBt_Today.Checked == true)
             {
-               
+                System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+                System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                string iDateToday = DateTime.Now.ToString("yyyy-MM-dd");
+
+                string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
+                                    + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
+                                    + " AND  HealDate_Remind = '" + iDateToday + "'"
+                                    + " Union "
+                                    + " SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
+                                    + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
+                                    + " AND  HealDate_Day = '" + iDateToday + "'";
+                idtHealDate = iConnect.SelectByCommand(isqlHealDate);
+                dGV_HealDate.DataSource = idtHealDate;
+                dGV_HealDate.Refresh();
             }
         }
         private void lb_HealRecordID_TextChanged(object sender, EventArgs e)
@@ -70,12 +84,12 @@ namespace Petshop
 
             if ((lb_PetID.Text != null) && (lb_PetID.Text != string.Empty))
             {
-                bt_AddHealDate.Enabled = true;
+                //bt_AddHealDate.Enabled = true;
                 bt_PrintBill.Enabled = true;
             }
             else
             {
-                bt_AddHealDate.Enabled = false;
+                //bt_AddHealDate.Enabled = false;
                 bt_PrintBill.Enabled = false;
             }
 
@@ -134,7 +148,7 @@ namespace Petshop
                 string isqlAddHealDate = "INSERT INTO `petshop`.`tb_healdate` (`Pet_ID`, `HealRecord_ID`, `Service_ID`, `HealDate_Remark`, `HealDate_Day`, `HealDate_Remind`, `HealDate_Status`) " +
                 "VALUES ('" + ilbPetID + "', '" + ilbHealRecordID + "', '" + icbService + "', '" + itxbRemark + "', '" + idTPHealDate + "', '" + iRemind + "', 0)";
                 iConnect.Insert(isqlAddHealDate);
-
+                ClearTxb();
                 /* DataTable idtHealDateID;
                  string isqlHealDateID = "SELECT HealDate_ID FROM `tb_healdate` ORDER BY `healDate_ID` DESC LIMIT 1";
                  idtHealDateID = iConnect.SelectByCommand(isqlHealDateID);
@@ -142,6 +156,15 @@ namespace Petshop
                 MessageBox.Show("บันทึกการนัดหมายแล้ว");
                 loadData();
             }
+        }
+
+        private void ClearTxb()
+        {
+            lb_PetID.Text = "";
+            lb_HealRecordID.Text = "";
+            lb_HealDateID.Text = "";
+            Txb_Remark.Clear();
+            CheckBox_Contract.Checked = false;
         }
 
         private void bt_HealDateEdit_Click(object sender, EventArgs e)
@@ -175,6 +198,7 @@ namespace Petshop
                 string isqlAddHealDate = "UPDATE `tb_healdate` "+
                 " SET Service_Id = '" + icbService + "', `HealDate_Remark`='" + itxbRemark + "', `HealDate_Day`='" + idTPHealDate + "', `HealDate_Remind`='" + iRemind + "', `HealDate_Status`=" + iContract.ToString() + " WHERE `HealDate_ID`='" + ilbHealDateID + "'";
                 iConnect.Insert(isqlAddHealDate);
+                ClearTxb();
                 MessageBox.Show("แก้ไขข้อมูลการนัดหมาย");
                 loadData();
             }
@@ -289,6 +313,7 @@ namespace Petshop
                         String iHealDateID = dGV_HealDate.Rows[i].Cells[1].Value.ToString();
                         string isqlHealDate = "UPDATE `tb_healdate` SET `HealDate_Status`=1 WHERE `HealDate_ID`='"+iHealDateID+"'";
                         iConnect.Insert(isqlHealDate);
+
                     }
                 }
           loadHealDate();
@@ -332,6 +357,11 @@ namespace Petshop
         private void lb_PetID_TextChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void bt_ResetRecord_Click(object sender, EventArgs e)
+        {
+            ClearTxb();
         }
     }
 }

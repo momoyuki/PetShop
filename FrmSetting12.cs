@@ -170,7 +170,7 @@ namespace Petshop
                     {
                         if ((itxbProductID != null) && (itxbProductID != string.Empty))
                         {
-                            DialogResult iConfirmResult = MessageBox.Show("แก้ไข " + itxbProductName + " มั๊ย?", "แก้ไขสินค้า..", MessageBoxButtons.YesNo);
+                            DialogResult iConfirmResult = MessageBox.Show("แก้ไข " + itxbProductName + " มั๊ย?", "แก้ไขข้อมูล..", MessageBoxButtons.YesNo);
                             if (iConfirmResult == DialogResult.Yes)
                             {
                                 string isqlAddProduct = "UPDATE `tb_product` SET `Product_Des` = '" + itxbProductName + "', `Product_Detail` = '" + itxbProductDetail + "', `Product_Price` = '" + itxbProductPrice + "', `Product_Sale` = '" + itxbProductSale + "', `Unit_ID` = '" + icbProductUnit + "', `Product_Product` = '" + idtpProduct + "', `Product_Expired` = '" + idtpExpired + "', `Product_Unit_Amt` = '" + itxbProductAmt + "', `Product_Unit_Order` = '" + itxbProductOrder + "',Product_Stock = b'" + iStock + "' WHERE `tb_product`.`Product_ID` = '" + ilbProductID + "'";                
@@ -352,7 +352,7 @@ namespace Petshop
                     {
                         string isqlDelProduct = "DELETE FROM `tb_Product` WHERE `Product_ID`='" + itxbProductID + "'";
                         iConnect.Insert(isqlDelProduct);
-                        MessageBox.Show("ทำการลบยาออกแล้ว");
+                        MessageBox.Show("ทำการลบสินค้าออกแล้ว");
                         ClearTxtProduct();
                     }
                     else

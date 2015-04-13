@@ -122,7 +122,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBillDate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBillDate";
+            this.Text = "ตัวอย่างก่อนพิมพ์ ใบนัดหมาย";
             this.ResumeLayout(false);
             this.PerformLayout();
 

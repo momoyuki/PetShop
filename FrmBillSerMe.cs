@@ -29,17 +29,22 @@ namespace Petshop
             string ilbBillid = lb_BillID.Text.Trim();
             DataTable idtBillDetail;
             string isqlBillDetail = "SELECT tb_servicebill.Service_ID as ServiceMedi_ID,tb_service.Service_Des as ServiceMedi_Des ," +
-                                    "tb_servicebill.Service_Bill_Price as  ServiceMedi_Price ," +
                                     "tb_servicebill.Service_Bill_Unit as ServiceMedi_Unit ," +
+                                    "tb_servicebill.Service_Bill_Price as  ServiceMedi_Price ," +
                                     "tb_servicebill.Service_Bill_Amt as ServiceMedi_Amt " +
                                     "From tb_servicebill,tb_service where tb_servicebill.Bill_ID = '" + ilbBillid + "' AND tb_servicebill.Service_ID = tb_service.Service_ID " +
                                     "union " +
                                     "SELECT tb_medibill.Medi_ID as ServiceMedi_ID,tb_medicine.Medi_Des as ServiceMedi_Des ," +
-                                    "tb_medibill.Medi_Bill_Price as  ServiceMedi_Price ," +
                                     "tb_medibill.Medi_Bill_Unit as ServiceMedi_Unit ," +
+                                    "tb_medibill.Medi_Bill_Price as  ServiceMedi_Price ," +
                                     "tb_medibill.Medi_Bill_Amt as ServiceMedi_Amt " +
-                                    "From tb_medibill,tb_medicine where tb_medibill.Bill_ID = '" + ilbBillid + "' AND tb_medibill.Medi_ID = tb_medicine.Medi_ID ";
-
+                                    "From tb_medibill,tb_medicine where tb_medibill.Bill_ID = '" + ilbBillid + "' AND tb_medibill.Medi_ID = tb_medicine.Medi_ID " +
+                                    "union "+
+                                    "SELECT tb_productsalebill.Product_ID as ServiceMedi_ID,tb_product.Product_Des as ServiceMedi_Des, "+
+                                    "tb_productsalebill.ProductSale_Bill_Unit as ServiceMedi_Unit, "+
+                                    "tb_productsalebill.ProductSale_Bill_Price as ServiceMedi_Price, " +
+                                    "tb_productsalebill.ProductSale_Bill_Amt as ServiceMedi_Amt " +
+                                    "FROM tb_productsalebill,tb_product where Bill_ID = '" + ilbBillid + "' AND tb_productsalebill.Product_ID = tb_product.Product_ID";
             idtBillDetail = iConnect.SelectByCommand(isqlBillDetail);
             //////////////////////////////////////////////Load Company//////////////////////////////////////////////////////////
             DataTable idtCompany;

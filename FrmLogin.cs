@@ -11,10 +11,10 @@ using System.Security.Cryptography;
 
 namespace Petshop
 {
-    public partial class FrmIndex : MetroForm
+    public partial class FrmLogin : MetroForm
     {
         private MySQLDBConnect iConnect; //ดึงClass MySQLDBConnect มาใช้ โดยเก็บไว้ในตัวแปร iconnect
-        public FrmIndex()
+        public FrmLogin()
         {
             InitializeComponent();
             iConnect = new MySQLDBConnect(); //กำหนดค่า iconnect เป็น Class MySQLDBConnect

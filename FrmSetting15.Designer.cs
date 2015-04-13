@@ -32,6 +32,7 @@
             this.tabControlBreedType = new System.Windows.Forms.TabControl();
             this.tpBreed = new System.Windows.Forms.TabPage();
             this.gBoxBreed = new System.Windows.Forms.GroupBox();
+            this.bt_ResetBreed = new System.Windows.Forms.Button();
             this.bt_DelBreed = new System.Windows.Forms.Button();
             this.Bt_LoadBreed = new System.Windows.Forms.Button();
             this.bt_EditBreed = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.ccPT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPetType_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxType = new System.Windows.Forms.GroupBox();
+            this.bt_Reset = new System.Windows.Forms.Button();
             this.bt_DelType = new System.Windows.Forms.Button();
             this.bt_LoadType = new System.Windows.Forms.Button();
             this.bt_EditType = new System.Windows.Forms.Button();
@@ -97,6 +99,7 @@
             // 
             // gBoxBreed
             // 
+            this.gBoxBreed.Controls.Add(this.bt_ResetBreed);
             this.gBoxBreed.Controls.Add(this.bt_DelBreed);
             this.gBoxBreed.Controls.Add(this.Bt_LoadBreed);
             this.gBoxBreed.Controls.Add(this.bt_EditBreed);
@@ -116,6 +119,19 @@
             this.gBoxBreed.TabStop = false;
             this.gBoxBreed.Text = "รายละเอียด";
             // 
+            // bt_ResetBreed
+            // 
+            this.bt_ResetBreed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_ResetBreed.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_ResetBreed.Location = new System.Drawing.Point(267, 23);
+            this.bt_ResetBreed.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_ResetBreed.Name = "bt_ResetBreed";
+            this.bt_ResetBreed.Size = new System.Drawing.Size(70, 32);
+            this.bt_ResetBreed.TabIndex = 9;
+            this.bt_ResetBreed.Text = "เริ่มใหม่";
+            this.bt_ResetBreed.UseVisualStyleBackColor = true;
+            this.bt_ResetBreed.Click += new System.EventHandler(this.bt_ResetBreed_Click);
+            // 
             // bt_DelBreed
             // 
             this.bt_DelBreed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -132,7 +148,7 @@
             // Bt_LoadBreed
             // 
             this.Bt_LoadBreed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_LoadBreed.Location = new System.Drawing.Point(291, 53);
+            this.Bt_LoadBreed.Location = new System.Drawing.Point(267, 60);
             this.Bt_LoadBreed.Margin = new System.Windows.Forms.Padding(4);
             this.Bt_LoadBreed.Name = "Bt_LoadBreed";
             this.Bt_LoadBreed.Size = new System.Drawing.Size(100, 32);
@@ -214,6 +230,7 @@
             this.txb_BreedID.Name = "txb_BreedID";
             this.txb_BreedID.Size = new System.Drawing.Size(132, 26);
             this.txb_BreedID.TabIndex = 1;
+            this.txb_BreedID.TextChanged += new System.EventHandler(this.txb_BreedID_TextChanged);
             // 
             // lb_BreedID
             // 
@@ -323,6 +340,7 @@
             // 
             // gBoxType
             // 
+            this.gBoxType.Controls.Add(this.bt_Reset);
             this.gBoxType.Controls.Add(this.bt_DelType);
             this.gBoxType.Controls.Add(this.bt_LoadType);
             this.gBoxType.Controls.Add(this.bt_EditType);
@@ -339,6 +357,19 @@
             this.gBoxType.TabIndex = 0;
             this.gBoxType.TabStop = false;
             this.gBoxType.Text = "รายละเอียด";
+            // 
+            // bt_Reset
+            // 
+            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_Reset.Location = new System.Drawing.Point(279, 24);
+            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Reset.Name = "bt_Reset";
+            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
+            this.bt_Reset.TabIndex = 9;
+            this.bt_Reset.Text = "เริ่มใหม่";
+            this.bt_Reset.UseVisualStyleBackColor = true;
+            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
             // 
             // bt_DelType
             // 
@@ -357,7 +388,7 @@
             // bt_LoadType
             // 
             this.bt_LoadType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_LoadType.Location = new System.Drawing.Point(279, 24);
+            this.bt_LoadType.Location = new System.Drawing.Point(556, 16);
             this.bt_LoadType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadType.Name = "bt_LoadType";
             this.bt_LoadType.Size = new System.Drawing.Size(100, 32);
@@ -497,6 +528,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_DesID;
         private System.Windows.Forms.ErrorProvider epCheck;
+        private System.Windows.Forms.Button bt_ResetBreed;
+        private System.Windows.Forms.Button bt_Reset;
 
 
     }

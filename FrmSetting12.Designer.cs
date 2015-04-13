@@ -223,7 +223,7 @@
             // 
             // txb_ProductID
             // 
-            this.txb_ProductID.Location = new System.Drawing.Point(96, 26);
+            this.txb_ProductID.Location = new System.Drawing.Point(96, 25);
             this.txb_ProductID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_ProductID.MaxLength = 16;
             this.txb_ProductID.Name = "txb_ProductID";
@@ -236,7 +236,7 @@
             // lb_ProductName
             // 
             this.lb_ProductName.AutoSize = true;
-            this.lb_ProductName.Location = new System.Drawing.Point(27, 66);
+            this.lb_ProductName.Location = new System.Drawing.Point(20, 63);
             this.lb_ProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ProductName.Name = "lb_ProductName";
             this.lb_ProductName.Size = new System.Drawing.Size(68, 18);
@@ -245,7 +245,7 @@
             // 
             // txb_ProductName
             // 
-            this.txb_ProductName.Location = new System.Drawing.Point(96, 62);
+            this.txb_ProductName.Location = new System.Drawing.Point(96, 59);
             this.txb_ProductName.Margin = new System.Windows.Forms.Padding(4);
             this.txb_ProductName.MaxLength = 100;
             this.txb_ProductName.Name = "txb_ProductName";
@@ -421,7 +421,7 @@
             // lb_ProductProduct
             // 
             this.lb_ProductProduct.AutoSize = true;
-            this.lb_ProductProduct.Location = new System.Drawing.Point(56, 104);
+            this.lb_ProductProduct.Location = new System.Drawing.Point(93, 104);
             this.lb_ProductProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ProductProduct.Name = "lb_ProductProduct";
             this.lb_ProductProduct.Size = new System.Drawing.Size(51, 18);
@@ -451,7 +451,7 @@
             // lb_ProductSale
             // 
             this.lb_ProductSale.AutoSize = true;
-            this.lb_ProductSale.Location = new System.Drawing.Point(27, 67);
+            this.lb_ProductSale.Location = new System.Drawing.Point(22, 67);
             this.lb_ProductSale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ProductSale.Name = "lb_ProductSale";
             this.lb_ProductSale.Size = new System.Drawing.Size(123, 18);
@@ -471,7 +471,7 @@
             // lb_ProductPrice
             // 
             this.lb_ProductPrice.AutoSize = true;
-            this.lb_ProductPrice.Location = new System.Drawing.Point(56, 29);
+            this.lb_ProductPrice.Location = new System.Drawing.Point(62, 29);
             this.lb_ProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ProductPrice.Name = "lb_ProductPrice";
             this.lb_ProductPrice.Size = new System.Drawing.Size(83, 18);
@@ -481,7 +481,7 @@
             // bt_AddProduct
             // 
             this.bt_AddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_AddProduct.Location = new System.Drawing.Point(116, 217);
+            this.bt_AddProduct.Location = new System.Drawing.Point(116, 220);
             this.bt_AddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddProduct.Name = "bt_AddProduct";
             this.bt_AddProduct.Size = new System.Drawing.Size(70, 32);
@@ -494,7 +494,7 @@
             // 
             this.bt_EditProduct.Enabled = false;
             this.bt_EditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_EditProduct.Location = new System.Drawing.Point(194, 217);
+            this.bt_EditProduct.Location = new System.Drawing.Point(194, 220);
             this.bt_EditProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditProduct.Name = "bt_EditProduct";
             this.bt_EditProduct.Size = new System.Drawing.Size(70, 32);
@@ -506,7 +506,7 @@
             // lb_Detail
             // 
             this.lb_Detail.AutoSize = true;
-            this.lb_Detail.Location = new System.Drawing.Point(23, 98);
+            this.lb_Detail.Location = new System.Drawing.Point(22, 93);
             this.lb_Detail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Detail.Name = "lb_Detail";
             this.lb_Detail.Size = new System.Drawing.Size(66, 18);
@@ -515,7 +515,7 @@
             // 
             // txb_ProductDetail
             // 
-            this.txb_ProductDetail.Location = new System.Drawing.Point(96, 98);
+            this.txb_ProductDetail.Location = new System.Drawing.Point(96, 93);
             this.txb_ProductDetail.Margin = new System.Windows.Forms.Padding(4);
             this.txb_ProductDetail.Multiline = true;
             this.txb_ProductDetail.Name = "txb_ProductDetail";
@@ -538,7 +538,7 @@
             this.bt_DelProduct.Enabled = false;
             this.bt_DelProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_DelProduct.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bt_DelProduct.Location = new System.Drawing.Point(272, 217);
+            this.bt_DelProduct.Location = new System.Drawing.Point(272, 220);
             this.bt_DelProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelProduct.Name = "bt_DelProduct";
             this.bt_DelProduct.Size = new System.Drawing.Size(70, 32);
@@ -589,7 +589,7 @@
             // 
             // txb_SearchProduct
             // 
-            this.txb_SearchProduct.Location = new System.Drawing.Point(550, 297);
+            this.txb_SearchProduct.Location = new System.Drawing.Point(550, 300);
             this.txb_SearchProduct.Name = "txb_SearchProduct";
             this.txb_SearchProduct.Size = new System.Drawing.Size(262, 26);
             this.txb_SearchProduct.TabIndex = 7;
@@ -598,7 +598,7 @@
             // bt_SearchProduct
             // 
             this.bt_SearchProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_SearchProduct.Location = new System.Drawing.Point(818, 294);
+            this.bt_SearchProduct.Location = new System.Drawing.Point(818, 297);
             this.bt_SearchProduct.Name = "bt_SearchProduct";
             this.bt_SearchProduct.Size = new System.Drawing.Size(101, 32);
             this.bt_SearchProduct.TabIndex = 8;
