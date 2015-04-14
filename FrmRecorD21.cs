@@ -40,7 +40,6 @@ namespace Petshop
 
         private void LoadHealDetail()
         {
-            if((txb_PetProfileID.Text !=null)&&(txb_PetProfileID.Text != string.Empty)){
                 string itxbPetProfileID = txb_PetProfileID.Text.ToString();
                 DataTable idtHealDetail;
                 string isqlCommand = "SELECT  tb_healrecord.Pet_ID as Pet_ID,tb_medirecord.HealRecord_ID as HealRecord_ID,tb_healrecord.HealRecord_Date as HealRecord_Date,tb_medirecord.Medi_ID as ServiceMedi_ID, "
@@ -55,7 +54,6 @@ namespace Petshop
                 dGV_HealDetail.DataSource = idtHealDetail;
                 dGV_HealDetail.Refresh();
                 lb_HealDetailCount.Text = idtHealDetail.Rows.Count.ToString();
-            }
         }
 
         private void LoadSex() // ญังไม่ได้เสร็จ มีปัญหา ในการ เพิ่ม เพศ ชาย หญิง
@@ -121,6 +119,10 @@ namespace Petshop
                     DataTable idtPetBreed;
                     string isqlCommand = "SELECT * FROM `tb_petbreed` where PetType_ID = " + icbTypeID + "";
                     idtPetBreed = iConnect.SelectByCommand(isqlCommand);
+                    cb_PetBreed.DisplayMember = null;
+                    cb_PetBreed.ValueMember = null;
+                    cb_PetBreed.DataSource = null;
+
                     if (idtPetBreed.Rows.Count > 0)
                     {
                         cb_PetBreed.DisplayMember = idtPetBreed.Columns["PetBreed_Des"].ColumnName;
@@ -156,11 +158,18 @@ namespace Petshop
         {
             epCheck.Clear();
             Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
-            Regex RegTel = new Regex(@"^\(\d{3}\) ?\d{3}( |-)?\d{4}|^\d{3}( |-)?\d{3}( |-)?\d{4}");
+            Regex RegTel = new Regex(@"^\(\d{3}\) ?\d{3}( |-)?\d{4}|^\d{3}( |-)?\d{3}( |-)?\d{3,4}");
             
             if (!RegString.IsMatch(txb_PetName.Text))
             {
                 epCheck.SetError(txb_PetName, "***กรุณาระบุชื่อสัตว์เลี้ยง");
+            }
+            else if (cb_PetType.SelectedValue == null)
+            {
+                epCheck.SetError(cb_PetType,"กรุณาเลือกประเภทของสัตว์");
+            }else if(cb_PetBreed.SelectedValue == null)
+            {
+                epCheck.SetError(cb_PetBreed, "กรุณาเลือกพันธุ์ของสัตว์");
             }
             else if (!RegString.IsMatch(txb_PetColor.Text))
             {
@@ -247,6 +256,8 @@ namespace Petshop
             txb_TelOwner.Clear();
             Txb_Addr.Clear();
             dTP_Born.Value = DateTime.Now;
+            lb_HealRecordID.Text = "";
+            lb_HealDetailID.Text = "";
         }
 
         private void cb_PetType_SelectionChangeCommitted(object sender, EventArgs e)
@@ -331,16 +342,23 @@ namespace Petshop
 
         private void bt_Search_Click(object sender, EventArgs e)
         {
+            PetSearch();
+        }
+
+        private void PetSearch()
+        {
             string iSearchBox = txb_SearchPet.Text.Trim();
             Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
 
-            if(RegString.IsMatch(txb_SearchPet.Text)){
+            if (RegString.IsMatch(txb_SearchPet.Text))
+            {
                 DataTable itbPetProfile;
-                string isqlCommand = "SELECT tb_petprofile.*,tb_petbreed.petbreed_des,tb_pettype.pettype_des "+
-                    "FROM `tb_petprofile`,tb_petbreed,tb_pettype where ( Pet_ID like '%"+iSearchBox+"%' OR Pet_Name like '%"+iSearchBox+"%' OR Owner_Name like '"+iSearchBox+"' ) AND (tb_petprofile.petbreed_ID = tb_petbreed.petbreed_id) AND (tb_petprofile.pettype_id = tb_pettype.pettype_id)";
+                string isqlCommand = "SELECT tb_petprofile.*,tb_petbreed.petbreed_des,tb_pettype.pettype_des " +
+                    "FROM `tb_petprofile`,tb_petbreed,tb_pettype where ( Pet_ID like '%" + iSearchBox + "%' OR Pet_Name like '%" + iSearchBox + "%' OR Owner_Name like '" + iSearchBox + "' ) AND (tb_petprofile.petbreed_ID = tb_petbreed.petbreed_id) AND (tb_petprofile.pettype_id = tb_pettype.pettype_id)";
                 itbPetProfile = iConnect.SelectByCommand(isqlCommand);
                 dGV_PetProfile.DataSource = itbPetProfile;
                 dGV_PetProfile.Refresh();
+                lb_PetCount.Text = itbPetProfile.Rows.Count.ToString();
             }
             else
             {
@@ -443,7 +461,7 @@ namespace Petshop
                 FrmNN21 iFrmMM21 = new FrmNN21();
                 iFrmMM21.MdiParent = MainForm.ActiveForm;
                 iFrmMM21.Show();
-                iFrmMM21.lb_HealRecordID.Text = lb_HealRecordID.Text;
+                iFrmMM21.lb_HealRecordID.Text = lb_HealDetailID.Text;
             }
             //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
             
@@ -463,7 +481,7 @@ namespace Petshop
                 FrmRecorD22 iFrmMM23 = new FrmRecorD22();
                 iFrmMM23.MdiParent = MainForm.ActiveForm;
                 iFrmMM23.Show();
-                iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
+                iFrmMM23.lb_HealRecordID.Text = lb_HealDetailID.Text;
                 iFrmMM23.lb_PetID.Text = txb_PetProfileID.Text;
             }
             
@@ -579,8 +597,12 @@ namespace Petshop
             clearTxb();
         }
 
-
-
-    
+        private void txb_SearchPet_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PetSearch();
+            }
+        }
     }
 }

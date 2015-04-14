@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lb_HealDate = new System.Windows.Forms.Label();
             this.lb_HealRecord = new System.Windows.Forms.Label();
             this.Txb_Remark = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@
             this.CheckBoxStats = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ccHealDate_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPet_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPet_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccOwner_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccOwner_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,11 +86,13 @@
             this.CheckBox_Contract = new System.Windows.Forms.CheckBox();
             this.bt_PrintBill = new System.Windows.Forms.Button();
             this.bt_ResetRecord = new System.Windows.Forms.Button();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tP_All.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDate)).BeginInit();
             this.tP_Detail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_HealDate
@@ -174,6 +178,7 @@
             // 
             // bt_AddHealDate
             // 
+            this.bt_AddHealDate.Enabled = false;
             this.bt_AddHealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddHealDate.Location = new System.Drawing.Point(743, 106);
             this.bt_AddHealDate.Margin = new System.Windows.Forms.Padding(4);
@@ -360,6 +365,7 @@
             this.CheckBoxStats,
             this.ccHealDate_ID,
             this.ccPet_ID,
+            this.ccService_Des,
             this.ccPet_Name,
             this.ccOwner_Name,
             this.ccOwner_Tel,
@@ -405,6 +411,14 @@
             this.ccPet_ID.Name = "ccPet_ID";
             this.ccPet_ID.ReadOnly = true;
             this.ccPet_ID.Width = 120;
+            // 
+            // ccService_Des
+            // 
+            this.ccService_Des.DataPropertyName = "Service_Des";
+            this.ccService_Des.FillWeight = 150F;
+            this.ccService_Des.HeaderText = "นัดเรื่อง";
+            this.ccService_Des.Name = "ccService_Des";
+            this.ccService_Des.Width = 150;
             // 
             // ccPet_Name
             // 
@@ -643,6 +657,7 @@
             this.bt_HealDateDel.TabIndex = 29;
             this.bt_HealDateDel.Text = "ลบ";
             this.bt_HealDateDel.UseVisualStyleBackColor = true;
+            this.bt_HealDateDel.Click += new System.EventHandler(this.bt_HealDateDel_Click);
             // 
             // label4
             // 
@@ -689,6 +704,10 @@
             this.bt_ResetRecord.UseVisualStyleBackColor = true;
             this.bt_ResetRecord.Click += new System.EventHandler(this.bt_ResetRecord_Click);
             // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
             // FrmRecorD22
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -732,6 +751,7 @@
             this.tP_Detail.ResumeLayout(false);
             this.tP_Detail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -782,9 +802,11 @@
         private System.Windows.Forms.CheckBox CheckBox_Contract;
         private System.Windows.Forms.Button bt_PrintBill;
         private System.Windows.Forms.RadioButton rBt_Today;
+        private System.Windows.Forms.Button bt_ResetRecord;
         private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBoxStats;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccOwner_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccOwner_Tel;
@@ -794,6 +816,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remind;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Stats;
-        private System.Windows.Forms.Button bt_ResetRecord;
+        private System.Windows.Forms.ErrorProvider epCheck;
     }
 }

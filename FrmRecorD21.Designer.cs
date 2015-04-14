@@ -696,6 +696,7 @@
             this.txb_SearchPet.Name = "txb_SearchPet";
             this.txb_SearchPet.Size = new System.Drawing.Size(383, 26);
             this.txb_SearchPet.TabIndex = 0;
+            this.txb_SearchPet.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchPet_KeyDown);
             // 
             // bt_Search
             // 
@@ -1004,6 +1005,7 @@
             this.bt_HealDateDetail.TabIndex = 7;
             this.bt_HealDateDetail.Text = "นัดหมาย";
             this.bt_HealDateDetail.UseVisualStyleBackColor = true;
+            this.bt_HealDateDetail.Click += new System.EventHandler(this.bt_HealDateDetail_Click);
             // 
             // lb_HealDetailID
             // 
@@ -1058,6 +1060,7 @@
             this.bt_HealRecordDetail.TabIndex = 8;
             this.bt_HealRecordDetail.Text = "รายละเอียด";
             this.bt_HealRecordDetail.UseVisualStyleBackColor = true;
+            this.bt_HealRecordDetail.Click += new System.EventHandler(this.bt_HealRecordDetail_Click);
             // 
             // dGV_HealDetail
             // 

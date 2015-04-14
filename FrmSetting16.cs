@@ -91,7 +91,7 @@ namespace Petshop
         {
             Regex RegID = new Regex(@"^(\d{13})$");
             Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
-            Regex RegTel = new Regex(@"^\(\d{3}\) ?\d{3}( |-)?\d{4}|^\d{3}( |-)?\d{3}( |-)?\d{4}");
+            Regex RegTel = new Regex(@"^\(\d{3}\) ?\d{3}( |-)?\d{4}|^\d{3}( |-)?\d{3}( |-)?\d{3,4}");
             if (!RegID.IsMatch(txb_EmID.Text))
             {
                 epCheck.SetError(txb_EmID, "กรุณาระบุรหัสสมาชิก 13 หลัก");

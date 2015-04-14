@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+
 
 namespace Petshop
 {
@@ -17,39 +19,72 @@ namespace Petshop
             InitializeComponent();
             iConnect = new MySQLDBConnect(); //กำหนดค่า iconnect เป็น Class MySQLDBConnect
         }
-
+        String iAddEditOutlay;
         private void bt_Addoutlay_Click(object sender, EventArgs e)
         {
-            Addoutlay();
+            iAddEditOutlay = "AddOutlay";
+            AddEditOutlay();
         }
         private void bt_Editoutlay_Click(object sender, EventArgs e)
         {
-            Editoutlay();
+            iAddEditOutlay = "EditOutlay";
+            AddEditOutlay();
         }
 
-        private void Addoutlay()
+        private void AddEditOutlay()
         {
             epCheck.Clear();
-            string itxboutlayID = txb_outlayID.Text.Trim();
-            string itxboutlayDetail = txb_outlayDetail.Text.Trim();
-            string itxboutlayPrice = txb_outlayPrice.Text.Trim();
-            if ((itxboutlayDetail != null) && (itxboutlayDetail != string.Empty))
+            Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
+            Regex RegInt = new Regex(@"^(\d{1,3})$");
+            if (txb_outlayDetail.Text != string.Empty)
             {
-                string isqlUnit = "INSERT INTO `petshop`.`tb_outlay` (`outlay_Detail`, `outlay_Price`) VALUES ('" + itxboutlayDetail + "', '" + itxboutlayPrice + "');";
-                DialogResult iConfirmResult = MessageBox.Show("เพิ่มรายการ รายจ่าย " + itxboutlayDetail + " มั๊ย?", "เพิ่มรายการ..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
-                {
-                    iConnect.Insert(isqlUnit);
-                    loadData();
-                    clearTxb();
-                }
+                epCheck.SetError(txb_outlayDetail,"กรุณาระบุรายละเอียด");
+                txb_outlayDetail.Focus();
+            }
+            else if (!RegMoney.IsMatch(txb_outlayPrice.Text))
+            {
+                epCheck.SetError(txb_outlayPrice,"กรุณากรอกจำนวนเงินให้ถูกต้อง");
+                txb_outlayPrice.Focus();
             }
             else
             {
-                epCheck.SetError(txb_outlayDetail, "กรุณากรอกรายละเอียด");
-                txb_outlayDetail.Focus();
-            }
+                string itxboutlayID = txb_outlayID.Text.Trim();
+                string itxboutlayDetail = txb_outlayDetail.Text.Trim();
+                string itxboutlayPrice = txb_outlayPrice.Text.Trim();
+
+                if (iAddEditOutlay == "AddOutlay")
+                {
+                    DialogResult iConfirmResult = MessageBox.Show("เพิ่มรายการ รายจ่าย " + itxboutlayDetail + " มั๊ย?", "เพิ่มรายการ..", MessageBoxButtons.YesNo);
+                    if (iConfirmResult == DialogResult.Yes)
+                    {
+                        string isqlUnit = "INSERT INTO `petshop`.`tb_outlay` (`outlay_Detail`, `outlay_Price`) VALUES ('" + itxboutlayDetail + "', '" + itxboutlayPrice + "');";
+                        iConnect.Insert(isqlUnit);
+                        loadData();
+                        clearTxb();
+                    }
+                }
+                else if (iAddEditOutlay == "EditOutlay")
+                {
+                    if (txb_outlayID.Text != string.Empty)
+                    {
+                        DialogResult iConfirmResult = MessageBox.Show("แก้ไขเป็น " + itxboutlayDetail + " มั๊ย?", "แก้ไขรายการ..", MessageBoxButtons.YesNo);
+                        if (iConfirmResult == DialogResult.Yes)
+                        {
+                            string isqloutlay = "UPDATE `petshop`.`tb_outlay` SET `outlay_Detail`='" + itxboutlayDetail + "', `outlay_Price`='" + itxboutlayPrice + "' WHERE `outlay_ID`='" + itxboutlayID + "'";
+                            iConnect.Insert(isqloutlay);
+                            loadData();
+                            clearTxb();
+                        }
+                    }
+                    else
+                    {
+                        epCheck.SetError(txb_outlayID,"กรุณาเลือกรายการที่จะแก้ไข");
+                    }
+                    
+                }
+            }  
         }
+    
 
         private void clearTxb()
         {
@@ -75,34 +110,6 @@ namespace Petshop
         private void bt_Resetoutlay_Click(object sender, EventArgs e)
         {
             clearTxb();
-        }
-
-        private void Editoutlay()
-        {
-            epCheck.Clear();
-            string itxboutlayID = txb_outlayID.Text.Trim();
-            string itxboutlayDetail = txb_outlayDetail.Text.Trim();
-            string itxboutlayPrice = txb_outlayPrice.Text.Trim();
-            if ((itxboutlayDetail == null) || (itxboutlayDetail == string.Empty))
-            {
-                epCheck.SetError(txb_outlayDetail, "กรุณากรอกรายละเอียด");
-                txb_outlayDetail.Focus();
-            }
-            else if ((itxboutlayID == null) || (itxboutlayID == string.Empty))
-            {
-                epCheck.SetError(txb_outlayID, "คุณยังไม่ได้เลือกรายการที่จะแก้ไข");
-            }
-            else
-            {
-                DialogResult iConfirmResult = MessageBox.Show("แก้ไขเป็น " + itxboutlayDetail + " มั๊ย?", "แก้ไขรายการ..", MessageBoxButtons.YesNo);
-                if (iConfirmResult == DialogResult.Yes)
-                {
-                    string isqloutlay = "UPDATE `petshop`.`tb_outlay` SET `outlay_Detail`='" + itxboutlayDetail + "', `outlay_Price`='" + itxboutlayPrice + "' WHERE `outlay_ID`='" + itxboutlayID + "'";
-                    iConnect.Insert(isqloutlay);
-                    loadData();
-                    clearTxb();
-                }
-            }
         }
 
         private void txb_outlayID_TextChanged(object sender, EventArgs e)

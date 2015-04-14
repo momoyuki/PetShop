@@ -346,7 +346,7 @@ namespace Petshop
                 if (iConfirmResult == DialogResult.Yes)
                 {
                     DataTable idtProductCheck;
-                    string isqlProductCheck = "SELECT tb_productsalebill.Product_ID FROM petshop.tb_productsalebill where Product_ID = '" + itxbProductID + "'";
+                    string isqlProductCheck = "SELECT tb_productsaledetail.Product_ID FROM petshop.tb_productsaledetail where Product_ID = '" + itxbProductID + "'";
                     idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
                     if (idtProductCheck.Rows.Count == 0)
                     {
@@ -372,8 +372,8 @@ namespace Petshop
 
         private void SearchProduct()
         {
-            Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
-            if (RegSearch.IsMatch(txb_SearchProduct.Text))
+            Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            if (RegString.IsMatch(txb_SearchProduct.Text))
             {
                 string iSearchProduct = txb_SearchProduct.Text.Trim();
                 DataTable idtProduct;

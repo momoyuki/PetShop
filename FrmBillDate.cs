@@ -30,7 +30,7 @@ namespace Petshop
             string itxbUnitList = tb_UnitList.Text.Trim();
             string ilbHealDateID = lb_HealDateID.Text.Trim();
             DataTable idtBillDetail;
-            string isqlBillDetail = "SELECT tb_healdate.*,tb_service.Service_Des FROM tb_healdate,tb_service where tb_HealDate.Pet_ID ='" + ilbHealDateID + "' AND tb_healdate.Service_ID = tb_service.Service_ID AND HealDate_Status = 0 Order By HealDate_Day asc limt '"+itxbUnitList+"'";
+            string isqlBillDetail = "SELECT tb_healdate.*,tb_service.Service_Des FROM tb_healdate,tb_service where tb_HealDate.Pet_ID ='" + ilbHealDateID + "' AND tb_healdate.Service_ID = tb_service.Service_ID AND HealDate_Status = 0 Order By HealDate_Day asc limit "+itxbUnitList+"";
 
             idtBillDetail = iConnect.SelectByCommand(isqlBillDetail);
             //////////////////////////////////////////////Load Company//////////////////////////////////////////////////////////

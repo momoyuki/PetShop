@@ -406,20 +406,19 @@ namespace Petshop
         private void txb_ServiceDetail_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) {
-                if((txb_ServiceDetail.Text !=null)&&(txb_ServiceDetail.Text !=string.Empty)){
+                
                     txb_ServicePrice.Focus();
-                }
-                }
+
+                                        }
         }
 
         private void txb_ServicePrice_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if ((txb_ServicePrice.Text != null) && (txb_ServicePrice.Text !=string.Empty))
-                {
+               
                     txb_ServiceDate.Focus();
-                }
+             
             }
         }
 
@@ -442,7 +441,9 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txb_MediName.Focus();
+               
+                    txb_MediName.Focus();
+              
             }
         }
 
@@ -450,7 +451,9 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txb_MediDetail.Focus();
+                
+                     txb_MediDetail.Focus();
+
             }
         }
 
@@ -466,7 +469,9 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txb_MediSale.Focus();
+             
+                    txb_MediSale.Focus();
+           
             }
         }
 
@@ -474,7 +479,9 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                cb_MediUnit.Focus();
+               
+                    cb_MediUnit.Focus();
+         
             }
         }
 
@@ -484,7 +491,7 @@ namespace Petshop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txb_MediOrder.Focus();
+             txb_MediOrder.Focus();
             }
         }
 
@@ -510,8 +517,8 @@ namespace Petshop
 
         private void SearchMedi()
         {
-            Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
-            if (RegSearch.IsMatch(txb_SearchMedi.Text))
+            Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            if (RegString.IsMatch(txb_SearchMedi.Text))
             {
                 string iSearchMedi = txb_SearchMedi.Text.Trim();
                 DataTable idtMedicine;
@@ -614,13 +621,12 @@ namespace Petshop
         private void bt_SearchService_Click(object sender, EventArgs e)
         {
             SearchServicce();
-           
         }
 
         private void SearchServicce()
         {
-            Regex RegSearch = new Regex(@"^[\d+]|[\w+]|[ ]$");
-            if (RegSearch.IsMatch(txb_SearchService.Text))
+            Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            if (RegString.IsMatch(txb_SearchService.Text))
             {
                 string iSearchService = txb_SearchService.Text.Trim();
                 DataTable idtService;

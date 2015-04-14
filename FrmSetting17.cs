@@ -50,7 +50,7 @@ namespace Petshop
         private void bt_Update_Click(object sender, EventArgs e)
         {
             epCheck.Clear();
-            Regex RegInt = new Regex(@"^(\d{2})$");
+            Regex RegInt2 = new Regex(@"^(\d{2})$");
             if (txb_Company_Name.Text == string.Empty) {
                 epCheck.SetError(txb_Company_Name,"กรุณาระบุชื่อองค์กร");
                 txb_Company_Name.Focus();
@@ -65,22 +65,22 @@ namespace Petshop
                 epCheck.SetError(txb_CompanyTel, "กรุณาระบุเบอร์โทรศัพท์");
                 txb_CompanyTel.Focus();
             }
-            else if (!RegInt.IsMatch(txb_CoID.Text)) 
+            else if (!RegInt2.IsMatch(txb_CoID.Text)) 
             {
                 epCheck.SetError(txb_CoID, "กรุณาระบุรหัสสาขา 2 ตำแหน่ง");
                 txb_CoID.Focus();
             }
-            else if (!RegInt.IsMatch(txb_CoService.Text))
+            else if (!RegInt2.IsMatch(txb_CoService.Text))
             {
                 epCheck.SetError(txb_CoService, "กรุณาระบุรหัสบริการ 2 ตำแหน่ง");
                 txb_CoService.Focus();
             }
-            else if (!RegInt.IsMatch(txb_CoSale.Text))
+            else if (!RegInt2.IsMatch(txb_CoSale.Text))
             {
                 epCheck.SetError(txb_CoSale, "กรุณาระบุรหัสขายสินค้า 2 ตำแหน่ง");
                 txb_CoSale.Focus();
             }
-            else if (!RegInt.IsMatch(txb_CoBill.Text))
+            else if (!RegInt2.IsMatch(txb_CoBill.Text))
             {
                 epCheck.SetError(txb_CoBill, "กรุณาระบุรหัสใบเสร็จ 2 ตำแหน่ง");
                 txb_CoBill.Focus();
