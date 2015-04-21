@@ -47,7 +47,7 @@ namespace Petshop
             else if (rBt_contract.Checked == true)
             {
                 string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                     "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 order by HealDate_Status,HealDate_Day";
+                     "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 order by HealDate_Day";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
@@ -55,7 +55,7 @@ namespace Petshop
             else if (rBt_contracted.Checked == true)
             {
                 string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                    "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 1 order by HealDate_Status,HealDate_Day";
+                    "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 1 order by HealDate_Day";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
@@ -73,7 +73,7 @@ namespace Petshop
                                     + " Union "
                                     + " SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
                                     + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
-                                    + " AND  HealDate_Day = '" + iDateToday + "'";
+                                    + " AND  HealDate_Day = '" + iDateToday + "' Order By HealDate_ID";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
@@ -109,13 +109,17 @@ namespace Petshop
         {
             epCheck.Clear();
             Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
-             Regex Regint = new Regex(@"^\d{1,3}$");
+            Regex Regint = new Regex(@"^\d{1,3}$");
             if (lb_PetID.Text == string.Empty)
             {
                 epCheck.SetError(lb_PetID, "ไม่พบรหัสสัตว์");
             }
             else if(lb_HealRecordID.Text == string.Empty) {
                 epCheck.SetError(lb_HealRecordID, "ไม่พบรหัสการรักษา");
+            }
+            else if(cb_Service.SelectedValue == null)
+            {
+                epCheck.SetError(cb_Service,"กรุณาเลือกบริการที่นัดหมาย");
             }
             else if(!Regint.IsMatch(txb_Remind.Text)){
                 epCheck.SetError(txb_Remind,"กรุณาระบุจำนวนวันก่อนถึงวันนัดหมาย");
@@ -295,10 +299,26 @@ namespace Petshop
 
         private void bt_PrintBill_Click(object sender, EventArgs e)
         {
-            string ilbHealDateID = lb_HealDateID.Text.Trim();
-            if((ilbHealDateID !=null)&&(ilbHealDateID !=""))
+            string ilbHealRecordID = lb_HealRecordID.Text.Trim();
+            if((ilbHealRecordID !=null)&&(ilbHealRecordID !=string.Empty))
             {
-                
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmNRePort31))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmNRePort31 iFrmNRePort31 = new FrmNRePort31();
+                iFrmNRePort31.MdiParent = MainForm.ActiveForm;
+                iFrmNRePort31.Show();
+                iFrmNRePort31.txb_ReferID.Text = lb_HealRecordID.Text;
+                //iFrmNRePort31.lb_PetID.Text = .Text;
+            }
+            else
+            {
+                MessageBox.Show("ไม่พบรหัสประวัติการรักษา");
             }
         }
 

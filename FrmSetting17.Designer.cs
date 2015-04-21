@@ -145,7 +145,6 @@
             this.txb_CompanyAddr.Name = "txb_CompanyAddr";
             this.txb_CompanyAddr.Size = new System.Drawing.Size(255, 130);
             this.txb_CompanyAddr.TabIndex = 1;
-            this.txb_CompanyAddr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_CompanyAddr_KeyDown);
             // 
             // txb_CompanyTel
             // 
@@ -174,7 +173,7 @@
             this.bt_Update.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Update.Name = "bt_Update";
             this.bt_Update.Size = new System.Drawing.Size(100, 32);
-            this.bt_Update.TabIndex = 0;
+            this.bt_Update.TabIndex = 3;
             this.bt_Update.Text = "บันทึก";
             this.bt_Update.UseVisualStyleBackColor = true;
             this.bt_Update.Click += new System.EventHandler(this.bt_Update_Click);
@@ -268,7 +267,7 @@
             this.gBoxCoDetail.Location = new System.Drawing.Point(12, 12);
             this.gBoxCoDetail.Name = "gBoxCoDetail";
             this.gBoxCoDetail.Size = new System.Drawing.Size(473, 284);
-            this.gBoxCoDetail.TabIndex = 26;
+            this.gBoxCoDetail.TabIndex = 0;
             this.gBoxCoDetail.TabStop = false;
             this.gBoxCoDetail.Text = "ข้อมูลหน่วยงาน";
             // 
@@ -286,7 +285,7 @@
             this.gBoxCompanyCode.Location = new System.Drawing.Point(12, 302);
             this.gBoxCompanyCode.Name = "gBoxCompanyCode";
             this.gBoxCompanyCode.Size = new System.Drawing.Size(473, 112);
-            this.gBoxCompanyCode.TabIndex = 27;
+            this.gBoxCompanyCode.TabIndex = 1;
             this.gBoxCompanyCode.TabStop = false;
             this.gBoxCompanyCode.Text = "รหัสสำหรับเอกสาร";
             // 
@@ -310,7 +309,7 @@
             this.gBoxLogo.Location = new System.Drawing.Point(491, 12);
             this.gBoxLogo.Name = "gBoxLogo";
             this.gBoxLogo.Size = new System.Drawing.Size(420, 402);
-            this.gBoxLogo.TabIndex = 28;
+            this.gBoxLogo.TabIndex = 2;
             this.gBoxLogo.TabStop = false;
             this.gBoxLogo.Text = "ภาพสัญลักษณ์";
             // 

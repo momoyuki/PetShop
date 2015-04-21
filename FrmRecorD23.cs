@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Petshop
 {
@@ -39,20 +40,21 @@ namespace Petshop
         }
         decimal iProductAmt = 0;
         private void Calculate()
-        {
+        { 
             txb_ProductSaleTotal.Text = iProductAmt.ToString();
             decimal iTotal = 0;
-            if ((txb_ProductSaleTotal.Text != null) && (txb_ProductSaleTotal.Text != ""))
+            decimal iDC = 0;
+            decimal iNet = 0;
+            Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
+            if (RegMoney.IsMatch(txb_ProductSaleTotal.Text))
             {
                 iTotal = Convert.ToDecimal(txb_ProductSaleTotal.Text);
             }
-            decimal iDC = 0;
-            if ((txb_ProductSaleDC.Text != null) && (txb_ProductSaleDC.Text != ""))
+            if (RegMoney.IsMatch(txb_ProductSaleDC.Text))
             {
                 iDC = Convert.ToDecimal(txb_ProductSaleDC.Text);
             }
-            decimal iNet = 0;
-            if ((txb_ProductSaleNet.Text != null) && (txb_ProductSaleNet.Text != ""))
+            if (RegMoney.IsMatch(txb_ProductSaleNet.Text))
             {
                 iNet = Convert.ToDecimal(txb_ProductSaleNet.Text);
             }
@@ -105,6 +107,7 @@ namespace Petshop
         private void AddRecordProductSale() //สร้างรหัส และ อัพเดต Total DC Net
         {
             epCheck.Clear();
+            Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
             string ilbProductSaleID = lb_ProductSaleID.Text.Trim();
             if (cb_Em.SelectedValue == null)
             {

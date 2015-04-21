@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nUD_ProductUnit = new System.Windows.Forms.NumericUpDown();
             this.lbyear = new System.Windows.Forms.Label();
             this.bt_CancelBuy = new System.Windows.Forms.Button();
@@ -43,14 +44,8 @@
             this.cb_Em = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProductSale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProductSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dTP_ProductSaleDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.ccProductSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_AddProductSale = new System.Windows.Forms.Button();
             this.txb_ProductID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,6 +60,12 @@
             this.lb_PriceAmt = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.bt_Reset = new System.Windows.Forms.Button();
+            this.ccProductSale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nUD_ProductUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
@@ -77,7 +78,7 @@
             this.nUD_ProductUnit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nUD_ProductUnit.Name = "nUD_ProductUnit";
             this.nUD_ProductUnit.Size = new System.Drawing.Size(72, 26);
-            this.nUD_ProductUnit.TabIndex = 131;
+            this.nUD_ProductUnit.TabIndex = 8;
             this.nUD_ProductUnit.Value = new decimal(new int[] {
             1,
             0,
@@ -103,7 +104,7 @@
             this.bt_CancelBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_CancelBuy.Name = "bt_CancelBuy";
             this.bt_CancelBuy.Size = new System.Drawing.Size(112, 37);
-            this.bt_CancelBuy.TabIndex = 129;
+            this.bt_CancelBuy.TabIndex = 12;
             this.bt_CancelBuy.Text = "ลบรายการ";
             this.bt_CancelBuy.UseVisualStyleBackColor = true;
             this.bt_CancelBuy.Click += new System.EventHandler(this.bt_CancelBuy_Click);
@@ -116,7 +117,7 @@
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Print.Name = "bt_Print";
             this.bt_Print.Size = new System.Drawing.Size(112, 87);
-            this.bt_Print.TabIndex = 127;
+            this.bt_Print.TabIndex = 10;
             this.bt_Print.Text = "พิมพ์ใบเสร็จ";
             this.bt_Print.UseVisualStyleBackColor = true;
             this.bt_Print.Click += new System.EventHandler(this.bt_Print_Click);
@@ -141,7 +142,7 @@
             this.txb_ProductSaleNet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_ProductSaleNet.Name = "txb_ProductSaleNet";
             this.txb_ProductSaleNet.Size = new System.Drawing.Size(66, 26);
-            this.txb_ProductSaleNet.TabIndex = 122;
+            this.txb_ProductSaleNet.TabIndex = 6;
             this.txb_ProductSaleNet.Text = "0.00";
             // 
             // label16
@@ -161,7 +162,7 @@
             this.txb_ProductSaleTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_ProductSaleTotal.Name = "txb_ProductSaleTotal";
             this.txb_ProductSaleTotal.Size = new System.Drawing.Size(66, 26);
-            this.txb_ProductSaleTotal.TabIndex = 120;
+            this.txb_ProductSaleTotal.TabIndex = 4;
             this.txb_ProductSaleTotal.Text = "0.00";
             // 
             // label14
@@ -180,7 +181,7 @@
             this.txb_Remark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_Remark.Name = "txb_Remark";
             this.txb_Remark.Size = new System.Drawing.Size(408, 26);
-            this.txb_Remark.TabIndex = 118;
+            this.txb_Remark.TabIndex = 3;
             // 
             // label13
             // 
@@ -199,7 +200,7 @@
             this.cb_Em.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cb_Em.Name = "cb_Em";
             this.cb_Em.Size = new System.Drawing.Size(238, 26);
-            this.cb_Em.TabIndex = 115;
+            this.cb_Em.TabIndex = 2;
             // 
             // label3
             // 
@@ -221,51 +222,13 @@
             this.label2.TabIndex = 113;
             this.label2.Text = "วันที่ทำการขาย";
             // 
-            // ccProduct_ID
-            // 
-            this.ccProduct_ID.DataPropertyName = "Product_ID";
-            this.ccProduct_ID.HeaderText = "รหัสสินค้า";
-            this.ccProduct_ID.Name = "ccProduct_ID";
-            this.ccProduct_ID.ReadOnly = true;
-            this.ccProduct_ID.Width = 120;
-            // 
-            // ccProduct_Des
-            // 
-            this.ccProduct_Des.DataPropertyName = "Product_Des";
-            this.ccProduct_Des.HeaderText = "รายการสินค้า";
-            this.ccProduct_Des.Name = "ccProduct_Des";
-            this.ccProduct_Des.ReadOnly = true;
-            this.ccProduct_Des.Width = 120;
-            // 
-            // ccProduct_Sale
-            // 
-            this.ccProduct_Sale.DataPropertyName = "Product_Sale";
-            this.ccProduct_Sale.HeaderText = "ราคาขาย";
-            this.ccProduct_Sale.Name = "ccProduct_Sale";
-            this.ccProduct_Sale.ReadOnly = true;
-            // 
-            // ccProductSale_ID
-            // 
-            this.ccProductSale_ID.DataPropertyName = "ProductSale_ID";
-            this.ccProductSale_ID.HeaderText = "เลขที่ทำการขาย";
-            this.ccProductSale_ID.Name = "ccProductSale_ID";
-            this.ccProductSale_ID.ReadOnly = true;
-            this.ccProductSale_ID.Visible = false;
-            // 
-            // ccProductSale_Total
-            // 
-            this.ccProductSale_Total.DataPropertyName = "ProductSale_Total";
-            this.ccProductSale_Total.HeaderText = "ราคารวม";
-            this.ccProductSale_Total.Name = "ccProductSale_Total";
-            this.ccProductSale_Total.ReadOnly = true;
-            // 
             // dTP_ProductSaleDate
             // 
             this.dTP_ProductSaleDate.Location = new System.Drawing.Point(436, 12);
             this.dTP_ProductSaleDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dTP_ProductSaleDate.Name = "dTP_ProductSaleDate";
             this.dTP_ProductSaleDate.Size = new System.Drawing.Size(211, 26);
-            this.dTP_ProductSaleDate.TabIndex = 112;
+            this.dTP_ProductSaleDate.TabIndex = 0;
             // 
             // label1
             // 
@@ -277,13 +240,6 @@
             this.label1.TabIndex = 116;
             this.label1.Text = "เลขที่ทำการขาย";
             // 
-            // ccProductSale_Unit
-            // 
-            this.ccProductSale_Unit.DataPropertyName = "ProductSale_Unit";
-            this.ccProductSale_Unit.HeaderText = "จำนวน";
-            this.ccProductSale_Unit.Name = "ccProductSale_Unit";
-            this.ccProductSale_Unit.ReadOnly = true;
-            // 
             // bt_AddProductSale
             // 
             this.bt_AddProductSale.Enabled = false;
@@ -292,7 +248,7 @@
             this.bt_AddProductSale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_AddProductSale.Name = "bt_AddProductSale";
             this.bt_AddProductSale.Size = new System.Drawing.Size(112, 37);
-            this.bt_AddProductSale.TabIndex = 110;
+            this.bt_AddProductSale.TabIndex = 11;
             this.bt_AddProductSale.Text = "เพิ่มรายการ";
             this.bt_AddProductSale.UseVisualStyleBackColor = true;
             this.bt_AddProductSale.Click += new System.EventHandler(this.bt_AddProductSale_Click);
@@ -306,7 +262,7 @@
             this.txb_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_ProductID.Name = "txb_ProductID";
             this.txb_ProductID.Size = new System.Drawing.Size(325, 26);
-            this.txb_ProductID.TabIndex = 107;
+            this.txb_ProductID.TabIndex = 7;
             this.txb_ProductID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Buy_KeyDown);
             // 
             // label4
@@ -333,6 +289,8 @@
             // 
             this.dGV_Product.AllowUserToAddRows = false;
             this.dGV_Product.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Product.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Product.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -351,7 +309,7 @@
             this.dGV_Product.ReadOnly = true;
             this.dGV_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Product.Size = new System.Drawing.Size(982, 456);
-            this.dGV_Product.TabIndex = 109;
+            this.dGV_Product.TabIndex = 13;
             this.dGV_Product.SelectionChanged += new System.EventHandler(this.dGV_Product_SelectionChanged);
             // 
             // txb_ProductSaleDC
@@ -361,7 +319,7 @@
             this.txb_ProductSaleDC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_ProductSaleDC.Name = "txb_ProductSaleDC";
             this.txb_ProductSaleDC.Size = new System.Drawing.Size(66, 26);
-            this.txb_ProductSaleDC.TabIndex = 133;
+            this.txb_ProductSaleDC.TabIndex = 5;
             this.txb_ProductSaleDC.Text = "0.00";
             this.txb_ProductSaleDC.TextChanged += new System.EventHandler(this.txb_ProductSaleDC_TextChanged);
             // 
@@ -401,7 +359,7 @@
             this.bt_RecordBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_RecordBuy.Name = "bt_RecordBuy";
             this.bt_RecordBuy.Size = new System.Drawing.Size(112, 87);
-            this.bt_RecordBuy.TabIndex = 136;
+            this.bt_RecordBuy.TabIndex = 9;
             this.bt_RecordBuy.Text = "บันทึก";
             this.bt_RecordBuy.UseVisualStyleBackColor = true;
             this.bt_RecordBuy.Click += new System.EventHandler(this.bt_RecordBuy_Click);
@@ -438,10 +396,55 @@
             this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Reset.Name = "bt_Reset";
             this.bt_Reset.Size = new System.Drawing.Size(70, 32);
-            this.bt_Reset.TabIndex = 139;
+            this.bt_Reset.TabIndex = 1;
             this.bt_Reset.Text = "เริ่มใหม่";
             this.bt_Reset.UseVisualStyleBackColor = true;
             this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
+            // 
+            // ccProductSale_ID
+            // 
+            this.ccProductSale_ID.DataPropertyName = "ProductSale_ID";
+            this.ccProductSale_ID.HeaderText = "เลขที่ทำการขาย";
+            this.ccProductSale_ID.Name = "ccProductSale_ID";
+            this.ccProductSale_ID.ReadOnly = true;
+            this.ccProductSale_ID.Visible = false;
+            // 
+            // ccProduct_ID
+            // 
+            this.ccProduct_ID.DataPropertyName = "Product_ID";
+            this.ccProduct_ID.HeaderText = "รหัสสินค้า";
+            this.ccProduct_ID.Name = "ccProduct_ID";
+            this.ccProduct_ID.ReadOnly = true;
+            this.ccProduct_ID.Width = 140;
+            // 
+            // ccProduct_Des
+            // 
+            this.ccProduct_Des.DataPropertyName = "Product_Des";
+            this.ccProduct_Des.HeaderText = "รายการสินค้า";
+            this.ccProduct_Des.Name = "ccProduct_Des";
+            this.ccProduct_Des.ReadOnly = true;
+            this.ccProduct_Des.Width = 400;
+            // 
+            // ccProduct_Sale
+            // 
+            this.ccProduct_Sale.DataPropertyName = "Product_Sale";
+            this.ccProduct_Sale.HeaderText = "ราคาขาย";
+            this.ccProduct_Sale.Name = "ccProduct_Sale";
+            this.ccProduct_Sale.ReadOnly = true;
+            // 
+            // ccProductSale_Unit
+            // 
+            this.ccProductSale_Unit.DataPropertyName = "ProductSale_Unit";
+            this.ccProductSale_Unit.HeaderText = "จำนวน";
+            this.ccProductSale_Unit.Name = "ccProductSale_Unit";
+            this.ccProductSale_Unit.ReadOnly = true;
+            // 
+            // ccProductSale_Total
+            // 
+            this.ccProductSale_Total.DataPropertyName = "ProductSale_Total";
+            this.ccProductSale_Total.HeaderText = "ราคารวม";
+            this.ccProductSale_Total.Name = "ccProductSale_Total";
+            this.ccProductSale_Total.ReadOnly = true;
             // 
             // FrmRecorD23
             // 
@@ -508,14 +511,8 @@
         private System.Windows.Forms.ComboBox cb_Em;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Des;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Sale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Total;
         private System.Windows.Forms.DateTimePicker dTP_ProductSaleDate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Unit;
         private System.Windows.Forms.Button bt_AddProductSale;
         private System.Windows.Forms.TextBox txb_ProductID;
         private System.Windows.Forms.Label label4;
@@ -530,5 +527,11 @@
         private System.Windows.Forms.Label lb_PriceAmt;
         private System.Windows.Forms.ErrorProvider epCheck;
         private System.Windows.Forms.Button bt_Reset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Des;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Sale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Total;
     }
 }

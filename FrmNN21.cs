@@ -46,18 +46,14 @@ namespace Petshop
             DataTable idtCompany;
             string isqlCompany = "SELECT * FROM `tb_company`";
             idtCompany = iConnect.SelectByCommand(isqlCompany);
-
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            lbYear.Text = DateTime.Now.ToString("yy");
+            lbCompanyID.Text = "99";
             if (idtCompany.Rows.Count > 0)
             {
-                System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
-                System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-                System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-                lbYear.Text = DateTime.Now.ToString("yy");
                 lbCompanyID.Text = idtCompany.Rows[0]["CoService"].ToString();
-            }
-            else
-            {
-                lbCompanyID.Text = "99";
             }
         }
 
@@ -84,7 +80,7 @@ namespace Petshop
                     cb_Service.ValueMember = idtService.Columns["Service_ID"].ColumnName;
                     cb_Service.DataSource = idtService;
                 }
-            }
+             }
         }
 
         private void loadEmployee() //โหลดข้อมูลเจ้าหน้าที่
@@ -463,46 +459,22 @@ namespace Petshop
         {
             LoadData();
         }
-
+        string iCloseHealRecord;
         private void bt_Print_Click(object sender, EventArgs e)
         {
-            AddHealRecord();
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmNRePort31))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmNRePort31 iFrmMM341 = new FrmNRePort31();
-            iFrmMM341.MdiParent = MainForm.ActiveForm;
-            iFrmMM341.txb_ReferID.Text = lb_HealRecordID.Text;
-            iFrmMM341.Show();
+            iCloseHealRecord = "Print";
         }
 
         private void bt_PrintDate_Click(object sender, EventArgs e)
         {
-            AddHealRecord();
-            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-            {
-                if (form.GetType() == typeof(FrmRecorD22))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            FrmRecorD22 iFrmMM23 = new FrmRecorD22();
-            iFrmMM23.MdiParent = MainForm.ActiveForm;
-            iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
-            iFrmMM23.lb_PetID.Text = txb_PetID.Text;
-            iFrmMM23.Show();
+            iCloseHealRecord = "HealDate";
+                    //AddHealRecord();
+                    
         }
         private void bt_refService_Click(object sender, EventArgs e)
         {
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
             string iServiceID = lb_ServiceID.Text.Trim();
-
             DialogResult iConfirmResult = MessageBox.Show("ต้องการยกเลิกบริการ ?", "ยกเลิกบริการ..", MessageBoxButtons.YesNo);
             if (iConfirmResult == DialogResult.Yes)
             {
@@ -514,38 +486,42 @@ namespace Petshop
         }
         private void bt_refMedi_Click(object sender, EventArgs e)
         {
-            string ilbHealRecordID = lb_HealRecordID.Text.Trim();
-            string iMediID = lb_MediID.Text.Trim();
-            string iMediU = lb_MediU.Text.Trim();
-            DialogResult iConfirmResult = MessageBox.Show("ต้องการยกเลิกรายการยา ?", "ยกเลิกรายการยา..", MessageBoxButtons.YesNo);
-            if (iConfirmResult == DialogResult.Yes)
-            {
-                DataTable idtCheckMedi;
-                string isqlCheckMedi = "SELECT * FROM tb_medicine where Medi_ID = '" + iMediID + "'";
-                idtCheckMedi = iConnect.SelectByCommand(isqlCheckMedi);
+                string ilbHealRecordID = lb_HealRecordID.Text.Trim();
+                string iMediID = lb_MediID.Text.Trim();
+                string iMediU = lb_MediU.Text.Trim();
+                    DataTable idtCheckMedi;
+                    string isqlCheckMedi = "SELECT * FROM tb_medicine where Medi_ID = '" + iMediID + "'";
+                    idtCheckMedi = iConnect.SelectByCommand(isqlCheckMedi);
+                    if (idtCheckMedi.Rows.Count > 0)
+                    {
+                        DialogResult iConfirmResult = MessageBox.Show("ต้องการยกเลิกรายการยา ?", "ยกเลิกรายการยา..", MessageBoxButtons.YesNo);
+                        if (iConfirmResult == DialogResult.Yes)
+                        {
 
-                UInt64 iStock = idtCheckMedi.Rows[0].Field<UInt64>(10);
+                            UInt64 iStock = idtCheckMedi.Rows[0].Field<UInt64>(10);
 
-                int iResult = 0;
-                if (iStock == 0)
-                {
-                    iResult = 1;
-                }
-                else
-                {
-                    iResult = 1;
-                    string isqlreStock = "UPDATE `tb_medicine` SET `Medi_Unit_Amt`= Medi_Unit_Amt +" + iMediU + " WHERE `Medi_ID`='" + iMediID + "'";
-                    iConnect.Insert(isqlreStock);
-                }
-                if (iResult == 1)
-                {
-                    string isqlDelServiceRecord = "DELETE FROM `tb_medirecord` WHERE `HealRecord_ID`='" + ilbHealRecordID + "' and`Medi_ID`='" + iMediID + "'";
-                    iConnect.Insert(isqlDelServiceRecord);
-                    lb_MediID.Text = "";
-                    lb_MediU.Text = "";
-                }
-            }
-            loadMediRecord();
+                            int iResult = 0;
+                            if (iStock == 0)
+                            {
+                                iResult = 1;
+                            }
+                            else
+                            {
+                                iResult = 1;
+                                string isqlreStock = "UPDATE `tb_medicine` SET `Medi_Unit_Amt`= Medi_Unit_Amt +" + iMediU + " WHERE `Medi_ID`='" + iMediID + "'";
+                                iConnect.Insert(isqlreStock);
+                            }
+                            if (iResult == 1)
+                            {
+                                string isqlDelServiceRecord = "DELETE FROM `tb_medirecord` WHERE `HealRecord_ID`='" + ilbHealRecordID + "' and`Medi_ID`='" + iMediID + "'";
+                                iConnect.Insert(isqlDelServiceRecord);
+                                lb_MediID.Text = null;
+                                lb_MediU.Text = null;
+                            }
+
+                            loadMediRecord();
+                        }
+                    } 
         }
         private void dGV_Service_SelectionChanged(object sender, EventArgs e)
         {
@@ -615,10 +591,84 @@ namespace Petshop
             Calcuator();
         }
 
-        private void FrmMM22_KeyDown(object sender, KeyEventArgs e)
+        private void txb_Temp_KeyDown(object sender, KeyEventArgs e)
         {
-          
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_Weight.Focus();
+            }
         }
-        
+
+        private void txb_Weight_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_HR.Focus();
+            }
+        }
+
+        private void txb_RR_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_RecordHeal.Select();
+            }
+        }
+
+        private void txb_HR_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txb_RR.Focus();
+            }
+        }
+
+        private void FrmNN21_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if((lb_HealRecordID.Text !=null)&&(lb_HealRecordID.Text != string.Empty)){
+                DialogResult iConfirmResult = MessageBox.Show("**หากปิดหน้าต่างคุณจะไม่สามารถกลับมาแก้ไขบันทึกการรักษาได้", "กำลังปิดหน้าต่างนี้", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (iConfirmResult == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else if (iConfirmResult == DialogResult.Yes)
+                {
+                    AddHealRecord();
+                    if (iCloseHealRecord == "HealDate")
+                    {
+                        foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                        {
+                            if (form.GetType() == typeof(FrmRecorD22))
+                            {
+                                form.Activate();
+                                return;
+                            }
+                        }
+                        FrmRecorD22 iFrmMM23 = new FrmRecorD22();
+                        iFrmMM23.MdiParent = MainForm.ActiveForm;
+                        iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
+                        iFrmMM23.lb_PetID.Text = txb_PetID.Text;
+                        iFrmMM23.Show(); 
+                    }
+                    else if (iCloseHealRecord == "Print") 
+                    {
+                        foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                        {
+                            if (form.GetType() == typeof(FrmNRePort31))
+                            {
+                                form.Activate();
+                                return;
+                            }
+                        }
+                        FrmNRePort31 iFrmMM341 = new FrmNRePort31();
+                        iFrmMM341.MdiParent = MainForm.ActiveForm;
+                        iFrmMM341.txb_ReferID.Text = lb_HealRecordID.Text;
+                        iFrmMM341.Show();  
+                    }
+                    
+               }
+           }
+            iCloseHealRecord = null;
+        }  
     }
 }

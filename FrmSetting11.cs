@@ -456,15 +456,6 @@ namespace Petshop
 
             }
         }
-
-        private void txb_MediDetail_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txb_MediPrice.Focus();
-            }
-        }
-
         private void txb_MediPrice_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

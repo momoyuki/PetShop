@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSetting12));
             this.dGV_Product = new System.Windows.Forms.DataGridView();
             this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +92,8 @@
             // 
             this.dGV_Product.AllowUserToAddRows = false;
             this.dGV_Product.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Product.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Product.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -122,7 +125,7 @@
             this.ccProduct_ID.HeaderText = "รหัสสินค้า";
             this.ccProduct_ID.Name = "ccProduct_ID";
             this.ccProduct_ID.ReadOnly = true;
-            this.ccProduct_ID.Width = 120;
+            this.ccProduct_ID.Width = 200;
             // 
             // ccProduct_Des
             // 
@@ -311,7 +314,7 @@
             this.bt_Unit.Size = new System.Drawing.Size(100, 32);
             this.bt_Unit.TabIndex = 6;
             this.bt_Unit.Text = "เพิ่มหน่วย";
-            this.bt_Unit.UseVisualStyleBackColor = true;
+            this.bt_Unit.UseVisualStyleBackColor = false;
             this.bt_Unit.Click += new System.EventHandler(this.bt_Unit_Click);
             // 
             // cb_ProductUnit
@@ -487,7 +490,7 @@
             this.bt_AddProduct.Size = new System.Drawing.Size(70, 32);
             this.bt_AddProduct.TabIndex = 4;
             this.bt_AddProduct.Text = "เพิ่ม";
-            this.bt_AddProduct.UseVisualStyleBackColor = true;
+            this.bt_AddProduct.UseVisualStyleBackColor = false;
             this.bt_AddProduct.Click += new System.EventHandler(this.bt_AddProduct_Click);
             // 
             // bt_EditProduct
@@ -500,7 +503,7 @@
             this.bt_EditProduct.Size = new System.Drawing.Size(70, 32);
             this.bt_EditProduct.TabIndex = 5;
             this.bt_EditProduct.Text = "แก้ไข";
-            this.bt_EditProduct.UseVisualStyleBackColor = true;
+            this.bt_EditProduct.UseVisualStyleBackColor = false;
             this.bt_EditProduct.Click += new System.EventHandler(this.bt_EditProduct_Click);
             // 
             // lb_Detail
@@ -521,7 +524,6 @@
             this.txb_ProductDetail.Name = "txb_ProductDetail";
             this.txb_ProductDetail.Size = new System.Drawing.Size(305, 111);
             this.txb_ProductDetail.TabIndex = 2;
-            this.txb_ProductDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ProductDetail_KeyDown);
             // 
             // lb_ProductIDh
             // 
@@ -544,7 +546,7 @@
             this.bt_DelProduct.Size = new System.Drawing.Size(70, 32);
             this.bt_DelProduct.TabIndex = 6;
             this.bt_DelProduct.Text = "ลบ";
-            this.bt_DelProduct.UseVisualStyleBackColor = true;
+            this.bt_DelProduct.UseVisualStyleBackColor = false;
             this.bt_DelProduct.Click += new System.EventHandler(this.bt_DelProduct_Click);
             // 
             // bt_reSetProduct
@@ -557,7 +559,7 @@
             this.bt_reSetProduct.Size = new System.Drawing.Size(70, 32);
             this.bt_reSetProduct.TabIndex = 16;
             this.bt_reSetProduct.Text = "เริ่มใหม่";
-            this.bt_reSetProduct.UseVisualStyleBackColor = true;
+            this.bt_reSetProduct.UseVisualStyleBackColor = false;
             this.bt_reSetProduct.Click += new System.EventHandler(this.bt_reSetProduct_Click);
             // 
             // lb_SearchProduct
@@ -603,7 +605,7 @@
             this.bt_SearchProduct.Size = new System.Drawing.Size(101, 32);
             this.bt_SearchProduct.TabIndex = 8;
             this.bt_SearchProduct.Text = "ค้นหา";
-            this.bt_SearchProduct.UseVisualStyleBackColor = true;
+            this.bt_SearchProduct.UseVisualStyleBackColor = false;
             this.bt_SearchProduct.Click += new System.EventHandler(this.bt_SearchProduct_Click);
             // 
             // lb_count
@@ -661,18 +663,6 @@
 
         private System.Windows.Forms.DataGridView dGV_Product;
         private System.Windows.Forms.ErrorProvider epCheck;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Des;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Detail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Sale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Expired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Unit_Amt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Unit_Order;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Stock;
         private System.Windows.Forms.Label lb_ProductIDh;
         private System.Windows.Forms.TextBox txb_ProductDetail;
         private System.Windows.Forms.Label lb_Detail;
@@ -710,5 +700,17 @@
         private System.Windows.Forms.Button bt_SearchProduct;
         private System.Windows.Forms.Button bt_ProductRefresh;
         private System.Windows.Forms.Label lb_count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Des;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Detail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Sale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Expired;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Unit_Amt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Unit_Order;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Stock;
     }
 }

@@ -276,13 +276,7 @@ namespace Petshop
             }
         }
 
-        private void txb_ProductDetail_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-             txb_ProductPrice.Focus();
-            }
-        }
+
          private void txb_ProductPrice_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

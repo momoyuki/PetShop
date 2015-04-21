@@ -29,9 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlBreedType = new System.Windows.Forms.TabControl();
             this.tpBreed = new System.Windows.Forms.TabPage();
             this.gBoxBreed = new System.Windows.Forms.GroupBox();
+            this.lb_CountBreed = new System.Windows.Forms.Label();
+            this.lb_CountBreedB = new System.Windows.Forms.Label();
+            this.lb_CountBreedA = new System.Windows.Forms.Label();
+            this.txb_SearchBreed = new System.Windows.Forms.TextBox();
+            this.bt_SearchBreed = new System.Windows.Forms.Button();
             this.bt_ResetBreed = new System.Windows.Forms.Button();
             this.bt_DelBreed = new System.Windows.Forms.Button();
             this.Bt_LoadBreed = new System.Windows.Forms.Button();
@@ -99,6 +106,11 @@
             // 
             // gBoxBreed
             // 
+            this.gBoxBreed.Controls.Add(this.lb_CountBreed);
+            this.gBoxBreed.Controls.Add(this.lb_CountBreedB);
+            this.gBoxBreed.Controls.Add(this.lb_CountBreedA);
+            this.gBoxBreed.Controls.Add(this.txb_SearchBreed);
+            this.gBoxBreed.Controls.Add(this.bt_SearchBreed);
             this.gBoxBreed.Controls.Add(this.bt_ResetBreed);
             this.gBoxBreed.Controls.Add(this.bt_DelBreed);
             this.gBoxBreed.Controls.Add(this.Bt_LoadBreed);
@@ -118,6 +130,52 @@
             this.gBoxBreed.TabIndex = 0;
             this.gBoxBreed.TabStop = false;
             this.gBoxBreed.Text = "รายละเอียด";
+            // 
+            // lb_CountBreed
+            // 
+            this.lb_CountBreed.AutoSize = true;
+            this.lb_CountBreed.Location = new System.Drawing.Point(120, 176);
+            this.lb_CountBreed.Name = "lb_CountBreed";
+            this.lb_CountBreed.Size = new System.Drawing.Size(16, 18);
+            this.lb_CountBreed.TabIndex = 14;
+            this.lb_CountBreed.Text = "0";
+            // 
+            // lb_CountBreedB
+            // 
+            this.lb_CountBreedB.AutoSize = true;
+            this.lb_CountBreedB.Location = new System.Drawing.Point(162, 176);
+            this.lb_CountBreedB.Name = "lb_CountBreedB";
+            this.lb_CountBreedB.Size = new System.Drawing.Size(36, 18);
+            this.lb_CountBreedB.TabIndex = 13;
+            this.lb_CountBreedB.Text = "พันธุ์";
+            // 
+            // lb_CountBreedA
+            // 
+            this.lb_CountBreedA.AutoSize = true;
+            this.lb_CountBreedA.Location = new System.Drawing.Point(13, 176);
+            this.lb_CountBreedA.Name = "lb_CountBreedA";
+            this.lb_CountBreedA.Size = new System.Drawing.Size(81, 18);
+            this.lb_CountBreedA.TabIndex = 12;
+            this.lb_CountBreedA.Text = "พบพันธุ์สัตว์";
+            // 
+            // txb_SearchBreed
+            // 
+            this.txb_SearchBreed.Location = new System.Drawing.Point(288, 173);
+            this.txb_SearchBreed.Name = "txb_SearchBreed";
+            this.txb_SearchBreed.Size = new System.Drawing.Size(262, 26);
+            this.txb_SearchBreed.TabIndex = 10;
+            this.txb_SearchBreed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchBreed_KeyDown);
+            // 
+            // bt_SearchBreed
+            // 
+            this.bt_SearchBreed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_SearchBreed.Location = new System.Drawing.Point(556, 169);
+            this.bt_SearchBreed.Name = "bt_SearchBreed";
+            this.bt_SearchBreed.Size = new System.Drawing.Size(101, 32);
+            this.bt_SearchBreed.TabIndex = 11;
+            this.bt_SearchBreed.Text = "ค้นหา";
+            this.bt_SearchBreed.UseVisualStyleBackColor = true;
+            this.bt_SearchBreed.Click += new System.EventHandler(this.bt_SearchBreed_Click);
             // 
             // bt_ResetBreed
             // 
@@ -246,6 +304,8 @@
             // 
             this.dGV_Breed.AllowUserToAddRows = false;
             this.dGV_Breed.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Breed.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Breed.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Breed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Breed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -276,6 +336,7 @@
             this.ccPetBreed_Des.HeaderText = "ชื่อพันธุ์";
             this.ccPetBreed_Des.Name = "ccPetBreed_Des";
             this.ccPetBreed_Des.ReadOnly = true;
+            this.ccPetBreed_Des.Width = 200;
             // 
             // ccPetType_ID
             // 
@@ -291,6 +352,7 @@
             this.ccPetType_DesID.HeaderText = "ประเภท";
             this.ccPetType_DesID.Name = "ccPetType_DesID";
             this.ccPetType_DesID.ReadOnly = true;
+            this.ccPetType_DesID.Width = 120;
             // 
             // tpType
             // 
@@ -309,6 +371,8 @@
             // 
             this.dGV_Type.AllowUserToAddRows = false;
             this.dGV_Type.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Type.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Type.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Type.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Type.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -337,6 +401,7 @@
             this.ccPetType_Des.HeaderText = "ชื่อประเภท";
             this.ccPetType_Des.Name = "ccPetType_Des";
             this.ccPetType_Des.ReadOnly = true;
+            this.ccPetType_Des.Width = 200;
             // 
             // gBoxType
             // 
@@ -511,8 +576,6 @@
         private System.Windows.Forms.DataGridView dGV_Breed;
         private System.Windows.Forms.TabPage tpType;
         private System.Windows.Forms.DataGridView dGV_Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccPT_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_Des;
         private System.Windows.Forms.GroupBox gBoxType;
         private System.Windows.Forms.Button bt_LoadType;
         private System.Windows.Forms.Button bt_EditType;
@@ -523,13 +586,20 @@
         private System.Windows.Forms.Label lb_TypeName;
         private System.Windows.Forms.Button bt_DelBreed;
         private System.Windows.Forms.Button bt_DelType;
+        private System.Windows.Forms.ErrorProvider epCheck;
+        private System.Windows.Forms.Button bt_ResetBreed;
+        private System.Windows.Forms.Button bt_Reset;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed_Des;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_DesID;
-        private System.Windows.Forms.ErrorProvider epCheck;
-        private System.Windows.Forms.Button bt_ResetBreed;
-        private System.Windows.Forms.Button bt_Reset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPT_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType_Des;
+        private System.Windows.Forms.TextBox txb_SearchBreed;
+        private System.Windows.Forms.Button bt_SearchBreed;
+        private System.Windows.Forms.Label lb_CountBreed;
+        private System.Windows.Forms.Label lb_CountBreedB;
+        private System.Windows.Forms.Label lb_CountBreedA;
 
 
     }

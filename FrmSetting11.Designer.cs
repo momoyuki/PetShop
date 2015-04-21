@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSetting11));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tabService = new System.Windows.Forms.TabPage();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
@@ -151,12 +153,14 @@
             this.tabService.Size = new System.Drawing.Size(974, 615);
             this.tabService.TabIndex = 0;
             this.tabService.Text = "บริการ";
-            this.tabService.UseVisualStyleBackColor = true;
             // 
             // dGV_Service
             // 
             this.dGV_Service.AllowUserToAddRows = false;
             this.dGV_Service.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Empty;
+            this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -180,7 +184,7 @@
             this.coService_ID.HeaderText = "รหัส";
             this.coService_ID.Name = "coService_ID";
             this.coService_ID.ReadOnly = true;
-            this.coService_ID.Width = 120;
+            this.coService_ID.Width = 200;
             // 
             // coService_Des
             // 
@@ -188,7 +192,7 @@
             this.coService_Des.HeaderText = "บริการ";
             this.coService_Des.Name = "coService_Des";
             this.coService_Des.ReadOnly = true;
-            this.coService_Des.Width = 250;
+            this.coService_Des.Width = 300;
             // 
             // coService_Price
             // 
@@ -289,7 +293,7 @@
             this.bt_SearchService.Size = new System.Drawing.Size(101, 32);
             this.bt_SearchService.TabIndex = 9;
             this.bt_SearchService.Text = "ค้นหา";
-            this.bt_SearchService.UseVisualStyleBackColor = true;
+            this.bt_SearchService.UseVisualStyleBackColor = false;
             this.bt_SearchService.Click += new System.EventHandler(this.bt_SearchService_Click);
             // 
             // bt_ResetService
@@ -302,21 +306,20 @@
             this.bt_ResetService.Size = new System.Drawing.Size(70, 32);
             this.bt_ResetService.TabIndex = 19;
             this.bt_ResetService.Text = "เริ่มใหม่";
-            this.bt_ResetService.UseVisualStyleBackColor = true;
+            this.bt_ResetService.UseVisualStyleBackColor = false;
             this.bt_ResetService.Click += new System.EventHandler(this.bt_ResetService_Click);
             // 
             // bt_DelService
             // 
             this.bt_DelService.Enabled = false;
             this.bt_DelService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_DelService.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_DelService.Location = new System.Drawing.Point(242, 150);
             this.bt_DelService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelService.Name = "bt_DelService";
             this.bt_DelService.Size = new System.Drawing.Size(70, 32);
             this.bt_DelService.TabIndex = 7;
             this.bt_DelService.Text = "ลบ";
-            this.bt_DelService.UseVisualStyleBackColor = true;
+            this.bt_DelService.UseVisualStyleBackColor = false;
             this.bt_DelService.Click += new System.EventHandler(this.bt_DelService_Click);
             // 
             // lb_RemarkService
@@ -346,27 +349,25 @@
             // 
             this.bt_EditService.Enabled = false;
             this.bt_EditService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_EditService.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_EditService.Location = new System.Drawing.Point(164, 150);
             this.bt_EditService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditService.Name = "bt_EditService";
             this.bt_EditService.Size = new System.Drawing.Size(70, 32);
             this.bt_EditService.TabIndex = 6;
             this.bt_EditService.Text = "แก้ไข";
-            this.bt_EditService.UseVisualStyleBackColor = true;
+            this.bt_EditService.UseVisualStyleBackColor = false;
             this.bt_EditService.Click += new System.EventHandler(this.bt_EditService_Click);
             // 
             // bt_AddService
             // 
             this.bt_AddService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_AddService.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_AddService.Location = new System.Drawing.Point(86, 150);
             this.bt_AddService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddService.Name = "bt_AddService";
             this.bt_AddService.Size = new System.Drawing.Size(70, 32);
             this.bt_AddService.TabIndex = 5;
             this.bt_AddService.Text = "เพิ่ม";
-            this.bt_AddService.UseVisualStyleBackColor = true;
+            this.bt_AddService.UseVisualStyleBackColor = false;
             this.bt_AddService.Click += new System.EventHandler(this.Bt_AddService_Click);
             // 
             // gBoxTimeService
@@ -491,7 +492,6 @@
             this.tabMedi.Size = new System.Drawing.Size(974, 615);
             this.tabMedi.TabIndex = 1;
             this.tabMedi.Text = "ยา";
-            this.tabMedi.UseVisualStyleBackColor = true;
             // 
             // lb_Result
             // 
@@ -536,7 +536,7 @@
             this.bt_SearchMedi.Size = new System.Drawing.Size(101, 32);
             this.bt_SearchMedi.TabIndex = 1;
             this.bt_SearchMedi.Text = "ค้นหา";
-            this.bt_SearchMedi.UseVisualStyleBackColor = true;
+            this.bt_SearchMedi.UseVisualStyleBackColor = false;
             this.bt_SearchMedi.Click += new System.EventHandler(this.bt_SearchMedi_Click);
             // 
             // groupBox4
@@ -583,7 +583,7 @@
             this.bt_ReSetMedi.Size = new System.Drawing.Size(70, 32);
             this.bt_ReSetMedi.TabIndex = 18;
             this.bt_ReSetMedi.Text = "เริ่มใหม่";
-            this.bt_ReSetMedi.UseVisualStyleBackColor = true;
+            this.bt_ReSetMedi.UseVisualStyleBackColor = false;
             this.bt_ReSetMedi.Click += new System.EventHandler(this.bt_ReSetMedi_Click);
             // 
             // bt_DelMedi
@@ -597,7 +597,7 @@
             this.bt_DelMedi.Size = new System.Drawing.Size(70, 32);
             this.bt_DelMedi.TabIndex = 6;
             this.bt_DelMedi.Text = "ลบ";
-            this.bt_DelMedi.UseVisualStyleBackColor = true;
+            this.bt_DelMedi.UseVisualStyleBackColor = false;
             this.bt_DelMedi.Click += new System.EventHandler(this.bt_DelMedi_Click);
             // 
             // lb_MediIDH
@@ -628,7 +628,6 @@
             this.txb_MediDetail.Name = "txb_MediDetail";
             this.txb_MediDetail.Size = new System.Drawing.Size(305, 79);
             this.txb_MediDetail.TabIndex = 2;
-            this.txb_MediDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_MediDetail_KeyDown);
             // 
             // lb_MediDetail
             // 
@@ -650,7 +649,7 @@
             this.bt_EditMedi.Size = new System.Drawing.Size(70, 32);
             this.bt_EditMedi.TabIndex = 5;
             this.bt_EditMedi.Text = "แก้ไข";
-            this.bt_EditMedi.UseVisualStyleBackColor = true;
+            this.bt_EditMedi.UseVisualStyleBackColor = false;
             this.bt_EditMedi.Click += new System.EventHandler(this.bt_EditMedi_Click);
             // 
             // bt_AddMedi
@@ -662,7 +661,7 @@
             this.bt_AddMedi.Size = new System.Drawing.Size(70, 32);
             this.bt_AddMedi.TabIndex = 4;
             this.bt_AddMedi.Text = "เพิ่ม";
-            this.bt_AddMedi.UseVisualStyleBackColor = true;
+            this.bt_AddMedi.UseVisualStyleBackColor = false;
             this.bt_AddMedi.Click += new System.EventHandler(this.Bt_AddMedi_Click);
             // 
             // gBoxMediSale
@@ -724,7 +723,7 @@
             this.Bt_Unit.Size = new System.Drawing.Size(100, 32);
             this.Bt_Unit.TabIndex = 6;
             this.Bt_Unit.Text = "เพิ่มหน่วย";
-            this.Bt_Unit.UseVisualStyleBackColor = true;
+            this.Bt_Unit.UseVisualStyleBackColor = false;
             this.Bt_Unit.Click += new System.EventHandler(this.Bt_Unit_Click);
             // 
             // cb_MediUnit
@@ -937,6 +936,8 @@
             // 
             this.dGV_Medi.AllowUserToAddRows = false;
             this.dGV_Medi.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -968,7 +969,7 @@
             this.ccMedi_ID.HeaderText = "รหัสยา";
             this.ccMedi_ID.Name = "ccMedi_ID";
             this.ccMedi_ID.ReadOnly = true;
-            this.ccMedi_ID.Width = 120;
+            this.ccMedi_ID.Width = 200;
             // 
             // ccMedi_Des
             // 
@@ -1015,7 +1016,6 @@
             this.ccMedi_Unit.Name = "ccMedi_Unit";
             this.ccMedi_Unit.ReadOnly = true;
             this.ccMedi_Unit.Visible = false;
-            this.ccMedi_Unit.Width = 120;
             // 
             // ccMedi_Product
             // 
@@ -1161,10 +1161,6 @@
         private System.Windows.Forms.Label lb_MediIDH;
         private System.Windows.Forms.Button Bt_Unit;
         private System.Windows.Forms.ErrorProvider epCheck;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coService_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coService_Des;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coService_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coService_DuringDate;
         private System.Windows.Forms.TextBox txb_SearchMedi;
         private System.Windows.Forms.Button bt_SearchMedi;
         private System.Windows.Forms.CheckBox CheckBox_Stock;
@@ -1176,6 +1172,18 @@
         private System.Windows.Forms.Button bt_DelMedi;
         private System.Windows.Forms.Button bt_ReSetMedi;
         private System.Windows.Forms.Button bt_ResetService;
+        private System.Windows.Forms.TextBox txb_SearchService;
+        private System.Windows.Forms.Button bt_SearchService;
+        private System.Windows.Forms.Label lb_SearchService;
+        private System.Windows.Forms.Label lb_SearchServiceB;
+        private System.Windows.Forms.Label lb_SearchServiceA;
+        private System.Windows.Forms.Button bt_ServiceRefresh;
+        private System.Windows.Forms.Button bt_MediRefresh;
+        private System.Windows.Forms.Label lb_count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coService_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coService_Des;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coService_Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coService_DuringDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Des;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Detall;
@@ -1188,14 +1196,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Unit_Amt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Unit_Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Stock;
-        private System.Windows.Forms.TextBox txb_SearchService;
-        private System.Windows.Forms.Button bt_SearchService;
-        private System.Windows.Forms.Label lb_SearchService;
-        private System.Windows.Forms.Label lb_SearchServiceB;
-        private System.Windows.Forms.Label lb_SearchServiceA;
-        private System.Windows.Forms.Button bt_ServiceRefresh;
-        private System.Windows.Forms.Button bt_MediRefresh;
-        private System.Windows.Forms.Label lb_count;
 
 
     }

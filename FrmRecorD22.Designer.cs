@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_HealDate = new System.Windows.Forms.Label();
             this.lb_HealRecord = new System.Windows.Forms.Label();
             this.Txb_Remark = new System.Windows.Forms.TextBox();
@@ -123,7 +125,7 @@
             this.Txb_Remark.Multiline = true;
             this.Txb_Remark.Name = "Txb_Remark";
             this.Txb_Remark.Size = new System.Drawing.Size(351, 102);
-            this.Txb_Remark.TabIndex = 4;
+            this.Txb_Remark.TabIndex = 3;
             // 
             // lb_RemarkDate
             // 
@@ -141,7 +143,7 @@
             this.dTP_HealDate.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_HealDate.Name = "dTP_HealDate";
             this.dTP_HealDate.Size = new System.Drawing.Size(189, 26);
-            this.dTP_HealDate.TabIndex = 6;
+            this.dTP_HealDate.TabIndex = 1;
             // 
             // lb_HealDateTP
             // 
@@ -160,7 +162,7 @@
             this.cb_Service.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Service.Name = "cb_Service";
             this.cb_Service.Size = new System.Drawing.Size(349, 26);
-            this.cb_Service.TabIndex = 9;
+            this.cb_Service.TabIndex = 0;
             this.cb_Service.SelectionChangeCommitted += new System.EventHandler(this.cb_Service_SelectionChangeCommitted);
             // 
             // bt_Load
@@ -184,7 +186,7 @@
             this.bt_AddHealDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddHealDate.Name = "bt_AddHealDate";
             this.bt_AddHealDate.Size = new System.Drawing.Size(97, 32);
-            this.bt_AddHealDate.TabIndex = 11;
+            this.bt_AddHealDate.TabIndex = 5;
             this.bt_AddHealDate.Text = "บันทึก";
             this.bt_AddHealDate.UseVisualStyleBackColor = true;
             this.bt_AddHealDate.Click += new System.EventHandler(this.bt_AddHealDate_Click);
@@ -197,7 +199,7 @@
             this.bt_HealDateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_HealDateEdit.Name = "bt_HealDateEdit";
             this.bt_HealDateEdit.Size = new System.Drawing.Size(97, 32);
-            this.bt_HealDateEdit.TabIndex = 12;
+            this.bt_HealDateEdit.TabIndex = 6;
             this.bt_HealDateEdit.Text = "แก้ไข";
             this.bt_HealDateEdit.UseVisualStyleBackColor = true;
             this.bt_HealDateEdit.Click += new System.EventHandler(this.bt_HealDateEdit_Click);
@@ -220,7 +222,7 @@
             this.bt_PrintDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_PrintDate.Name = "bt_PrintDate";
             this.bt_PrintDate.Size = new System.Drawing.Size(100, 72);
-            this.bt_PrintDate.TabIndex = 15;
+            this.bt_PrintDate.TabIndex = 9;
             this.bt_PrintDate.Text = "พิมพ์ใบนัด";
             this.bt_PrintDate.UseVisualStyleBackColor = true;
             this.bt_PrintDate.Click += new System.EventHandler(this.bt_PrintDate_Click);
@@ -231,7 +233,7 @@
             this.txb_Search.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Search.Name = "txb_Search";
             this.txb_Search.Size = new System.Drawing.Size(177, 26);
-            this.txb_Search.TabIndex = 18;
+            this.txb_Search.TabIndex = 6;
             // 
             // lb_Search
             // 
@@ -240,7 +242,7 @@
             this.lb_Search.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Search.Name = "lb_Search";
             this.lb_Search.Size = new System.Drawing.Size(43, 18);
-            this.lb_Search.TabIndex = 17;
+            this.lb_Search.TabIndex = 8;
             this.lb_Search.Text = "ค้นหา";
             // 
             // bt_Search
@@ -250,7 +252,7 @@
             this.bt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Search.Name = "bt_Search";
             this.bt_Search.Size = new System.Drawing.Size(100, 32);
-            this.bt_Search.TabIndex = 19;
+            this.bt_Search.TabIndex = 7;
             this.bt_Search.Text = "ค้นหา";
             this.bt_Search.UseVisualStyleBackColor = true;
             this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
@@ -263,7 +265,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(959, 434);
-            this.tabControl1.TabIndex = 20;
+            this.tabControl1.TabIndex = 10;
             // 
             // tP_All
             // 
@@ -292,7 +294,7 @@
             this.rBt_Today.Location = new System.Drawing.Point(255, 12);
             this.rBt_Today.Name = "rBt_Today";
             this.rBt_Today.Size = new System.Drawing.Size(51, 22);
-            this.rBt_Today.TabIndex = 29;
+            this.rBt_Today.TabIndex = 2;
             this.rBt_Today.TabStop = true;
             this.rBt_Today.Text = "วันนี้";
             this.rBt_Today.UseVisualStyleBackColor = true;
@@ -305,7 +307,7 @@
             this.bt_contract.Margin = new System.Windows.Forms.Padding(4);
             this.bt_contract.Name = "bt_contract";
             this.bt_contract.Size = new System.Drawing.Size(97, 32);
-            this.bt_contract.TabIndex = 28;
+            this.bt_contract.TabIndex = 1;
             this.bt_contract.Text = "ยังไม่ติดต่อ";
             this.bt_contract.UseVisualStyleBackColor = true;
             this.bt_contract.Click += new System.EventHandler(this.bt_contract_Click);
@@ -316,7 +318,7 @@
             this.rBt_contracted.Location = new System.Drawing.Point(511, 12);
             this.rBt_contracted.Name = "rBt_contracted";
             this.rBt_contracted.Size = new System.Drawing.Size(87, 22);
-            this.rBt_contracted.TabIndex = 22;
+            this.rBt_contracted.TabIndex = 5;
             this.rBt_contracted.Text = "ติดต่อแล้ว";
             this.rBt_contracted.UseVisualStyleBackColor = true;
             this.rBt_contracted.CheckedChanged += new System.EventHandler(this.rBt_contracted_CheckedChanged);
@@ -328,7 +330,7 @@
             this.bt_contracted.Margin = new System.Windows.Forms.Padding(4);
             this.bt_contracted.Name = "bt_contracted";
             this.bt_contracted.Size = new System.Drawing.Size(97, 32);
-            this.bt_contracted.TabIndex = 20;
+            this.bt_contracted.TabIndex = 0;
             this.bt_contracted.Text = "ติดต่อแล้ว";
             this.bt_contracted.UseVisualStyleBackColor = true;
             this.bt_contracted.Click += new System.EventHandler(this.bt_contracted_Click);
@@ -339,7 +341,7 @@
             this.rBt_contract.Location = new System.Drawing.Point(396, 12);
             this.rBt_contract.Name = "rBt_contract";
             this.rBt_contract.Size = new System.Drawing.Size(112, 22);
-            this.rBt_contract.TabIndex = 21;
+            this.rBt_contract.TabIndex = 4;
             this.rBt_contract.Text = "ยังไม่ได้ติดต่อ";
             this.rBt_contract.UseVisualStyleBackColor = true;
             this.rBt_contract.CheckedChanged += new System.EventHandler(this.rBt_contract_CheckedChanged);
@@ -350,7 +352,7 @@
             this.rBt_All.Location = new System.Drawing.Point(318, 12);
             this.rBt_All.Name = "rBt_All";
             this.rBt_All.Size = new System.Drawing.Size(72, 22);
-            this.rBt_All.TabIndex = 20;
+            this.rBt_All.TabIndex = 3;
             this.rBt_All.Text = "ทั้งหมด";
             this.rBt_All.UseVisualStyleBackColor = true;
             this.rBt_All.CheckedChanged += new System.EventHandler(this.rBt_All_CheckedChanged);
@@ -359,6 +361,8 @@
             // 
             this.dGV_HealDate.AllowUserToAddRows = false;
             this.dGV_HealDate.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_HealDate.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -535,6 +539,8 @@
             // 
             this.dGV_HealRecord.AllowUserToAddRows = false;
             this.dGV_HealRecord.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_HealRecord.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -596,7 +602,7 @@
             this.txb_Remind.Location = new System.Drawing.Point(395, 88);
             this.txb_Remind.Name = "txb_Remind";
             this.txb_Remind.Size = new System.Drawing.Size(51, 26);
-            this.txb_Remind.TabIndex = 21;
+            this.txb_Remind.TabIndex = 2;
             this.txb_Remind.Text = "1";
             // 
             // lb_Pet
@@ -654,7 +660,7 @@
             this.bt_HealDateDel.Margin = new System.Windows.Forms.Padding(4);
             this.bt_HealDateDel.Name = "bt_HealDateDel";
             this.bt_HealDateDel.Size = new System.Drawing.Size(97, 32);
-            this.bt_HealDateDel.TabIndex = 29;
+            this.bt_HealDateDel.TabIndex = 7;
             this.bt_HealDateDel.Text = "ลบ";
             this.bt_HealDateDel.UseVisualStyleBackColor = true;
             this.bt_HealDateDel.Click += new System.EventHandler(this.bt_HealDateDel_Click);
@@ -674,7 +680,7 @@
             this.CheckBox_Contract.Location = new System.Drawing.Point(483, 200);
             this.CheckBox_Contract.Name = "CheckBox_Contract";
             this.CheckBox_Contract.Size = new System.Drawing.Size(88, 22);
-            this.CheckBox_Contract.TabIndex = 31;
+            this.CheckBox_Contract.TabIndex = 4;
             this.CheckBox_Contract.Text = "ติดต่อแล้ว";
             this.CheckBox_Contract.UseVisualStyleBackColor = true;
             // 
@@ -686,7 +692,7 @@
             this.bt_PrintBill.Margin = new System.Windows.Forms.Padding(4);
             this.bt_PrintBill.Name = "bt_PrintBill";
             this.bt_PrintBill.Size = new System.Drawing.Size(100, 72);
-            this.bt_PrintBill.TabIndex = 32;
+            this.bt_PrintBill.TabIndex = 8;
             this.bt_PrintBill.Text = "พิมพ์ใบเสร็จ";
             this.bt_PrintBill.UseVisualStyleBackColor = true;
             this.bt_PrintBill.Click += new System.EventHandler(this.bt_PrintBill_Click);
@@ -712,7 +718,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 672);
+            this.ClientSize = new System.Drawing.Size(1008, 672);
             this.Controls.Add(this.bt_ResetRecord);
             this.Controls.Add(this.bt_PrintBill);
             this.Controls.Add(this.CheckBox_Contract);

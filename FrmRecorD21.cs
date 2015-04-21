@@ -42,13 +42,13 @@ namespace Petshop
         {
                 string itxbPetProfileID = txb_PetProfileID.Text.ToString();
                 DataTable idtHealDetail;
-                string isqlCommand = "SELECT  tb_healrecord.Pet_ID as Pet_ID,tb_medirecord.HealRecord_ID as HealRecord_ID,tb_healrecord.HealRecord_Date as HealRecord_Date,tb_medirecord.Medi_ID as ServiceMedi_ID, "
+                string isqlCommand = "SELECT  tb_healrecord.Pet_ID as Pet_ID,tb_medirecord.HealRecord_ID as HealRecord_ID,tb_medirecord.Medi_ID as ServiceMedi_ID, "
                                      + "tb_medicine.Medi_Des as ServiceMedi_Des "
                                      + "FROM tb_healrecord,tb_medirecord,tb_medicine where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_medirecord.Medi_ID = tb_medicine.Medi_ID "
                                      + "UNION "
-                                     + "SELECT tb_healrecord.Pet_ID as Pet_ID ,tb_servicerecord.HealRecord_ID as HealRecord_ID,tb_healrecord.HealRecord_Date as HealRecord_Date,tb_servicerecord.Service_ID as ServiceMedi_ID, "
+                                     + "SELECT tb_healrecord.Pet_ID as Pet_ID ,tb_servicerecord.HealRecord_ID as HealRecord_ID,tb_servicerecord.Service_ID as ServiceMedi_ID, "
                                      + "tb_service.service_Des AS ServiceMedi_Des "
-                                     + "FROM tb_healrecord,tb_servicerecord,tb_service where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_servicerecord.Service_ID = tb_service.Service_ID";
+                                     + "FROM tb_healrecord,tb_servicerecord,tb_service where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_servicerecord.Service_ID = tb_service.Service_ID order by HealRecord_ID";
 
                 idtHealDetail = iConnect.SelectByCommand(isqlCommand);
                 dGV_HealDetail.DataSource = idtHealDetail;
@@ -84,13 +84,14 @@ namespace Petshop
             DataTable idtCompany;
             string isqlCommand = "SELECT * FROM `tb_company`";
             idtCompany = iConnect.SelectByCommand(isqlCommand);
+
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            lbYear.Text = DateTime.Now.ToString("yy");
+            lbCompany.Text = "01";
             if (idtCompany.Rows.Count > 0)
             {
-                lbCompany.Text = idtCompany.Rows[0]["Company_ID"].ToString();
-                System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
-                System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-                System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-                lbYear.Text = DateTime.Now.ToString("yy");
                 lbCompany.Text = idtCompany.Rows[0]["Company_ID"].ToString();
             }
         }
@@ -298,7 +299,7 @@ namespace Petshop
                 iFrmMM21.MdiParent = MainForm.ActiveForm;
                 iFrmMM21.Show();
                 iFrmMM21.txb_PetID.Text = txb_PetProfileID.Text;
-                this.Close();
+                //this.Close();
             }
             else
             {
@@ -365,10 +366,29 @@ namespace Petshop
                 LoadPetProfile();
             }
         }
-
+        private void bt_HealRecord_Click(object sender, EventArgs e)
+        {
+            if ((lb_HealRecordID.Text != string.Empty) && (lb_HealRecordID.Text != null))
+            {
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmNH21))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmNH21 iFrmNH21 = new FrmNH21();
+                iFrmNH21.MdiParent = MainForm.ActiveForm;
+                iFrmNH21.Show();
+                iFrmNH21.lb_HealRecordID.Text = lb_HealRecordID.Text;
+            }
+            //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
+            
+        }
         private void bt_HealDate_Click(object sender, EventArgs e)
         {
-            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != ""))
+            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
@@ -383,7 +403,7 @@ namespace Petshop
                 iFrmMM23.Show();
                 iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
                 iFrmMM23.lb_PetID.Text = txb_PetProfileID.Text;
-                this.Close();
+                //this.Close();
             }
             else
             {
@@ -452,16 +472,16 @@ namespace Petshop
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    if (form.GetType() == typeof(FrmNN21))
+                    if (form.GetType() == typeof(FrmNH21))
                     {
                         form.Activate();
                         return;
                     }
                 }
-                FrmNN21 iFrmMM21 = new FrmNN21();
-                iFrmMM21.MdiParent = MainForm.ActiveForm;
-                iFrmMM21.Show();
-                iFrmMM21.lb_HealRecordID.Text = lb_HealDetailID.Text;
+                FrmNH21 iFrmNH21 = new FrmNH21();
+                iFrmNH21.MdiParent = MainForm.ActiveForm;
+                iFrmNH21.Show();
+                iFrmNH21.lb_HealRecordID.Text = lb_HealDetailID.Text;
             }
             //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
             
@@ -578,10 +598,7 @@ namespace Petshop
 
         private void Txb_Addr_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                bt_AddMember.Select();
-            }
+
         }
 
         private void dGV_HealDetail_SelectionChanged(object sender, EventArgs e)
@@ -604,5 +621,51 @@ namespace Petshop
                 PetSearch();
             }
         }
+
+        private void bt_HealBill_Click(object sender, EventArgs e)
+        {
+            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
+            {
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmNRePort31))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmNRePort31 iFrmNRePort31 = new FrmNRePort31();
+                iFrmNRePort31.MdiParent = MainForm.ActiveForm;
+                iFrmNRePort31.Show();
+                iFrmNRePort31.txb_ReferID.Text = lb_HealRecordID.Text;
+                //iFrmNRePort31.lb_PetID.Text = txb_PetProfileID.Text;
+                //this.Close();
+            }
+            else
+            {
+                MessageBox.Show("กรุณาเลือกสัตว์ไข้", "ไม่พบสัตว์ไข้");
+            }
+        }
+
+        private void bt_DetailBill_Click(object sender, EventArgs e)
+        {
+            if ((lb_HealRecordID.Text != string.Empty) && (lb_HealRecordID.Text != null))
+            {
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmNRePort31))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmNRePort31 iFrmNRePort31 = new FrmNRePort31();
+                iFrmNRePort31.MdiParent = MainForm.ActiveForm;
+                iFrmNRePort31.Show();
+                iFrmNRePort31.txb_ReferID.Text = lb_HealDetailID.Text;
+            }
+        }
+
+
     }
 }

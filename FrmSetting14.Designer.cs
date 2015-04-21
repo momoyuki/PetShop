@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dGV_Uni = new System.Windows.Forms.DataGridView();
             this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxUnit = new System.Windows.Forms.GroupBox();
+            this.bt_Reset = new System.Windows.Forms.Button();
             this.bt_DelUnit = new System.Windows.Forms.Button();
             this.bt_LoadUnit = new System.Windows.Forms.Button();
             this.bt_EditUnit = new System.Windows.Forms.Button();
@@ -42,7 +44,6 @@
             this.lb_UnitID = new System.Windows.Forms.Label();
             this.lb_UnitName = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bt_Reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Uni)).BeginInit();
             this.gBoxUnit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
@@ -52,6 +53,8 @@
             // 
             this.dGV_Uni.AllowUserToAddRows = false;
             this.dGV_Uni.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Uni.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Uni.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Uni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Uni.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -81,6 +84,7 @@
             this.ccUnit_Name.HeaderText = "หน่วยเรียก";
             this.ccUnit_Name.Name = "ccUnit_Name";
             this.ccUnit_Name.ReadOnly = true;
+            this.ccUnit_Name.Width = 200;
             // 
             // gBoxUnit
             // 
@@ -101,6 +105,19 @@
             this.gBoxUnit.TabIndex = 0;
             this.gBoxUnit.TabStop = false;
             this.gBoxUnit.Text = "รายละเอียด";
+            // 
+            // bt_Reset
+            // 
+            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_Reset.Location = new System.Drawing.Point(256, 23);
+            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Reset.Name = "bt_Reset";
+            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
+            this.bt_Reset.TabIndex = 17;
+            this.bt_Reset.Text = "เริ่มใหม่";
+            this.bt_Reset.UseVisualStyleBackColor = true;
+            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
             // 
             // bt_DelUnit
             // 
@@ -198,19 +215,6 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
-            // bt_Reset
-            // 
-            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bt_Reset.Location = new System.Drawing.Point(256, 23);
-            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_Reset.Name = "bt_Reset";
-            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
-            this.bt_Reset.TabIndex = 17;
-            this.bt_Reset.Text = "เริ่มใหม่";
-            this.bt_Reset.UseVisualStyleBackColor = true;
-            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
-            // 
             // FrmSetting14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -236,8 +240,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dGV_Uni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_Name;
         private System.Windows.Forms.GroupBox gBoxUnit;
         private System.Windows.Forms.Button bt_LoadUnit;
         private System.Windows.Forms.Button bt_EditUnit;
@@ -249,5 +251,7 @@
         private System.Windows.Forms.Button bt_DelUnit;
         private System.Windows.Forms.ErrorProvider epCheck;
         private System.Windows.Forms.Button bt_Reset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccUnit_Name;
     }
 }

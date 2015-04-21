@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cb_outlay = new System.Windows.Forms.ComboBox();
             this.Lb_ListService = new System.Windows.Forms.Label();
             this.dGV_outlay = new System.Windows.Forms.DataGridView();
@@ -79,6 +80,9 @@
             // 
             this.dGV_outlay.AllowUserToAddRows = false;
             this.dGV_outlay.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_outlay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dGV_outlay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_outlay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_outlay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccoutlayDetail_ID,

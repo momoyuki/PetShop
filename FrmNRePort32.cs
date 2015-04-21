@@ -117,21 +117,15 @@ namespace Petshop
             DataTable idtCompany;
             string isqlCompany = "SELECT * FROM `tb_company`";
             idtCompany = iConnect.SelectByCommand(isqlCompany);
-            if (idtCompany != null)
-            {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            lbYear.Text = DateTime.Now.ToString("yy");
+            Lb_CoBill.Text = "55";
                 if (idtCompany.Rows.Count > 0)
                 {
-                    System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
-                    System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-                    System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-                    lbYear.Text = DateTime.Now.ToString("yy");
                     Lb_CoBill.Text = idtCompany.Rows[0]["CoBill"].ToString();
                 }
-                else
-                {
-                    Lb_CoBill.Text = "55";
-                }
-            } 
         }
 
         private void loadEmployee()

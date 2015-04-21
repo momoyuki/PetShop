@@ -173,15 +173,6 @@ namespace Petshop
                 txb_CompanyAddr.Focus();
             }
         }
-
-        private void txb_CompanyAddr_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txb_CompanyTel.Focus();
-            }
-        }
-
         private void txb_CompanyTel_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

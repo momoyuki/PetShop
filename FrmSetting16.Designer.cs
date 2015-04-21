@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlEmployee = new System.Windows.Forms.TabControl();
             this.tpEmployee = new System.Windows.Forms.TabPage();
             this.gBoxEmployee = new System.Windows.Forms.GroupBox();
@@ -381,7 +382,7 @@
             // 
             this.dGV_Ep.AllowUserToAddRows = false;
             this.dGV_Ep.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dGV_Ep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Ep.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Ep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -412,11 +413,11 @@
             this.ccEm_ID.HeaderText = "รหัส";
             this.ccEm_ID.Name = "ccEm_ID";
             this.ccEm_ID.ReadOnly = true;
+            this.ccEm_ID.Width = 120;
             // 
             // ccEm_Name
             // 
             this.ccEm_Name.DataPropertyName = "Em_Name";
-            this.ccEm_Name.FillWeight = 140F;
             this.ccEm_Name.HeaderText = "ชื่อ";
             this.ccEm_Name.Name = "ccEm_Name";
             this.ccEm_Name.ReadOnly = true;
@@ -478,7 +479,6 @@
             // ccEm_Tel
             // 
             this.ccEm_Tel.DataPropertyName = "Em_Tel";
-            this.ccEm_Tel.FillWeight = 120F;
             this.ccEm_Tel.HeaderText = "เบอร์โทรศัพท์";
             this.ccEm_Tel.Name = "ccEm_Tel";
             this.ccEm_Tel.ReadOnly = true;
@@ -501,6 +501,8 @@
             // 
             this.dGV_PS.AllowUserToAddRows = false;
             this.dGV_PS.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_PS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_PS.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_PS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_PS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -527,7 +529,6 @@
             // ccEm_Position
             // 
             this.ccEm_Position.DataPropertyName = "Em_Position";
-            this.ccEm_Position.FillWeight = 240F;
             this.ccEm_Position.HeaderText = "ตำแหน่ง";
             this.ccEm_Position.Name = "ccEm_Position";
             this.ccEm_Position.ReadOnly = true;
@@ -728,6 +729,8 @@
         private System.Windows.Forms.TextBox txb_EmTel;
         private System.Windows.Forms.Label lb_EmDOB;
         private System.Windows.Forms.DateTimePicker dTP_EmDOB;
+        private System.Windows.Forms.Button bt_Reset;
+        private System.Windows.Forms.Button bt_ResetPosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEmPosition_ID;
@@ -740,8 +743,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Tel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEP_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Position;
-        private System.Windows.Forms.Button bt_Reset;
-        private System.Windows.Forms.Button bt_ResetPosition;
 
 
     }

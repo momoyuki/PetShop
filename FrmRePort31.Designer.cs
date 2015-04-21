@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControlBill = new System.Windows.Forms.TabControl();
             this.tp_AllBill = new System.Windows.Forms.TabPage();
             this.dGV_Bill = new System.Windows.Forms.DataGridView();
@@ -90,6 +92,8 @@
             // 
             this.dGV_Bill.AllowUserToAddRows = false;
             this.dGV_Bill.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Bill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Bill.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Bill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -192,6 +196,8 @@
             // 
             this.dGV_Detail.AllowUserToAddRows = false;
             this.dGV_Detail.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Detail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Detail.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Detail.GridColor = System.Drawing.SystemColors.ButtonShadow;
@@ -254,6 +260,7 @@
             this.bt_Load.TabIndex = 177;
             this.bt_Load.Text = "Load";
             this.bt_Load.UseVisualStyleBackColor = true;
+            this.bt_Load.Visible = false;
             this.bt_Load.Click += new System.EventHandler(this.bt_Load_Click);
             // 
             // txb_BillDC
@@ -265,6 +272,7 @@
             this.txb_BillDC.Size = new System.Drawing.Size(70, 26);
             this.txb_BillDC.TabIndex = 176;
             this.txb_BillDC.Text = "0.00";
+            this.txb_BillDC.TextChanged += new System.EventHandler(this.txb_BillDC_TextChanged);
             // 
             // lb_DC
             // 

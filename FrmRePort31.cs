@@ -28,7 +28,6 @@ namespace Petshop
             loadBill();
         }
         
-
         private void FrmRePort31_Load(object sender, EventArgs e)
         {
             loadData();
@@ -44,7 +43,6 @@ namespace Petshop
 
         private void loadBillDetail() //ส่วนของดึงข้อมูลจาก mysql ตาราง Service มาแสดง แท๊บ บริการ
         {
-           
             DataTable idtBillDetail;
             string isqlBillDetail = "";
             idtBillDetail = iConnect.SelectByCommand(isqlBillDetail);
@@ -95,6 +93,11 @@ namespace Petshop
                 iFrmBill.Show();
                 iFrmBill.lb_BillID.Text = Lb_BillID.Text.Trim();
             }
+        }
+
+        private void txb_BillDC_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

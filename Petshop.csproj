@@ -97,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmNH21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNH21.Designer.cs">
+      <DependentUpon>FrmNH21.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRePort31.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     <Compile Include="Resources\MySQLConnect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmNH21.resx">
+      <DependentUpon>FrmNH21.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRePort31.resx">
       <DependentUpon>FrmRePort31.cs</DependentUpon>
     </EmbeddedResource>

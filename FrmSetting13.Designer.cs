@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_Searchoutlay = new System.Windows.Forms.Label();
             this.lb_SearchoutlayB = new System.Windows.Forms.Label();
             this.lb_SearchoutlayA = new System.Windows.Forms.Label();
@@ -98,7 +99,7 @@
             this.bt_Searchoutlay.Size = new System.Drawing.Size(101, 32);
             this.bt_Searchoutlay.TabIndex = 7;
             this.bt_Searchoutlay.Text = "ค้นหา";
-            this.bt_Searchoutlay.UseVisualStyleBackColor = true;
+            this.bt_Searchoutlay.UseVisualStyleBackColor = false;
             this.bt_Searchoutlay.Click += new System.EventHandler(this.bt_Searchoutlay_Click);
             // 
             // bt_Resetoutlay
@@ -111,7 +112,7 @@
             this.bt_Resetoutlay.Size = new System.Drawing.Size(70, 32);
             this.bt_Resetoutlay.TabIndex = 8;
             this.bt_Resetoutlay.Text = "เริ่มใหม่";
-            this.bt_Resetoutlay.UseVisualStyleBackColor = true;
+            this.bt_Resetoutlay.UseVisualStyleBackColor = false;
             this.bt_Resetoutlay.Click += new System.EventHandler(this.bt_Resetoutlay_Click);
             // 
             // bt_Deloutlay
@@ -125,7 +126,7 @@
             this.bt_Deloutlay.Size = new System.Drawing.Size(70, 32);
             this.bt_Deloutlay.TabIndex = 5;
             this.bt_Deloutlay.Text = "ลบ";
-            this.bt_Deloutlay.UseVisualStyleBackColor = true;
+            this.bt_Deloutlay.UseVisualStyleBackColor = false;
             this.bt_Deloutlay.Click += new System.EventHandler(this.bt_Deloutlay_Click);
             // 
             // lb_RemarkoutlayID
@@ -162,7 +163,7 @@
             this.bt_Editoutlay.Size = new System.Drawing.Size(70, 32);
             this.bt_Editoutlay.TabIndex = 4;
             this.bt_Editoutlay.Text = "แก้ไข";
-            this.bt_Editoutlay.UseVisualStyleBackColor = true;
+            this.bt_Editoutlay.UseVisualStyleBackColor = false;
             this.bt_Editoutlay.Click += new System.EventHandler(this.bt_Editoutlay_Click);
             // 
             // bt_Addoutlay
@@ -175,7 +176,7 @@
             this.bt_Addoutlay.Size = new System.Drawing.Size(70, 32);
             this.bt_Addoutlay.TabIndex = 3;
             this.bt_Addoutlay.Text = "เพิ่ม";
-            this.bt_Addoutlay.UseVisualStyleBackColor = true;
+            this.bt_Addoutlay.UseVisualStyleBackColor = false;
             this.bt_Addoutlay.Click += new System.EventHandler(this.bt_Addoutlay_Click);
             // 
             // txb_outlayPrice
@@ -244,6 +245,8 @@
             // 
             this.dGV_outlay.AllowUserToAddRows = false;
             this.dGV_outlay.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_outlay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_outlay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_outlay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_outlay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -270,7 +273,6 @@
             // ccoutlay_detail
             // 
             this.ccoutlay_detail.DataPropertyName = "outlay_detail";
-            this.ccoutlay_detail.FillWeight = 240F;
             this.ccoutlay_detail.HeaderText = "รายละเอียด";
             this.ccoutlay_detail.Name = "ccoutlay_detail";
             this.ccoutlay_detail.ReadOnly = true;
@@ -279,7 +281,6 @@
             // ccoutlay_Price
             // 
             this.ccoutlay_Price.DataPropertyName = "outlay_Price";
-            this.ccoutlay_Price.FillWeight = 250F;
             this.ccoutlay_Price.HeaderText = "ค่าเดิม";
             this.ccoutlay_Price.Name = "ccoutlay_Price";
             this.ccoutlay_Price.ReadOnly = true;
@@ -316,7 +317,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSetting13";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "income";
+            this.Text = "ตั้งค่า รายจ่าย";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSetting13_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_outlay)).EndInit();

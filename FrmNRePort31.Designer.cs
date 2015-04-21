@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bt_Print = new System.Windows.Forms.Button();
             this.bt_Load = new System.Windows.Forms.Button();
             this.txb_BillDC = new System.Windows.Forms.TextBox();
@@ -277,6 +279,8 @@
             // 
             this.dGV_Service.AllowUserToAddRows = false;
             this.dGV_Service.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -362,6 +366,8 @@
             // 
             this.dGV_Medi.AllowUserToAddRows = false;
             this.dGV_Medi.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

@@ -101,19 +101,19 @@ namespace Petshop
                 epCheck.SetError(txb_EmName, "กรุณาระบุชื่อสมาชิก");
                 txb_EmName.Focus();
             }
-            else if((rB_Work.Checked != true)&&(rB_NotWork.Checked != true))
+            else if (!RegTel.IsMatch(txb_EmTel.Text))
             {
-                epCheck.SetError(rB_Work, "คุณไม่ได้เลือกสถานะ");
+                epCheck.SetError(txb_EmTel, "กรุณาระบุเบอร์โทรศัพท์");
             }
             else if (!RegString.IsMatch(txb_EmAddr.Text))
             {
                 epCheck.SetError(txb_EmAddr,"กรุณาระบุที่อยู่");
             }
-            else if(!RegTel.IsMatch(txb_EmTel.Text))
+            else if ((rB_Work.Checked != true) && (rB_NotWork.Checked != true))
             {
-                epCheck.SetError(txb_EmTel,"กรุณาระบุเบอร์โทรศัพท์");
+                epCheck.SetError(rB_Work, "คุณไม่ได้เลือกสถานะ");
             }
-            else
+             else
             {
                 string itxbEmID = txb_EmID.Text.Trim();
                 string itxbEmName = txb_EmName.Text.Trim();
@@ -134,8 +134,8 @@ namespace Petshop
                 {
                     hash = md5.ComputeHash(Encoding.UTF8.GetBytes(itxbPwd));
                 }
-                string ipwd = Convert.ToBase64String(hash);
-
+                //string ipwd = Convert.ToBase64String(hash);
+                string ipwd = txb_Pwd.Text.Trim();
                 int iStatus = 0;
                 if (rB_Work.Checked == true)
                 {
@@ -186,12 +186,15 @@ namespace Petshop
 
         private void ClearTxbEmployee()
         {
+            epCheck.Clear();
             txb_EmID.Clear();
             txb_EmName.Clear();
             txb_UserName.Clear();
             txb_Pwd.Clear();
             txb_EmID.Focus();
             dTP_EmDOB.Value = DateTime.Now;
+            txb_EmTel.Clear();
+            txb_EmAddr.Clear();
         }
 
         private void FrmMM14_Load(object sender, EventArgs e)

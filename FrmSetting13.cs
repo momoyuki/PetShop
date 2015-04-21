@@ -36,15 +36,16 @@ namespace Petshop
             epCheck.Clear();
             Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
             Regex RegInt = new Regex(@"^(\d{1,3})$");
-            if (txb_outlayDetail.Text != string.Empty)
+            if (txb_outlayDetail.Text == string.Empty)
             {
                 epCheck.SetError(txb_outlayDetail,"กรุณาระบุรายละเอียด");
                 txb_outlayDetail.Focus();
             }
             else if (!RegMoney.IsMatch(txb_outlayPrice.Text))
             {
-                epCheck.SetError(txb_outlayPrice,"กรุณากรอกจำนวนเงินให้ถูกต้อง");
+                epCheck.SetError(txb_outlayPrice,"คุณกรอกไม่ถูกต้อง");
                 txb_outlayPrice.Focus();
+                txb_outlayPrice.Text = "0.00";
             }
             else
             {

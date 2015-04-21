@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
 namespace Petshop
 {
     public partial class FrmSetting15 : Form
@@ -41,6 +41,7 @@ namespace Petshop
             idtBreed = iConnect.SelectByCommand(isqlCommand);
             dGV_Breed.DataSource = idtBreed;
             dGV_Breed.Refresh();
+            lb_CountBreed.Text = idtBreed.Rows.Count.ToString();
         }
 
          
@@ -340,6 +341,35 @@ namespace Petshop
         private void bt_Reset_Click(object sender, EventArgs e)
         {
             clearTypeTxb();
+        }
+
+        private void bt_SearchBreed_Click(object sender, EventArgs e)
+        {
+            SearchBreed();
+        }
+
+        private void SearchBreed()
+        {
+            Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            string itxbSearchBreed = txb_SearchBreed.Text.Trim();
+            if (RegString.IsMatch(itxbSearchBreed))
+            {
+                DataTable idtSearchBreed;
+                string isqlSearchBreed = "SELECT * FROM petshop.tb_petbreed where PetBreed_Des like '%" + itxbSearchBreed + "%'";
+                idtSearchBreed = iConnect.SelectByCommand(isqlSearchBreed);
+                dGV_Breed.DataSource = idtSearchBreed;
+                dGV_Breed.Refresh();
+                lb_CountBreed.Text = idtSearchBreed.Rows.Count.ToString();
+            }
+            
+        }
+
+        private void txb_SearchBreed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchBreed();
+            }
         }
     }
 }

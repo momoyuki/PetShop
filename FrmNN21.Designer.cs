@@ -400,6 +400,7 @@
             // 
             this.dGV_Medi.AllowUserToAddRows = false;
             this.dGV_Medi.AllowUserToDeleteRows = false;
+            this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ccHealRecord_ID2,
@@ -789,6 +790,7 @@
             this.txb_Temp.Name = "txb_Temp";
             this.txb_Temp.Size = new System.Drawing.Size(60, 26);
             this.txb_Temp.TabIndex = 41;
+            this.txb_Temp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Temp_KeyDown);
             // 
             // txb_Weight
             // 
@@ -797,6 +799,7 @@
             this.txb_Weight.Name = "txb_Weight";
             this.txb_Weight.Size = new System.Drawing.Size(60, 26);
             this.txb_Weight.TabIndex = 39;
+            this.txb_Weight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Weight_KeyDown);
             // 
             // lb_Weight
             // 
@@ -866,6 +869,7 @@
             this.txb_HR.Name = "txb_HR";
             this.txb_HR.Size = new System.Drawing.Size(60, 26);
             this.txb_HR.TabIndex = 78;
+            this.txb_HR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_HR_KeyDown);
             // 
             // txb_RR
             // 
@@ -874,6 +878,7 @@
             this.txb_RR.Name = "txb_RR";
             this.txb_RR.Size = new System.Drawing.Size(60, 26);
             this.txb_RR.TabIndex = 79;
+            this.txb_RR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_RR_KeyDown);
             // 
             // lb_HealRecordHR
             // 
@@ -977,8 +982,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "บันทึกประจำวัน หัตถการและบริการ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNN21_FormClosing);
             this.Load += new System.EventHandler(this.FrmMM21_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMM22_KeyDown);
             this.tabControlServiceMedi.ResumeLayout(false);
             this.tPService.ResumeLayout(false);
             this.tPService.PerformLayout();
