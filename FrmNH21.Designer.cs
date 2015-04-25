@@ -43,11 +43,6 @@
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tPService = new System.Windows.Forms.TabPage();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
-            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tPMedi = new System.Windows.Forms.TabPage();
             this.lb_HR = new System.Windows.Forms.Label();
             this.lb_ServiceA = new System.Windows.Forms.Label();
@@ -87,6 +82,11 @@
             this.lb_Total = new System.Windows.Forms.Label();
             this.txb_HealRecordRemark = new System.Windows.Forms.TextBox();
             this.txb_Em = new System.Windows.Forms.TextBox();
+            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Medi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.tabControlServiceMedi.SuspendLayout();
@@ -242,52 +242,6 @@
             this.dGV_Service.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Service.Size = new System.Drawing.Size(737, 279);
             this.dGV_Service.TabIndex = 0;
-            // 
-            // ccHealRecord_ID
-            // 
-            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
-            this.ccHealRecord_ID.HeaderText = "รหัสประวัติรักษา";
-            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
-            this.ccHealRecord_ID.ReadOnly = true;
-            this.ccHealRecord_ID.Visible = false;
-            this.ccHealRecord_ID.Width = 120;
-            // 
-            // ccService_ID
-            // 
-            this.ccService_ID.DataPropertyName = "Service_ID";
-            this.ccService_ID.FillWeight = 140F;
-            this.ccService_ID.HeaderText = "รหัสบริการ";
-            this.ccService_ID.Name = "ccService_ID";
-            this.ccService_ID.ReadOnly = true;
-            this.ccService_ID.Width = 140;
-            // 
-            // ccService_Des
-            // 
-            this.ccService_Des.DataPropertyName = "Service_Des";
-            this.ccService_Des.FillWeight = 250F;
-            this.ccService_Des.HeaderText = "บริการ";
-            this.ccService_Des.Name = "ccService_Des";
-            this.ccService_Des.ReadOnly = true;
-            this.ccService_Des.Width = 250;
-            // 
-            // ccService_Price
-            // 
-            this.ccService_Price.DataPropertyName = "Service_Price";
-            this.ccService_Price.FillWeight = 140F;
-            this.ccService_Price.HeaderText = "ค่าบริการต้น";
-            this.ccService_Price.Name = "ccService_Price";
-            this.ccService_Price.ReadOnly = true;
-            this.ccService_Price.Visible = false;
-            this.ccService_Price.Width = 140;
-            // 
-            // ccService_Amt
-            // 
-            this.ccService_Amt.DataPropertyName = "Service_Amt";
-            this.ccService_Amt.FillWeight = 140F;
-            this.ccService_Amt.HeaderText = "ค่าบริการ";
-            this.ccService_Amt.Name = "ccService_Amt";
-            this.ccService_Amt.ReadOnly = true;
-            this.ccService_Amt.Width = 140;
             // 
             // tPMedi
             // 
@@ -471,6 +425,7 @@
             this.bt_PrintDate.TabIndex = 119;
             this.bt_PrintDate.Text = "พิมพ์ใบนัด";
             this.bt_PrintDate.UseVisualStyleBackColor = true;
+            this.bt_PrintDate.Click += new System.EventHandler(this.bt_PrintDate_Click);
             // 
             // lb_Temp
             // 
@@ -625,6 +580,7 @@
             this.bt_PrintBill.TabIndex = 90;
             this.bt_PrintBill.Text = "พิมพ์ใบเสร็จ";
             this.bt_PrintBill.UseVisualStyleBackColor = true;
+            this.bt_PrintBill.Click += new System.EventHandler(this.bt_PrintBill_Click);
             // 
             // txb_HealRecordSymptom
             // 
@@ -673,6 +629,48 @@
             this.txb_Em.Name = "txb_Em";
             this.txb_Em.Size = new System.Drawing.Size(178, 26);
             this.txb_Em.TabIndex = 131;
+            // 
+            // ccHealRecord_ID
+            // 
+            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
+            this.ccHealRecord_ID.HeaderText = "รหัสประวัติรักษา";
+            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
+            this.ccHealRecord_ID.ReadOnly = true;
+            this.ccHealRecord_ID.Visible = false;
+            this.ccHealRecord_ID.Width = 120;
+            // 
+            // ccService_ID
+            // 
+            this.ccService_ID.DataPropertyName = "Service_ID";
+            this.ccService_ID.HeaderText = "รหัสบริการ";
+            this.ccService_ID.Name = "ccService_ID";
+            this.ccService_ID.ReadOnly = true;
+            this.ccService_ID.Width = 140;
+            // 
+            // ccService_Des
+            // 
+            this.ccService_Des.DataPropertyName = "Service_Des";
+            this.ccService_Des.HeaderText = "บริการ";
+            this.ccService_Des.Name = "ccService_Des";
+            this.ccService_Des.ReadOnly = true;
+            this.ccService_Des.Width = 350;
+            // 
+            // ccService_Price
+            // 
+            this.ccService_Price.DataPropertyName = "Service_Price";
+            this.ccService_Price.HeaderText = "ค่าบริการต้น";
+            this.ccService_Price.Name = "ccService_Price";
+            this.ccService_Price.ReadOnly = true;
+            this.ccService_Price.Visible = false;
+            this.ccService_Price.Width = 140;
+            // 
+            // ccService_Amt
+            // 
+            this.ccService_Amt.DataPropertyName = "Service_Amt";
+            this.ccService_Amt.HeaderText = "ค่าบริการ";
+            this.ccService_Amt.Name = "ccService_Amt";
+            this.ccService_Amt.ReadOnly = true;
+            this.ccService_Amt.Width = 140;
             // 
             // FrmNH21
             // 
@@ -753,11 +751,6 @@
         private System.Windows.Forms.TabControl tabControlServiceMedi;
         private System.Windows.Forms.TabPage tPService;
         private System.Windows.Forms.DataGridView dGV_Service;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Amt;
         private System.Windows.Forms.TabPage tPMedi;
         private System.Windows.Forms.Label lb_HR;
         private System.Windows.Forms.Label lb_ServiceA;
@@ -797,5 +790,10 @@
         private System.Windows.Forms.Label lb_Total;
         private System.Windows.Forms.TextBox txb_HealRecordRemark;
         private System.Windows.Forms.TextBox txb_Em;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Amt;
     }
 }

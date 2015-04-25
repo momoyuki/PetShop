@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lb_HealDateID = new System.Windows.Forms.Label();
+            this.lb_PetID = new System.Windows.Forms.Label();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.lb_HealDate = new System.Windows.Forms.Label();
             this.Bt_Report = new System.Windows.Forms.Button();
@@ -37,13 +37,13 @@
             this.CheckBox_Print = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // lb_HealDateID
+            // lb_PetID
             // 
-            this.lb_HealDateID.AutoSize = true;
-            this.lb_HealDateID.Location = new System.Drawing.Point(123, 20);
-            this.lb_HealDateID.Name = "lb_HealDateID";
-            this.lb_HealDateID.Size = new System.Drawing.Size(0, 18);
-            this.lb_HealDateID.TabIndex = 8;
+            this.lb_PetID.AutoSize = true;
+            this.lb_PetID.Location = new System.Drawing.Point(123, 20);
+            this.lb_PetID.Name = "lb_PetID";
+            this.lb_PetID.Size = new System.Drawing.Size(0, 18);
+            this.lb_PetID.TabIndex = 8;
             // 
             // crystalReportViewer1
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.CheckBox_Print);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_UnitList);
-            this.Controls.Add(this.lb_HealDateID);
+            this.Controls.Add(this.lb_PetID);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.lb_HealDate);
             this.Controls.Add(this.Bt_Report);
@@ -130,7 +130,7 @@
 
         #endregion
 
-        public System.Windows.Forms.Label lb_HealDateID;
+        public System.Windows.Forms.Label lb_PetID;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.Label lb_HealDate;
         private System.Windows.Forms.Button Bt_Report;

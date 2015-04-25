@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecorD21));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gBoxDetail = new System.Windows.Forms.GroupBox();
             this.bt_Refresh = new System.Windows.Forms.Button();
             this.lb_BirthDay = new System.Windows.Forms.Label();
@@ -91,8 +91,8 @@
             this.lb_PetCount = new System.Windows.Forms.Label();
             this.lb_PetCountA = new System.Windows.Forms.Label();
             this.tP_LisTDetail = new System.Windows.Forms.TabPage();
-            this.bt_HealBill = new System.Windows.Forms.Button();
             this.bt_HealDate = new System.Windows.Forms.Button();
+            this.bt_HealBill = new System.Windows.Forms.Button();
             this.lb_HealRecordID = new System.Windows.Forms.Label();
             this.lb_HealRecord = new System.Windows.Forms.Label();
             this.lb_HealRecordL = new System.Windows.Forms.Label();
@@ -556,8 +556,8 @@
             // 
             this.dGV_PetProfile.AllowUserToAddRows = false;
             this.dGV_PetProfile.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_PetProfile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_PetProfile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_PetProfile.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_PetProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_PetProfile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -772,8 +772,8 @@
             // 
             // tP_LisTDetail
             // 
-            this.tP_LisTDetail.Controls.Add(this.bt_HealBill);
             this.tP_LisTDetail.Controls.Add(this.bt_HealDate);
+            this.tP_LisTDetail.Controls.Add(this.bt_HealBill);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecordID);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecord);
             this.tP_LisTDetail.Controls.Add(this.lb_HealRecordL);
@@ -789,6 +789,17 @@
             this.tP_LisTDetail.Text = "ประวัติการรักษา";
             this.tP_LisTDetail.UseVisualStyleBackColor = true;
             // 
+            // bt_HealDate
+            // 
+            this.bt_HealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_HealDate.Location = new System.Drawing.Point(742, 6);
+            this.bt_HealDate.Name = "bt_HealDate";
+            this.bt_HealDate.Size = new System.Drawing.Size(100, 31);
+            this.bt_HealDate.TabIndex = 9;
+            this.bt_HealDate.Text = "นัดหมาย";
+            this.bt_HealDate.UseVisualStyleBackColor = true;
+            this.bt_HealDate.Click += new System.EventHandler(this.bt_HealDate_Click);
+            // 
             // bt_HealBill
             // 
             this.bt_HealBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -798,18 +809,8 @@
             this.bt_HealBill.TabIndex = 8;
             this.bt_HealBill.Text = "พิมพ์ใบเสร็จ";
             this.bt_HealBill.UseVisualStyleBackColor = true;
+            this.bt_HealBill.Visible = false;
             this.bt_HealBill.Click += new System.EventHandler(this.bt_HealBill_Click);
-            // 
-            // bt_HealDate
-            // 
-            this.bt_HealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_HealDate.Location = new System.Drawing.Point(742, 6);
-            this.bt_HealDate.Name = "bt_HealDate";
-            this.bt_HealDate.Size = new System.Drawing.Size(100, 31);
-            this.bt_HealDate.TabIndex = 0;
-            this.bt_HealDate.Text = "นัดหมาย";
-            this.bt_HealDate.UseVisualStyleBackColor = true;
-            this.bt_HealDate.Click += new System.EventHandler(this.bt_HealDate_Click);
             // 
             // lb_HealRecordID
             // 
@@ -851,9 +852,9 @@
             this.lb_HealRecordList.AutoSize = true;
             this.lb_HealRecordList.Location = new System.Drawing.Point(12, 12);
             this.lb_HealRecordList.Name = "lb_HealRecordList";
-            this.lb_HealRecordList.Size = new System.Drawing.Size(167, 18);
+            this.lb_HealRecordList.Size = new System.Drawing.Size(161, 18);
             this.lb_HealRecordList.TabIndex = 2;
-            this.lb_HealRecordList.Text = "พบประวัติการรักษาทั้้งหมด";
+            this.lb_HealRecordList.Text = "พบประวัติมารักษาทั้้งหมด";
             // 
             // bt_HealRecord
             // 
@@ -870,8 +871,8 @@
             // 
             this.dGV_HealRecord.AllowUserToAddRows = false;
             this.dGV_HealRecord.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_HealRecord.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1028,6 +1029,7 @@
             this.bt_DetailBill.TabIndex = 14;
             this.bt_DetailBill.Text = "พิมพ์ใบเสร็จ";
             this.bt_DetailBill.UseVisualStyleBackColor = true;
+            this.bt_DetailBill.Visible = false;
             this.bt_DetailBill.Click += new System.EventHandler(this.bt_DetailBill_Click);
             // 
             // bt_HealDateDetail
@@ -1100,8 +1102,8 @@
             // 
             this.dGV_HealDetail.AllowUserToAddRows = false;
             this.dGV_HealDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dGV_HealDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1264,7 +1266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccBreed_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed;
         private System.Windows.Forms.Label lb_BirthDay;
-        private System.Windows.Forms.Button bt_HealDate;
         private System.Windows.Forms.ErrorProvider epCheck;
         private System.Windows.Forms.Label lb_PetCountB;
         private System.Windows.Forms.Label lb_PetCount;
@@ -1286,5 +1287,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_Desd;
         private System.Windows.Forms.Button bt_HealBill;
         private System.Windows.Forms.Button bt_DetailBill;
+        private System.Windows.Forms.Button bt_HealDate;
     }
 }

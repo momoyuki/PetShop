@@ -137,6 +137,39 @@ namespace Petshop
             }
         }
 
+        private void bt_PrintDate_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmRecorD22))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmRecorD22 iFrmRecorD22 = new FrmRecorD22();
+            iFrmRecorD22.MdiParent = MainForm.ActiveForm;
+            iFrmRecorD22.lb_HealRecordID.Text = lb_HealRecordID.Text;
+            iFrmRecorD22.lb_PetID.Text = txb_PetID.Text;
+            iFrmRecorD22.Show(); 
+        }
+
+        private void bt_PrintBill_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmNRePort31))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmNRePort31 iFrmMM341 = new FrmNRePort31();
+            iFrmMM341.MdiParent = MainForm.ActiveForm;
+            iFrmMM341.txb_ReferID.Text = lb_HealRecordID.Text;
+            iFrmMM341.Show();  
+        }
+
         
     }
 }

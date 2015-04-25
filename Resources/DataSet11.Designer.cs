@@ -24,13 +24,13 @@ namespace Petshop.Resources {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1 : global::System.Data.DataSet {
         
-        private DT_HealDateDataTable tableDT_HealDate;
-        
         private DT_CompanyDataTable tableDT_Company;
         
         private DT_BillDataTable tableDT_Bill;
         
         private DT_BillDetailDataTable tableDT_BillDetail;
+        
+        private DT_HealDateDataTable tableDT_HealDate;
         
         private DT_PetProfileDataTable tableDT_PetProfile;
         
@@ -62,9 +62,6 @@ namespace Petshop.Resources {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DT_HealDate"] != null)) {
-                    base.Tables.Add(new DT_HealDateDataTable(ds.Tables["DT_HealDate"]));
-                }
                 if ((ds.Tables["DT_Company"] != null)) {
                     base.Tables.Add(new DT_CompanyDataTable(ds.Tables["DT_Company"]));
                 }
@@ -73,6 +70,9 @@ namespace Petshop.Resources {
                 }
                 if ((ds.Tables["DT_BillDetail"] != null)) {
                     base.Tables.Add(new DT_BillDetailDataTable(ds.Tables["DT_BillDetail"]));
+                }
+                if ((ds.Tables["DT_HealDate"] != null)) {
+                    base.Tables.Add(new DT_HealDateDataTable(ds.Tables["DT_HealDate"]));
                 }
                 if ((ds.Tables["DT_PetProfile"] != null)) {
                     base.Tables.Add(new DT_PetProfileDataTable(ds.Tables["DT_PetProfile"]));
@@ -93,16 +93,6 @@ namespace Petshop.Resources {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DT_HealDateDataTable DT_HealDate {
-            get {
-                return this.tableDT_HealDate;
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -132,6 +122,16 @@ namespace Petshop.Resources {
         public DT_BillDetailDataTable DT_BillDetail {
             get {
                 return this.tableDT_BillDetail;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DT_HealDateDataTable DT_HealDate {
+            get {
+                return this.tableDT_HealDate;
             }
         }
         
@@ -212,9 +212,6 @@ namespace Petshop.Resources {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DT_HealDate"] != null)) {
-                    base.Tables.Add(new DT_HealDateDataTable(ds.Tables["DT_HealDate"]));
-                }
                 if ((ds.Tables["DT_Company"] != null)) {
                     base.Tables.Add(new DT_CompanyDataTable(ds.Tables["DT_Company"]));
                 }
@@ -223,6 +220,9 @@ namespace Petshop.Resources {
                 }
                 if ((ds.Tables["DT_BillDetail"] != null)) {
                     base.Tables.Add(new DT_BillDetailDataTable(ds.Tables["DT_BillDetail"]));
+                }
+                if ((ds.Tables["DT_HealDate"] != null)) {
+                    base.Tables.Add(new DT_HealDateDataTable(ds.Tables["DT_HealDate"]));
                 }
                 if ((ds.Tables["DT_PetProfile"] != null)) {
                     base.Tables.Add(new DT_PetProfileDataTable(ds.Tables["DT_PetProfile"]));
@@ -260,12 +260,6 @@ namespace Petshop.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDT_HealDate = ((DT_HealDateDataTable)(base.Tables["DT_HealDate"]));
-            if ((initTable == true)) {
-                if ((this.tableDT_HealDate != null)) {
-                    this.tableDT_HealDate.InitVars();
-                }
-            }
             this.tableDT_Company = ((DT_CompanyDataTable)(base.Tables["DT_Company"]));
             if ((initTable == true)) {
                 if ((this.tableDT_Company != null)) {
@@ -284,6 +278,12 @@ namespace Petshop.Resources {
                     this.tableDT_BillDetail.InitVars();
                 }
             }
+            this.tableDT_HealDate = ((DT_HealDateDataTable)(base.Tables["DT_HealDate"]));
+            if ((initTable == true)) {
+                if ((this.tableDT_HealDate != null)) {
+                    this.tableDT_HealDate.InitVars();
+                }
+            }
             this.tableDT_PetProfile = ((DT_PetProfileDataTable)(base.Tables["DT_PetProfile"]));
             if ((initTable == true)) {
                 if ((this.tableDT_PetProfile != null)) {
@@ -300,22 +300,16 @@ namespace Petshop.Resources {
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDT_HealDate = new DT_HealDateDataTable();
-            base.Tables.Add(this.tableDT_HealDate);
             this.tableDT_Company = new DT_CompanyDataTable();
             base.Tables.Add(this.tableDT_Company);
             this.tableDT_Bill = new DT_BillDataTable();
             base.Tables.Add(this.tableDT_Bill);
             this.tableDT_BillDetail = new DT_BillDetailDataTable();
             base.Tables.Add(this.tableDT_BillDetail);
+            this.tableDT_HealDate = new DT_HealDateDataTable();
+            base.Tables.Add(this.tableDT_HealDate);
             this.tableDT_PetProfile = new DT_PetProfileDataTable();
             base.Tables.Add(this.tableDT_PetProfile);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDT_HealDate() {
-            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -333,6 +327,12 @@ namespace Petshop.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeDT_BillDetail() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeDT_HealDate() {
             return false;
         }
         
@@ -398,9 +398,6 @@ namespace Petshop.Resources {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DT_HealDateRowChangeEventHandler(object sender, DT_HealDateRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void DT_CompanyRowChangeEventHandler(object sender, DT_CompanyRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -410,352 +407,10 @@ namespace Petshop.Resources {
         public delegate void DT_BillDetailRowChangeEventHandler(object sender, DT_BillDetailRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DT_PetProfileRowChangeEventHandler(object sender, DT_PetProfileRowChangeEvent e);
+        public delegate void DT_HealDateRowChangeEventHandler(object sender, DT_HealDateRowChangeEvent e);
         
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DT_HealDateDataTable : global::System.Data.TypedTableBase<DT_HealDateRow> {
-            
-            private global::System.Data.DataColumn columnHealDate_ID;
-            
-            private global::System.Data.DataColumn columnHealRecord_ID;
-            
-            private global::System.Data.DataColumn columnService_ID;
-            
-            private global::System.Data.DataColumn columnService_Des;
-            
-            private global::System.Data.DataColumn columnHealDate_Remark;
-            
-            private global::System.Data.DataColumn columnHealDate_Day;
-            
-            private global::System.Data.DataColumn columnHealDate_Remind;
-            
-            private global::System.Data.DataColumn columnHealDate_Status;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_HealDateDataTable() {
-                this.TableName = "DT_HealDate";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DT_HealDateDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DT_HealDateDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HealDate_IDColumn {
-                get {
-                    return this.columnHealDate_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HealRecord_IDColumn {
-                get {
-                    return this.columnHealRecord_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Service_IDColumn {
-                get {
-                    return this.columnService_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Service_DesColumn {
-                get {
-                    return this.columnService_Des;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HealDate_RemarkColumn {
-                get {
-                    return this.columnHealDate_Remark;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HealDate_DayColumn {
-                get {
-                    return this.columnHealDate_Day;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HealDate_RemindColumn {
-                get {
-                    return this.columnHealDate_Remind;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HealDate_StatusColumn {
-                get {
-                    return this.columnHealDate_Status;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_HealDateRow this[int index] {
-                get {
-                    return ((DT_HealDateRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DT_HealDateRowChangeEventHandler DT_HealDateRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DT_HealDateRowChangeEventHandler DT_HealDateRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DT_HealDateRowChangeEventHandler DT_HealDateRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DT_HealDateRowChangeEventHandler DT_HealDateRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDT_HealDateRow(DT_HealDateRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_HealDateRow AddDT_HealDateRow(string HealDate_ID, string HealRecord_ID, string Service_ID, string Service_Des, System.DateTime HealDate_Remark, System.DateTime HealDate_Day, System.DateTime HealDate_Remind, string HealDate_Status) {
-                DT_HealDateRow rowDT_HealDateRow = ((DT_HealDateRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        HealDate_ID,
-                        HealRecord_ID,
-                        Service_ID,
-                        Service_Des,
-                        HealDate_Remark,
-                        HealDate_Day,
-                        HealDate_Remind,
-                        HealDate_Status};
-                rowDT_HealDateRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDT_HealDateRow);
-                return rowDT_HealDateRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                DT_HealDateDataTable cln = ((DT_HealDateDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new DT_HealDateDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnHealDate_ID = base.Columns["HealDate_ID"];
-                this.columnHealRecord_ID = base.Columns["HealRecord_ID"];
-                this.columnService_ID = base.Columns["Service_ID"];
-                this.columnService_Des = base.Columns["Service_Des"];
-                this.columnHealDate_Remark = base.Columns["HealDate_Remark"];
-                this.columnHealDate_Day = base.Columns["HealDate_Day"];
-                this.columnHealDate_Remind = base.Columns["HealDate_Remind"];
-                this.columnHealDate_Status = base.Columns["HealDate_Status"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnHealDate_ID = new global::System.Data.DataColumn("HealDate_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHealDate_ID);
-                this.columnHealRecord_ID = new global::System.Data.DataColumn("HealRecord_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHealRecord_ID);
-                this.columnService_ID = new global::System.Data.DataColumn("Service_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnService_ID);
-                this.columnService_Des = new global::System.Data.DataColumn("Service_Des", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnService_Des);
-                this.columnHealDate_Remark = new global::System.Data.DataColumn("HealDate_Remark", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHealDate_Remark);
-                this.columnHealDate_Day = new global::System.Data.DataColumn("HealDate_Day", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHealDate_Day);
-                this.columnHealDate_Remind = new global::System.Data.DataColumn("HealDate_Remind", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHealDate_Remind);
-                this.columnHealDate_Status = new global::System.Data.DataColumn("HealDate_Status", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHealDate_Status);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_HealDateRow NewDT_HealDateRow() {
-                return ((DT_HealDateRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DT_HealDateRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(DT_HealDateRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.DT_HealDateRowChanged != null)) {
-                    this.DT_HealDateRowChanged(this, new DT_HealDateRowChangeEvent(((DT_HealDateRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.DT_HealDateRowChanging != null)) {
-                    this.DT_HealDateRowChanging(this, new DT_HealDateRowChangeEvent(((DT_HealDateRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.DT_HealDateRowDeleted != null)) {
-                    this.DT_HealDateRowDeleted(this, new DT_HealDateRowChangeEvent(((DT_HealDateRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.DT_HealDateRowDeleting != null)) {
-                    this.DT_HealDateRowDeleting(this, new DT_HealDateRowChangeEvent(((DT_HealDateRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDT_HealDateRow(DT_HealDateRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DT_HealDateDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void DT_PetProfileRowChangeEventHandler(object sender, DT_PetProfileRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1207,7 +862,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_BillRow AddDT_BillRow(string Bill_ID, string Refer_ID, string Em_Name, string Bill_Date, string BillSale_Total, string BillSale_DC, string BillSale_Net) {
+            public DT_BillRow AddDT_BillRow(string Bill_ID, string Refer_ID, string Em_Name, System.DateTime Bill_Date, string BillSale_Total, string BillSale_DC, string BillSale_Net) {
                 DT_BillRow rowDT_BillRow = ((DT_BillRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Bill_ID,
@@ -1257,7 +912,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnRefer_ID);
                 this.columnEm_Name = new global::System.Data.DataColumn("Em_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEm_Name);
-                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBill_Date);
                 this.columnBillSale_Total = new global::System.Data.DataColumn("BillSale_Total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBillSale_Total);
@@ -1769,6 +1424,365 @@ namespace Petshop.Resources {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DT_HealDateDataTable : global::System.Data.TypedTableBase<DT_HealDateRow> {
+            
+            private global::System.Data.DataColumn columnHealDate_ID;
+            
+            private global::System.Data.DataColumn columnPet_ID;
+            
+            private global::System.Data.DataColumn columnHealRecord_ID;
+            
+            private global::System.Data.DataColumn columnService_ID;
+            
+            private global::System.Data.DataColumn columnHealDate_Remark;
+            
+            private global::System.Data.DataColumn columnHealDate_Day;
+            
+            private global::System.Data.DataColumn columnHealDate_Remind;
+            
+            private global::System.Data.DataColumn columnHealDate_Status;
+            
+            private global::System.Data.DataColumn columnService_Des;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealDateDataTable() {
+                this.TableName = "DT_HealDate";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_HealDateDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected DT_HealDateDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealDate_IDColumn {
+                get {
+                    return this.columnHealDate_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Pet_IDColumn {
+                get {
+                    return this.columnPet_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_IDColumn {
+                get {
+                    return this.columnHealRecord_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Service_IDColumn {
+                get {
+                    return this.columnService_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealDate_RemarkColumn {
+                get {
+                    return this.columnHealDate_Remark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealDate_DayColumn {
+                get {
+                    return this.columnHealDate_Day;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealDate_RemindColumn {
+                get {
+                    return this.columnHealDate_Remind;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealDate_StatusColumn {
+                get {
+                    return this.columnHealDate_Status;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Service_DesColumn {
+                get {
+                    return this.columnService_Des;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealDateRow this[int index] {
+                get {
+                    return ((DT_HealDateRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_HealDateRowChangeEventHandler DT_HealDateRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_HealDateRowChangeEventHandler DT_HealDateRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_HealDateRowChangeEventHandler DT_HealDateRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_HealDateRowChangeEventHandler DT_HealDateRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddDT_HealDateRow(DT_HealDateRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealDateRow AddDT_HealDateRow(string HealDate_ID, string Pet_ID, string HealRecord_ID, string Service_ID, string HealDate_Remark, string HealDate_Day, string HealDate_Remind, string HealDate_Status, string Service_Des) {
+                DT_HealDateRow rowDT_HealDateRow = ((DT_HealDateRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        HealDate_ID,
+                        Pet_ID,
+                        HealRecord_ID,
+                        Service_ID,
+                        HealDate_Remark,
+                        HealDate_Day,
+                        HealDate_Remind,
+                        HealDate_Status,
+                        Service_Des};
+                rowDT_HealDateRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_HealDateRow);
+                return rowDT_HealDateRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DT_HealDateDataTable cln = ((DT_HealDateDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DT_HealDateDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnHealDate_ID = base.Columns["HealDate_ID"];
+                this.columnPet_ID = base.Columns["Pet_ID"];
+                this.columnHealRecord_ID = base.Columns["HealRecord_ID"];
+                this.columnService_ID = base.Columns["Service_ID"];
+                this.columnHealDate_Remark = base.Columns["HealDate_Remark"];
+                this.columnHealDate_Day = base.Columns["HealDate_Day"];
+                this.columnHealDate_Remind = base.Columns["HealDate_Remind"];
+                this.columnHealDate_Status = base.Columns["HealDate_Status"];
+                this.columnService_Des = base.Columns["Service_Des"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnHealDate_ID = new global::System.Data.DataColumn("HealDate_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealDate_ID);
+                this.columnPet_ID = new global::System.Data.DataColumn("Pet_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPet_ID);
+                this.columnHealRecord_ID = new global::System.Data.DataColumn("HealRecord_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_ID);
+                this.columnService_ID = new global::System.Data.DataColumn("Service_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnService_ID);
+                this.columnHealDate_Remark = new global::System.Data.DataColumn("HealDate_Remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealDate_Remark);
+                this.columnHealDate_Day = new global::System.Data.DataColumn("HealDate_Day", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealDate_Day);
+                this.columnHealDate_Remind = new global::System.Data.DataColumn("HealDate_Remind", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealDate_Remind);
+                this.columnHealDate_Status = new global::System.Data.DataColumn("HealDate_Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealDate_Status);
+                this.columnService_Des = new global::System.Data.DataColumn("Service_Des", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnService_Des);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealDateRow NewDT_HealDateRow() {
+                return ((DT_HealDateRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DT_HealDateRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DT_HealDateRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DT_HealDateRowChanged != null)) {
+                    this.DT_HealDateRowChanged(this, new DT_HealDateRowChangeEvent(((DT_HealDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DT_HealDateRowChanging != null)) {
+                    this.DT_HealDateRowChanging(this, new DT_HealDateRowChangeEvent(((DT_HealDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DT_HealDateRowDeleted != null)) {
+                    this.DT_HealDateRowDeleted(this, new DT_HealDateRowChangeEvent(((DT_HealDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DT_HealDateRowDeleting != null)) {
+                    this.DT_HealDateRowDeleting(this, new DT_HealDateRowChangeEvent(((DT_HealDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveDT_HealDateRow(DT_HealDateRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DT_HealDateDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DT_PetProfileDataTable : global::System.Data.TypedTableBase<DT_PetProfileRow> {
             
             private global::System.Data.DataColumn columnPet_ID;
@@ -1961,7 +1975,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_PetProfileRow AddDT_PetProfileRow(string Pet_ID, string Pet_Name, string Pet_Sex, string Pet_Color, string PetType_ID, string PetType_Des, string PetBreed_ID, string PetBreed_Des, System.DateTime Pet_Sterility, string Owner_Name, string Owner_Addr, string Owner_Tel) {
+            public DT_PetProfileRow AddDT_PetProfileRow(string Pet_ID, string Pet_Name, string Pet_Sex, string Pet_Color, string PetType_ID, string PetType_Des, string PetBreed_ID, string PetBreed_Des, string Pet_Sterility, string Owner_Name, string Owner_Addr, string Owner_Tel) {
                 DT_PetProfileRow rowDT_PetProfileRow = ((DT_PetProfileRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Pet_ID,
@@ -2031,7 +2045,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnPetBreed_ID);
                 this.columnPetBreed_Des = new global::System.Data.DataColumn("PetBreed_Des", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPetBreed_Des);
-                this.columnPet_Sterility = new global::System.Data.DataColumn("Pet_Sterility", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnPet_Sterility = new global::System.Data.DataColumn("Pet_Sterility", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPet_Sterility);
                 this.columnOwner_Name = new global::System.Data.DataColumn("Owner_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOwner_Name);
@@ -2162,245 +2176,6 @@ namespace Petshop.Resources {
                 }
                 xs.Add(dsSchema);
                 return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class DT_HealDateRow : global::System.Data.DataRow {
-            
-            private DT_HealDateDataTable tableDT_HealDate;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DT_HealDateRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableDT_HealDate = ((DT_HealDateDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string HealDate_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_HealDate.HealDate_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_ID\' in table \'DT_HealDate\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_HealDate.HealDate_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string HealRecord_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_HealDate.HealRecord_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_ID\' in table \'DT_HealDate\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_HealDate.HealRecord_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Service_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_HealDate.Service_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Service_ID\' in table \'DT_HealDate\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_HealDate.Service_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Service_Des {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_HealDate.Service_DesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Service_Des\' in table \'DT_HealDate\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_HealDate.Service_DesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime HealDate_Remark {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableDT_HealDate.HealDate_RemarkColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_Remark\' in table \'DT_HealDate\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_HealDate.HealDate_RemarkColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime HealDate_Day {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableDT_HealDate.HealDate_DayColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_Day\' in table \'DT_HealDate\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_HealDate.HealDate_DayColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime HealDate_Remind {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableDT_HealDate.HealDate_RemindColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_Remind\' in table \'DT_HealDate\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_HealDate.HealDate_RemindColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string HealDate_Status {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_HealDate.HealDate_StatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_Status\' in table \'DT_HealDate\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_HealDate.HealDate_StatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHealDate_IDNull() {
-                return this.IsNull(this.tableDT_HealDate.HealDate_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHealDate_IDNull() {
-                this[this.tableDT_HealDate.HealDate_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHealRecord_IDNull() {
-                return this.IsNull(this.tableDT_HealDate.HealRecord_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHealRecord_IDNull() {
-                this[this.tableDT_HealDate.HealRecord_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsService_IDNull() {
-                return this.IsNull(this.tableDT_HealDate.Service_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetService_IDNull() {
-                this[this.tableDT_HealDate.Service_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsService_DesNull() {
-                return this.IsNull(this.tableDT_HealDate.Service_DesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetService_DesNull() {
-                this[this.tableDT_HealDate.Service_DesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHealDate_RemarkNull() {
-                return this.IsNull(this.tableDT_HealDate.HealDate_RemarkColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHealDate_RemarkNull() {
-                this[this.tableDT_HealDate.HealDate_RemarkColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHealDate_DayNull() {
-                return this.IsNull(this.tableDT_HealDate.HealDate_DayColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHealDate_DayNull() {
-                this[this.tableDT_HealDate.HealDate_DayColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHealDate_RemindNull() {
-                return this.IsNull(this.tableDT_HealDate.HealDate_RemindColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHealDate_RemindNull() {
-                this[this.tableDT_HealDate.HealDate_RemindColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHealDate_StatusNull() {
-                return this.IsNull(this.tableDT_HealDate.HealDate_StatusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHealDate_StatusNull() {
-                this[this.tableDT_HealDate.HealDate_StatusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2623,10 +2398,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Bill_Date {
+            public System.DateTime Bill_Date {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Bill.Bill_DateColumn]));
+                        return ((global::System.DateTime)(this[this.tableDT_Bill.Bill_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Bill_Date\' in table \'DT_Bill\' is DBNull.", e);
@@ -3069,6 +2844,273 @@ namespace Petshop.Resources {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class DT_HealDateRow : global::System.Data.DataRow {
+            
+            private DT_HealDateDataTable tableDT_HealDate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_HealDateRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDT_HealDate = ((DT_HealDateDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealDate_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.HealDate_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_ID\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.HealDate_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Pet_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.Pet_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pet_ID\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.Pet_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.HealRecord_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_ID\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.HealRecord_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Service_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.Service_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Service_ID\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.Service_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealDate_Remark {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.HealDate_RemarkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_Remark\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.HealDate_RemarkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealDate_Day {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.HealDate_DayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_Day\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.HealDate_DayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealDate_Remind {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.HealDate_RemindColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_Remind\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.HealDate_RemindColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealDate_Status {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.HealDate_StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealDate_Status\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.HealDate_StatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Service_Des {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealDate.Service_DesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Service_Des\' in table \'DT_HealDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealDate.Service_DesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealDate_IDNull() {
+                return this.IsNull(this.tableDT_HealDate.HealDate_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealDate_IDNull() {
+                this[this.tableDT_HealDate.HealDate_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPet_IDNull() {
+                return this.IsNull(this.tableDT_HealDate.Pet_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPet_IDNull() {
+                this[this.tableDT_HealDate.Pet_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_IDNull() {
+                return this.IsNull(this.tableDT_HealDate.HealRecord_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_IDNull() {
+                this[this.tableDT_HealDate.HealRecord_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsService_IDNull() {
+                return this.IsNull(this.tableDT_HealDate.Service_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetService_IDNull() {
+                this[this.tableDT_HealDate.Service_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealDate_RemarkNull() {
+                return this.IsNull(this.tableDT_HealDate.HealDate_RemarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealDate_RemarkNull() {
+                this[this.tableDT_HealDate.HealDate_RemarkColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealDate_DayNull() {
+                return this.IsNull(this.tableDT_HealDate.HealDate_DayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealDate_DayNull() {
+                this[this.tableDT_HealDate.HealDate_DayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealDate_RemindNull() {
+                return this.IsNull(this.tableDT_HealDate.HealDate_RemindColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealDate_RemindNull() {
+                this[this.tableDT_HealDate.HealDate_RemindColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealDate_StatusNull() {
+                return this.IsNull(this.tableDT_HealDate.HealDate_StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealDate_StatusNull() {
+                this[this.tableDT_HealDate.HealDate_StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsService_DesNull() {
+                return this.IsNull(this.tableDT_HealDate.Service_DesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetService_DesNull() {
+                this[this.tableDT_HealDate.Service_DesColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class DT_PetProfileRow : global::System.Data.DataRow {
             
             private DT_PetProfileDataTable tableDT_PetProfile;
@@ -3210,10 +3252,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Pet_Sterility {
+            public string Pet_Sterility {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDT_PetProfile.Pet_SterilityColumn]));
+                        return ((string)(this[this.tableDT_PetProfile.Pet_SterilityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Pet_Sterility\' in table \'DT_PetProfile\' is DBNull.", e);
@@ -3421,40 +3463,6 @@ namespace Petshop.Resources {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DT_HealDateRowChangeEvent : global::System.EventArgs {
-            
-            private DT_HealDateRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_HealDateRowChangeEvent(DT_HealDateRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_HealDateRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class DT_CompanyRowChangeEvent : global::System.EventArgs {
             
             private DT_CompanyRow eventRow;
@@ -3539,6 +3547,40 @@ namespace Petshop.Resources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DT_BillDetailRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class DT_HealDateRowChangeEvent : global::System.EventArgs {
+            
+            private DT_HealDateRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealDateRowChangeEvent(DT_HealDateRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealDateRow Row {
                 get {
                     return this.eventRow;
                 }

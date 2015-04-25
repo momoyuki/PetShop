@@ -386,31 +386,6 @@ namespace Petshop
             //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
             
         }
-        private void bt_HealDate_Click(object sender, EventArgs e)
-        {
-            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
-            {
-                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-                {
-                    if (form.GetType() == typeof(FrmRecorD22))
-                    {
-                        form.Activate();
-                        return;
-                    }
-                }
-                FrmRecorD22 iFrmMM23 = new FrmRecorD22();
-                iFrmMM23.MdiParent = MainForm.ActiveForm;
-                iFrmMM23.Show();
-                iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
-                iFrmMM23.lb_PetID.Text = txb_PetProfileID.Text;
-                //this.Close();
-            }
-            else
-            {
-                MessageBox.Show("กรุณาเลือกสัตว์ไข้","ไม่พบสัตว์ไข้");
-            }
-        }
-
         private void dGV_HealRecord_SelectionChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dGV_HealRecord.SelectedRows)
@@ -596,10 +571,7 @@ namespace Petshop
             }
         }
 
-        private void Txb_Addr_KeyDown(object sender, KeyEventArgs e)
-        {
 
-        }
 
         private void dGV_HealDetail_SelectionChanged(object sender, EventArgs e)
         {
@@ -663,6 +635,33 @@ namespace Petshop
                 iFrmNRePort31.MdiParent = MainForm.ActiveForm;
                 iFrmNRePort31.Show();
                 iFrmNRePort31.txb_ReferID.Text = lb_HealDetailID.Text;
+            }
+        }
+
+
+
+        private void bt_HealDate_Click(object sender, EventArgs e)
+        {
+            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
+            {
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmRecorD22))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmRecorD22 iFrmMM23 = new FrmRecorD22();
+                iFrmMM23.MdiParent = MainForm.ActiveForm;
+                iFrmMM23.Show();
+                iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
+                iFrmMM23.lb_PetID.Text = txb_PetProfileID.Text;
+                //this.Close();
+            }
+            else
+            {
+                MessageBox.Show("กรุณาเลือกสัตว์ไข้", "ไม่พบสัตว์ไข้");
             }
         }
 

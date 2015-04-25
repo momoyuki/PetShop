@@ -184,9 +184,8 @@
             this.txb_outlayPrice.Location = new System.Drawing.Point(464, 72);
             this.txb_outlayPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txb_outlayPrice.MaxLength = 11;
-            this.txb_outlayPrice.Multiline = true;
             this.txb_outlayPrice.Name = "txb_outlayPrice";
-            this.txb_outlayPrice.Size = new System.Drawing.Size(64, 24);
+            this.txb_outlayPrice.Size = new System.Drawing.Size(64, 26);
             this.txb_outlayPrice.TabIndex = 2;
             this.txb_outlayPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_outlayRemark_KeyDown);
             // 

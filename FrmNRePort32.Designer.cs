@@ -42,13 +42,6 @@
             this.dTP_ProductSaleDate = new System.Windows.Forms.DateTimePicker();
             this.lb_Bill = new System.Windows.Forms.Label();
             this.dGV_Product = new System.Windows.Forms.DataGridView();
-            this.ccCheckBoxProduct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ccProductSale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProductSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProductSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lb_BillID = new System.Windows.Forms.Label();
             this.Lb_CoBill = new System.Windows.Forms.Label();
             this.lbYear = new System.Windows.Forms.Label();
@@ -58,6 +51,13 @@
             this.txb_ReferID = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lb_Remark = new System.Windows.Forms.Label();
+            this.ccCheckBoxProduct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ccProductSale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -217,60 +217,6 @@
             this.dGV_Product.Size = new System.Drawing.Size(982, 486);
             this.dGV_Product.TabIndex = 136;
             // 
-            // ccCheckBoxProduct
-            // 
-            this.ccCheckBoxProduct.FillWeight = 30F;
-            this.ccCheckBoxProduct.HeaderText = "";
-            this.ccCheckBoxProduct.Name = "ccCheckBoxProduct";
-            this.ccCheckBoxProduct.Width = 30;
-            // 
-            // ccProductSale_ID
-            // 
-            this.ccProductSale_ID.DataPropertyName = "ProductSale_ID";
-            this.ccProductSale_ID.HeaderText = "เลขที่ทำการขาย";
-            this.ccProductSale_ID.Name = "ccProductSale_ID";
-            this.ccProductSale_ID.ReadOnly = true;
-            this.ccProductSale_ID.Visible = false;
-            // 
-            // ccProduct_ID
-            // 
-            this.ccProduct_ID.DataPropertyName = "Product_ID";
-            this.ccProduct_ID.FillWeight = 150F;
-            this.ccProduct_ID.HeaderText = "รหัสสินค้า";
-            this.ccProduct_ID.Name = "ccProduct_ID";
-            this.ccProduct_ID.ReadOnly = true;
-            this.ccProduct_ID.Width = 150;
-            // 
-            // ccProduct_Des
-            // 
-            this.ccProduct_Des.DataPropertyName = "Product_Des";
-            this.ccProduct_Des.FillWeight = 200F;
-            this.ccProduct_Des.HeaderText = "รายการสินค้า";
-            this.ccProduct_Des.Name = "ccProduct_Des";
-            this.ccProduct_Des.ReadOnly = true;
-            this.ccProduct_Des.Width = 200;
-            // 
-            // ccProduct_Sale
-            // 
-            this.ccProduct_Sale.DataPropertyName = "Product_Sale";
-            this.ccProduct_Sale.HeaderText = "ราคาขาย";
-            this.ccProduct_Sale.Name = "ccProduct_Sale";
-            this.ccProduct_Sale.ReadOnly = true;
-            // 
-            // ccProductSale_Unit
-            // 
-            this.ccProductSale_Unit.DataPropertyName = "ProductSale_Unit";
-            this.ccProductSale_Unit.HeaderText = "จำนวน";
-            this.ccProductSale_Unit.Name = "ccProductSale_Unit";
-            this.ccProductSale_Unit.ReadOnly = true;
-            // 
-            // ccProductSale_Total
-            // 
-            this.ccProductSale_Total.DataPropertyName = "ProductSale_Total";
-            this.ccProductSale_Total.HeaderText = "ราคารวม";
-            this.ccProductSale_Total.Name = "ccProductSale_Total";
-            this.ccProductSale_Total.ReadOnly = true;
-            // 
             // Lb_BillID
             // 
             this.Lb_BillID.AutoSize = true;
@@ -359,6 +305,58 @@
             this.lb_Remark.Text = "*เลือกไม่รายการเพื่อไม่พิมพ์";
             this.lb_Remark.UseCompatibleTextRendering = true;
             // 
+            // ccCheckBoxProduct
+            // 
+            this.ccCheckBoxProduct.FillWeight = 30F;
+            this.ccCheckBoxProduct.HeaderText = "";
+            this.ccCheckBoxProduct.Name = "ccCheckBoxProduct";
+            this.ccCheckBoxProduct.Width = 30;
+            // 
+            // ccProductSale_ID
+            // 
+            this.ccProductSale_ID.DataPropertyName = "ProductSale_ID";
+            this.ccProductSale_ID.HeaderText = "เลขที่ทำการขาย";
+            this.ccProductSale_ID.Name = "ccProductSale_ID";
+            this.ccProductSale_ID.ReadOnly = true;
+            this.ccProductSale_ID.Visible = false;
+            // 
+            // ccProduct_ID
+            // 
+            this.ccProduct_ID.DataPropertyName = "Product_ID";
+            this.ccProduct_ID.HeaderText = "รหัสสินค้า";
+            this.ccProduct_ID.Name = "ccProduct_ID";
+            this.ccProduct_ID.ReadOnly = true;
+            this.ccProduct_ID.Width = 180;
+            // 
+            // ccProduct_Des
+            // 
+            this.ccProduct_Des.DataPropertyName = "Product_Des";
+            this.ccProduct_Des.HeaderText = "รายการสินค้า";
+            this.ccProduct_Des.Name = "ccProduct_Des";
+            this.ccProduct_Des.ReadOnly = true;
+            this.ccProduct_Des.Width = 400;
+            // 
+            // ccProduct_Sale
+            // 
+            this.ccProduct_Sale.DataPropertyName = "Product_Sale";
+            this.ccProduct_Sale.HeaderText = "ราคาขาย";
+            this.ccProduct_Sale.Name = "ccProduct_Sale";
+            this.ccProduct_Sale.ReadOnly = true;
+            // 
+            // ccProductSale_Unit
+            // 
+            this.ccProductSale_Unit.DataPropertyName = "ProductSale_Unit";
+            this.ccProductSale_Unit.HeaderText = "จำนวน";
+            this.ccProductSale_Unit.Name = "ccProductSale_Unit";
+            this.ccProductSale_Unit.ReadOnly = true;
+            // 
+            // ccProductSale_Total
+            // 
+            this.ccProductSale_Total.DataPropertyName = "ProductSale_Total";
+            this.ccProductSale_Total.HeaderText = "ราคารวม";
+            this.ccProductSale_Total.Name = "ccProductSale_Total";
+            this.ccProductSale_Total.ReadOnly = true;
+            // 
             // FrmNRePort32
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -420,6 +418,12 @@
         private System.Windows.Forms.Label Lb_BillID;
         private System.Windows.Forms.Label Lb_CoBill;
         private System.Windows.Forms.Label lbYear;
+        private System.Windows.Forms.CheckBox CheckBoxProduct;
+        private System.Windows.Forms.Button bt_Submit;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txb_ReferID;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lb_Remark;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ccCheckBoxProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_ID;
@@ -427,11 +431,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Sale;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Total;
-        private System.Windows.Forms.CheckBox CheckBoxProduct;
-        private System.Windows.Forms.Button bt_Submit;
-        private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txb_ReferID;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lb_Remark;
     }
 }

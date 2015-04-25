@@ -60,6 +60,12 @@
             this.lb_Bill = new System.Windows.Forms.Label();
             this.lb_EmID = new System.Windows.Forms.Label();
             this.bt_Reset = new System.Windows.Forms.Button();
+            this.ccBill_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccItem_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccItem_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBill_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBill_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBill_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControlBill.SuspendLayout();
             this.tp_AllBill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Bill)).BeginInit();
@@ -200,6 +206,13 @@
             this.dGV_Detail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Detail.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_Detail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ccBill_IDd,
+            this.ccItem_ID,
+            this.ccItem_Detail,
+            this.ccBill_Unit,
+            this.ccBill_Price,
+            this.ccBill_Amt});
             this.dGV_Detail.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dGV_Detail.Location = new System.Drawing.Point(7, 7);
             this.dGV_Detail.Margin = new System.Windows.Forms.Padding(4);
@@ -217,6 +230,7 @@
             this.Lb_BillID.Name = "Lb_BillID";
             this.Lb_BillID.Size = new System.Drawing.Size(0, 18);
             this.Lb_BillID.TabIndex = 181;
+            this.Lb_BillID.TextChanged += new System.EventHandler(this.Lb_BillID_TextChanged);
             // 
             // txb_ReferID
             // 
@@ -272,7 +286,6 @@
             this.txb_BillDC.Size = new System.Drawing.Size(70, 26);
             this.txb_BillDC.TabIndex = 176;
             this.txb_BillDC.Text = "0.00";
-            this.txb_BillDC.TextChanged += new System.EventHandler(this.txb_BillDC_TextChanged);
             // 
             // lb_DC
             // 
@@ -385,6 +398,53 @@
             this.bt_Reset.UseVisualStyleBackColor = true;
             this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
             // 
+            // ccBill_IDd
+            // 
+            this.ccBill_IDd.DataPropertyName = "Bill_ID";
+            this.ccBill_IDd.HeaderText = "เลขที่ใบเสร็จ";
+            this.ccBill_IDd.Name = "ccBill_IDd";
+            this.ccBill_IDd.ReadOnly = true;
+            this.ccBill_IDd.Visible = false;
+            // 
+            // ccItem_ID
+            // 
+            this.ccItem_ID.DataPropertyName = "Item_ID";
+            this.ccItem_ID.HeaderText = "รหัสสินค้าบริการ";
+            this.ccItem_ID.Name = "ccItem_ID";
+            this.ccItem_ID.ReadOnly = true;
+            this.ccItem_ID.Width = 150;
+            // 
+            // ccItem_Detail
+            // 
+            this.ccItem_Detail.DataPropertyName = "Item_Detail";
+            this.ccItem_Detail.HeaderText = "รายการ";
+            this.ccItem_Detail.Name = "ccItem_Detail";
+            this.ccItem_Detail.ReadOnly = true;
+            this.ccItem_Detail.Width = 400;
+            // 
+            // ccBill_Unit
+            // 
+            this.ccBill_Unit.DataPropertyName = "Bill_Unit";
+            this.ccBill_Unit.HeaderText = "จำนวน";
+            this.ccBill_Unit.Name = "ccBill_Unit";
+            this.ccBill_Unit.ReadOnly = true;
+            this.ccBill_Unit.Width = 120;
+            // 
+            // ccBill_Price
+            // 
+            this.ccBill_Price.DataPropertyName = "Bill_Price";
+            this.ccBill_Price.HeaderText = "ราคาต่อหน่วย";
+            this.ccBill_Price.Name = "ccBill_Price";
+            this.ccBill_Price.ReadOnly = true;
+            this.ccBill_Price.Width = 120;
+            // 
+            // ccBill_Amt
+            // 
+            this.ccBill_Amt.DataPropertyName = "Bill_Amt";
+            this.ccBill_Amt.HeaderText = "ราคาสุทธิ";
+            this.ccBill_Amt.Name = "ccBill_Amt";
+            this.ccBill_Amt.ReadOnly = true;
+            // 
             // FrmRePort31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -457,5 +517,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccBillSale_DC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccBillSale_Net;
         public System.Windows.Forms.Label Lb_BillID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccBill_IDd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccItem_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccItem_Detail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccBill_Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccBill_Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccBill_Amt;
     }
 }

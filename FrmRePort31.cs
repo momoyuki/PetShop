@@ -26,6 +26,7 @@ namespace Petshop
         private void loadData()
         {
             loadBill();
+            loadBillDetail();
         }
         
         private void FrmRePort31_Load(object sender, EventArgs e)
@@ -43,8 +44,13 @@ namespace Petshop
 
         private void loadBillDetail() //ส่วนของดึงข้อมูลจาก mysql ตาราง Service มาแสดง แท๊บ บริการ
         {
+            string ilbBillID = Lb_BillID.Text.Trim();
             DataTable idtBillDetail;
-            string isqlBillDetail = "";
+            string isqlBillDetail = "SELECT tb_servicebill.Bill_ID,tb_servicebill.Service_ID as Item_ID,tb_service.Service_Des as Item_Detail,tb_servicebill.Service_Bill_Unit as Bill_Unit,tb_servicebill.Service_Bill_Price as Bill_Price,tb_servicebill.Service_Bill_Amt as Bill_Amt FROM  tb_servicebill,tb_service where tb_servicebill.Service_ID = tb_service.Service_ID AND Bill_ID ='"+ilbBillID+"'"
+                                    +" union " 
+                                    +" SELECT tb_productsalebill.Bill_ID as Bill_ID,tb_productsalebill.Product_ID as Item_ID,tb_product.Product_Des as Item_Detail,tb_productsalebill.ProductSale_Bill_Unit as Bill_Unit,tb_productsalebill.ProductSale_Bill_Price as Bill_Price,tb_productsalebill.ProductSale_Bill_Amt as Bill_Amt FROM tb_productsalebill,tb_product where tb_productsalebill.Product_ID = tb_product.Product_ID AND Bill_ID ='"+ilbBillID+"'"
+                                    +" Union "
+                                    + " SELECT tb_medibill.Bill_ID as Bill_ID,tb_medibill.Medi_ID as Item_ID,tb_medicine.Medi_Des as Item_Detail,tb_medibill.Medi_Bill_Unit as Bill_Unit,tb_medibill.Medi_Bill_Price as Bill_Price,tb_medibill.Medi_Bill_Amt as Bill_Amt FROM tb_medibill,tb_medicine where tb_medibill.Medi_ID = tb_medicine.Medi_ID AND Bill_ID ='" + ilbBillID + "'";
             idtBillDetail = iConnect.SelectByCommand(isqlBillDetail);
             dGV_Detail.DataSource = idtBillDetail;
             dGV_Detail.Refresh(); 
@@ -95,9 +101,10 @@ namespace Petshop
             }
         }
 
-        private void txb_BillDC_TextChanged(object sender, EventArgs e)
+        private void Lb_BillID_TextChanged(object sender, EventArgs e)
         {
-
+            loadBillDetail();
         }
+
     }
 }

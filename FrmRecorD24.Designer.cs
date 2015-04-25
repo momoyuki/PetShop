@@ -98,7 +98,7 @@
             this.dGV_outlay.Name = "dGV_outlay";
             this.dGV_outlay.ReadOnly = true;
             this.dGV_outlay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_outlay.Size = new System.Drawing.Size(982, 368);
+            this.dGV_outlay.Size = new System.Drawing.Size(982, 475);
             this.dGV_outlay.TabIndex = 80;
             this.dGV_outlay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_outlay_CellClick);
             // 

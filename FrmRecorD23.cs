@@ -358,9 +358,7 @@ namespace Petshop
             nUD_ProductUnit.Value = 1;
             lb_ProductUnit.Text = "1";
             lb_ProductSaleID.Text = "";
-            dGV_Product.DataSource = null;
-            dGV_Product.Rows.Clear();
-            dGV_Product.Refresh();
-        }
+            loadData();
+                    }
     }
 }

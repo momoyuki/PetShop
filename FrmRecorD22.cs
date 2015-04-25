@@ -38,7 +38,7 @@ namespace Petshop
             DataTable idtHealDate;
             if (rBt_All.Checked == true)
             {
-                string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
                     "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
                 dGV_HealDate.DataSource = idtHealDate;
@@ -46,7 +46,7 @@ namespace Petshop
             }
             else if (rBt_contract.Checked == true)
             {
-                string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
                      "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 order by HealDate_Day";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
                 dGV_HealDate.DataSource = idtHealDate;
@@ -54,7 +54,7 @@ namespace Petshop
             }
             else if (rBt_contracted.Checked == true)
             {
-                string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
                     "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 1 order by HealDate_Day";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
                 dGV_HealDate.DataSource = idtHealDate;
@@ -67,11 +67,11 @@ namespace Petshop
                 System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
                 string iDateToday = DateTime.Now.ToString("yyyy-MM-dd");
 
-                string isqlHealDate = "SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
+                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
                                     + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
                                     + " AND  HealDate_Remind = '" + iDateToday + "'"
                                     + " Union "
-                                    + " SELECT tb_healdate.*,.tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
+                                    + " SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
                                     + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
                                     + " AND  HealDate_Day = '" + iDateToday + "' Order By HealDate_ID";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
@@ -294,7 +294,7 @@ namespace Petshop
             FrmBillDate iFrmMMDateBill = new FrmBillDate();
             iFrmMMDateBill.MdiParent = MainForm.ActiveForm;
             iFrmMMDateBill.Show();
-            iFrmMMDateBill.lb_HealDateID.Text = lb_PetID.Text;
+            iFrmMMDateBill.lb_PetID.Text = lb_PetID.Text;
         }
 
         private void bt_PrintBill_Click(object sender, EventArgs e)
@@ -360,21 +360,35 @@ namespace Petshop
                 string isqlSearch = null;
                 if (rBt_All.Checked == true)
                 {
-                    isqlSearch = "";
+                    isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                    "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day";
                 }
                 else if (rBt_contract.Checked == true)
                 {
-                    isqlSearch = "";
-                
+                    isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                     "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 order by HealDate_Day";
+               
                 }
                 else if (rBt_contracted.Checked == true)
                 {
-                    isqlSearch = "";
-                
+                    isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                    "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 1 order by HealDate_Day";
+               
                 }
                 else if (rBt_Today.Checked == true)
                 {
-                    isqlSearch = "";
+                    System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+                    System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                    string iDateToday = DateTime.Now.ToString("yyyy-MM-dd");
+
+                    isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
+                                    + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
+                                    + " AND  HealDate_Remind = '" + iDateToday + "'"
+                                    + " Union "
+                                    + " SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
+                                    + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
+                                    + " AND  HealDate_Day = '" + iDateToday + "' Order By HealDate_ID";
                 }
                 idtSearch = iConnect.SelectByCommand(isqlSearch);
                 dGV_HealDate.DataSource = idtSearch;

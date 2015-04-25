@@ -315,7 +315,7 @@ namespace Petshop
         }
         private void AddServiceRecord()
         {
-            if ((cb_Service.SelectedValue != null) && (cb_Service.SelectedValue != string.Empty))
+            if ((cb_Service.SelectedValue != null) && (cb_Service.SelectedValue != ""))
             {
                 string ilbHealRecordID = lb_HealRecordID.Text.Trim();
                 string icbServiceID = cb_Service.SelectedValue.ToString();
@@ -463,13 +463,27 @@ namespace Petshop
         private void bt_Print_Click(object sender, EventArgs e)
         {
             iCloseHealRecord = "Print";
+            this.Close();
         }
 
         private void bt_PrintDate_Click(object sender, EventArgs e)
         {
-            iCloseHealRecord = "HealDate";
-                    //AddHealRecord();
-                    
+            //iCloseHealRecord = "HealDate";
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmRecorD22))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmRecorD22 iFrmRecorD22 = new FrmRecorD22();
+            iFrmRecorD22.MdiParent = MainForm.ActiveForm;
+            iFrmRecorD22.lb_HealRecordID.Text = lb_HealRecordID.Text;
+            iFrmRecorD22.lb_PetID.Text = txb_PetID.Text;
+            iFrmRecorD22.Show(); 
+            //this.Close();
+                    //AddHealRecord();      
         }
         private void bt_refService_Click(object sender, EventArgs e)
         {
@@ -636,7 +650,7 @@ namespace Petshop
                     AddHealRecord();
                     if (iCloseHealRecord == "HealDate")
                     {
-                        foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                     /*   foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                         {
                             if (form.GetType() == typeof(FrmRecorD22))
                             {
@@ -644,11 +658,11 @@ namespace Petshop
                                 return;
                             }
                         }
-                        FrmRecorD22 iFrmMM23 = new FrmRecorD22();
-                        iFrmMM23.MdiParent = MainForm.ActiveForm;
-                        iFrmMM23.lb_HealRecordID.Text = lb_HealRecordID.Text;
-                        iFrmMM23.lb_PetID.Text = txb_PetID.Text;
-                        iFrmMM23.Show(); 
+                        FrmRecorD22 iFrmRecorD22 = new FrmRecorD22();
+                        iFrmRecorD22.MdiParent = MainForm.ActiveForm;
+                        iFrmRecorD22.lb_HealRecordID.Text = lb_HealRecordID.Text;
+                        iFrmRecorD22.lb_PetID.Text = txb_PetID.Text;
+                        iFrmRecorD22.Show(); */
                     }
                     else if (iCloseHealRecord == "Print") 
                     {
