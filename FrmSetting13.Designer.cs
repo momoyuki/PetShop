@@ -181,7 +181,7 @@
             // 
             // txb_outlayPrice
             // 
-            this.txb_outlayPrice.Location = new System.Drawing.Point(464, 72);
+            this.txb_outlayPrice.Location = new System.Drawing.Point(486, 72);
             this.txb_outlayPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txb_outlayPrice.MaxLength = 11;
             this.txb_outlayPrice.Name = "txb_outlayPrice";
@@ -195,9 +195,9 @@
             this.lb_Priceoutlay.Location = new System.Drawing.Point(409, 75);
             this.lb_Priceoutlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Priceoutlay.Name = "lb_Priceoutlay";
-            this.lb_Priceoutlay.Size = new System.Drawing.Size(47, 18);
+            this.lb_Priceoutlay.Size = new System.Drawing.Size(69, 18);
             this.lb_Priceoutlay.TabIndex = 27;
-            this.lb_Priceoutlay.Text = "ค่าเดิม";
+            this.lb_Priceoutlay.Text = "จำนวนเงิน";
             // 
             // txb_outlayDetail
             // 

@@ -78,6 +78,8 @@ namespace Petshop
         private void FrmMM24_Load(object sender, EventArgs e)
         {
             LoadData();
+            nUDYear.Value = Convert.ToDecimal(lbYear.Text);
+ 
         }
         private void LoadCompany()
         {
@@ -256,7 +258,14 @@ namespace Petshop
             txb_NameOwner.Clear();
             txb_TelOwner.Clear();
             Txb_Addr.Clear();
+
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            nUDYear.Value =Convert.ToDecimal(DateTime.Now.ToString("yy"));
+
             dTP_Born.Value = DateTime.Now;
+
             lb_HealRecordID.Text = "";
             lb_HealDetailID.Text = "";
         }
@@ -372,16 +381,16 @@ namespace Petshop
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    if (form.GetType() == typeof(FrmNH21))
+                    if (form.GetType() == typeof(FrmNN21))
                     {
                         form.Activate();
                         return;
                     }
                 }
-                FrmNH21 iFrmNH21 = new FrmNH21();
-                iFrmNH21.MdiParent = MainForm.ActiveForm;
-                iFrmNH21.Show();
-                iFrmNH21.lb_HealRecordID.Text = lb_HealRecordID.Text;
+                FrmNN21 iFrmNN21 = new FrmNN21();
+                iFrmNN21.MdiParent = MainForm.ActiveForm;
+                iFrmNN21.Show();
+                iFrmNN21.lb_HealRecordID.Text = lb_HealRecordID.Text;
             }
             //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
             
@@ -447,16 +456,16 @@ namespace Petshop
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    if (form.GetType() == typeof(FrmNH21))
+                    if (form.GetType() == typeof(FrmNN21))
                     {
                         form.Activate();
                         return;
                     }
                 }
-                FrmNH21 iFrmNH21 = new FrmNH21();
-                iFrmNH21.MdiParent = MainForm.ActiveForm;
-                iFrmNH21.Show();
-                iFrmNH21.lb_HealRecordID.Text = lb_HealDetailID.Text;
+                FrmNN21 iFrmNN21 = new FrmNN21();
+                iFrmNN21.MdiParent = MainForm.ActiveForm;
+                iFrmNN21.Show();
+                iFrmNN21.lb_HealRecordID.Text = lb_HealDetailID.Text;
             }
             //string itxbPetProfiles = txb_PetProfileID.Text.Trim();
             
@@ -502,9 +511,14 @@ namespace Petshop
                 }
 
                 //วันเกิด ccPet_DOB DateTimePicker
+                dTP_Born.Value = Convert.ToDateTime(row.Cells["ccPet_DOB"].Value);
                 txb_PetColor.Text = row.Cells["ccPet_Color"].Value.ToString();
                 //ประเภทสัตว์ ccPetType_ID  Combobox
-                //พันธุ์สัตว์ ccPet_Breed_ID Combobox
+                cb_PetType.SelectedValue = row.Cells["ccPetType_ID"].Value;
+
+                //พันธุ์สัตว์ ccPetBreed_ID Combobox
+                cb_PetBreed.SelectedValue = row.Cells["ccPetBreed_ID"].Value;
+
                 //ทำหมัน ccPet_Sterility DateTimePicker
                 DateTime iSterility = Convert.ToDateTime(row.Cells["ccPet_Sterility"].Value);
                 if (iSterility > DateTime.MinValue)
@@ -665,6 +679,14 @@ namespace Petshop
             }
         }
 
+        private void cb_PetType_TextChanged(object sender, EventArgs e)
+        {
+            LoadPetBreed();
+        }
 
+        private void nUDYear_ValueChanged(object sender, EventArgs e)
+        {
+            lbYear.Text = nUDYear.Value.ToString();
+        }
     }
 }

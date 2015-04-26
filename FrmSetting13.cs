@@ -189,13 +189,21 @@ namespace Petshop
 
         private void Searchoutlay()
         {
-            string itxbSearchoutlay = txb_Searchoutlay.Text.Trim();
-            DataTable idtSearchOutlay;
-            string isqlSearch = "SELECT * FROM petshop.tb_outlay where outlay_ID like '%" + itxbSearchoutlay + "%' OR outlay_Detail like '%" + itxbSearchoutlay + "%'";
-            idtSearchOutlay = iConnect.SelectByCommand(isqlSearch);
-            lb_Searchoutlay.Text = idtSearchOutlay.Rows.Count.ToString();
-            dGV_outlay.DataSource = idtSearchOutlay;
-            dGV_outlay.Refresh();
+            Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            if (RegString.IsMatch(txb_Searchoutlay.Text))
+            {
+                string itxbSearchoutlay = txb_Searchoutlay.Text.Trim();
+                DataTable idtSearchOutlay;
+                string isqlSearch = "SELECT * FROM petshop.tb_outlay where outlay_ID like '%" + itxbSearchoutlay + "%' OR outlay_Detail like '%" + itxbSearchoutlay + "%' OR outlay_Price like '%" + itxbSearchoutlay + "%' ";
+                idtSearchOutlay = iConnect.SelectByCommand(isqlSearch);
+                lb_Searchoutlay.Text = idtSearchOutlay.Rows.Count.ToString();
+                dGV_outlay.DataSource = idtSearchOutlay;
+                dGV_outlay.Refresh();
+            }
+            else
+            {
+                loadData();
+            }
         }
 
         private void txb_Searchoutlay_KeyDown(object sender, KeyEventArgs e)

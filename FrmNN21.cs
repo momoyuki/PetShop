@@ -31,6 +31,44 @@ namespace Petshop
             loadEmployee(); //ข้อมูลรายชื่อพนักงาน
             LoadData();
         }
+
+        private void CheckBill()
+        {
+            string ilbHealRecordID = lb_HealRecordID.Text.Trim();
+            if ((ilbHealRecordID != null) && (ilbHealRecordID != ""))
+            {
+                tabControlServiceMedi.Enabled = true;
+                bt_PrintBill.Enabled = true;
+                bt_PrintDate.Enabled = true;
+                txb_HealRecordDC.Enabled = true;
+            }
+            else
+            {
+                tabControlServiceMedi.Enabled = false;
+                bt_PrintBill.Enabled = false;
+                bt_PrintDate.Enabled = false;
+                txb_HealRecordDC.Enabled = false;
+            }
+            DataTable idtBillCheck; //CheckBill
+            string isqlBillCheck = "SELECT * FROM petshop.tb_bill where Refer_ID = '" + ilbHealRecordID + "'";
+            idtBillCheck = iConnect.SelectByCommand(isqlBillCheck);
+            if (idtBillCheck.Rows.Count == 0)
+            {
+                bt_RecordHeal.Enabled = true;
+                bt_BuyService.Enabled = true;
+                bt_BuyMedi.Enabled = true;
+                bt_refService.Enabled = true;
+                bt_refMedi.Enabled = true;
+            }
+            else
+            {
+                bt_RecordHeal.Enabled = false;
+                bt_BuyService.Enabled = false;
+                bt_BuyMedi.Enabled = false;
+                bt_refService.Enabled = false;
+                bt_refMedi.Enabled = false;
+            }
+        }
         private void LoadData()
         {
             loadMedi(); // รายการยาต่างๆ
@@ -40,6 +78,7 @@ namespace Petshop
             loadMediRecord(); //Medi บันทึกยา --Detail--
             loadPetProfiles(); // ชื่อเจ้าของและสัตว์
             Calcuator();
+            CheckBill();
         }
         private void loadCompany()// โหลดข้อมูลองค์กร
         {
@@ -300,9 +339,15 @@ namespace Petshop
                 }
                 else
                 {
-                    string isqlHealRecordUpdate = "UPDATE `tb_healrecord` SET `Em_ID`='" + icbEmID + "', `HealRecord_Symptom`='" + itxbHealRecordSymptom + "', `HealRecord_Remark`='" + itxbHealRecordRemark + "', `HealRecord_Weight`='" + itxbWeight + "', `HealRecord_Temp`='" + itxbTemp + "',HealRecord_HR='" + itxbHR + "',HealRecord_RR='" + itxbRR + "',HealRecord_Date = '" + idtpHealRecordDate + "', `HealRecord_Total`='" + itbHealTotal + "', `HealRecord_DC`='" + itbHealDC + "', `HealRecord_Net`='" + itbHealNet + "' WHERE `HealRecord_ID`='" + ilbHealRecordID + "'";
-                    iConnect.Insert(isqlHealRecordUpdate);
-                    MessageBox.Show("ทำการบันทึกข้อมูลแล้ว");
+                    DataTable idtBillCheck; //BillCheck
+                    string isqlBillCheck = "SELECT * FROM petshop.tb_bill where Refer_ID = '" + ilbHealRecordID + "'";
+                    idtBillCheck = iConnect.SelectByCommand(isqlBillCheck);
+                    if (idtBillCheck.Rows.Count == 0)
+                    {
+                        string isqlHealRecordUpdate = "UPDATE `tb_healrecord` SET `Em_ID`='" + icbEmID + "', `HealRecord_Symptom`='" + itxbHealRecordSymptom + "', `HealRecord_Remark`='" + itxbHealRecordRemark + "', `HealRecord_Weight`='" + itxbWeight + "', `HealRecord_Temp`='" + itxbTemp + "',HealRecord_HR='" + itxbHR + "',HealRecord_RR='" + itxbRR + "',HealRecord_Date = '" + idtpHealRecordDate + "', `HealRecord_Total`='" + itbHealTotal + "', `HealRecord_DC`='" + itbHealDC + "', `HealRecord_Net`='" + itbHealNet + "' WHERE `HealRecord_ID`='" + ilbHealRecordID + "'";
+                        iConnect.Insert(isqlHealRecordUpdate);
+                        MessageBox.Show("ทำการบันทึกข้อมูลแล้ว");
+                    }
                 }
             }
             loadHealRecord();
@@ -324,23 +369,31 @@ namespace Petshop
 
                 if ((ilbHealRecordID != null) && (ilbHealRecordID != ""))
                 {
-                    DataTable idtCheckServiceRecord;
-                    string isqlCheckServiceRecord = "SELECT * FROM tb_servicerecord where HealRecord_ID = '" + ilbHealRecordID + "' AND Service_ID ='" + icbServiceID + "'";
-                    idtCheckServiceRecord = iConnect.SelectByCommand(isqlCheckServiceRecord);
-                    if ((idtCheckServiceRecord != null) && (idtCheckServiceRecord.Rows.Count > 0))
+                     DataTable idtBillCheck; //BillCheck
+            string isqlBillCheck = "SELECT * FROM petshop.tb_bill where Refer_ID = '" + ilbHealRecordID + "'";
+            idtBillCheck = iConnect.SelectByCommand(isqlBillCheck);
+            if (idtBillCheck.Rows.Count == 0)
+            {
+                DataTable idtCheckServiceRecord;
+                string isqlCheckServiceRecord = "SELECT * FROM tb_servicerecord where HealRecord_ID = '" + ilbHealRecordID + "' AND Service_ID ='" + icbServiceID + "'";
+                idtCheckServiceRecord = iConnect.SelectByCommand(isqlCheckServiceRecord);
+
+
+                if ((idtCheckServiceRecord != null) && (idtCheckServiceRecord.Rows.Count > 0))
+                {
+                    MessageBox.Show("ได้เพิ่ม " + icbService + " แล้ว");
+                }
+                else
+                {
+                    DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + icbService + " มั๊ย?", "กำลังเพิ่มข้อมูล..", MessageBoxButtons.YesNo);
+                    if (iConfirmResult == DialogResult.Yes)
                     {
-                        MessageBox.Show("ได้เพิ่ม " + icbService + " แล้ว");
-                    }
-                    else
-                    {
-                        DialogResult iConfirmResult = MessageBox.Show("เพิ่ม " + icbService + " มั๊ย?", "กำลังเพิ่มข้อมูล..", MessageBoxButtons.YesNo);
-                        if (iConfirmResult == DialogResult.Yes)
-                        {
-                            string isqlServiceRecord = "INSERT INTO `tb_servicerecord` (`HealRecord_ID`, `Service_ID`, `Service_Amt`) VALUES ('" + ilbHealRecordID + "', '" + icbServiceID + "', '" + ilbPrice + "')";
-                            iConnect.Insert(isqlServiceRecord);
-                        }
+                        string isqlServiceRecord = "INSERT INTO `tb_servicerecord` (`HealRecord_ID`, `Service_ID`, `Service_Amt`) VALUES ('" + ilbHealRecordID + "', '" + icbServiceID + "', '" + ilbPrice + "')";
+                        iConnect.Insert(isqlServiceRecord);
                     }
                 }
+            }
+                  }
                 else
                 {
                     AddHealRecord();
@@ -359,6 +412,7 @@ namespace Petshop
 
         private void Buy_Medi()
         {
+
             string itxbMedi = cb_Medi.SelectedValue.ToString();
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
 
@@ -366,6 +420,11 @@ namespace Petshop
 
             if ((ilbHealRecordID != null) && (ilbHealRecordID != ""))
             {
+                DataTable idtBillCheck;
+                string isqlBillCheck = "SELECT * FROM petshop.tb_bill where Refer_ID = '" + ilbHealRecordID + "'";
+                idtBillCheck = iConnect.SelectByCommand(isqlBillCheck);
+                if (idtBillCheck.Rows.Count == 0)
+                {
                 DataTable idtMediCheck;
                 string isqlMediCheck = "SELECT * FROM tb_medicine where Medi_ID = '" + itxbMedi + "'";
                 idtMediCheck = iConnect.SelectByCommand(isqlMediCheck);
@@ -430,6 +489,7 @@ namespace Petshop
                     MessageBox.Show("ไม่พบข้อมูล รหัสยา");
                 }
             }
+            }
             else
             {
                 AddHealRecord();
@@ -440,20 +500,6 @@ namespace Petshop
         private void lb_HealRecordID_TextChanged(object sender, EventArgs e)
         {
             LoadData();
-            if ((lb_HealRecordID.Text != null) && (lb_HealRecordID.Text != ""))
-            {
-                tabControlServiceMedi.Enabled = true;
-                bt_PrintBill.Enabled = true;
-                bt_PrintDate.Enabled = true;
-                txb_HealRecordDC.Enabled = true;
-            }
-            else
-            {
-                tabControlServiceMedi.Enabled = false;
-                bt_PrintBill.Enabled = false;
-                bt_PrintDate.Enabled = false;
-                txb_HealRecordDC.Enabled = false;
-            }
         }
         private void txb_PetID_TextChanged(object sender, EventArgs e)
         {
@@ -462,8 +508,20 @@ namespace Petshop
         string iCloseHealRecord;
         private void bt_Print_Click(object sender, EventArgs e)
         {
-            iCloseHealRecord = "Print";
-            this.Close();
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmNRePort31))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmNRePort31 iFrmMM31 = new FrmNRePort31();
+            iFrmMM31.MdiParent = MainForm.ActiveForm;
+            iFrmMM31.txb_ReferID.Text = lb_HealRecordID.Text;
+            iFrmMM31.Show();  
+            //iCloseHealRecord = "Print";
+            //this.Close();
         }
 
         private void bt_PrintDate_Click(object sender, EventArgs e)
@@ -489,14 +547,21 @@ namespace Petshop
         {
             string ilbHealRecordID = lb_HealRecordID.Text.Trim();
             string iServiceID = lb_ServiceID.Text.Trim();
-            DialogResult iConfirmResult = MessageBox.Show("ต้องการยกเลิกบริการ ?", "ยกเลิกบริการ..", MessageBoxButtons.YesNo);
-            if (iConfirmResult == DialogResult.Yes)
+             DataTable idtBillCheck;
+            string isqlBillCheck = "SELECT * FROM petshop.tb_bill where Refer_ID = '" + ilbHealRecordID + "'";
+            idtBillCheck = iConnect.SelectByCommand(isqlBillCheck);
+            if (idtBillCheck.Rows.Count == 0)
             {
-                string isqlDelService = "DELETE FROM `tb_servicerecord` WHERE `HealRecord_ID`='" + ilbHealRecordID + "' and`Service_ID`='" + iServiceID + "'";
-                iConnect.Insert(isqlDelService);
-                lb_ServiceID.Text = "";
+                
+                DialogResult iConfirmResult = MessageBox.Show("ต้องการยกเลิกบริการ ?", "ยกเลิกบริการ..", MessageBoxButtons.YesNo);
+                if (iConfirmResult == DialogResult.Yes)
+                {
+                    string isqlDelService = "DELETE FROM `tb_servicerecord` WHERE `HealRecord_ID`='" + ilbHealRecordID + "' and`Service_ID`='" + iServiceID + "'";
+                    iConnect.Insert(isqlDelService);
+                    lb_ServiceID.Text = "";
+                }
+                loadServiceRecord();
             }
-            loadServiceRecord();
         }
         private void bt_refMedi_Click(object sender, EventArgs e)
         {
@@ -508,6 +573,11 @@ namespace Petshop
                     idtCheckMedi = iConnect.SelectByCommand(isqlCheckMedi);
                     if (idtCheckMedi.Rows.Count > 0)
                     {
+                         DataTable idtBillCheck; //CheckBill
+                         string isqlBillCheck = "SELECT * FROM petshop.tb_bill where Refer_ID = '" + ilbHealRecordID + "'";
+                         idtBillCheck = iConnect.SelectByCommand(isqlBillCheck);
+                         if (idtBillCheck.Rows.Count == 0)
+                          {
                         DialogResult iConfirmResult = MessageBox.Show("ต้องการยกเลิกรายการยา ?", "ยกเลิกรายการยา..", MessageBoxButtons.YesNo);
                         if (iConfirmResult == DialogResult.Yes)
                         {
@@ -532,10 +602,10 @@ namespace Petshop
                                 lb_MediID.Text = null;
                                 lb_MediU.Text = null;
                             }
-
-                            loadMediRecord();
                         }
-                    } 
+                        }
+                    }
+                    loadMediRecord();
         }
         private void dGV_Service_SelectionChanged(object sender, EventArgs e)
         {
@@ -639,50 +709,54 @@ namespace Petshop
 
         private void FrmNN21_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if((lb_HealRecordID.Text !=null)&&(lb_HealRecordID.Text != string.Empty)){
-                DialogResult iConfirmResult = MessageBox.Show("**หากปิดหน้าต่างคุณจะไม่สามารถกลับมาแก้ไขบันทึกการรักษาได้", "กำลังปิดหน้าต่างนี้", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (iConfirmResult == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
-                else if (iConfirmResult == DialogResult.Yes)
-                {
-                    AddHealRecord();
-                    if (iCloseHealRecord == "HealDate")
-                    {
-                     /*   foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-                        {
-                            if (form.GetType() == typeof(FrmRecorD22))
-                            {
-                                form.Activate();
-                                return;
-                            }
-                        }
-                        FrmRecorD22 iFrmRecorD22 = new FrmRecorD22();
-                        iFrmRecorD22.MdiParent = MainForm.ActiveForm;
-                        iFrmRecorD22.lb_HealRecordID.Text = lb_HealRecordID.Text;
-                        iFrmRecorD22.lb_PetID.Text = txb_PetID.Text;
-                        iFrmRecorD22.Show(); */
-                    }
-                    else if (iCloseHealRecord == "Print") 
-                    {
-                        foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-                        {
-                            if (form.GetType() == typeof(FrmNRePort31))
-                            {
-                                form.Activate();
-                                return;
-                            }
-                        }
-                        FrmNRePort31 iFrmMM341 = new FrmNRePort31();
-                        iFrmMM341.MdiParent = MainForm.ActiveForm;
-                        iFrmMM341.txb_ReferID.Text = lb_HealRecordID.Text;
-                        iFrmMM341.Show();  
-                    }
+             if((lb_HealRecordID.Text !=null)&&(lb_HealRecordID.Text != string.Empty)){
+              AddHealRecord();
+              }
+
+             /*
+              //   DialogResult iConfirmResult = MessageBox.Show("**หากปิดหน้าต่างคุณจะไม่สามารถกลับมาแก้ไขบันทึกการรักษาได้", "กำลังปิดหน้าต่างนี้", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                 if (iConfirmResult == DialogResult.No)
+                 {
+                     e.Cancel = true;
+                 }
+                 else if (iConfirmResult == DialogResult.Yes)
+                 {
+                     AddHealRecord();
+                     if (iCloseHealRecord == "HealDate")
+                     {
+                         foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                         {
+                             if (form.GetType() == typeof(FrmRecorD22))
+                             {
+                                 form.Activate();
+                                 return;
+                             }
+                         }
+                         FrmRecorD22 iFrmRecorD22 = new FrmRecorD22();
+                         iFrmRecorD22.MdiParent = MainForm.ActiveForm;
+                         iFrmRecorD22.lb_HealRecordID.Text = lb_HealRecordID.Text;
+                         iFrmRecorD22.lb_PetID.Text = txb_PetID.Text;
+                         iFrmRecorD22.Show(); 
+                     }
+                     else if (iCloseHealRecord == "Print") 
+                     {
+                         foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                         {
+                             if (form.GetType() == typeof(FrmNRePort31))
+                             {
+                                 form.Activate();
+                                 return;
+                             }
+                         }
+                         FrmNRePort31 iFrmMM341 = new FrmNRePort31();
+                         iFrmMM341.MdiParent = MainForm.ActiveForm;
+                         iFrmMM341.txb_ReferID.Text = lb_HealRecordID.Text;
+                         iFrmMM341.Show();  
+                     }
                     
-               }
-           }
-            iCloseHealRecord = null;
+                }
+            }
+            iCloseHealRecord = null;*/
         }  
     }
 }

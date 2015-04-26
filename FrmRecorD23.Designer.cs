@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nUD_ProductUnit = new System.Windows.Forms.NumericUpDown();
             this.lbyear = new System.Windows.Forms.Label();
             this.bt_CancelBuy = new System.Windows.Forms.Button();
@@ -51,6 +52,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dGV_Product = new System.Windows.Forms.DataGridView();
+            this.ccProductSale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txb_ProductSaleDC = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lb_ProductID = new System.Windows.Forms.Label();
@@ -60,15 +67,25 @@
             this.lb_PriceAmt = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.bt_Reset = new System.Windows.Forms.Button();
-            this.ccProductSale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProductSale_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProductSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dGV_ProductSale = new System.Windows.Forms.DataGridView();
+            this.ccProSale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Totalm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProductSale_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nUD_ProductUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_ProductSale)).BeginInit();
             this.SuspendLayout();
             // 
             // nUD_ProductUnit
@@ -113,7 +130,7 @@
             // 
             this.bt_Print.Enabled = false;
             this.bt_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Print.Location = new System.Drawing.Point(883, 55);
+            this.bt_Print.Location = new System.Drawing.Point(884, 50);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Print.Name = "bt_Print";
             this.bt_Print.Size = new System.Drawing.Size(112, 87);
@@ -125,7 +142,7 @@
             // bt_Load
             // 
             this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Load.Location = new System.Drawing.Point(883, 8);
+            this.bt_Load.Location = new System.Drawing.Point(884, 8);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Load.Name = "bt_Load";
             this.bt_Load.Size = new System.Drawing.Size(111, 37);
@@ -236,9 +253,9 @@
             this.label1.Location = new System.Drawing.Point(44, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 18);
+            this.label1.Size = new System.Drawing.Size(101, 18);
             this.label1.TabIndex = 116;
-            this.label1.Text = "เลขที่ทำการขาย";
+            this.label1.Text = "เลขที่ขายสินค้า";
             // 
             // bt_AddProductSale
             // 
@@ -300,106 +317,16 @@
             this.ccProduct_Sale,
             this.ccProductSale_Unit,
             this.ccProductSale_Total});
-            this.dGV_Product.Enabled = false;
             this.dGV_Product.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dGV_Product.Location = new System.Drawing.Point(13, 202);
+            this.dGV_Product.Location = new System.Drawing.Point(7, 9);
             this.dGV_Product.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dGV_Product.MultiSelect = false;
             this.dGV_Product.Name = "dGV_Product";
             this.dGV_Product.ReadOnly = true;
             this.dGV_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_Product.Size = new System.Drawing.Size(982, 456);
+            this.dGV_Product.Size = new System.Drawing.Size(961, 412);
             this.dGV_Product.TabIndex = 13;
             this.dGV_Product.SelectionChanged += new System.EventHandler(this.dGV_Product_SelectionChanged);
-            // 
-            // txb_ProductSaleDC
-            // 
-            this.txb_ProductSaleDC.Enabled = false;
-            this.txb_ProductSaleDC.Location = new System.Drawing.Point(449, 124);
-            this.txb_ProductSaleDC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txb_ProductSaleDC.Name = "txb_ProductSaleDC";
-            this.txb_ProductSaleDC.Size = new System.Drawing.Size(66, 26);
-            this.txb_ProductSaleDC.TabIndex = 5;
-            this.txb_ProductSaleDC.Text = "0.00";
-            this.txb_ProductSaleDC.TextChanged += new System.EventHandler(this.txb_ProductSaleDC_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(390, 128);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 18);
-            this.label6.TabIndex = 132;
-            this.label6.Text = "ส่วนลด";
-            // 
-            // lb_ProductID
-            // 
-            this.lb_ProductID.AutoSize = true;
-            this.lb_ProductID.Location = new System.Drawing.Point(640, 128);
-            this.lb_ProductID.Name = "lb_ProductID";
-            this.lb_ProductID.Size = new System.Drawing.Size(91, 18);
-            this.lb_ProductID.TabIndex = 134;
-            this.lb_ProductID.Text = "lb_ProductID";
-            this.lb_ProductID.Visible = false;
-            // 
-            // lb_ProductSaleID
-            // 
-            this.lb_ProductSaleID.AutoSize = true;
-            this.lb_ProductSaleID.Location = new System.Drawing.Point(161, 18);
-            this.lb_ProductSaleID.Name = "lb_ProductSaleID";
-            this.lb_ProductSaleID.Size = new System.Drawing.Size(0, 18);
-            this.lb_ProductSaleID.TabIndex = 135;
-            this.lb_ProductSaleID.TextChanged += new System.EventHandler(this.lb_ProductSaleID_TextChanged);
-            // 
-            // bt_RecordBuy
-            // 
-            this.bt_RecordBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_RecordBuy.Location = new System.Drawing.Point(763, 55);
-            this.bt_RecordBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bt_RecordBuy.Name = "bt_RecordBuy";
-            this.bt_RecordBuy.Size = new System.Drawing.Size(112, 87);
-            this.bt_RecordBuy.TabIndex = 9;
-            this.bt_RecordBuy.Text = "บันทึก";
-            this.bt_RecordBuy.UseVisualStyleBackColor = true;
-            this.bt_RecordBuy.Click += new System.EventHandler(this.bt_RecordBuy_Click);
-            // 
-            // lb_ProductUnit
-            // 
-            this.lb_ProductUnit.AutoSize = true;
-            this.lb_ProductUnit.Location = new System.Drawing.Point(640, 164);
-            this.lb_ProductUnit.Name = "lb_ProductUnit";
-            this.lb_ProductUnit.Size = new System.Drawing.Size(100, 18);
-            this.lb_ProductUnit.TabIndex = 137;
-            this.lb_ProductUnit.Text = "lb_ProductUnit";
-            this.lb_ProductUnit.Visible = false;
-            // 
-            // lb_PriceAmt
-            // 
-            this.lb_PriceAmt.AutoSize = true;
-            this.lb_PriceAmt.Location = new System.Drawing.Point(148, 128);
-            this.lb_PriceAmt.Name = "lb_PriceAmt";
-            this.lb_PriceAmt.Size = new System.Drawing.Size(83, 18);
-            this.lb_PriceAmt.TabIndex = 138;
-            this.lb_PriceAmt.Text = "lb_PriceAmt";
-            this.lb_PriceAmt.Visible = false;
-            // 
-            // epCheck
-            // 
-            this.epCheck.ContainerControl = this;
-            // 
-            // bt_Reset
-            // 
-            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bt_Reset.Location = new System.Drawing.Point(655, 8);
-            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_Reset.Name = "bt_Reset";
-            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
-            this.bt_Reset.TabIndex = 1;
-            this.bt_Reset.Text = "เริ่มใหม่";
-            this.bt_Reset.UseVisualStyleBackColor = true;
-            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
             // 
             // ccProductSale_ID
             // 
@@ -446,11 +373,225 @@
             this.ccProductSale_Total.Name = "ccProductSale_Total";
             this.ccProductSale_Total.ReadOnly = true;
             // 
+            // txb_ProductSaleDC
+            // 
+            this.txb_ProductSaleDC.Enabled = false;
+            this.txb_ProductSaleDC.Location = new System.Drawing.Point(449, 124);
+            this.txb_ProductSaleDC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_ProductSaleDC.Name = "txb_ProductSaleDC";
+            this.txb_ProductSaleDC.Size = new System.Drawing.Size(66, 26);
+            this.txb_ProductSaleDC.TabIndex = 5;
+            this.txb_ProductSaleDC.Text = "0.00";
+            this.txb_ProductSaleDC.TextChanged += new System.EventHandler(this.txb_ProductSaleDC_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(390, 128);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 18);
+            this.label6.TabIndex = 132;
+            this.label6.Text = "ส่วนลด";
+            // 
+            // lb_ProductID
+            // 
+            this.lb_ProductID.AutoSize = true;
+            this.lb_ProductID.Location = new System.Drawing.Point(640, 128);
+            this.lb_ProductID.Name = "lb_ProductID";
+            this.lb_ProductID.Size = new System.Drawing.Size(91, 18);
+            this.lb_ProductID.TabIndex = 134;
+            this.lb_ProductID.Text = "lb_ProductID";
+            this.lb_ProductID.Visible = false;
+            // 
+            // lb_ProductSaleID
+            // 
+            this.lb_ProductSaleID.AutoSize = true;
+            this.lb_ProductSaleID.Location = new System.Drawing.Point(161, 18);
+            this.lb_ProductSaleID.Name = "lb_ProductSaleID";
+            this.lb_ProductSaleID.Size = new System.Drawing.Size(0, 18);
+            this.lb_ProductSaleID.TabIndex = 135;
+            this.lb_ProductSaleID.TextChanged += new System.EventHandler(this.lb_ProductSaleID_TextChanged);
+            // 
+            // bt_RecordBuy
+            // 
+            this.bt_RecordBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_RecordBuy.Location = new System.Drawing.Point(764, 85);
+            this.bt_RecordBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_RecordBuy.Name = "bt_RecordBuy";
+            this.bt_RecordBuy.Size = new System.Drawing.Size(112, 52);
+            this.bt_RecordBuy.TabIndex = 9;
+            this.bt_RecordBuy.Text = "บันทึก";
+            this.bt_RecordBuy.UseVisualStyleBackColor = true;
+            this.bt_RecordBuy.Click += new System.EventHandler(this.bt_RecordBuy_Click);
+            // 
+            // lb_ProductUnit
+            // 
+            this.lb_ProductUnit.AutoSize = true;
+            this.lb_ProductUnit.Location = new System.Drawing.Point(640, 164);
+            this.lb_ProductUnit.Name = "lb_ProductUnit";
+            this.lb_ProductUnit.Size = new System.Drawing.Size(100, 18);
+            this.lb_ProductUnit.TabIndex = 137;
+            this.lb_ProductUnit.Text = "lb_ProductUnit";
+            this.lb_ProductUnit.Visible = false;
+            // 
+            // lb_PriceAmt
+            // 
+            this.lb_PriceAmt.AutoSize = true;
+            this.lb_PriceAmt.Location = new System.Drawing.Point(148, 128);
+            this.lb_PriceAmt.Name = "lb_PriceAmt";
+            this.lb_PriceAmt.Size = new System.Drawing.Size(83, 18);
+            this.lb_PriceAmt.TabIndex = 138;
+            this.lb_PriceAmt.Text = "lb_PriceAmt";
+            this.lb_PriceAmt.Visible = false;
+            // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
+            // bt_Reset
+            // 
+            this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_Reset.Location = new System.Drawing.Point(655, 8);
+            this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Reset.Name = "bt_Reset";
+            this.bt_Reset.Size = new System.Drawing.Size(70, 32);
+            this.bt_Reset.TabIndex = 1;
+            this.bt_Reset.Text = "เริ่มใหม่";
+            this.bt_Reset.UseVisualStyleBackColor = true;
+            this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 200);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(983, 460);
+            this.tabControl1.TabIndex = 139;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dGV_Product);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(975, 429);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "รายการสินค้า";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dGV_ProductSale);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(975, 429);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "ประวัติการขาย";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dGV_ProductSale
+            // 
+            this.dGV_ProductSale.AllowUserToAddRows = false;
+            this.dGV_ProductSale.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_ProductSale.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dGV_ProductSale.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dGV_ProductSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_ProductSale.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ccProSale_ID,
+            this.ccEm_ID,
+            this.ccEm_Name,
+            this.ccProductSale_Date,
+            this.ccProductSale_Totalm,
+            this.ccProductSale_DC,
+            this.ccProductSale_Net,
+            this.ccProductSale_Remark});
+            this.dGV_ProductSale.GridColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dGV_ProductSale.Location = new System.Drawing.Point(7, 8);
+            this.dGV_ProductSale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dGV_ProductSale.MultiSelect = false;
+            this.dGV_ProductSale.Name = "dGV_ProductSale";
+            this.dGV_ProductSale.ReadOnly = true;
+            this.dGV_ProductSale.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_ProductSale.Size = new System.Drawing.Size(961, 412);
+            this.dGV_ProductSale.TabIndex = 14;
+            this.dGV_ProductSale.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_ProductSale_CellClick);
+            // 
+            // ccProSale_ID
+            // 
+            this.ccProSale_ID.DataPropertyName = "ProductSale_ID";
+            this.ccProSale_ID.HeaderText = "เลขที่ขายสินค้า";
+            this.ccProSale_ID.Name = "ccProSale_ID";
+            this.ccProSale_ID.ReadOnly = true;
+            this.ccProSale_ID.Width = 160;
+            // 
+            // ccEm_ID
+            // 
+            this.ccEm_ID.DataPropertyName = "Em_ID";
+            this.ccEm_ID.HeaderText = "รหัสพนักงาน";
+            this.ccEm_ID.Name = "ccEm_ID";
+            this.ccEm_ID.ReadOnly = true;
+            this.ccEm_ID.Visible = false;
+            // 
+            // ccEm_Name
+            // 
+            this.ccEm_Name.DataPropertyName = "Em_Name";
+            this.ccEm_Name.HeaderText = "ผู้ขาย";
+            this.ccEm_Name.Name = "ccEm_Name";
+            this.ccEm_Name.ReadOnly = true;
+            this.ccEm_Name.Width = 150;
+            // 
+            // ccProductSale_Date
+            // 
+            this.ccProductSale_Date.DataPropertyName = "ProductSale_Date";
+            this.ccProductSale_Date.HeaderText = "วันที่ทำการขาย";
+            this.ccProductSale_Date.Name = "ccProductSale_Date";
+            this.ccProductSale_Date.ReadOnly = true;
+            this.ccProductSale_Date.Width = 150;
+            // 
+            // ccProductSale_Totalm
+            // 
+            this.ccProductSale_Totalm.DataPropertyName = "ProductSale_Total";
+            this.ccProductSale_Totalm.HeaderText = "รวม";
+            this.ccProductSale_Totalm.Name = "ccProductSale_Totalm";
+            this.ccProductSale_Totalm.ReadOnly = true;
+            this.ccProductSale_Totalm.Width = 80;
+            // 
+            // ccProductSale_DC
+            // 
+            this.ccProductSale_DC.DataPropertyName = "ProductSale_DC";
+            this.ccProductSale_DC.HeaderText = "ส่วนลด";
+            this.ccProductSale_DC.Name = "ccProductSale_DC";
+            this.ccProductSale_DC.ReadOnly = true;
+            this.ccProductSale_DC.Width = 80;
+            // 
+            // ccProductSale_Net
+            // 
+            this.ccProductSale_Net.DataPropertyName = "ProductSale_Net";
+            this.ccProductSale_Net.HeaderText = "สุทธิ";
+            this.ccProductSale_Net.Name = "ccProductSale_Net";
+            this.ccProductSale_Net.ReadOnly = true;
+            this.ccProductSale_Net.Width = 80;
+            // 
+            // ccProductSale_Remark
+            // 
+            this.ccProductSale_Remark.DataPropertyName = "ProductSale_Remark";
+            this.ccProductSale_Remark.HeaderText = "หมายเหตุ";
+            this.ccProductSale_Remark.Name = "ccProductSale_Remark";
+            this.ccProductSale_Remark.ReadOnly = true;
+            this.ccProductSale_Remark.Width = 210;
+            // 
             // FrmRecorD23
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.bt_Reset);
             this.Controls.Add(this.lb_PriceAmt);
             this.Controls.Add(this.lb_ProductUnit);
@@ -479,17 +620,21 @@
             this.Controls.Add(this.txb_ProductID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.dGV_Product);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRecorD23";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "บันทึกประจำวัน ขายสินค้า";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmRecorD23_FormClosing);
             this.Load += new System.EventHandler(this.FrmMM22_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nUD_ProductUnit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_ProductSale)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,5 +678,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Sale;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Total;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dGV_ProductSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProSale_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Totalm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_DC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Net;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Remark;
     }
 }

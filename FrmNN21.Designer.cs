@@ -38,6 +38,11 @@
             this.lb_Service = new System.Windows.Forms.Label();
             this.bt_BuyService = new System.Windows.Forms.Button();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
+            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tPMedi = new System.Windows.Forms.TabPage();
             this.lb_MediU = new System.Windows.Forms.Label();
             this.lb_Unit = new System.Windows.Forms.Label();
@@ -101,11 +106,6 @@
             this.lb_HealRecordRR = new System.Windows.Forms.Label();
             this.lb_HR = new System.Windows.Forms.Label();
             this.lb_HealRecordID = new System.Windows.Forms.Label();
-            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlServiceMedi.SuspendLayout();
             this.tPService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -231,6 +231,48 @@
             this.dGV_Service.Size = new System.Drawing.Size(737, 243);
             this.dGV_Service.TabIndex = 0;
             this.dGV_Service.SelectionChanged += new System.EventHandler(this.dGV_Service_SelectionChanged);
+            // 
+            // ccHealRecord_ID
+            // 
+            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
+            this.ccHealRecord_ID.HeaderText = "รหัสประวัติรักษา";
+            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
+            this.ccHealRecord_ID.ReadOnly = true;
+            this.ccHealRecord_ID.Visible = false;
+            this.ccHealRecord_ID.Width = 120;
+            // 
+            // ccService_ID
+            // 
+            this.ccService_ID.DataPropertyName = "Service_ID";
+            this.ccService_ID.HeaderText = "รหัสบริการ";
+            this.ccService_ID.Name = "ccService_ID";
+            this.ccService_ID.ReadOnly = true;
+            this.ccService_ID.Width = 140;
+            // 
+            // ccService_Des
+            // 
+            this.ccService_Des.DataPropertyName = "Service_Des";
+            this.ccService_Des.HeaderText = "บริการ";
+            this.ccService_Des.Name = "ccService_Des";
+            this.ccService_Des.ReadOnly = true;
+            this.ccService_Des.Width = 350;
+            // 
+            // ccService_Price
+            // 
+            this.ccService_Price.DataPropertyName = "Service_Price";
+            this.ccService_Price.HeaderText = "ค่าบริการต้น";
+            this.ccService_Price.Name = "ccService_Price";
+            this.ccService_Price.ReadOnly = true;
+            this.ccService_Price.Visible = false;
+            this.ccService_Price.Width = 140;
+            // 
+            // ccService_Amt
+            // 
+            this.ccService_Amt.DataPropertyName = "Service_Amt";
+            this.ccService_Amt.HeaderText = "ค่าบริการ";
+            this.ccService_Amt.Name = "ccService_Amt";
+            this.ccService_Amt.ReadOnly = true;
+            this.ccService_Amt.Width = 140;
             // 
             // tPMedi
             // 
@@ -572,7 +614,6 @@
             this.bt_LoadData.TabIndex = 65;
             this.bt_LoadData.Text = "LoadData";
             this.bt_LoadData.UseVisualStyleBackColor = true;
-            this.bt_LoadData.Visible = false;
             this.bt_LoadData.Click += new System.EventHandler(this.bt_LoadData_Click);
             // 
             // txb_HealRecordNet
@@ -878,48 +919,6 @@
             this.lb_HealRecordID.Size = new System.Drawing.Size(0, 18);
             this.lb_HealRecordID.TabIndex = 84;
             this.lb_HealRecordID.TextChanged += new System.EventHandler(this.lb_HealRecordID_TextChanged);
-            // 
-            // ccHealRecord_ID
-            // 
-            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
-            this.ccHealRecord_ID.HeaderText = "รหัสประวัติรักษา";
-            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
-            this.ccHealRecord_ID.ReadOnly = true;
-            this.ccHealRecord_ID.Visible = false;
-            this.ccHealRecord_ID.Width = 120;
-            // 
-            // ccService_ID
-            // 
-            this.ccService_ID.DataPropertyName = "Service_ID";
-            this.ccService_ID.HeaderText = "รหัสบริการ";
-            this.ccService_ID.Name = "ccService_ID";
-            this.ccService_ID.ReadOnly = true;
-            this.ccService_ID.Width = 140;
-            // 
-            // ccService_Des
-            // 
-            this.ccService_Des.DataPropertyName = "Service_Des";
-            this.ccService_Des.HeaderText = "บริการ";
-            this.ccService_Des.Name = "ccService_Des";
-            this.ccService_Des.ReadOnly = true;
-            this.ccService_Des.Width = 350;
-            // 
-            // ccService_Price
-            // 
-            this.ccService_Price.DataPropertyName = "Service_Price";
-            this.ccService_Price.HeaderText = "ค่าบริการต้น";
-            this.ccService_Price.Name = "ccService_Price";
-            this.ccService_Price.ReadOnly = true;
-            this.ccService_Price.Visible = false;
-            this.ccService_Price.Width = 140;
-            // 
-            // ccService_Amt
-            // 
-            this.ccService_Amt.DataPropertyName = "Service_Amt";
-            this.ccService_Amt.HeaderText = "ค่าบริการ";
-            this.ccService_Amt.Name = "ccService_Amt";
-            this.ccService_Amt.ReadOnly = true;
-            this.ccService_Amt.Width = 140;
             // 
             // FrmNN21
             // 

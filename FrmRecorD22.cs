@@ -357,11 +357,12 @@ namespace Petshop
             if ((txb_Search.Text != string.Empty) && (txb_Search.Text != null)){
                 string itxbSearch = txb_Search.Text.ToString();
                 DataTable idtSearch;
-                string isqlSearch = null;
-                if (rBt_All.Checked == true)
+                string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                    "FROM tb_healdate,tb_petprofile,tb_service where (HealDate_Day ='" + itxbSearch + "' OR tb_petprofile.pet_name like '%" + itxbSearch + "%' OR tb_Service.Service_Des like '%" + itxbSearch + "%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day"; ;
+               /* if (rBt_All.Checked == true)
                 {
                     isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                    "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day";
+                    "FROM tb_healdate,tb_petprofile,tb_service where  tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day";
                 }
                 else if (rBt_contract.Checked == true)
                 {
@@ -389,7 +390,7 @@ namespace Petshop
                                     + " SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
                                     + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
                                     + " AND  HealDate_Day = '" + iDateToday + "' Order By HealDate_ID";
-                }
+                }*/
                 idtSearch = iConnect.SelectByCommand(isqlSearch);
                 dGV_HealDate.DataSource = idtSearch;
                 dGV_HealDate.Refresh();

@@ -109,9 +109,6 @@ namespace Petshop
                 dGV_Product.Refresh();
                             }
                      }
-        
-
-        
         private void loadCompany()
         {
             DataTable idtCompany;
@@ -143,8 +140,8 @@ namespace Petshop
         }
         private void bt_Print_Click(object sender, EventArgs e)
         {
-            BillAdd();
             AddProductBill();
+            BillAdd();
             if ((Lb_BillID.Text != null) && (Lb_BillID.Text != ""))
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
@@ -173,8 +170,8 @@ namespace Petshop
 
         private void bt_Submit_Click(object sender, EventArgs e)
         {
-            BillAdd();
             AddProductBill();
+            BillAdd();
         }
 
         private void AddProductBill()
@@ -253,6 +250,7 @@ namespace Petshop
                 string isqlBillUpdate = "UPDATE `tb_bill` SET `Em_ID`='" + icbEmplyee + "', `Bill_Date`='" + idTPProductSaleDate + "', `BillSale_Total`='" + iBillTotal + "', `BillSale_DC`='" + iBillDC + "', `BillSale_Net`='" + iBillNet + "' WHERE `Bill_ID`='" + ilbBillID + "'";
                 iConnect.Insert(isqlBillUpdate);
             }
+
         }
 
         private void Lb_BillID_TextChanged(object sender, EventArgs e)
@@ -263,6 +261,7 @@ namespace Petshop
         private void txb_ReferID_TextChanged(object sender, EventArgs e)
         {
             loadProductSale();
+            loaddata();
         }
 
         private void txb_BillTotal_TextChanged(object sender, EventArgs e)

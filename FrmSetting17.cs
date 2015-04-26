@@ -42,7 +42,7 @@ namespace Petshop
             lb_CoIDH.Text = idtCompany.Rows[0]["Company_ID"].ToString();
                 
             string FP = idtCompany.Rows[0]["CoLogo"].ToString();
-                if((FP!=null)&&(FP!="")){
+                if(File.Exists(FP)){
                     picBoxLogo.Image = Image.FromFile(FP);
                 }
             }
