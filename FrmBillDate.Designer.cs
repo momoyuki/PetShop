@@ -32,7 +32,7 @@
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.lb_HealDate = new System.Windows.Forms.Label();
             this.Bt_Report = new System.Windows.Forms.Button();
-            this.tb_UnitList = new System.Windows.Forms.TextBox();
+            this.txb_UnitList = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CheckBox_Print = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
@@ -44,6 +44,7 @@
             this.lb_PetID.Name = "lb_PetID";
             this.lb_PetID.Size = new System.Drawing.Size(0, 18);
             this.lb_PetID.TabIndex = 8;
+            this.lb_PetID.TextChanged += new System.EventHandler(this.lb_PetID_TextChanged);
             // 
             // crystalReportViewer1
             // 
@@ -53,8 +54,13 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(13, 50);
             this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ShowCloseButton = false;
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowLogo = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.Size = new System.Drawing.Size(982, 609);
             this.crystalReportViewer1.TabIndex = 7;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.ToolPanelWidth = 267;
             // 
             // lb_HealDate
@@ -78,14 +84,14 @@
             this.Bt_Report.UseVisualStyleBackColor = true;
             this.Bt_Report.Click += new System.EventHandler(this.Bt_Report_Click);
             // 
-            // tb_UnitList
+            // txb_UnitList
             // 
-            this.tb_UnitList.Location = new System.Drawing.Point(287, 16);
-            this.tb_UnitList.MaxLength = 2;
-            this.tb_UnitList.Name = "tb_UnitList";
-            this.tb_UnitList.Size = new System.Drawing.Size(40, 26);
-            this.tb_UnitList.TabIndex = 9;
-            this.tb_UnitList.Text = "5";
+            this.txb_UnitList.Location = new System.Drawing.Point(287, 16);
+            this.txb_UnitList.MaxLength = 2;
+            this.txb_UnitList.Name = "txb_UnitList";
+            this.txb_UnitList.Size = new System.Drawing.Size(40, 26);
+            this.txb_UnitList.TabIndex = 9;
+            this.txb_UnitList.Text = "5";
             // 
             // label1
             // 
@@ -113,7 +119,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 672);
             this.Controls.Add(this.CheckBox_Print);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tb_UnitList);
+            this.Controls.Add(this.txb_UnitList);
             this.Controls.Add(this.lb_PetID);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.lb_HealDate);
@@ -123,6 +129,7 @@
             this.Name = "FrmBillDate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ตัวอย่างก่อนพิมพ์ ใบนัดหมาย";
+            this.Load += new System.EventHandler(this.FrmBillDate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,7 +141,7 @@
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.Label lb_HealDate;
         private System.Windows.Forms.Button Bt_Report;
-        private System.Windows.Forms.TextBox tb_UnitList;
+        private System.Windows.Forms.TextBox txb_UnitList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CheckBox_Print;
     }

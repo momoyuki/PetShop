@@ -73,5 +73,13 @@ namespace Petshop
         private void FrmBillreview_Load(object sender, EventArgs e)
         {
         }
+
+        private void lb_BillID_TextChanged(object sender, EventArgs e)
+        {
+            if((lb_BillID.Text !=string.Empty)&&(lb_BillID.Text != null))
+            {
+                LoadBill();
+            }
+        }
     }
 }

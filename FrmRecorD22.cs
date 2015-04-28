@@ -354,11 +354,20 @@ namespace Petshop
         private void bt_Search_Click(object sender, EventArgs e)
         {
             // ค้นหายังไม่เสร็จ
-            if ((txb_Search.Text != string.Empty) && (txb_Search.Text != null)){
+                Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
+            if (RegString.IsMatch(txb_Search.Text.Trim())){
                 string itxbSearch = txb_Search.Text.ToString();
                 DataTable idtSearch;
+                Regex RegDate = new Regex(@"^[0-9]+|$");
+                
                 string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                    "FROM tb_healdate,tb_petprofile,tb_service where (HealDate_Day ='" + itxbSearch + "' OR tb_petprofile.pet_name like '%" + itxbSearch + "%' OR tb_Service.Service_Des like '%" + itxbSearch + "%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day"; ;
+                   "FROM tb_healdate,tb_petprofile,tb_service where (tb_petprofile.pet_name like '%" + itxbSearch + "%' OR tb_Service.Service_Des like '%" + itxbSearch + "%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day"; ;
+                if(RegDate.IsMatch(itxbSearch))
+                {
+                     isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                                       "FROM tb_healdate,tb_petprofile,tb_service where (tb_HealDate.HealDate_Day like '%"+itxbSearch+"%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day"; ;
+                     MessageBox.Show("wwwss");
+                }
                /* if (rBt_All.Checked == true)
                 {
                     isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +

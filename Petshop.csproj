@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -97,6 +97,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrOutlay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrOutlay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmNN22.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNN22.Designer.cs">
+      <DependentUpon>FrmNN22.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRePort31.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +261,13 @@
     <Compile Include="Resources\MySQLConnect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrOutlay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrOutlay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNN22.resx">
+      <DependentUpon>FrmNN22.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRePort31.resx">
       <DependentUpon>FrmRePort31.cs</DependentUpon>
     </EmbeddedResource>

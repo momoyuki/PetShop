@@ -34,6 +34,8 @@ namespace Petshop.Resources {
         
         private DT_PetProfileDataTable tableDT_PetProfile;
         
+        private DT_OutlayDataTable tableDT_Outlay;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -76,6 +78,9 @@ namespace Petshop.Resources {
                 }
                 if ((ds.Tables["DT_PetProfile"] != null)) {
                     base.Tables.Add(new DT_PetProfileDataTable(ds.Tables["DT_PetProfile"]));
+                }
+                if ((ds.Tables["DT_Outlay"] != null)) {
+                    base.Tables.Add(new DT_OutlayDataTable(ds.Tables["DT_Outlay"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -142,6 +147,16 @@ namespace Petshop.Resources {
         public DT_PetProfileDataTable DT_PetProfile {
             get {
                 return this.tableDT_PetProfile;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DT_OutlayDataTable DT_Outlay {
+            get {
+                return this.tableDT_Outlay;
             }
         }
         
@@ -227,6 +242,9 @@ namespace Petshop.Resources {
                 if ((ds.Tables["DT_PetProfile"] != null)) {
                     base.Tables.Add(new DT_PetProfileDataTable(ds.Tables["DT_PetProfile"]));
                 }
+                if ((ds.Tables["DT_Outlay"] != null)) {
+                    base.Tables.Add(new DT_OutlayDataTable(ds.Tables["DT_Outlay"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -290,6 +308,12 @@ namespace Petshop.Resources {
                     this.tableDT_PetProfile.InitVars();
                 }
             }
+            this.tableDT_Outlay = ((DT_OutlayDataTable)(base.Tables["DT_Outlay"]));
+            if ((initTable == true)) {
+                if ((this.tableDT_Outlay != null)) {
+                    this.tableDT_Outlay.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +334,8 @@ namespace Petshop.Resources {
             base.Tables.Add(this.tableDT_BillDetail);
             this.tableDT_PetProfile = new DT_PetProfileDataTable();
             base.Tables.Add(this.tableDT_PetProfile);
+            this.tableDT_Outlay = new DT_OutlayDataTable();
+            base.Tables.Add(this.tableDT_Outlay);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -339,6 +365,12 @@ namespace Petshop.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeDT_PetProfile() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeDT_Outlay() {
             return false;
         }
         
@@ -411,6 +443,9 @@ namespace Petshop.Resources {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void DT_PetProfileRowChangeEventHandler(object sender, DT_PetProfileRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void DT_OutlayRowChangeEventHandler(object sender, DT_OutlayRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2166,6 +2201,365 @@ namespace Petshop.Resources {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DT_OutlayDataTable : global::System.Data.TypedTableBase<DT_OutlayRow> {
+            
+            private global::System.Data.DataColumn columnoutlayDetail_ID;
+            
+            private global::System.Data.DataColumn columnoutlay_ID;
+            
+            private global::System.Data.DataColumn columnoutlay_Detail;
+            
+            private global::System.Data.DataColumn columnoutlayDetail_Date;
+            
+            private global::System.Data.DataColumn columnEm_ID;
+            
+            private global::System.Data.DataColumn columnEm_Name;
+            
+            private global::System.Data.DataColumn columnoutlayDetail_Remark;
+            
+            private global::System.Data.DataColumn columnoutlayDetail_Amt;
+            
+            private global::System.Data.DataColumn columnoutlayDetail_Total;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_OutlayDataTable() {
+                this.TableName = "DT_Outlay";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_OutlayDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected DT_OutlayDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn outlayDetail_IDColumn {
+                get {
+                    return this.columnoutlayDetail_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn outlay_IDColumn {
+                get {
+                    return this.columnoutlay_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn outlay_DetailColumn {
+                get {
+                    return this.columnoutlay_Detail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn outlayDetail_DateColumn {
+                get {
+                    return this.columnoutlayDetail_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Em_IDColumn {
+                get {
+                    return this.columnEm_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Em_NameColumn {
+                get {
+                    return this.columnEm_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn outlayDetail_RemarkColumn {
+                get {
+                    return this.columnoutlayDetail_Remark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn outlayDetail_AmtColumn {
+                get {
+                    return this.columnoutlayDetail_Amt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn outlayDetail_TotalColumn {
+                get {
+                    return this.columnoutlayDetail_Total;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_OutlayRow this[int index] {
+                get {
+                    return ((DT_OutlayRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_OutlayRowChangeEventHandler DT_OutlayRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_OutlayRowChangeEventHandler DT_OutlayRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_OutlayRowChangeEventHandler DT_OutlayRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_OutlayRowChangeEventHandler DT_OutlayRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddDT_OutlayRow(DT_OutlayRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_OutlayRow AddDT_OutlayRow(string outlayDetail_ID, string outlay_ID, string outlay_Detail, System.DateTime outlayDetail_Date, string Em_ID, string Em_Name, string outlayDetail_Remark, string outlayDetail_Amt, string outlayDetail_Total) {
+                DT_OutlayRow rowDT_OutlayRow = ((DT_OutlayRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        outlayDetail_ID,
+                        outlay_ID,
+                        outlay_Detail,
+                        outlayDetail_Date,
+                        Em_ID,
+                        Em_Name,
+                        outlayDetail_Remark,
+                        outlayDetail_Amt,
+                        outlayDetail_Total};
+                rowDT_OutlayRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_OutlayRow);
+                return rowDT_OutlayRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DT_OutlayDataTable cln = ((DT_OutlayDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DT_OutlayDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnoutlayDetail_ID = base.Columns["outlayDetail_ID"];
+                this.columnoutlay_ID = base.Columns["outlay_ID"];
+                this.columnoutlay_Detail = base.Columns["outlay_Detail"];
+                this.columnoutlayDetail_Date = base.Columns["outlayDetail_Date"];
+                this.columnEm_ID = base.Columns["Em_ID"];
+                this.columnEm_Name = base.Columns["Em_Name"];
+                this.columnoutlayDetail_Remark = base.Columns["outlayDetail_Remark"];
+                this.columnoutlayDetail_Amt = base.Columns["outlayDetail_Amt"];
+                this.columnoutlayDetail_Total = base.Columns["outlayDetail_Total"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnoutlayDetail_ID = new global::System.Data.DataColumn("outlayDetail_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoutlayDetail_ID);
+                this.columnoutlay_ID = new global::System.Data.DataColumn("outlay_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoutlay_ID);
+                this.columnoutlay_Detail = new global::System.Data.DataColumn("outlay_Detail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoutlay_Detail);
+                this.columnoutlayDetail_Date = new global::System.Data.DataColumn("outlayDetail_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoutlayDetail_Date);
+                this.columnEm_ID = new global::System.Data.DataColumn("Em_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEm_ID);
+                this.columnEm_Name = new global::System.Data.DataColumn("Em_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEm_Name);
+                this.columnoutlayDetail_Remark = new global::System.Data.DataColumn("outlayDetail_Remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoutlayDetail_Remark);
+                this.columnoutlayDetail_Amt = new global::System.Data.DataColumn("outlayDetail_Amt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoutlayDetail_Amt);
+                this.columnoutlayDetail_Total = new global::System.Data.DataColumn("outlayDetail_Total", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoutlayDetail_Total);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_OutlayRow NewDT_OutlayRow() {
+                return ((DT_OutlayRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DT_OutlayRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DT_OutlayRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DT_OutlayRowChanged != null)) {
+                    this.DT_OutlayRowChanged(this, new DT_OutlayRowChangeEvent(((DT_OutlayRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DT_OutlayRowChanging != null)) {
+                    this.DT_OutlayRowChanging(this, new DT_OutlayRowChangeEvent(((DT_OutlayRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DT_OutlayRowDeleted != null)) {
+                    this.DT_OutlayRowDeleted(this, new DT_OutlayRowChangeEvent(((DT_OutlayRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DT_OutlayRowDeleting != null)) {
+                    this.DT_OutlayRowDeleting(this, new DT_OutlayRowChangeEvent(((DT_OutlayRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveDT_OutlayRow(DT_OutlayRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DT_OutlayDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DT_HealDateRow : global::System.Data.DataRow {
@@ -3418,6 +3812,273 @@ namespace Petshop.Resources {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DT_OutlayRow : global::System.Data.DataRow {
+            
+            private DT_OutlayDataTable tableDT_Outlay;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_OutlayRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDT_Outlay = ((DT_OutlayDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string outlayDetail_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Outlay.outlayDetail_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'outlayDetail_ID\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.outlayDetail_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string outlay_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Outlay.outlay_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'outlay_ID\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.outlay_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string outlay_Detail {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Outlay.outlay_DetailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'outlay_Detail\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.outlay_DetailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime outlayDetail_Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDT_Outlay.outlayDetail_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'outlayDetail_Date\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.outlayDetail_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Em_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Outlay.Em_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Em_ID\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.Em_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Em_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Outlay.Em_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Em_Name\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.Em_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string outlayDetail_Remark {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Outlay.outlayDetail_RemarkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'outlayDetail_Remark\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.outlayDetail_RemarkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string outlayDetail_Amt {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Outlay.outlayDetail_AmtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'outlayDetail_Amt\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.outlayDetail_AmtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string outlayDetail_Total {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Outlay.outlayDetail_TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'outlayDetail_Total\' in table \'DT_Outlay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Outlay.outlayDetail_TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsoutlayDetail_IDNull() {
+                return this.IsNull(this.tableDT_Outlay.outlayDetail_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetoutlayDetail_IDNull() {
+                this[this.tableDT_Outlay.outlayDetail_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isoutlay_IDNull() {
+                return this.IsNull(this.tableDT_Outlay.outlay_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setoutlay_IDNull() {
+                this[this.tableDT_Outlay.outlay_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isoutlay_DetailNull() {
+                return this.IsNull(this.tableDT_Outlay.outlay_DetailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setoutlay_DetailNull() {
+                this[this.tableDT_Outlay.outlay_DetailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsoutlayDetail_DateNull() {
+                return this.IsNull(this.tableDT_Outlay.outlayDetail_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetoutlayDetail_DateNull() {
+                this[this.tableDT_Outlay.outlayDetail_DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEm_IDNull() {
+                return this.IsNull(this.tableDT_Outlay.Em_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEm_IDNull() {
+                this[this.tableDT_Outlay.Em_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEm_NameNull() {
+                return this.IsNull(this.tableDT_Outlay.Em_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEm_NameNull() {
+                this[this.tableDT_Outlay.Em_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsoutlayDetail_RemarkNull() {
+                return this.IsNull(this.tableDT_Outlay.outlayDetail_RemarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetoutlayDetail_RemarkNull() {
+                this[this.tableDT_Outlay.outlayDetail_RemarkColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsoutlayDetail_AmtNull() {
+                return this.IsNull(this.tableDT_Outlay.outlayDetail_AmtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetoutlayDetail_AmtNull() {
+                this[this.tableDT_Outlay.outlayDetail_AmtColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsoutlayDetail_TotalNull() {
+                return this.IsNull(this.tableDT_Outlay.outlayDetail_TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetoutlayDetail_TotalNull() {
+                this[this.tableDT_Outlay.outlayDetail_TotalColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3573,6 +4234,40 @@ namespace Petshop.Resources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DT_PetProfileRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class DT_OutlayRowChangeEvent : global::System.EventArgs {
+            
+            private DT_OutlayRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_OutlayRowChangeEvent(DT_OutlayRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_OutlayRow Row {
                 get {
                     return this.eventRow;
                 }

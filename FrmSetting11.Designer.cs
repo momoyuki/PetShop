@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSetting11));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tabService = new System.Windows.Forms.TabPage();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
@@ -158,9 +158,8 @@
             // 
             this.dGV_Service.AllowUserToAddRows = false;
             this.dGV_Service.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Empty;
-            this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -936,8 +935,8 @@
             // 
             this.dGV_Medi.AllowUserToAddRows = false;
             this.dGV_Medi.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1077,7 +1076,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1008, 672);
             this.Controls.Add(this.tabControlServiceMedi);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));

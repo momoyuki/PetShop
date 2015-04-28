@@ -71,19 +71,6 @@
             this.lb_PetID = new System.Windows.Forms.Label();
             this.txb_PetProfileID = new System.Windows.Forms.TextBox();
             this.dGV_PetProfile = new System.Windows.Forms.DataGridView();
-            this.ccPet_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccOwner_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPet_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPet_Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPet_DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPet_Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPet_Sterility = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccOwner_Addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccOwner_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPetType_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPetType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPetBreed_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPetBreed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txb_SearchPet = new System.Windows.Forms.TextBox();
             this.bt_Search = new System.Windows.Forms.Button();
             this.tabC_Pet = new System.Windows.Forms.TabControl();
@@ -124,11 +111,26 @@
             this.lb_HealDetailCounta = new System.Windows.Forms.Label();
             this.bt_HealRecordDetail = new System.Windows.Forms.Button();
             this.dGV_HealDetail = new System.Windows.Forms.DataGridView();
-            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.ccPet_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealRecord_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccServiceMedi_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccServiceMedi_Desd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bt_remove = new System.Windows.Forms.Button();
+            this.ccPet_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOwner_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_Sterility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOwner_Addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOwner_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPetType_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPetType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPetBreed_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPetBreed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDYear)).BeginInit();
             this.gBox_OwnerDetail.SuspendLayout();
@@ -144,6 +146,7 @@
             // 
             // gBoxDetail
             // 
+            this.gBoxDetail.Controls.Add(this.bt_remove);
             this.gBoxDetail.Controls.Add(this.nUDYear);
             this.gBoxDetail.Controls.Add(this.bt_Refresh);
             this.gBoxDetail.Controls.Add(this.lb_BirthDay);
@@ -152,6 +155,7 @@
             this.gBoxDetail.Controls.Add(this.lbSex);
             this.gBoxDetail.Controls.Add(this.rb_M);
             this.gBoxDetail.Controls.Add(this.lbYear);
+            this.gBoxDetail.Controls.Add(this.lbCompany);
             this.gBoxDetail.Controls.Add(this.rb_F);
             this.gBoxDetail.Controls.Add(this.bt_EditMember);
             this.gBoxDetail.Controls.Add(this.bt_AddMember);
@@ -297,10 +301,10 @@
             // 
             this.bt_EditMember.Enabled = false;
             this.bt_EditMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_EditMember.Location = new System.Drawing.Point(177, 245);
+            this.bt_EditMember.Location = new System.Drawing.Point(137, 245);
             this.bt_EditMember.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditMember.Name = "bt_EditMember";
-            this.bt_EditMember.Size = new System.Drawing.Size(100, 32);
+            this.bt_EditMember.Size = new System.Drawing.Size(68, 32);
             this.bt_EditMember.TabIndex = 9;
             this.bt_EditMember.Text = "แก้ไข";
             this.bt_EditMember.UseVisualStyleBackColor = true;
@@ -309,10 +313,10 @@
             // bt_AddMember
             // 
             this.bt_AddMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_AddMember.Location = new System.Drawing.Point(69, 245);
+            this.bt_AddMember.Location = new System.Drawing.Point(62, 245);
             this.bt_AddMember.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddMember.Name = "bt_AddMember";
-            this.bt_AddMember.Size = new System.Drawing.Size(100, 32);
+            this.bt_AddMember.Size = new System.Drawing.Size(68, 32);
             this.bt_AddMember.TabIndex = 8;
             this.bt_AddMember.Text = "เพิ่ม";
             this.bt_AddMember.UseVisualStyleBackColor = true;
@@ -327,7 +331,6 @@
             this.gBox_OwnerDetail.Controls.Add(this.lb_Addr);
             this.gBox_OwnerDetail.Controls.Add(this.Txb_Addr);
             this.gBox_OwnerDetail.Controls.Add(this.lb_OwnerName);
-            this.gBox_OwnerDetail.Controls.Add(this.lbCompany);
             this.gBox_OwnerDetail.Controls.Add(this.txb_NameOwner);
             this.gBox_OwnerDetail.Location = new System.Drawing.Point(323, 107);
             this.gBox_OwnerDetail.Margin = new System.Windows.Forms.Padding(4);
@@ -415,7 +418,7 @@
             // lbCompany
             // 
             this.lbCompany.AutoSize = true;
-            this.lbCompany.Location = new System.Drawing.Point(542, 122);
+            this.lbCompany.Location = new System.Drawing.Point(542, 97);
             this.lbCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCompany.Name = "lbCompany";
             this.lbCompany.Size = new System.Drawing.Size(17, 18);
@@ -600,7 +603,8 @@
             this.ccPetType_ID,
             this.ccPetType,
             this.ccPetBreed_ID,
-            this.ccPetBreed});
+            this.ccPetBreed,
+            this.ccStatus});
             this.dGV_PetProfile.Location = new System.Drawing.Point(7, 47);
             this.dGV_PetProfile.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_PetProfile.MultiSelect = false;
@@ -610,118 +614,6 @@
             this.dGV_PetProfile.Size = new System.Drawing.Size(960, 261);
             this.dGV_PetProfile.TabIndex = 4;
             this.dGV_PetProfile.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_PetProfile_CellClick);
-            // 
-            // ccPet_ID
-            // 
-            this.ccPet_ID.DataPropertyName = "Pet_ID";
-            this.ccPet_ID.FillWeight = 120F;
-            this.ccPet_ID.HeaderText = "รหัสสมาชิก";
-            this.ccPet_ID.Name = "ccPet_ID";
-            this.ccPet_ID.ReadOnly = true;
-            this.ccPet_ID.Width = 120;
-            // 
-            // ccOwner_Name
-            // 
-            this.ccOwner_Name.DataPropertyName = "Owner_Name";
-            this.ccOwner_Name.FillWeight = 200F;
-            this.ccOwner_Name.HeaderText = "ชื่อเจ้าของ";
-            this.ccOwner_Name.Name = "ccOwner_Name";
-            this.ccOwner_Name.ReadOnly = true;
-            this.ccOwner_Name.Width = 200;
-            // 
-            // ccPet_Name
-            // 
-            this.ccPet_Name.DataPropertyName = "Pet_Name";
-            this.ccPet_Name.FillWeight = 180F;
-            this.ccPet_Name.HeaderText = "ชื่อสัตว์เลี้ยง";
-            this.ccPet_Name.Name = "ccPet_Name";
-            this.ccPet_Name.ReadOnly = true;
-            this.ccPet_Name.Width = 180;
-            // 
-            // ccPet_Sex
-            // 
-            this.ccPet_Sex.DataPropertyName = "Pet_Sex";
-            this.ccPet_Sex.HeaderText = "เพศ";
-            this.ccPet_Sex.Name = "ccPet_Sex";
-            this.ccPet_Sex.ReadOnly = true;
-            this.ccPet_Sex.Visible = false;
-            // 
-            // ccPet_DOB
-            // 
-            this.ccPet_DOB.DataPropertyName = "Pet_DOB";
-            this.ccPet_DOB.HeaderText = "วันเดือนปีเกิด";
-            this.ccPet_DOB.Name = "ccPet_DOB";
-            this.ccPet_DOB.ReadOnly = true;
-            this.ccPet_DOB.Visible = false;
-            // 
-            // ccPet_Color
-            // 
-            this.ccPet_Color.DataPropertyName = "Pet_Color";
-            this.ccPet_Color.FillWeight = 140F;
-            this.ccPet_Color.HeaderText = "สีของสัตว์";
-            this.ccPet_Color.Name = "ccPet_Color";
-            this.ccPet_Color.ReadOnly = true;
-            this.ccPet_Color.Width = 140;
-            // 
-            // ccPet_Sterility
-            // 
-            this.ccPet_Sterility.DataPropertyName = "Pet_Sterility";
-            this.ccPet_Sterility.HeaderText = "ทำหมัน";
-            this.ccPet_Sterility.Name = "ccPet_Sterility";
-            this.ccPet_Sterility.ReadOnly = true;
-            this.ccPet_Sterility.Visible = false;
-            // 
-            // ccOwner_Addr
-            // 
-            this.ccOwner_Addr.DataPropertyName = "Owner_Addr";
-            this.ccOwner_Addr.HeaderText = "ที่อยู่";
-            this.ccOwner_Addr.Name = "ccOwner_Addr";
-            this.ccOwner_Addr.ReadOnly = true;
-            this.ccOwner_Addr.Visible = false;
-            // 
-            // ccOwner_Tel
-            // 
-            this.ccOwner_Tel.DataPropertyName = "Owner_Tel";
-            this.ccOwner_Tel.HeaderText = "เบอร์โทรติดต่อ";
-            this.ccOwner_Tel.Name = "ccOwner_Tel";
-            this.ccOwner_Tel.ReadOnly = true;
-            this.ccOwner_Tel.Visible = false;
-            // 
-            // ccPetType_ID
-            // 
-            this.ccPetType_ID.DataPropertyName = "PetType_ID";
-            this.ccPetType_ID.FillWeight = 120F;
-            this.ccPetType_ID.HeaderText = "รหัสประเภท";
-            this.ccPetType_ID.Name = "ccPetType_ID";
-            this.ccPetType_ID.ReadOnly = true;
-            this.ccPetType_ID.Visible = false;
-            this.ccPetType_ID.Width = 120;
-            // 
-            // ccPetType
-            // 
-            this.ccPetType.DataPropertyName = "PetType_Des";
-            this.ccPetType.FillWeight = 120F;
-            this.ccPetType.HeaderText = "ประเภทสัตว์";
-            this.ccPetType.Name = "ccPetType";
-            this.ccPetType.ReadOnly = true;
-            this.ccPetType.Width = 120;
-            // 
-            // ccPetBreed_ID
-            // 
-            this.ccPetBreed_ID.DataPropertyName = "PetBreed_ID";
-            this.ccPetBreed_ID.HeaderText = "รหัสพันธุ์";
-            this.ccPetBreed_ID.Name = "ccPetBreed_ID";
-            this.ccPetBreed_ID.ReadOnly = true;
-            this.ccPetBreed_ID.Visible = false;
-            // 
-            // ccPetBreed
-            // 
-            this.ccPetBreed.DataPropertyName = "PetBreed_Des";
-            this.ccPetBreed.FillWeight = 120F;
-            this.ccPetBreed.HeaderText = "พันธุ์สัตว์";
-            this.ccPetBreed.Name = "ccPetBreed";
-            this.ccPetBreed.ReadOnly = true;
-            this.ccPetBreed.Width = 120;
             // 
             // txb_SearchPet
             // 
@@ -1147,10 +1039,6 @@
             this.dGV_HealDetail.TabIndex = 0;
             this.dGV_HealDetail.SelectionChanged += new System.EventHandler(this.dGV_HealDetail_SelectionChanged);
             // 
-            // epCheck
-            // 
-            this.epCheck.ContainerControl = this;
-            // 
             // ccPet_IDd
             // 
             this.ccPet_IDd.DataPropertyName = "Pet_ID";
@@ -1182,6 +1070,143 @@
             this.ccServiceMedi_Desd.Name = "ccServiceMedi_Desd";
             this.ccServiceMedi_Desd.ReadOnly = true;
             this.ccServiceMedi_Desd.Width = 500;
+            // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
+            // bt_remove
+            // 
+            this.bt_remove.Enabled = false;
+            this.bt_remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_remove.Location = new System.Drawing.Point(212, 245);
+            this.bt_remove.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_remove.Name = "bt_remove";
+            this.bt_remove.Size = new System.Drawing.Size(68, 32);
+            this.bt_remove.TabIndex = 31;
+            this.bt_remove.Text = "ลบข้อมูล";
+            this.bt_remove.UseVisualStyleBackColor = true;
+            this.bt_remove.Click += new System.EventHandler(this.bt_remove_Click);
+            // 
+            // ccPet_ID
+            // 
+            this.ccPet_ID.DataPropertyName = "Pet_ID";
+            this.ccPet_ID.FillWeight = 120F;
+            this.ccPet_ID.HeaderText = "รหัสสมาชิก";
+            this.ccPet_ID.Name = "ccPet_ID";
+            this.ccPet_ID.ReadOnly = true;
+            this.ccPet_ID.Width = 120;
+            // 
+            // ccOwner_Name
+            // 
+            this.ccOwner_Name.DataPropertyName = "Owner_Name";
+            this.ccOwner_Name.FillWeight = 200F;
+            this.ccOwner_Name.HeaderText = "ชื่อเจ้าของ";
+            this.ccOwner_Name.Name = "ccOwner_Name";
+            this.ccOwner_Name.ReadOnly = true;
+            this.ccOwner_Name.Width = 200;
+            // 
+            // ccPet_Name
+            // 
+            this.ccPet_Name.DataPropertyName = "Pet_Name";
+            this.ccPet_Name.FillWeight = 180F;
+            this.ccPet_Name.HeaderText = "ชื่อสัตว์เลี้ยง";
+            this.ccPet_Name.Name = "ccPet_Name";
+            this.ccPet_Name.ReadOnly = true;
+            this.ccPet_Name.Width = 180;
+            // 
+            // ccPet_Sex
+            // 
+            this.ccPet_Sex.DataPropertyName = "Pet_Sex";
+            this.ccPet_Sex.HeaderText = "เพศ";
+            this.ccPet_Sex.Name = "ccPet_Sex";
+            this.ccPet_Sex.ReadOnly = true;
+            this.ccPet_Sex.Visible = false;
+            // 
+            // ccPet_DOB
+            // 
+            this.ccPet_DOB.DataPropertyName = "Pet_DOB";
+            this.ccPet_DOB.HeaderText = "วันเดือนปีเกิด";
+            this.ccPet_DOB.Name = "ccPet_DOB";
+            this.ccPet_DOB.ReadOnly = true;
+            this.ccPet_DOB.Visible = false;
+            // 
+            // ccPet_Color
+            // 
+            this.ccPet_Color.DataPropertyName = "Pet_Color";
+            this.ccPet_Color.FillWeight = 140F;
+            this.ccPet_Color.HeaderText = "สีของสัตว์";
+            this.ccPet_Color.Name = "ccPet_Color";
+            this.ccPet_Color.ReadOnly = true;
+            this.ccPet_Color.Width = 140;
+            // 
+            // ccPet_Sterility
+            // 
+            this.ccPet_Sterility.DataPropertyName = "Pet_Sterility";
+            this.ccPet_Sterility.HeaderText = "ทำหมัน";
+            this.ccPet_Sterility.Name = "ccPet_Sterility";
+            this.ccPet_Sterility.ReadOnly = true;
+            this.ccPet_Sterility.Visible = false;
+            // 
+            // ccOwner_Addr
+            // 
+            this.ccOwner_Addr.DataPropertyName = "Owner_Addr";
+            this.ccOwner_Addr.HeaderText = "ที่อยู่";
+            this.ccOwner_Addr.Name = "ccOwner_Addr";
+            this.ccOwner_Addr.ReadOnly = true;
+            this.ccOwner_Addr.Visible = false;
+            // 
+            // ccOwner_Tel
+            // 
+            this.ccOwner_Tel.DataPropertyName = "Owner_Tel";
+            this.ccOwner_Tel.HeaderText = "เบอร์โทรติดต่อ";
+            this.ccOwner_Tel.Name = "ccOwner_Tel";
+            this.ccOwner_Tel.ReadOnly = true;
+            this.ccOwner_Tel.Visible = false;
+            // 
+            // ccPetType_ID
+            // 
+            this.ccPetType_ID.DataPropertyName = "PetType_ID";
+            this.ccPetType_ID.FillWeight = 120F;
+            this.ccPetType_ID.HeaderText = "รหัสประเภท";
+            this.ccPetType_ID.Name = "ccPetType_ID";
+            this.ccPetType_ID.ReadOnly = true;
+            this.ccPetType_ID.Visible = false;
+            this.ccPetType_ID.Width = 120;
+            // 
+            // ccPetType
+            // 
+            this.ccPetType.DataPropertyName = "PetType_Des";
+            this.ccPetType.FillWeight = 120F;
+            this.ccPetType.HeaderText = "ประเภทสัตว์";
+            this.ccPetType.Name = "ccPetType";
+            this.ccPetType.ReadOnly = true;
+            this.ccPetType.Width = 120;
+            // 
+            // ccPetBreed_ID
+            // 
+            this.ccPetBreed_ID.DataPropertyName = "PetBreed_ID";
+            this.ccPetBreed_ID.HeaderText = "รหัสพันธุ์";
+            this.ccPetBreed_ID.Name = "ccPetBreed_ID";
+            this.ccPetBreed_ID.ReadOnly = true;
+            this.ccPetBreed_ID.Visible = false;
+            // 
+            // ccPetBreed
+            // 
+            this.ccPetBreed.DataPropertyName = "PetBreed_Des";
+            this.ccPetBreed.FillWeight = 120F;
+            this.ccPetBreed.HeaderText = "พันธุ์สัตว์";
+            this.ccPetBreed.Name = "ccPetBreed";
+            this.ccPetBreed.ReadOnly = true;
+            this.ccPetBreed.Width = 120;
+            // 
+            // ccStatus
+            // 
+            this.ccStatus.DataPropertyName = "Status";
+            this.ccStatus.HeaderText = "สถานะ";
+            this.ccStatus.Name = "ccStatus";
+            this.ccStatus.ReadOnly = true;
+            this.ccStatus.Visible = false;
             // 
             // FrmRecorD21
             // 
@@ -1297,6 +1322,12 @@
         private System.Windows.Forms.Button bt_HealBill;
         private System.Windows.Forms.Button bt_DetailBill;
         private System.Windows.Forms.Button bt_HealDate;
+        private System.Windows.Forms.NumericUpDown nUDYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_IDd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_IDd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_Desd;
+        private System.Windows.Forms.Button bt_remove;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccOwner_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_Name;
@@ -1310,10 +1341,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetType;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed;
-        private System.Windows.Forms.NumericUpDown nUDYear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_IDd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_IDd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_Desd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccStatus;
     }
 }

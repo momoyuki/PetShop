@@ -222,11 +222,17 @@ namespace Petshop
 
         private void ดรายรบรายจายToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmRePort32))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmRePort32 iFrmRePort32 = new FrmRePort32();
+            iFrmRePort32.MdiParent = this;
+            iFrmRePort32.Show();
         }
-
-
-
-
     }
 }

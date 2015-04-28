@@ -64,8 +64,13 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(13, 50);
             this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ShowCloseButton = false;
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowLogo = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.Size = new System.Drawing.Size(982, 609);
             this.crystalReportViewer1.TabIndex = 3;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.ToolPanelWidth = 267;
             // 
             // lb_BillID
@@ -75,6 +80,7 @@
             this.lb_BillID.Name = "lb_BillID";
             this.lb_BillID.Size = new System.Drawing.Size(0, 18);
             this.lb_BillID.TabIndex = 4;
+            this.lb_BillID.TextChanged += new System.EventHandler(this.lb_BillID_TextChanged);
             // 
             // CheckBox_Print
             // 

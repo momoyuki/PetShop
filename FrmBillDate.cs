@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Petshop
 {
@@ -27,7 +28,12 @@ namespace Petshop
 
         private void loadBill()
         {
-            string itxbUnitList = tb_UnitList.Text.Trim();
+            Regex Regint = new Regex(@"^\d{1,3}$");
+            if(!Regint.IsMatch(txb_UnitList.Text.Trim()))
+            {
+                txb_UnitList.Text = "5";
+            }
+            string itxbUnitList = txb_UnitList.Text.Trim();
             string ilbPetID = lb_PetID.Text.Trim();
             DataTable idtDateDetail;
             string isqlDateDetail = "SELECT tb_healdate.*,tb_service.Service_Des FROM tb_healdate,tb_service where tb_HealDate.Pet_ID ='" + ilbPetID + "' AND tb_healdate.Service_ID = tb_service.Service_ID AND HealDate_Status = 0 Order By HealDate_Day asc limit "+itxbUnitList+"";
@@ -57,6 +63,19 @@ namespace Petshop
             rpt.Subreports["Profile_Sub_Report"].Database.Tables[0].SetDataSource(idtProfile);
             this.crystalReportViewer1.ReportSource = rpt;
             this.crystalReportViewer1.Refresh();
+        }
+
+        private void lb_PetID_TextChanged(object sender, EventArgs e)
+        {
+            if ((lb_PetID.Text != string.Empty) && (lb_PetID.Text != null))
+            {
+                loadBill();
+            }
+        }
+
+        private void FrmBillDate_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
