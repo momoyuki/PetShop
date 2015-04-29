@@ -196,6 +196,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRePort32";
             this.Text = "ดูรายรับ-รายจ่าย";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmRePort32_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

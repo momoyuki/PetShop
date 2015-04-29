@@ -399,6 +399,10 @@ namespace Petshop
 
         private void bt_Reset_Click(object sender, EventArgs e)
         {
+            if ((lb_ProductSaleID.Text != null)&&(lb_ProductSaleID.Text !=string.Empty))
+            {
+                AddRecordProductSale();
+            }
             lb_ProductSaleID.Text = "";
             dTP_ProductSaleDate.Value = DateTime.Now;
             txb_Remark.Clear();

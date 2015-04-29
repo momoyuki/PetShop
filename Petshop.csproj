@@ -103,6 +103,18 @@
       <DependentUpon>CrOutlay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrSerMe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrSerMe.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrInCome.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrInCome.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FrmNN22.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +276,14 @@
     <EmbeddedResource Include="CrOutlay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrOutlay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrSerMe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSerMe.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrInCome.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrInCome.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNN22.resx">
       <DependentUpon>FrmNN22.cs</DependentUpon>
