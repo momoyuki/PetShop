@@ -757,6 +757,11 @@ namespace Petshop
                 }
             }
             iCloseHealRecord = null;*/
+        }
+
+        private void bt_Refresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }  
     }
 }

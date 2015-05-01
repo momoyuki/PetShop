@@ -20,9 +20,7 @@ namespace Petshop
         DataTable idtoutlay;
         private void bt_Load_Click(object sender, EventArgs e)
         {
-            loadEmployee();
-            loadoutlay();
-            loadoutlayDetail();
+            loadData();
         }
 
         private void loadoutlayDetail()
@@ -36,6 +34,12 @@ namespace Petshop
             }
         }
         private void FrmRecorD24_Load(object sender, EventArgs e)
+        {
+            loadData();
+            
+        }
+
+        private void loadData()
         {
             loadEmployee();
             loadoutlay();
@@ -146,6 +150,11 @@ namespace Petshop
         private void bt_Reset_Click(object sender, EventArgs e)
         {
             clearTxb();
+        }
+
+        private void bt_Refresh_Click(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

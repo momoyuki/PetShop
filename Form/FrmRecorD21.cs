@@ -34,8 +34,6 @@ namespace Petshop
             LoadPetProfile();
             LoadPetType();
             LoadPetBreed();
-           
-            
         }
         private void bt_remove_Click(object sender, EventArgs e)
         {
@@ -175,6 +173,7 @@ namespace Petshop
 
         private void AddEditMember()
         {
+            lbYear.Text = nUDYear.Value.ToString();
             epCheck.Clear();
             Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
             Regex RegTel = new Regex(@"^\(\d{3}\) ?\d{3}( |-)?\d{4}|^\d{3}( |-)?\d{3}( |-)?\d{3,4}");
@@ -343,6 +342,7 @@ namespace Petshop
             _Textbox.Text = txb_PetProfileID.Text;
             loadHealRecord();
             LoadHealDetail();
+            loadDate();
             if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
             {
                 bt_Service.Enabled = true;
@@ -355,6 +355,18 @@ namespace Petshop
                 bt_EditMember.Enabled = false;
                 bt_remove.Enabled = false;
             }
+        }
+
+        private void loadDate()
+        {
+            string itxbPetProfileID = txb_PetProfileID.Text.Trim();
+            DataTable idtDate;
+            string isqlDate = "SELECT tb_healdate.Healdate_ID,tb_service.Service_Des,tb_healdate.healdate_Remark,tb_healdate.healDate_Day FROM tb_healdate,tb_service "+
+            "where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = '"+itxbPetProfileID+"'  order by HealDate_Status,HealDate_Day";
+            idtDate = iConnect.SelectByCommand(isqlDate);
+            dGV_HealDate.DataSource = idtDate;
+            dGV_HealDate.Refresh();
+            lb_HealDateCount.Text = idtDate.Rows.Count.ToString();
         }
 
         private void loadHealRecord()
@@ -382,7 +394,7 @@ namespace Petshop
             {
                 DataTable itbPetProfile;
                 string isqlCommand = "SELECT tb_petprofile.*,tb_petbreed.petbreed_des,tb_pettype.pettype_des " +
-                    "FROM `tb_petprofile`,tb_petbreed,tb_pettype where ( Pet_ID like '%" + iSearchBox + "%' OR Pet_Name like '%" + iSearchBox + "%' OR Owner_Name like '" + iSearchBox + "' ) AND (tb_petprofile.petbreed_ID = tb_petbreed.petbreed_id) AND (tb_petprofile.pettype_id = tb_pettype.pettype_id) And Status = 0";
+                    "FROM `tb_petprofile`,tb_petbreed,tb_pettype where ( Pet_ID like '%" + iSearchBox + "%' OR Pet_Name like '%" + iSearchBox + "%' OR Owner_Name like '%" + iSearchBox + "%' ) AND (tb_petprofile.petbreed_ID = tb_petbreed.petbreed_id) AND (tb_petprofile.pettype_id = tb_pettype.pettype_id) And Status = 0";
                 itbPetProfile = iConnect.SelectByCommand(isqlCommand);
                 dGV_PetProfile.DataSource = itbPetProfile;
                 dGV_PetProfile.Refresh();

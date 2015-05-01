@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNRePort31));
             this.bt_Print = new System.Windows.Forms.Button();
             this.bt_Load = new System.Windows.Forms.Button();
             this.txb_BillDC = new System.Windows.Forms.TextBox();
@@ -50,15 +51,14 @@
             this.tp_Service = new System.Windows.Forms.TabPage();
             this.CheckBoxService = new System.Windows.Forms.CheckBox();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
+            this.ccCheckBoxService = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tp_Medi = new System.Windows.Forms.TabPage();
             this.CheckBoxMedi = new System.Windows.Forms.CheckBox();
             this.dGV_Medi = new System.Windows.Forms.DataGridView();
-            this.lbYear = new System.Windows.Forms.Label();
-            this.Lb_CoBill = new System.Windows.Forms.Label();
-            this.bt_AddBill = new System.Windows.Forms.Button();
-            this.lb_ServiceAmtBill = new System.Windows.Forms.Label();
-            this.lb_Remark = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ccCheckBoxMedi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,11 +66,13 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccCheckBoxService = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbYear = new System.Windows.Forms.Label();
+            this.Lb_CoBill = new System.Windows.Forms.Label();
+            this.bt_AddBill = new System.Windows.Forms.Button();
+            this.lb_ServiceAmtBill = new System.Windows.Forms.Label();
+            this.lb_Remark = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bt_Refresh = new System.Windows.Forms.Button();
             this.TabControlServiceMediBill.SuspendLayout();
             this.tp_Service.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -102,6 +104,7 @@
             this.bt_Load.TabIndex = 125;
             this.bt_Load.Text = "Load";
             this.bt_Load.UseVisualStyleBackColor = true;
+            this.bt_Load.Visible = false;
             this.bt_Load.Click += new System.EventHandler(this.bt_Load_Click);
             // 
             // txb_BillDC
@@ -298,6 +301,43 @@
             this.dGV_Service.Size = new System.Drawing.Size(962, 480);
             this.dGV_Service.TabIndex = 111;
             // 
+            // ccCheckBoxService
+            // 
+            this.ccCheckBoxService.FillWeight = 30F;
+            this.ccCheckBoxService.HeaderText = "";
+            this.ccCheckBoxService.Name = "ccCheckBoxService";
+            this.ccCheckBoxService.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ccCheckBoxService.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ccCheckBoxService.Width = 30;
+            // 
+            // ccHealRecord_ID
+            // 
+            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
+            this.ccHealRecord_ID.HeaderText = "รหัสใบเสร็จ";
+            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
+            this.ccHealRecord_ID.Visible = false;
+            this.ccHealRecord_ID.Width = 180;
+            // 
+            // ccService_ID
+            // 
+            this.ccService_ID.DataPropertyName = "Service_ID";
+            this.ccService_ID.HeaderText = "รหัสบริการ";
+            this.ccService_ID.Name = "ccService_ID";
+            this.ccService_ID.Width = 180;
+            // 
+            // ccService_Des
+            // 
+            this.ccService_Des.DataPropertyName = "Service_Des";
+            this.ccService_Des.HeaderText = "ชื่อบริการ";
+            this.ccService_Des.Name = "ccService_Des";
+            this.ccService_Des.Width = 400;
+            // 
+            // ccService_Amt
+            // 
+            this.ccService_Amt.DataPropertyName = "Service_Amt";
+            this.ccService_Amt.HeaderText = "ค่าบริการ";
+            this.ccService_Amt.Name = "ccService_Amt";
+            // 
             // tp_Medi
             // 
             this.tp_Medi.Controls.Add(this.CheckBoxMedi);
@@ -344,6 +384,52 @@
             this.dGV_Medi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Medi.Size = new System.Drawing.Size(962, 480);
             this.dGV_Medi.TabIndex = 111;
+            // 
+            // ccCheckBoxMedi
+            // 
+            this.ccCheckBoxMedi.FillWeight = 30F;
+            this.ccCheckBoxMedi.HeaderText = "";
+            this.ccCheckBoxMedi.Name = "ccCheckBoxMedi";
+            this.ccCheckBoxMedi.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "HealRecord_ID";
+            this.dataGridViewTextBoxColumn9.HeaderText = "รหัสใบเสร็จ";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Medi_ID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "รหัสยา";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Medi_Des";
+            this.dataGridViewTextBoxColumn11.HeaderText = "ชื่อยา";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 400;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "MediSale_Unit";
+            this.dataGridViewTextBoxColumn14.HeaderText = "จำนวน";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Medi_Sale";
+            this.dataGridViewTextBoxColumn15.HeaderText = "ราคา";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "MediRecord_Total";
+            this.dataGridViewTextBoxColumn16.HeaderText = "ราคารวม";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
             // lbYear
             // 
@@ -404,94 +490,23 @@
             this.pictureBox1.TabIndex = 142;
             this.pictureBox1.TabStop = false;
             // 
-            // ccCheckBoxMedi
+            // bt_Refresh
             // 
-            this.ccCheckBoxMedi.FillWeight = 30F;
-            this.ccCheckBoxMedi.HeaderText = "";
-            this.ccCheckBoxMedi.Name = "ccCheckBoxMedi";
-            this.ccCheckBoxMedi.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "HealRecord_ID";
-            this.dataGridViewTextBoxColumn9.HeaderText = "รหัสใบเสร็จ";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Medi_ID";
-            this.dataGridViewTextBoxColumn10.HeaderText = "รหัสยา";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Medi_Des";
-            this.dataGridViewTextBoxColumn11.HeaderText = "ชื่อยา";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 400;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "MediSale_Unit";
-            this.dataGridViewTextBoxColumn14.HeaderText = "จำนวน";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Medi_Sale";
-            this.dataGridViewTextBoxColumn15.HeaderText = "ราคา";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "MediRecord_Total";
-            this.dataGridViewTextBoxColumn16.HeaderText = "ราคารวม";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // ccCheckBoxService
-            // 
-            this.ccCheckBoxService.FillWeight = 30F;
-            this.ccCheckBoxService.HeaderText = "";
-            this.ccCheckBoxService.Name = "ccCheckBoxService";
-            this.ccCheckBoxService.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ccCheckBoxService.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ccCheckBoxService.Width = 30;
-            // 
-            // ccHealRecord_ID
-            // 
-            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
-            this.ccHealRecord_ID.HeaderText = "รหัสใบเสร็จ";
-            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
-            this.ccHealRecord_ID.Visible = false;
-            this.ccHealRecord_ID.Width = 180;
-            // 
-            // ccService_ID
-            // 
-            this.ccService_ID.DataPropertyName = "Service_ID";
-            this.ccService_ID.HeaderText = "รหัสบริการ";
-            this.ccService_ID.Name = "ccService_ID";
-            this.ccService_ID.Width = 180;
-            // 
-            // ccService_Des
-            // 
-            this.ccService_Des.DataPropertyName = "Service_Des";
-            this.ccService_Des.HeaderText = "ชื่อบริการ";
-            this.ccService_Des.Name = "ccService_Des";
-            this.ccService_Des.Width = 400;
-            // 
-            // ccService_Amt
-            // 
-            this.ccService_Amt.DataPropertyName = "Service_Amt";
-            this.ccService_Amt.HeaderText = "ค่าบริการ";
-            this.ccService_Amt.Name = "ccService_Amt";
+            this.bt_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_Refresh.Image")));
+            this.bt_Refresh.Location = new System.Drawing.Point(848, 53);
+            this.bt_Refresh.Name = "bt_Refresh";
+            this.bt_Refresh.Size = new System.Drawing.Size(36, 36);
+            this.bt_Refresh.TabIndex = 143;
+            this.bt_Refresh.UseVisualStyleBackColor = true;
+            this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
             // 
             // FrmNRePort31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.bt_Refresh);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lb_Remark);
             this.Controls.Add(this.lb_ServiceAmtBill);
@@ -578,5 +593,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.Button bt_Refresh;
     }
 }

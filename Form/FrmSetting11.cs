@@ -89,16 +89,23 @@ namespace Petshop
             epCheck.Clear();
             Regex RegMoney = new Regex(@"^((\d{1,8})|(\d{1,6}\.\d{1,2}))$");
             Regex Regint = new Regex(@"^\d{1,3}$");
+
+            if (!Regint.IsMatch(txb_ServiceDate.Text))
+            {
+                epCheck.SetError(txb_ServiceDate, "***คุณลืมใส่วัน");
+                txb_ServiceDate.Text = "0";
+            }
+            
             if (txb_ServiceDetail.Text == string.Empty)
             {
                 epCheck.SetError(txb_ServiceDetail, "***กรุณากรอกชื่อบริการ");
                 txb_ServiceDetail.Focus();
             }
-            else if (!Regint.IsMatch(txb_ServiceDate.Text))
+           /* else if (!Regint.IsMatch(txb_ServiceDate.Text))
             {
                 epCheck.SetError(txb_ServiceDate, "***คุณลืมใส่วัน");
                 txb_ServiceDate.Text = "0";
-            }
+            } */
             else if (!RegMoney.IsMatch(txb_ServicePrice.Text))
             {
                 epCheck.SetError(txb_ServicePrice, "***กรุณาใส่ค่าให้ถูกต้อง เช่น 777 หรือ 777.25");

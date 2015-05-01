@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNRePort32));
             this.bt_Print = new System.Windows.Forms.Button();
             this.bt_Load = new System.Windows.Forms.Button();
             this.txb_BillDC = new System.Windows.Forms.TextBox();
@@ -58,12 +59,14 @@
             this.txb_ReferID = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lb_Remark = new System.Windows.Forms.Label();
+            this.bt_Refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_Print
             // 
+            this.bt_Print.Enabled = false;
             this.bt_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Print.Location = new System.Drawing.Point(895, 47);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4);
@@ -77,13 +80,14 @@
             // bt_Load
             // 
             this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Load.Location = new System.Drawing.Point(895, 7);
+            this.bt_Load.Location = new System.Drawing.Point(787, 36);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Load.Name = "bt_Load";
             this.bt_Load.Size = new System.Drawing.Size(100, 32);
             this.bt_Load.TabIndex = 149;
             this.bt_Load.Text = "Load";
             this.bt_Load.UseVisualStyleBackColor = true;
+            this.bt_Load.Visible = false;
             this.bt_Load.Click += new System.EventHandler(this.bt_Load_Click);
             // 
             // txb_BillDC
@@ -358,11 +362,23 @@
             this.lb_Remark.Text = "*เลือกไม่รายการเพื่อไม่พิมพ์";
             this.lb_Remark.UseCompatibleTextRendering = true;
             // 
+            // bt_Refresh
+            // 
+            this.bt_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_Refresh.Image")));
+            this.bt_Refresh.Location = new System.Drawing.Point(959, 6);
+            this.bt_Refresh.Name = "bt_Refresh";
+            this.bt_Refresh.Size = new System.Drawing.Size(36, 36);
+            this.bt_Refresh.TabIndex = 186;
+            this.bt_Refresh.UseVisualStyleBackColor = true;
+            this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
+            // 
             // FrmNRePort32
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.bt_Refresh);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lb_Remark);
             this.Controls.Add(this.txb_ReferID);
@@ -432,5 +448,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProduct_Sale;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Total;
+        private System.Windows.Forms.Button bt_Refresh;
     }
 }

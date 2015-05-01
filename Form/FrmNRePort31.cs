@@ -182,8 +182,8 @@ namespace Petshop
 
         private void bt_Print_Click(object sender, EventArgs e)
         {
-            BillAdd();
             AddServiceBill();
+            BillAdd();
             if ((Lb_BillID.Text != null) && (Lb_BillID.Text != ""))
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
@@ -345,8 +345,8 @@ namespace Petshop
 
         private void bt_AddBill_Click(object sender, EventArgs e)
         {
-            BillAdd();
             AddServiceBill();
+            BillAdd();
         }
 
         private void txb_BillDC_TextChanged(object sender, EventArgs e)
@@ -374,10 +374,11 @@ namespace Petshop
                 txb_BillDC.Enabled = false;
             }
         }
-
-        private void TabControlServiceMediBill_MouseClick(object sender, MouseEventArgs e)
+        private void bt_Refresh_Click(object sender, EventArgs e)
         {
-
+            loadEmployee();
+            loadCompany();
+            loadData();
         }
 
 

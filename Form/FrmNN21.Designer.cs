@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNN21));
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tPService = new System.Windows.Forms.TabPage();
             this.lb_ServiceID = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@
             this.lb_HealRecordRR = new System.Windows.Forms.Label();
             this.lb_HR = new System.Windows.Forms.Label();
             this.lb_HealRecordID = new System.Windows.Forms.Label();
+            this.bt_Refresh = new System.Windows.Forms.Button();
             this.tabControlServiceMedi.SuspendLayout();
             this.tPService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -614,6 +616,7 @@
             this.bt_LoadData.TabIndex = 65;
             this.bt_LoadData.Text = "LoadData";
             this.bt_LoadData.UseVisualStyleBackColor = true;
+            this.bt_LoadData.Visible = false;
             this.bt_LoadData.Click += new System.EventHandler(this.bt_LoadData_Click);
             // 
             // txb_HealRecordNet
@@ -920,11 +923,23 @@
             this.lb_HealRecordID.TabIndex = 84;
             this.lb_HealRecordID.TextChanged += new System.EventHandler(this.lb_HealRecordID_TextChanged);
             // 
+            // bt_Refresh
+            // 
+            this.bt_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_Refresh.Image")));
+            this.bt_Refresh.Location = new System.Drawing.Point(699, 1);
+            this.bt_Refresh.Name = "bt_Refresh";
+            this.bt_Refresh.Size = new System.Drawing.Size(36, 36);
+            this.bt_Refresh.TabIndex = 70;
+            this.bt_Refresh.UseVisualStyleBackColor = true;
+            this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
+            // 
             // FrmNN21
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.bt_Refresh);
             this.Controls.Add(this.lb_ServiceAmt);
             this.Controls.Add(this.lb_HealRecordID);
             this.Controls.Add(this.lb_MediAmt);
@@ -1072,5 +1087,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Amt;
+        private System.Windows.Forms.Button bt_Refresh;
     }
 }

@@ -256,6 +256,13 @@ namespace Petshop
         private void Lb_BillID_TextChanged(object sender, EventArgs e)
         {
             loadProductSale();
+            if((Lb_BillID.Text !=null)&&(Lb_BillID.Text !=string.Empty)){
+                bt_Print.Enabled = true;
+            }
+            else
+            {
+                bt_Print.Enabled = false;
+            }
         }
 
         private void txb_ReferID_TextChanged(object sender, EventArgs e)
@@ -272,6 +279,14 @@ namespace Petshop
         private void txb_BillDC_TextChanged(object sender, EventArgs e)
         {
             Calculate();
+        }
+
+        private void bt_Refresh_Click(object sender, EventArgs e)
+        {
+            loadEmployee();
+            loadCompany();
+            loadProductSale();
+            loaddata();
         }
 
     }

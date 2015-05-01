@@ -115,52 +115,52 @@
       <DependentUpon>CrInCome.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FrmNN22.cs">
+    <Compile Include="Form\FrmNN22.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNN22.Designer.cs">
+    <Compile Include="Form\FrmNN22.Designer.cs">
       <DependentUpon>FrmNN22.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRePort31.cs">
+    <Compile Include="Form\FrmRePort31.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRePort31.Designer.cs">
+    <Compile Include="Form\FrmRePort31.Designer.cs">
       <DependentUpon>FrmRePort31.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRecorD24.cs">
+    <Compile Include="Form\FrmRecorD24.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRecorD24.Designer.cs">
+    <Compile Include="Form\FrmRecorD24.Designer.cs">
       <DependentUpon>FrmRecorD24.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="Form\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
+    <Compile Include="Form\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBillDate.cs">
+    <Compile Include="Form\FrmBillDate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBillDate.Designer.cs">
+    <Compile Include="Form\FrmBillDate.Designer.cs">
       <DependentUpon>FrmBillDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNN21.cs">
+    <Compile Include="Form\FrmNN21.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNN21.Designer.cs">
+    <Compile Include="Form\FrmNN21.Designer.cs">
       <DependentUpon>FrmNN21.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRePort32.cs">
+    <Compile Include="Form\FrmRePort32.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRePort32.Designer.cs">
+    <Compile Include="Form\FrmRePort32.Designer.cs">
       <DependentUpon>FrmRePort32.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSetting13.cs">
+    <Compile Include="Form\FrmSetting13.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSetting13.Designer.cs">
+    <Compile Include="Form\FrmSetting13.Designer.cs">
       <DependentUpon>FrmSetting13.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -192,82 +192,82 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Resources\DateDifference.cs" />
-    <Compile Include="FrmRecorD23.cs">
+    <Compile Include="Form\FrmRecorD23.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRecorD23.Designer.cs">
+    <Compile Include="Form\FrmRecorD23.Designer.cs">
       <DependentUpon>FrmRecorD23.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNRePort32.cs">
+    <Compile Include="Form\FrmNRePort32.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNRePort32.Designer.cs">
+    <Compile Include="Form\FrmNRePort32.Designer.cs">
       <DependentUpon>FrmNRePort32.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBillSerMe.cs">
+    <Compile Include="Form\FrmBillSerMe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBillSerMe.Designer.cs">
+    <Compile Include="Form\FrmBillSerMe.Designer.cs">
       <DependentUpon>FrmBillSerMe.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSetting14.cs">
+    <Compile Include="Form\FrmSetting14.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSetting14.Designer.cs">
+    <Compile Include="Form\FrmSetting14.Designer.cs">
       <DependentUpon>FrmSetting14.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNRePort31.cs">
+    <Compile Include="Form\FrmNRePort31.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNRePort31.Designer.cs">
+    <Compile Include="Form\FrmNRePort31.Designer.cs">
       <DependentUpon>FrmNRePort31.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRecorD22.cs">
+    <Compile Include="Form\FrmRecorD22.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRecorD22.Designer.cs">
+    <Compile Include="Form\FrmRecorD22.Designer.cs">
       <DependentUpon>FrmRecorD22.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSetting17.cs">
+    <Compile Include="Form\FrmSetting17.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSetting17.Designer.cs">
+    <Compile Include="Form\FrmSetting17.Designer.cs">
       <DependentUpon>FrmSetting17.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSetting16.cs">
+    <Compile Include="Form\FrmSetting16.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSetting16.Designer.cs">
+    <Compile Include="Form\FrmSetting16.Designer.cs">
       <DependentUpon>FrmSetting16.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSetting15.cs">
+    <Compile Include="Form\FrmSetting15.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSetting15.Designer.cs">
+    <Compile Include="Form\FrmSetting15.Designer.cs">
       <DependentUpon>FrmSetting15.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSetting12.cs">
+    <Compile Include="Form\FrmSetting12.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSetting12.Designer.cs">
+    <Compile Include="Form\FrmSetting12.Designer.cs">
       <DependentUpon>FrmSetting12.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSetting11.cs">
+    <Compile Include="Form\FrmSetting11.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSetting11.Designer.cs">
+    <Compile Include="Form\FrmSetting11.Designer.cs">
       <DependentUpon>FrmSetting11.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRecorD21.cs">
+    <Compile Include="Form\FrmRecorD21.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRecorD21.Designer.cs">
+    <Compile Include="Form\FrmRecorD21.Designer.cs">
       <DependentUpon>FrmRecorD21.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Form\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\MySQLConnect.cs" />
@@ -285,67 +285,67 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrInCome.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNN22.resx">
+    <EmbeddedResource Include="Form\FrmNN22.resx">
       <DependentUpon>FrmNN22.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRePort31.resx">
+    <EmbeddedResource Include="Form\FrmRePort31.resx">
       <DependentUpon>FrmRePort31.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRecorD24.resx">
+    <EmbeddedResource Include="Form\FrmRecorD24.resx">
       <DependentUpon>FrmRecorD24.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="Form\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBillDate.resx">
+    <EmbeddedResource Include="Form\FrmBillDate.resx">
       <DependentUpon>FrmBillDate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNN21.resx">
+    <EmbeddedResource Include="Form\FrmNN21.resx">
       <DependentUpon>FrmNN21.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRecorD23.resx">
+    <EmbeddedResource Include="Form\FrmRecorD23.resx">
       <DependentUpon>FrmRecorD23.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNRePort32.resx">
+    <EmbeddedResource Include="Form\FrmNRePort32.resx">
       <DependentUpon>FrmNRePort32.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBillSerMe.resx">
+    <EmbeddedResource Include="Form\FrmBillSerMe.resx">
       <DependentUpon>FrmBillSerMe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRePort32.resx">
+    <EmbeddedResource Include="Form\FrmRePort32.resx">
       <DependentUpon>FrmRePort32.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting14.resx">
+    <EmbeddedResource Include="Form\FrmSetting14.resx">
       <DependentUpon>FrmSetting14.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNRePort31.resx">
+    <EmbeddedResource Include="Form\FrmNRePort31.resx">
       <DependentUpon>FrmNRePort31.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRecorD22.resx">
+    <EmbeddedResource Include="Form\FrmRecorD22.resx">
       <DependentUpon>FrmRecorD22.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting17.resx">
+    <EmbeddedResource Include="Form\FrmSetting17.resx">
       <DependentUpon>FrmSetting17.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting16.resx">
+    <EmbeddedResource Include="Form\FrmSetting16.resx">
       <DependentUpon>FrmSetting16.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting15.resx">
+    <EmbeddedResource Include="Form\FrmSetting15.resx">
       <DependentUpon>FrmSetting15.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting11.resx">
+    <EmbeddedResource Include="Form\FrmSetting11.resx">
       <DependentUpon>FrmSetting11.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting12.resx">
+    <EmbeddedResource Include="Form\FrmSetting12.resx">
       <DependentUpon>FrmSetting12.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRecorD21.resx">
+    <EmbeddedResource Include="Form\FrmRecorD21.resx">
       <DependentUpon>FrmRecorD21.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting13.resx">
+    <EmbeddedResource Include="Form\FrmSetting13.resx">
       <DependentUpon>FrmSetting13.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -440,6 +440,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\noun_16443.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CrReport\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

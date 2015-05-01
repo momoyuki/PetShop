@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecorD24));
             this.cb_outlay = new System.Windows.Forms.ComboBox();
             this.Lb_ListService = new System.Windows.Forms.Label();
             this.dGV_outlay = new System.Windows.Forms.DataGridView();
@@ -54,6 +55,7 @@
             this.bt_AddoutlayDetail = new System.Windows.Forms.Button();
             this.lb_outlayID = new System.Windows.Forms.Label();
             this.bt_Reset = new System.Windows.Forms.Button();
+            this.bt_Refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_outlay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,7 +184,7 @@
             // bt_Load
             // 
             this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Load.Location = new System.Drawing.Point(884, 4);
+            this.bt_Load.Location = new System.Drawing.Point(884, 43);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Load.Name = "bt_Load";
             this.bt_Load.Size = new System.Drawing.Size(111, 37);
@@ -310,11 +312,23 @@
             this.bt_Reset.UseVisualStyleBackColor = true;
             this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
             // 
+            // bt_Refresh
+            // 
+            this.bt_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_Refresh.Image")));
+            this.bt_Refresh.Location = new System.Drawing.Point(959, 2);
+            this.bt_Refresh.Name = "bt_Refresh";
+            this.bt_Refresh.Size = new System.Drawing.Size(36, 36);
+            this.bt_Refresh.TabIndex = 159;
+            this.bt_Refresh.UseVisualStyleBackColor = true;
+            this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
+            // 
             // FrmRecorD24
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.bt_Refresh);
             this.Controls.Add(this.bt_Reset);
             this.Controls.Add(this.lb_outlayID);
             this.Controls.Add(this.bt_DeloutlayDetail);
@@ -372,5 +386,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_Amt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_Remark;
         private System.Windows.Forms.Button bt_Reset;
+        private System.Windows.Forms.Button bt_Refresh;
     }
 }

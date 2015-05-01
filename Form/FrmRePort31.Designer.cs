@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRePort31));
             this.TabControlBill = new System.Windows.Forms.TabControl();
             this.tp_AllBill = new System.Windows.Forms.TabPage();
             this.dGV_Bill = new System.Windows.Forms.DataGridView();
@@ -43,6 +44,12 @@
             this.ccBillSale_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tp_Medi = new System.Windows.Forms.TabPage();
             this.dGV_Detail = new System.Windows.Forms.DataGridView();
+            this.ccBill_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccItem_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccItem_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBill_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBill_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBill_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lb_BillID = new System.Windows.Forms.Label();
             this.txb_ReferID = new System.Windows.Forms.TextBox();
             this.lb_ReferID = new System.Windows.Forms.Label();
@@ -60,12 +67,7 @@
             this.lb_Bill = new System.Windows.Forms.Label();
             this.lb_EmID = new System.Windows.Forms.Label();
             this.bt_Reset = new System.Windows.Forms.Button();
-            this.ccBill_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccItem_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccItem_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccBill_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccBill_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccBill_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_Refresh = new System.Windows.Forms.Button();
             this.TabControlBill.SuspendLayout();
             this.tp_AllBill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Bill)).BeginInit();
@@ -223,6 +225,53 @@
             this.dGV_Detail.Size = new System.Drawing.Size(962, 480);
             this.dGV_Detail.TabIndex = 111;
             // 
+            // ccBill_IDd
+            // 
+            this.ccBill_IDd.DataPropertyName = "Bill_ID";
+            this.ccBill_IDd.HeaderText = "เลขที่ใบเสร็จ";
+            this.ccBill_IDd.Name = "ccBill_IDd";
+            this.ccBill_IDd.ReadOnly = true;
+            this.ccBill_IDd.Visible = false;
+            // 
+            // ccItem_ID
+            // 
+            this.ccItem_ID.DataPropertyName = "Item_ID";
+            this.ccItem_ID.HeaderText = "รหัสสินค้าบริการ";
+            this.ccItem_ID.Name = "ccItem_ID";
+            this.ccItem_ID.ReadOnly = true;
+            this.ccItem_ID.Width = 150;
+            // 
+            // ccItem_Detail
+            // 
+            this.ccItem_Detail.DataPropertyName = "Item_Detail";
+            this.ccItem_Detail.HeaderText = "รายการ";
+            this.ccItem_Detail.Name = "ccItem_Detail";
+            this.ccItem_Detail.ReadOnly = true;
+            this.ccItem_Detail.Width = 400;
+            // 
+            // ccBill_Unit
+            // 
+            this.ccBill_Unit.DataPropertyName = "Bill_Unit";
+            this.ccBill_Unit.HeaderText = "จำนวน";
+            this.ccBill_Unit.Name = "ccBill_Unit";
+            this.ccBill_Unit.ReadOnly = true;
+            this.ccBill_Unit.Width = 120;
+            // 
+            // ccBill_Price
+            // 
+            this.ccBill_Price.DataPropertyName = "Bill_Price";
+            this.ccBill_Price.HeaderText = "ราคาต่อหน่วย";
+            this.ccBill_Price.Name = "ccBill_Price";
+            this.ccBill_Price.ReadOnly = true;
+            this.ccBill_Price.Width = 120;
+            // 
+            // ccBill_Amt
+            // 
+            this.ccBill_Amt.DataPropertyName = "Bill_Amt";
+            this.ccBill_Amt.HeaderText = "ราคาสุทธิ";
+            this.ccBill_Amt.Name = "ccBill_Amt";
+            this.ccBill_Amt.ReadOnly = true;
+            // 
             // Lb_BillID
             // 
             this.Lb_BillID.AutoSize = true;
@@ -267,7 +316,7 @@
             // bt_Load
             // 
             this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Load.Location = new System.Drawing.Point(888, 7);
+            this.bt_Load.Location = new System.Drawing.Point(846, 9);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Load.Name = "bt_Load";
             this.bt_Load.Size = new System.Drawing.Size(100, 32);
@@ -398,58 +447,23 @@
             this.bt_Reset.UseVisualStyleBackColor = true;
             this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
             // 
-            // ccBill_IDd
+            // bt_Refresh
             // 
-            this.ccBill_IDd.DataPropertyName = "Bill_ID";
-            this.ccBill_IDd.HeaderText = "เลขที่ใบเสร็จ";
-            this.ccBill_IDd.Name = "ccBill_IDd";
-            this.ccBill_IDd.ReadOnly = true;
-            this.ccBill_IDd.Visible = false;
-            // 
-            // ccItem_ID
-            // 
-            this.ccItem_ID.DataPropertyName = "Item_ID";
-            this.ccItem_ID.HeaderText = "รหัสสินค้าบริการ";
-            this.ccItem_ID.Name = "ccItem_ID";
-            this.ccItem_ID.ReadOnly = true;
-            this.ccItem_ID.Width = 150;
-            // 
-            // ccItem_Detail
-            // 
-            this.ccItem_Detail.DataPropertyName = "Item_Detail";
-            this.ccItem_Detail.HeaderText = "รายการ";
-            this.ccItem_Detail.Name = "ccItem_Detail";
-            this.ccItem_Detail.ReadOnly = true;
-            this.ccItem_Detail.Width = 400;
-            // 
-            // ccBill_Unit
-            // 
-            this.ccBill_Unit.DataPropertyName = "Bill_Unit";
-            this.ccBill_Unit.HeaderText = "จำนวน";
-            this.ccBill_Unit.Name = "ccBill_Unit";
-            this.ccBill_Unit.ReadOnly = true;
-            this.ccBill_Unit.Width = 120;
-            // 
-            // ccBill_Price
-            // 
-            this.ccBill_Price.DataPropertyName = "Bill_Price";
-            this.ccBill_Price.HeaderText = "ราคาต่อหน่วย";
-            this.ccBill_Price.Name = "ccBill_Price";
-            this.ccBill_Price.ReadOnly = true;
-            this.ccBill_Price.Width = 120;
-            // 
-            // ccBill_Amt
-            // 
-            this.ccBill_Amt.DataPropertyName = "Bill_Amt";
-            this.ccBill_Amt.HeaderText = "ราคาสุทธิ";
-            this.ccBill_Amt.Name = "ccBill_Amt";
-            this.ccBill_Amt.ReadOnly = true;
+            this.bt_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_Refresh.Image")));
+            this.bt_Refresh.Location = new System.Drawing.Point(953, 7);
+            this.bt_Refresh.Name = "bt_Refresh";
+            this.bt_Refresh.Size = new System.Drawing.Size(36, 36);
+            this.bt_Refresh.TabIndex = 185;
+            this.bt_Refresh.UseVisualStyleBackColor = true;
+            this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
             // 
             // FrmRePort31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.bt_Refresh);
             this.Controls.Add(this.bt_Reset);
             this.Controls.Add(this.lb_EmID);
             this.Controls.Add(this.TabControlBill);
@@ -523,5 +537,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccBill_Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccBill_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccBill_Amt;
+        private System.Windows.Forms.Button bt_Refresh;
     }
 }
