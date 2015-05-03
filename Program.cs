@@ -15,14 +15,12 @@ namespace Petshop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
-
-
-           /* FrmIndex fLogin = new FrmIndex();
+            //Application.Run(new MainForm());
+            FrmLogin fLogin = new FrmLogin();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new MainForm());
-            }*/
+            }
         }
     }
 }

@@ -256,23 +256,24 @@ namespace Petshop
             string itxbTypeName = txb_TypeName.Text.Trim();
             if ((itxbTypeID != null) && (itxbTypeID != string.Empty))
             {
+                DataTable idtType;
+                string isqlType = "SELECT tb_petbreed.PetType_ID FROM petshop.tb_petbreed where PetType_ID = '" + itxbTypeID + "'";
+                idtType = iConnect.SelectByCommand(isqlType);
+                if (idtType.Rows.Count == 0)
+                {
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbTypeName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    DataTable idtType;
-                    string isqlType = "SELECT tb_petbreed.PetType_ID FROM petshop.tb_petbreed where PetType_ID = '"+itxbTypeID+"'";
-                    idtType = iConnect.SelectByCommand(isqlType);
-                    if (idtType.Rows.Count == 0)
-                    {
+                    
                         string isqlDelType = "DELETE FROM `petshop`.`tb_pettype` WHERE `PetType_ID`='" + itxbTypeID + "'";
                         iConnect.Insert(isqlDelType);
                         clearTypeTxb();
                         MessageBox.Show("ทำการลบประเภทสัตว์ออกแล้ว");
                     }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถลบได้");
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถลบได้");
                 }
                 LoadType();
             }
@@ -284,23 +285,24 @@ namespace Petshop
             string itxbBreedName = txb_BreedName.Text.Trim();
             if ((itxbBreedID != null) && (itxbBreedID != string.Empty))
             {
+                DataTable idtPetProfiles;
+                string isqlBreed = "SELECT tb_petprofile.PetBreed_ID FROM petshop.tb_petprofile where PetBreed_ID = '" + itxbBreedID + "'";
+                idtPetProfiles = iConnect.SelectByCommand(isqlBreed);
+                if (idtPetProfiles.Rows.Count == 0)
+                {
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbBreedName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    DataTable idtPetProfiles;
-                    string isqlBreed = "SELECT tb_petprofile.PetBreed_ID FROM petshop.tb_petprofile where PetBreed_ID = '"+itxbBreedID+"'";
-                    idtPetProfiles = iConnect.SelectByCommand(isqlBreed);
-                    if (idtPetProfiles.Rows.Count == 0)
-                    {
+                   
                         string isqlDelBreed = "DELETE FROM `petshop`.`tb_petbreed` WHERE `PetBreed_ID`='" + itxbBreedID + "'";
                         iConnect.Insert(isqlDelBreed);
                         MessageBox.Show("ทำการพันธุ์สัตว์ออกแล้ว");
                         clearBreedTxb();
                     }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถลบได้");
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถลบได้");
                 }
                 LoadBreed();
             }

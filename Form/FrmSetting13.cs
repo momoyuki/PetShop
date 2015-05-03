@@ -140,23 +140,24 @@ namespace Petshop
             string itxboutlayPrice = txb_outlayPrice.Text.Trim();
             if ((itxboutlayID != null) && (itxboutlayID != string.Empty))
             {
+                DataTable idtoutlayDetail;
+                string isqloutlayDetail = "SELECT * FROM petshop.tb_outlaydetail where outlay_ID = '" + itxboutlayID + "'";
+                idtoutlayDetail = iConnect.SelectByCommand(isqloutlayDetail);
+                if (idtoutlayDetail.Rows.Count == 0)
+                {
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxboutlayDetail + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    DataTable idtoutlayDetail;
-                    string isqloutlayDetail = "SELECT * FROM petshop.tb_outlaydetail where outlay_ID = '"+itxboutlayID+"'";
-                    idtoutlayDetail = iConnect.SelectByCommand(isqloutlayDetail);
-                    if (idtoutlayDetail.Rows.Count == 0)
-                    {
+                    
                         string isqlDeloutlay = "DELETE FROM `petshop`.`tb_outlay` WHERE `outlay_ID`='"+itxboutlayID+"'";
                         iConnect.Insert(isqlDeloutlay);
                         clearTxb();
                         MessageBox.Show("ทำการลบรายการรายจ่ายออกแล้ว");
                     }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถลบได้");
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถลบได้");
                 }
                 loadData();
             }

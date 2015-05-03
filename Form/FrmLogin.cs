@@ -49,7 +49,7 @@ namespace Petshop
             else
             {
                 DataTable idtLogin;
-                string isqlLogin = "SELECT * FROM petshop.tb_emlogin where Em_User ='" + itxbusername + "' AND Em_Pwd ='" + ipwd + "'";
+                string isqlLogin = "SELECT * FROM petshop.tb_employee where Em_login='" + itxbusername + "' AND Em_Pwd ='" + ipwd + "'";
                 idtLogin = iConnect.SelectByCommand(isqlLogin);
                 if ((idtLogin.Rows.Count == 1)||(txb_Username.Text =="Admin")&&(txb_Pwd.Text =="petshop"))
                 {

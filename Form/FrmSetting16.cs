@@ -134,8 +134,8 @@ namespace Petshop
                 {
                     hash = md5.ComputeHash(Encoding.UTF8.GetBytes(itxbPwd));
                 }
-                //string ipwd = Convert.ToBase64String(hash);
-                string ipwd = txb_Pwd.Text.Trim();
+                string ipwd = Convert.ToBase64String(hash);
+                //string ipwd = txb_Pwd.Text.Trim();
                 int iStatus = 0;
                 if (rB_Work.Checked == true)
                 {
@@ -147,23 +147,41 @@ namespace Petshop
                 }
                 if (iAddEditEmployee == "AddEmployee")
                 {
+                    if ((txb_Pwd.Text != null) && (txb_Pwd.Text != string.Empty))
+                    {
+                        DataTable idtEmpCheck;
+                        string isqlEmpCheck = "SELECT * FROM petshop.tb_employee where Em_ID = '" + itxbEmID + "'";
+                        idtEmpCheck = iConnect.SelectByCommand(isqlEmpCheck);
+
+                        DataTable idtCheckUser;
+                        string isqlCheckUser = "SELECT * FROM petshop.tb_employee where Em_Login = '" + itxbUser + "'";
+                        idtCheckUser = iConnect.SelectByCommand(isqlCheckUser);
+                        if (idtEmpCheck.Rows.Count == 0)
+                        {
+                        if (idtCheckUser.Rows.Count == 0)
+                        { 
                     DialogResult iConfirmResult = MessageBox.Show("เพิ่มพนักงาน " + itxbEmName + " มั๊ย?", "Insert..", MessageBoxButtons.YesNo);
                     if (iConfirmResult == DialogResult.Yes)
                     { 
-                        DataTable idtEmpCheck;
-                        string isqlEmpCheck = "SELECT * FROM petshop.tb_employee where Em_ID = '"+itxbEmID+"'";
-                        idtEmpCheck = iConnect.SelectByCommand(isqlEmpCheck);
-                        if(idtEmpCheck.Rows.Count ==0){
-                        string isqlEmployee = "INSERT INTO `tb_employee` (`Em_ID`, `Em_Name`, `EmPosition_ID`,Em_Status,Em_Login,Em_Pwd,Em_DOB,Em_Addr,Em_Tel)"
-                           +"VALUES ('" + itxbEmID + "', '" + itxbEmName + "', '" + icbEmPosition + "',b'" + iStatus + "','"+itxbUser+"','"+ipwd+"','"+idtpEmDOB+"','"+itxbEmAddr+"','"+itxbEmTel+"');";
-                        iConnect.Insert(isqlEmployee);
-                        ClearTxbEmployee();
+                                    string isqlEmployee = "INSERT INTO `tb_employee` (`Em_ID`, `Em_Name`, `EmPosition_ID`,Em_Status,Em_Login,Em_Pwd,Em_DOB,Em_Addr,Em_Tel)"
+                                       + "VALUES ('" + itxbEmID + "', '" + itxbEmName + "', '" + icbEmPosition + "',b'" + iStatus + "','" + itxbUser + "','" + ipwd + "','" + idtpEmDOB + "','" + itxbEmAddr + "','" + itxbEmTel + "');";
+                                    iConnect.Insert(isqlEmployee);
+                                    ClearTxbEmployee();
+                    }      
+                            }
+                            else
+                            {
+                                epCheck.SetError(txb_UserName,"UserName ซ้ำกับเจ้าหน้าที่อื่น");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("มีรหัสเจ้าหน้าที่นี้อยู่แล้ว");
+                            epCheck.SetError(txb_EmID, "มีรหัสเจ้าหน้าที่นี้อยู่แล้ว");
                         }
-                        
+                    }
+                    else
+                    {
+                        epCheck.SetError(txb_Pwd, "กรุณากำหนดรหัสผ่าน");
                     }
                 }
                 else if (iAddEditEmployee == "EditEmployee")
@@ -324,23 +342,24 @@ namespace Petshop
             string itxbEmposition = txb_Emposition.Text.Trim();
             if ((itxbPositionID != null) && (itxbPositionID != string.Empty))
             {
+                DataTable idtEmposition;
+                string isqlEmposition = "SELECT EmPosition_ID FROM petshop.tb_employee where Emposition_ID = '" + itxbPositionID + "'";
+                idtEmposition = iConnect.SelectByCommand(isqlEmposition);
+                if (idtEmposition.Rows.Count == 0)
+                {
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbEmposition + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    DataTable idtEmposition;
-                    string isqlEmposition = "SELECT EmPosition_ID FROM petshop.tb_employee where Emposition_ID = '"+itxbPositionID+"'";
-                    idtEmposition = iConnect.SelectByCommand(isqlEmposition);
-                    if (idtEmposition.Rows.Count == 0)
-                    {
+                    
                         string isqlDelEmposition = "DELETE FROM `petshop`.`tb_emposition` WHERE `EmPosition_ID`='"+itxbPositionID+"'";
                         iConnect.Insert(isqlDelEmposition);
                         MessageBox.Show("ทำการลบตำแหน่งออกแล้ว");
                         ClearTxbPosition();
                     }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถลบได้");
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถลบได้");
                 }
                 LoadEmpoition();
                 LoadEmPloyee();
@@ -387,6 +406,18 @@ namespace Petshop
         private void bt_ResetPosition_Click(object sender, EventArgs e)
         {
             ClearTxbPosition();
+        }
+
+        private void bt_Pwd_Click(object sender, EventArgs e)
+        {
+            if ((txb_EmID.Text != null) && (txb_EmID.Text != string.Empty))
+            {
+                FrmPwd iFrmPwd = new FrmPwd();
+                iFrmPwd.lb_PetID.Text = txb_EmID.Text.Trim();
+                iFrmPwd.ShowDialog();
+                
+            }
+            
         }
     }
 }

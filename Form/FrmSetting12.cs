@@ -67,7 +67,6 @@ namespace Petshop
             if (CheckBox_Stock.Checked == true)
             {
                 iStock = 1;
-
             }
             else
             {
@@ -336,23 +335,24 @@ namespace Petshop
             string itxbProductName = txb_ProductName.Text.Trim();
             if ((itxbProductID != null) && (itxbProductID != ""))
             {
+                DataTable idtProductCheck;
+                string isqlProductCheck = "SELECT tb_productsaledetail.Product_ID FROM petshop.tb_productsaledetail where Product_ID = '" + itxbProductID + "'";
+                idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
+                if (idtProductCheck.Rows.Count == 0)
+                {
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbProductName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    DataTable idtProductCheck;
-                    string isqlProductCheck = "SELECT tb_productsaledetail.Product_ID FROM petshop.tb_productsaledetail where Product_ID = '" + itxbProductID + "'";
-                    idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
-                    if (idtProductCheck.Rows.Count == 0)
-                    {
+                    
                         string isqlDelProduct = "DELETE FROM `tb_Product` WHERE `Product_ID`='" + itxbProductID + "'";
                         iConnect.Insert(isqlDelProduct);
                         MessageBox.Show("ทำการลบสินค้าออกแล้ว");
                         ClearTxtProduct();
-                    }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถลบได้");
-                    }
+                }   
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถลบได้");
                 }
                 LoadProduct();
             }

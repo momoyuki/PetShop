@@ -291,19 +291,19 @@ namespace Petshop
 
                 if (iAddEditMedi == "AddMedi")
                 {
+                    DataTable iCheckMedi;
+                    string isqlCheckMedi = "SELECT * FROM tb_medicine where Medi_ID ='" + itxbMediID + "'";
+                    iCheckMedi = iConnect.SelectByCommand(isqlCheckMedi);
+                    if (iCheckMedi.Rows.Count > 0)
+                    {
+                        string iMedi = iCheckMedi.Rows[0].Field<string>(1);
+                        MessageBox.Show("มียารหัส " + itxbMediID + " - " + iMedi + " อยู่ในระบบแล้ว", "ตรวจสอบ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
                     DialogResult iConfirmResult = MessageBox.Show("เพิ่มยา " + itxbMediName + " มั๊ย?", "เพิ่มยา..", MessageBoxButtons.YesNo);
                     if (iConfirmResult == DialogResult.Yes)
                     {
-                        DataTable iCheckMedi;
-                        string isqlCheckMedi = "SELECT * FROM tb_medicine where Medi_ID ='" + itxbMediID + "'";
-                        iCheckMedi = iConnect.SelectByCommand(isqlCheckMedi);
-                        if (iCheckMedi.Rows.Count > 0)
-                        {
-                            string iMedi = iCheckMedi.Rows[0].Field<string>(1);
-                            MessageBox.Show("มียารหัส " + itxbMediID + " - " + iMedi + " อยู่ในระบบแล้ว", "ตรวจสอบ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
                             string isqlAddMedi = "Insert into tb_medicine (Medi_ID,Medi_Des,Medi_Detall,Medi_Price,Medi_Sale,Unit_ID,Medi_Product,Medi_Expired,Medi_Unit_Amt,Medi_Unit_Order,Medi_Stock) " +
                                                 "Values ('" + itxbMediID + "','" + itxbMediName + "', '" + itxbMediDetail + "', '" + itxbMediPrice + "', '" + itxbMediSale + "', '" + icbMediUnit + "', '" + idtpProduct + "', '" + idtpExpired + "', '" + itxbMediAmt + "', '" + itxbMediOrder + "',b'" + iStock + "')";
                             iConnect.Insert(isqlAddMedi);
@@ -316,7 +316,6 @@ namespace Petshop
                 }
                 else if (iAddEditMedi == "EditMedi")
                 {
-                   
                     DataTable iMediCheck;
                     string isqlMedi = "SELECT * FROM petshop.tb_medicine where Medi_ID = '" + ilbMediID + "'";
                     iMediCheck = iConnect.SelectByCommand(isqlMedi);
@@ -538,28 +537,28 @@ namespace Petshop
             string iServiceName = txb_ServiceDetail.Text.Trim();
             if ((iServiceID != null) && (iServiceID != ""))
             {
+                DataTable idtServiceRecordCheck;
+                string isqlServiceCheck = "SELECT tb_servicerecord.Service_ID FROM tb_servicerecord where Service_ID = '" + iServiceID + "'";
+                idtServiceRecordCheck = iConnect.SelectByCommand(isqlServiceCheck);
+                DataTable idtHealDateCheck;
+                string isqlHealDateCheck = "SELECT * FROM tb_healdate where Service_ID='" + iServiceID + "'";
+                idtHealDateCheck = iConnect.SelectByCommand(isqlHealDateCheck);
+                if ((idtServiceRecordCheck.Rows.Count == 0) && (idtHealDateCheck.Rows.Count == 0))
+                {
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + iServiceName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                     if (iConfirmResult == DialogResult.Yes)
                     {
-                        DataTable idtServiceRecordCheck;
-                        string isqlServiceCheck = "SELECT tb_servicerecord.Service_ID FROM tb_servicerecord where Service_ID = '"+iServiceID+"'";
-                        idtServiceRecordCheck = iConnect.SelectByCommand(isqlServiceCheck);
-                        DataTable idtHealDateCheck;
-                        string isqlHealDateCheck = "SELECT * FROM tb_healdate where Service_ID='"+iServiceID+"'";
-                        idtHealDateCheck = iConnect.SelectByCommand(isqlHealDateCheck);
-                        if ((idtServiceRecordCheck.Rows.Count == 0)&&(idtHealDateCheck.Rows.Count ==0))
-                        {
                             string isqlDelService = "DELETE FROM `tb_service` WHERE `Service_ID`='"+iServiceID+"'";
                             iConnect.Insert(isqlDelService);
                             MessageBox.Show("ทำการลบบริการแล้ว");
                             ClearTxtService();
-                        }
-                        else
-                        {
-                            MessageBox.Show("ไม่สามารถลบได้");
-                        }
                     }
-                    LoadService();
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถลบได้");
+                }
+                LoadService();
             }
           }
 
@@ -569,25 +568,26 @@ namespace Petshop
             string iMediName = txb_MediName.Text.Trim();
             if ((iMediID != null) && (iMediID != ""))
             {
+                DataTable idtMediRecordCheck;
+                string isqlServiceCheck = "SELECT tb_MediRecord.Medi_ID FROM tb_MediRecord where Medi_ID = '" + iMediID + "'";
+                idtMediRecordCheck = iConnect.SelectByCommand(isqlServiceCheck);
+                if (idtMediRecordCheck.Rows.Count == 0)
+                {
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + iMediName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                        DataTable idtMediRecordCheck;
-                        string isqlServiceCheck = "SELECT tb_MediRecord.Medi_ID FROM tb_MediRecord where Medi_ID = '" + iMediID + "'";
-                        idtMediRecordCheck = iConnect.SelectByCommand(isqlServiceCheck);
-                    if (idtMediRecordCheck.Rows.Count == 0)
-                    {
+                       
                         string isqlDelMedi = "DELETE FROM `tb_medicine` WHERE `Medi_ID`='" + iMediID + "'";
                         iConnect.Insert(isqlDelMedi);
                         MessageBox.Show("ทำการลบยาออกแล้ว");
                         ClearTxtMedi();
-                    }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถลบได้");
-                    }
                 }
-                
+                    
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถลบได้");
+                }
                 LoadMedi();
             }
         }

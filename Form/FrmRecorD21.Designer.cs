@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecorD21));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gBoxDetail = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.bt_EditMember = new System.Windows.Forms.Button();
             this.bt_AddMember = new System.Windows.Forms.Button();
             this.gBox_OwnerDetail = new System.Windows.Forms.GroupBox();
+            this.lb_statusHide = new System.Windows.Forms.Label();
             this.bt_ResetProfile = new System.Windows.Forms.Button();
             this.bt_LoadProfile = new System.Windows.Forms.Button();
             this.lb_Tel = new System.Windows.Forms.Label();
@@ -143,6 +144,9 @@
             this.ccHealDate_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealDate_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkBox_MaID = new System.Windows.Forms.CheckBox();
+            this.lb_AutoCount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.gBoxDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDYear)).BeginInit();
             this.gBox_OwnerDetail.SuspendLayout();
@@ -160,6 +164,9 @@
             // 
             // gBoxDetail
             // 
+            this.gBoxDetail.Controls.Add(this.label3);
+            this.gBoxDetail.Controls.Add(this.lb_AutoCount);
+            this.gBoxDetail.Controls.Add(this.checkBox_MaID);
             this.gBoxDetail.Controls.Add(this.label2);
             this.gBoxDetail.Controls.Add(this.label1);
             this.gBoxDetail.Controls.Add(this.bt_remove);
@@ -203,7 +210,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(121, 134);
+            this.label2.Location = new System.Drawing.Point(163, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 18);
             this.label2.TabIndex = 33;
@@ -212,7 +219,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 134);
+            this.label1.Location = new System.Drawing.Point(79, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 18);
             this.label1.TabIndex = 32;
@@ -233,7 +240,7 @@
             // 
             // nUDYear
             // 
-            this.nUDYear.Location = new System.Drawing.Point(87, 24);
+            this.nUDYear.Location = new System.Drawing.Point(110, 24);
             this.nUDYear.Maximum = new decimal(new int[] {
             99,
             0,
@@ -268,7 +275,7 @@
             // lb_BirthDay
             // 
             this.lb_BirthDay.AutoSize = true;
-            this.lb_BirthDay.Location = new System.Drawing.Point(755, 67);
+            this.lb_BirthDay.Location = new System.Drawing.Point(755, 62);
             this.lb_BirthDay.Name = "lb_BirthDay";
             this.lb_BirthDay.Size = new System.Drawing.Size(33, 18);
             this.lb_BirthDay.TabIndex = 27;
@@ -277,7 +284,7 @@
             // CheckBox_Sterility
             // 
             this.CheckBox_Sterility.AutoSize = true;
-            this.CheckBox_Sterility.Location = new System.Drawing.Point(65, 103);
+            this.CheckBox_Sterility.Location = new System.Drawing.Point(523, 103);
             this.CheckBox_Sterility.Name = "CheckBox_Sterility";
             this.CheckBox_Sterility.Size = new System.Drawing.Size(15, 14);
             this.CheckBox_Sterility.TabIndex = 25;
@@ -299,7 +306,7 @@
             // lbSex
             // 
             this.lbSex.AutoSize = true;
-            this.lbSex.Location = new System.Drawing.Point(307, 85);
+            this.lbSex.Location = new System.Drawing.Point(18, 259);
             this.lbSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSex.Name = "lbSex";
             this.lbSex.Size = new System.Drawing.Size(42, 18);
@@ -310,7 +317,7 @@
             // rb_M
             // 
             this.rb_M.AutoSize = true;
-            this.rb_M.Location = new System.Drawing.Point(380, 65);
+            this.rb_M.Location = new System.Drawing.Point(382, 60);
             this.rb_M.Margin = new System.Windows.Forms.Padding(4);
             this.rb_M.Name = "rb_M";
             this.rb_M.Size = new System.Drawing.Size(35, 22);
@@ -323,7 +330,7 @@
             // lbYear
             // 
             this.lbYear.AutoSize = true;
-            this.lbYear.Location = new System.Drawing.Point(188, 134);
+            this.lbYear.Location = new System.Drawing.Point(230, 135);
             this.lbYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbYear.Name = "lbYear";
             this.lbYear.Size = new System.Drawing.Size(37, 18);
@@ -333,7 +340,7 @@
             // lbCompany
             // 
             this.lbCompany.AutoSize = true;
-            this.lbCompany.Location = new System.Drawing.Point(84, 134);
+            this.lbCompany.Location = new System.Drawing.Point(126, 135);
             this.lbCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCompany.Name = "lbCompany";
             this.lbCompany.Size = new System.Drawing.Size(17, 18);
@@ -343,7 +350,7 @@
             // rb_F
             // 
             this.rb_F.AutoSize = true;
-            this.rb_F.Location = new System.Drawing.Point(310, 65);
+            this.rb_F.Location = new System.Drawing.Point(312, 60);
             this.rb_F.Margin = new System.Windows.Forms.Padding(4);
             this.rb_F.Name = "rb_F";
             this.rb_F.Size = new System.Drawing.Size(49, 22);
@@ -380,6 +387,7 @@
             // 
             // gBox_OwnerDetail
             // 
+            this.gBox_OwnerDetail.Controls.Add(this.lb_statusHide);
             this.gBox_OwnerDetail.Controls.Add(this.bt_ResetProfile);
             this.gBox_OwnerDetail.Controls.Add(this.bt_LoadProfile);
             this.gBox_OwnerDetail.Controls.Add(this.lb_Tel);
@@ -388,20 +396,30 @@
             this.gBox_OwnerDetail.Controls.Add(this.Txb_Addr);
             this.gBox_OwnerDetail.Controls.Add(this.lb_OwnerName);
             this.gBox_OwnerDetail.Controls.Add(this.txb_NameOwner);
-            this.gBox_OwnerDetail.Location = new System.Drawing.Point(323, 107);
+            this.gBox_OwnerDetail.Location = new System.Drawing.Point(323, 131);
             this.gBox_OwnerDetail.Margin = new System.Windows.Forms.Padding(4);
             this.gBox_OwnerDetail.Name = "gBox_OwnerDetail";
             this.gBox_OwnerDetail.Padding = new System.Windows.Forms.Padding(4);
-            this.gBox_OwnerDetail.Size = new System.Drawing.Size(648, 170);
+            this.gBox_OwnerDetail.Size = new System.Drawing.Size(648, 146);
             this.gBox_OwnerDetail.TabIndex = 16;
             this.gBox_OwnerDetail.TabStop = false;
             this.gBox_OwnerDetail.Text = "ข้อมูลเจ้าของสัตว์";
+            // 
+            // lb_statusHide
+            // 
+            this.lb_statusHide.AutoSize = true;
+            this.lb_statusHide.Location = new System.Drawing.Point(538, 114);
+            this.lb_statusHide.Name = "lb_statusHide";
+            this.lb_statusHide.Size = new System.Drawing.Size(77, 18);
+            this.lb_statusHide.TabIndex = 25;
+            this.lb_statusHide.Text = "สถานะซ่อน";
+            this.lb_statusHide.Visible = false;
             // 
             // bt_ResetProfile
             // 
             this.bt_ResetProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_ResetProfile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bt_ResetProfile.Location = new System.Drawing.Point(541, 64);
+            this.bt_ResetProfile.Location = new System.Drawing.Point(541, 59);
             this.bt_ResetProfile.Margin = new System.Windows.Forms.Padding(4);
             this.bt_ResetProfile.Name = "bt_ResetProfile";
             this.bt_ResetProfile.Size = new System.Drawing.Size(70, 32);
@@ -413,7 +431,7 @@
             // bt_LoadProfile
             // 
             this.bt_LoadProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_LoadProfile.Location = new System.Drawing.Point(5, 130);
+            this.bt_LoadProfile.Location = new System.Drawing.Point(5, 85);
             this.bt_LoadProfile.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadProfile.Name = "bt_LoadProfile";
             this.bt_LoadProfile.Size = new System.Drawing.Size(100, 32);
@@ -426,7 +444,7 @@
             // lb_Tel
             // 
             this.lb_Tel.AutoSize = true;
-            this.lb_Tel.Location = new System.Drawing.Point(329, 31);
+            this.lb_Tel.Location = new System.Drawing.Point(329, 27);
             this.lb_Tel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Tel.Name = "lb_Tel";
             this.lb_Tel.Size = new System.Drawing.Size(136, 18);
@@ -435,7 +453,7 @@
             // 
             // txb_TelOwner
             // 
-            this.txb_TelOwner.Location = new System.Drawing.Point(473, 27);
+            this.txb_TelOwner.Location = new System.Drawing.Point(473, 23);
             this.txb_TelOwner.Margin = new System.Windows.Forms.Padding(4);
             this.txb_TelOwner.Name = "txb_TelOwner";
             this.txb_TelOwner.Size = new System.Drawing.Size(145, 26);
@@ -445,7 +463,7 @@
             // lb_Addr
             // 
             this.lb_Addr.AutoSize = true;
-            this.lb_Addr.Location = new System.Drawing.Point(59, 68);
+            this.lb_Addr.Location = new System.Drawing.Point(75, 59);
             this.lb_Addr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Addr.Name = "lb_Addr";
             this.lb_Addr.Size = new System.Drawing.Size(37, 18);
@@ -454,17 +472,17 @@
             // 
             // Txb_Addr
             // 
-            this.Txb_Addr.Location = new System.Drawing.Point(113, 64);
+            this.Txb_Addr.Location = new System.Drawing.Point(120, 59);
             this.Txb_Addr.Margin = new System.Windows.Forms.Padding(4);
             this.Txb_Addr.Multiline = true;
             this.Txb_Addr.Name = "Txb_Addr";
-            this.Txb_Addr.Size = new System.Drawing.Size(420, 97);
+            this.Txb_Addr.Size = new System.Drawing.Size(413, 79);
             this.Txb_Addr.TabIndex = 2;
             // 
             // lb_OwnerName
             // 
             this.lb_OwnerName.AutoSize = true;
-            this.lb_OwnerName.Location = new System.Drawing.Point(8, 31);
+            this.lb_OwnerName.Location = new System.Drawing.Point(8, 27);
             this.lb_OwnerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_OwnerName.Name = "lb_OwnerName";
             this.lb_OwnerName.Size = new System.Drawing.Size(104, 18);
@@ -473,7 +491,7 @@
             // 
             // txb_NameOwner
             // 
-            this.txb_NameOwner.Location = new System.Drawing.Point(120, 27);
+            this.txb_NameOwner.Location = new System.Drawing.Point(120, 23);
             this.txb_NameOwner.Margin = new System.Windows.Forms.Padding(4);
             this.txb_NameOwner.Name = "txb_NameOwner";
             this.txb_NameOwner.Size = new System.Drawing.Size(194, 26);
@@ -544,7 +562,7 @@
             // lb_Sex
             // 
             this.lb_Sex.AutoSize = true;
-            this.lb_Sex.Location = new System.Drawing.Point(256, 67);
+            this.lb_Sex.Location = new System.Drawing.Point(258, 62);
             this.lb_Sex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Sex.Name = "lb_Sex";
             this.lb_Sex.Size = new System.Drawing.Size(33, 18);
@@ -554,7 +572,7 @@
             // lb_Color
             // 
             this.lb_Color.AutoSize = true;
-            this.lb_Color.Location = new System.Drawing.Point(8, 66);
+            this.lb_Color.Location = new System.Drawing.Point(15, 101);
             this.lb_Color.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Color.Name = "lb_Color";
             this.lb_Color.Size = new System.Drawing.Size(75, 18);
@@ -563,7 +581,7 @@
             // 
             // txb_PetColor
             // 
-            this.txb_PetColor.Location = new System.Drawing.Point(87, 63);
+            this.txb_PetColor.Location = new System.Drawing.Point(94, 97);
             this.txb_PetColor.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetColor.Name = "txb_PetColor";
             this.txb_PetColor.Size = new System.Drawing.Size(161, 26);
@@ -573,7 +591,7 @@
             // lb_Sterility
             // 
             this.lb_Sterility.AutoSize = true;
-            this.lb_Sterility.Location = new System.Drawing.Point(4, 101);
+            this.lb_Sterility.Location = new System.Drawing.Point(462, 101);
             this.lb_Sterility.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Sterility.Name = "lb_Sterility";
             this.lb_Sterility.Size = new System.Drawing.Size(54, 18);
@@ -582,7 +600,7 @@
             // 
             // dTP_Sterility
             // 
-            this.dTP_Sterility.Location = new System.Drawing.Point(87, 97);
+            this.dTP_Sterility.Location = new System.Drawing.Point(545, 97);
             this.dTP_Sterility.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Sterility.Name = "dTP_Sterility";
             this.dTP_Sterility.Size = new System.Drawing.Size(189, 26);
@@ -591,7 +609,7 @@
             // lb_DOB
             // 
             this.lb_DOB.AutoSize = true;
-            this.lb_DOB.Location = new System.Drawing.Point(436, 67);
+            this.lb_DOB.Location = new System.Drawing.Point(436, 62);
             this.lb_DOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_DOB.Name = "lb_DOB";
             this.lb_DOB.Size = new System.Drawing.Size(88, 18);
@@ -600,7 +618,7 @@
             // 
             // dTP_Born
             // 
-            this.dTP_Born.Location = new System.Drawing.Point(545, 63);
+            this.dTP_Born.Location = new System.Drawing.Point(545, 58);
             this.dTP_Born.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Born.Name = "dTP_Born";
             this.dTP_Born.Size = new System.Drawing.Size(189, 26);
@@ -620,10 +638,10 @@
             // txb_PetProfileID
             // 
             this.txb_PetProfileID.Enabled = false;
-            this.txb_PetProfileID.Location = new System.Drawing.Point(133, 25);
+            this.txb_PetProfileID.Location = new System.Drawing.Point(156, 25);
             this.txb_PetProfileID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetProfileID.Name = "txb_PetProfileID";
-            this.txb_PetProfileID.Size = new System.Drawing.Size(114, 26);
+            this.txb_PetProfileID.Size = new System.Drawing.Size(92, 26);
             this.txb_PetProfileID.TabIndex = 0;
             this.txb_PetProfileID.TextChanged += new System.EventHandler(this.txb_PetProfileID_TextChanged);
             // 
@@ -631,8 +649,8 @@
             // 
             this.dGV_PetProfile.AllowUserToAddRows = false;
             this.dGV_PetProfile.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_PetProfile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_PetProfile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dGV_PetProfile.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_PetProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_PetProfile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -734,6 +752,7 @@
             this.ccOwner_Tel.HeaderText = "เบอร์โทรติดต่อ";
             this.ccOwner_Tel.Name = "ccOwner_Tel";
             this.ccOwner_Tel.ReadOnly = true;
+            this.ccOwner_Tel.Width = 120;
             // 
             // ccPetType_ID
             // 
@@ -955,8 +974,8 @@
             // 
             this.dGV_HealRecord.AllowUserToAddRows = false;
             this.dGV_HealRecord.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dGV_HealRecord.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1186,8 +1205,8 @@
             // 
             this.dGV_HealDetail.AllowUserToAddRows = false;
             this.dGV_HealDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dGV_HealDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1281,8 +1300,8 @@
             // 
             this.dGV_HealDate.AllowUserToAddRows = false;
             this.dGV_HealDate.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dGV_HealDate.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1334,6 +1353,34 @@
             // epCheck
             // 
             this.epCheck.ContainerControl = this;
+            // 
+            // checkBox_MaID
+            // 
+            this.checkBox_MaID.AutoSize = true;
+            this.checkBox_MaID.Location = new System.Drawing.Point(89, 30);
+            this.checkBox_MaID.Name = "checkBox_MaID";
+            this.checkBox_MaID.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_MaID.TabIndex = 34;
+            this.checkBox_MaID.UseVisualStyleBackColor = true;
+            this.checkBox_MaID.CheckedChanged += new System.EventHandler(this.checkBox_MaID_CheckedChanged);
+            // 
+            // lb_AutoCount
+            // 
+            this.lb_AutoCount.AutoSize = true;
+            this.lb_AutoCount.Location = new System.Drawing.Point(86, 62);
+            this.lb_AutoCount.Name = "lb_AutoCount";
+            this.lb_AutoCount.Size = new System.Drawing.Size(94, 18);
+            this.lb_AutoCount.TabIndex = 35;
+            this.lb_AutoCount.Text = "lb_AutoCount";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 18);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "รหัสล่าสุด";
             // 
             // FrmRecorD21
             // 
@@ -1459,6 +1506,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccServiceMedi_Desd;
         private System.Windows.Forms.Button bt_remove;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dGV_HealDate;
+        private System.Windows.Forms.Label lb_HealDateB;
+        private System.Windows.Forms.Label lb_HealDateCount;
+        private System.Windows.Forms.Label lb_HealDateCountA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Day;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_statusHide;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccOwner_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_Name;
@@ -1473,15 +1531,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccPetBreed;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccStatus;
-        private System.Windows.Forms.DataGridView dGV_HealDate;
-        private System.Windows.Forms.Label lb_HealDateB;
-        private System.Windows.Forms.Label lb_HealDateCount;
-        private System.Windows.Forms.Label lb_HealDateCountA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remark;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Day;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox_MaID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_AutoCount;
     }
 }

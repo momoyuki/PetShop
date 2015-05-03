@@ -82,6 +82,7 @@
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bt_Pwd = new System.Windows.Forms.Button();
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -118,6 +119,7 @@
             // 
             // gBoxEmployee
             // 
+            this.gBoxEmployee.Controls.Add(this.bt_Pwd);
             this.gBoxEmployee.Controls.Add(this.bt_Reset);
             this.gBoxEmployee.Controls.Add(this.lb_EmAddr);
             this.gBoxEmployee.Controls.Add(this.bt_LoadEP);
@@ -165,7 +167,7 @@
             // lb_EmAddr
             // 
             this.lb_EmAddr.AutoSize = true;
-            this.lb_EmAddr.Location = new System.Drawing.Point(466, 98);
+            this.lb_EmAddr.Location = new System.Drawing.Point(465, 109);
             this.lb_EmAddr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_EmAddr.Name = "lb_EmAddr";
             this.lb_EmAddr.Size = new System.Drawing.Size(37, 18);
@@ -187,18 +189,18 @@
             // 
             // txb_EmAddr
             // 
-            this.txb_EmAddr.Location = new System.Drawing.Point(511, 92);
+            this.txb_EmAddr.Location = new System.Drawing.Point(510, 113);
             this.txb_EmAddr.Margin = new System.Windows.Forms.Padding(4);
             this.txb_EmAddr.MaxLength = 100;
             this.txb_EmAddr.Multiline = true;
             this.txb_EmAddr.Name = "txb_EmAddr";
-            this.txb_EmAddr.Size = new System.Drawing.Size(263, 66);
+            this.txb_EmAddr.Size = new System.Drawing.Size(263, 50);
             this.txb_EmAddr.TabIndex = 12;
             // 
             // lb_EmTel
             // 
             this.lb_EmTel.AutoSize = true;
-            this.lb_EmTel.Location = new System.Drawing.Point(411, 61);
+            this.lb_EmTel.Location = new System.Drawing.Point(410, 72);
             this.lb_EmTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_EmTel.Name = "lb_EmTel";
             this.lb_EmTel.Size = new System.Drawing.Size(92, 18);
@@ -207,7 +209,7 @@
             // 
             // txb_EmTel
             // 
-            this.txb_EmTel.Location = new System.Drawing.Point(511, 58);
+            this.txb_EmTel.Location = new System.Drawing.Point(510, 69);
             this.txb_EmTel.Margin = new System.Windows.Forms.Padding(4);
             this.txb_EmTel.MaxLength = 100;
             this.txb_EmTel.Name = "txb_EmTel";
@@ -217,7 +219,7 @@
             // lb_EmDOB
             // 
             this.lb_EmDOB.AutoSize = true;
-            this.lb_EmDOB.Location = new System.Drawing.Point(457, 30);
+            this.lb_EmDOB.Location = new System.Drawing.Point(456, 41);
             this.lb_EmDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_EmDOB.Name = "lb_EmDOB";
             this.lb_EmDOB.Size = new System.Drawing.Size(47, 18);
@@ -226,7 +228,7 @@
             // 
             // dTP_EmDOB
             // 
-            this.dTP_EmDOB.Location = new System.Drawing.Point(511, 26);
+            this.dTP_EmDOB.Location = new System.Drawing.Point(510, 37);
             this.dTP_EmDOB.Name = "dTP_EmDOB";
             this.dTP_EmDOB.Size = new System.Drawing.Size(200, 26);
             this.dTP_EmDOB.TabIndex = 8;
@@ -234,7 +236,7 @@
             // rB_NotWork
             // 
             this.rB_NotWork.AutoSize = true;
-            this.rB_NotWork.Location = new System.Drawing.Point(525, 170);
+            this.rB_NotWork.Location = new System.Drawing.Point(524, 170);
             this.rB_NotWork.Name = "rB_NotWork";
             this.rB_NotWork.Size = new System.Drawing.Size(82, 22);
             this.rB_NotWork.TabIndex = 7;
@@ -247,6 +249,7 @@
             this.txb_Pwd.Location = new System.Drawing.Point(127, 168);
             this.txb_Pwd.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Pwd.Name = "txb_Pwd";
+            this.txb_Pwd.PasswordChar = '*';
             this.txb_Pwd.Size = new System.Drawing.Size(175, 26);
             this.txb_Pwd.TabIndex = 1;
             this.txb_Pwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Pwd_KeyDown);
@@ -267,7 +270,7 @@
             // rB_Work
             // 
             this.rB_Work.AutoSize = true;
-            this.rB_Work.Location = new System.Drawing.Point(613, 170);
+            this.rB_Work.Location = new System.Drawing.Point(612, 170);
             this.rB_Work.Name = "rB_Work";
             this.rB_Work.Size = new System.Drawing.Size(98, 22);
             this.rB_Work.TabIndex = 6;
@@ -663,6 +666,18 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
+            // bt_Pwd
+            // 
+            this.bt_Pwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Pwd.Location = new System.Drawing.Point(148, 202);
+            this.bt_Pwd.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Pwd.Name = "bt_Pwd";
+            this.bt_Pwd.Size = new System.Drawing.Size(110, 32);
+            this.bt_Pwd.TabIndex = 15;
+            this.bt_Pwd.Text = "เปลี่ยนรหัสผ่าน";
+            this.bt_Pwd.UseVisualStyleBackColor = true;
+            this.bt_Pwd.Click += new System.EventHandler(this.bt_Pwd_Click);
+            // 
             // FrmSetting16
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -743,6 +758,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Tel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEP_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Position;
+        private System.Windows.Forms.Button bt_Pwd;
 
 
     }

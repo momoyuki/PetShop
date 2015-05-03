@@ -76,41 +76,30 @@ namespace Petshop
             this.crystalReportViewer1.ReportSource = rpt;
             this.crystalReportViewer1.Refresh();
             /////////////////////////////////////[[รายงานส่วนที่ 2]]//////////////////////////////////////////
-          /*  DataTable idtService;
-            string isqlService = "";
+            DataTable idtService;
+            string isqlService = "SELECT tb_medirecord.Medi_ID as Product_ID,tb_medicine.Medi_Des as Product_Des, "
+                                    + "sum(tb_medirecord.MediSale_Unit) as ProductSale_Unit,tb_medirecord.Medi_Sale as Product_Sale, "
+                                    + "sum(tb_medirecord.MediRecord_Total) as ProductSale_Total FROM tb_medirecord,tb_medicine,tb_healrecord "
+                                    + "where (tb_healrecord.HealRecord_Date between '" + idtpDate + "' AND '" + idtpToDate + "') "
+                                    + "AND (tb_medirecord.Medi_ID = tb_medicine.Medi_ID) group by Product_ID";
             idtService = iConnect.SelectByCommand(isqlService);
             ///////////////////////////////////////////////////
             DataTable idtServiceTotal;
-            string isqlServiceTotal = "";
+            string isqlServiceTotal = "SELECT sum(tb_medirecord.MediRecord_Total) as income_Total "
+                                     +"FROM tb_medirecord,tb_healrecord "
+                                     +"WHERE (tb_healrecord.HealRecord_Date between '" + idtpDate + "' AND '" + idtpToDate + "')";
             idtServiceTotal = iConnect.SelectByCommand(isqlServiceTotal);
             /////////////////////////////////////////////////////////////
             ReportDocument rptService = new ReportDocument();
-            rptService.Load("D:\\PetShop\\CrSerMe.rpt");
+            rptService.Load("CrIncome.rpt");
             rptService.SetDataSource(idtService);
             rptService.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rptService.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
-            rptService.Subreports["SerMe_Sub_Report"].Database.Tables[0].SetDataSource(idtServiceTotal);
+            rptService.Subreports["income_Sub_Report"].Database.Tables[0].SetDataSource(idtServiceTotal);
 
             this.crystalReportViewer2.ReportSource = rptService;
             this.crystalReportViewer2.Refresh();
-            /////////////////////////////////////////////////////////////////////////////////////////////
-            DataTable idtMedi;
-            string isqlMedi = "";
-            idtMedi = iConnect.SelectByCommand(isqlMedi);
-            //////////////////////////////////////////////
-            DataTable idtMediTotal;
-            string isqlMediTotal = "";
-            idtMediTotal = iConnect.SelectByCommand(isqlMediTotal);
-            ///////////////////////////////////////////////////////
-            ReportDocument rptMedi = new ReportDocument();
-            rptMedi.Load("D:\\PetShop\\CrSerMe.rpt");
-            rptMedi.SetDataSource(idtMedi);
-            rptMedi.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
-            rptMedi.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
-            rptMedi.Subreports["SerMe_Sub_Report"].Database.Tables[0].SetDataSource(idtMediTotal);
-
-            this.crystalReportViewer2.ReportSource = rptMedi;
-            this.crystalReportViewer2.Refresh(); */
+            
             ////////////////////////////////[[รายงานส่วนที่ 3]]///////////////////////////////////////////////
             DataTable idtProductSale;
             string isqlProductSale = "SELECT tb_productsaledetail.Product_ID,tb_Product.Product_Des,sum(productsale_Unit) "+
@@ -121,19 +110,17 @@ namespace Petshop
             idtProductSale = iConnect.SelectByCommand(isqlProductSale);
             /////////////////////////////////////////////////////////////////////////////////////
             DataTable idtProductTotal;
-            string isqlProductTotal = "SELECT sum(productsale_Unit) "+
-            "as ProductSale_Unit,sum(tb_productsaledetail.ProductSale_Total) as SerMe_Total "+
-            "FROM tb_Product,tb_productsale,tb_productsaledetail "+
-            "WHERE (tb_productsale.ProductSale_Date between '" + idtpDate + "' AND '" + idtpToDate + "') " +
-            "AND (tb_Product.Product_ID = tb_productsaledetail.Product_ID)";
+            string isqlProductTotal = "SELECT sum(tb_productsaledetail.ProductSale_Total) as income_Total " +
+            "FROM tb_productsale,tb_productsaledetail " +
+            "WHERE (tb_productsale.ProductSale_Date between '" + idtpDate + "' AND '" + idtpToDate + "') ";
             idtProductTotal = iConnect.SelectByCommand(isqlProductTotal);
             ReportDocument rptSerMe = new ReportDocument();
             ////////////////////////////////////////////////////////////////////////////////////
-            rptSerMe.Load("CrSerMe.rpt");
+            rptSerMe.Load("CrIncome.rpt");
             rptSerMe.SetDataSource(idtProductSale);
             rptSerMe.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rptSerMe.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
-            rptSerMe.Subreports["SerMe_Sub_Report"].Database.Tables[0].SetDataSource(idtProductTotal);
+            rptSerMe.Subreports["income_Sub_Report"].Database.Tables[0].SetDataSource(idtProductTotal);
 
             this.crystalReportViewer3.ReportSource = rptSerMe;
             this.crystalReportViewer3.Refresh();

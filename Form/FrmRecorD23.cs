@@ -185,7 +185,7 @@ namespace Petshop
                         iConnect.Insert(isqlProductSale);
 
                         DataTable idtProductSaleID; //เรียกไอดีเดิมขึ้นมาโชว์
-                        string isqProductSaleID = "SELECT ProductSale_ID FROM `tb_productsale` AS `alias` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  ORDER BY `ProductSale_ID` DESC LIMIT 1";
+                        string isqProductSaleID = "SELECT ProductSale_ID FROM `tb_productsale` WHERE SUBSTR(`ProductSale_ID`, 1, 2) = ('" + ilbyear + "')  ORDER BY `ProductSale_ID` DESC LIMIT 1";
                         idtProductSaleID = iConnect.SelectByCommand(isqProductSaleID);
                         loadData();
                         loadProductSale();
@@ -223,13 +223,11 @@ namespace Petshop
                     idtBillCheck = iConnect.SelectByCommand(isqlBillCheck);
                     if (idtBillCheck.Rows.Count == 0)
                     {
-
                         DataTable idtProductCheck;
                         string isqlProductCheck = "SELECT * FROM `tb_product` where Product_ID = '" + itxbProductID + "'";
                         idtProductCheck = iConnect.SelectByCommand(isqlProductCheck);
                         if ((idtProductCheck != null) && (idtProductCheck.Rows.Count > 0))
                         {
-
                             decimal iUnit = Convert.ToDecimal(nUD_ProductUnit.Value);
                             decimal iPrice = idtProductCheck.Rows[0].Field<decimal>(4);
                             decimal iProductSale_Total = iPrice * iUnit;
@@ -245,7 +243,6 @@ namespace Petshop
                             }
                             else
                             {
-
                                 if ((iProductUnitAmt > iUnit) || (iProductUnitAmt == iUnit))
                                 {
                                     iResult = 1;
@@ -282,7 +279,6 @@ namespace Petshop
                                 nUD_ProductUnit.Text = "1";
                                 txb_ProductID.Clear();
                             }
-
                         }
                         else
                         {

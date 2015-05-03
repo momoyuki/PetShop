@@ -135,26 +135,28 @@ namespace Petshop
             string itxbUnitName = txb_UnitName.Text.Trim();
             if ((itxbUnitID != null) && (itxbUnitID != string.Empty))
             {
+                DataTable idtUnitMedi;
+                string isqlUnitMedi = " SELECT tb_medicine.Unit_ID FROM petshop.tb_medicine where Unit_ID = '" + itxbUnitID + "'";
+                idtUnitMedi = iConnect.SelectByCommand(isqlUnitMedi);
+                DataTable idtUnitProduct;
+                string isqlUnitProduct = "SELECT tb_product.Unit_ID FROM petshop.tb_product where Unit_ID = '" + itxbUnitID + "'";
+                idtUnitProduct = iConnect.SelectByCommand(isqlUnitProduct);
+                if ((idtUnitMedi.Rows.Count == 0) && (idtUnitProduct.Rows.Count == 0))
+                {
                 DialogResult iConfirmResult = MessageBox.Show("ลบข้อมูล " + itxbUnitName + " มั๊ย?", "ลบข้อมูล..", MessageBoxButtons.YesNo);
                 if (iConfirmResult == DialogResult.Yes)
                 {
-                    DataTable idtUnitMedi;
-                    string isqlUnitMedi = " SELECT tb_medicine.Unit_ID FROM petshop.tb_medicine where Unit_ID = '" + itxbUnitID + "'";
-                    idtUnitMedi = iConnect.SelectByCommand(isqlUnitMedi);
-                    DataTable idtUnitProduct;
-                    string isqlUnitProduct = "SELECT tb_product.Unit_ID FROM petshop.tb_product where Unit_ID = '" + itxbUnitID + "'";
-                    idtUnitProduct = iConnect.SelectByCommand(isqlUnitProduct);
-                    if ((idtUnitMedi.Rows.Count == 0) && (idtUnitProduct.Rows.Count == 0))
-                    {
+                    
                         string isqlDelUnit = "DELETE FROM `petshop`.`tb_unit` WHERE `Unit_ID`='" + itxbUnitID + "'";
                         iConnect.Insert(isqlDelUnit);
                         clearTxb();
                         MessageBox.Show("ทำการลบหน่วยออกแล้ว");
                     }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถลบได้");
-                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถลบได้");
                 }
                 loadData();
             }
