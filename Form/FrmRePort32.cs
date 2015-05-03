@@ -84,18 +84,20 @@ namespace Petshop
             DataTable idtService;
             string isqlService =      "SELECT tb_medirecord.Medi_ID as ProMedi_ID,tb_medicine.Medi_Des as ProMedi_Des, "
                                     + "sum(tb_medirecord.MediSale_Unit) as ProMedi_Unit,tb_medirecord.Medi_Sale as ProMedi_Sale, "
-                                    + "sum(tb_medirecord.MediRecord_Total) as ProMedi_Total FROM tb_medirecord,tb_medicine,tb_healrecord "
+                                    + "sum(tb_medirecord.MediRecord_Total) as ProMedi_Total "
+                                    + "FROM tb_medirecord,tb_medicine,tb_healrecord "
                                     + "where (tb_healrecord.HealRecord_Date between '" + idtpDate + "' AND '" + idtpToDate + "') "
                                     + "AND (tb_medirecord.Medi_ID = tb_medicine.Medi_ID) group by ProMedi_ID";
             idtService = iConnect.SelectByCommand(isqlService);
             ///////////////////////////////////////////////////
             DataTable idtServiceTotal;
-            string isqlServiceTotal = "SELECT sum(tb_medirecord.MediRecord_Total) as ProMedi_Total, "
+            string isqlServiceTotal ="SELECT sum(tb_medirecord.MediRecord_Total) as ProMedi_Total, "
                                     +"(sum(tb_medirecord.MediRecord_Total)-sum(tb_medirecord.MediSale_Unit)*tb_medicine.Medi_Price) "
                                     +"as ProMedi_Price,(sum(tb_medirecord.MediRecord_Total))-(sum(tb_medirecord.MediRecord_Total) "
                                     +"- sum(tb_medirecord.MediSale_Unit)*tb_medicine.Medi_Price) as ProMedi_PriceTotal "
                                     +"FROM tb_medirecord,tb_medicine,tb_healrecord "
-                                    +"where tb_medirecord.Medi_ID = tb_medicine.Medi_ID AND tb_medirecord.HealRecord_ID = tb_healrecord.HealRecord_ID AND (tb_healrecord.HealRecord_Date between '" + idtpDate + "' AND '" + idtpToDate + "') ";
+                                    +"where tb_medirecord.Medi_ID = tb_medicine.Medi_ID AND tb_medirecord.HealRecord_ID = tb_healrecord.HealRecord_ID "
+                                    +"AND (tb_healrecord.HealRecord_Date between '" + idtpDate + "' AND '" + idtpToDate + "') ";
             idtServiceTotal = iConnect.SelectByCommand(isqlServiceTotal);
             /////////////////////////////////////////////////////////////
             ReportDocument rptService = new ReportDocument();
@@ -108,30 +110,35 @@ namespace Petshop
             this.crViewerMedi.ReportSource = rptService;
             this.crViewerMedi.Refresh();
             
-           /* ////////////////////////////////[[รายงานส่วนสินค้า]]///////////////////////////////////////////////
+           ////////////////////////////////[[รายงานส่วนสินค้า]]///////////////////////////////////////////////
             DataTable idtProductSale;
-            string isqlProductSale = "SELECT tb_productsaledetail.Product_ID,tb_Product.Product_Des,sum(productsale_Unit) "+
-            "as ProductSale_Unit,tb_productsaledetail.Product_Sale,sum(tb_productsaledetail.ProductSale_Total) as ProductSale_Total " +
+            string isqlProductSale = "SELECT tb_productsaledetail.Product_ID as ProMedi_ID,tb_Product.Product_Des as ProMedi_Des "+
+            ",sum(productsale_Unit) as ProMedi_Unit,tb_productsaledetail.Product_Sale as ProMedi_Sale,sum(tb_productsaledetail.ProductSale_Total) as ProMedi_Total " +
             "FROM tb_Product,tb_productsale,tb_productsaledetail "+
             "WHERE (tb_productsale.ProductSale_Date between '"+idtpDate+"' AND '"+idtpToDate+"') "+
-            "AND (tb_Product.Product_ID = tb_productsaledetail.Product_ID) group by product_ID ";
+            "AND (tb_Product.Product_ID = tb_productsaledetail.Product_ID) group by ProMedi_ID";
             idtProductSale = iConnect.SelectByCommand(isqlProductSale);
             /////////////////////////////////////////////////////////////////////////////////////
             DataTable idtProductTotal;
-            string isqlProductTotal = "SELECT sum(tb_productsaledetail.ProductSale_Total) as income_Total " +
-            "FROM tb_productsale,tb_productsaledetail " +
-            "WHERE (tb_productsale.ProductSale_Date between '" + idtpDate + "' AND '" + idtpToDate + "') ";
+
+            string isqlProductTotal ="Select sum(tb_productsaledetail.productsale_Total)as ProMedi_Total, "
+                                    +"(sum(tb_productsaledetail.productsale_total)-sum(tb_productsaledetail.productsale_Unit)*tb_product.Product_Price) as ProMedi_Price, "
+                                    +"(sum(tb_productsaledetail.productsale_Total)) - (sum(tb_productsaledetail.productsale_total)-sum(tb_productsaledetail.productsale_Unit)*tb_product.Product_Price) as ProMedi_PriceTotal "
+                                    +"from tb_productsaleDetail,tb_product,tb_productsale "
+                                    +"where tb_productsaledetail.Product_ID = tb_product.Product_ID AND tb_productsale.ProductSale_ID = tb_productsaledetail.ProductSale_ID "
+                                    +"AND (tb_productsale.ProductSale_Date between '" + idtpDate + "' AND '" + idtpToDate + "')";
+
             idtProductTotal = iConnect.SelectByCommand(isqlProductTotal);
             ReportDocument rptSerMe = new ReportDocument();
             ////////////////////////////////////////////////////////////////////////////////////
-            rptSerMe.Load("D:\\PetShop\\CrIncome.rpt");
+            rptSerMe.Load("D:\\PetShop\\CrProMe.rpt");
             rptSerMe.SetDataSource(idtProductSale);
             rptSerMe.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rptSerMe.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
-            rptSerMe.Subreports["income_Sub_Report"].Database.Tables[0].SetDataSource(idtProductTotal);
+            rptSerMe.Subreports["ProMedi_Sub_Report"].Database.Tables[0].SetDataSource(idtProductTotal);
 
             this.crViewerProduct.ReportSource = rptSerMe;
-            this.crViewerProduct.Refresh(); */
+            this.crViewerProduct.Refresh(); 
         }
 
         private void FrmRePort32_Load(object sender, EventArgs e)
