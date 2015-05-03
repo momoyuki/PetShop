@@ -30,23 +30,23 @@
         {
             this.dTP_Date = new System.Windows.Forms.DateTimePicker();
             this.dTP_ToDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lb_DateLb = new System.Windows.Forms.Label();
+            this.lb_ToDateLb = new System.Windows.Forms.Label();
             this.bt_Search = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.crystalReportViewer3 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tp_Product = new System.Windows.Forms.TabPage();
+            this.crViewerProduct = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tp_Medi = new System.Windows.Forms.TabPage();
+            this.crViewerMedi = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tp_outlay = new System.Windows.Forms.TabPage();
+            this.crViewerOutlay = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.crystalReportViewer4 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.tabPage3.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tp_Service = new System.Windows.Forms.TabPage();
+            this.crViewerService = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tp_Product.SuspendLayout();
+            this.tp_Medi.SuspendLayout();
+            this.tp_outlay.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tp_Service.SuspendLayout();
             this.SuspendLayout();
             // 
             // dTP_Date
@@ -63,23 +63,23 @@
             this.dTP_ToDate.Size = new System.Drawing.Size(200, 26);
             this.dTP_ToDate.TabIndex = 2;
             // 
-            // label1
+            // lb_DateLb
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(189, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ตั้งแต่วันที่";
+            this.lb_DateLb.AutoSize = true;
+            this.lb_DateLb.Location = new System.Drawing.Point(189, 19);
+            this.lb_DateLb.Name = "lb_DateLb";
+            this.lb_DateLb.Size = new System.Drawing.Size(69, 18);
+            this.lb_DateLb.TabIndex = 3;
+            this.lb_DateLb.Text = "ตั้งแต่วันที่";
             // 
-            // label2
+            // lb_ToDateLb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(497, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ถึงวันที่";
+            this.lb_ToDateLb.AutoSize = true;
+            this.lb_ToDateLb.Location = new System.Drawing.Point(497, 19);
+            this.lb_ToDateLb.Name = "lb_ToDateLb";
+            this.lb_ToDateLb.Size = new System.Drawing.Size(51, 18);
+            this.lb_ToDateLb.TabIndex = 4;
+            this.lb_ToDateLb.Text = "ถึงวันที่";
             // 
             // bt_Search
             // 
@@ -92,125 +92,125 @@
             this.bt_Search.UseVisualStyleBackColor = true;
             this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
             // 
-            // tabPage3
+            // tp_Product
             // 
-            this.tabPage3.Controls.Add(this.crystalReportViewer3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(976, 566);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "รายรับ(ขายสินค้า)";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tp_Product.Controls.Add(this.crViewerProduct);
+            this.tp_Product.Location = new System.Drawing.Point(4, 27);
+            this.tp_Product.Name = "tp_Product";
+            this.tp_Product.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_Product.Size = new System.Drawing.Size(976, 566);
+            this.tp_Product.TabIndex = 2;
+            this.tp_Product.Text = "รายรับ(ขายสินค้า)";
+            this.tp_Product.UseVisualStyleBackColor = true;
             // 
-            // crystalReportViewer3
+            // crViewerProduct
             // 
-            this.crystalReportViewer3.ActiveViewIndex = -1;
-            this.crystalReportViewer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer3.Location = new System.Drawing.Point(3, 3);
-            this.crystalReportViewer3.Name = "crystalReportViewer3";
-            this.crystalReportViewer3.ShowCloseButton = false;
-            this.crystalReportViewer3.ShowGroupTreeButton = false;
-            this.crystalReportViewer3.ShowLogo = false;
-            this.crystalReportViewer3.ShowParameterPanelButton = false;
-            this.crystalReportViewer3.Size = new System.Drawing.Size(970, 560);
-            this.crystalReportViewer3.TabIndex = 0;
-            this.crystalReportViewer3.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crViewerProduct.ActiveViewIndex = -1;
+            this.crViewerProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crViewerProduct.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crViewerProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crViewerProduct.Location = new System.Drawing.Point(3, 3);
+            this.crViewerProduct.Name = "crViewerProduct";
+            this.crViewerProduct.ShowCloseButton = false;
+            this.crViewerProduct.ShowGroupTreeButton = false;
+            this.crViewerProduct.ShowLogo = false;
+            this.crViewerProduct.ShowParameterPanelButton = false;
+            this.crViewerProduct.Size = new System.Drawing.Size(970, 560);
+            this.crViewerProduct.TabIndex = 0;
+            this.crViewerProduct.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // tabPage2
+            // tp_Medi
             // 
-            this.tabPage2.Controls.Add(this.crystalReportViewer2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(976, 566);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "รายรับ(ยา)";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tp_Medi.Controls.Add(this.crViewerMedi);
+            this.tp_Medi.Location = new System.Drawing.Point(4, 27);
+            this.tp_Medi.Name = "tp_Medi";
+            this.tp_Medi.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_Medi.Size = new System.Drawing.Size(976, 566);
+            this.tp_Medi.TabIndex = 1;
+            this.tp_Medi.Text = "รายรับ(ยา)";
+            this.tp_Medi.UseVisualStyleBackColor = true;
             // 
-            // crystalReportViewer2
+            // crViewerMedi
             // 
-            this.crystalReportViewer2.ActiveViewIndex = -1;
-            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer2.Location = new System.Drawing.Point(3, 3);
-            this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.ShowCloseButton = false;
-            this.crystalReportViewer2.ShowGroupTreeButton = false;
-            this.crystalReportViewer2.ShowLogo = false;
-            this.crystalReportViewer2.ShowParameterPanelButton = false;
-            this.crystalReportViewer2.Size = new System.Drawing.Size(970, 560);
-            this.crystalReportViewer2.TabIndex = 1;
-            this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crViewerMedi.ActiveViewIndex = -1;
+            this.crViewerMedi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crViewerMedi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crViewerMedi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crViewerMedi.Location = new System.Drawing.Point(3, 3);
+            this.crViewerMedi.Name = "crViewerMedi";
+            this.crViewerMedi.ShowCloseButton = false;
+            this.crViewerMedi.ShowGroupTreeButton = false;
+            this.crViewerMedi.ShowLogo = false;
+            this.crViewerMedi.ShowParameterPanelButton = false;
+            this.crViewerMedi.Size = new System.Drawing.Size(970, 560);
+            this.crViewerMedi.TabIndex = 1;
+            this.crViewerMedi.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // tabPage1
+            // tp_outlay
             // 
-            this.tabPage1.Controls.Add(this.crystalReportViewer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(976, 566);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "รายจ่าย";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tp_outlay.Controls.Add(this.crViewerOutlay);
+            this.tp_outlay.Location = new System.Drawing.Point(4, 27);
+            this.tp_outlay.Name = "tp_outlay";
+            this.tp_outlay.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_outlay.Size = new System.Drawing.Size(976, 566);
+            this.tp_outlay.TabIndex = 0;
+            this.tp_outlay.Text = "รายจ่าย";
+            this.tp_outlay.UseVisualStyleBackColor = true;
             // 
-            // crystalReportViewer1
+            // crViewerOutlay
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(970, 560);
-            this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crViewerOutlay.ActiveViewIndex = -1;
+            this.crViewerOutlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crViewerOutlay.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crViewerOutlay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crViewerOutlay.Location = new System.Drawing.Point(3, 3);
+            this.crViewerOutlay.Name = "crViewerOutlay";
+            this.crViewerOutlay.ShowCloseButton = false;
+            this.crViewerOutlay.ShowGroupTreeButton = false;
+            this.crViewerOutlay.ShowLogo = false;
+            this.crViewerOutlay.ShowParameterPanelButton = false;
+            this.crViewerOutlay.Size = new System.Drawing.Size(970, 560);
+            this.crViewerOutlay.TabIndex = 0;
+            this.crViewerOutlay.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tp_outlay);
+            this.tabControl1.Controls.Add(this.tp_Service);
+            this.tabControl1.Controls.Add(this.tp_Medi);
+            this.tabControl1.Controls.Add(this.tp_Product);
             this.tabControl1.Location = new System.Drawing.Point(12, 63);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(984, 597);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage4
+            // tp_Service
             // 
-            this.tabPage4.Controls.Add(this.crystalReportViewer4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 27);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(976, 566);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "รายรับ(บริการ)";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tp_Service.Controls.Add(this.crViewerService);
+            this.tp_Service.Location = new System.Drawing.Point(4, 27);
+            this.tp_Service.Name = "tp_Service";
+            this.tp_Service.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_Service.Size = new System.Drawing.Size(976, 566);
+            this.tp_Service.TabIndex = 3;
+            this.tp_Service.Text = "รายรับ(บริการ)";
+            this.tp_Service.UseVisualStyleBackColor = true;
             // 
-            // crystalReportViewer4
+            // crViewerService
             // 
-            this.crystalReportViewer4.ActiveViewIndex = -1;
-            this.crystalReportViewer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer4.Location = new System.Drawing.Point(3, 3);
-            this.crystalReportViewer4.Name = "crystalReportViewer4";
-            this.crystalReportViewer4.ShowCloseButton = false;
-            this.crystalReportViewer4.ShowGroupTreeButton = false;
-            this.crystalReportViewer4.ShowLogo = false;
-            this.crystalReportViewer4.ShowParameterPanelButton = false;
-            this.crystalReportViewer4.Size = new System.Drawing.Size(970, 560);
-            this.crystalReportViewer4.TabIndex = 1;
-            this.crystalReportViewer4.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crViewerService.ActiveViewIndex = -1;
+            this.crViewerService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crViewerService.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crViewerService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crViewerService.Location = new System.Drawing.Point(3, 3);
+            this.crViewerService.Name = "crViewerService";
+            this.crViewerService.ShowCloseButton = false;
+            this.crViewerService.ShowGroupTreeButton = false;
+            this.crViewerService.ShowLogo = false;
+            this.crViewerService.ShowParameterPanelButton = false;
+            this.crViewerService.Size = new System.Drawing.Size(970, 560);
+            this.crViewerService.TabIndex = 1;
+            this.crViewerService.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FrmRePort32
             // 
@@ -218,8 +218,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
             this.Controls.Add(this.bt_Search);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb_ToDateLb);
+            this.Controls.Add(this.lb_DateLb);
             this.Controls.Add(this.dTP_ToDate);
             this.Controls.Add(this.dTP_Date);
             this.Controls.Add(this.tabControl1);
@@ -229,11 +229,11 @@
             this.Text = "ดูรายรับ-รายจ่าย";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmRePort32_Load);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tp_Product.ResumeLayout(false);
+            this.tp_Medi.ResumeLayout(false);
+            this.tp_outlay.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
+            this.tp_Service.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,17 +243,17 @@
 
         private System.Windows.Forms.DateTimePicker dTP_Date;
         private System.Windows.Forms.DateTimePicker dTP_ToDate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_DateLb;
+        private System.Windows.Forms.Label lb_ToDateLb;
         private System.Windows.Forms.Button bt_Search;
-        private System.Windows.Forms.TabPage tabPage3;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer3;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.TabPage tp_Product;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crViewerProduct;
+        private System.Windows.Forms.TabPage tp_Medi;
+        private System.Windows.Forms.TabPage tp_outlay;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crViewerOutlay;
         private System.Windows.Forms.TabControl tabControl1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
-        private System.Windows.Forms.TabPage tabPage4;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer4;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crViewerMedi;
+        private System.Windows.Forms.TabPage tp_Service;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crViewerService;
     }
 }

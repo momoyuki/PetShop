@@ -91,6 +91,7 @@
             this.CheckBox_Print.TabIndex = 13;
             this.CheckBox_Print.Text = "สำเนา";
             this.CheckBox_Print.UseVisualStyleBackColor = true;
+            this.CheckBox_Print.Visible = false;
             // 
             // FrmBillSerMe
             // 

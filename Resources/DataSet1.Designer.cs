@@ -38,7 +38,7 @@ namespace Petshop.Resources {
         
         private DT_ReportDataTable tableDT_Report;
         
-        private DT_ProductDataTable tableDT_Product;
+        private DT_ProMediDataTable tableDT_ProMedi;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -89,8 +89,8 @@ namespace Petshop.Resources {
                 if ((ds.Tables["DT_Report"] != null)) {
                     base.Tables.Add(new DT_ReportDataTable(ds.Tables["DT_Report"]));
                 }
-                if ((ds.Tables["DT_Product"] != null)) {
-                    base.Tables.Add(new DT_ProductDataTable(ds.Tables["DT_Product"]));
+                if ((ds.Tables["DT_ProMedi"] != null)) {
+                    base.Tables.Add(new DT_ProMediDataTable(ds.Tables["DT_ProMedi"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -184,9 +184,9 @@ namespace Petshop.Resources {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DT_ProductDataTable DT_Product {
+        public DT_ProMediDataTable DT_ProMedi {
             get {
-                return this.tableDT_Product;
+                return this.tableDT_ProMedi;
             }
         }
         
@@ -278,8 +278,8 @@ namespace Petshop.Resources {
                 if ((ds.Tables["DT_Report"] != null)) {
                     base.Tables.Add(new DT_ReportDataTable(ds.Tables["DT_Report"]));
                 }
-                if ((ds.Tables["DT_Product"] != null)) {
-                    base.Tables.Add(new DT_ProductDataTable(ds.Tables["DT_Product"]));
+                if ((ds.Tables["DT_ProMedi"] != null)) {
+                    base.Tables.Add(new DT_ProMediDataTable(ds.Tables["DT_ProMedi"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -356,10 +356,10 @@ namespace Petshop.Resources {
                     this.tableDT_Report.InitVars();
                 }
             }
-            this.tableDT_Product = ((DT_ProductDataTable)(base.Tables["DT_Product"]));
+            this.tableDT_ProMedi = ((DT_ProMediDataTable)(base.Tables["DT_ProMedi"]));
             if ((initTable == true)) {
-                if ((this.tableDT_Product != null)) {
-                    this.tableDT_Product.InitVars();
+                if ((this.tableDT_ProMedi != null)) {
+                    this.tableDT_ProMedi.InitVars();
                 }
             }
         }
@@ -386,8 +386,8 @@ namespace Petshop.Resources {
             base.Tables.Add(this.tableDT_Outlay);
             this.tableDT_Report = new DT_ReportDataTable();
             base.Tables.Add(this.tableDT_Report);
-            this.tableDT_Product = new DT_ProductDataTable();
-            base.Tables.Add(this.tableDT_Product);
+            this.tableDT_ProMedi = new DT_ProMediDataTable();
+            base.Tables.Add(this.tableDT_ProMedi);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -434,7 +434,7 @@ namespace Petshop.Resources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDT_Product() {
+        private bool ShouldSerializeDT_ProMedi() {
             return false;
         }
         
@@ -515,7 +515,7 @@ namespace Petshop.Resources {
         public delegate void DT_ReportRowChangeEventHandler(object sender, DT_ReportRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DT_ProductRowChangeEventHandler(object sender, DT_ProductRowChangeEvent e);
+        public delegate void DT_ProMediRowChangeEventHandler(object sender, DT_ProMediRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2628,9 +2628,15 @@ namespace Petshop.Resources {
             
             private global::System.Data.DataColumn columnOutlayDetail_Total;
             
-            private global::System.Data.DataColumn columnInCome_Total;
+            private global::System.Data.DataColumn columnProMedi_Total;
             
-            private global::System.Data.DataColumn columnSerMe_Total;
+            private global::System.Data.DataColumn columnProMedi_Price;
+            
+            private global::System.Data.DataColumn columnProMedi_PriceTotal;
+            
+            private global::System.Data.DataColumn columnService_Total;
+            
+            private global::System.Data.DataColumn columnReportType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2691,17 +2697,41 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn InCome_TotalColumn {
+            public global::System.Data.DataColumn ProMedi_TotalColumn {
                 get {
-                    return this.columnInCome_Total;
+                    return this.columnProMedi_Total;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SerMe_TotalColumn {
+            public global::System.Data.DataColumn ProMedi_PriceColumn {
                 get {
-                    return this.columnSerMe_Total;
+                    return this.columnProMedi_Price;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProMedi_PriceTotalColumn {
+                get {
+                    return this.columnProMedi_PriceTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Service_TotalColumn {
+                get {
+                    return this.columnService_Total;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ReportTypeColumn {
+                get {
+                    return this.columnReportType;
                 }
             }
             
@@ -2742,14 +2772,17 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ReportRow AddDT_ReportRow(string ReportDate, string ReportToDate, string OutlayDetail_Total, string InCome_Total, string SerMe_Total) {
+            public DT_ReportRow AddDT_ReportRow(string ReportDate, string ReportToDate, string OutlayDetail_Total, string ProMedi_Total, string ProMedi_Price, string ProMedi_PriceTotal, string Service_Total, string ReportType) {
                 DT_ReportRow rowDT_ReportRow = ((DT_ReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ReportDate,
                         ReportToDate,
                         OutlayDetail_Total,
-                        InCome_Total,
-                        SerMe_Total};
+                        ProMedi_Total,
+                        ProMedi_Price,
+                        ProMedi_PriceTotal,
+                        Service_Total,
+                        ReportType};
                 rowDT_ReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_ReportRow);
                 return rowDT_ReportRow;
@@ -2775,8 +2808,11 @@ namespace Petshop.Resources {
                 this.columnReportDate = base.Columns["ReportDate"];
                 this.columnReportToDate = base.Columns["ReportToDate"];
                 this.columnOutlayDetail_Total = base.Columns["OutlayDetail_Total"];
-                this.columnInCome_Total = base.Columns["InCome_Total"];
-                this.columnSerMe_Total = base.Columns["SerMe_Total"];
+                this.columnProMedi_Total = base.Columns["ProMedi_Total"];
+                this.columnProMedi_Price = base.Columns["ProMedi_Price"];
+                this.columnProMedi_PriceTotal = base.Columns["ProMedi_PriceTotal"];
+                this.columnService_Total = base.Columns["Service_Total"];
+                this.columnReportType = base.Columns["ReportType"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2788,10 +2824,16 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnReportToDate);
                 this.columnOutlayDetail_Total = new global::System.Data.DataColumn("OutlayDetail_Total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOutlayDetail_Total);
-                this.columnInCome_Total = new global::System.Data.DataColumn("InCome_Total", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInCome_Total);
-                this.columnSerMe_Total = new global::System.Data.DataColumn("SerMe_Total", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSerMe_Total);
+                this.columnProMedi_Total = new global::System.Data.DataColumn("ProMedi_Total", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProMedi_Total);
+                this.columnProMedi_Price = new global::System.Data.DataColumn("ProMedi_Price", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProMedi_Price);
+                this.columnProMedi_PriceTotal = new global::System.Data.DataColumn("ProMedi_PriceTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProMedi_PriceTotal);
+                this.columnService_Total = new global::System.Data.DataColumn("Service_Total", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnService_Total);
+                this.columnReportType = new global::System.Data.DataColumn("ReportType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReportType);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2923,22 +2965,22 @@ namespace Petshop.Resources {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DT_ProductDataTable : global::System.Data.TypedTableBase<DT_ProductRow> {
+        public partial class DT_ProMediDataTable : global::System.Data.TypedTableBase<DT_ProMediRow> {
             
-            private global::System.Data.DataColumn columnProduct_ID;
+            private global::System.Data.DataColumn columnProMedi_ID;
             
-            private global::System.Data.DataColumn columnProduct_Des;
+            private global::System.Data.DataColumn columnProMedi_Des;
             
-            private global::System.Data.DataColumn columnProductSale_Unit;
+            private global::System.Data.DataColumn columnProMedi_Unit;
             
-            private global::System.Data.DataColumn columnProduct_Sale;
+            private global::System.Data.DataColumn columnProMedi_Sale;
             
-            private global::System.Data.DataColumn columnProductSale_Total;
+            private global::System.Data.DataColumn columnProMedi_Total;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ProductDataTable() {
-                this.TableName = "DT_Product";
+            public DT_ProMediDataTable() {
+                this.TableName = "DT_ProMedi";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2946,7 +2988,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DT_ProductDataTable(global::System.Data.DataTable table) {
+            internal DT_ProMediDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2963,48 +3005,48 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DT_ProductDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DT_ProMediDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Product_IDColumn {
+            public global::System.Data.DataColumn ProMedi_IDColumn {
                 get {
-                    return this.columnProduct_ID;
+                    return this.columnProMedi_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Product_DesColumn {
+            public global::System.Data.DataColumn ProMedi_DesColumn {
                 get {
-                    return this.columnProduct_Des;
+                    return this.columnProMedi_Des;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProductSale_UnitColumn {
+            public global::System.Data.DataColumn ProMedi_UnitColumn {
                 get {
-                    return this.columnProductSale_Unit;
+                    return this.columnProMedi_Unit;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Product_SaleColumn {
+            public global::System.Data.DataColumn ProMedi_SaleColumn {
                 get {
-                    return this.columnProduct_Sale;
+                    return this.columnProMedi_Sale;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProductSale_TotalColumn {
+            public global::System.Data.DataColumn ProMedi_TotalColumn {
                 get {
-                    return this.columnProductSale_Total;
+                    return this.columnProMedi_Total;
                 }
             }
             
@@ -3019,49 +3061,49 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ProductRow this[int index] {
+            public DT_ProMediRow this[int index] {
                 get {
-                    return ((DT_ProductRow)(this.Rows[index]));
+                    return ((DT_ProMediRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DT_ProductRowChangeEventHandler DT_ProductRowChanging;
+            public event DT_ProMediRowChangeEventHandler DT_ProMediRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DT_ProductRowChangeEventHandler DT_ProductRowChanged;
+            public event DT_ProMediRowChangeEventHandler DT_ProMediRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DT_ProductRowChangeEventHandler DT_ProductRowDeleting;
+            public event DT_ProMediRowChangeEventHandler DT_ProMediRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DT_ProductRowChangeEventHandler DT_ProductRowDeleted;
+            public event DT_ProMediRowChangeEventHandler DT_ProMediRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDT_ProductRow(DT_ProductRow row) {
+            public void AddDT_ProMediRow(DT_ProMediRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ProductRow AddDT_ProductRow(string Product_ID, string Product_Des, string ProductSale_Unit, string Product_Sale, string ProductSale_Total) {
-                DT_ProductRow rowDT_ProductRow = ((DT_ProductRow)(this.NewRow()));
+            public DT_ProMediRow AddDT_ProMediRow(string ProMedi_ID, string ProMedi_Des, string ProMedi_Unit, string ProMedi_Sale, string ProMedi_Total) {
+                DT_ProMediRow rowDT_ProMediRow = ((DT_ProMediRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Product_ID,
-                        Product_Des,
-                        ProductSale_Unit,
-                        Product_Sale,
-                        ProductSale_Total};
-                rowDT_ProductRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDT_ProductRow);
-                return rowDT_ProductRow;
+                        ProMedi_ID,
+                        ProMedi_Des,
+                        ProMedi_Unit,
+                        ProMedi_Sale,
+                        ProMedi_Total};
+                rowDT_ProMediRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_ProMediRow);
+                return rowDT_ProMediRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DT_ProductDataTable cln = ((DT_ProductDataTable)(base.Clone()));
+                DT_ProMediDataTable cln = ((DT_ProMediDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3069,58 +3111,58 @@ namespace Petshop.Resources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DT_ProductDataTable();
+                return new DT_ProMediDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnProduct_ID = base.Columns["Product_ID"];
-                this.columnProduct_Des = base.Columns["Product_Des"];
-                this.columnProductSale_Unit = base.Columns["ProductSale_Unit"];
-                this.columnProduct_Sale = base.Columns["Product_Sale"];
-                this.columnProductSale_Total = base.Columns["ProductSale_Total"];
+                this.columnProMedi_ID = base.Columns["ProMedi_ID"];
+                this.columnProMedi_Des = base.Columns["ProMedi_Des"];
+                this.columnProMedi_Unit = base.Columns["ProMedi_Unit"];
+                this.columnProMedi_Sale = base.Columns["ProMedi_Sale"];
+                this.columnProMedi_Total = base.Columns["ProMedi_Total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnProduct_ID = new global::System.Data.DataColumn("Product_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProduct_ID);
-                this.columnProduct_Des = new global::System.Data.DataColumn("Product_Des", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProduct_Des);
-                this.columnProductSale_Unit = new global::System.Data.DataColumn("ProductSale_Unit", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProductSale_Unit);
-                this.columnProduct_Sale = new global::System.Data.DataColumn("Product_Sale", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProduct_Sale);
-                this.columnProductSale_Total = new global::System.Data.DataColumn("ProductSale_Total", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProductSale_Total);
+                this.columnProMedi_ID = new global::System.Data.DataColumn("ProMedi_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProMedi_ID);
+                this.columnProMedi_Des = new global::System.Data.DataColumn("ProMedi_Des", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProMedi_Des);
+                this.columnProMedi_Unit = new global::System.Data.DataColumn("ProMedi_Unit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProMedi_Unit);
+                this.columnProMedi_Sale = new global::System.Data.DataColumn("ProMedi_Sale", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProMedi_Sale);
+                this.columnProMedi_Total = new global::System.Data.DataColumn("ProMedi_Total", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProMedi_Total);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ProductRow NewDT_ProductRow() {
-                return ((DT_ProductRow)(this.NewRow()));
+            public DT_ProMediRow NewDT_ProMediRow() {
+                return ((DT_ProMediRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DT_ProductRow(builder);
+                return new DT_ProMediRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DT_ProductRow);
+                return typeof(DT_ProMediRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DT_ProductRowChanged != null)) {
-                    this.DT_ProductRowChanged(this, new DT_ProductRowChangeEvent(((DT_ProductRow)(e.Row)), e.Action));
+                if ((this.DT_ProMediRowChanged != null)) {
+                    this.DT_ProMediRowChanged(this, new DT_ProMediRowChangeEvent(((DT_ProMediRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3128,8 +3170,8 @@ namespace Petshop.Resources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DT_ProductRowChanging != null)) {
-                    this.DT_ProductRowChanging(this, new DT_ProductRowChangeEvent(((DT_ProductRow)(e.Row)), e.Action));
+                if ((this.DT_ProMediRowChanging != null)) {
+                    this.DT_ProMediRowChanging(this, new DT_ProMediRowChangeEvent(((DT_ProMediRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3137,8 +3179,8 @@ namespace Petshop.Resources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DT_ProductRowDeleted != null)) {
-                    this.DT_ProductRowDeleted(this, new DT_ProductRowChangeEvent(((DT_ProductRow)(e.Row)), e.Action));
+                if ((this.DT_ProMediRowDeleted != null)) {
+                    this.DT_ProMediRowDeleted(this, new DT_ProMediRowChangeEvent(((DT_ProMediRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3146,14 +3188,14 @@ namespace Petshop.Resources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DT_ProductRowDeleting != null)) {
-                    this.DT_ProductRowDeleting(this, new DT_ProductRowChangeEvent(((DT_ProductRow)(e.Row)), e.Action));
+                if ((this.DT_ProMediRowDeleting != null)) {
+                    this.DT_ProMediRowDeleting(this, new DT_ProMediRowChangeEvent(((DT_ProMediRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDT_ProductRow(DT_ProductRow row) {
+            public void RemoveDT_ProMediRow(DT_ProMediRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3180,7 +3222,7 @@ namespace Petshop.Resources {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DT_ProductDataTable";
+                attribute2.FixedValue = "DT_ProMediDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4776,33 +4818,81 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string InCome_Total {
+            public string ProMedi_Total {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Report.InCome_TotalColumn]));
+                        return ((string)(this[this.tableDT_Report.ProMedi_TotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'InCome_Total\' in table \'DT_Report\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_Total\' in table \'DT_Report\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Report.InCome_TotalColumn] = value;
+                    this[this.tableDT_Report.ProMedi_TotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SerMe_Total {
+            public string ProMedi_Price {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Report.SerMe_TotalColumn]));
+                        return ((string)(this[this.tableDT_Report.ProMedi_PriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SerMe_Total\' in table \'DT_Report\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_Price\' in table \'DT_Report\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Report.SerMe_TotalColumn] = value;
+                    this[this.tableDT_Report.ProMedi_PriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ProMedi_PriceTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Report.ProMedi_PriceTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_PriceTotal\' in table \'DT_Report\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Report.ProMedi_PriceTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Service_Total {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Report.Service_TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Service_Total\' in table \'DT_Report\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Report.Service_TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ReportType {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Report.ReportTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReportType\' in table \'DT_Report\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Report.ReportTypeColumn] = value;
                 }
             }
             
@@ -4844,181 +4934,217 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsInCome_TotalNull() {
-                return this.IsNull(this.tableDT_Report.InCome_TotalColumn);
+            public bool IsProMedi_TotalNull() {
+                return this.IsNull(this.tableDT_Report.ProMedi_TotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetInCome_TotalNull() {
-                this[this.tableDT_Report.InCome_TotalColumn] = global::System.Convert.DBNull;
+            public void SetProMedi_TotalNull() {
+                this[this.tableDT_Report.ProMedi_TotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSerMe_TotalNull() {
-                return this.IsNull(this.tableDT_Report.SerMe_TotalColumn);
+            public bool IsProMedi_PriceNull() {
+                return this.IsNull(this.tableDT_Report.ProMedi_PriceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSerMe_TotalNull() {
-                this[this.tableDT_Report.SerMe_TotalColumn] = global::System.Convert.DBNull;
+            public void SetProMedi_PriceNull() {
+                this[this.tableDT_Report.ProMedi_PriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProMedi_PriceTotalNull() {
+                return this.IsNull(this.tableDT_Report.ProMedi_PriceTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProMedi_PriceTotalNull() {
+                this[this.tableDT_Report.ProMedi_PriceTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsService_TotalNull() {
+                return this.IsNull(this.tableDT_Report.Service_TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetService_TotalNull() {
+                this[this.tableDT_Report.Service_TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsReportTypeNull() {
+                return this.IsNull(this.tableDT_Report.ReportTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetReportTypeNull() {
+                this[this.tableDT_Report.ReportTypeColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DT_ProductRow : global::System.Data.DataRow {
+        public partial class DT_ProMediRow : global::System.Data.DataRow {
             
-            private DT_ProductDataTable tableDT_Product;
+            private DT_ProMediDataTable tableDT_ProMedi;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DT_ProductRow(global::System.Data.DataRowBuilder rb) : 
+            internal DT_ProMediRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDT_Product = ((DT_ProductDataTable)(this.Table));
+                this.tableDT_ProMedi = ((DT_ProMediDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Product_ID {
+            public string ProMedi_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Product.Product_IDColumn]));
+                        return ((string)(this[this.tableDT_ProMedi.ProMedi_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Product_ID\' in table \'DT_Product\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_ID\' in table \'DT_ProMedi\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Product.Product_IDColumn] = value;
+                    this[this.tableDT_ProMedi.ProMedi_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Product_Des {
+            public string ProMedi_Des {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Product.Product_DesColumn]));
+                        return ((string)(this[this.tableDT_ProMedi.ProMedi_DesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Product_Des\' in table \'DT_Product\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_Des\' in table \'DT_ProMedi\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Product.Product_DesColumn] = value;
+                    this[this.tableDT_ProMedi.ProMedi_DesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ProductSale_Unit {
+            public string ProMedi_Unit {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Product.ProductSale_UnitColumn]));
+                        return ((string)(this[this.tableDT_ProMedi.ProMedi_UnitColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProductSale_Unit\' in table \'DT_Product\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_Unit\' in table \'DT_ProMedi\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Product.ProductSale_UnitColumn] = value;
+                    this[this.tableDT_ProMedi.ProMedi_UnitColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Product_Sale {
+            public string ProMedi_Sale {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Product.Product_SaleColumn]));
+                        return ((string)(this[this.tableDT_ProMedi.ProMedi_SaleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Product_Sale\' in table \'DT_Product\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_Sale\' in table \'DT_ProMedi\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Product.Product_SaleColumn] = value;
+                    this[this.tableDT_ProMedi.ProMedi_SaleColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ProductSale_Total {
+            public string ProMedi_Total {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Product.ProductSale_TotalColumn]));
+                        return ((string)(this[this.tableDT_ProMedi.ProMedi_TotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProductSale_Total\' in table \'DT_Product\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_Total\' in table \'DT_ProMedi\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Product.ProductSale_TotalColumn] = value;
+                    this[this.tableDT_ProMedi.ProMedi_TotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProduct_IDNull() {
-                return this.IsNull(this.tableDT_Product.Product_IDColumn);
+            public bool IsProMedi_IDNull() {
+                return this.IsNull(this.tableDT_ProMedi.ProMedi_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProduct_IDNull() {
-                this[this.tableDT_Product.Product_IDColumn] = global::System.Convert.DBNull;
+            public void SetProMedi_IDNull() {
+                this[this.tableDT_ProMedi.ProMedi_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProduct_DesNull() {
-                return this.IsNull(this.tableDT_Product.Product_DesColumn);
+            public bool IsProMedi_DesNull() {
+                return this.IsNull(this.tableDT_ProMedi.ProMedi_DesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProduct_DesNull() {
-                this[this.tableDT_Product.Product_DesColumn] = global::System.Convert.DBNull;
+            public void SetProMedi_DesNull() {
+                this[this.tableDT_ProMedi.ProMedi_DesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProductSale_UnitNull() {
-                return this.IsNull(this.tableDT_Product.ProductSale_UnitColumn);
+            public bool IsProMedi_UnitNull() {
+                return this.IsNull(this.tableDT_ProMedi.ProMedi_UnitColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProductSale_UnitNull() {
-                this[this.tableDT_Product.ProductSale_UnitColumn] = global::System.Convert.DBNull;
+            public void SetProMedi_UnitNull() {
+                this[this.tableDT_ProMedi.ProMedi_UnitColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProduct_SaleNull() {
-                return this.IsNull(this.tableDT_Product.Product_SaleColumn);
+            public bool IsProMedi_SaleNull() {
+                return this.IsNull(this.tableDT_ProMedi.ProMedi_SaleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProduct_SaleNull() {
-                this[this.tableDT_Product.Product_SaleColumn] = global::System.Convert.DBNull;
+            public void SetProMedi_SaleNull() {
+                this[this.tableDT_ProMedi.ProMedi_SaleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProductSale_TotalNull() {
-                return this.IsNull(this.tableDT_Product.ProductSale_TotalColumn);
+            public bool IsProMedi_TotalNull() {
+                return this.IsNull(this.tableDT_ProMedi.ProMedi_TotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProductSale_TotalNull() {
-                this[this.tableDT_Product.ProductSale_TotalColumn] = global::System.Convert.DBNull;
+            public void SetProMedi_TotalNull() {
+                this[this.tableDT_ProMedi.ProMedi_TotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5264,22 +5390,22 @@ namespace Petshop.Resources {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DT_ProductRowChangeEvent : global::System.EventArgs {
+        public class DT_ProMediRowChangeEvent : global::System.EventArgs {
             
-            private DT_ProductRow eventRow;
+            private DT_ProMediRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ProductRowChangeEvent(DT_ProductRow row, global::System.Data.DataRowAction action) {
+            public DT_ProMediRowChangeEvent(DT_ProMediRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ProductRow Row {
+            public DT_ProMediRow Row {
                 get {
                     return this.eventRow;
                 }

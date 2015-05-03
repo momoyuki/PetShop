@@ -97,22 +97,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrInCome.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrInCome.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CrOutlay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrOutlay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrSerMe.cs">
+    <Compile Include="CrProMe.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrSerMe.rpt</DependentUpon>
+      <DependentUpon>CrProMe.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Form\FrmNN22.cs">
@@ -279,17 +273,13 @@
     <Compile Include="Resources\MySQLConnect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CrInCome.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrInCome.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="CrOutlay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrOutlay.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrSerMe.rpt">
+    <EmbeddedResource Include="CrProMe.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrSerMe.cs</LastGenOutput>
+      <LastGenOutput>CrProMe.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmNN22.resx">
       <DependentUpon>FrmNN22.cs</DependentUpon>
