@@ -109,6 +109,12 @@
       <DependentUpon>CrProMe.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrService.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrService.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form\FrmNN22.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,10 @@
     <EmbeddedResource Include="CrProMe.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrProMe.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrService.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrService.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmNN22.resx">
       <DependentUpon>FrmNN22.cs</DependentUpon>
