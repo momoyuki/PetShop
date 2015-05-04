@@ -30,11 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecorD21));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gBoxDetail = new System.Windows.Forms.GroupBox();
+            this.bt_BloodTest = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lb_AutoCount = new System.Windows.Forms.Label();
+            this.checkBox_MaID = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bt_remove = new System.Windows.Forms.Button();
@@ -143,10 +148,19 @@
             this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealDate_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccHealDate_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpBloodTest = new System.Windows.Forms.TabPage();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkBox_MaID = new System.Windows.Forms.CheckBox();
-            this.lb_AutoCount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dGV_BloodTest = new System.Windows.Forms.DataGridView();
+            this.lb_BloodTestID = new System.Windows.Forms.Label();
+            this.lb_BloodTest = new System.Windows.Forms.Label();
+            this.lb_ListBloodTestA = new System.Windows.Forms.Label();
+            this.lb_CountBlood = new System.Windows.Forms.Label();
+            this.lb_ListBloodTest = new System.Windows.Forms.Label();
+            this.bt_BloodTestDetail = new System.Windows.Forms.Button();
+            this.ccbloodtest_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccbloodtest_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_IDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccbloodtest_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDYear)).BeginInit();
             this.gBox_OwnerDetail.SuspendLayout();
@@ -159,11 +173,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDetail)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDate)).BeginInit();
+            this.tpBloodTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_BloodTest)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxDetail
             // 
+            this.gBoxDetail.Controls.Add(this.bt_BloodTest);
             this.gBoxDetail.Controls.Add(this.label3);
             this.gBoxDetail.Controls.Add(this.lb_AutoCount);
             this.gBoxDetail.Controls.Add(this.checkBox_MaID);
@@ -206,6 +223,47 @@
             this.gBoxDetail.TabIndex = 1;
             this.gBoxDetail.TabStop = false;
             this.gBoxDetail.Text = "รายละเอียด";
+            // 
+            // bt_BloodTest
+            // 
+            this.bt_BloodTest.Enabled = false;
+            this.bt_BloodTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_BloodTest.Location = new System.Drawing.Point(175, 168);
+            this.bt_BloodTest.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_BloodTest.Name = "bt_BloodTest";
+            this.bt_BloodTest.Size = new System.Drawing.Size(101, 69);
+            this.bt_BloodTest.TabIndex = 37;
+            this.bt_BloodTest.Text = "บันทึกผลเลือด";
+            this.bt_BloodTest.UseVisualStyleBackColor = true;
+            this.bt_BloodTest.Click += new System.EventHandler(this.bt_BloodTest_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 18);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "รหัสล่าสุด";
+            // 
+            // lb_AutoCount
+            // 
+            this.lb_AutoCount.AutoSize = true;
+            this.lb_AutoCount.Location = new System.Drawing.Point(86, 62);
+            this.lb_AutoCount.Name = "lb_AutoCount";
+            this.lb_AutoCount.Size = new System.Drawing.Size(94, 18);
+            this.lb_AutoCount.TabIndex = 35;
+            this.lb_AutoCount.Text = "lb_AutoCount";
+            // 
+            // checkBox_MaID
+            // 
+            this.checkBox_MaID.AutoSize = true;
+            this.checkBox_MaID.Location = new System.Drawing.Point(89, 30);
+            this.checkBox_MaID.Name = "checkBox_MaID";
+            this.checkBox_MaID.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_MaID.TabIndex = 34;
+            this.checkBox_MaID.UseVisualStyleBackColor = true;
+            this.checkBox_MaID.CheckedChanged += new System.EventHandler(this.checkBox_MaID_CheckedChanged);
             // 
             // label2
             // 
@@ -297,7 +355,7 @@
             this.bt_Service.Location = new System.Drawing.Point(68, 168);
             this.bt_Service.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Service.Name = "bt_Service";
-            this.bt_Service.Size = new System.Drawing.Size(208, 69);
+            this.bt_Service.Size = new System.Drawing.Size(101, 69);
             this.bt_Service.TabIndex = 7;
             this.bt_Service.Text = "ทำการรักษา";
             this.bt_Service.UseVisualStyleBackColor = true;
@@ -649,8 +707,8 @@
             // 
             this.dGV_PetProfile.AllowUserToAddRows = false;
             this.dGV_PetProfile.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_PetProfile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_PetProfile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dGV_PetProfile.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_PetProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_PetProfile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -824,6 +882,7 @@
             this.tabC_Pet.Controls.Add(this.tP_LisTDetail);
             this.tabC_Pet.Controls.Add(this.tp_HealDetail);
             this.tabC_Pet.Controls.Add(this.tabPage1);
+            this.tabC_Pet.Controls.Add(this.tpBloodTest);
             this.tabC_Pet.Location = new System.Drawing.Point(16, 309);
             this.tabC_Pet.Name = "tabC_Pet";
             this.tabC_Pet.SelectedIndex = 0;
@@ -974,8 +1033,8 @@
             // 
             this.dGV_HealRecord.AllowUserToAddRows = false;
             this.dGV_HealRecord.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dGV_HealRecord.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1205,8 +1264,8 @@
             // 
             this.dGV_HealDetail.AllowUserToAddRows = false;
             this.dGV_HealDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dGV_HealDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1300,8 +1359,8 @@
             // 
             this.dGV_HealDate.AllowUserToAddRows = false;
             this.dGV_HealDate.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dGV_HealDate.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1350,37 +1409,136 @@
             this.ccHealDate_Day.ReadOnly = true;
             this.ccHealDate_Day.Width = 200;
             // 
+            // tpBloodTest
+            // 
+            this.tpBloodTest.Controls.Add(this.bt_BloodTestDetail);
+            this.tpBloodTest.Controls.Add(this.lb_BloodTestID);
+            this.tpBloodTest.Controls.Add(this.lb_BloodTest);
+            this.tpBloodTest.Controls.Add(this.lb_ListBloodTestA);
+            this.tpBloodTest.Controls.Add(this.lb_CountBlood);
+            this.tpBloodTest.Controls.Add(this.lb_ListBloodTest);
+            this.tpBloodTest.Controls.Add(this.dGV_BloodTest);
+            this.tpBloodTest.Location = new System.Drawing.Point(4, 27);
+            this.tpBloodTest.Name = "tpBloodTest";
+            this.tpBloodTest.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBloodTest.Size = new System.Drawing.Size(972, 320);
+            this.tpBloodTest.TabIndex = 4;
+            this.tpBloodTest.Text = "ผลเลือด";
+            this.tpBloodTest.UseVisualStyleBackColor = true;
+            // 
             // epCheck
             // 
             this.epCheck.ContainerControl = this;
             // 
-            // checkBox_MaID
+            // dGV_BloodTest
             // 
-            this.checkBox_MaID.AutoSize = true;
-            this.checkBox_MaID.Location = new System.Drawing.Point(89, 30);
-            this.checkBox_MaID.Name = "checkBox_MaID";
-            this.checkBox_MaID.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_MaID.TabIndex = 34;
-            this.checkBox_MaID.UseVisualStyleBackColor = true;
-            this.checkBox_MaID.CheckedChanged += new System.EventHandler(this.checkBox_MaID_CheckedChanged);
+            this.dGV_BloodTest.AllowUserToAddRows = false;
+            this.dGV_BloodTest.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_BloodTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dGV_BloodTest.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dGV_BloodTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_BloodTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ccbloodtest_ID,
+            this.ccbloodtest_Date,
+            this.ccPet_IDB,
+            this.ccbloodtest_Remark});
+            this.dGV_BloodTest.Location = new System.Drawing.Point(7, 47);
+            this.dGV_BloodTest.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_BloodTest.MultiSelect = false;
+            this.dGV_BloodTest.Name = "dGV_BloodTest";
+            this.dGV_BloodTest.ReadOnly = true;
+            this.dGV_BloodTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_BloodTest.Size = new System.Drawing.Size(961, 269);
+            this.dGV_BloodTest.TabIndex = 11;
+            this.dGV_BloodTest.SelectionChanged += new System.EventHandler(this.dGV_BloodTest_SelectionChanged);
             // 
-            // lb_AutoCount
+            // lb_BloodTestID
             // 
-            this.lb_AutoCount.AutoSize = true;
-            this.lb_AutoCount.Location = new System.Drawing.Point(86, 62);
-            this.lb_AutoCount.Name = "lb_AutoCount";
-            this.lb_AutoCount.Size = new System.Drawing.Size(94, 18);
-            this.lb_AutoCount.TabIndex = 35;
-            this.lb_AutoCount.Text = "lb_AutoCount";
+            this.lb_BloodTestID.AutoSize = true;
+            this.lb_BloodTestID.Location = new System.Drawing.Point(449, 16);
+            this.lb_BloodTestID.Name = "lb_BloodTestID";
+            this.lb_BloodTestID.Size = new System.Drawing.Size(0, 18);
+            this.lb_BloodTestID.TabIndex = 18;
             // 
-            // label3
+            // lb_BloodTest
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 18);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "รหัสล่าสุด";
+            this.lb_BloodTest.AutoSize = true;
+            this.lb_BloodTest.Location = new System.Drawing.Point(321, 16);
+            this.lb_BloodTest.Name = "lb_BloodTest";
+            this.lb_BloodTest.Size = new System.Drawing.Size(122, 18);
+            this.lb_BloodTest.TabIndex = 17;
+            this.lb_BloodTest.Text = "เลขที่ผลตรวจเลือด";
+            // 
+            // lb_ListBloodTestA
+            // 
+            this.lb_ListBloodTestA.AutoSize = true;
+            this.lb_ListBloodTestA.Location = new System.Drawing.Point(252, 16);
+            this.lb_ListBloodTestA.Name = "lb_ListBloodTestA";
+            this.lb_ListBloodTestA.Size = new System.Drawing.Size(52, 18);
+            this.lb_ListBloodTestA.TabIndex = 16;
+            this.lb_ListBloodTestA.Text = "รายการ";
+            // 
+            // lb_CountBlood
+            // 
+            this.lb_CountBlood.AutoSize = true;
+            this.lb_CountBlood.Location = new System.Drawing.Point(205, 16);
+            this.lb_CountBlood.Name = "lb_CountBlood";
+            this.lb_CountBlood.Size = new System.Drawing.Size(16, 18);
+            this.lb_CountBlood.TabIndex = 15;
+            this.lb_CountBlood.Text = "0";
+            // 
+            // lb_ListBloodTest
+            // 
+            this.lb_ListBloodTest.AutoSize = true;
+            this.lb_ListBloodTest.Location = new System.Drawing.Point(18, 16);
+            this.lb_ListBloodTest.Name = "lb_ListBloodTest";
+            this.lb_ListBloodTest.Size = new System.Drawing.Size(162, 18);
+            this.lb_ListBloodTest.TabIndex = 14;
+            this.lb_ListBloodTest.Text = "พบบันทึกผลเลือดทั้งหมด";
+            // 
+            // bt_BloodTestDetail
+            // 
+            this.bt_BloodTestDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_BloodTestDetail.Location = new System.Drawing.Point(867, 9);
+            this.bt_BloodTestDetail.Name = "bt_BloodTestDetail";
+            this.bt_BloodTestDetail.Size = new System.Drawing.Size(100, 31);
+            this.bt_BloodTestDetail.TabIndex = 19;
+            this.bt_BloodTestDetail.Text = "รายละเอียด";
+            this.bt_BloodTestDetail.UseVisualStyleBackColor = true;
+            this.bt_BloodTestDetail.Click += new System.EventHandler(this.bt_BloodTestDetail_Click);
+            // 
+            // ccbloodtest_ID
+            // 
+            this.ccbloodtest_ID.DataPropertyName = "bloodtest_ID";
+            this.ccbloodtest_ID.HeaderText = "เลขที่ผลตรวจ";
+            this.ccbloodtest_ID.Name = "ccbloodtest_ID";
+            this.ccbloodtest_ID.ReadOnly = true;
+            this.ccbloodtest_ID.Width = 130;
+            // 
+            // ccbloodtest_Date
+            // 
+            this.ccbloodtest_Date.DataPropertyName = "bloodtest_Date";
+            this.ccbloodtest_Date.HeaderText = "วันที่ทำการบันทึก";
+            this.ccbloodtest_Date.Name = "ccbloodtest_Date";
+            this.ccbloodtest_Date.ReadOnly = true;
+            this.ccbloodtest_Date.Width = 160;
+            // 
+            // ccPet_IDB
+            // 
+            this.ccPet_IDB.DataPropertyName = "Pet_ID";
+            this.ccPet_IDB.HeaderText = "รหัสสัตว์";
+            this.ccPet_IDB.Name = "ccPet_IDB";
+            this.ccPet_IDB.ReadOnly = true;
+            this.ccPet_IDB.Visible = false;
+            // 
+            // ccbloodtest_Remark
+            // 
+            this.ccbloodtest_Remark.DataPropertyName = "bloodtest_Remark";
+            this.ccbloodtest_Remark.HeaderText = "หมายเหตุ";
+            this.ccbloodtest_Remark.Name = "ccbloodtest_Remark";
+            this.ccbloodtest_Remark.ReadOnly = true;
+            this.ccbloodtest_Remark.Width = 400;
             // 
             // FrmRecorD21
             // 
@@ -1414,7 +1572,10 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDate)).EndInit();
+            this.tpBloodTest.ResumeLayout(false);
+            this.tpBloodTest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_BloodTest)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1534,5 +1695,18 @@
         private System.Windows.Forms.CheckBox checkBox_MaID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_AutoCount;
+        private System.Windows.Forms.Button bt_BloodTest;
+        private System.Windows.Forms.TabPage tpBloodTest;
+        private System.Windows.Forms.Button bt_BloodTestDetail;
+        private System.Windows.Forms.Label lb_BloodTestID;
+        private System.Windows.Forms.Label lb_BloodTest;
+        private System.Windows.Forms.Label lb_ListBloodTestA;
+        private System.Windows.Forms.Label lb_CountBlood;
+        private System.Windows.Forms.Label lb_ListBloodTest;
+        private System.Windows.Forms.DataGridView dGV_BloodTest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_Remark;
     }
 }

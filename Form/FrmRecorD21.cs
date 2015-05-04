@@ -390,19 +390,35 @@ namespace Petshop
             _Textbox.Text = txb_PetProfileID.Text;
             loadHealRecord();
             LoadHealDetail();
+
+            loadBloodTest();
+
             loadDate();
             if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
             {
                 bt_Service.Enabled = true;
+                bt_BloodTest.Enabled = true;
                 bt_EditMember.Enabled = true;
                 bt_remove.Enabled = true;
             }
             else
             {
+                bt_BloodTest.Enabled = false;
                 bt_Service.Enabled = false;
                 bt_EditMember.Enabled = false;
                 bt_remove.Enabled = false;
             }
+        }
+
+        private void loadBloodTest()
+        {
+            string itxbPetProfileID = txb_PetProfileID.Text.Trim();
+            DataTable idtBloodTest;
+            string isqlBloodTest = "SELECT Bloodtest_ID,Bloodtest_Date,Pet_ID,bloodtest_remark FROM petshop.tb_bloodtest where pet_ID = '"+itxbPetProfileID+"'";
+            idtBloodTest = iConnect.SelectByCommand(isqlBloodTest);
+            dGV_BloodTest.DataSource = idtBloodTest;
+            dGV_BloodTest.Refresh();
+            lb_CountBlood.Text = idtBloodTest.Rows.Count.ToString();
         }
 
         private void loadDate()
@@ -805,6 +821,56 @@ namespace Petshop
             }
         }
 
-       
+        private void bt_BloodTest_Click(object sender, EventArgs e)
+        {
+            if ((txb_PetProfileID.Text != null) && (txb_PetProfileID.Text != string.Empty))
+            {
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmNN22))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+
+                FrmNN22 iFrmMM22 = new FrmNN22();
+                iFrmMM22.MdiParent = MainForm.ActiveForm;
+                iFrmMM22.Show();
+                iFrmMM22.lb_PetID.Text = txb_PetProfileID.Text;
+                //this.Close();
+            }
+            else
+            {
+                MessageBox.Show("กรุณาเลือกสัตว์ไข้", "ไม่พบสัตว์ไข้");
+            }
+        }
+
+        private void dGV_BloodTest_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dGV_BloodTest.SelectedRows)
+            {
+                lb_BloodTestID.Text = row.Cells["ccbloodtest_ID"].Value.ToString();
+            }
+        }
+
+        private void bt_BloodTestDetail_Click(object sender, EventArgs e)
+        {
+            if ((lb_BloodTestID.Text != string.Empty) && (lb_BloodTestID.Text != null))
+            {
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmNN22))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmNN22 iFrmNN22 = new FrmNN22();
+                iFrmNN22.MdiParent = MainForm.ActiveForm;
+                iFrmNN22.Show();
+                iFrmNN22.lb_BloodTestID.Text = lb_BloodTestID.Text;
+            }
+        }
     }
 }
