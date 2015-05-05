@@ -115,6 +115,18 @@
       <DependentUpon>CrService.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrHealRecord.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrHealRecord.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\FrmRePort33.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmRePort33.Designer.cs">
+      <DependentUpon>FrmRePort33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FrmNN22.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +303,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrService.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrHealRecord.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrHealRecord.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmNN22.resx">
       <DependentUpon>FrmNN22.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmRePort32.resx">
       <DependentUpon>FrmRePort32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmRePort33.resx">
+      <DependentUpon>FrmRePort33.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmSetting14.resx">
       <DependentUpon>FrmSetting14.cs</DependentUpon>

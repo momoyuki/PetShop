@@ -234,5 +234,20 @@ namespace Petshop
             iFrmRePort32.MdiParent = this;
             iFrmRePort32.Show();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+            {
+                if (form.GetType() == typeof(FrmRePort33))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FrmRePort33 iFrmRePort33 = new FrmRePort33();
+            iFrmRePort33.MdiParent = this;
+            iFrmRePort33.Show();
+        }
     }
 }

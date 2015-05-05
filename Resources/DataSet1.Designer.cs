@@ -42,6 +42,14 @@ namespace Petshop.Resources {
         
         private DT_ServiceDataTable tableDT_Service;
         
+        private DT_HealRecordDataTable tableDT_HealRecord;
+        
+        private DT_ServiceRecordDataTable tableDT_ServiceRecord;
+        
+        private DT_MediRecordDataTable tableDT_MediRecord;
+        
+        private global::System.Data.DataRelation relationDT_HealRecord_DT_ServiceRecord;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -96,6 +104,15 @@ namespace Petshop.Resources {
                 }
                 if ((ds.Tables["DT_Service"] != null)) {
                     base.Tables.Add(new DT_ServiceDataTable(ds.Tables["DT_Service"]));
+                }
+                if ((ds.Tables["DT_HealRecord"] != null)) {
+                    base.Tables.Add(new DT_HealRecordDataTable(ds.Tables["DT_HealRecord"]));
+                }
+                if ((ds.Tables["DT_ServiceRecord"] != null)) {
+                    base.Tables.Add(new DT_ServiceRecordDataTable(ds.Tables["DT_ServiceRecord"]));
+                }
+                if ((ds.Tables["DT_MediRecord"] != null)) {
+                    base.Tables.Add(new DT_MediRecordDataTable(ds.Tables["DT_MediRecord"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -207,6 +224,36 @@ namespace Petshop.Resources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DT_HealRecordDataTable DT_HealRecord {
+            get {
+                return this.tableDT_HealRecord;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DT_ServiceRecordDataTable DT_ServiceRecord {
+            get {
+                return this.tableDT_ServiceRecord;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DT_MediRecordDataTable DT_MediRecord {
+            get {
+                return this.tableDT_MediRecord;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -299,6 +346,15 @@ namespace Petshop.Resources {
                 if ((ds.Tables["DT_Service"] != null)) {
                     base.Tables.Add(new DT_ServiceDataTable(ds.Tables["DT_Service"]));
                 }
+                if ((ds.Tables["DT_HealRecord"] != null)) {
+                    base.Tables.Add(new DT_HealRecordDataTable(ds.Tables["DT_HealRecord"]));
+                }
+                if ((ds.Tables["DT_ServiceRecord"] != null)) {
+                    base.Tables.Add(new DT_ServiceRecordDataTable(ds.Tables["DT_ServiceRecord"]));
+                }
+                if ((ds.Tables["DT_MediRecord"] != null)) {
+                    base.Tables.Add(new DT_MediRecordDataTable(ds.Tables["DT_MediRecord"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -386,6 +442,25 @@ namespace Petshop.Resources {
                     this.tableDT_Service.InitVars();
                 }
             }
+            this.tableDT_HealRecord = ((DT_HealRecordDataTable)(base.Tables["DT_HealRecord"]));
+            if ((initTable == true)) {
+                if ((this.tableDT_HealRecord != null)) {
+                    this.tableDT_HealRecord.InitVars();
+                }
+            }
+            this.tableDT_ServiceRecord = ((DT_ServiceRecordDataTable)(base.Tables["DT_ServiceRecord"]));
+            if ((initTable == true)) {
+                if ((this.tableDT_ServiceRecord != null)) {
+                    this.tableDT_ServiceRecord.InitVars();
+                }
+            }
+            this.tableDT_MediRecord = ((DT_MediRecordDataTable)(base.Tables["DT_MediRecord"]));
+            if ((initTable == true)) {
+                if ((this.tableDT_MediRecord != null)) {
+                    this.tableDT_MediRecord.InitVars();
+                }
+            }
+            this.relationDT_HealRecord_DT_ServiceRecord = this.Relations["DT_HealRecord_DT_ServiceRecord"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +489,16 @@ namespace Petshop.Resources {
             base.Tables.Add(this.tableDT_ProMedi);
             this.tableDT_Service = new DT_ServiceDataTable();
             base.Tables.Add(this.tableDT_Service);
+            this.tableDT_HealRecord = new DT_HealRecordDataTable();
+            base.Tables.Add(this.tableDT_HealRecord);
+            this.tableDT_ServiceRecord = new DT_ServiceRecordDataTable();
+            base.Tables.Add(this.tableDT_ServiceRecord);
+            this.tableDT_MediRecord = new DT_MediRecordDataTable();
+            base.Tables.Add(this.tableDT_MediRecord);
+            this.relationDT_HealRecord_DT_ServiceRecord = new global::System.Data.DataRelation("DT_HealRecord_DT_ServiceRecord", new global::System.Data.DataColumn[] {
+                        this.tableDT_HealRecord.HealRecord_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDT_ServiceRecord.HealRecord_IDColumn}, false);
+            this.Relations.Add(this.relationDT_HealRecord_DT_ServiceRecord);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -467,6 +552,24 @@ namespace Petshop.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeDT_Service() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeDT_HealRecord() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeDT_ServiceRecord() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeDT_MediRecord() {
             return false;
         }
         
@@ -551,6 +654,15 @@ namespace Petshop.Resources {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void DT_ServiceRowChangeEventHandler(object sender, DT_ServiceRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void DT_HealRecordRowChangeEventHandler(object sender, DT_HealRecordRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void DT_ServiceRecordRowChangeEventHandler(object sender, DT_ServiceRecordRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void DT_MediRecordRowChangeEventHandler(object sender, DT_MediRecordRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3602,6 +3714,1044 @@ namespace Petshop.Resources {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DT_HealRecordDataTable : global::System.Data.TypedTableBase<DT_HealRecordRow> {
+            
+            private global::System.Data.DataColumn columnHealRecord_ID;
+            
+            private global::System.Data.DataColumn columnPet_ID;
+            
+            private global::System.Data.DataColumn columnPet_Name;
+            
+            private global::System.Data.DataColumn columnEm_ID;
+            
+            private global::System.Data.DataColumn columnEm_Name;
+            
+            private global::System.Data.DataColumn columnHealRecord_Symptom;
+            
+            private global::System.Data.DataColumn columnHealRecord_Weight;
+            
+            private global::System.Data.DataColumn columnHealRecord_Temp;
+            
+            private global::System.Data.DataColumn columnHealRecord_HR;
+            
+            private global::System.Data.DataColumn columnHealRecord_RR;
+            
+            private global::System.Data.DataColumn columnHealRecord_Date;
+            
+            private global::System.Data.DataColumn columnHealRecord_Total;
+            
+            private global::System.Data.DataColumn columnHealRecord_DC;
+            
+            private global::System.Data.DataColumn columnHealRecord_Net;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealRecordDataTable() {
+                this.TableName = "DT_HealRecord";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_HealRecordDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected DT_HealRecordDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_IDColumn {
+                get {
+                    return this.columnHealRecord_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Pet_IDColumn {
+                get {
+                    return this.columnPet_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Pet_NameColumn {
+                get {
+                    return this.columnPet_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Em_IDColumn {
+                get {
+                    return this.columnEm_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Em_NameColumn {
+                get {
+                    return this.columnEm_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_SymptomColumn {
+                get {
+                    return this.columnHealRecord_Symptom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_WeightColumn {
+                get {
+                    return this.columnHealRecord_Weight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_TempColumn {
+                get {
+                    return this.columnHealRecord_Temp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_HRColumn {
+                get {
+                    return this.columnHealRecord_HR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_RRColumn {
+                get {
+                    return this.columnHealRecord_RR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_DateColumn {
+                get {
+                    return this.columnHealRecord_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_TotalColumn {
+                get {
+                    return this.columnHealRecord_Total;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_DCColumn {
+                get {
+                    return this.columnHealRecord_DC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_NetColumn {
+                get {
+                    return this.columnHealRecord_Net;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealRecordRow this[int index] {
+                get {
+                    return ((DT_HealRecordRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_HealRecordRowChangeEventHandler DT_HealRecordRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_HealRecordRowChangeEventHandler DT_HealRecordRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_HealRecordRowChangeEventHandler DT_HealRecordRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_HealRecordRowChangeEventHandler DT_HealRecordRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddDT_HealRecordRow(DT_HealRecordRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealRecordRow AddDT_HealRecordRow(string HealRecord_ID, string Pet_ID, string Pet_Name, string Em_ID, string Em_Name, string HealRecord_Symptom, string HealRecord_Weight, string HealRecord_Temp, string HealRecord_HR, string HealRecord_RR, System.DateTime HealRecord_Date, string HealRecord_Total, string HealRecord_DC, string HealRecord_Net) {
+                DT_HealRecordRow rowDT_HealRecordRow = ((DT_HealRecordRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        HealRecord_ID,
+                        Pet_ID,
+                        Pet_Name,
+                        Em_ID,
+                        Em_Name,
+                        HealRecord_Symptom,
+                        HealRecord_Weight,
+                        HealRecord_Temp,
+                        HealRecord_HR,
+                        HealRecord_RR,
+                        HealRecord_Date,
+                        HealRecord_Total,
+                        HealRecord_DC,
+                        HealRecord_Net};
+                rowDT_HealRecordRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_HealRecordRow);
+                return rowDT_HealRecordRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DT_HealRecordDataTable cln = ((DT_HealRecordDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DT_HealRecordDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnHealRecord_ID = base.Columns["HealRecord_ID"];
+                this.columnPet_ID = base.Columns["Pet_ID"];
+                this.columnPet_Name = base.Columns["Pet_Name"];
+                this.columnEm_ID = base.Columns["Em_ID"];
+                this.columnEm_Name = base.Columns["Em_Name"];
+                this.columnHealRecord_Symptom = base.Columns["HealRecord_Symptom"];
+                this.columnHealRecord_Weight = base.Columns["HealRecord_Weight"];
+                this.columnHealRecord_Temp = base.Columns["HealRecord_Temp"];
+                this.columnHealRecord_HR = base.Columns["HealRecord_HR"];
+                this.columnHealRecord_RR = base.Columns["HealRecord_RR"];
+                this.columnHealRecord_Date = base.Columns["HealRecord_Date"];
+                this.columnHealRecord_Total = base.Columns["HealRecord_Total"];
+                this.columnHealRecord_DC = base.Columns["HealRecord_DC"];
+                this.columnHealRecord_Net = base.Columns["HealRecord_Net"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnHealRecord_ID = new global::System.Data.DataColumn("HealRecord_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_ID);
+                this.columnPet_ID = new global::System.Data.DataColumn("Pet_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPet_ID);
+                this.columnPet_Name = new global::System.Data.DataColumn("Pet_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPet_Name);
+                this.columnEm_ID = new global::System.Data.DataColumn("Em_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEm_ID);
+                this.columnEm_Name = new global::System.Data.DataColumn("Em_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEm_Name);
+                this.columnHealRecord_Symptom = new global::System.Data.DataColumn("HealRecord_Symptom", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_Symptom);
+                this.columnHealRecord_Weight = new global::System.Data.DataColumn("HealRecord_Weight", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_Weight);
+                this.columnHealRecord_Temp = new global::System.Data.DataColumn("HealRecord_Temp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_Temp);
+                this.columnHealRecord_HR = new global::System.Data.DataColumn("HealRecord_HR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_HR);
+                this.columnHealRecord_RR = new global::System.Data.DataColumn("HealRecord_RR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_RR);
+                this.columnHealRecord_Date = new global::System.Data.DataColumn("HealRecord_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_Date);
+                this.columnHealRecord_Total = new global::System.Data.DataColumn("HealRecord_Total", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_Total);
+                this.columnHealRecord_DC = new global::System.Data.DataColumn("HealRecord_DC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_DC);
+                this.columnHealRecord_Net = new global::System.Data.DataColumn("HealRecord_Net", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_Net);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealRecordRow NewDT_HealRecordRow() {
+                return ((DT_HealRecordRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DT_HealRecordRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DT_HealRecordRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DT_HealRecordRowChanged != null)) {
+                    this.DT_HealRecordRowChanged(this, new DT_HealRecordRowChangeEvent(((DT_HealRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DT_HealRecordRowChanging != null)) {
+                    this.DT_HealRecordRowChanging(this, new DT_HealRecordRowChangeEvent(((DT_HealRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DT_HealRecordRowDeleted != null)) {
+                    this.DT_HealRecordRowDeleted(this, new DT_HealRecordRowChangeEvent(((DT_HealRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DT_HealRecordRowDeleting != null)) {
+                    this.DT_HealRecordRowDeleting(this, new DT_HealRecordRowChangeEvent(((DT_HealRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveDT_HealRecordRow(DT_HealRecordRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DT_HealRecordDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DT_ServiceRecordDataTable : global::System.Data.TypedTableBase<DT_ServiceRecordRow> {
+            
+            private global::System.Data.DataColumn columnHealRecord_ID;
+            
+            private global::System.Data.DataColumn columnService_ID;
+            
+            private global::System.Data.DataColumn columnService_Des;
+            
+            private global::System.Data.DataColumn columnService_Amt;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_ServiceRecordDataTable() {
+                this.TableName = "DT_ServiceRecord";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_ServiceRecordDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected DT_ServiceRecordDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_IDColumn {
+                get {
+                    return this.columnHealRecord_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Service_IDColumn {
+                get {
+                    return this.columnService_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Service_DesColumn {
+                get {
+                    return this.columnService_Des;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Service_AmtColumn {
+                get {
+                    return this.columnService_Amt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_ServiceRecordRow this[int index] {
+                get {
+                    return ((DT_ServiceRecordRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_ServiceRecordRowChangeEventHandler DT_ServiceRecordRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_ServiceRecordRowChangeEventHandler DT_ServiceRecordRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_ServiceRecordRowChangeEventHandler DT_ServiceRecordRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_ServiceRecordRowChangeEventHandler DT_ServiceRecordRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddDT_ServiceRecordRow(DT_ServiceRecordRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_ServiceRecordRow AddDT_ServiceRecordRow(DT_HealRecordRow parentDT_HealRecordRowByDT_HealRecord_DT_ServiceRecord, string Service_ID, string Service_Des, string Service_Amt) {
+                DT_ServiceRecordRow rowDT_ServiceRecordRow = ((DT_ServiceRecordRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Service_ID,
+                        Service_Des,
+                        Service_Amt};
+                if ((parentDT_HealRecordRowByDT_HealRecord_DT_ServiceRecord != null)) {
+                    columnValuesArray[0] = parentDT_HealRecordRowByDT_HealRecord_DT_ServiceRecord[0];
+                }
+                rowDT_ServiceRecordRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_ServiceRecordRow);
+                return rowDT_ServiceRecordRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DT_ServiceRecordDataTable cln = ((DT_ServiceRecordDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DT_ServiceRecordDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnHealRecord_ID = base.Columns["HealRecord_ID"];
+                this.columnService_ID = base.Columns["Service_ID"];
+                this.columnService_Des = base.Columns["Service_Des"];
+                this.columnService_Amt = base.Columns["Service_Amt"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnHealRecord_ID = new global::System.Data.DataColumn("HealRecord_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_ID);
+                this.columnService_ID = new global::System.Data.DataColumn("Service_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnService_ID);
+                this.columnService_Des = new global::System.Data.DataColumn("Service_Des", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnService_Des);
+                this.columnService_Amt = new global::System.Data.DataColumn("Service_Amt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnService_Amt);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_ServiceRecordRow NewDT_ServiceRecordRow() {
+                return ((DT_ServiceRecordRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DT_ServiceRecordRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DT_ServiceRecordRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DT_ServiceRecordRowChanged != null)) {
+                    this.DT_ServiceRecordRowChanged(this, new DT_ServiceRecordRowChangeEvent(((DT_ServiceRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DT_ServiceRecordRowChanging != null)) {
+                    this.DT_ServiceRecordRowChanging(this, new DT_ServiceRecordRowChangeEvent(((DT_ServiceRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DT_ServiceRecordRowDeleted != null)) {
+                    this.DT_ServiceRecordRowDeleted(this, new DT_ServiceRecordRowChangeEvent(((DT_ServiceRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DT_ServiceRecordRowDeleting != null)) {
+                    this.DT_ServiceRecordRowDeleting(this, new DT_ServiceRecordRowChangeEvent(((DT_ServiceRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveDT_ServiceRecordRow(DT_ServiceRecordRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DT_ServiceRecordDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DT_MediRecordDataTable : global::System.Data.TypedTableBase<DT_MediRecordRow> {
+            
+            private global::System.Data.DataColumn columnHealRecord_ID;
+            
+            private global::System.Data.DataColumn columnMedi_ID;
+            
+            private global::System.Data.DataColumn columnMedi_Des;
+            
+            private global::System.Data.DataColumn columnMediSale_Unit;
+            
+            private global::System.Data.DataColumn columnMedi_Sale;
+            
+            private global::System.Data.DataColumn columnMediRecord_Total;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_MediRecordDataTable() {
+                this.TableName = "DT_MediRecord";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_MediRecordDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected DT_MediRecordDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HealRecord_IDColumn {
+                get {
+                    return this.columnHealRecord_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Medi_IDColumn {
+                get {
+                    return this.columnMedi_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Medi_DesColumn {
+                get {
+                    return this.columnMedi_Des;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MediSale_UnitColumn {
+                get {
+                    return this.columnMediSale_Unit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Medi_SaleColumn {
+                get {
+                    return this.columnMedi_Sale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MediRecord_TotalColumn {
+                get {
+                    return this.columnMediRecord_Total;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_MediRecordRow this[int index] {
+                get {
+                    return ((DT_MediRecordRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_MediRecordRowChangeEventHandler DT_MediRecordRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_MediRecordRowChangeEventHandler DT_MediRecordRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_MediRecordRowChangeEventHandler DT_MediRecordRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DT_MediRecordRowChangeEventHandler DT_MediRecordRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddDT_MediRecordRow(DT_MediRecordRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_MediRecordRow AddDT_MediRecordRow(string HealRecord_ID, string Medi_ID, string Medi_Des, string MediSale_Unit, string Medi_Sale, string MediRecord_Total) {
+                DT_MediRecordRow rowDT_MediRecordRow = ((DT_MediRecordRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        HealRecord_ID,
+                        Medi_ID,
+                        Medi_Des,
+                        MediSale_Unit,
+                        Medi_Sale,
+                        MediRecord_Total};
+                rowDT_MediRecordRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_MediRecordRow);
+                return rowDT_MediRecordRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DT_MediRecordDataTable cln = ((DT_MediRecordDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DT_MediRecordDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnHealRecord_ID = base.Columns["HealRecord_ID"];
+                this.columnMedi_ID = base.Columns["Medi_ID"];
+                this.columnMedi_Des = base.Columns["Medi_Des"];
+                this.columnMediSale_Unit = base.Columns["MediSale_Unit"];
+                this.columnMedi_Sale = base.Columns["Medi_Sale"];
+                this.columnMediRecord_Total = base.Columns["MediRecord_Total"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnHealRecord_ID = new global::System.Data.DataColumn("HealRecord_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHealRecord_ID);
+                this.columnMedi_ID = new global::System.Data.DataColumn("Medi_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMedi_ID);
+                this.columnMedi_Des = new global::System.Data.DataColumn("Medi_Des", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMedi_Des);
+                this.columnMediSale_Unit = new global::System.Data.DataColumn("MediSale_Unit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMediSale_Unit);
+                this.columnMedi_Sale = new global::System.Data.DataColumn("Medi_Sale", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMedi_Sale);
+                this.columnMediRecord_Total = new global::System.Data.DataColumn("MediRecord_Total", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMediRecord_Total);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_MediRecordRow NewDT_MediRecordRow() {
+                return ((DT_MediRecordRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DT_MediRecordRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DT_MediRecordRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DT_MediRecordRowChanged != null)) {
+                    this.DT_MediRecordRowChanged(this, new DT_MediRecordRowChangeEvent(((DT_MediRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DT_MediRecordRowChanging != null)) {
+                    this.DT_MediRecordRowChanging(this, new DT_MediRecordRowChangeEvent(((DT_MediRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DT_MediRecordRowDeleted != null)) {
+                    this.DT_MediRecordRowDeleted(this, new DT_MediRecordRowChangeEvent(((DT_MediRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DT_MediRecordRowDeleting != null)) {
+                    this.DT_MediRecordRowDeleting(this, new DT_MediRecordRowChangeEvent(((DT_MediRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveDT_MediRecordRow(DT_MediRecordRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DT_MediRecordDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DT_HealDateRow : global::System.Data.DataRow {
@@ -5642,6 +6792,745 @@ namespace Petshop.Resources {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DT_HealRecordRow : global::System.Data.DataRow {
+            
+            private DT_HealRecordDataTable tableDT_HealRecord;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_HealRecordRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDT_HealRecord = ((DT_HealRecordDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_ID\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Pet_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.Pet_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pet_ID\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.Pet_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Pet_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.Pet_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pet_Name\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.Pet_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Em_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.Em_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Em_ID\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.Em_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Em_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.Em_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Em_Name\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.Em_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_Symptom {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_SymptomColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_Symptom\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_SymptomColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_Weight {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_WeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_Weight\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_WeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_Temp {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_TempColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_Temp\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_TempColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_HR {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_HRColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_HR\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_HRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_RR {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_RRColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_RR\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_RRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime HealRecord_Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDT_HealRecord.HealRecord_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_Date\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_Total {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_Total\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_DC {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_DCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_DC\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_DCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_Net {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.HealRecord_NetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_Net\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.HealRecord_NetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_IDNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_IDNull() {
+                this[this.tableDT_HealRecord.HealRecord_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPet_IDNull() {
+                return this.IsNull(this.tableDT_HealRecord.Pet_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPet_IDNull() {
+                this[this.tableDT_HealRecord.Pet_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPet_NameNull() {
+                return this.IsNull(this.tableDT_HealRecord.Pet_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPet_NameNull() {
+                this[this.tableDT_HealRecord.Pet_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEm_IDNull() {
+                return this.IsNull(this.tableDT_HealRecord.Em_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEm_IDNull() {
+                this[this.tableDT_HealRecord.Em_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEm_NameNull() {
+                return this.IsNull(this.tableDT_HealRecord.Em_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEm_NameNull() {
+                this[this.tableDT_HealRecord.Em_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_SymptomNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_SymptomColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_SymptomNull() {
+                this[this.tableDT_HealRecord.HealRecord_SymptomColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_WeightNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_WeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_WeightNull() {
+                this[this.tableDT_HealRecord.HealRecord_WeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_TempNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_TempColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_TempNull() {
+                this[this.tableDT_HealRecord.HealRecord_TempColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_HRNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_HRColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_HRNull() {
+                this[this.tableDT_HealRecord.HealRecord_HRColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_RRNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_RRColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_RRNull() {
+                this[this.tableDT_HealRecord.HealRecord_RRColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_DateNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_DateNull() {
+                this[this.tableDT_HealRecord.HealRecord_DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_TotalNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_TotalNull() {
+                this[this.tableDT_HealRecord.HealRecord_TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_DCNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_DCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_DCNull() {
+                this[this.tableDT_HealRecord.HealRecord_DCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_NetNull() {
+                return this.IsNull(this.tableDT_HealRecord.HealRecord_NetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_NetNull() {
+                this[this.tableDT_HealRecord.HealRecord_NetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_ServiceRecordRow[] GetDT_ServiceRecordRows() {
+                if ((this.Table.ChildRelations["DT_HealRecord_DT_ServiceRecord"] == null)) {
+                    return new DT_ServiceRecordRow[0];
+                }
+                else {
+                    return ((DT_ServiceRecordRow[])(base.GetChildRows(this.Table.ChildRelations["DT_HealRecord_DT_ServiceRecord"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DT_ServiceRecordRow : global::System.Data.DataRow {
+            
+            private DT_ServiceRecordDataTable tableDT_ServiceRecord;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_ServiceRecordRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDT_ServiceRecord = ((DT_ServiceRecordDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_ServiceRecord.HealRecord_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_ID\' in table \'DT_ServiceRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_ServiceRecord.HealRecord_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Service_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_ServiceRecord.Service_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Service_ID\' in table \'DT_ServiceRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_ServiceRecord.Service_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Service_Des {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_ServiceRecord.Service_DesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Service_Des\' in table \'DT_ServiceRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_ServiceRecord.Service_DesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Service_Amt {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_ServiceRecord.Service_AmtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Service_Amt\' in table \'DT_ServiceRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_ServiceRecord.Service_AmtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealRecordRow DT_HealRecordRow {
+                get {
+                    return ((DT_HealRecordRow)(this.GetParentRow(this.Table.ParentRelations["DT_HealRecord_DT_ServiceRecord"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["DT_HealRecord_DT_ServiceRecord"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_IDNull() {
+                return this.IsNull(this.tableDT_ServiceRecord.HealRecord_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_IDNull() {
+                this[this.tableDT_ServiceRecord.HealRecord_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsService_IDNull() {
+                return this.IsNull(this.tableDT_ServiceRecord.Service_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetService_IDNull() {
+                this[this.tableDT_ServiceRecord.Service_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsService_DesNull() {
+                return this.IsNull(this.tableDT_ServiceRecord.Service_DesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetService_DesNull() {
+                this[this.tableDT_ServiceRecord.Service_DesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsService_AmtNull() {
+                return this.IsNull(this.tableDT_ServiceRecord.Service_AmtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetService_AmtNull() {
+                this[this.tableDT_ServiceRecord.Service_AmtColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DT_MediRecordRow : global::System.Data.DataRow {
+            
+            private DT_MediRecordDataTable tableDT_MediRecord;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DT_MediRecordRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDT_MediRecord = ((DT_MediRecordDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HealRecord_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_MediRecord.HealRecord_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HealRecord_ID\' in table \'DT_MediRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_MediRecord.HealRecord_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Medi_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_MediRecord.Medi_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Medi_ID\' in table \'DT_MediRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_MediRecord.Medi_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Medi_Des {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_MediRecord.Medi_DesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Medi_Des\' in table \'DT_MediRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_MediRecord.Medi_DesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MediSale_Unit {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_MediRecord.MediSale_UnitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MediSale_Unit\' in table \'DT_MediRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_MediRecord.MediSale_UnitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Medi_Sale {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_MediRecord.Medi_SaleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Medi_Sale\' in table \'DT_MediRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_MediRecord.Medi_SaleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MediRecord_Total {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_MediRecord.MediRecord_TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MediRecord_Total\' in table \'DT_MediRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_MediRecord.MediRecord_TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHealRecord_IDNull() {
+                return this.IsNull(this.tableDT_MediRecord.HealRecord_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHealRecord_IDNull() {
+                this[this.tableDT_MediRecord.HealRecord_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMedi_IDNull() {
+                return this.IsNull(this.tableDT_MediRecord.Medi_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMedi_IDNull() {
+                this[this.tableDT_MediRecord.Medi_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMedi_DesNull() {
+                return this.IsNull(this.tableDT_MediRecord.Medi_DesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMedi_DesNull() {
+                this[this.tableDT_MediRecord.Medi_DesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMediSale_UnitNull() {
+                return this.IsNull(this.tableDT_MediRecord.MediSale_UnitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMediSale_UnitNull() {
+                this[this.tableDT_MediRecord.MediSale_UnitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMedi_SaleNull() {
+                return this.IsNull(this.tableDT_MediRecord.Medi_SaleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMedi_SaleNull() {
+                this[this.tableDT_MediRecord.Medi_SaleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMediRecord_TotalNull() {
+                return this.IsNull(this.tableDT_MediRecord.MediRecord_TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMediRecord_TotalNull() {
+                this[this.tableDT_MediRecord.MediRecord_TotalColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5933,6 +7822,108 @@ namespace Petshop.Resources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DT_ServiceRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class DT_HealRecordRowChangeEvent : global::System.EventArgs {
+            
+            private DT_HealRecordRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealRecordRowChangeEvent(DT_HealRecordRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_HealRecordRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class DT_ServiceRecordRowChangeEvent : global::System.EventArgs {
+            
+            private DT_ServiceRecordRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_ServiceRecordRowChangeEvent(DT_ServiceRecordRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_ServiceRecordRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class DT_MediRecordRowChangeEvent : global::System.EventArgs {
+            
+            private DT_MediRecordRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_MediRecordRowChangeEvent(DT_MediRecordRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DT_MediRecordRow Row {
                 get {
                     return this.eventRow;
                 }
