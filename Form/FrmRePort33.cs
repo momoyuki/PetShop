@@ -80,7 +80,7 @@ namespace Petshop
             
 
             ReportDocument rpt = new ReportDocument();
-            rpt.Load("D:\\PetShop\\CrHealRecord.rpt");
+            rpt.Load("CrHealRecord.rpt");
             rpt.SetDataSource(idtHealRecord);
             rpt.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
