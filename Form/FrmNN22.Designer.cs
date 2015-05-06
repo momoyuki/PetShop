@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lb_PetID = new System.Windows.Forms.Label();
+            this.lb_PetName = new System.Windows.Forms.Label();
             this.bt_Reset = new System.Windows.Forms.Button();
             this.bt_PrintBloodtest = new System.Windows.Forms.Button();
             this.bt_BloodTest = new System.Windows.Forms.Button();
@@ -251,8 +253,6 @@
             this.lb_Employee = new System.Windows.Forms.Label();
             this.lb_PetID2 = new System.Windows.Forms.Label();
             this.lb_Name = new System.Windows.Forms.Label();
-            this.lb_PetName = new System.Windows.Forms.Label();
-            this.lb_PetID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -283,6 +283,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "บันทึกผลตรวจเลือด";
             // 
+            // lb_PetID
+            // 
+            this.lb_PetID.AutoSize = true;
+            this.lb_PetID.Location = new System.Drawing.Point(133, 38);
+            this.lb_PetID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_PetID.Name = "lb_PetID";
+            this.lb_PetID.Size = new System.Drawing.Size(50, 18);
+            this.lb_PetID.TabIndex = 106;
+            this.lb_PetID.Text = "สัตว์ไข้";
+            this.lb_PetID.TextChanged += new System.EventHandler(this.lb_PetID_TextChanged);
+            // 
+            // lb_PetName
+            // 
+            this.lb_PetName.AutoSize = true;
+            this.lb_PetName.Location = new System.Drawing.Point(406, 38);
+            this.lb_PetName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_PetName.Name = "lb_PetName";
+            this.lb_PetName.Size = new System.Drawing.Size(50, 18);
+            this.lb_PetName.TabIndex = 105;
+            this.lb_PetName.Text = "สัตว์ไข้";
+            // 
             // bt_Reset
             // 
             this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -306,6 +327,7 @@
             this.bt_PrintBloodtest.TabIndex = 103;
             this.bt_PrintBloodtest.Text = "พิมพ์ผลตรวจ";
             this.bt_PrintBloodtest.UseVisualStyleBackColor = true;
+            this.bt_PrintBloodtest.Click += new System.EventHandler(this.bt_PrintBloodtest_Click);
             // 
             // bt_BloodTest
             // 
@@ -2914,27 +2936,6 @@
             this.lb_Name.Size = new System.Drawing.Size(50, 18);
             this.lb_Name.TabIndex = 89;
             this.lb_Name.Text = "สัตว์ไข้";
-            // 
-            // lb_PetName
-            // 
-            this.lb_PetName.AutoSize = true;
-            this.lb_PetName.Location = new System.Drawing.Point(406, 38);
-            this.lb_PetName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_PetName.Name = "lb_PetName";
-            this.lb_PetName.Size = new System.Drawing.Size(50, 18);
-            this.lb_PetName.TabIndex = 105;
-            this.lb_PetName.Text = "สัตว์ไข้";
-            // 
-            // lb_PetID
-            // 
-            this.lb_PetID.AutoSize = true;
-            this.lb_PetID.Location = new System.Drawing.Point(133, 38);
-            this.lb_PetID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_PetID.Name = "lb_PetID";
-            this.lb_PetID.Size = new System.Drawing.Size(50, 18);
-            this.lb_PetID.TabIndex = 106;
-            this.lb_PetID.Text = "สัตว์ไข้";
-            this.lb_PetID.TextChanged += new System.EventHandler(this.lb_PetID_TextChanged);
             // 
             // FrmNN22
             // 

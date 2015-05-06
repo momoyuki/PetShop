@@ -16,14 +16,14 @@ namespace Petshop {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrBloodTest : ReportClass {
+    public class CrystalReport : ReportClass {
         
-        public CrBloodTest() {
+        public CrystalReport() {
         }
         
         public override string ResourceName {
             get {
-                return "CrBloodTest.rpt";
+                return "CrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Petshop {
         
         public override string FullResourceName {
             get {
-                return "Petshop.CrBloodTest.rpt";
+                return "Petshop.CrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Petshop {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrBloodTest : Component, ICachedReport {
+    public class CachedCrystalReport : Component, ICachedReport {
         
-        public CachedCrBloodTest() {
+        public CachedCrystalReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Petshop {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrBloodTest rpt = new CrBloodTest();
+            CrystalReport rpt = new CrystalReport();
             rpt.Site = this.Site;
             return rpt;
         }
