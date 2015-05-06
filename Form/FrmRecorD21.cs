@@ -566,7 +566,7 @@ namespace Petshop
         }
         private void bt_HealDateDetail_Click(object sender, EventArgs e)
         {
-            if ((lb_HealRecordID.Text != string.Empty) && (lb_HealRecordID.Text != null))
+            if ((lb_HealDetailID.Text != string.Empty) && (lb_HealDetailID.Text != null))
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {

@@ -49,6 +49,9 @@ namespace Petshop
             string isqlProfile = "SELECT * FROM tb_petprofile";
             idtProfile = iConnect.SelectByCommand(isqlProfile);
 
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
 
             ReportDocument rpt = new ReportDocument();
             //string iFolder = Application.ExecutablePath;

@@ -56,7 +56,12 @@ namespace Petshop
             DataTable idtbill;
             string isqlBill = "SELECT tb_bill.*,tb_employee.Em_Name FROM tb_bill,tb_employee where Bill_ID ='" + ilbBillid +"' AND tb_bill.Em_ID = tb_employee.Em_ID";
             idtbill = iConnect.SelectByCommand(isqlBill);
-            
+
+
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+
             ReportDocument rpt = new ReportDocument();
             
             rpt.Load("CrBillSerMe.rpt");

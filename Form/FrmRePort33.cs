@@ -20,14 +20,15 @@ namespace Petshop
         }
         string ReportDate;
         string ReportToDate;
+        string idtpDate;
+        string idtpToDate;
         private void bt_Search_Click(object sender, EventArgs e)
         {
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            ReportDate = dTP_Date.Value.ToString("dd MMMM yyyy");
-            ReportToDate = dTP_Date.Value.ToString("dd MMMM yyyy");
-
+            idtpDate = dTP_Date.Value.ToString("yyyy-MM-dd");
+            idtpToDate = dTP_ToDate.Value.ToString("yyyy-MM-dd");
             SearchHealRecord();
         }
 
@@ -44,11 +45,13 @@ namespace Petshop
             string isqlCompany = "SELECT * FROM petshop.tb_company";
             idtCompany = iConnect.SelectByCommand(isqlCompany);
             /////////////////////////////////////////////////////////
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+            
+
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            string idtpDate = dTP_Date.Value.ToString("yyyy-MM-dd");
-            string idtpToDate = dTP_ToDate.Value.ToString("yyyy-MM-dd");
+            ReportDate = dTP_Date.Value.ToString("dd MMMM yyyy");
+            ReportToDate = dTP_Date.Value.ToString("dd MMMM yyyy");
             ///////////////////////////////////////////////////////////
             DataTable idtHead = new DataTable("date");
             DataRow dr = null;
@@ -77,7 +80,6 @@ namespace Petshop
                                     "FROM petshop.tb_medirecord,tb_medicine "+
                                     "where tb_medicine.Medi_ID = tb_medirecord.Medi_ID";
             idtMediRecord = iConnect.SelectByCommand(isqlMediRecord);
-            
 
             ReportDocument rpt = new ReportDocument();
             rpt.Load("D:\\PetShop\\CrHealRecord.rpt");

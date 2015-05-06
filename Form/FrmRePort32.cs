@@ -20,13 +20,16 @@ namespace Petshop
         }
         string ReportDate;
         string ReportToDate;
+        string idtpDate;
+        string idtpToDate;
         private void bt_Search_Click(object sender, EventArgs e)
         {
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            ReportDate = dTP_Date.Value.ToString("dd MMMM yyyy");
-            ReportToDate = dTP_ToDate.Value.ToString("dd MMMM yyyy");
+            idtpDate = dTP_Date.Value.ToString("yyyy-MM-dd");
+            idtpToDate = dTP_ToDate.Value.ToString("yyyy-MM-dd");
+            
             SearchReport();
         }
 
@@ -37,11 +40,11 @@ namespace Petshop
             string isqlCompany = "SELECT * FROM petshop.tb_company";
             idtCompany = iConnect.SelectByCommand(isqlCompany);
             ////////////////////ช่วงเวลาที่โหลดข้อมูล//////////////////////////
-            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-            string idtpDate = dTP_Date.Value.ToString("yyyy-MM-dd");
-            string idtpToDate = dTP_ToDate.Value.ToString("yyyy-MM-dd");
+            ReportDate = dTP_Date.Value.ToString("dd MMMM yyyy");
+            ReportToDate = dTP_ToDate.Value.ToString("dd MMMM yyyy");
             
             ///////////////////ประกาศช่วงบนหัวเอกสาร///////////////////////
             DataTable idtHead = new DataTable("date");

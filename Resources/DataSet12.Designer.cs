@@ -1494,7 +1494,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_BillRow AddDT_BillRow(string Bill_ID, string Refer_ID, string Em_Name, System.DateTime Bill_Date, string BillSale_Total, string BillSale_DC, string BillSale_Net) {
+            public DT_BillRow AddDT_BillRow(string Bill_ID, string Refer_ID, string Em_Name, string Bill_Date, string BillSale_Total, string BillSale_DC, string BillSale_Net) {
                 DT_BillRow rowDT_BillRow = ((DT_BillRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Bill_ID,
@@ -1544,7 +1544,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnRefer_ID);
                 this.columnEm_Name = new global::System.Data.DataColumn("Em_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEm_Name);
-                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBill_Date);
                 this.columnBillSale_Total = new global::System.Data.DataColumn("BillSale_Total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBillSale_Total);
@@ -4793,11 +4793,9 @@ namespace Petshop.Resources {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DT_BloodTestDataTable : global::System.Data.TypedTableBase<DT_BloodTestRow> {
             
-            private global::System.Data.DataColumn columnBloodTest_ID;
+            private global::System.Data.DataColumn columnBloodtest_ID;
             
-            private global::System.Data.DataColumn columnBloodTest_Date;
-            
-            private global::System.Data.DataColumn columnEm_ID;
+            private global::System.Data.DataColumn columnBloodtest_Date;
             
             private global::System.Data.DataColumn columnEm_Name;
             
@@ -4805,7 +4803,7 @@ namespace Petshop.Resources {
             
             private global::System.Data.DataColumn columnPet_Name;
             
-            private global::System.Data.DataColumn columnHGB;
+            private global::System.Data.DataColumn columnHBG;
             
             private global::System.Data.DataColumn columnPCV;
             
@@ -4843,7 +4841,7 @@ namespace Petshop.Resources {
             
             private global::System.Data.DataColumn columnREFRACT;
             
-            private global::System.Data.DataColumn columnBlmor;
+            private global::System.Data.DataColumn columnblmor;
             
             private global::System.Data.DataColumn columnBUN;
             
@@ -4889,7 +4887,7 @@ namespace Petshop.Resources {
             
             private global::System.Data.DataColumn columnAMMONIA;
             
-            private global::System.Data.DataColumn columnbloodtest_OTHERS;
+            private global::System.Data.DataColumn columnBloodtest_OTHERS;
             
             private global::System.Data.DataColumn columnBloodtest_Remark;
             
@@ -4928,25 +4926,17 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BloodTest_IDColumn {
+            public global::System.Data.DataColumn Bloodtest_IDColumn {
                 get {
-                    return this.columnBloodTest_ID;
+                    return this.columnBloodtest_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BloodTest_DateColumn {
+            public global::System.Data.DataColumn Bloodtest_DateColumn {
                 get {
-                    return this.columnBloodTest_Date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Em_IDColumn {
-                get {
-                    return this.columnEm_ID;
+                    return this.columnBloodtest_Date;
                 }
             }
             
@@ -4976,9 +4966,9 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HGBColumn {
+            public global::System.Data.DataColumn HBGColumn {
                 get {
-                    return this.columnHGB;
+                    return this.columnHBG;
                 }
             }
             
@@ -5128,9 +5118,9 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BlmorColumn {
+            public global::System.Data.DataColumn blmorColumn {
                 get {
-                    return this.columnBlmor;
+                    return this.columnblmor;
                 }
             }
             
@@ -5312,9 +5302,9 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn bloodtest_OTHERSColumn {
+            public global::System.Data.DataColumn Bloodtest_OTHERSColumn {
                 get {
-                    return this.columnbloodtest_OTHERS;
+                    return this.columnBloodtest_OTHERS;
                 }
             }
             
@@ -5364,13 +5354,12 @@ namespace Petshop.Resources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DT_BloodTestRow AddDT_BloodTestRow(
-                        string BloodTest_ID, 
-                        System.DateTime BloodTest_Date, 
-                        string Em_ID, 
+                        string Bloodtest_ID, 
+                        System.DateTime Bloodtest_Date, 
                         string Em_Name, 
                         string Pet_ID, 
                         string Pet_Name, 
-                        string HGB, 
+                        string HBG, 
                         string PCV, 
                         string RBC, 
                         string MCV, 
@@ -5389,7 +5378,7 @@ namespace Petshop.Resources {
                         string RETICS, 
                         string PLATELETS, 
                         string REFRACT, 
-                        string Blmor, 
+                        string blmor, 
                         string BUN, 
                         string CREATINNIE, 
                         string GLUCOSE, 
@@ -5412,17 +5401,16 @@ namespace Petshop.Resources {
                         string POTASSIUM, 
                         string CHLORIDE, 
                         string AMMONIA, 
-                        string bloodtest_OTHERS, 
+                        string Bloodtest_OTHERS, 
                         string Bloodtest_Remark) {
                 DT_BloodTestRow rowDT_BloodTestRow = ((DT_BloodTestRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BloodTest_ID,
-                        BloodTest_Date,
-                        Em_ID,
+                        Bloodtest_ID,
+                        Bloodtest_Date,
                         Em_Name,
                         Pet_ID,
                         Pet_Name,
-                        HGB,
+                        HBG,
                         PCV,
                         RBC,
                         MCV,
@@ -5441,7 +5429,7 @@ namespace Petshop.Resources {
                         RETICS,
                         PLATELETS,
                         REFRACT,
-                        Blmor,
+                        blmor,
                         BUN,
                         CREATINNIE,
                         GLUCOSE,
@@ -5464,7 +5452,7 @@ namespace Petshop.Resources {
                         POTASSIUM,
                         CHLORIDE,
                         AMMONIA,
-                        bloodtest_OTHERS,
+                        Bloodtest_OTHERS,
                         Bloodtest_Remark};
                 rowDT_BloodTestRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_BloodTestRow);
@@ -5488,13 +5476,12 @@ namespace Petshop.Resources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnBloodTest_ID = base.Columns["BloodTest_ID"];
-                this.columnBloodTest_Date = base.Columns["BloodTest_Date"];
-                this.columnEm_ID = base.Columns["Em_ID"];
+                this.columnBloodtest_ID = base.Columns["Bloodtest_ID"];
+                this.columnBloodtest_Date = base.Columns["Bloodtest_Date"];
                 this.columnEm_Name = base.Columns["Em_Name"];
                 this.columnPet_ID = base.Columns["Pet_ID"];
                 this.columnPet_Name = base.Columns["Pet_Name"];
-                this.columnHGB = base.Columns["HGB"];
+                this.columnHBG = base.Columns["HBG"];
                 this.columnPCV = base.Columns["PCV"];
                 this.columnRBC = base.Columns["RBC"];
                 this.columnMCV = base.Columns["MCV"];
@@ -5513,7 +5500,7 @@ namespace Petshop.Resources {
                 this.columnRETICS = base.Columns["RETICS"];
                 this.columnPLATELETS = base.Columns["PLATELETS"];
                 this.columnREFRACT = base.Columns["REFRACT"];
-                this.columnBlmor = base.Columns["Blmor"];
+                this.columnblmor = base.Columns["blmor"];
                 this.columnBUN = base.Columns["BUN"];
                 this.columnCREATINNIE = base.Columns["CREATINNIE"];
                 this.columnGLUCOSE = base.Columns["GLUCOSE"];
@@ -5536,27 +5523,25 @@ namespace Petshop.Resources {
                 this.columnPOTASSIUM = base.Columns["POTASSIUM"];
                 this.columnCHLORIDE = base.Columns["CHLORIDE"];
                 this.columnAMMONIA = base.Columns["AMMONIA"];
-                this.columnbloodtest_OTHERS = base.Columns["bloodtest_OTHERS"];
+                this.columnBloodtest_OTHERS = base.Columns["Bloodtest_OTHERS"];
                 this.columnBloodtest_Remark = base.Columns["Bloodtest_Remark"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnBloodTest_ID = new global::System.Data.DataColumn("BloodTest_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBloodTest_ID);
-                this.columnBloodTest_Date = new global::System.Data.DataColumn("BloodTest_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBloodTest_Date);
-                this.columnEm_ID = new global::System.Data.DataColumn("Em_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEm_ID);
+                this.columnBloodtest_ID = new global::System.Data.DataColumn("Bloodtest_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBloodtest_ID);
+                this.columnBloodtest_Date = new global::System.Data.DataColumn("Bloodtest_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBloodtest_Date);
                 this.columnEm_Name = new global::System.Data.DataColumn("Em_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEm_Name);
                 this.columnPet_ID = new global::System.Data.DataColumn("Pet_ID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPet_ID);
                 this.columnPet_Name = new global::System.Data.DataColumn("Pet_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPet_Name);
-                this.columnHGB = new global::System.Data.DataColumn("HGB", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHGB);
+                this.columnHBG = new global::System.Data.DataColumn("HBG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHBG);
                 this.columnPCV = new global::System.Data.DataColumn("PCV", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPCV);
                 this.columnRBC = new global::System.Data.DataColumn("RBC", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5593,8 +5578,8 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnPLATELETS);
                 this.columnREFRACT = new global::System.Data.DataColumn("REFRACT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnREFRACT);
-                this.columnBlmor = new global::System.Data.DataColumn("Blmor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBlmor);
+                this.columnblmor = new global::System.Data.DataColumn("blmor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnblmor);
                 this.columnBUN = new global::System.Data.DataColumn("BUN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBUN);
                 this.columnCREATINNIE = new global::System.Data.DataColumn("CREATINNIE", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5639,8 +5624,8 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnCHLORIDE);
                 this.columnAMMONIA = new global::System.Data.DataColumn("AMMONIA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAMMONIA);
-                this.columnbloodtest_OTHERS = new global::System.Data.DataColumn("bloodtest_OTHERS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbloodtest_OTHERS);
+                this.columnBloodtest_OTHERS = new global::System.Data.DataColumn("Bloodtest_OTHERS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBloodtest_OTHERS);
                 this.columnBloodtest_Remark = new global::System.Data.DataColumn("Bloodtest_Remark", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBloodtest_Remark);
             }
@@ -6227,10 +6212,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Bill_Date {
+            public string Bill_Date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDT_Bill.Bill_DateColumn]));
+                        return ((string)(this[this.tableDT_Bill.Bill_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Bill_Date\' in table \'DT_Bill\' is DBNull.", e);
@@ -8564,49 +8549,33 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BloodTest_ID {
+            public string Bloodtest_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_BloodTest.BloodTest_IDColumn]));
+                        return ((string)(this[this.tableDT_BloodTest.Bloodtest_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BloodTest_ID\' in table \'DT_BloodTest\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bloodtest_ID\' in table \'DT_BloodTest\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_BloodTest.BloodTest_IDColumn] = value;
+                    this[this.tableDT_BloodTest.Bloodtest_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime BloodTest_Date {
+            public System.DateTime Bloodtest_Date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDT_BloodTest.BloodTest_DateColumn]));
+                        return ((global::System.DateTime)(this[this.tableDT_BloodTest.Bloodtest_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BloodTest_Date\' in table \'DT_BloodTest\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bloodtest_Date\' in table \'DT_BloodTest\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_BloodTest.BloodTest_DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Em_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_BloodTest.Em_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Em_ID\' in table \'DT_BloodTest\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_BloodTest.Em_IDColumn] = value;
+                    this[this.tableDT_BloodTest.Bloodtest_DateColumn] = value;
                 }
             }
             
@@ -8660,17 +8629,17 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string HGB {
+            public string HBG {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_BloodTest.HGBColumn]));
+                        return ((string)(this[this.tableDT_BloodTest.HBGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HGB\' in table \'DT_BloodTest\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HBG\' in table \'DT_BloodTest\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_BloodTest.HGBColumn] = value;
+                    this[this.tableDT_BloodTest.HBGColumn] = value;
                 }
             }
             
@@ -8964,17 +8933,17 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Blmor {
+            public string blmor {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_BloodTest.BlmorColumn]));
+                        return ((string)(this[this.tableDT_BloodTest.blmorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Blmor\' in table \'DT_BloodTest\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'blmor\' in table \'DT_BloodTest\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_BloodTest.BlmorColumn] = value;
+                    this[this.tableDT_BloodTest.blmorColumn] = value;
                 }
             }
             
@@ -9332,17 +9301,17 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string bloodtest_OTHERS {
+            public string Bloodtest_OTHERS {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_BloodTest.bloodtest_OTHERSColumn]));
+                        return ((string)(this[this.tableDT_BloodTest.Bloodtest_OTHERSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'bloodtest_OTHERS\' in table \'DT_BloodTest\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bloodtest_OTHERS\' in table \'DT_BloodTest\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_BloodTest.bloodtest_OTHERSColumn] = value;
+                    this[this.tableDT_BloodTest.Bloodtest_OTHERSColumn] = value;
                 }
             }
             
@@ -9364,38 +9333,26 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBloodTest_IDNull() {
-                return this.IsNull(this.tableDT_BloodTest.BloodTest_IDColumn);
+            public bool IsBloodtest_IDNull() {
+                return this.IsNull(this.tableDT_BloodTest.Bloodtest_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBloodTest_IDNull() {
-                this[this.tableDT_BloodTest.BloodTest_IDColumn] = global::System.Convert.DBNull;
+            public void SetBloodtest_IDNull() {
+                this[this.tableDT_BloodTest.Bloodtest_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBloodTest_DateNull() {
-                return this.IsNull(this.tableDT_BloodTest.BloodTest_DateColumn);
+            public bool IsBloodtest_DateNull() {
+                return this.IsNull(this.tableDT_BloodTest.Bloodtest_DateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBloodTest_DateNull() {
-                this[this.tableDT_BloodTest.BloodTest_DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEm_IDNull() {
-                return this.IsNull(this.tableDT_BloodTest.Em_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEm_IDNull() {
-                this[this.tableDT_BloodTest.Em_IDColumn] = global::System.Convert.DBNull;
+            public void SetBloodtest_DateNull() {
+                this[this.tableDT_BloodTest.Bloodtest_DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9436,14 +9393,14 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHGBNull() {
-                return this.IsNull(this.tableDT_BloodTest.HGBColumn);
+            public bool IsHBGNull() {
+                return this.IsNull(this.tableDT_BloodTest.HBGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHGBNull() {
-                this[this.tableDT_BloodTest.HGBColumn] = global::System.Convert.DBNull;
+            public void SetHBGNull() {
+                this[this.tableDT_BloodTest.HBGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9664,14 +9621,14 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBlmorNull() {
-                return this.IsNull(this.tableDT_BloodTest.BlmorColumn);
+            public bool IsblmorNull() {
+                return this.IsNull(this.tableDT_BloodTest.blmorColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBlmorNull() {
-                this[this.tableDT_BloodTest.BlmorColumn] = global::System.Convert.DBNull;
+            public void SetblmorNull() {
+                this[this.tableDT_BloodTest.blmorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9940,14 +9897,14 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isbloodtest_OTHERSNull() {
-                return this.IsNull(this.tableDT_BloodTest.bloodtest_OTHERSColumn);
+            public bool IsBloodtest_OTHERSNull() {
+                return this.IsNull(this.tableDT_BloodTest.Bloodtest_OTHERSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setbloodtest_OTHERSNull() {
-                this[this.tableDT_BloodTest.bloodtest_OTHERSColumn] = global::System.Convert.DBNull;
+            public void SetBloodtest_OTHERSNull() {
+                this[this.tableDT_BloodTest.Bloodtest_OTHERSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

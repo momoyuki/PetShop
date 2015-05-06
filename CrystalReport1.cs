@@ -16,14 +16,14 @@ namespace Petshop {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport : ReportClass {
+    public class CrystalReport1 : ReportClass {
         
-        public CrystalReport() {
+        public CrystalReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport.rpt";
+                return "CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Petshop {
         
         public override string FullResourceName {
             get {
-                return "Petshop.CrystalReport.rpt";
+                return "Petshop.CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Petshop {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport : Component, ICachedReport {
+    public class CachedCrystalReport1 : Component, ICachedReport {
         
-        public CachedCrystalReport() {
+        public CachedCrystalReport1() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Petshop {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport rpt = new CrystalReport();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.Site = this.Site;
             return rpt;
         }

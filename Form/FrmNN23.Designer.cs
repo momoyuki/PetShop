@@ -69,6 +69,7 @@
             this.bt_Search.TabIndex = 19;
             this.bt_Search.Text = "ค้นหา";
             this.bt_Search.UseVisualStyleBackColor = true;
+            this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
             // 
             // lb_BloodTest
             // 
