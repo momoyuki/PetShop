@@ -67,7 +67,7 @@ namespace Petshop
             idtOutlayTotal = iConnect.SelectByCommand(isqlOutlayTotal);
 
             ReportDocument rpt = new ReportDocument();
-            rpt.Load("D:\\PetShop\\CrOutlay.rpt");
+            rpt.Load("CrOutlay.rpt");
             rpt.SetDataSource(idtOutlay);
             rpt.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
@@ -97,7 +97,7 @@ namespace Petshop
             idtMediTotal = iConnect.SelectByCommand(isqlMediTotal);
             /////////////////////////////////////////////////////////////
             ReportDocument rptMedi = new ReportDocument();
-            rptMedi.Load("D:\\PetShop\\CrProMe.rpt");
+            rptMedi.Load("CrProMe.rpt");
             rptMedi.SetDataSource(idtMedi);
             rptMedi.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rptMedi.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
@@ -126,7 +126,7 @@ namespace Petshop
             idtProductTotal = iConnect.SelectByCommand(isqlProductTotal);
             ReportDocument rptPro = new ReportDocument();
             ////////////////////////////////////////////////////////////////////////////////////
-            rptPro.Load("D:\\PetShop\\CrProMe.rpt");
+            rptPro.Load("CrProMe.rpt");
             rptPro.SetDataSource(idtProductSale);
             rptPro.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rptPro.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
@@ -154,7 +154,7 @@ namespace Petshop
 
             ReportDocument rptService = new ReportDocument();
             ////////////////////////////////////////////////////////////////////////////////////
-            rptService.Load("D:\\PetShop\\CrService.rpt");
+            rptService.Load("CrService.rpt");
             rptService.SetDataSource(idtService);
             rptService.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rptService.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
