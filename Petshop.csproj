@@ -97,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrBloodTest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrBloodTest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrOutlay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,6 +186,12 @@
     </Compile>
     <Compile Include="Form\FrmPwd.Designer.cs">
       <DependentUpon>FrmPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmNN23.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmNN23.Designer.cs">
+      <DependentUpon>FrmNN23.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -291,6 +303,10 @@
     <Compile Include="Resources\MySQLConnect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrBloodTest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBloodTest.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrOutlay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrOutlay.cs</LastGenOutput>
@@ -375,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmPwd.resx">
       <DependentUpon>FrmPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmNN23.resx">
+      <DependentUpon>FrmNN23.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
