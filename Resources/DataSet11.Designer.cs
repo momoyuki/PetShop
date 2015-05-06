@@ -3572,7 +3572,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ServiceRow AddDT_ServiceRow(string Service_ID, string Service_Des, string Service_Unit, string Service_Price, string Service_Total) {
+            public DT_ServiceRow AddDT_ServiceRow(string Service_ID, string Service_Des, int Service_Unit, string Service_Price, string Service_Total) {
                 DT_ServiceRow rowDT_ServiceRow = ((DT_ServiceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Service_ID,
@@ -3616,7 +3616,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnService_ID);
                 this.columnService_Des = new global::System.Data.DataColumn("Service_Des", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnService_Des);
-                this.columnService_Unit = new global::System.Data.DataColumn("Service_Unit", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnService_Unit = new global::System.Data.DataColumn("Service_Unit", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnService_Unit);
                 this.columnService_Price = new global::System.Data.DataColumn("Service_Price", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnService_Price);
@@ -7597,10 +7597,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Service_Unit {
+            public int Service_Unit {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Service.Service_UnitColumn]));
+                        return ((int)(this[this.tableDT_Service.Service_UnitColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Service_Unit\' in table \'DT_Service\' is DBNull.", e);
