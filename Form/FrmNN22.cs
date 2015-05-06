@@ -517,24 +517,5 @@ namespace Petshop
                 loadPetProfile();
             }
         }
-
-        private void bt_PrintBloodtest_Click(object sender, EventArgs e)
-        {
-            if ((lb_BloodTestID.Text != null) && (lb_BloodTestID.Text != string.Empty))
-            {
-                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
-                {
-                    if (form.GetType() == typeof(FrmNN23))
-                    {
-                        form.Activate();
-                        return;
-                    }
-                }
-                FrmNN23 iFrmNN23 = new FrmNN23();
-                iFrmNN23.MdiParent = MainForm.ActiveForm;
-                iFrmNN23.Show();
-                iFrmNN23.lb_BloodTestID.Text = lb_BloodTestID.Text.Trim();
-            }
-        }
     }
 }
