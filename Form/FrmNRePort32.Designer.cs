@@ -355,11 +355,11 @@
             // lb_Remark
             // 
             this.lb_Remark.AutoSize = true;
-            this.lb_Remark.Location = new System.Drawing.Point(83, 142);
+            this.lb_Remark.Location = new System.Drawing.Point(83, 148);
             this.lb_Remark.Name = "lb_Remark";
-            this.lb_Remark.Size = new System.Drawing.Size(167, 23);
+            this.lb_Remark.Size = new System.Drawing.Size(184, 23);
             this.lb_Remark.TabIndex = 163;
-            this.lb_Remark.Text = "*เลือกรายการเพื่อไม่พิมพ์";
+            this.lb_Remark.Text = "*เลือกไม่รายการเพื่อไม่พิมพ์";
             this.lb_Remark.UseCompatibleTextRendering = true;
             // 
             // bt_Refresh
