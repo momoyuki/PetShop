@@ -26,7 +26,7 @@ namespace Petshop
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
             ReportDate = dTP_Date.Value.ToString("dd MMMM yyyy");
-            ReportToDate = dTP_Date.Value.ToString("dd MMMM yyyy");
+            ReportToDate = dTP_ToDate.Value.ToString("dd MMMM yyyy");
             SearchReport();
         }
 
