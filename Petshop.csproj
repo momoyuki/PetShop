@@ -97,29 +97,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrReport\CrOutlay.cs">
+    <Compile Include="CrOutlay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrOutlay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrReport\CrProMe.cs">
+    <Compile Include="CrProMe.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrProMe.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrReport\CrService.cs">
+    <Compile Include="CrService.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrService.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrReport\CrHealRecord.cs">
+    <Compile Include="CrHealRecord.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrHealRecord.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrBloodTest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrBloodTest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\FrmNN23.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmNN23.Designer.cs">
+      <DependentUpon>FrmNN23.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FrmRePort33.cs">
       <SubType>Form</SubType>
@@ -186,14 +198,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="CrReport\CrBillSerMe.cs">
+    <Compile Include="CrBillSerMe.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrBillSerMe.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="CrReport\CrBillDate.cs">
+    <Compile Include="CrBillDate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrBillDate.rpt</DependentUpon>
@@ -205,6 +217,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Resources\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -291,21 +308,28 @@
     <Compile Include="Resources\MySQLConnect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CrReport\CrOutlay.rpt">
+    <EmbeddedResource Include="CrOutlay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrOutlay.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrReport\CrProMe.rpt">
+    <EmbeddedResource Include="CrProMe.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrProMe.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrReport\CrService.rpt">
+    <EmbeddedResource Include="CrService.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrService.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrReport\CrHealRecord.rpt">
+    <EmbeddedResource Include="CrHealRecord.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrHealRecord.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrBloodTest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBloodTest.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmNN23.resx">
+      <DependentUpon>FrmNN23.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmNN22.resx">
       <DependentUpon>FrmNN22.cs</DependentUpon>
@@ -381,12 +405,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrReport\CrBillSerMe.rpt">
+    <EmbeddedResource Include="CrBillSerMe.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrBillSerMe.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrReport\CrBillDate.rpt">
+    <EmbeddedResource Include="CrBillDate.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrBillDate.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -416,7 +440,7 @@
     <None Include="Resources\DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet11.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>

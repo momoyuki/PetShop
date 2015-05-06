@@ -3269,7 +3269,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_ProMediRow AddDT_ProMediRow(string ProMedi_ID, string ProMedi_Des, string ProMedi_Unit, string ProMedi_Sale, string ProMedi_Total) {
+            public DT_ProMediRow AddDT_ProMediRow(string ProMedi_ID, string ProMedi_Des, int ProMedi_Unit, string ProMedi_Sale, string ProMedi_Total) {
                 DT_ProMediRow rowDT_ProMediRow = ((DT_ProMediRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ProMedi_ID,
@@ -3313,7 +3313,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnProMedi_ID);
                 this.columnProMedi_Des = new global::System.Data.DataColumn("ProMedi_Des", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProMedi_Des);
-                this.columnProMedi_Unit = new global::System.Data.DataColumn("ProMedi_Unit", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnProMedi_Unit = new global::System.Data.DataColumn("ProMedi_Unit", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProMedi_Unit);
                 this.columnProMedi_Sale = new global::System.Data.DataColumn("ProMedi_Sale", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProMedi_Sale);
@@ -4606,7 +4606,7 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_MediRecordRow AddDT_MediRecordRow(string HealRecord_ID, string Medi_ID, string Medi_Des, string MediSale_Unit, string Medi_Sale, string MediRecord_Total) {
+            public DT_MediRecordRow AddDT_MediRecordRow(string HealRecord_ID, string Medi_ID, string Medi_Des, int MediSale_Unit, string Medi_Sale, string MediRecord_Total) {
                 DT_MediRecordRow rowDT_MediRecordRow = ((DT_MediRecordRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         HealRecord_ID,
@@ -4654,7 +4654,7 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnMedi_ID);
                 this.columnMedi_Des = new global::System.Data.DataColumn("Medi_Des", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMedi_Des);
-                this.columnMediSale_Unit = new global::System.Data.DataColumn("MediSale_Unit", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnMediSale_Unit = new global::System.Data.DataColumn("MediSale_Unit", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMediSale_Unit);
                 this.columnMedi_Sale = new global::System.Data.DataColumn("Medi_Sale", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMedi_Sale);
@@ -7442,10 +7442,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ProMedi_Unit {
+            public int ProMedi_Unit {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_ProMedi.ProMedi_UnitColumn]));
+                        return ((int)(this[this.tableDT_ProMedi.ProMedi_UnitColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ProMedi_Unit\' in table \'DT_ProMedi\' is DBNull.", e);
@@ -8324,10 +8324,10 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MediSale_Unit {
+            public int MediSale_Unit {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_MediRecord.MediSale_UnitColumn]));
+                        return ((int)(this[this.tableDT_MediRecord.MediSale_UnitColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'MediSale_Unit\' in table \'DT_MediRecord\' is DBNull.", e);
