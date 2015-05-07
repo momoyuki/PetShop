@@ -26,6 +26,10 @@ namespace Petshop
 
         private void SearchBloodTest()
         {
+            DataTable idtCompany;
+            string isqlCompany = "SELECT * FROM petshop.tb_company";
+            idtCompany = iConnect.SelectByCommand(isqlCompany);
+
             string ilbBloodTestID = lb_BloodTestID.Text.Trim();
             DataTable idtBloodTest;
             string isqlBloodTest = "SELECT tb_bloodtest.*,tb_employee.Em_Name,tb_petprofile.Pet_Name FROM petshop.tb_bloodtest,tb_employee,tb_petprofile "
@@ -39,11 +43,7 @@ namespace Petshop
             ReportDocument rpt = new ReportDocument();
             rpt.Load("D:\\PetShop\\CrBloodTest.rpt");
             rpt.SetDataSource(idtBloodTest);
-            //rpt.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
-           // rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
-            //rpt.Subreports["ServiceRecord_Sub_Report"].Database.Tables[0].SetDataSource(idtServiceRecord);
-            //rpt.Subreports["MediRecord_Sub_Report"].Database.Tables[0].SetDataSource(idtMediRecord);
-            //rpt.Subreports["HealRecord_Sub_Report"].Database.Tables[0].SetDataSource(idtHealRecord);
+            rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
             this.crViewerBloodtest.ReportSource = rpt;
             this.crViewerBloodtest.Refresh();
         }

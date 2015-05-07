@@ -799,7 +799,6 @@
         private System.Windows.Forms.TextBox txb_Remind;
         private System.Windows.Forms.Label lb_Pet;
         private System.Windows.Forms.Label lb_RemindDay;
-        private System.Windows.Forms.Label lb_HealDateID;
         public System.Windows.Forms.Label lb_PetID;
         public System.Windows.Forms.Label lb_HealRecordID;
         private System.Windows.Forms.Button bt_contract;
@@ -837,5 +836,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Stats;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remind;
         private System.Windows.Forms.Button bt_Refresh;
+        public System.Windows.Forms.Label lb_HealDateID;
     }
 }

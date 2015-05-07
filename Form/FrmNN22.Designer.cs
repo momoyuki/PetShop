@@ -1145,9 +1145,9 @@
             this.label116.Location = new System.Drawing.Point(369, 290);
             this.label116.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(61, 16);
+            this.label116.Size = new System.Drawing.Size(67, 16);
             this.label116.TabIndex = 200;
-            this.label116.Text = "37 C IU/L";
+            this.label116.Text = "37° C IU/L";
             // 
             // label117
             // 
@@ -1211,9 +1211,9 @@
             this.label95.Location = new System.Drawing.Point(369, 222);
             this.label95.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(61, 16);
+            this.label95.Size = new System.Drawing.Size(67, 16);
             this.label95.TabIndex = 194;
-            this.label95.Text = "37 C IU/L";
+            this.label95.Text = "37° C IU/L";
             // 
             // label96
             // 
@@ -1244,9 +1244,9 @@
             this.label98.Location = new System.Drawing.Point(369, 188);
             this.label98.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(61, 16);
+            this.label98.Size = new System.Drawing.Size(67, 16);
             this.label98.TabIndex = 191;
-            this.label98.Text = "37 C IU/L";
+            this.label98.Text = "37° C IU/L";
             // 
             // label99
             // 

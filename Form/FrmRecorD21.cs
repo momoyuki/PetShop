@@ -330,6 +330,8 @@ namespace Petshop
 
             lb_HealRecordID.Text = "";
             lb_HealDetailID.Text = "";
+            lb_DateID.Text = "";
+            lb_BloodTestID.Text = "";
             lb_statusHide.Visible = false;
         }
 
@@ -870,6 +872,33 @@ namespace Petshop
                 iFrmNN22.MdiParent = MainForm.ActiveForm;
                 iFrmNN22.Show();
                 iFrmNN22.lb_BloodTestID.Text = lb_BloodTestID.Text;
+            }
+        }
+
+        private void dGV_HealDate_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dGV_HealDate.SelectedRows)
+            {
+                lb_DateID.Text = row.Cells["ccHealDate_ID"].Value.ToString();
+            }
+        }
+
+        private void bt_Date_Click(object sender, EventArgs e)
+        {
+            if ((lb_DateID.Text != string.Empty) && (lb_DateID.Text != null))
+            {
+                foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
+                {
+                    if (form.GetType() == typeof(FrmRecorD22))
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+                FrmRecorD22 iFrmRecorD22 = new FrmRecorD22();
+                iFrmRecorD22.MdiParent = MainForm.ActiveForm;
+                iFrmRecorD22.Show();
+                iFrmRecorD22.lb_HealDateID.Text = lb_DateID.Text;
             }
         }
     }
