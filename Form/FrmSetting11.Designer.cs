@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSetting11));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tabService = new System.Windows.Forms.TabPage();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
@@ -158,8 +158,8 @@
             // 
             this.dGV_Service.AllowUserToAddRows = false;
             this.dGV_Service.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -174,7 +174,7 @@
             this.dGV_Service.ReadOnly = true;
             this.dGV_Service.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Service.Size = new System.Drawing.Size(958, 343);
-            this.dGV_Service.TabIndex = 0;
+            this.dGV_Service.TabIndex = 1;
             this.dGV_Service.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Service_CellClick);
             // 
             // coService_ID
@@ -245,7 +245,7 @@
             this.bt_ServiceRefresh.Location = new System.Drawing.Point(915, 26);
             this.bt_ServiceRefresh.Name = "bt_ServiceRefresh";
             this.bt_ServiceRefresh.Size = new System.Drawing.Size(36, 36);
-            this.bt_ServiceRefresh.TabIndex = 25;
+            this.bt_ServiceRefresh.TabIndex = 7;
             this.bt_ServiceRefresh.UseVisualStyleBackColor = true;
             this.bt_ServiceRefresh.Click += new System.EventHandler(this.bt_ServiceRefresh_Click);
             // 
@@ -316,7 +316,7 @@
             this.bt_DelService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelService.Name = "bt_DelService";
             this.bt_DelService.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelService.TabIndex = 7;
+            this.bt_DelService.TabIndex = 6;
             this.bt_DelService.Text = "ลบ";
             this.bt_DelService.UseVisualStyleBackColor = false;
             this.bt_DelService.Click += new System.EventHandler(this.bt_DelService_Click);
@@ -352,7 +352,7 @@
             this.bt_EditService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditService.Name = "bt_EditService";
             this.bt_EditService.Size = new System.Drawing.Size(70, 32);
-            this.bt_EditService.TabIndex = 6;
+            this.bt_EditService.TabIndex = 5;
             this.bt_EditService.Text = "แก้ไข";
             this.bt_EditService.UseVisualStyleBackColor = false;
             this.bt_EditService.Click += new System.EventHandler(this.bt_EditService_Click);
@@ -364,7 +364,7 @@
             this.bt_AddService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddService.Name = "bt_AddService";
             this.bt_AddService.Size = new System.Drawing.Size(70, 32);
-            this.bt_AddService.TabIndex = 5;
+            this.bt_AddService.TabIndex = 4;
             this.bt_AddService.Text = "เพิ่ม";
             this.bt_AddService.UseVisualStyleBackColor = false;
             this.bt_AddService.Click += new System.EventHandler(this.Bt_AddService_Click);
@@ -380,7 +380,7 @@
             this.gBoxTimeService.Name = "gBoxTimeService";
             this.gBoxTimeService.Padding = new System.Windows.Forms.Padding(4);
             this.gBoxTimeService.Size = new System.Drawing.Size(282, 76);
-            this.gBoxTimeService.TabIndex = 4;
+            this.gBoxTimeService.TabIndex = 3;
             this.gBoxTimeService.TabStop = false;
             this.gBoxTimeService.Text = "ติดตามการรักษา";
             // 
@@ -401,7 +401,7 @@
             this.txb_ServiceDate.MaxLength = 3;
             this.txb_ServiceDate.Name = "txb_ServiceDate";
             this.txb_ServiceDate.Size = new System.Drawing.Size(52, 26);
-            this.txb_ServiceDate.TabIndex = 1;
+            this.txb_ServiceDate.TabIndex = 0;
             this.txb_ServiceDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ServiceDate_KeyDown);
             // 
             // lb_ServiceDate
@@ -421,7 +421,7 @@
             this.txb_ServicePrice.MaxLength = 11;
             this.txb_ServicePrice.Name = "txb_ServicePrice";
             this.txb_ServicePrice.Size = new System.Drawing.Size(140, 26);
-            this.txb_ServicePrice.TabIndex = 3;
+            this.txb_ServicePrice.TabIndex = 2;
             this.txb_ServicePrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ServicePrice_KeyDown);
             // 
             // lb_ServicePrice
@@ -441,7 +441,7 @@
             this.txb_ServiceDetail.MaxLength = 100;
             this.txb_ServiceDetail.Name = "txb_ServiceDetail";
             this.txb_ServiceDetail.Size = new System.Drawing.Size(289, 26);
-            this.txb_ServiceDetail.TabIndex = 2;
+            this.txb_ServiceDetail.TabIndex = 1;
             this.txb_ServiceDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_ServiceDetail_KeyDown);
             // 
             // lb_Service
@@ -462,7 +462,7 @@
             this.txb_ServiceID.MaxLength = 16;
             this.txb_ServiceID.Name = "txb_ServiceID";
             this.txb_ServiceID.Size = new System.Drawing.Size(140, 26);
-            this.txb_ServiceID.TabIndex = 1;
+            this.txb_ServiceID.TabIndex = 0;
             this.txb_ServiceID.TextChanged += new System.EventHandler(this.txb_ServiceID_TextChanged);
             // 
             // lb_ServiceID
@@ -524,7 +524,7 @@
             this.txb_SearchMedi.Location = new System.Drawing.Point(559, 314);
             this.txb_SearchMedi.Name = "txb_SearchMedi";
             this.txb_SearchMedi.Size = new System.Drawing.Size(262, 26);
-            this.txb_SearchMedi.TabIndex = 0;
+            this.txb_SearchMedi.TabIndex = 1;
             this.txb_SearchMedi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchMedi_KeyDown);
             // 
             // bt_SearchMedi
@@ -533,7 +533,7 @@
             this.bt_SearchMedi.Location = new System.Drawing.Point(827, 310);
             this.bt_SearchMedi.Name = "bt_SearchMedi";
             this.bt_SearchMedi.Size = new System.Drawing.Size(101, 32);
-            this.bt_SearchMedi.TabIndex = 1;
+            this.bt_SearchMedi.TabIndex = 2;
             this.bt_SearchMedi.Text = "ค้นหา";
             this.bt_SearchMedi.UseVisualStyleBackColor = false;
             this.bt_SearchMedi.Click += new System.EventHandler(this.bt_SearchMedi_Click);
@@ -559,7 +559,7 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(958, 293);
-            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "รายละเอียดยา";
             // 
@@ -594,7 +594,7 @@
             this.bt_DelMedi.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelMedi.Name = "bt_DelMedi";
             this.bt_DelMedi.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelMedi.TabIndex = 6;
+            this.bt_DelMedi.TabIndex = 5;
             this.bt_DelMedi.Text = "ลบ";
             this.bt_DelMedi.UseVisualStyleBackColor = false;
             this.bt_DelMedi.Click += new System.EventHandler(this.bt_DelMedi_Click);
@@ -646,7 +646,7 @@
             this.bt_EditMedi.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditMedi.Name = "bt_EditMedi";
             this.bt_EditMedi.Size = new System.Drawing.Size(70, 32);
-            this.bt_EditMedi.TabIndex = 5;
+            this.bt_EditMedi.TabIndex = 4;
             this.bt_EditMedi.Text = "แก้ไข";
             this.bt_EditMedi.UseVisualStyleBackColor = false;
             this.bt_EditMedi.Click += new System.EventHandler(this.bt_EditMedi_Click);
@@ -658,7 +658,7 @@
             this.bt_AddMedi.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddMedi.Name = "bt_AddMedi";
             this.bt_AddMedi.Size = new System.Drawing.Size(70, 32);
-            this.bt_AddMedi.TabIndex = 4;
+            this.bt_AddMedi.TabIndex = 3;
             this.bt_AddMedi.Text = "เพิ่ม";
             this.bt_AddMedi.UseVisualStyleBackColor = false;
             this.bt_AddMedi.Click += new System.EventHandler(this.Bt_AddMedi_Click);
@@ -709,7 +709,7 @@
             this.CheckBox_Stock.Location = new System.Drawing.Point(441, 205);
             this.CheckBox_Stock.Name = "CheckBox_Stock";
             this.CheckBox_Stock.Size = new System.Drawing.Size(104, 22);
-            this.CheckBox_Stock.TabIndex = 8;
+            this.CheckBox_Stock.TabIndex = 6;
             this.CheckBox_Stock.Text = "ตัดคลังสินค้า";
             this.CheckBox_Stock.UseVisualStyleBackColor = true;
             // 
@@ -734,7 +734,7 @@
             this.cb_MediUnit.Margin = new System.Windows.Forms.Padding(4);
             this.cb_MediUnit.Name = "cb_MediUnit";
             this.cb_MediUnit.Size = new System.Drawing.Size(104, 26);
-            this.cb_MediUnit.TabIndex = 3;
+            this.cb_MediUnit.TabIndex = 2;
             this.cb_MediUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_MediUnit_KeyDown);
             // 
             // Bt_LoadMedi
@@ -757,7 +757,7 @@
             this.txb_MediAmt.MaxLength = 4;
             this.txb_MediAmt.Name = "txb_MediAmt";
             this.txb_MediAmt.Size = new System.Drawing.Size(104, 26);
-            this.txb_MediAmt.TabIndex = 4;
+            this.txb_MediAmt.TabIndex = 3;
             this.txb_MediAmt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_MediAmt_KeyDown);
             // 
             // lb_MediAmt
@@ -790,7 +790,7 @@
             this.txb_MediOrder.MaxLength = 4;
             this.txb_MediOrder.Name = "txb_MediOrder";
             this.txb_MediOrder.Size = new System.Drawing.Size(104, 26);
-            this.txb_MediOrder.TabIndex = 1;
+            this.txb_MediOrder.TabIndex = 0;
             this.txb_MediOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_MediOrder_KeyDown);
             // 
             // lb_MediOrder
@@ -809,7 +809,7 @@
             this.dTP_Expired.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Expired.Name = "dTP_Expired";
             this.dTP_Expired.Size = new System.Drawing.Size(189, 26);
-            this.dTP_Expired.TabIndex = 6;
+            this.dTP_Expired.TabIndex = 5;
             // 
             // lb_MediExpired
             // 
@@ -827,7 +827,7 @@
             this.dTP_Product.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_Product.Name = "dTP_Product";
             this.dTP_Product.Size = new System.Drawing.Size(189, 26);
-            this.dTP_Product.TabIndex = 5;
+            this.dTP_Product.TabIndex = 4;
             // 
             // lb_MediProduct
             // 
@@ -935,8 +935,8 @@
             // 
             this.dGV_Medi.AllowUserToAddRows = false;
             this.dGV_Medi.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -959,7 +959,7 @@
             this.dGV_Medi.ReadOnly = true;
             this.dGV_Medi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Medi.Size = new System.Drawing.Size(958, 257);
-            this.dGV_Medi.TabIndex = 0;
+            this.dGV_Medi.TabIndex = 3;
             this.dGV_Medi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Medi_CellClick);
             // 
             // ccMedi_ID

@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecorD21));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gBoxDetail = new System.Windows.Forms.GroupBox();
+            this.bt_MemberCard = new System.Windows.Forms.Button();
             this.bt_BloodTest = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_AutoCount = new System.Windows.Forms.Label();
@@ -140,6 +141,9 @@
             this.ccServiceMedi_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccServiceMedi_Desd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bt_Date = new System.Windows.Forms.Button();
+            this.lb_DateID = new System.Windows.Forms.Label();
+            this.lb_Date = new System.Windows.Forms.Label();
             this.lb_HealDateB = new System.Windows.Forms.Label();
             this.lb_HealDateCount = new System.Windows.Forms.Label();
             this.lb_HealDateCountA = new System.Windows.Forms.Label();
@@ -161,9 +165,6 @@
             this.ccPet_IDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccbloodtest_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lb_DateID = new System.Windows.Forms.Label();
-            this.lb_Date = new System.Windows.Forms.Label();
-            this.bt_Date = new System.Windows.Forms.Button();
             this.gBoxDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDYear)).BeginInit();
             this.gBox_OwnerDetail.SuspendLayout();
@@ -183,6 +184,7 @@
             // 
             // gBoxDetail
             // 
+            this.gBoxDetail.Controls.Add(this.bt_MemberCard);
             this.gBoxDetail.Controls.Add(this.bt_BloodTest);
             this.gBoxDetail.Controls.Add(this.label3);
             this.gBoxDetail.Controls.Add(this.lb_AutoCount);
@@ -226,6 +228,19 @@
             this.gBoxDetail.TabIndex = 1;
             this.gBoxDetail.TabStop = false;
             this.gBoxDetail.Text = "รายละเอียด";
+            // 
+            // bt_MemberCard
+            // 
+            this.bt_MemberCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_MemberCard.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_MemberCard.Location = new System.Drawing.Point(852, 96);
+            this.bt_MemberCard.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_MemberCard.Name = "bt_MemberCard";
+            this.bt_MemberCard.Size = new System.Drawing.Size(119, 32);
+            this.bt_MemberCard.TabIndex = 26;
+            this.bt_MemberCard.Text = "พิมพ์บัตรสมาชิก";
+            this.bt_MemberCard.UseVisualStyleBackColor = true;
+            this.bt_MemberCard.Click += new System.EventHandler(this.bt_MemberCard_Click);
             // 
             // bt_BloodTest
             // 
@@ -633,7 +648,7 @@
             // lb_Color
             // 
             this.lb_Color.AutoSize = true;
-            this.lb_Color.Location = new System.Drawing.Point(15, 101);
+            this.lb_Color.Location = new System.Drawing.Point(213, 101);
             this.lb_Color.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Color.Name = "lb_Color";
             this.lb_Color.Size = new System.Drawing.Size(75, 18);
@@ -642,7 +657,7 @@
             // 
             // txb_PetColor
             // 
-            this.txb_PetColor.Location = new System.Drawing.Point(94, 97);
+            this.txb_PetColor.Location = new System.Drawing.Point(292, 97);
             this.txb_PetColor.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetColor.Name = "txb_PetColor";
             this.txb_PetColor.Size = new System.Drawing.Size(161, 26);
@@ -699,7 +714,7 @@
             // txb_PetProfileID
             // 
             this.txb_PetProfileID.Enabled = false;
-            this.txb_PetProfileID.Location = new System.Drawing.Point(156, 25);
+            this.txb_PetProfileID.Location = new System.Drawing.Point(156, 24);
             this.txb_PetProfileID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetProfileID.Name = "txb_PetProfileID";
             this.txb_PetProfileID.Size = new System.Drawing.Size(92, 26);
@@ -1036,8 +1051,8 @@
             // 
             this.dGV_HealRecord.AllowUserToAddRows = false;
             this.dGV_HealRecord.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dGV_HealRecord.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1267,8 +1282,8 @@
             // 
             this.dGV_HealDetail.AllowUserToAddRows = false;
             this.dGV_HealDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dGV_HealDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1334,6 +1349,34 @@
             this.tabPage1.Text = "นัดหมาย";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // bt_Date
+            // 
+            this.bt_Date.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Date.Location = new System.Drawing.Point(860, 9);
+            this.bt_Date.Name = "bt_Date";
+            this.bt_Date.Size = new System.Drawing.Size(100, 31);
+            this.bt_Date.TabIndex = 28;
+            this.bt_Date.Text = "นัดหมาย";
+            this.bt_Date.UseVisualStyleBackColor = true;
+            this.bt_Date.Click += new System.EventHandler(this.bt_Date_Click);
+            // 
+            // lb_DateID
+            // 
+            this.lb_DateID.AutoSize = true;
+            this.lb_DateID.Location = new System.Drawing.Point(563, 16);
+            this.lb_DateID.Name = "lb_DateID";
+            this.lb_DateID.Size = new System.Drawing.Size(0, 18);
+            this.lb_DateID.TabIndex = 27;
+            // 
+            // lb_Date
+            // 
+            this.lb_Date.AutoSize = true;
+            this.lb_Date.Location = new System.Drawing.Point(415, 16);
+            this.lb_Date.Name = "lb_Date";
+            this.lb_Date.Size = new System.Drawing.Size(95, 18);
+            this.lb_Date.TabIndex = 26;
+            this.lb_Date.Text = "เลขที่นัดหมาย";
+            // 
             // lb_HealDateB
             // 
             this.lb_HealDateB.AutoSize = true;
@@ -1365,8 +1408,8 @@
             // 
             this.dGV_HealDate.AllowUserToAddRows = false;
             this.dGV_HealDate.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dGV_HealDate.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1547,34 +1590,6 @@
             // 
             this.epCheck.ContainerControl = this;
             // 
-            // lb_DateID
-            // 
-            this.lb_DateID.AutoSize = true;
-            this.lb_DateID.Location = new System.Drawing.Point(563, 16);
-            this.lb_DateID.Name = "lb_DateID";
-            this.lb_DateID.Size = new System.Drawing.Size(0, 18);
-            this.lb_DateID.TabIndex = 27;
-            // 
-            // lb_Date
-            // 
-            this.lb_Date.AutoSize = true;
-            this.lb_Date.Location = new System.Drawing.Point(415, 16);
-            this.lb_Date.Name = "lb_Date";
-            this.lb_Date.Size = new System.Drawing.Size(95, 18);
-            this.lb_Date.TabIndex = 26;
-            this.lb_Date.Text = "เลขที่นัดหมาย";
-            // 
-            // bt_Date
-            // 
-            this.bt_Date.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Date.Location = new System.Drawing.Point(860, 9);
-            this.bt_Date.Name = "bt_Date";
-            this.bt_Date.Size = new System.Drawing.Size(100, 31);
-            this.bt_Date.TabIndex = 28;
-            this.bt_Date.Text = "นัดหมาย";
-            this.bt_Date.UseVisualStyleBackColor = true;
-            this.bt_Date.Click += new System.EventHandler(this.bt_Date_Click);
-            // 
             // FrmRecorD21
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1746,5 +1761,6 @@
         private System.Windows.Forms.Button bt_Date;
         private System.Windows.Forms.Label lb_DateID;
         private System.Windows.Forms.Label lb_Date;
+        private System.Windows.Forms.Button bt_MemberCard;
     }
 }

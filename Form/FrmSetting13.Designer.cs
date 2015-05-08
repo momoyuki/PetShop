@@ -88,7 +88,7 @@
             this.txb_Searchoutlay.Location = new System.Drawing.Point(586, 182);
             this.txb_Searchoutlay.Name = "txb_Searchoutlay";
             this.txb_Searchoutlay.Size = new System.Drawing.Size(262, 26);
-            this.txb_Searchoutlay.TabIndex = 6;
+            this.txb_Searchoutlay.TabIndex = 7;
             this.txb_Searchoutlay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Searchoutlay_KeyDown);
             // 
             // bt_Searchoutlay
@@ -97,7 +97,7 @@
             this.bt_Searchoutlay.Location = new System.Drawing.Point(854, 178);
             this.bt_Searchoutlay.Name = "bt_Searchoutlay";
             this.bt_Searchoutlay.Size = new System.Drawing.Size(101, 32);
-            this.bt_Searchoutlay.TabIndex = 7;
+            this.bt_Searchoutlay.TabIndex = 8;
             this.bt_Searchoutlay.Text = "ค้นหา";
             this.bt_Searchoutlay.UseVisualStyleBackColor = false;
             this.bt_Searchoutlay.Click += new System.EventHandler(this.bt_Searchoutlay_Click);
@@ -110,7 +110,7 @@
             this.bt_Resetoutlay.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Resetoutlay.Name = "bt_Resetoutlay";
             this.bt_Resetoutlay.Size = new System.Drawing.Size(70, 32);
-            this.bt_Resetoutlay.TabIndex = 8;
+            this.bt_Resetoutlay.TabIndex = 6;
             this.bt_Resetoutlay.Text = "เริ่มใหม่";
             this.bt_Resetoutlay.UseVisualStyleBackColor = false;
             this.bt_Resetoutlay.Click += new System.EventHandler(this.bt_Resetoutlay_Click);
@@ -259,7 +259,7 @@
             this.dGV_outlay.ReadOnly = true;
             this.dGV_outlay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_outlay.Size = new System.Drawing.Size(982, 442);
-            this.dGV_outlay.TabIndex = 43;
+            this.dGV_outlay.TabIndex = 9;
             this.dGV_outlay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_outlay_CellClick);
             // 
             // ccoutlay_ID

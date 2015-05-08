@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmNN21
+    partial class FrmHealRecord
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNN21));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHealRecord));
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tPService = new System.Windows.Forms.TabPage();
             this.lb_ServiceID = new System.Windows.Forms.Label();
@@ -934,7 +934,7 @@
             this.bt_Refresh.UseVisualStyleBackColor = true;
             this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
             // 
-            // FrmNN21
+            // FrmHealRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -988,7 +988,7 @@
             this.Controls.Add(this.lb_Total);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmNN21";
+            this.Name = "FrmHealRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "บันทึกประจำวัน หัตถการและบริการ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

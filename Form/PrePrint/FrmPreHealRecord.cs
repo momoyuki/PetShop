@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Petshop
 {
-    public partial class FrmRePort33 : Form
+    public partial class FrmPreHealRecord : Form
     {
         private MySQLDBConnect iConnect;
-        public FrmRePort33()
+        public FrmPreHealRecord()
         {
             InitializeComponent();
             iConnect = new MySQLDBConnect();
@@ -82,7 +82,7 @@ namespace Petshop
             idtMediRecord = iConnect.SelectByCommand(isqlMediRecord);
 
             ReportDocument rpt = new ReportDocument();
-            rpt.Load("D:\\PetShop\\CrHealRecord.rpt");
+            rpt.Load("CrHealRecord.rpt");
             rpt.SetDataSource(idtHealRecord);
             rpt.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);
             rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);

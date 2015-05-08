@@ -312,7 +312,7 @@
             this.bt_Unit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Unit.Name = "bt_Unit";
             this.bt_Unit.Size = new System.Drawing.Size(100, 32);
-            this.bt_Unit.TabIndex = 6;
+            this.bt_Unit.TabIndex = 9;
             this.bt_Unit.Text = "เพิ่มหน่วย";
             this.bt_Unit.UseVisualStyleBackColor = false;
             this.bt_Unit.Click += new System.EventHandler(this.bt_Unit_Click);
@@ -336,7 +336,7 @@
             this.Bt_LoadPD.Margin = new System.Windows.Forms.Padding(4);
             this.Bt_LoadPD.Name = "Bt_LoadPD";
             this.Bt_LoadPD.Size = new System.Drawing.Size(100, 32);
-            this.Bt_LoadPD.TabIndex = 15;
+            this.Bt_LoadPD.TabIndex = 8;
             this.Bt_LoadPD.Text = "LoadPD";
             this.Bt_LoadPD.UseVisualStyleBackColor = true;
             this.Bt_LoadPD.Visible = false;
@@ -557,7 +557,7 @@
             this.bt_reSetProduct.Margin = new System.Windows.Forms.Padding(4);
             this.bt_reSetProduct.Name = "bt_reSetProduct";
             this.bt_reSetProduct.Size = new System.Drawing.Size(70, 32);
-            this.bt_reSetProduct.TabIndex = 16;
+            this.bt_reSetProduct.TabIndex = 10;
             this.bt_reSetProduct.Text = "เริ่มใหม่";
             this.bt_reSetProduct.UseVisualStyleBackColor = false;
             this.bt_reSetProduct.Click += new System.EventHandler(this.bt_reSetProduct_Click);

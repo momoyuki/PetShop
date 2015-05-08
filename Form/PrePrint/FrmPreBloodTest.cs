@@ -10,10 +10,10 @@ using CrystalDecisions.CrystalReports.Engine;
 
 namespace Petshop
 {
-    public partial class FrmNN23 : Form
+    public partial class FrmPreBloodTest : Form
     {
         private MySQLDBConnect iConnect;
-        public FrmNN23()
+        public FrmPreBloodTest()
         {
             InitializeComponent();
             iConnect = new MySQLDBConnect();
@@ -41,11 +41,16 @@ namespace Petshop
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
 
             ReportDocument rpt = new ReportDocument();
-            rpt.Load("D:\\PetShop\\CrBloodTest.rpt");
+            rpt.Load("CrBloodTest.rpt");
             rpt.SetDataSource(idtBloodTest);
             rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
             this.crViewerBloodtest.ReportSource = rpt;
             this.crViewerBloodtest.Refresh();
+        }
+
+        private void lb_BloodTestID_TextChanged(object sender, EventArgs e)
+        {
+            SearchBloodTest();
         }
     }
 }

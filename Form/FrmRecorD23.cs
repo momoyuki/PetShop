@@ -309,16 +309,16 @@ namespace Petshop
             AddRecordProductSale();
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmNRePort32))
+                if (form.GetType() == typeof(FrmBillProduct))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmNRePort32 iFrmMM32 = new FrmNRePort32();
-            iFrmMM32.MdiParent = MainForm.ActiveForm;
-            iFrmMM32.Show();
-            iFrmMM32.txb_ReferID.Text = lb_ProductSaleID.Text.Trim();
+            FrmBillProduct iFrmBillProduct = new FrmBillProduct();
+            iFrmBillProduct.MdiParent = MainForm.ActiveForm;
+            iFrmBillProduct.Show();
+            iFrmBillProduct.txb_ReferID.Text = lb_ProductSaleID.Text.Trim();
         }
 
         private void bt_AddProductSale_Click(object sender, EventArgs e)

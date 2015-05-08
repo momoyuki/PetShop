@@ -130,10 +130,10 @@
             // 
             this.bt_Print.Enabled = false;
             this.bt_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Print.Location = new System.Drawing.Point(884, 50);
+            this.bt_Print.Location = new System.Drawing.Point(884, 86);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Print.Name = "bt_Print";
-            this.bt_Print.Size = new System.Drawing.Size(112, 87);
+            this.bt_Print.Size = new System.Drawing.Size(112, 64);
             this.bt_Print.TabIndex = 10;
             this.bt_Print.Text = "พิมพ์ใบเสร็จ";
             this.bt_Print.UseVisualStyleBackColor = true;
@@ -416,10 +416,10 @@
             // bt_RecordBuy
             // 
             this.bt_RecordBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_RecordBuy.Location = new System.Drawing.Point(764, 85);
+            this.bt_RecordBuy.Location = new System.Drawing.Point(763, 113);
             this.bt_RecordBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_RecordBuy.Name = "bt_RecordBuy";
-            this.bt_RecordBuy.Size = new System.Drawing.Size(112, 52);
+            this.bt_RecordBuy.Size = new System.Drawing.Size(112, 37);
             this.bt_RecordBuy.TabIndex = 9;
             this.bt_RecordBuy.Text = "บันทึก";
             this.bt_RecordBuy.UseVisualStyleBackColor = true;

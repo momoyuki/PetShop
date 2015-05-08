@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmNN22
+    partial class FrmBloodTest
     {
         /// <summary>
         /// Required designer variable.
@@ -2937,7 +2937,7 @@
             this.lb_Name.TabIndex = 89;
             this.lb_Name.Text = "สัตว์ไข้";
             // 
-            // FrmNN22
+            // FrmBloodTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2945,7 +2945,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmNN22";
+            this.Name = "FrmBloodTest";
             this.Text = "บันทึกผลตรวจเลือด";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmNN22_Load);

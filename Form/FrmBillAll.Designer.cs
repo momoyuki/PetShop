@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmRePort31
+    partial class FrmBillAll
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRePort31));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBillAll));
             this.TabControlBill = new System.Windows.Forms.TabControl();
             this.tp_AllBill = new System.Windows.Forms.TabPage();
             this.dGV_Bill = new System.Windows.Forms.DataGridView();
@@ -458,7 +458,7 @@
             this.bt_Refresh.UseVisualStyleBackColor = true;
             this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
             // 
-            // FrmRePort31
+            // FrmBillAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -484,7 +484,7 @@
             this.Controls.Add(this.lb_Bill);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmRePort31";
+            this.Name = "FrmBillAll";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "พิมพ์ใบเสร็จ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -114,7 +114,7 @@
             this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Reset.Name = "bt_Reset";
             this.bt_Reset.Size = new System.Drawing.Size(70, 32);
-            this.bt_Reset.TabIndex = 17;
+            this.bt_Reset.TabIndex = 5;
             this.bt_Reset.Text = "เริ่มใหม่";
             this.bt_Reset.UseVisualStyleBackColor = true;
             this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
@@ -128,7 +128,7 @@
             this.bt_DelUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelUnit.Name = "bt_DelUnit";
             this.bt_DelUnit.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelUnit.TabIndex = 5;
+            this.bt_DelUnit.TabIndex = 4;
             this.bt_DelUnit.Text = "ลบ";
             this.bt_DelUnit.UseVisualStyleBackColor = true;
             this.bt_DelUnit.Click += new System.EventHandler(this.bt_DelUnit_Click);
@@ -140,7 +140,7 @@
             this.bt_LoadUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadUnit.Name = "bt_LoadUnit";
             this.bt_LoadUnit.Size = new System.Drawing.Size(100, 32);
-            this.bt_LoadUnit.TabIndex = 16;
+            this.bt_LoadUnit.TabIndex = 6;
             this.bt_LoadUnit.Text = "LoadUnit";
             this.bt_LoadUnit.UseVisualStyleBackColor = true;
             this.bt_LoadUnit.Visible = false;
@@ -154,7 +154,7 @@
             this.bt_EditUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditUnit.Name = "bt_EditUnit";
             this.bt_EditUnit.Size = new System.Drawing.Size(70, 32);
-            this.bt_EditUnit.TabIndex = 4;
+            this.bt_EditUnit.TabIndex = 3;
             this.bt_EditUnit.Text = "แก้ไข";
             this.bt_EditUnit.UseVisualStyleBackColor = true;
             this.bt_EditUnit.Click += new System.EventHandler(this.bt_EditUnit_Click);
@@ -166,7 +166,7 @@
             this.bt_AddUnit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddUnit.Name = "bt_AddUnit";
             this.bt_AddUnit.Size = new System.Drawing.Size(70, 32);
-            this.bt_AddUnit.TabIndex = 3;
+            this.bt_AddUnit.TabIndex = 2;
             this.bt_AddUnit.Text = "เพิ่ม";
             this.bt_AddUnit.UseVisualStyleBackColor = true;
             this.bt_AddUnit.Click += new System.EventHandler(this.bt_AddUnit_Click);
@@ -178,7 +178,7 @@
             this.txb_UnitID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_UnitID.Name = "txb_UnitID";
             this.txb_UnitID.Size = new System.Drawing.Size(132, 26);
-            this.txb_UnitID.TabIndex = 1;
+            this.txb_UnitID.TabIndex = 0;
             this.txb_UnitID.TextChanged += new System.EventHandler(this.txb_UnitID_TextChanged);
             // 
             // txb_UnitName
@@ -188,7 +188,7 @@
             this.txb_UnitName.MaxLength = 140;
             this.txb_UnitName.Name = "txb_UnitName";
             this.txb_UnitName.Size = new System.Drawing.Size(163, 26);
-            this.txb_UnitName.TabIndex = 2;
+            this.txb_UnitName.TabIndex = 1;
             this.txb_UnitName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_UnitName_KeyDown);
             // 
             // lb_UnitID

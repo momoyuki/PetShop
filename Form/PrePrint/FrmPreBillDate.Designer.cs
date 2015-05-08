@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmBillDate
+    partial class FrmPreBillDate
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,6 @@
             this.Bt_Report = new System.Windows.Forms.Button();
             this.txb_UnitList = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.CheckBox_Print = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lb_PetID
@@ -75,12 +74,13 @@
             // 
             // Bt_Report
             // 
+            this.Bt_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_Report.Location = new System.Drawing.Point(392, 13);
             this.Bt_Report.Margin = new System.Windows.Forms.Padding(4);
             this.Bt_Report.Name = "Bt_Report";
             this.Bt_Report.Size = new System.Drawing.Size(100, 32);
             this.Bt_Report.TabIndex = 5;
-            this.Bt_Report.Text = "ค้นหา";
+            this.Bt_Report.Text = "แสดงตัวอย่าง";
             this.Bt_Report.UseVisualStyleBackColor = true;
             this.Bt_Report.Click += new System.EventHandler(this.Bt_Report_Click);
             // 
@@ -102,23 +102,11 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "รายการ";
             // 
-            // CheckBox_Print
-            // 
-            this.CheckBox_Print.AutoSize = true;
-            this.CheckBox_Print.Location = new System.Drawing.Point(500, 20);
-            this.CheckBox_Print.Name = "CheckBox_Print";
-            this.CheckBox_Print.Size = new System.Drawing.Size(64, 22);
-            this.CheckBox_Print.TabIndex = 11;
-            this.CheckBox_Print.Text = "สำเนา";
-            this.CheckBox_Print.UseVisualStyleBackColor = true;
-            this.CheckBox_Print.Visible = false;
-            // 
-            // FrmBillDate
+            // FrmPreBillDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
-            this.Controls.Add(this.CheckBox_Print);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txb_UnitList);
             this.Controls.Add(this.lb_PetID);
@@ -127,7 +115,7 @@
             this.Controls.Add(this.Bt_Report);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmBillDate";
+            this.Name = "FrmPreBillDate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ตัวอย่างก่อนพิมพ์ ใบนัดหมาย";
             this.Load += new System.EventHandler(this.FrmBillDate_Load);
@@ -144,6 +132,5 @@
         private System.Windows.Forms.Button Bt_Report;
         private System.Windows.Forms.TextBox txb_UnitList;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox CheckBox_Print;
     }
 }

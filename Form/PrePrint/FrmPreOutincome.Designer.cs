@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmRePort32
+    partial class FrmPreOutincome
     {
         /// <summary>
         /// Required designer variable.
@@ -86,9 +86,9 @@
             this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Search.Location = new System.Drawing.Point(760, 12);
             this.bt_Search.Name = "bt_Search";
-            this.bt_Search.Size = new System.Drawing.Size(75, 32);
+            this.bt_Search.Size = new System.Drawing.Size(104, 32);
             this.bt_Search.TabIndex = 5;
-            this.bt_Search.Text = "ค้นหา";
+            this.bt_Search.Text = "แสดงตัวอย่าง";
             this.bt_Search.UseVisualStyleBackColor = true;
             this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
             // 
@@ -212,7 +212,7 @@
             this.crViewerService.TabIndex = 1;
             this.crViewerService.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // FrmRePort32
+            // FrmPreOutincome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -225,7 +225,7 @@
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmRePort32";
+            this.Name = "FrmPreOutincome";
             this.Text = "ดูรายรับ-รายจ่าย";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmRePort32_Load);

@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmNRePort32
+    partial class FrmBillProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNRePort32));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBillProduct));
             this.bt_Print = new System.Windows.Forms.Button();
             this.bt_Load = new System.Windows.Forms.Button();
             this.txb_BillDC = new System.Windows.Forms.TextBox();
@@ -80,7 +80,7 @@
             // bt_Load
             // 
             this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Load.Location = new System.Drawing.Point(787, 36);
+            this.bt_Load.Location = new System.Drawing.Point(787, 47);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Load.Name = "bt_Load";
             this.bt_Load.Size = new System.Drawing.Size(100, 32);
@@ -315,10 +315,10 @@
             // bt_Submit
             // 
             this.bt_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Submit.Location = new System.Drawing.Point(787, 72);
+            this.bt_Submit.Location = new System.Drawing.Point(787, 92);
             this.bt_Submit.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Submit.Name = "bt_Submit";
-            this.bt_Submit.Size = new System.Drawing.Size(100, 54);
+            this.bt_Submit.Size = new System.Drawing.Size(100, 34);
             this.bt_Submit.TabIndex = 160;
             this.bt_Submit.Text = "บันทึก";
             this.bt_Submit.UseVisualStyleBackColor = true;
@@ -373,7 +373,7 @@
             this.bt_Refresh.UseVisualStyleBackColor = true;
             this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
             // 
-            // FrmNRePort32
+            // FrmBillProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -404,7 +404,7 @@
             this.Controls.Add(this.dGV_Product);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmNRePort32";
+            this.Name = "FrmBillProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ใบเสร็จ ขายสินค้า";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

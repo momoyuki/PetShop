@@ -184,10 +184,10 @@
             // 
             this.bt_AddHealDate.Enabled = false;
             this.bt_AddHealDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_AddHealDate.Location = new System.Drawing.Point(743, 172);
+            this.bt_AddHealDate.Location = new System.Drawing.Point(743, 187);
             this.bt_AddHealDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddHealDate.Name = "bt_AddHealDate";
-            this.bt_AddHealDate.Size = new System.Drawing.Size(97, 46);
+            this.bt_AddHealDate.Size = new System.Drawing.Size(97, 32);
             this.bt_AddHealDate.TabIndex = 5;
             this.bt_AddHealDate.Text = "เพิ่ม";
             this.bt_AddHealDate.UseVisualStyleBackColor = true;
@@ -220,10 +220,10 @@
             // 
             this.bt_PrintDate.Enabled = false;
             this.bt_PrintDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_PrintDate.Location = new System.Drawing.Point(848, 146);
+            this.bt_PrintDate.Location = new System.Drawing.Point(848, 166);
             this.bt_PrintDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_PrintDate.Name = "bt_PrintDate";
-            this.bt_PrintDate.Size = new System.Drawing.Size(100, 72);
+            this.bt_PrintDate.Size = new System.Drawing.Size(100, 52);
             this.bt_PrintDate.TabIndex = 9;
             this.bt_PrintDate.Text = "พิมพ์ใบนัด";
             this.bt_PrintDate.UseVisualStyleBackColor = true;
@@ -689,10 +689,10 @@
             // 
             this.bt_PrintBill.Enabled = false;
             this.bt_PrintBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_PrintBill.Location = new System.Drawing.Point(848, 66);
+            this.bt_PrintBill.Location = new System.Drawing.Point(848, 103);
             this.bt_PrintBill.Margin = new System.Windows.Forms.Padding(4);
             this.bt_PrintBill.Name = "bt_PrintBill";
-            this.bt_PrintBill.Size = new System.Drawing.Size(100, 72);
+            this.bt_PrintBill.Size = new System.Drawing.Size(100, 52);
             this.bt_PrintBill.TabIndex = 8;
             this.bt_PrintBill.Text = "พิมพ์ใบเสร็จ";
             this.bt_PrintBill.UseVisualStyleBackColor = true;

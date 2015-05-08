@@ -63,6 +63,9 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>Resources\iconpetshop_4gf_2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -127,28 +130,40 @@
       <DependentUpon>CrBloodTest.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrMemberCard.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrMemberCard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\PrePrint\FrmPreMemberCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\PrePrint\FrmPreMemberCard.Designer.cs">
+      <DependentUpon>FrmPreMemberCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmRePort33.cs">
+    <Compile Include="Form\PrePrint\FrmPreHealRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmRePort33.Designer.cs">
-      <DependentUpon>FrmRePort33.cs</DependentUpon>
+    <Compile Include="Form\PrePrint\FrmPreHealRecord.Designer.cs">
+      <DependentUpon>FrmPreHealRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmNN22.cs">
+    <Compile Include="Form\FrmBloodTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmNN22.Designer.cs">
-      <DependentUpon>FrmNN22.cs</DependentUpon>
+    <Compile Include="Form\FrmBloodTest.Designer.cs">
+      <DependentUpon>FrmBloodTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmRePort31.cs">
+    <Compile Include="Form\FrmBillAll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmRePort31.Designer.cs">
-      <DependentUpon>FrmRePort31.cs</DependentUpon>
+    <Compile Include="Form\FrmBillAll.Designer.cs">
+      <DependentUpon>FrmBillAll.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FrmRecorD24.cs">
       <SubType>Form</SubType>
@@ -162,23 +177,23 @@
     <Compile Include="Form\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmBillDate.cs">
+    <Compile Include="Form\PrePrint\FrmPreBillDate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmBillDate.Designer.cs">
-      <DependentUpon>FrmBillDate.cs</DependentUpon>
+    <Compile Include="Form\PrePrint\FrmPreBillDate.Designer.cs">
+      <DependentUpon>FrmPreBillDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmNN21.cs">
+    <Compile Include="Form\FrmHealRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmNN21.Designer.cs">
-      <DependentUpon>FrmNN21.cs</DependentUpon>
+    <Compile Include="Form\FrmHealRecord.Designer.cs">
+      <DependentUpon>FrmHealRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmRePort32.cs">
+    <Compile Include="Form\PrePrint\FrmPreOutincome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmRePort32.Designer.cs">
-      <DependentUpon>FrmRePort32.cs</DependentUpon>
+    <Compile Include="Form\PrePrint\FrmPreOutincome.Designer.cs">
+      <DependentUpon>FrmPreOutincome.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FrmSetting13.cs">
       <SubType>Form</SubType>
@@ -192,11 +207,11 @@
     <Compile Include="Form\FrmPwd.Designer.cs">
       <DependentUpon>FrmPwd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmNN23.cs">
+    <Compile Include="Form\PrePrint\FrmPreBloodTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmNN23.Designer.cs">
-      <DependentUpon>FrmNN23.cs</DependentUpon>
+    <Compile Include="Form\PrePrint\FrmPreBloodTest.Designer.cs">
+      <DependentUpon>FrmPreBloodTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -224,17 +239,17 @@
     <Compile Include="Form\FrmRecorD23.Designer.cs">
       <DependentUpon>FrmRecorD23.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmNRePort32.cs">
+    <Compile Include="Form\FrmBillProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmNRePort32.Designer.cs">
-      <DependentUpon>FrmNRePort32.cs</DependentUpon>
+    <Compile Include="Form\FrmBillProduct.Designer.cs">
+      <DependentUpon>FrmBillProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmBillSerMe.cs">
+    <Compile Include="Form\PrePrint\FrmPreBillSerMe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmBillSerMe.Designer.cs">
-      <DependentUpon>FrmBillSerMe.cs</DependentUpon>
+    <Compile Include="Form\PrePrint\FrmPreBillSerMe.Designer.cs">
+      <DependentUpon>FrmPreBillSerMe.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FrmSetting14.cs">
       <SubType>Form</SubType>
@@ -242,11 +257,11 @@
     <Compile Include="Form\FrmSetting14.Designer.cs">
       <DependentUpon>FrmSetting14.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmNRePort31.cs">
+    <Compile Include="Form\FrmBillSerMe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmNRePort31.Designer.cs">
-      <DependentUpon>FrmNRePort31.cs</DependentUpon>
+    <Compile Include="Form\FrmBillSerMe.Designer.cs">
+      <DependentUpon>FrmBillSerMe.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FrmRecorD22.cs">
       <SubType>Form</SubType>
@@ -319,11 +334,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrBloodTest.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmNN22.resx">
-      <DependentUpon>FrmNN22.cs</DependentUpon>
+    <EmbeddedResource Include="CrMemberCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrMemberCard.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmRePort31.resx">
-      <DependentUpon>FrmRePort31.cs</DependentUpon>
+    <EmbeddedResource Include="Form\FrmBloodTest.resx">
+      <DependentUpon>FrmBloodTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmBillAll.resx">
+      <DependentUpon>FrmBillAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmRecorD24.resx">
       <DependentUpon>FrmRecorD24.cs</DependentUpon>
@@ -331,32 +350,32 @@
     <EmbeddedResource Include="Form\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmBillDate.resx">
-      <DependentUpon>FrmBillDate.cs</DependentUpon>
+    <EmbeddedResource Include="Form\PrePrint\FrmPreBillDate.resx">
+      <DependentUpon>FrmPreBillDate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmNN21.resx">
-      <DependentUpon>FrmNN21.cs</DependentUpon>
+    <EmbeddedResource Include="Form\FrmHealRecord.resx">
+      <DependentUpon>FrmHealRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmRecorD23.resx">
       <DependentUpon>FrmRecorD23.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmNRePort32.resx">
-      <DependentUpon>FrmNRePort32.cs</DependentUpon>
+    <EmbeddedResource Include="Form\FrmBillProduct.resx">
+      <DependentUpon>FrmBillProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmBillSerMe.resx">
-      <DependentUpon>FrmBillSerMe.cs</DependentUpon>
+    <EmbeddedResource Include="Form\PrePrint\FrmPreBillSerMe.resx">
+      <DependentUpon>FrmPreBillSerMe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmRePort32.resx">
-      <DependentUpon>FrmRePort32.cs</DependentUpon>
+    <EmbeddedResource Include="Form\PrePrint\FrmPreOutincome.resx">
+      <DependentUpon>FrmPreOutincome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmRePort33.resx">
-      <DependentUpon>FrmRePort33.cs</DependentUpon>
+    <EmbeddedResource Include="Form\PrePrint\FrmPreHealRecord.resx">
+      <DependentUpon>FrmPreHealRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmSetting14.resx">
       <DependentUpon>FrmSetting14.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmNRePort31.resx">
-      <DependentUpon>FrmNRePort31.cs</DependentUpon>
+    <EmbeddedResource Include="Form\FrmBillSerMe.resx">
+      <DependentUpon>FrmBillSerMe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmRecorD22.resx">
       <DependentUpon>FrmRecorD22.cs</DependentUpon>
@@ -388,8 +407,11 @@
     <EmbeddedResource Include="Form\FrmPwd.resx">
       <DependentUpon>FrmPwd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmNN23.resx">
-      <DependentUpon>FrmNN23.cs</DependentUpon>
+    <EmbeddedResource Include="Form\PrePrint\FrmPreBloodTest.resx">
+      <DependentUpon>FrmPreBloodTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PrePrint\FrmPreMemberCard.resx">
+      <DependentUpon>FrmPreMemberCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -484,7 +506,9 @@
   <ItemGroup>
     <None Include="Resources\noun_16443.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\iconpetshop_4gf_2.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

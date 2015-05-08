@@ -248,7 +248,7 @@
             this.bt_LoadCompany.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadCompany.Name = "bt_LoadCompany";
             this.bt_LoadCompany.Size = new System.Drawing.Size(123, 32);
-            this.bt_LoadCompany.TabIndex = 24;
+            this.bt_LoadCompany.TabIndex = 4;
             this.bt_LoadCompany.Text = "LoadCompany";
             this.bt_LoadCompany.UseVisualStyleBackColor = true;
             this.bt_LoadCompany.Visible = false;
@@ -341,7 +341,7 @@
             this.bt_Browse.Name = "bt_Browse";
             this.bt_Browse.Size = new System.Drawing.Size(100, 32);
             this.bt_Browse.TabIndex = 1;
-            this.bt_Browse.Text = "เลือก";
+            this.bt_Browse.Text = "เลือกภาพ";
             this.bt_Browse.UseVisualStyleBackColor = true;
             this.bt_Browse.Click += new System.EventHandler(this.bt_Browse_Click);
             // 

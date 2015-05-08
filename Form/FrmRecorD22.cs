@@ -285,16 +285,16 @@ namespace Petshop
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmBillDate))
+                if (form.GetType() == typeof(FrmPreBillDate))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmBillDate iFrmMMDateBill = new FrmBillDate();
-            iFrmMMDateBill.MdiParent = MainForm.ActiveForm;
-            iFrmMMDateBill.Show();
-            iFrmMMDateBill.lb_PetID.Text = lb_PetID.Text;
+            FrmPreBillDate iFrmPreBillDate = new FrmPreBillDate();
+            iFrmPreBillDate.MdiParent = MainForm.ActiveForm;
+            iFrmPreBillDate.Show();
+            iFrmPreBillDate.lb_PetID.Text = lb_PetID.Text;
         }
 
         private void bt_PrintBill_Click(object sender, EventArgs e)
@@ -304,16 +304,16 @@ namespace Petshop
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    if (form.GetType() == typeof(FrmNRePort31))
+                    if (form.GetType() == typeof(FrmBillSerMe))
                     {
                         form.Activate();
                         return;
                     }
                 }
-                FrmNRePort31 iFrmNRePort31 = new FrmNRePort31();
-                iFrmNRePort31.MdiParent = MainForm.ActiveForm;
-                iFrmNRePort31.Show();
-                iFrmNRePort31.txb_ReferID.Text = lb_HealRecordID.Text;
+                FrmBillSerMe iFrmBillSerMe = new FrmBillSerMe();
+                iFrmBillSerMe.MdiParent = MainForm.ActiveForm;
+                iFrmBillSerMe.Show();
+                iFrmBillSerMe.txb_ReferID.Text = lb_HealRecordID.Text;
                 //iFrmNRePort31.lb_PetID.Text = .Text;
             }
             else

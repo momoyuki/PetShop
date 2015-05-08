@@ -12,10 +12,10 @@ using System.Text.RegularExpressions;
 
 namespace Petshop
 {
-    public partial class FrmBillDate : Form
+    public partial class FrmPreBillDate : Form
     {
         private MySQLDBConnect iConnect;
-        public FrmBillDate()
+        public FrmPreBillDate()
         {
             InitializeComponent();
             iConnect = new MySQLDBConnect();

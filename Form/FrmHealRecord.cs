@@ -10,12 +10,12 @@ using System.Text.RegularExpressions;
 
 namespace Petshop
 {
-    public partial class FrmNN21 : Form
+    public partial class FrmHealRecord : Form
     {
         DataTable idtmedicine, idtService;
         private MySQLDBConnect iConnect;
 
-        public FrmNN21()
+        public FrmHealRecord()
         {
             InitializeComponent();
             iConnect = new MySQLDBConnect();
@@ -510,16 +510,16 @@ namespace Petshop
         {
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
-                if (form.GetType() == typeof(FrmNRePort31))
+                if (form.GetType() == typeof(FrmBillSerMe))
                 {
                     form.Activate();
                     return;
                 }
             }
-            FrmNRePort31 iFrmMM31 = new FrmNRePort31();
-            iFrmMM31.MdiParent = MainForm.ActiveForm;
-            iFrmMM31.txb_ReferID.Text = lb_HealRecordID.Text;
-            iFrmMM31.Show();  
+            FrmBillSerMe iFrmBillSerMe = new FrmBillSerMe();
+            iFrmBillSerMe.MdiParent = MainForm.ActiveForm;
+            iFrmBillSerMe.txb_ReferID.Text = lb_HealRecordID.Text;
+            iFrmBillSerMe.Show();  
             //iCloseHealRecord = "Print";
             //this.Close();
         }

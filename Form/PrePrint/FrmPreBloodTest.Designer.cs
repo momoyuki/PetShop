@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmNN23
+    partial class FrmPreBloodTest
     {
         /// <summary>
         /// Required designer variable.
@@ -65,9 +65,9 @@
             this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Search.Location = new System.Drawing.Point(273, 6);
             this.bt_Search.Name = "bt_Search";
-            this.bt_Search.Size = new System.Drawing.Size(75, 32);
+            this.bt_Search.Size = new System.Drawing.Size(104, 32);
             this.bt_Search.TabIndex = 19;
-            this.bt_Search.Text = "ค้นหา";
+            this.bt_Search.Text = "แสดงตัวอย่าง";
             this.bt_Search.UseVisualStyleBackColor = true;
             this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
             // 
@@ -88,8 +88,9 @@
             this.lb_BloodTestID.Size = new System.Drawing.Size(16, 18);
             this.lb_BloodTestID.TabIndex = 22;
             this.lb_BloodTestID.Text = "0";
+            this.lb_BloodTestID.TextChanged += new System.EventHandler(this.lb_BloodTestID_TextChanged);
             // 
-            // FrmNN23
+            // FrmPreBloodTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +101,7 @@
             this.Controls.Add(this.bt_Search);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmNN23";
+            this.Name = "FrmPreBloodTest";
             this.Text = "พิมพ์ผลตรวจเลือด";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);

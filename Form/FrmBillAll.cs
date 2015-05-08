@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace Petshop
 {
-    public partial class FrmRePort31 : Form
+    public partial class FrmBillAll : Form
     {
         private MySQLDBConnect iConnect;
-        public FrmRePort31()
+        public FrmBillAll()
         {
             InitializeComponent();
             iConnect = new MySQLDBConnect();
@@ -88,16 +88,16 @@ namespace Petshop
             {
                 foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
                 {
-                    if (form.GetType() == typeof(FrmBillSerMe))
+                    if (form.GetType() == typeof(FrmPreBillSerMe))
                     {
                         form.Activate();
                         return;
                     }
                 }
-                FrmBillSerMe iFrmBill = new FrmBillSerMe();
-                iFrmBill.MdiParent = MainForm.ActiveForm;
-                iFrmBill.Show();
-                iFrmBill.lb_BillID.Text = Lb_BillID.Text.Trim();
+                FrmPreBillSerMe iFrmPreBillSerMe = new FrmPreBillSerMe();
+                iFrmPreBillSerMe.MdiParent = MainForm.ActiveForm;
+                iFrmPreBillSerMe.Show();
+                iFrmPreBillSerMe.lb_BillID.Text = Lb_BillID.Text.Trim();
             }
         }
 

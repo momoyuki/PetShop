@@ -1,6 +1,6 @@
 ﻿namespace Petshop
 {
-    partial class FrmRePort33
+    partial class FrmPreHealRecord
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             // bt_Search
             // 
             this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Search.Location = new System.Drawing.Point(906, 5);
+            this.bt_Search.Location = new System.Drawing.Point(870, 6);
             this.bt_Search.Name = "bt_Search";
             this.bt_Search.Size = new System.Drawing.Size(75, 32);
             this.bt_Search.TabIndex = 10;
@@ -109,7 +109,7 @@
             // 
             // txb_PetID
             // 
-            this.txb_PetID.Location = new System.Drawing.Point(718, 9);
+            this.txb_PetID.Location = new System.Drawing.Point(682, 10);
             this.txb_PetID.Name = "txb_PetID";
             this.txb_PetID.Size = new System.Drawing.Size(181, 26);
             this.txb_PetID.TabIndex = 13;
@@ -117,14 +117,14 @@
             // CheckBox_PetID
             // 
             this.CheckBox_PetID.AutoSize = true;
-            this.CheckBox_PetID.Location = new System.Drawing.Point(635, 13);
+            this.CheckBox_PetID.Location = new System.Drawing.Point(599, 14);
             this.CheckBox_PetID.Name = "CheckBox_PetID";
             this.CheckBox_PetID.Size = new System.Drawing.Size(77, 22);
             this.CheckBox_PetID.TabIndex = 14;
             this.CheckBox_PetID.Text = "รหัสสัตว์";
             this.CheckBox_PetID.UseVisualStyleBackColor = true;
             // 
-            // FrmRePort33
+            // FrmPreHealRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.dTP_Date);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmRePort33";
+            this.Name = "FrmPreHealRecord";
             this.Text = "งานรายการรักษา";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);

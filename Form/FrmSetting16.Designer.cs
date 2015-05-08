@@ -34,6 +34,7 @@
             this.tabControlEmployee = new System.Windows.Forms.TabControl();
             this.tpEmployee = new System.Windows.Forms.TabPage();
             this.gBoxEmployee = new System.Windows.Forms.GroupBox();
+            this.bt_Pwd = new System.Windows.Forms.Button();
             this.bt_Reset = new System.Windows.Forms.Button();
             this.lb_EmAddr = new System.Windows.Forms.Label();
             this.bt_LoadEP = new System.Windows.Forms.Button();
@@ -82,7 +83,6 @@
             this.txb_EmpositionID = new System.Windows.Forms.TextBox();
             this.lb_EmPosition = new System.Windows.Forms.Label();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bt_Pwd = new System.Windows.Forms.Button();
             this.tabControlEmployee.SuspendLayout();
             this.tpEmployee.SuspendLayout();
             this.gBoxEmployee.SuspendLayout();
@@ -147,9 +147,21 @@
             this.gBoxEmployee.Name = "gBoxEmployee";
             this.gBoxEmployee.Padding = new System.Windows.Forms.Padding(4);
             this.gBoxEmployee.Size = new System.Drawing.Size(845, 234);
-            this.gBoxEmployee.TabIndex = 1;
+            this.gBoxEmployee.TabIndex = 0;
             this.gBoxEmployee.TabStop = false;
             this.gBoxEmployee.Text = "รายละเอียด";
+            // 
+            // bt_Pwd
+            // 
+            this.bt_Pwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Pwd.Location = new System.Drawing.Point(148, 202);
+            this.bt_Pwd.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Pwd.Name = "bt_Pwd";
+            this.bt_Pwd.Size = new System.Drawing.Size(110, 32);
+            this.bt_Pwd.TabIndex = 10;
+            this.bt_Pwd.Text = "เปลี่ยนรหัสผ่าน";
+            this.bt_Pwd.UseVisualStyleBackColor = true;
+            this.bt_Pwd.Click += new System.EventHandler(this.bt_Pwd_Click);
             // 
             // bt_Reset
             // 
@@ -181,7 +193,7 @@
             this.bt_LoadEP.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadEP.Name = "bt_LoadEP";
             this.bt_LoadEP.Size = new System.Drawing.Size(100, 32);
-            this.bt_LoadEP.TabIndex = 3;
+            this.bt_LoadEP.TabIndex = 13;
             this.bt_LoadEP.Text = "LoadEP";
             this.bt_LoadEP.UseVisualStyleBackColor = true;
             this.bt_LoadEP.Visible = false;
@@ -195,7 +207,7 @@
             this.txb_EmAddr.Multiline = true;
             this.txb_EmAddr.Name = "txb_EmAddr";
             this.txb_EmAddr.Size = new System.Drawing.Size(263, 50);
-            this.txb_EmAddr.TabIndex = 12;
+            this.txb_EmAddr.TabIndex = 7;
             // 
             // lb_EmTel
             // 
@@ -214,7 +226,7 @@
             this.txb_EmTel.MaxLength = 100;
             this.txb_EmTel.Name = "txb_EmTel";
             this.txb_EmTel.Size = new System.Drawing.Size(200, 26);
-            this.txb_EmTel.TabIndex = 10;
+            this.txb_EmTel.TabIndex = 6;
             // 
             // lb_EmDOB
             // 
@@ -231,7 +243,7 @@
             this.dTP_EmDOB.Location = new System.Drawing.Point(510, 37);
             this.dTP_EmDOB.Name = "dTP_EmDOB";
             this.dTP_EmDOB.Size = new System.Drawing.Size(200, 26);
-            this.dTP_EmDOB.TabIndex = 8;
+            this.dTP_EmDOB.TabIndex = 5;
             // 
             // rB_NotWork
             // 
@@ -239,7 +251,7 @@
             this.rB_NotWork.Location = new System.Drawing.Point(524, 170);
             this.rB_NotWork.Name = "rB_NotWork";
             this.rB_NotWork.Size = new System.Drawing.Size(82, 22);
-            this.rB_NotWork.TabIndex = 7;
+            this.rB_NotWork.TabIndex = 8;
             this.rB_NotWork.TabStop = true;
             this.rB_NotWork.Text = "0.ลาออก";
             this.rB_NotWork.UseVisualStyleBackColor = true;
@@ -251,7 +263,7 @@
             this.txb_Pwd.Name = "txb_Pwd";
             this.txb_Pwd.PasswordChar = '*';
             this.txb_Pwd.Size = new System.Drawing.Size(175, 26);
-            this.txb_Pwd.TabIndex = 1;
+            this.txb_Pwd.TabIndex = 4;
             this.txb_Pwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Pwd_KeyDown);
             // 
             // bt_EditEm
@@ -262,7 +274,7 @@
             this.bt_EditEm.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditEm.Name = "bt_EditEm";
             this.bt_EditEm.Size = new System.Drawing.Size(70, 32);
-            this.bt_EditEm.TabIndex = 2;
+            this.bt_EditEm.TabIndex = 12;
             this.bt_EditEm.Text = "แก้ไข";
             this.bt_EditEm.UseVisualStyleBackColor = true;
             this.bt_EditEm.Click += new System.EventHandler(this.bt_EditEm_Click);
@@ -273,7 +285,7 @@
             this.rB_Work.Location = new System.Drawing.Point(612, 170);
             this.rB_Work.Name = "rB_Work";
             this.rB_Work.Size = new System.Drawing.Size(98, 22);
-            this.rB_Work.TabIndex = 6;
+            this.rB_Work.TabIndex = 9;
             this.rB_Work.TabStop = true;
             this.rB_Work.Text = "1.ทำงานอยู่";
             this.rB_Work.UseVisualStyleBackColor = true;
@@ -285,7 +297,7 @@
             this.bt_AddEm.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddEm.Name = "bt_AddEm";
             this.bt_AddEm.Size = new System.Drawing.Size(70, 32);
-            this.bt_AddEm.TabIndex = 1;
+            this.bt_AddEm.TabIndex = 11;
             this.bt_AddEm.Text = "เพิ่ม";
             this.bt_AddEm.UseVisualStyleBackColor = true;
             this.bt_AddEm.Click += new System.EventHandler(this.bt_AddEm_Click);
@@ -307,7 +319,7 @@
             this.txb_UserName.MaxLength = 32;
             this.txb_UserName.Name = "txb_UserName";
             this.txb_UserName.Size = new System.Drawing.Size(175, 26);
-            this.txb_UserName.TabIndex = 0;
+            this.txb_UserName.TabIndex = 3;
             this.txb_UserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_UserName_KeyDown);
             // 
             // cb_EmPosition
@@ -565,7 +577,7 @@
             this.bt_ResetPosition.Margin = new System.Windows.Forms.Padding(4);
             this.bt_ResetPosition.Name = "bt_ResetPosition";
             this.bt_ResetPosition.Size = new System.Drawing.Size(70, 32);
-            this.bt_ResetPosition.TabIndex = 16;
+            this.bt_ResetPosition.TabIndex = 5;
             this.bt_ResetPosition.Text = "เริ่มใหม่";
             this.bt_ResetPosition.UseVisualStyleBackColor = true;
             this.bt_ResetPosition.Click += new System.EventHandler(this.bt_ResetPosition_Click);
@@ -579,7 +591,7 @@
             this.bt_DelPosition.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelPosition.Name = "bt_DelPosition";
             this.bt_DelPosition.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelPosition.TabIndex = 15;
+            this.bt_DelPosition.TabIndex = 4;
             this.bt_DelPosition.Text = "ลบ";
             this.bt_DelPosition.UseVisualStyleBackColor = true;
             this.bt_DelPosition.Click += new System.EventHandler(this.bt_DelPosition_Click);
@@ -665,18 +677,6 @@
             // epCheck
             // 
             this.epCheck.ContainerControl = this;
-            // 
-            // bt_Pwd
-            // 
-            this.bt_Pwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Pwd.Location = new System.Drawing.Point(148, 202);
-            this.bt_Pwd.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_Pwd.Name = "bt_Pwd";
-            this.bt_Pwd.Size = new System.Drawing.Size(110, 32);
-            this.bt_Pwd.TabIndex = 15;
-            this.bt_Pwd.Text = "เปลี่ยนรหัสผ่าน";
-            this.bt_Pwd.UseVisualStyleBackColor = true;
-            this.bt_Pwd.Click += new System.EventHandler(this.bt_Pwd_Click);
             // 
             // FrmSetting16
             // 

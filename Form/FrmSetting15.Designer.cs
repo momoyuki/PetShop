@@ -163,7 +163,7 @@
             this.txb_SearchBreed.Location = new System.Drawing.Point(288, 173);
             this.txb_SearchBreed.Name = "txb_SearchBreed";
             this.txb_SearchBreed.Size = new System.Drawing.Size(262, 26);
-            this.txb_SearchBreed.TabIndex = 10;
+            this.txb_SearchBreed.TabIndex = 7;
             this.txb_SearchBreed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_SearchBreed_KeyDown);
             // 
             // bt_SearchBreed
@@ -172,7 +172,7 @@
             this.bt_SearchBreed.Location = new System.Drawing.Point(556, 169);
             this.bt_SearchBreed.Name = "bt_SearchBreed";
             this.bt_SearchBreed.Size = new System.Drawing.Size(101, 32);
-            this.bt_SearchBreed.TabIndex = 11;
+            this.bt_SearchBreed.TabIndex = 8;
             this.bt_SearchBreed.Text = "ค้นหา";
             this.bt_SearchBreed.UseVisualStyleBackColor = true;
             this.bt_SearchBreed.Click += new System.EventHandler(this.bt_SearchBreed_Click);
@@ -185,7 +185,7 @@
             this.bt_ResetBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_ResetBreed.Name = "bt_ResetBreed";
             this.bt_ResetBreed.Size = new System.Drawing.Size(70, 32);
-            this.bt_ResetBreed.TabIndex = 9;
+            this.bt_ResetBreed.TabIndex = 6;
             this.bt_ResetBreed.Text = "เริ่มใหม่";
             this.bt_ResetBreed.UseVisualStyleBackColor = true;
             this.bt_ResetBreed.Click += new System.EventHandler(this.bt_ResetBreed_Click);
@@ -198,7 +198,7 @@
             this.bt_DelBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_DelBreed.Name = "bt_DelBreed";
             this.bt_DelBreed.Size = new System.Drawing.Size(70, 32);
-            this.bt_DelBreed.TabIndex = 6;
+            this.bt_DelBreed.TabIndex = 5;
             this.bt_DelBreed.Text = "ลบ";
             this.bt_DelBreed.UseVisualStyleBackColor = true;
             this.bt_DelBreed.Click += new System.EventHandler(this.bt_DelBreed_Click);
@@ -223,7 +223,7 @@
             this.bt_EditBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_EditBreed.Name = "bt_EditBreed";
             this.bt_EditBreed.Size = new System.Drawing.Size(70, 32);
-            this.bt_EditBreed.TabIndex = 5;
+            this.bt_EditBreed.TabIndex = 4;
             this.bt_EditBreed.Text = "แก้ไข";
             this.bt_EditBreed.UseVisualStyleBackColor = true;
             this.bt_EditBreed.Click += new System.EventHandler(this.bt_EditBreed_Click);
@@ -235,7 +235,7 @@
             this.bt_AddBreed.Margin = new System.Windows.Forms.Padding(4);
             this.bt_AddBreed.Name = "bt_AddBreed";
             this.bt_AddBreed.Size = new System.Drawing.Size(70, 32);
-            this.bt_AddBreed.TabIndex = 4;
+            this.bt_AddBreed.TabIndex = 3;
             this.bt_AddBreed.Text = "เพิ่ม";
             this.bt_AddBreed.UseVisualStyleBackColor = true;
             this.bt_AddBreed.Click += new System.EventHandler(this.bt_AddBreed_Click);
@@ -247,7 +247,7 @@
             this.cb_Type.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Type.Name = "cb_Type";
             this.cb_Type.Size = new System.Drawing.Size(132, 26);
-            this.cb_Type.TabIndex = 2;
+            this.cb_Type.TabIndex = 1;
             this.cb_Type.SelectionChangeCommitted += new System.EventHandler(this.cb_Type_SelectionChangeCommitted);
             // 
             // lb_cbType
@@ -267,7 +267,7 @@
             this.txb_BreedName.MaxLength = 100;
             this.txb_BreedName.Name = "txb_BreedName";
             this.txb_BreedName.Size = new System.Drawing.Size(263, 26);
-            this.txb_BreedName.TabIndex = 3;
+            this.txb_BreedName.TabIndex = 2;
             this.txb_BreedName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_BreedName_KeyDown);
             // 
             // lb_BreedName
@@ -287,7 +287,7 @@
             this.txb_BreedID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_BreedID.Name = "txb_BreedID";
             this.txb_BreedID.Size = new System.Drawing.Size(132, 26);
-            this.txb_BreedID.TabIndex = 1;
+            this.txb_BreedID.TabIndex = 0;
             this.txb_BreedID.TextChanged += new System.EventHandler(this.txb_BreedID_TextChanged);
             // 
             // lb_BreedID
@@ -320,7 +320,7 @@
             this.dGV_Breed.ReadOnly = true;
             this.dGV_Breed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Breed.Size = new System.Drawing.Size(664, 383);
-            this.dGV_Breed.TabIndex = 2;
+            this.dGV_Breed.TabIndex = 1;
             this.dGV_Breed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Breed_CellClick);
             // 
             // ccPetBreed_ID
@@ -431,7 +431,7 @@
             this.bt_Reset.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Reset.Name = "bt_Reset";
             this.bt_Reset.Size = new System.Drawing.Size(70, 32);
-            this.bt_Reset.TabIndex = 9;
+            this.bt_Reset.TabIndex = 5;
             this.bt_Reset.Text = "เริ่มใหม่";
             this.bt_Reset.UseVisualStyleBackColor = true;
             this.bt_Reset.Click += new System.EventHandler(this.bt_Reset_Click);
@@ -457,7 +457,7 @@
             this.bt_LoadType.Margin = new System.Windows.Forms.Padding(4);
             this.bt_LoadType.Name = "bt_LoadType";
             this.bt_LoadType.Size = new System.Drawing.Size(100, 32);
-            this.bt_LoadType.TabIndex = 5;
+            this.bt_LoadType.TabIndex = 6;
             this.bt_LoadType.Text = "LoadType";
             this.bt_LoadType.UseVisualStyleBackColor = true;
             this.bt_LoadType.Visible = false;
