@@ -151,6 +151,8 @@
               <xs:element name="HealRecord_Total" msprop:Generator_ColumnVarNameInTable="columnHealRecord_Total" msprop:Generator_ColumnPropNameInRow="HealRecord_Total" msprop:Generator_ColumnPropNameInTable="HealRecord_TotalColumn" msprop:Generator_UserColumnName="HealRecord_Total" type="xs:string" minOccurs="0" />
               <xs:element name="HealRecord_DC" msprop:Generator_ColumnVarNameInTable="columnHealRecord_DC" msprop:Generator_ColumnPropNameInRow="HealRecord_DC" msprop:Generator_ColumnPropNameInTable="HealRecord_DCColumn" msprop:Generator_UserColumnName="HealRecord_DC" type="xs:string" minOccurs="0" />
               <xs:element name="HealRecord_Net" msprop:Generator_ColumnVarNameInTable="columnHealRecord_Net" msprop:Generator_ColumnPropNameInRow="HealRecord_Net" msprop:Generator_ColumnPropNameInTable="HealRecord_NetColumn" msprop:Generator_UserColumnName="HealRecord_Net" type="xs:string" minOccurs="0" />
+              <xs:element name="Owner_Name" msprop:Generator_ColumnVarNameInTable="columnOwner_Name" msprop:Generator_ColumnPropNameInRow="Owner_Name" msprop:Generator_ColumnPropNameInTable="Owner_NameColumn" msprop:Generator_UserColumnName="Owner_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Owner_Tel" msprop:Generator_ColumnVarNameInTable="columnOwner_Tel" msprop:Generator_ColumnPropNameInRow="Owner_Tel" msprop:Generator_ColumnPropNameInTable="Owner_TelColumn" msprop:Generator_UserColumnName="Owner_Tel" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -229,6 +231,8 @@
               <xs:element name="AMMONIA" msprop:Generator_ColumnVarNameInTable="columnAMMONIA" msprop:Generator_ColumnPropNameInRow="AMMONIA" msprop:Generator_ColumnPropNameInTable="AMMONIAColumn" msprop:Generator_UserColumnName="AMMONIA" type="xs:string" minOccurs="0" />
               <xs:element name="bloodtest_OTHERS" msprop:Generator_ColumnVarNameInTable="columnbloodtest_OTHERS" msprop:Generator_ColumnPropNameInRow="bloodtest_OTHERS" msprop:Generator_ColumnPropNameInTable="bloodtest_OTHERSColumn" msprop:Generator_UserColumnName="bloodtest_OTHERS" type="xs:string" minOccurs="0" />
               <xs:element name="Bloodtest_Remark" msprop:Generator_ColumnVarNameInTable="columnBloodtest_Remark" msprop:Generator_ColumnPropNameInRow="Bloodtest_Remark" msprop:Generator_ColumnPropNameInTable="Bloodtest_RemarkColumn" msprop:Generator_UserColumnName="Bloodtest_Remark" type="xs:string" minOccurs="0" />
+              <xs:element name="Owner_Name" msprop:Generator_ColumnVarNameInTable="columnOwner_Name" msprop:Generator_ColumnPropNameInRow="Owner_Name" msprop:Generator_ColumnPropNameInTable="Owner_NameColumn" msprop:Generator_UserColumnName="Owner_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Owner_Tel" msprop:Generator_ColumnVarNameInTable="columnOwner_Tel" msprop:Generator_ColumnPropNameInRow="Owner_Tel" msprop:Generator_ColumnPropNameInTable="Owner_TelColumn" msprop:Generator_UserColumnName="Owner_Tel" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

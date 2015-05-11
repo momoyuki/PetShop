@@ -33,7 +33,9 @@
             this.bt_Search = new System.Windows.Forms.Button();
             this.txb_PetID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.nUDID = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDID)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +67,7 @@
             // 
             this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Search.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bt_Search.Location = new System.Drawing.Point(243, 14);
+            this.bt_Search.Location = new System.Drawing.Point(331, 13);
             this.bt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Search.Name = "bt_Search";
             this.bt_Search.Size = new System.Drawing.Size(104, 32);
@@ -91,11 +93,19 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "บัตรเลขที่";
             // 
+            // nUDID
+            // 
+            this.nUDID.Location = new System.Drawing.Point(242, 18);
+            this.nUDID.Name = "nUDID";
+            this.nUDID.Size = new System.Drawing.Size(82, 26);
+            this.nUDID.TabIndex = 28;
+            // 
             // FrmPreMemberCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 672);
+            this.Controls.Add(this.nUDID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txb_PetID);
             this.Controls.Add(this.bt_Search);
@@ -105,6 +115,7 @@
             this.Name = "FrmPreMemberCard";
             this.Text = "พิมพ์บัตรสมาชิก";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nUDID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +128,6 @@
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crViewerBloodtest;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txb_PetID;
+        private System.Windows.Forms.NumericUpDown nUDID;
     }
 }

@@ -168,7 +168,7 @@ namespace Petshop
                 else if (iAddEditHealDate == "EditHealDate")
                 {
                     string ilbHealDateID = lb_HealDateID.Text.Trim();
-                    int iContract = -0;
+                    int iContract;
                     if (CheckBox_Contract.Checked == true)
                     {
                         iContract = 1;
@@ -183,7 +183,7 @@ namespace Petshop
                         if (iConfirmResult == DialogResult.Yes)
                         {
                             string isqlAddHealDate = "UPDATE `tb_healdate` " +
-                            " SET Service_Id = '" + icbService + "', `HealDate_Remark`='" + itxbRemark + "', `HealDate_Day`='" + idTPHealDate + "', `HealDate_Remind`='" + iRemind + "', `HealDate_Status`=" + iContract.ToString() + " WHERE `HealDate_ID`='" + ilbHealDateID + "'";
+                            " SET Service_Id = '" + icbService + "', `HealDate_Remark`='" + itxbRemark + "', `HealDate_Day`='" + idTPHealDate + "', `HealDate_Remind`='" + iRemind + "', `HealDate_Status`=" + iContract.ToString() +" WHERE `HealDate_ID`='" + ilbHealDateID + "'";
                             iConnect.Insert(isqlAddHealDate);
                             ClearTxb();
                             MessageBox.Show("แก้ไขข้อมูลการนัดหมาย");
@@ -354,29 +354,38 @@ namespace Petshop
         private void bt_Search_Click(object sender, EventArgs e)
         {
                 Regex RegString = new Regex(@"^[\d+]|[\w+]|[ ]$");
-            if (RegString.IsMatch(txb_Search.Text.Trim())){
-                string itxbSearch = txb_Search.Text.ToString();
                 DataTable idtSearch;
-                Regex RegDate = new Regex(@"^[0-9]+|$");
-                
-                string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                   "FROM tb_healdate,tb_petprofile,tb_service where (tb_petprofile.pet_name like '%" + itxbSearch + "%' OR tb_Service.Service_Des like '%" + itxbSearch + "%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day"; ;
-                if(RegDate.IsMatch(itxbSearch))
+                if (CheckBox_Search.Checked == true)
                 {
-                     isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                                       "FROM tb_healdate,tb_petprofile,tb_service where (tb_HealDate.HealDate_Day like '%"+itxbSearch+"%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day"; ;
-                     MessageBox.Show("wwwss");
+                    string iDateToday = dTPSearch.Value.ToString("yyyy-MM-dd");
+                    System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
+                    System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                    string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                    "FROM tb_healdate,tb_petprofile,tb_service where (HealDate_Day ='" + iDateToday + "' OR HealDate_Day ='" + iDateToday + "') AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID " +
+                    "Union SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                    "FROM tb_healdate,tb_petprofile,tb_service where (HealDate_Remind ='" + iDateToday + "' OR HealDate_Remind ='" + iDateToday + "') AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day ";
+                    idtSearch = iConnect.SelectByCommand(isqlSearch);
+                    dGV_HealDate.DataSource = idtSearch;
+                    dGV_HealDate.Refresh();
                 }
-             
-                idtSearch = iConnect.SelectByCommand(isqlSearch);
-                dGV_HealDate.DataSource = idtSearch;
-                dGV_HealDate.Refresh();
+                else if(CheckBox_Search.Checked == false)
+                {
+                    if (RegString.IsMatch(txb_Search.Text.Trim()))
+                    {
+                        string itxbSearch = txb_Search.Text.ToString();
+                        string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                   "FROM tb_healdate,tb_petprofile,tb_service where (tb_petprofile.pet_name like '%" + itxbSearch + "%' OR tb_Service.Service_Des like '%" + itxbSearch + "%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day";
+                    idtSearch = iConnect.SelectByCommand(isqlSearch);
+                    dGV_HealDate.DataSource = idtSearch;
+                    dGV_HealDate.Refresh();
+                    }else
+                     {
+                    loadData();
+                     }
+                }
+                
             }
-            else
-            {
-                loadData();
-            }
-        }
 
         private void lb_HealDateID_TextChanged(object sender, EventArgs e)
         {
@@ -385,6 +394,7 @@ namespace Petshop
                 bt_HealDateEdit.Enabled = true;
                 bt_HealDateDel.Enabled = true;
                 bt_PrintDate.Enabled = true;
+                loadHealDateProfiles();
             }
             else
             {
@@ -392,6 +402,16 @@ namespace Petshop
                 bt_HealDateDel.Enabled = false;
                 bt_PrintDate.Enabled = false;
             }
+        }
+
+        private void loadHealDateProfiles()
+        {
+            string ilbHealDateID = lb_HealDateID.Text.Trim();
+            DataTable DatePro;
+            string isqlDatePro = "SELECT * FROM petshop.tb_healdate where HealDate_ID = '" + ilbHealDateID + "'";
+            DatePro = iConnect.SelectByCommand(isqlDatePro);
+            lb_PetID.Text = DatePro.Rows[0].Field<string>(1);
+            lb_HealRecordID.Text = DatePro.Rows[0].Field<string>(2);
         }
 
         private void lb_PetID_TextChanged(object sender, EventArgs e)
@@ -454,6 +474,19 @@ namespace Petshop
         private void bt_Refresh_Click(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        private void CheckBox_Search_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox_Search.Checked == true)
+            {
+                dTPSearch.Visible = true;
+
+            }
+            else
+            {
+                dTPSearch.Visible = false;
+            }
         }
     }
 }

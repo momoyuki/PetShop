@@ -63,7 +63,7 @@ namespace Petshop
             idtHead.Rows.Add(dr);
             ///////////////////////[[ส่วนบันทึกส่วนหลัก]]//////////////////////////
             DataTable idtHealRecord;
-            string isqlHealRecord = "SELECT tb_healRecord.*,tb_petprofile.Pet_Name,tb_employee.Em_Name "+ 
+            string isqlHealRecord = "SELECT tb_healRecord.*,tb_petprofile.Pet_Name,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel,tb_employee.Em_Name " + 
                                    "FROM tb_healrecord,tb_petprofile,tb_employee "+
                                    "where tb_petprofile.Pet_ID = tb_healRecord.Pet_ID AND tb_employee.Em_ID = tb_healRecord.Em_ID AND tb_healRecord.Pet_ID like '" + itxbPetID + "'" +
                                    "AND (tb_healrecord.HealRecord_Date between '" + idtpDate + "' AND '" + idtpToDate + "') ";
@@ -82,6 +82,7 @@ namespace Petshop
             idtMediRecord = iConnect.SelectByCommand(isqlMediRecord);
 
             ReportDocument rpt = new ReportDocument();
+            //rpt.Load("D:\\Petshop\\CrHealRecord.rpt");
             rpt.Load("CrHealRecord.rpt");
             rpt.SetDataSource(idtHealRecord);
             rpt.Subreports["Head_Sub_Report"].Database.Tables[0].SetDataSource(idtHead);

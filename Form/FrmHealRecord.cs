@@ -508,6 +508,7 @@ namespace Petshop
         string iCloseHealRecord;
         private void bt_Print_Click(object sender, EventArgs e)
         {
+            AddHealRecord();
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {
                 if (form.GetType() == typeof(FrmBillSerMe))
@@ -526,6 +527,7 @@ namespace Petshop
 
         private void bt_PrintDate_Click(object sender, EventArgs e)
         {
+            AddHealRecord();
             //iCloseHealRecord = "HealDate";
             foreach (Form form in Application.OpenForms) //คำสั่งห้ามเปิดซ้อนสอง
             {

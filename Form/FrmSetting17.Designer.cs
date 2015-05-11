@@ -54,10 +54,10 @@
             this.bt_UseImage = new System.Windows.Forms.Button();
             this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.bt_Browse = new System.Windows.Forms.Button();
-            this.lb_ExLogo = new System.Windows.Forms.Label();
             this.lb_LogoRemark = new System.Windows.Forms.Label();
             this.txb_Image = new System.Windows.Forms.TextBox();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lb_ExLogo = new System.Windows.Forms.Label();
             this.gBoxCoDetail.SuspendLayout();
             this.gBoxCompanyCode.SuspendLayout();
             this.gBoxLogo.SuspendLayout();
@@ -326,7 +326,7 @@
             // 
             // picBoxLogo
             // 
-            this.picBoxLogo.Location = new System.Drawing.Point(125, 134);
+            this.picBoxLogo.Location = new System.Drawing.Point(123, 100);
             this.picBoxLogo.Name = "picBoxLogo";
             this.picBoxLogo.Size = new System.Drawing.Size(200, 200);
             this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -336,7 +336,7 @@
             // bt_Browse
             // 
             this.bt_Browse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Browse.Location = new System.Drawing.Point(307, 56);
+            this.bt_Browse.Location = new System.Drawing.Point(307, 26);
             this.bt_Browse.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Browse.Name = "bt_Browse";
             this.bt_Browse.Size = new System.Drawing.Size(100, 32);
@@ -345,30 +345,20 @@
             this.bt_Browse.UseVisualStyleBackColor = true;
             this.bt_Browse.Click += new System.EventHandler(this.bt_Browse_Click);
             // 
-            // lb_ExLogo
-            // 
-            this.lb_ExLogo.AutoSize = true;
-            this.lb_ExLogo.Location = new System.Drawing.Point(185, 352);
-            this.lb_ExLogo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_ExLogo.Name = "lb_ExLogo";
-            this.lb_ExLogo.Size = new System.Drawing.Size(83, 18);
-            this.lb_ExLogo.TabIndex = 33;
-            this.lb_ExLogo.Text = "ตัวอย่างภาพ";
-            // 
             // lb_LogoRemark
             // 
             this.lb_LogoRemark.AutoSize = true;
-            this.lb_LogoRemark.Location = new System.Drawing.Point(13, 90);
+            this.lb_LogoRemark.Location = new System.Drawing.Point(20, 62);
             this.lb_LogoRemark.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_LogoRemark.Name = "lb_LogoRemark";
-            this.lb_LogoRemark.Size = new System.Drawing.Size(258, 18);
+            this.lb_LogoRemark.Size = new System.Drawing.Size(387, 18);
             this.lb_LogoRemark.TabIndex = 32;
-            this.lb_LogoRemark.Text = "**ภาพควรมี DPI 600 เพื่อใช้สำหรับพิมพ์";
+            this.lb_LogoRemark.Text = "**ภาพที่ใช้ควรมีขนาดไม่เกิน 1.5 x 1.5 นิ้ว เพื่อใช้สำหรับพิมพ์";
             // 
             // txb_Image
             // 
             this.txb_Image.Enabled = false;
-            this.txb_Image.Location = new System.Drawing.Point(16, 60);
+            this.txb_Image.Location = new System.Drawing.Point(16, 30);
             this.txb_Image.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Image.Name = "txb_Image";
             this.txb_Image.Size = new System.Drawing.Size(281, 26);
@@ -377,6 +367,16 @@
             // epCheck
             // 
             this.epCheck.ContainerControl = this;
+            // 
+            // lb_ExLogo
+            // 
+            this.lb_ExLogo.AutoSize = true;
+            this.lb_ExLogo.Location = new System.Drawing.Point(120, 310);
+            this.lb_ExLogo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_ExLogo.Name = "lb_ExLogo";
+            this.lb_ExLogo.Size = new System.Drawing.Size(83, 18);
+            this.lb_ExLogo.TabIndex = 33;
+            this.lb_ExLogo.Text = "ตัวอย่างภาพ";
             // 
             // FrmSetting17
             // 
@@ -432,11 +432,11 @@
         private System.Windows.Forms.GroupBox gBoxLogo;
         private System.Windows.Forms.PictureBox picBoxLogo;
         private System.Windows.Forms.Button bt_Browse;
-        private System.Windows.Forms.Label lb_ExLogo;
         private System.Windows.Forms.Label lb_LogoRemark;
         private System.Windows.Forms.TextBox txb_Image;
         private System.Windows.Forms.Label lb_CoIDH;
         private System.Windows.Forms.Button bt_UseImage;
         private System.Windows.Forms.ErrorProvider epCheck;
+        private System.Windows.Forms.Label lb_ExLogo;
     }
 }

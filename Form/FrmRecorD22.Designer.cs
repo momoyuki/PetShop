@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecorD22));
             this.lb_HealDate = new System.Windows.Forms.Label();
             this.lb_HealRecord = new System.Windows.Forms.Label();
@@ -45,7 +45,6 @@
             this.lb_Service = new System.Windows.Forms.Label();
             this.bt_PrintDate = new System.Windows.Forms.Button();
             this.txb_Search = new System.Windows.Forms.TextBox();
-            this.lb_Search = new System.Windows.Forms.Label();
             this.bt_Search = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tP_All = new System.Windows.Forms.TabPage();
@@ -91,6 +90,8 @@
             this.bt_ResetRecord = new System.Windows.Forms.Button();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.bt_Refresh = new System.Windows.Forms.Button();
+            this.CheckBox_Search = new System.Windows.Forms.CheckBox();
+            this.dTPSearch = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tP_All.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HealDate)).BeginInit();
@@ -237,16 +238,6 @@
             this.txb_Search.Size = new System.Drawing.Size(177, 26);
             this.txb_Search.TabIndex = 6;
             // 
-            // lb_Search
-            // 
-            this.lb_Search.AutoSize = true;
-            this.lb_Search.Location = new System.Drawing.Point(605, 14);
-            this.lb_Search.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Search.Name = "lb_Search";
-            this.lb_Search.Size = new System.Drawing.Size(43, 18);
-            this.lb_Search.TabIndex = 8;
-            this.lb_Search.Text = "ค้นหา";
-            // 
             // bt_Search
             // 
             this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -271,6 +262,8 @@
             // 
             // tP_All
             // 
+            this.tP_All.Controls.Add(this.dTPSearch);
+            this.tP_All.Controls.Add(this.CheckBox_Search);
             this.tP_All.Controls.Add(this.rBt_Today);
             this.tP_All.Controls.Add(this.bt_contract);
             this.tP_All.Controls.Add(this.rBt_contracted);
@@ -278,7 +271,6 @@
             this.tP_All.Controls.Add(this.rBt_contract);
             this.tP_All.Controls.Add(this.rBt_All);
             this.tP_All.Controls.Add(this.dGV_HealDate);
-            this.tP_All.Controls.Add(this.lb_Search);
             this.tP_All.Controls.Add(this.txb_Search);
             this.tP_All.Controls.Add(this.bt_Search);
             this.tP_All.Location = new System.Drawing.Point(4, 27);
@@ -293,7 +285,7 @@
             // 
             this.rBt_Today.AutoSize = true;
             this.rBt_Today.Checked = true;
-            this.rBt_Today.Location = new System.Drawing.Point(255, 12);
+            this.rBt_Today.Location = new System.Drawing.Point(230, 12);
             this.rBt_Today.Name = "rBt_Today";
             this.rBt_Today.Size = new System.Drawing.Size(51, 22);
             this.rBt_Today.TabIndex = 2;
@@ -317,7 +309,7 @@
             // rBt_contracted
             // 
             this.rBt_contracted.AutoSize = true;
-            this.rBt_contracted.Location = new System.Drawing.Point(511, 12);
+            this.rBt_contracted.Location = new System.Drawing.Point(486, 12);
             this.rBt_contracted.Name = "rBt_contracted";
             this.rBt_contracted.Size = new System.Drawing.Size(87, 22);
             this.rBt_contracted.TabIndex = 5;
@@ -340,7 +332,7 @@
             // rBt_contract
             // 
             this.rBt_contract.AutoSize = true;
-            this.rBt_contract.Location = new System.Drawing.Point(396, 12);
+            this.rBt_contract.Location = new System.Drawing.Point(371, 12);
             this.rBt_contract.Name = "rBt_contract";
             this.rBt_contract.Size = new System.Drawing.Size(112, 22);
             this.rBt_contract.TabIndex = 4;
@@ -351,7 +343,7 @@
             // rBt_All
             // 
             this.rBt_All.AutoSize = true;
-            this.rBt_All.Location = new System.Drawing.Point(318, 12);
+            this.rBt_All.Location = new System.Drawing.Point(293, 12);
             this.rBt_All.Name = "rBt_All";
             this.rBt_All.Size = new System.Drawing.Size(72, 22);
             this.rBt_All.TabIndex = 3;
@@ -363,8 +355,8 @@
             // 
             this.dGV_HealDate.AllowUserToAddRows = false;
             this.dGV_HealDate.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dGV_HealDate.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -540,8 +532,8 @@
             // 
             this.dGV_HealRecord.AllowUserToAddRows = false;
             this.dGV_HealRecord.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dGV_HealRecord.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -726,6 +718,25 @@
             this.bt_Refresh.UseVisualStyleBackColor = true;
             this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
             // 
+            // CheckBox_Search
+            // 
+            this.CheckBox_Search.AutoSize = true;
+            this.CheckBox_Search.Location = new System.Drawing.Point(587, 12);
+            this.CheckBox_Search.Name = "CheckBox_Search";
+            this.CheckBox_Search.Size = new System.Drawing.Size(62, 22);
+            this.CheckBox_Search.TabIndex = 10;
+            this.CheckBox_Search.Text = "ค้นหา";
+            this.CheckBox_Search.UseVisualStyleBackColor = true;
+            this.CheckBox_Search.CheckedChanged += new System.EventHandler(this.CheckBox_Search_CheckedChanged);
+            // 
+            // dTPSearch
+            // 
+            this.dTPSearch.Location = new System.Drawing.Point(652, 10);
+            this.dTPSearch.Name = "dTPSearch";
+            this.dTPSearch.Size = new System.Drawing.Size(181, 26);
+            this.dTPSearch.TabIndex = 11;
+            this.dTPSearch.Visible = false;
+            // 
             // FrmRecorD22
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -791,7 +802,6 @@
         private System.Windows.Forms.Label lb_Service;
         private System.Windows.Forms.Button bt_PrintDate;
         private System.Windows.Forms.TextBox txb_Search;
-        private System.Windows.Forms.Label lb_Search;
         private System.Windows.Forms.Button bt_Search;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tP_All;
@@ -837,5 +847,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remind;
         private System.Windows.Forms.Button bt_Refresh;
         public System.Windows.Forms.Label lb_HealDateID;
+        private System.Windows.Forms.DateTimePicker dTPSearch;
+        private System.Windows.Forms.CheckBox CheckBox_Search;
     }
 }

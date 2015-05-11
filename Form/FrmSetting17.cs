@@ -43,7 +43,14 @@ namespace Petshop
                 
             string FP = idtCompany.Rows[0]["CoLogo"].ToString();
                 if(File.Exists(FP)){
+
                     picBoxLogo.Image = Image.FromFile(FP);
+                    Image i = Image.FromFile(FP);
+                    float docHeight = i.Height / i.VerticalResolution;
+                    float docWidth = i.Width / i.HorizontalResolution;
+                    string iHeight = docWidth.ToString();
+                    string iWidth = docWidth.ToString();
+                    lb_ExLogo.Text = "ความกว้าง " + iWidth + " x ความยาว " + iHeight;
                 }
             }
         }
@@ -150,6 +157,13 @@ namespace Petshop
                 string ImagePath = Browse.FileName;
                 picBoxLogo.ImageLocation = ImagePath;
                 txb_Image.Text = ImagePath;
+                Image i = Image.FromFile(ImagePath);
+                float docHeight = i.Height / i.VerticalResolution;
+                float docWidth = i.Width / i.HorizontalResolution;
+                string iHeight = docWidth.ToString();
+                string iWidth = docWidth.ToString();
+
+                lb_ExLogo.Text = "ความกว้าง "+iWidth+" x ความยาว "+iHeight;
             }
         }
 

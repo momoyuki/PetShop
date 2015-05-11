@@ -33,17 +33,10 @@ namespace Petshop
             string isqlCompany = "SELECT * FROM petshop.tb_company";
             idtCompany = iConnect.SelectByCommand(isqlCompany);
 
-
+            string inUD = nUDID.Value.ToString();
             DataTable idtPetProfile;
-            string isqlPetProfile;
-            if ((txb_PetID.Text == string.Empty) || (txb_PetID.Text == null))
-            {
-                isqlPetProfile = "SELECT * FROM petshop.tb_petprofile limit 40";
-            }
-            else
-            {
-                isqlPetProfile = "SELECT * FROM petshop.tb_petprofile where pet_ID between '" + itxbPetID + "' AND '" + itxbPetID + "'+7";
-            }
+            string isqlPetProfile = "SELECT * FROM petshop.tb_petprofile where pet_ID between '" + itxbPetID + "' AND '" + itxbPetID + "'+'" + inUD + "'";
+            
             idtPetProfile = iConnect.SelectByCommand(isqlPetProfile);
 
             System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
@@ -51,8 +44,8 @@ namespace Petshop
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
 
             ReportDocument rpt = new ReportDocument();
-           //rpt.Load("D:\\PetShop\\CrmemberCard.rpt");
-           rpt.Load("CrmemberCard.rpt");
+           rpt.Load("D:\\PetShop\\CrmemberCard.rpt");
+           //rpt.Load("CrmemberCard.rpt");
            rpt.SetDataSource(idtPetProfile);
            rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
             this.crViewerBloodtest.ReportSource = rpt;

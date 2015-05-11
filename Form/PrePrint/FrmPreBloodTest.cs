@@ -32,7 +32,7 @@ namespace Petshop
 
             string ilbBloodTestID = lb_BloodTestID.Text.Trim();
             DataTable idtBloodTest;
-            string isqlBloodTest = "SELECT tb_bloodtest.*,tb_employee.Em_Name,tb_petprofile.Pet_Name FROM petshop.tb_bloodtest,tb_employee,tb_petprofile "
+            string isqlBloodTest = "SELECT tb_bloodtest.*,tb_employee.Em_Name,tb_petprofile.Pet_Name,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel FROM petshop.tb_bloodtest,tb_employee,tb_petprofile "
                 + "where tb_bloodtest.BloodTest_ID = '"+ilbBloodTestID+"'  AND tb_petprofile.Pet_ID = tb_bloodtest.Pet_ID AND tb_bloodtest.Em_ID = tb_employee.Em_ID";
             idtBloodTest = iConnect.SelectByCommand(isqlBloodTest);
 
@@ -41,6 +41,7 @@ namespace Petshop
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
 
             ReportDocument rpt = new ReportDocument();
+            //rpt.Load("D:\\Petshop\\CrBloodTest.rpt");
             rpt.Load("CrBloodTest.rpt");
             rpt.SetDataSource(idtBloodTest);
             rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);

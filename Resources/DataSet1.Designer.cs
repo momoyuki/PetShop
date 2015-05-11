@@ -3783,6 +3783,10 @@ namespace Petshop.Resources {
             
             private global::System.Data.DataColumn columnHealRecord_Net;
             
+            private global::System.Data.DataColumn columnOwner_Name;
+            
+            private global::System.Data.DataColumn columnOwner_Tel;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DT_HealRecordDataTable() {
@@ -3930,6 +3934,22 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Owner_NameColumn {
+                get {
+                    return this.columnOwner_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Owner_TelColumn {
+                get {
+                    return this.columnOwner_Tel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3965,7 +3985,23 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DT_HealRecordRow AddDT_HealRecordRow(string HealRecord_ID, string Pet_ID, string Pet_Name, string Em_ID, string Em_Name, string HealRecord_Symptom, string HealRecord_Weight, string HealRecord_Temp, string HealRecord_HR, string HealRecord_RR, System.DateTime HealRecord_Date, string HealRecord_Total, string HealRecord_DC, string HealRecord_Net) {
+            public DT_HealRecordRow AddDT_HealRecordRow(
+                        string HealRecord_ID, 
+                        string Pet_ID, 
+                        string Pet_Name, 
+                        string Em_ID, 
+                        string Em_Name, 
+                        string HealRecord_Symptom, 
+                        string HealRecord_Weight, 
+                        string HealRecord_Temp, 
+                        string HealRecord_HR, 
+                        string HealRecord_RR, 
+                        System.DateTime HealRecord_Date, 
+                        string HealRecord_Total, 
+                        string HealRecord_DC, 
+                        string HealRecord_Net, 
+                        string Owner_Name, 
+                        string Owner_Tel) {
                 DT_HealRecordRow rowDT_HealRecordRow = ((DT_HealRecordRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         HealRecord_ID,
@@ -3981,7 +4017,9 @@ namespace Petshop.Resources {
                         HealRecord_Date,
                         HealRecord_Total,
                         HealRecord_DC,
-                        HealRecord_Net};
+                        HealRecord_Net,
+                        Owner_Name,
+                        Owner_Tel};
                 rowDT_HealRecordRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_HealRecordRow);
                 return rowDT_HealRecordRow;
@@ -4018,6 +4056,8 @@ namespace Petshop.Resources {
                 this.columnHealRecord_Total = base.Columns["HealRecord_Total"];
                 this.columnHealRecord_DC = base.Columns["HealRecord_DC"];
                 this.columnHealRecord_Net = base.Columns["HealRecord_Net"];
+                this.columnOwner_Name = base.Columns["Owner_Name"];
+                this.columnOwner_Tel = base.Columns["Owner_Tel"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4051,6 +4091,10 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnHealRecord_DC);
                 this.columnHealRecord_Net = new global::System.Data.DataColumn("HealRecord_Net", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHealRecord_Net);
+                this.columnOwner_Name = new global::System.Data.DataColumn("Owner_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOwner_Name);
+                this.columnOwner_Tel = new global::System.Data.DataColumn("Owner_Tel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOwner_Tel);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4893,6 +4937,10 @@ namespace Petshop.Resources {
             
             private global::System.Data.DataColumn columnBloodtest_Remark;
             
+            private global::System.Data.DataColumn columnOwner_Name;
+            
+            private global::System.Data.DataColumn columnOwner_Tel;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DT_BloodTestDataTable() {
@@ -5328,6 +5376,22 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Owner_NameColumn {
+                get {
+                    return this.columnOwner_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Owner_TelColumn {
+                get {
+                    return this.columnOwner_Tel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5413,7 +5477,9 @@ namespace Petshop.Resources {
                         string CHLORIDE, 
                         string AMMONIA, 
                         string bloodtest_OTHERS, 
-                        string Bloodtest_Remark) {
+                        string Bloodtest_Remark, 
+                        string Owner_Name, 
+                        string Owner_Tel) {
                 DT_BloodTestRow rowDT_BloodTestRow = ((DT_BloodTestRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         BloodTest_ID,
@@ -5465,7 +5531,9 @@ namespace Petshop.Resources {
                         CHLORIDE,
                         AMMONIA,
                         bloodtest_OTHERS,
-                        Bloodtest_Remark};
+                        Bloodtest_Remark,
+                        Owner_Name,
+                        Owner_Tel};
                 rowDT_BloodTestRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_BloodTestRow);
                 return rowDT_BloodTestRow;
@@ -5538,6 +5606,8 @@ namespace Petshop.Resources {
                 this.columnAMMONIA = base.Columns["AMMONIA"];
                 this.columnbloodtest_OTHERS = base.Columns["bloodtest_OTHERS"];
                 this.columnBloodtest_Remark = base.Columns["Bloodtest_Remark"];
+                this.columnOwner_Name = base.Columns["Owner_Name"];
+                this.columnOwner_Tel = base.Columns["Owner_Tel"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5643,6 +5713,10 @@ namespace Petshop.Resources {
                 base.Columns.Add(this.columnbloodtest_OTHERS);
                 this.columnBloodtest_Remark = new global::System.Data.DataColumn("Bloodtest_Remark", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBloodtest_Remark);
+                this.columnOwner_Name = new global::System.Data.DataColumn("Owner_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOwner_Name);
+                this.columnOwner_Tel = new global::System.Data.DataColumn("Owner_Tel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOwner_Tel);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8049,6 +8123,38 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Owner_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.Owner_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Owner_Name\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.Owner_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Owner_Tel {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_HealRecord.Owner_TelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Owner_Tel\' in table \'DT_HealRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_HealRecord.Owner_TelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsHealRecord_IDNull() {
                 return this.IsNull(this.tableDT_HealRecord.HealRecord_IDColumn);
             }
@@ -8213,6 +8319,30 @@ namespace Petshop.Resources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetHealRecord_NetNull() {
                 this[this.tableDT_HealRecord.HealRecord_NetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOwner_NameNull() {
+                return this.IsNull(this.tableDT_HealRecord.Owner_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOwner_NameNull() {
+                this[this.tableDT_HealRecord.Owner_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOwner_TelNull() {
+                return this.IsNull(this.tableDT_HealRecord.Owner_TelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOwner_TelNull() {
+                this[this.tableDT_HealRecord.Owner_TelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9364,6 +9494,38 @@ namespace Petshop.Resources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Owner_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_BloodTest.Owner_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Owner_Name\' in table \'DT_BloodTest\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_BloodTest.Owner_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Owner_Tel {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_BloodTest.Owner_TelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Owner_Tel\' in table \'DT_BloodTest\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_BloodTest.Owner_TelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBloodTest_IDNull() {
                 return this.IsNull(this.tableDT_BloodTest.BloodTest_IDColumn);
             }
@@ -9960,6 +10122,30 @@ namespace Petshop.Resources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBloodtest_RemarkNull() {
                 this[this.tableDT_BloodTest.Bloodtest_RemarkColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOwner_NameNull() {
+                return this.IsNull(this.tableDT_BloodTest.Owner_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOwner_NameNull() {
+                this[this.tableDT_BloodTest.Owner_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOwner_TelNull() {
+                return this.IsNull(this.tableDT_BloodTest.Owner_TelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOwner_TelNull() {
+                this[this.tableDT_BloodTest.Owner_TelColumn] = global::System.Convert.DBNull;
             }
         }
         
