@@ -519,7 +519,7 @@ namespace Petshop
             {
                 string iSearchMedi = txb_SearchMedi.Text.Trim();
                 DataTable idtMedicine;
-                string isqlCommand = "SELECT * FROM `tb_Medicine` where Medi_Des like '%" + iSearchMedi + "%' OR Medi_ID like '%" + iSearchMedi + "%' ";
+                string isqlCommand = "SELECT tb_Medicine.*,tb_Unit.Unit_Name FROM `tb_Medicine`,tb_Unit where Medi_Des like '%" + iSearchMedi + "%' OR Medi_ID like '%" + iSearchMedi + "%' AND tb_Unit.Unit_ID = tb_Medicine.Unit_ID  ";
                 idtMedicine = iConnect.SelectByCommand(isqlCommand);
                 dGV_Medi.DataSource = idtMedicine;
                 dGV_Medi.Refresh();

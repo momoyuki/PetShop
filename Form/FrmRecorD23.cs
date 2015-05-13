@@ -34,6 +34,7 @@ namespace Petshop
             lbyear.Text = DateTime.Now.ToString("yy");
             loadData();
             loadProductSale();
+
         }
         private void loadData()
         {

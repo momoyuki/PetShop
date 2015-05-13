@@ -990,7 +990,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmHealRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "บันทึกประจำวัน หัตถการและบริการ";
+            this.Text = "บันทึกประวัติรักษาสัตว์";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNN21_FormClosing);
             this.Load += new System.EventHandler(this.FrmMM21_Load);

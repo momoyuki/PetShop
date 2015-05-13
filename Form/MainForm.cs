@@ -26,7 +26,24 @@ namespace Petshop
                 {
                     e.Cancel = true;
                 }
+            
         }
+        internal void LoadEmployee()
+        {
+            DataTable idtEmployee;
+            string isqlEmployee = "SELECT * FROM petshop.tb_employee where Em_ID = '"+_strUser+"'";
+            idtEmployee = iConnect.SelectByCommand(isqlEmployee);
+            StripStatusEm_ID.Text = idtEmployee.Rows[0].Field<string>(0);
+            StripStatusEm_Name.Text = idtEmployee.Rows[0].Field<string>(1);
+  
+        }
+        string strUser;
+        public string _strUser
+        {
+            get { return strUser; }
+            set { strUser = value; }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             DataTable idtCompany;
@@ -182,6 +199,7 @@ namespace Petshop
             FrmRecorD23 iFrmRecorD23 = new FrmRecorD23();
             iFrmRecorD23.MdiParent = this;
             iFrmRecorD23.Show();
+            iFrmRecorD23.cb_Em.SelectedValue = StripStatusEm_ID.Text;
         }
         private void บนทกรายจายToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -196,6 +214,7 @@ namespace Petshop
             FrmRecorD24 iFrmRecorD24 = new FrmRecorD24();
             iFrmRecorD24.MdiParent = this;
             iFrmRecorD24.Show();
+            iFrmRecorD24.cb_Em.SelectedValue = StripStatusEm_ID.Text;
         }
     
         private TextBox _TextBox = new TextBox();
@@ -249,5 +268,12 @@ namespace Petshop
             iFrmRePort33.MdiParent = this;
             iFrmRePort33.Show();
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }

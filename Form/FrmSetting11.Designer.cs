@@ -103,21 +103,21 @@
             this.txb_MediID = new System.Windows.Forms.TextBox();
             this.lb_MediS = new System.Windows.Forms.Label();
             this.dGV_Medi = new System.Windows.Forms.DataGridView();
+            this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.ccMedi_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Detall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccMedi_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Expired = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Unit_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Unit_Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ccMedi_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlServiceMedi.SuspendLayout();
             this.tabService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -946,12 +946,12 @@
             this.ccMedi_Price,
             this.ccMedi_Sale,
             this.coUnit_ID,
-            this.ccMedi_Unit,
             this.ccMedi_Product,
             this.ccMedi_Expired,
             this.ccMedi_Unit_Amt,
             this.ccMedi_Unit_Order,
-            this.ccMedi_Stock});
+            this.ccMedi_Stock,
+            this.ccMedi_Unit});
             this.dGV_Medi.Location = new System.Drawing.Point(8, 347);
             this.dGV_Medi.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_Medi.MultiSelect = false;
@@ -961,6 +961,25 @@
             this.dGV_Medi.Size = new System.Drawing.Size(958, 257);
             this.dGV_Medi.TabIndex = 3;
             this.dGV_Medi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Medi_CellClick);
+            // 
+            // ccUnit_Name
+            // 
+            this.ccUnit_Name.DataPropertyName = "Unit_Name";
+            this.ccUnit_Name.HeaderText = "หน่วยเรียก";
+            this.ccUnit_Name.Name = "ccUnit_Name";
+            this.ccUnit_Name.ReadOnly = true;
+            // 
+            // ccUnit_ID
+            // 
+            this.ccUnit_ID.DataPropertyName = "Unit_ID";
+            this.ccUnit_ID.HeaderText = "รหัส";
+            this.ccUnit_ID.Name = "ccUnit_ID";
+            this.ccUnit_ID.ReadOnly = true;
+            this.ccUnit_ID.Width = 40;
+            // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
             // 
             // ccMedi_ID
             // 
@@ -1008,14 +1027,6 @@
             this.coUnit_ID.ReadOnly = true;
             this.coUnit_ID.Visible = false;
             // 
-            // ccMedi_Unit
-            // 
-            this.ccMedi_Unit.DataPropertyName = "Unit_Name";
-            this.ccMedi_Unit.HeaderText = "หน่วย";
-            this.ccMedi_Unit.Name = "ccMedi_Unit";
-            this.ccMedi_Unit.ReadOnly = true;
-            this.ccMedi_Unit.Visible = false;
-            // 
             // ccMedi_Product
             // 
             this.ccMedi_Product.DataPropertyName = "Medi_Product";
@@ -1053,24 +1064,13 @@
             this.ccMedi_Stock.ReadOnly = true;
             this.ccMedi_Stock.Visible = false;
             // 
-            // ccUnit_Name
+            // ccMedi_Unit
             // 
-            this.ccUnit_Name.DataPropertyName = "Unit_Name";
-            this.ccUnit_Name.HeaderText = "หน่วยเรียก";
-            this.ccUnit_Name.Name = "ccUnit_Name";
-            this.ccUnit_Name.ReadOnly = true;
-            // 
-            // ccUnit_ID
-            // 
-            this.ccUnit_ID.DataPropertyName = "Unit_ID";
-            this.ccUnit_ID.HeaderText = "รหัส";
-            this.ccUnit_ID.Name = "ccUnit_ID";
-            this.ccUnit_ID.ReadOnly = true;
-            this.ccUnit_ID.Width = 40;
-            // 
-            // epCheck
-            // 
-            this.epCheck.ContainerControl = this;
+            this.ccMedi_Unit.DataPropertyName = "Unit_Name";
+            this.ccMedi_Unit.HeaderText = "หน่วย";
+            this.ccMedi_Unit.Name = "ccMedi_Unit";
+            this.ccMedi_Unit.ReadOnly = true;
+            this.ccMedi_Unit.Visible = false;
             // 
             // FrmSetting11
             // 
@@ -1189,12 +1189,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Sale;
         private System.Windows.Forms.DataGridViewTextBoxColumn coUnit_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Expired;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Unit_Amt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Unit_Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccMedi_Unit;
 
 
     }

@@ -51,20 +51,20 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 100);
+            this.metroLabel1.Location = new System.Drawing.Point(39, 100);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(54, 19);
             this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "UserName :";
+            this.metroLabel1.Text = "ชื่อผู้ใช้ :";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(34, 140);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(59, 19);
             this.metroLabel2.TabIndex = 2;
-            this.metroLabel2.Text = "Password:";
+            this.metroLabel2.Text = "รหัสผ่าน:";
             // 
             // txb_Username
             // 

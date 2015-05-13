@@ -5,22 +5,26 @@ using System.Windows.Forms;
 
 namespace Petshop
 {
+
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainForm());
+
+            Application.Run(new FrmLogin());
+           /*
             FrmLogin fLogin = new FrmLogin();
+            
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new MainForm());
-            }
+                MainForm iMainForm = new MainForm();
+                iMainForm.ShowDialog();
+            } 
+            */
         }
     }
 }

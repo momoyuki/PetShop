@@ -653,7 +653,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txb_Remark;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cb_Em;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dTP_ProductSaleDate;
@@ -690,5 +689,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_DC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Net;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Remark;
+        public System.Windows.Forms.ComboBox cb_Em;
     }
 }

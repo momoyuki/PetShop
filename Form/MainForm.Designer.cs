@@ -54,7 +54,11 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.xออกจากโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StripStatusEm_Name = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StripStatusEm_ID = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -247,11 +251,35 @@
             this.xออกจากโปรแกรมToolStripMenuItem.Text = "&X. ออกจากโปรแกรม";
             this.xออกจากโปรแกรมToolStripMenuItem.Click += new System.EventHandler(this.xออกจากโปรแกรมToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StripStatusEm_ID,
+            this.StripStatusEm_Name});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 708);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StripStatusEm_Name
+            // 
+            this.StripStatusEm_Name.Name = "StripStatusEm_Name";
+            this.StripStatusEm_Name.Size = new System.Drawing.Size(61, 17);
+            this.StripStatusEm_Name.Text = "Em_Name";
+            // 
+            // StripStatusEm_ID
+            // 
+            this.StripStatusEm_ID.Name = "StripStatusEm_ID";
+            this.StripStatusEm_ID.Size = new System.Drawing.Size(40, 17);
+            this.StripStatusEm_ID.Text = "Em_ID";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -263,9 +291,12 @@
             this.Text = "ระบบติดตามการรักษาสัตว์ กรณีศึกษา โรงพยาบาลสัตว์น่านปิยะมิตร";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,6 +329,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        public System.Windows.Forms.ToolStripStatusLabel StripStatusEm_Name;
+        public System.Windows.Forms.ToolStripStatusLabel StripStatusEm_ID;
     }
 }
 

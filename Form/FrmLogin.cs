@@ -29,7 +29,6 @@ namespace Petshop
         {
             ilogin();
          }
-
         private void ilogin()
         {
             epCheck.Clear();
@@ -53,7 +52,19 @@ namespace Petshop
                 idtLogin = iConnect.SelectByCommand(isqlLogin);
                 if ((idtLogin.Rows.Count == 1)||(txb_Username.Text =="Admin")&&(txb_Pwd.Text =="petshop"))
                 {
-                    DialogResult = DialogResult.OK;
+                    this.Hide();
+                    MainForm iMainForm = new MainForm();
+                    if((txb_Username.Text =="Admin")&&(txb_Pwd.Text =="petshop")){
+
+                    }else{
+                    iMainForm._strUser = idtLogin.Rows[0].Field<string>(0);
+                    iMainForm.LoadEmployee();
+                    }
+                    
+                    iMainForm.ShowDialog();
+                    iMainForm = null;
+                    //Show();
+                   //DialogResult = DialogResult.OK;
                 }
                 else
                 {

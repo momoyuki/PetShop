@@ -370,7 +370,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txb_outlayRemark;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cb_Em;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_Date;
         private System.Windows.Forms.DateTimePicker dTP_outlayDate;
@@ -387,5 +386,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccoutlayDetail_Remark;
         private System.Windows.Forms.Button bt_Reset;
         private System.Windows.Forms.Button bt_Refresh;
+        public System.Windows.Forms.ComboBox cb_Em;
     }
 }
