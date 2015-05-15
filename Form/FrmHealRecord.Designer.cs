@@ -127,7 +127,7 @@
             this.tabControlServiceMedi.Name = "tabControlServiceMedi";
             this.tabControlServiceMedi.SelectedIndex = 0;
             this.tabControlServiceMedi.Size = new System.Drawing.Size(978, 326);
-            this.tabControlServiceMedi.TabIndex = 35;
+            this.tabControlServiceMedi.TabIndex = 17;
             // 
             // tPService
             // 
@@ -173,7 +173,7 @@
             this.bt_refService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_refService.Name = "bt_refService";
             this.bt_refService.Size = new System.Drawing.Size(100, 32);
-            this.bt_refService.TabIndex = 67;
+            this.bt_refService.TabIndex = 2;
             this.bt_refService.Text = "ลบ";
             this.bt_refService.UseVisualStyleBackColor = true;
             this.bt_refService.Click += new System.EventHandler(this.bt_refService_Click);
@@ -187,7 +187,7 @@
             this.cb_Service.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Service.Name = "cb_Service";
             this.cb_Service.Size = new System.Drawing.Size(511, 26);
-            this.cb_Service.TabIndex = 65;
+            this.cb_Service.TabIndex = 0;
             this.cb_Service.SelectionChangeCommitted += new System.EventHandler(this.cb_Service_SelectionChangeCommitted);
             this.cb_Service.TextChanged += new System.EventHandler(this.cb_Service_TextChanged);
             // 
@@ -208,7 +208,7 @@
             this.bt_BuyService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_BuyService.Name = "bt_BuyService";
             this.bt_BuyService.Size = new System.Drawing.Size(100, 32);
-            this.bt_BuyService.TabIndex = 40;
+            this.bt_BuyService.TabIndex = 1;
             this.bt_BuyService.Text = "เพิ่ม";
             this.bt_BuyService.UseVisualStyleBackColor = true;
             this.bt_BuyService.Click += new System.EventHandler(this.bt_BuyService_Click);
@@ -514,7 +514,7 @@
             this.bt_RecordHeal.Margin = new System.Windows.Forms.Padding(4);
             this.bt_RecordHeal.Name = "bt_RecordHeal";
             this.bt_RecordHeal.Size = new System.Drawing.Size(208, 36);
-            this.bt_RecordHeal.TabIndex = 77;
+            this.bt_RecordHeal.TabIndex = 14;
             this.bt_RecordHeal.Text = "บันทึก";
             this.bt_RecordHeal.UseVisualStyleBackColor = false;
             this.bt_RecordHeal.Click += new System.EventHandler(this.Bt_RecordHeal_Click);
@@ -526,7 +526,7 @@
             this.txb_HealRecordDC.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HealRecordDC.Name = "txb_HealRecordDC";
             this.txb_HealRecordDC.Size = new System.Drawing.Size(59, 26);
-            this.txb_HealRecordDC.TabIndex = 76;
+            this.txb_HealRecordDC.TabIndex = 8;
             this.txb_HealRecordDC.Text = "0.00";
             this.txb_HealRecordDC.TextChanged += new System.EventHandler(this.txb_DC_TextChanged);
             // 
@@ -548,7 +548,7 @@
             this.bt_PrintDate.Margin = new System.Windows.Forms.Padding(4);
             this.bt_PrintDate.Name = "bt_PrintDate";
             this.bt_PrintDate.Size = new System.Drawing.Size(100, 46);
-            this.bt_PrintDate.TabIndex = 74;
+            this.bt_PrintDate.TabIndex = 15;
             this.bt_PrintDate.Text = "พิมพ์ใบนัด";
             this.bt_PrintDate.UseVisualStyleBackColor = true;
             this.bt_PrintDate.Click += new System.EventHandler(this.bt_PrintDate_Click);
@@ -562,7 +562,7 @@
             this.txb_PetID.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetID.Name = "txb_PetID";
             this.txb_PetID.Size = new System.Drawing.Size(178, 26);
-            this.txb_PetID.TabIndex = 73;
+            this.txb_PetID.TabIndex = 2;
             this.txb_PetID.TextChanged += new System.EventHandler(this.txb_PetID_TextChanged);
             // 
             // txb_PetName
@@ -572,7 +572,7 @@
             this.txb_PetName.Margin = new System.Windows.Forms.Padding(4);
             this.txb_PetName.Name = "txb_PetName";
             this.txb_PetName.Size = new System.Drawing.Size(178, 26);
-            this.txb_PetName.TabIndex = 71;
+            this.txb_PetName.TabIndex = 0;
             // 
             // lb_PetID
             // 
@@ -626,7 +626,7 @@
             this.txb_HealRecordNet.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HealRecordNet.Name = "txb_HealRecordNet";
             this.txb_HealRecordNet.Size = new System.Drawing.Size(59, 26);
-            this.txb_HealRecordNet.TabIndex = 63;
+            this.txb_HealRecordNet.TabIndex = 9;
             this.txb_HealRecordNet.Text = "0.00";
             // 
             // lb_Net
@@ -647,7 +647,7 @@
             this.bt_PrintBill.Margin = new System.Windows.Forms.Padding(4);
             this.bt_PrintBill.Name = "bt_PrintBill";
             this.bt_PrintBill.Size = new System.Drawing.Size(100, 46);
-            this.bt_PrintBill.TabIndex = 38;
+            this.bt_PrintBill.TabIndex = 16;
             this.bt_PrintBill.Text = "พิมพ์ใบเสร็จ";
             this.bt_PrintBill.UseVisualStyleBackColor = true;
             this.bt_PrintBill.Click += new System.EventHandler(this.bt_Print_Click);
@@ -659,7 +659,7 @@
             this.txb_HealRecordTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HealRecordTotal.Name = "txb_HealRecordTotal";
             this.txb_HealRecordTotal.Size = new System.Drawing.Size(59, 26);
-            this.txb_HealRecordTotal.TabIndex = 59;
+            this.txb_HealRecordTotal.TabIndex = 7;
             this.txb_HealRecordTotal.Text = "0.00";
             // 
             // lb_Total
@@ -678,7 +678,7 @@
             this.txb_HealRecordRemark.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HealRecordRemark.Name = "txb_HealRecordRemark";
             this.txb_HealRecordRemark.Size = new System.Drawing.Size(411, 26);
-            this.txb_HealRecordRemark.TabIndex = 57;
+            this.txb_HealRecordRemark.TabIndex = 6;
             // 
             // txb_HealRecordSymptom
             // 
@@ -687,7 +687,7 @@
             this.txb_HealRecordSymptom.Multiline = true;
             this.txb_HealRecordSymptom.Name = "txb_HealRecordSymptom";
             this.txb_HealRecordSymptom.Size = new System.Drawing.Size(552, 90);
-            this.txb_HealRecordSymptom.TabIndex = 56;
+            this.txb_HealRecordSymptom.TabIndex = 5;
             // 
             // lb_Remark
             // 
@@ -716,7 +716,7 @@
             this.txb_OwnerName.Margin = new System.Windows.Forms.Padding(4);
             this.txb_OwnerName.Name = "txb_OwnerName";
             this.txb_OwnerName.Size = new System.Drawing.Size(178, 26);
-            this.txb_OwnerName.TabIndex = 49;
+            this.txb_OwnerName.TabIndex = 3;
             // 
             // lb_OwnerName
             // 
@@ -787,7 +787,7 @@
             this.txb_Temp.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Temp.Name = "txb_Temp";
             this.txb_Temp.Size = new System.Drawing.Size(60, 26);
-            this.txb_Temp.TabIndex = 41;
+            this.txb_Temp.TabIndex = 10;
             this.txb_Temp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Temp_KeyDown);
             // 
             // txb_Weight
@@ -796,7 +796,7 @@
             this.txb_Weight.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Weight.Name = "txb_Weight";
             this.txb_Weight.Size = new System.Drawing.Size(60, 26);
-            this.txb_Weight.TabIndex = 39;
+            this.txb_Weight.TabIndex = 11;
             this.txb_Weight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Weight_KeyDown);
             // 
             // lb_Weight
@@ -816,7 +816,7 @@
             this.cb_Em.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Em.Name = "cb_Em";
             this.cb_Em.Size = new System.Drawing.Size(178, 26);
-            this.cb_Em.TabIndex = 37;
+            this.cb_Em.TabIndex = 4;
             // 
             // lb_Employee
             // 
@@ -844,7 +844,7 @@
             this.dTP_HealRecordDate.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_HealRecordDate.Name = "dTP_HealRecordDate";
             this.dTP_HealRecordDate.Size = new System.Drawing.Size(178, 26);
-            this.dTP_HealRecordDate.TabIndex = 34;
+            this.dTP_HealRecordDate.TabIndex = 1;
             // 
             // lb_HealRecord
             // 
@@ -866,7 +866,7 @@
             this.txb_HR.Margin = new System.Windows.Forms.Padding(4);
             this.txb_HR.Name = "txb_HR";
             this.txb_HR.Size = new System.Drawing.Size(60, 26);
-            this.txb_HR.TabIndex = 78;
+            this.txb_HR.TabIndex = 12;
             this.txb_HR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_HR_KeyDown);
             // 
             // txb_RR
@@ -875,7 +875,7 @@
             this.txb_RR.Margin = new System.Windows.Forms.Padding(4);
             this.txb_RR.Name = "txb_RR";
             this.txb_RR.Size = new System.Drawing.Size(60, 26);
-            this.txb_RR.TabIndex = 79;
+            this.txb_RR.TabIndex = 13;
             this.txb_RR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_RR_KeyDown);
             // 
             // lb_HealRecordHR

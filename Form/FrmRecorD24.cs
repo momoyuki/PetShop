@@ -29,10 +29,19 @@ namespace Petshop
             string isqloutlay = "SELECT tb_outlaydetail.*,tb_outlay.outlay_Detail,tb_employee.em_Name FROM petshop.tb_outlaydetail,tb_outlay,tb_employee where tb_outlaydetail.outlay_ID = tb_outlay.outlay_ID AND tb_outlaydetail.Em_ID = tb_employee.Em_ID";
             idtoutlay = iConnect.SelectByCommand(isqloutlay); 
             if(idtoutlay.Rows.Count >0){
+                LoadThai();
                 dGV_outlay.DataSource = idtoutlay;
                 dGV_outlay.Refresh();
             }
         }
+
+        private void LoadThai()
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+        }
+
         private void FrmRecorD24_Load(object sender, EventArgs e)
         {
             loadData();

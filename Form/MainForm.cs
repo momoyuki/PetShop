@@ -274,6 +274,13 @@ namespace Petshop
             Application.Exit();
         }
 
+        private void เกยวกบเราToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbout iFrmAbout = new FrmAbout();
+            //iFrmAbout.MdiParent = this;
+            iFrmAbout.ShowDialog();
+        }
+
 
     }
 }

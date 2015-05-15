@@ -31,8 +31,15 @@ namespace Petshop
             DataTable idtEmployee;
             string isqlCommand = "SELECT tb_employee.*,tb_emposition.Em_Position FROM `tb_employee`,tb_emposition where tb_employee.EmPosition_ID = tb_emposition.EmPosition_ID";
             idtEmployee = iConnect.SelectByCommand(isqlCommand);
+            LoadThai();
             dGV_Ep.DataSource = idtEmployee;
             dGV_Ep.Refresh();
+        }
+        private void LoadThai()
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
         }
 
         private void bt_LoadPS_Click(object sender, EventArgs e)

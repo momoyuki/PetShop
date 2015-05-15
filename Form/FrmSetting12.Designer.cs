@@ -31,19 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSetting12));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dGV_Product = new System.Windows.Forms.DataGridView();
-            this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Expired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Unit_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Unit_Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccProduct_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.lb_ProductID = new System.Windows.Forms.Label();
             this.txb_ProductID = new System.Windows.Forms.TextBox();
@@ -82,6 +72,18 @@
             this.txb_SearchProduct = new System.Windows.Forms.TextBox();
             this.bt_SearchProduct = new System.Windows.Forms.Button();
             this.lb_count = new System.Windows.Forms.Label();
+            this.ccProduct_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Expired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Unit_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Unit_Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccProduct_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.gBoxProductPrice.SuspendLayout();
@@ -118,97 +120,6 @@
             this.dGV_Product.Size = new System.Drawing.Size(982, 326);
             this.dGV_Product.TabIndex = 9;
             this.dGV_Product.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_PD_CellClick);
-            // 
-            // ccProduct_ID
-            // 
-            this.ccProduct_ID.DataPropertyName = "Product_ID";
-            this.ccProduct_ID.HeaderText = "รหัสสินค้า";
-            this.ccProduct_ID.Name = "ccProduct_ID";
-            this.ccProduct_ID.ReadOnly = true;
-            this.ccProduct_ID.Width = 200;
-            // 
-            // ccProduct_Des
-            // 
-            this.ccProduct_Des.DataPropertyName = "Product_Des";
-            this.ccProduct_Des.HeaderText = "ชื่อสินค้า";
-            this.ccProduct_Des.Name = "ccProduct_Des";
-            this.ccProduct_Des.ReadOnly = true;
-            this.ccProduct_Des.Width = 200;
-            // 
-            // ccProduct_Detail
-            // 
-            this.ccProduct_Detail.DataPropertyName = "Product_Detail";
-            this.ccProduct_Detail.HeaderText = "สรรพคุณ";
-            this.ccProduct_Detail.Name = "ccProduct_Detail";
-            this.ccProduct_Detail.ReadOnly = true;
-            this.ccProduct_Detail.Visible = false;
-            // 
-            // ccProduct_Price
-            // 
-            this.ccProduct_Price.DataPropertyName = "Product_Price";
-            this.ccProduct_Price.HeaderText = "ราคาต้นทุน";
-            this.ccProduct_Price.Name = "ccProduct_Price";
-            this.ccProduct_Price.ReadOnly = true;
-            // 
-            // ccProduct_Sale
-            // 
-            this.ccProduct_Sale.DataPropertyName = "Product_Sale";
-            this.ccProduct_Sale.HeaderText = "ราคาขาย";
-            this.ccProduct_Sale.Name = "ccProduct_Sale";
-            this.ccProduct_Sale.ReadOnly = true;
-            // 
-            // ccProduct_Unit
-            // 
-            this.ccProduct_Unit.DataPropertyName = "Unit_Name";
-            this.ccProduct_Unit.HeaderText = "หน่วยเรียก";
-            this.ccProduct_Unit.Name = "ccProduct_Unit";
-            this.ccProduct_Unit.ReadOnly = true;
-            this.ccProduct_Unit.Visible = false;
-            // 
-            // ccProduct_Product
-            // 
-            this.ccProduct_Product.DataPropertyName = "Product_Product";
-            this.ccProduct_Product.HeaderText = "วันที่ผลิต";
-            this.ccProduct_Product.Name = "ccProduct_Product";
-            this.ccProduct_Product.ReadOnly = true;
-            // 
-            // ccProduct_Expired
-            // 
-            this.ccProduct_Expired.DataPropertyName = "Product_Expired";
-            this.ccProduct_Expired.HeaderText = "วันหมดอายุ";
-            this.ccProduct_Expired.Name = "ccProduct_Expired";
-            this.ccProduct_Expired.ReadOnly = true;
-            // 
-            // ccProduct_Unit_Amt
-            // 
-            this.ccProduct_Unit_Amt.DataPropertyName = "Product_Unit_Amt";
-            this.ccProduct_Unit_Amt.HeaderText = "คงเหลือ";
-            this.ccProduct_Unit_Amt.Name = "ccProduct_Unit_Amt";
-            this.ccProduct_Unit_Amt.ReadOnly = true;
-            // 
-            // ccProduct_Unit_Order
-            // 
-            this.ccProduct_Unit_Order.DataPropertyName = "Product_Unit_Order";
-            this.ccProduct_Unit_Order.HeaderText = "สั่งเมื่อเหลือ";
-            this.ccProduct_Unit_Order.Name = "ccProduct_Unit_Order";
-            this.ccProduct_Unit_Order.ReadOnly = true;
-            this.ccProduct_Unit_Order.Visible = false;
-            // 
-            // ccUnit_ID
-            // 
-            this.ccUnit_ID.DataPropertyName = "Unit_ID";
-            this.ccUnit_ID.HeaderText = "รหัสหน่วย";
-            this.ccUnit_ID.Name = "ccUnit_ID";
-            this.ccUnit_ID.ReadOnly = true;
-            this.ccUnit_ID.Visible = false;
-            // 
-            // ccProduct_Stock
-            // 
-            this.ccProduct_Stock.DataPropertyName = "Product_Stock";
-            this.ccProduct_Stock.HeaderText = "สต็อก";
-            this.ccProduct_Stock.Name = "ccProduct_Stock";
-            this.ccProduct_Stock.ReadOnly = true;
-            this.ccProduct_Stock.Visible = false;
             // 
             // epCheck
             // 
@@ -616,6 +527,101 @@
             this.lb_count.Size = new System.Drawing.Size(24, 18);
             this.lb_count.TabIndex = 30;
             this.lb_count.Text = "16";
+            // 
+            // ccProduct_ID
+            // 
+            this.ccProduct_ID.DataPropertyName = "Product_ID";
+            this.ccProduct_ID.HeaderText = "รหัสสินค้า";
+            this.ccProduct_ID.Name = "ccProduct_ID";
+            this.ccProduct_ID.ReadOnly = true;
+            this.ccProduct_ID.Width = 200;
+            // 
+            // ccProduct_Des
+            // 
+            this.ccProduct_Des.DataPropertyName = "Product_Des";
+            this.ccProduct_Des.HeaderText = "ชื่อสินค้า";
+            this.ccProduct_Des.Name = "ccProduct_Des";
+            this.ccProduct_Des.ReadOnly = true;
+            this.ccProduct_Des.Width = 200;
+            // 
+            // ccProduct_Detail
+            // 
+            this.ccProduct_Detail.DataPropertyName = "Product_Detail";
+            this.ccProduct_Detail.HeaderText = "สรรพคุณ";
+            this.ccProduct_Detail.Name = "ccProduct_Detail";
+            this.ccProduct_Detail.ReadOnly = true;
+            this.ccProduct_Detail.Visible = false;
+            // 
+            // ccProduct_Price
+            // 
+            this.ccProduct_Price.DataPropertyName = "Product_Price";
+            this.ccProduct_Price.HeaderText = "ราคาต้นทุน";
+            this.ccProduct_Price.Name = "ccProduct_Price";
+            this.ccProduct_Price.ReadOnly = true;
+            // 
+            // ccProduct_Sale
+            // 
+            this.ccProduct_Sale.DataPropertyName = "Product_Sale";
+            this.ccProduct_Sale.HeaderText = "ราคาขาย";
+            this.ccProduct_Sale.Name = "ccProduct_Sale";
+            this.ccProduct_Sale.ReadOnly = true;
+            // 
+            // ccProduct_Unit
+            // 
+            this.ccProduct_Unit.DataPropertyName = "Unit_Name";
+            this.ccProduct_Unit.HeaderText = "หน่วยเรียก";
+            this.ccProduct_Unit.Name = "ccProduct_Unit";
+            this.ccProduct_Unit.ReadOnly = true;
+            this.ccProduct_Unit.Visible = false;
+            // 
+            // ccProduct_Product
+            // 
+            this.ccProduct_Product.DataPropertyName = "Product_Product";
+            dataGridViewCellStyle2.Format = "d";
+            this.ccProduct_Product.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ccProduct_Product.HeaderText = "วันที่ผลิต";
+            this.ccProduct_Product.Name = "ccProduct_Product";
+            this.ccProduct_Product.ReadOnly = true;
+            // 
+            // ccProduct_Expired
+            // 
+            this.ccProduct_Expired.DataPropertyName = "Product_Expired";
+            dataGridViewCellStyle3.Format = "d";
+            this.ccProduct_Expired.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ccProduct_Expired.HeaderText = "วันหมดอายุ";
+            this.ccProduct_Expired.Name = "ccProduct_Expired";
+            this.ccProduct_Expired.ReadOnly = true;
+            // 
+            // ccProduct_Unit_Amt
+            // 
+            this.ccProduct_Unit_Amt.DataPropertyName = "Product_Unit_Amt";
+            this.ccProduct_Unit_Amt.HeaderText = "คงเหลือ";
+            this.ccProduct_Unit_Amt.Name = "ccProduct_Unit_Amt";
+            this.ccProduct_Unit_Amt.ReadOnly = true;
+            // 
+            // ccProduct_Unit_Order
+            // 
+            this.ccProduct_Unit_Order.DataPropertyName = "Product_Unit_Order";
+            this.ccProduct_Unit_Order.HeaderText = "สั่งเมื่อเหลือ";
+            this.ccProduct_Unit_Order.Name = "ccProduct_Unit_Order";
+            this.ccProduct_Unit_Order.ReadOnly = true;
+            this.ccProduct_Unit_Order.Visible = false;
+            // 
+            // ccUnit_ID
+            // 
+            this.ccUnit_ID.DataPropertyName = "Unit_ID";
+            this.ccUnit_ID.HeaderText = "รหัสหน่วย";
+            this.ccUnit_ID.Name = "ccUnit_ID";
+            this.ccUnit_ID.ReadOnly = true;
+            this.ccUnit_ID.Visible = false;
+            // 
+            // ccProduct_Stock
+            // 
+            this.ccProduct_Stock.DataPropertyName = "Product_Stock";
+            this.ccProduct_Stock.HeaderText = "สต็อก";
+            this.ccProduct_Stock.Name = "ccProduct_Stock";
+            this.ccProduct_Stock.ReadOnly = true;
+            this.ccProduct_Stock.Visible = false;
             // 
             // FrmSetting12
             // 

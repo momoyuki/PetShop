@@ -55,8 +55,9 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.xออกจากโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StripStatusEm_Name = new System.Windows.Forms.ToolStripStatusLabel();
             this.StripStatusEm_ID = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StripStatusEm_Name = new System.Windows.Forms.ToolStripStatusLabel();
+            this.เกยวกบเราToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             this.ทำการกษาToolStripMenuItem,
             this.ทำการรกษาToolStripMenuItem,
             this.รายงานToolStripMenuItem,
+            this.เกยวกบเราToolStripMenuItem,
             this.xออกจากโปรแกรมToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -262,17 +264,24 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // StripStatusEm_ID
+            // 
+            this.StripStatusEm_ID.Name = "StripStatusEm_ID";
+            this.StripStatusEm_ID.Size = new System.Drawing.Size(40, 17);
+            this.StripStatusEm_ID.Text = "Em_ID";
+            // 
             // StripStatusEm_Name
             // 
             this.StripStatusEm_Name.Name = "StripStatusEm_Name";
             this.StripStatusEm_Name.Size = new System.Drawing.Size(61, 17);
             this.StripStatusEm_Name.Text = "Em_Name";
             // 
-            // StripStatusEm_ID
+            // เกยวกบเราToolStripMenuItem
             // 
-            this.StripStatusEm_ID.Name = "StripStatusEm_ID";
-            this.StripStatusEm_ID.Size = new System.Drawing.Size(40, 17);
-            this.StripStatusEm_ID.Text = "Em_ID";
+            this.เกยวกบเราToolStripMenuItem.Name = "เกยวกบเราToolStripMenuItem";
+            this.เกยวกบเราToolStripMenuItem.Size = new System.Drawing.Size(74, 19);
+            this.เกยวกบเราToolStripMenuItem.Text = "เกี่ยวกับเรา";
+            this.เกยวกบเราToolStripMenuItem.Click += new System.EventHandler(this.เกยวกบเราToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -332,6 +341,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         public System.Windows.Forms.ToolStripStatusLabel StripStatusEm_Name;
         public System.Windows.Forms.ToolStripStatusLabel StripStatusEm_ID;
+        private System.Windows.Forms.ToolStripMenuItem เกยวกบเราToolStripMenuItem;
     }
 }
 

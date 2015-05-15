@@ -143,6 +143,12 @@
     <Compile Include="Form\PrePrint\FrmPreMemberCard.Designer.cs">
       <DependentUpon>FrmPreMemberCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -413,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\PrePrint\FrmPreMemberCard.resx">
       <DependentUpon>FrmPreMemberCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

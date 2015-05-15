@@ -38,8 +38,16 @@ namespace Petshop
             DataTable idtBillAll;
             string isqlCommand = "SELECT tb_bill.*,tb_employee.Em_Name FROM tb_bill,tb_employee where tb_bill.Em_ID = tb_employee.Em_ID";
             idtBillAll = iConnect.SelectByCommand(isqlCommand);
+            LoadThai();
             dGV_Bill.DataSource = idtBillAll;
             dGV_Bill.Refresh();
+        }
+
+        private void LoadThai()
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
         }
 
         private void loadBillDetail() //ส่วนของดึงข้อมูลจาก mysql ตาราง Service มาแสดง แท๊บ บริการ

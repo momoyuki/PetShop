@@ -39,14 +39,21 @@ namespace Petshop
             cb_ProductUnit.ValueMember = idtUnit.Columns["Unit_ID"].ColumnName;
             cb_ProductUnit.DataSource = idtUnit;
         }
-
+        private void LoadThai()
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+        }
         private void LoadProduct()
         {
             DataTable idtProduct;
             string isqlCommand = "SELECT tb_product.*,tb_unit.Unit_Name FROM `tb_product`,tb_unit where tb_product.unit_Id = tb_unit.Unit_ID";
             idtProduct = iConnect.SelectByCommand(isqlCommand);
+            LoadThai();
             dGV_Product.DataSource = idtProduct;
             dGV_Product.Refresh();
+            
             lb_SearchProduct.Text = idtProduct.Rows.Count.ToString();
         }
         string iAddEditProduct; 
@@ -373,6 +380,7 @@ namespace Petshop
                 DataTable idtProduct;
                 string isqlCommand = "SELECT * FROM `tb_Product` where Product_Des like '%" + iSearchProduct + "%' OR Product_ID like '%" + iSearchProduct + "%' ";
                 idtProduct = iConnect.SelectByCommand(isqlCommand);
+                LoadThai();
                 dGV_Product.DataSource = idtProduct;
                 dGV_Product.Refresh();
                 lb_SearchProduct.Text = idtProduct.Rows.Count.ToString();

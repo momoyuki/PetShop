@@ -30,33 +30,41 @@ namespace Petshop
         }
         private void loadData()
         {
+           
             LoadService();
             loadHealDate();
         }
+        string iDateToday;
         private void loadHealDate()
         {
+           
+            LoadThai();
             DataTable idtHealDate;
             if (rBt_All.Checked == true)
             {
-                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                    "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day";
+
+                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel, if (tb_healdate.HealDate_Status = '1','ติดตามแล้ว','ยังไม่ได้') as Status " +
+                    "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day ";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
+                LoadThai();
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
             }
             else if (rBt_contract.Checked == true)
             {
-                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel,  if (tb_healdate.HealDate_Status = '1','ติดตามแล้ว','ยังไม่ได้') as Status " +
                      "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 order by HealDate_Day";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
+                LoadThai();
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
             }
             else if (rBt_contracted.Checked == true)
             {
-                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
+                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel , if (tb_healdate.HealDate_Status = '1','ติดตามแล้ว','ยังไม่ได้') as Status " +
                     "FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 1 order by HealDate_Day";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
+                LoadThai();
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
             }
@@ -65,19 +73,31 @@ namespace Petshop
                 System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
                 System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
                 System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-                string iDateToday = DateTime.Now.ToString("yyyy-MM-dd");
-
-                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
+                iDateToday = DateTime.Now.ToString("yyyy-MM-dd");
+                string isqlHealDate = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel ,  if (tb_healdate.HealDate_Status = '1','ติดตามแล้ว','ยังไม่ได้') as Status "
                                     + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
                                     + " AND  HealDate_Remind = '" + iDateToday + "'"
                                     + " Union "
-                                    + " SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel "
+                                    + " SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel ,  if (tb_healdate.HealDate_Status = '1','ติดตามแล้ว','ยังไม่ได้') as Status "
                                     + " FROM tb_healdate,tb_petprofile,tb_service where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID AND Healdate_Status = 0 "
                                     + " AND  HealDate_Day = '" + iDateToday + "' Order By HealDate_ID";
                 idtHealDate = iConnect.SelectByCommand(isqlHealDate);
+                LoadThai();
                 dGV_HealDate.DataSource = idtHealDate;
                 dGV_HealDate.Refresh();
             }
+        }
+
+        private void LoadEndToday()
+        {
+            
+        }
+
+        private void LoadThai()
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
         }
         private void lb_HealRecordID_TextChanged(object sender, EventArgs e)
         {
@@ -133,7 +153,6 @@ namespace Petshop
                 string icbService = cb_Service.SelectedValue.ToString();
 
                 string itxbRemark = Txb_Remark.Text.Trim();
-
                 System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
                 System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
                 System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
@@ -169,13 +188,17 @@ namespace Petshop
                 {
                     string ilbHealDateID = lb_HealDateID.Text.Trim();
                     int iContract;
+
+                    //string iContract;
                     if (CheckBox_Contract.Checked == true)
                     {
                         iContract = 1;
+                        //iContract = "ติดต่อแล้ว";
                     }
                     else
                     {
                         iContract = 0;
+                        //iContract = "ยังไม่ได้ติดต่อ";
                     }
                     if ((lb_HealDateID.Text != "") || (lb_HealDateID.Text != null))
                     {
@@ -357,15 +380,16 @@ namespace Petshop
                 DataTable idtSearch;
                 if (CheckBox_Search.Checked == true)
                 {
-                    string iDateToday = dTPSearch.Value.ToString("yyyy-MM-dd");
                     System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("en-US");
                     System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
                     System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-                    string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                    "FROM tb_healdate,tb_petprofile,tb_service where (HealDate_Day ='" + iDateToday + "' OR HealDate_Day ='" + iDateToday + "') AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID " +
-                    "Union SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                    "FROM tb_healdate,tb_petprofile,tb_service where (HealDate_Remind ='" + iDateToday + "' OR HealDate_Remind ='" + iDateToday + "') AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day ";
+                    string iDateday = dTPSearch.Value.ToString("yyyy-MM-dd");
+                    string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel ,  if (tb_healdate.HealDate_Status = '1','ติดตามแล้ว','ยังไม่ได้') as Status  " +
+                    "FROM tb_healdate,tb_petprofile,tb_service where (HealDate_Day ='" + iDateday + "' OR HealDate_Day ='" + iDateday + "') AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID " +
+                    "Union SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel ,  if (tb_healdate.HealDate_Status = '1','ติดตามแล้ว','ยังไม่ได้') as Status  " +
+                    "FROM tb_healdate,tb_petprofile,tb_service where (HealDate_Remind ='" + iDateday + "' OR HealDate_Remind ='" + iDateday + "') AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day ";
                     idtSearch = iConnect.SelectByCommand(isqlSearch);
+                    LoadThai();
                     dGV_HealDate.DataSource = idtSearch;
                     dGV_HealDate.Refresh();
                 }
@@ -374,11 +398,12 @@ namespace Petshop
                     if (RegString.IsMatch(txb_Search.Text.Trim()))
                     {
                         string itxbSearch = txb_Search.Text.ToString();
-                        string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel " +
-                   "FROM tb_healdate,tb_petprofile,tb_service where (tb_petprofile.pet_name like '%" + itxbSearch + "%' OR tb_Service.Service_Des like '%" + itxbSearch + "%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day";
-                    idtSearch = iConnect.SelectByCommand(isqlSearch);
-                    dGV_HealDate.DataSource = idtSearch;
-                    dGV_HealDate.Refresh();
+                        string isqlSearch = "SELECT tb_healdate.*,tb_petprofile.pet_name,tb_service.Service_Des,tb_petprofile.Owner_Name,tb_petprofile.Owner_Tel ,  if (tb_healdate.HealDate_Status = '1','ติดตามแล้ว','ยังไม่ได้') as Status  " +
+                        "FROM tb_healdate,tb_petprofile,tb_service where (tb_petprofile.pet_name like '%" + itxbSearch + "%' OR tb_Service.Service_Des like '%" + itxbSearch + "%' ) AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = tb_petprofile.Pet_ID  order by HealDate_Status,HealDate_Day";
+                         idtSearch = iConnect.SelectByCommand(isqlSearch);
+                         LoadThai();
+                          dGV_HealDate.DataSource = idtSearch;
+                          dGV_HealDate.Refresh();
                     }else
                      {
                     loadData();

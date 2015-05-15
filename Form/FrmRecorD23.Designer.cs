@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nUD_ProductUnit = new System.Windows.Forms.NumericUpDown();
             this.lbyear = new System.Windows.Forms.Label();
             this.bt_CancelBuy = new System.Windows.Forms.Button();
@@ -549,6 +550,8 @@
             // ccProductSale_Date
             // 
             this.ccProductSale_Date.DataPropertyName = "ProductSale_Date";
+            dataGridViewCellStyle3.Format = "d";
+            this.ccProductSale_Date.DefaultCellStyle = dataGridViewCellStyle3;
             this.ccProductSale_Date.HeaderText = "วันที่ทำการขาย";
             this.ccProductSale_Date.Name = "ccProductSale_Date";
             this.ccProductSale_Date.ReadOnly = true;
@@ -681,6 +684,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dGV_ProductSale;
+        public System.Windows.Forms.ComboBox cb_Em;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProSale_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_Name;
@@ -689,6 +693,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_DC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Net;
         private System.Windows.Forms.DataGridViewTextBoxColumn ccProductSale_Remark;
-        public System.Windows.Forms.ComboBox cb_Em;
     }
 }

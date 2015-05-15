@@ -77,11 +77,11 @@ namespace Petshop
                 DataTable idtHealDetail;
                 string isqlCommand =   "SELECT tb_healrecord.Pet_ID as Pet_ID,tb_medirecord.HealRecord_ID as HealRecord_ID,tb_medirecord.Medi_ID as ServiceMedi_ID, "
                                      + "tb_medicine.Medi_Des as ServiceMedi_Des "
-                                     + "FROM tb_healrecord,tb_medirecord,tb_medicine where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_medirecord.Medi_ID = tb_medicine.Medi_ID "
+                                     + "FROM tb_healrecord,tb_medirecord,tb_medicine where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_medirecord.Healrecord_ID = tb_healrecord.Healrecord_ID  AND tb_medirecord.Medi_ID = tb_medicine.Medi_ID "
                                      + "UNION "
                                      + "SELECT tb_healrecord.Pet_ID as Pet_ID ,tb_servicerecord.HealRecord_ID as HealRecord_ID,tb_servicerecord.Service_ID as ServiceMedi_ID, "
                                      + "tb_service.service_Des AS ServiceMedi_Des "
-                                     + "FROM tb_healrecord,tb_servicerecord,tb_service where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_servicerecord.Service_ID = tb_service.Service_ID order by HealRecord_ID";
+                                     + "FROM tb_healrecord,tb_servicerecord,tb_service where  tb_healrecord.Pet_ID = '" + itxbPetProfileID + "' AND tb_servicerecord.Healrecord_ID = tb_healrecord.Healrecord_ID AND  tb_servicerecord.Service_ID = tb_service.Service_ID order by HealRecord_ID";
 
                 idtHealDetail = iConnect.SelectByCommand(isqlCommand);
                 dGV_HealDetail.DataSource = idtHealDetail;
@@ -396,7 +396,6 @@ namespace Petshop
             _Textbox.Text = txb_PetProfileID.Text;
             loadHealRecord();
             LoadHealDetail();
-
             loadBloodTest();
 
             loadDate();
@@ -422,6 +421,7 @@ namespace Petshop
             DataTable idtBloodTest;
             string isqlBloodTest = "SELECT Bloodtest_ID,Bloodtest_Date,Pet_ID,bloodtest_remark FROM petshop.tb_bloodtest where pet_ID = '"+itxbPetProfileID+"'";
             idtBloodTest = iConnect.SelectByCommand(isqlBloodTest);
+            LoadThai();
             dGV_BloodTest.DataSource = idtBloodTest;
             dGV_BloodTest.Refresh();
             lb_CountBlood.Text = idtBloodTest.Rows.Count.ToString();
@@ -434,6 +434,7 @@ namespace Petshop
             string isqlDate = "SELECT tb_healdate.Healdate_ID,tb_service.Service_Des,tb_healdate.healdate_Remark,tb_healdate.healDate_Day FROM tb_healdate,tb_service "+
             "where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = '"+itxbPetProfileID+"'  order by HealDate_Status,HealDate_Day";
             idtDate = iConnect.SelectByCommand(isqlDate);
+            LoadThai();
             dGV_HealDate.DataSource = idtDate;
             dGV_HealDate.Refresh();
             lb_HealDateCount.Text = idtDate.Rows.Count.ToString();
@@ -445,9 +446,16 @@ namespace Petshop
             DataTable idtHealRecord;
             string isqlHealRecord = "SELECT * FROM petshop.tb_healrecord where pet_ID='" + itxbPetID + "'";
             idtHealRecord = iConnect.SelectByCommand(isqlHealRecord);
+            LoadThai();
             dGV_HealRecord.DataSource = idtHealRecord;
             dGV_HealRecord.Refresh();
             lb_CountHealRecord.Text = idtHealRecord.Rows.Count.ToString();
+        }
+        private void LoadThai()
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
         }
 
         private void bt_Search_Click(object sender, EventArgs e)

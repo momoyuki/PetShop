@@ -47,6 +47,7 @@ namespace Petshop
             DataTable idtMedi;
             string isqlCommand = "SELECT tb_Medicine.*,tb_Unit.Unit_Name FROM tb_Medicine,tb_Unit where tb_Unit.Unit_ID = tb_medicine.Unit_ID";
             idtMedi = iConnect.SelectByCommand(isqlCommand);
+            LoadThai();
             dGV_Medi.DataSource = idtMedi;
             dGV_Medi.Refresh();
             lb_Result.Text = idtMedi.Rows.Count.ToString();
@@ -65,6 +66,12 @@ namespace Petshop
         private void Bt_LoadService_Click(object sender, EventArgs e)
         {
             loadData();
+        }
+        private void LoadThai()
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
         }
         private void Bt_LoadMedi_Click(object sender, EventArgs e)
         {
@@ -630,6 +637,7 @@ namespace Petshop
                 DataTable idtService;
                 string isqlCommand = "SELECT * FROM `tb_Service` where Service_Des like '%" + iSearchService + "%' OR Service_ID like '%" + iSearchService + "%' ";
                 idtService = iConnect.SelectByCommand(isqlCommand);
+                LoadThai();
                 dGV_Service.DataSource = idtService;
                 dGV_Service.Refresh();
                 lb_SearchService.Text = idtService.Rows.Count.ToString();

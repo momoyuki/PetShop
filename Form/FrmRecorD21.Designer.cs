@@ -30,11 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecorD21));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gBoxDetail = new System.Windows.Forms.GroupBox();
             this.bt_MemberCard = new System.Windows.Forms.Button();
             this.bt_BloodTest = new System.Windows.Forms.Button();
@@ -113,19 +116,6 @@
             this.lb_HealRecordList = new System.Windows.Forms.Label();
             this.bt_HealRecord = new System.Windows.Forms.Button();
             this.dGV_HealRecord = new System.Windows.Forms.DataGridView();
-            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccPet_IDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_Symptom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_Weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_Temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_HR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_RR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealRecord_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tp_HealDetail = new System.Windows.Forms.TabPage();
             this.bt_DetailBill = new System.Windows.Forms.Button();
             this.bt_HealDateDetail = new System.Windows.Forms.Button();
@@ -148,10 +138,6 @@
             this.lb_HealDateCount = new System.Windows.Forms.Label();
             this.lb_HealDateCountA = new System.Windows.Forms.Label();
             this.dGV_HealDate = new System.Windows.Forms.DataGridView();
-            this.ccHealDate_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealDate_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccHealDate_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpBloodTest = new System.Windows.Forms.TabPage();
             this.bt_BloodTestDetail = new System.Windows.Forms.Button();
             this.lb_BloodTestID = new System.Windows.Forms.Label();
@@ -160,11 +146,28 @@
             this.lb_CountBlood = new System.Windows.Forms.Label();
             this.lb_ListBloodTest = new System.Windows.Forms.Label();
             this.dGV_BloodTest = new System.Windows.Forms.DataGridView();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ccHealRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccPet_IDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Symptom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_HR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_RR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealRecord_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealDate_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccService_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealDate_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccHealDate_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccbloodtest_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccbloodtest_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccPet_IDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccbloodtest_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.gBoxDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDYear)).BeginInit();
             this.gBox_OwnerDetail.SuspendLayout();
@@ -725,8 +728,8 @@
             // 
             this.dGV_PetProfile.AllowUserToAddRows = false;
             this.dGV_PetProfile.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_PetProfile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_PetProfile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_PetProfile.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_PetProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_PetProfile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1051,8 +1054,8 @@
             // 
             this.dGV_HealRecord.AllowUserToAddRows = false;
             this.dGV_HealRecord.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_HealRecord.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1078,108 +1081,6 @@
             this.dGV_HealRecord.TabIndex = 0;
             this.dGV_HealRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_HealRecord_CellClick);
             this.dGV_HealRecord.SelectionChanged += new System.EventHandler(this.dGV_HealRecord_SelectionChanged);
-            // 
-            // ccHealRecord_ID
-            // 
-            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
-            this.ccHealRecord_ID.HeaderText = "รหัสรักษา";
-            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
-            this.ccHealRecord_ID.ReadOnly = true;
-            // 
-            // ccPet_IDa
-            // 
-            this.ccPet_IDa.DataPropertyName = "Pet_ID";
-            this.ccPet_IDa.HeaderText = "รหัสสัตว์";
-            this.ccPet_IDa.Name = "ccPet_IDa";
-            this.ccPet_IDa.ReadOnly = true;
-            this.ccPet_IDa.Visible = false;
-            // 
-            // ccEm_ID
-            // 
-            this.ccEm_ID.DataPropertyName = "Em_ID";
-            this.ccEm_ID.HeaderText = "รหัสเจ้าหน้าที่";
-            this.ccEm_ID.Name = "ccEm_ID";
-            this.ccEm_ID.ReadOnly = true;
-            this.ccEm_ID.Visible = false;
-            // 
-            // ccHealRecord_Symptom
-            // 
-            this.ccHealRecord_Symptom.DataPropertyName = "HealRecord_Symptom";
-            this.ccHealRecord_Symptom.FillWeight = 200F;
-            this.ccHealRecord_Symptom.HeaderText = "อาการ";
-            this.ccHealRecord_Symptom.Name = "ccHealRecord_Symptom";
-            this.ccHealRecord_Symptom.ReadOnly = true;
-            this.ccHealRecord_Symptom.Width = 200;
-            // 
-            // ccHealRecord_Remark
-            // 
-            this.ccHealRecord_Remark.DataPropertyName = "HealRecord_Remark";
-            this.ccHealRecord_Remark.HeaderText = "หมายเหตุ";
-            this.ccHealRecord_Remark.Name = "ccHealRecord_Remark";
-            this.ccHealRecord_Remark.ReadOnly = true;
-            this.ccHealRecord_Remark.Visible = false;
-            // 
-            // ccHealRecord_Weight
-            // 
-            this.ccHealRecord_Weight.DataPropertyName = "HealRecord_Weight";
-            this.ccHealRecord_Weight.HeaderText = "น้ำหนัก";
-            this.ccHealRecord_Weight.Name = "ccHealRecord_Weight";
-            this.ccHealRecord_Weight.ReadOnly = true;
-            this.ccHealRecord_Weight.Visible = false;
-            // 
-            // ccHealRecord_Temp
-            // 
-            this.ccHealRecord_Temp.DataPropertyName = "HealRecord_Temp";
-            this.ccHealRecord_Temp.HeaderText = "อณุหภูมิ";
-            this.ccHealRecord_Temp.Name = "ccHealRecord_Temp";
-            this.ccHealRecord_Temp.ReadOnly = true;
-            this.ccHealRecord_Temp.Visible = false;
-            // 
-            // ccHealRecord_HR
-            // 
-            this.ccHealRecord_HR.DataPropertyName = "HealRecord_HR";
-            this.ccHealRecord_HR.HeaderText = "อัตราการเต้นหัวใจ";
-            this.ccHealRecord_HR.Name = "ccHealRecord_HR";
-            this.ccHealRecord_HR.ReadOnly = true;
-            this.ccHealRecord_HR.Visible = false;
-            // 
-            // ccHealRecord_RR
-            // 
-            this.ccHealRecord_RR.DataPropertyName = "HealRecord_RR";
-            this.ccHealRecord_RR.HeaderText = "อัตราการหายใจ";
-            this.ccHealRecord_RR.Name = "ccHealRecord_RR";
-            this.ccHealRecord_RR.ReadOnly = true;
-            this.ccHealRecord_RR.Visible = false;
-            // 
-            // ccHealRecord_Date
-            // 
-            this.ccHealRecord_Date.DataPropertyName = "HealRecord_Date";
-            this.ccHealRecord_Date.FillWeight = 140F;
-            this.ccHealRecord_Date.HeaderText = "วันที่รักษา";
-            this.ccHealRecord_Date.Name = "ccHealRecord_Date";
-            this.ccHealRecord_Date.ReadOnly = true;
-            this.ccHealRecord_Date.Width = 140;
-            // 
-            // ccHealRecord_Total
-            // 
-            this.ccHealRecord_Total.DataPropertyName = "HealRecord_Total";
-            this.ccHealRecord_Total.HeaderText = "รวม";
-            this.ccHealRecord_Total.Name = "ccHealRecord_Total";
-            this.ccHealRecord_Total.ReadOnly = true;
-            // 
-            // ccHealRecord_DC
-            // 
-            this.ccHealRecord_DC.DataPropertyName = "HealRecord_DC";
-            this.ccHealRecord_DC.HeaderText = "ส่วนลด";
-            this.ccHealRecord_DC.Name = "ccHealRecord_DC";
-            this.ccHealRecord_DC.ReadOnly = true;
-            // 
-            // ccHealRecord_Net
-            // 
-            this.ccHealRecord_Net.DataPropertyName = "HealRecord_Net";
-            this.ccHealRecord_Net.HeaderText = "สุทธิ";
-            this.ccHealRecord_Net.Name = "ccHealRecord_Net";
-            this.ccHealRecord_Net.ReadOnly = true;
             // 
             // tp_HealDetail
             // 
@@ -1282,8 +1183,8 @@
             // 
             this.dGV_HealDetail.AllowUserToAddRows = false;
             this.dGV_HealDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dGV_HealDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1408,8 +1309,8 @@
             // 
             this.dGV_HealDate.AllowUserToAddRows = false;
             this.dGV_HealDate.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_HealDate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dGV_HealDate.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_HealDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_HealDate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1426,38 +1327,6 @@
             this.dGV_HealDate.Size = new System.Drawing.Size(961, 269);
             this.dGV_HealDate.TabIndex = 10;
             this.dGV_HealDate.SelectionChanged += new System.EventHandler(this.dGV_HealDate_SelectionChanged);
-            // 
-            // ccHealDate_ID
-            // 
-            this.ccHealDate_ID.DataPropertyName = "HealDate_ID";
-            this.ccHealDate_ID.HeaderText = "รหัสนัดหมาย";
-            this.ccHealDate_ID.Name = "ccHealDate_ID";
-            this.ccHealDate_ID.ReadOnly = true;
-            this.ccHealDate_ID.Width = 110;
-            // 
-            // ccService_Des
-            // 
-            this.ccService_Des.DataPropertyName = "Service_Des";
-            this.ccService_Des.HeaderText = "รายการนัด";
-            this.ccService_Des.Name = "ccService_Des";
-            this.ccService_Des.ReadOnly = true;
-            this.ccService_Des.Width = 300;
-            // 
-            // ccHealDate_Remark
-            // 
-            this.ccHealDate_Remark.DataPropertyName = "HealDate_Remark";
-            this.ccHealDate_Remark.HeaderText = "หมายเหตุ";
-            this.ccHealDate_Remark.Name = "ccHealDate_Remark";
-            this.ccHealDate_Remark.ReadOnly = true;
-            this.ccHealDate_Remark.Width = 300;
-            // 
-            // ccHealDate_Day
-            // 
-            this.ccHealDate_Day.DataPropertyName = "HealDate_Day";
-            this.ccHealDate_Day.HeaderText = "วันที่นัดหมาย";
-            this.ccHealDate_Day.Name = "ccHealDate_Day";
-            this.ccHealDate_Day.ReadOnly = true;
-            this.ccHealDate_Day.Width = 200;
             // 
             // tpBloodTest
             // 
@@ -1535,8 +1404,8 @@
             // 
             this.dGV_BloodTest.AllowUserToAddRows = false;
             this.dGV_BloodTest.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_BloodTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_BloodTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dGV_BloodTest.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_BloodTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_BloodTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1554,6 +1423,148 @@
             this.dGV_BloodTest.TabIndex = 11;
             this.dGV_BloodTest.SelectionChanged += new System.EventHandler(this.dGV_BloodTest_SelectionChanged);
             // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
+            // ccHealRecord_ID
+            // 
+            this.ccHealRecord_ID.DataPropertyName = "HealRecord_ID";
+            this.ccHealRecord_ID.HeaderText = "รหัสรักษา";
+            this.ccHealRecord_ID.Name = "ccHealRecord_ID";
+            this.ccHealRecord_ID.ReadOnly = true;
+            // 
+            // ccPet_IDa
+            // 
+            this.ccPet_IDa.DataPropertyName = "Pet_ID";
+            this.ccPet_IDa.HeaderText = "รหัสสัตว์";
+            this.ccPet_IDa.Name = "ccPet_IDa";
+            this.ccPet_IDa.ReadOnly = true;
+            this.ccPet_IDa.Visible = false;
+            // 
+            // ccEm_ID
+            // 
+            this.ccEm_ID.DataPropertyName = "Em_ID";
+            this.ccEm_ID.HeaderText = "รหัสเจ้าหน้าที่";
+            this.ccEm_ID.Name = "ccEm_ID";
+            this.ccEm_ID.ReadOnly = true;
+            this.ccEm_ID.Visible = false;
+            // 
+            // ccHealRecord_Symptom
+            // 
+            this.ccHealRecord_Symptom.DataPropertyName = "HealRecord_Symptom";
+            this.ccHealRecord_Symptom.FillWeight = 200F;
+            this.ccHealRecord_Symptom.HeaderText = "อาการ";
+            this.ccHealRecord_Symptom.Name = "ccHealRecord_Symptom";
+            this.ccHealRecord_Symptom.ReadOnly = true;
+            this.ccHealRecord_Symptom.Width = 200;
+            // 
+            // ccHealRecord_Remark
+            // 
+            this.ccHealRecord_Remark.DataPropertyName = "HealRecord_Remark";
+            this.ccHealRecord_Remark.HeaderText = "หมายเหตุ";
+            this.ccHealRecord_Remark.Name = "ccHealRecord_Remark";
+            this.ccHealRecord_Remark.ReadOnly = true;
+            this.ccHealRecord_Remark.Visible = false;
+            // 
+            // ccHealRecord_Weight
+            // 
+            this.ccHealRecord_Weight.DataPropertyName = "HealRecord_Weight";
+            this.ccHealRecord_Weight.HeaderText = "น้ำหนัก";
+            this.ccHealRecord_Weight.Name = "ccHealRecord_Weight";
+            this.ccHealRecord_Weight.ReadOnly = true;
+            this.ccHealRecord_Weight.Visible = false;
+            // 
+            // ccHealRecord_Temp
+            // 
+            this.ccHealRecord_Temp.DataPropertyName = "HealRecord_Temp";
+            this.ccHealRecord_Temp.HeaderText = "อณุหภูมิ";
+            this.ccHealRecord_Temp.Name = "ccHealRecord_Temp";
+            this.ccHealRecord_Temp.ReadOnly = true;
+            this.ccHealRecord_Temp.Visible = false;
+            // 
+            // ccHealRecord_HR
+            // 
+            this.ccHealRecord_HR.DataPropertyName = "HealRecord_HR";
+            this.ccHealRecord_HR.HeaderText = "อัตราการเต้นหัวใจ";
+            this.ccHealRecord_HR.Name = "ccHealRecord_HR";
+            this.ccHealRecord_HR.ReadOnly = true;
+            this.ccHealRecord_HR.Visible = false;
+            // 
+            // ccHealRecord_RR
+            // 
+            this.ccHealRecord_RR.DataPropertyName = "HealRecord_RR";
+            this.ccHealRecord_RR.HeaderText = "อัตราการหายใจ";
+            this.ccHealRecord_RR.Name = "ccHealRecord_RR";
+            this.ccHealRecord_RR.ReadOnly = true;
+            this.ccHealRecord_RR.Visible = false;
+            // 
+            // ccHealRecord_Date
+            // 
+            this.ccHealRecord_Date.DataPropertyName = "HealRecord_Date";
+            dataGridViewCellStyle3.Format = "d";
+            this.ccHealRecord_Date.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ccHealRecord_Date.FillWeight = 140F;
+            this.ccHealRecord_Date.HeaderText = "วันที่รักษา";
+            this.ccHealRecord_Date.Name = "ccHealRecord_Date";
+            this.ccHealRecord_Date.ReadOnly = true;
+            this.ccHealRecord_Date.Width = 140;
+            // 
+            // ccHealRecord_Total
+            // 
+            this.ccHealRecord_Total.DataPropertyName = "HealRecord_Total";
+            this.ccHealRecord_Total.HeaderText = "รวม";
+            this.ccHealRecord_Total.Name = "ccHealRecord_Total";
+            this.ccHealRecord_Total.ReadOnly = true;
+            // 
+            // ccHealRecord_DC
+            // 
+            this.ccHealRecord_DC.DataPropertyName = "HealRecord_DC";
+            this.ccHealRecord_DC.HeaderText = "ส่วนลด";
+            this.ccHealRecord_DC.Name = "ccHealRecord_DC";
+            this.ccHealRecord_DC.ReadOnly = true;
+            // 
+            // ccHealRecord_Net
+            // 
+            this.ccHealRecord_Net.DataPropertyName = "HealRecord_Net";
+            this.ccHealRecord_Net.HeaderText = "สุทธิ";
+            this.ccHealRecord_Net.Name = "ccHealRecord_Net";
+            this.ccHealRecord_Net.ReadOnly = true;
+            // 
+            // ccHealDate_ID
+            // 
+            this.ccHealDate_ID.DataPropertyName = "HealDate_ID";
+            this.ccHealDate_ID.HeaderText = "รหัสนัดหมาย";
+            this.ccHealDate_ID.Name = "ccHealDate_ID";
+            this.ccHealDate_ID.ReadOnly = true;
+            this.ccHealDate_ID.Width = 110;
+            // 
+            // ccService_Des
+            // 
+            this.ccService_Des.DataPropertyName = "Service_Des";
+            this.ccService_Des.HeaderText = "รายการนัด";
+            this.ccService_Des.Name = "ccService_Des";
+            this.ccService_Des.ReadOnly = true;
+            this.ccService_Des.Width = 300;
+            // 
+            // ccHealDate_Remark
+            // 
+            this.ccHealDate_Remark.DataPropertyName = "HealDate_Remark";
+            this.ccHealDate_Remark.HeaderText = "หมายเหตุ";
+            this.ccHealDate_Remark.Name = "ccHealDate_Remark";
+            this.ccHealDate_Remark.ReadOnly = true;
+            this.ccHealDate_Remark.Width = 300;
+            // 
+            // ccHealDate_Day
+            // 
+            this.ccHealDate_Day.DataPropertyName = "HealDate_Day";
+            dataGridViewCellStyle6.Format = "d";
+            this.ccHealDate_Day.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ccHealDate_Day.HeaderText = "วันที่นัดหมาย";
+            this.ccHealDate_Day.Name = "ccHealDate_Day";
+            this.ccHealDate_Day.ReadOnly = true;
+            this.ccHealDate_Day.Width = 200;
+            // 
             // ccbloodtest_ID
             // 
             this.ccbloodtest_ID.DataPropertyName = "bloodtest_ID";
@@ -1565,6 +1576,8 @@
             // ccbloodtest_Date
             // 
             this.ccbloodtest_Date.DataPropertyName = "bloodtest_Date";
+            dataGridViewCellStyle8.Format = "d";
+            this.ccbloodtest_Date.DefaultCellStyle = dataGridViewCellStyle8;
             this.ccbloodtest_Date.HeaderText = "วันที่ทำการบันทึก";
             this.ccbloodtest_Date.Name = "ccbloodtest_Date";
             this.ccbloodtest_Date.ReadOnly = true;
@@ -1585,10 +1598,6 @@
             this.ccbloodtest_Remark.Name = "ccbloodtest_Remark";
             this.ccbloodtest_Remark.ReadOnly = true;
             this.ccbloodtest_Remark.Width = 400;
-            // 
-            // epCheck
-            // 
-            this.epCheck.ContainerControl = this;
             // 
             // FrmRecorD21
             // 
@@ -1678,19 +1687,6 @@
         private System.Windows.Forms.Label lb_CountHealRecord;
         private System.Windows.Forms.Label lb_HealRecordList;
         private System.Windows.Forms.Button bt_HealRecord;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Symptom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Remark;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Weight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Temp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_HR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_RR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_DC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Net;
         private System.Windows.Forms.Label lb_BirthDay;
         private System.Windows.Forms.ErrorProvider epCheck;
         private System.Windows.Forms.Label lb_PetCountB;
@@ -1721,10 +1717,6 @@
         private System.Windows.Forms.Label lb_HealDateB;
         private System.Windows.Forms.Label lb_HealDateCount;
         private System.Windows.Forms.Label lb_HealDateCountA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remark;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Day;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_statusHide;
@@ -1754,13 +1746,30 @@
         private System.Windows.Forms.Label lb_CountBlood;
         private System.Windows.Forms.Label lb_ListBloodTest;
         private System.Windows.Forms.DataGridView dGV_BloodTest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_Remark;
         private System.Windows.Forms.Button bt_Date;
         private System.Windows.Forms.Label lb_DateID;
         private System.Windows.Forms.Label lb_Date;
         private System.Windows.Forms.Button bt_MemberCard;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccEm_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Symptom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Weight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Temp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_HR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_RR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_DC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealRecord_Net;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccService_Des;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccHealDate_Day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccPet_IDB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccbloodtest_Remark;
     }
 }

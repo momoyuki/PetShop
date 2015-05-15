@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSetting11));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tabService = new System.Windows.Forms.TabPage();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
@@ -1030,6 +1032,8 @@
             // ccMedi_Product
             // 
             this.ccMedi_Product.DataPropertyName = "Medi_Product";
+            dataGridViewCellStyle3.Format = "d";
+            this.ccMedi_Product.DefaultCellStyle = dataGridViewCellStyle3;
             this.ccMedi_Product.HeaderText = "วันที่ผลิต";
             this.ccMedi_Product.Name = "ccMedi_Product";
             this.ccMedi_Product.ReadOnly = true;
@@ -1037,6 +1041,8 @@
             // ccMedi_Expired
             // 
             this.ccMedi_Expired.DataPropertyName = "Medi_Expired";
+            dataGridViewCellStyle4.Format = "d";
+            this.ccMedi_Expired.DefaultCellStyle = dataGridViewCellStyle4;
             this.ccMedi_Expired.HeaderText = "วันหมดอายุ";
             this.ccMedi_Expired.Name = "ccMedi_Expired";
             this.ccMedi_Expired.ReadOnly = true;

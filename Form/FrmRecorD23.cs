@@ -48,6 +48,7 @@ namespace Petshop
             DataTable idtProductSale;
             string isqlProductSale = "SELECT tb_productSale.*,tb_employee.Em_Name FROM tb_productsale,tb_employee where tb_productsale.Em_ID = tb_employee.Em_ID";
             idtProductSale = iConnect.SelectByCommand(isqlProductSale);
+            LoadThai();
             dGV_ProductSale.DataSource = idtProductSale;
             dGV_ProductSale.Refresh();
         }
@@ -110,7 +111,12 @@ namespace Petshop
             iNet = iTotal - iDC;
             txb_ProductSaleNet.Text = iNet.ToString();
         }
-       
+        private void LoadThai()
+        {
+            System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+        }
         private void loadProductSaleDetail()
         {
          //   if ((lb_ProductSaleID.Text != null)&&(lb_ProductSaleID.Text !=string.Empty))
@@ -119,6 +125,7 @@ namespace Petshop
                 string isqlProductSaleDetail = "SELECT tb_productsaledetail.*,tb_Product.Product_Des  FROM tb_Product,tb_productsaledetail " +
                 "WHERE (tb_productsaledetail.ProductSale_ID = '" + ilbproductSaleID + "' AND tb_Product.Product_ID = tb_productsaledetail.Product_ID)";
                 idtProductSaleDetail = iConnect.SelectByCommand(isqlProductSaleDetail);
+                LoadThai();
                 dGV_Product.DataSource = idtProductSaleDetail;
                 dGV_Product.Refresh();
 
