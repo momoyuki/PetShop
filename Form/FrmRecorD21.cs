@@ -103,6 +103,9 @@ namespace Petshop
         private void bt_Refresh_Click(object sender, EventArgs e)
         {
             LoadData();
+            loadHealRecord();
+            LoadHealDetail();
+            loadBloodTest();
         }
         private void bt_ServiceRefresh_Click(object sender, EventArgs e)
         {
@@ -432,7 +435,7 @@ namespace Petshop
             string itxbPetProfileID = txb_PetProfileID.Text.Trim();
             DataTable idtDate;
             string isqlDate = "SELECT tb_healdate.Healdate_ID,tb_service.Service_Des,tb_healdate.healdate_Remark,tb_healdate.healDate_Day FROM tb_healdate,tb_service "+
-            "where tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = '"+itxbPetProfileID+"'  order by HealDate_Status,HealDate_Day";
+            "where tb_healdate.Healdate_Status = 0 AND tb_healdate.Service_ID = tb_Service.Service_ID AND tb_healdate.Pet_ID = '"+itxbPetProfileID+"'  order by HealDate_Status,HealDate_Day";
             idtDate = iConnect.SelectByCommand(isqlDate);
             LoadThai();
             dGV_HealDate.DataSource = idtDate;

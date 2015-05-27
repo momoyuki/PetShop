@@ -46,7 +46,7 @@ namespace Petshop
 
             ////////////////////////////////////////////Load Bill Master//////////////////////////////////////////////////////////////
             DataTable idtProfile;
-            string isqlProfile = "SELECT * FROM tb_petprofile";
+            string isqlProfile = "SELECT * FROM tb_petprofile where Pet_ID = '"+ilbPetID+"'";
             idtProfile = iConnect.SelectByCommand(isqlProfile);
 
             System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("th-TH");

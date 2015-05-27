@@ -351,7 +351,7 @@ namespace Petshop
                 {
                     if (dGV_HealDate.Rows[i].Cells[0].Value != null)
                     {
-                        String iHealDateID = dGV_HealDate.Rows[i].Cells[1].Value.ToString();
+                        String iHealDateID = dGV_HealDate.Rows[i].Cells["ccHealDate_ID"].Value.ToString();
                         string isqlHealDate = "UPDATE `tb_healdate` SET `HealDate_Status`=1 WHERE `HealDate_ID`='"+iHealDateID+"'";
                         iConnect.Insert(isqlHealDate);
 
@@ -366,7 +366,7 @@ namespace Petshop
             {
                 if (dGV_HealDate.Rows[i].Cells[0].Value != null)
                 {
-                    String iHealDateID = dGV_HealDate.Rows[i].Cells[1].Value.ToString();
+                    String iHealDateID = dGV_HealDate.Rows[i].Cells["ccHealDate_ID"].Value.ToString();
                     string isqlHealDate = "UPDATE `tb_healdate` SET `HealDate_Status`=0 WHERE `HealDate_ID`='" + iHealDateID + "'";
                     iConnect.Insert(isqlHealDate);
                 }

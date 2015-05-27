@@ -44,8 +44,8 @@ namespace Petshop
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
 
             ReportDocument rpt = new ReportDocument();
-           rpt.Load("D:\\PetShop\\CrmemberCard.rpt");
-           //rpt.Load("CrmemberCard.rpt");
+           //rpt.Load("D:\\PetShop\\CrmemberCard.rpt");
+           rpt.Load("CrmemberCard.rpt");
            rpt.SetDataSource(idtPetProfile);
            rpt.Subreports["Company_Sub_Report"].Database.Tables[0].SetDataSource(idtCompany);
             this.crViewerBloodtest.ReportSource = rpt;

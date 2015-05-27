@@ -54,15 +54,46 @@ namespace Petshop
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        //MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        MessageBox.Show("ไม่สามารถเชื่อมต่อได้ กรุณาติดต่อผู้ดูแลระบบ");
                         break;
-
+                    case 1044:
+                        //MessageBox.Show("Invalid username/password, please try again");
+                        MessageBox.Show("ชื่อผู้ใช้หรือรหัสผ่านสำหรับติดต่อฐานข้อมูลไม่ถูกต้อง");
+                        break;
                     case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
+                        //MessageBox.Show("Invalid username/password, please try again");
+                        MessageBox.Show("ชื่อผู้ใช้หรือรหัสผ่านสำหรับติดต่อฐานข้อมูลไม่ถูกต้อง");
+                        break;
+                    case 1049:
+                        MessageBox.Show("กำลังทำการติดตั้งฐานข้อมูล");
+                        //createDB();
                         break;
                 }
                 return false;
             }
+        }
+
+        internal void createDB()
+        {
+            string query = "";
+            if (File.Exists("PetShopDB.sql"))
+            {
+                string conndb =  "SERVER=" + server + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";charset=utf8;Convert Zero Datetime=True";
+                connection = new MySqlConnection(conndb);
+                connection.Open();
+                StreamReader streamReader = new StreamReader("PetShopDB.sql");
+                query = streamReader.ReadToEnd();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Execute command
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("สร้างฐานข้อมูลแล้ว");
+                //close connection
+                this.CloseConnection();
+                streamReader.Close();
+            }
+            
+            
         }
         //Close connection
         private bool CloseConnection()
@@ -85,8 +116,8 @@ namespace Petshop
             // Set Select command
             string query = iSqlcommand;
             DataSet DS = new DataSet();  // using system.data
-
-            //Open connection
+            try
+            {
             if (this.OpenConnection() == true)
             {
                 //Create Command
@@ -98,6 +129,13 @@ namespace Petshop
             }
             //return datatable with all records
             return DS.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            //Open connection
+            
         }
         //Delete statement
         internal void DeleteBySQL(string iSqlCommand)
@@ -111,7 +149,6 @@ namespace Petshop
                 this.CloseConnection();
             }
         }
-        //�ӡ�� Insert ������ŧ㹰ҹ������ Applicant ���ҧ By SqlCommand
         internal void Insert(string iSQLCommand) 
         {
             string query = iSQLCommand; 
