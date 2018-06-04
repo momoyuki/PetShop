@@ -15,7 +15,7 @@ namespace Petshop
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainForm());
 
-            Application.Run(new FrmLogin());
+            Application.Run(new MainForm());
            /*
             FrmLogin fLogin = new FrmLogin();
             
