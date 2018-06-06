@@ -247,6 +247,9 @@
             // 
             // TabControlServiceMediBill
             // 
+            this.TabControlServiceMediBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControlServiceMediBill.Controls.Add(this.tp_Service);
             this.TabControlServiceMediBill.Controls.Add(this.tp_Medi);
             this.TabControlServiceMediBill.Enabled = false;
@@ -284,6 +287,9 @@
             this.dGV_Service.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dGV_Service.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -366,6 +372,9 @@
             this.dGV_Medi.AllowUserToDeleteRows = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dGV_Medi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

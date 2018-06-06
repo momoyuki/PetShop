@@ -202,6 +202,9 @@
             // 
             this.dGV_Product.AllowUserToAddRows = false;
             this.dGV_Product.AllowUserToDeleteRows = false;
+            this.dGV_Product.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Product.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
