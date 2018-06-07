@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -17,17 +18,40 @@ namespace Petshop
             InitializeComponent();
             iConnect = new MySQLDBConnect(); //กำหนดค่า iconnect เป็น Class MySQLDBConnect
         }
+
+
+
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-                if (MessageBox.Show("ต้องการออกจากโปรแกรม?",
-                       "กำลังปิดโปรแกรม",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Information) == DialogResult.No)
+
+            if (MessageBox.Show("ต้องการออกจากโปรแกรม?",
+                         "กำลังปิดโปรแกรม",
+                          MessageBoxButtons.YesNoCancel,
+                          MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+              /*  // Prepare a dummy string, thos would appear in the dialog
+                string dummyFileName = "Save Here";
+
+                SaveFileDialog sf = new SaveFileDialog();
+                // Feed the dummy name to the save dialog
+                sf.FileName = dummyFileName;
+
+                if (sf.ShowDialog() == DialogResult.OK)
                 {
-                    e.Cancel = true;
+                    // Now here's our save folder
+                    string savePath = Path.GetDirectoryName(sf.FileName);
+                    // Do whatever
+                    iConnect.BackupDatabase(savePath);
                 }
-            
+            }
+            else
+            {*/
+                e.Cancel = true;
+            }            
         }
+
+
         internal void LoadEmployee()
         {
             DataTable idtEmployee;

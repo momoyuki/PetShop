@@ -163,6 +163,26 @@ namespace Petshop
                 this.CloseConnection();
             }
         }
+
+   /*     internal void BackupDatabase(string path)
+        {
+            string filepath = path;
+           
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = connection;
+                        if (this.OpenConnection() == true)
+                        {
+                            mb.ExportToFile(filepath);
+                            this.CloseConnection();
+                        }
+                    }
+                
+                }
+                
+        }*/
         
     }
 
