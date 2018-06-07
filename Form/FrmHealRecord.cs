@@ -505,7 +505,7 @@ namespace Petshop
         {
             LoadData();
         }
-     
+        string iCloseHealRecord;
         private void bt_Print_Click(object sender, EventArgs e)
         {
             AddHealRecord();

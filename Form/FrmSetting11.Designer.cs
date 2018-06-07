@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSetting11));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlServiceMedi = new System.Windows.Forms.TabControl();
             this.tabService = new System.Windows.Forms.TabPage();
             this.dGV_Service = new System.Windows.Forms.DataGridView();
@@ -105,6 +105,9 @@
             this.txb_MediID = new System.Windows.Forms.TextBox();
             this.lb_MediS = new System.Windows.Forms.Label();
             this.dGV_Medi = new System.Windows.Forms.DataGridView();
+            this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.ccMedi_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Detall = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,9 +120,6 @@
             this.ccMedi_Unit_Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccMedi_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccUnit_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccUnit_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControlServiceMedi.SuspendLayout();
             this.tabService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Service)).BeginInit();
@@ -135,9 +135,6 @@
             // 
             // tabControlServiceMedi
             // 
-            this.tabControlServiceMedi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlServiceMedi.Controls.Add(this.tabService);
             this.tabControlServiceMedi.Controls.Add(this.tabMedi);
             this.tabControlServiceMedi.Location = new System.Drawing.Point(13, 13);
@@ -163,11 +160,8 @@
             // 
             this.dGV_Service.AllowUserToAddRows = false;
             this.dGV_Service.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dGV_Service.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -188,7 +182,6 @@
             // coService_ID
             // 
             this.coService_ID.DataPropertyName = "Service_ID";
-            this.coService_ID.FillWeight = 87.4317F;
             this.coService_ID.HeaderText = "รหัส";
             this.coService_ID.Name = "coService_ID";
             this.coService_ID.ReadOnly = true;
@@ -197,29 +190,24 @@
             // coService_Des
             // 
             this.coService_Des.DataPropertyName = "Service_Des";
-            this.coService_Des.FillWeight = 172.3028F;
             this.coService_Des.HeaderText = "บริการ";
             this.coService_Des.Name = "coService_Des";
             this.coService_Des.ReadOnly = true;
-            this.coService_Des.Width = 394;
+            this.coService_Des.Width = 300;
             // 
             // coService_Price
             // 
             this.coService_Price.DataPropertyName = "Service_Price";
-            this.coService_Price.FillWeight = 61.87714F;
             this.coService_Price.HeaderText = "ค่าบริการ";
             this.coService_Price.Name = "coService_Price";
             this.coService_Price.ReadOnly = true;
-            this.coService_Price.Width = 142;
             // 
             // coService_DuringDate
             // 
             this.coService_DuringDate.DataPropertyName = "Service_DuringDate";
-            this.coService_DuringDate.FillWeight = 78.3884F;
             this.coService_DuringDate.HeaderText = "ภายใน/วัน";
             this.coService_DuringDate.Name = "coService_DuringDate";
             this.coService_DuringDate.ReadOnly = true;
-            this.coService_DuringDate.Width = 179;
             // 
             // gBox_Service
             // 
@@ -251,13 +239,9 @@
             this.gBox_Service.TabIndex = 0;
             this.gBox_Service.TabStop = false;
             this.gBox_Service.Text = "รายละเอียดบริการ";
-            
             // 
             // bt_ServiceRefresh
             // 
-            this.bt_ServiceRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_ServiceRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_ServiceRefresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_ServiceRefresh.Image")));
             this.bt_ServiceRefresh.Location = new System.Drawing.Point(915, 26);
@@ -269,9 +253,6 @@
             // 
             // lb_SearchService
             // 
-            this.lb_SearchService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_SearchService.AutoSize = true;
             this.lb_SearchService.Location = new System.Drawing.Point(193, 219);
             this.lb_SearchService.Name = "lb_SearchService";
@@ -281,9 +262,6 @@
             // 
             // lb_SearchServiceB
             // 
-            this.lb_SearchServiceB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_SearchServiceB.AutoSize = true;
             this.lb_SearchServiceB.Location = new System.Drawing.Point(264, 219);
             this.lb_SearchServiceB.Name = "lb_SearchServiceB";
@@ -293,9 +271,6 @@
             // 
             // lb_SearchServiceA
             // 
-            this.lb_SearchServiceA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_SearchServiceA.AutoSize = true;
             this.lb_SearchServiceA.Location = new System.Drawing.Point(82, 219);
             this.lb_SearchServiceA.Name = "lb_SearchServiceA";
@@ -305,9 +280,6 @@
             // 
             // txb_SearchService
             // 
-            this.txb_SearchService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_SearchService.Location = new System.Drawing.Point(582, 209);
             this.txb_SearchService.Name = "txb_SearchService";
             this.txb_SearchService.Size = new System.Drawing.Size(262, 26);
@@ -316,9 +288,6 @@
             // 
             // bt_SearchService
             // 
-            this.bt_SearchService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_SearchService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_SearchService.Location = new System.Drawing.Point(850, 205);
             this.bt_SearchService.Name = "bt_SearchService";
@@ -330,9 +299,6 @@
             // 
             // bt_ResetService
             // 
-            this.bt_ResetService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_ResetService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_ResetService.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_ResetService.Location = new System.Drawing.Point(304, 36);
@@ -346,9 +312,6 @@
             // 
             // bt_DelService
             // 
-            this.bt_DelService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_DelService.Enabled = false;
             this.bt_DelService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_DelService.Location = new System.Drawing.Point(242, 150);
@@ -362,9 +325,6 @@
             // 
             // lb_RemarkService
             // 
-            this.lb_RemarkService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_RemarkService.AutoSize = true;
             this.lb_RemarkService.Location = new System.Drawing.Point(239, 120);
             this.lb_RemarkService.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -375,9 +335,6 @@
             // 
             // Bt_LoadService
             // 
-            this.Bt_LoadService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Bt_LoadService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_LoadService.Location = new System.Drawing.Point(690, 56);
             this.Bt_LoadService.Margin = new System.Windows.Forms.Padding(4);
@@ -391,9 +348,6 @@
             // 
             // bt_EditService
             // 
-            this.bt_EditService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_EditService.Enabled = false;
             this.bt_EditService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_EditService.Location = new System.Drawing.Point(164, 150);
@@ -407,9 +361,6 @@
             // 
             // bt_AddService
             // 
-            this.bt_AddService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_AddService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddService.Location = new System.Drawing.Point(86, 150);
             this.bt_AddService.Margin = new System.Windows.Forms.Padding(4);
@@ -422,9 +373,6 @@
             // 
             // gBoxTimeService
             // 
-            this.gBoxTimeService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxTimeService.Controls.Add(this.lb_Day);
             this.gBoxTimeService.Controls.Add(this.txb_ServiceDate);
             this.gBoxTimeService.Controls.Add(this.lb_ServiceDate);
@@ -470,9 +418,6 @@
             // 
             // txb_ServicePrice
             // 
-            this.txb_ServicePrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_ServicePrice.Location = new System.Drawing.Point(85, 110);
             this.txb_ServicePrice.Margin = new System.Windows.Forms.Padding(4);
             this.txb_ServicePrice.MaxLength = 11;
@@ -483,9 +428,6 @@
             // 
             // lb_ServicePrice
             // 
-            this.lb_ServicePrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_ServicePrice.AutoSize = true;
             this.lb_ServicePrice.Location = new System.Drawing.Point(11, 116);
             this.lb_ServicePrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -496,9 +438,6 @@
             // 
             // txb_ServiceDetail
             // 
-            this.txb_ServiceDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_ServiceDetail.Location = new System.Drawing.Point(85, 76);
             this.txb_ServiceDetail.Margin = new System.Windows.Forms.Padding(4);
             this.txb_ServiceDetail.MaxLength = 100;
@@ -509,9 +448,6 @@
             // 
             // lb_Service
             // 
-            this.lb_Service.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Service.AutoSize = true;
             this.lb_Service.Location = new System.Drawing.Point(27, 80);
             this.lb_Service.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -522,9 +458,6 @@
             // 
             // txb_ServiceID
             // 
-            this.txb_ServiceID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_ServiceID.Enabled = false;
             this.txb_ServiceID.Location = new System.Drawing.Point(85, 40);
             this.txb_ServiceID.Margin = new System.Windows.Forms.Padding(4);
@@ -536,9 +469,6 @@
             // 
             // lb_ServiceID
             // 
-            this.lb_ServiceID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_ServiceID.AutoSize = true;
             this.lb_ServiceID.Location = new System.Drawing.Point(8, 44);
             this.lb_ServiceID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -1007,11 +937,8 @@
             // 
             this.dGV_Medi.AllowUserToAddRows = false;
             this.dGV_Medi.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dGV_Medi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1036,6 +963,25 @@
             this.dGV_Medi.Size = new System.Drawing.Size(958, 257);
             this.dGV_Medi.TabIndex = 3;
             this.dGV_Medi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Medi_CellClick);
+            // 
+            // ccUnit_Name
+            // 
+            this.ccUnit_Name.DataPropertyName = "Unit_Name";
+            this.ccUnit_Name.HeaderText = "หน่วยเรียก";
+            this.ccUnit_Name.Name = "ccUnit_Name";
+            this.ccUnit_Name.ReadOnly = true;
+            // 
+            // ccUnit_ID
+            // 
+            this.ccUnit_ID.DataPropertyName = "Unit_ID";
+            this.ccUnit_ID.HeaderText = "รหัส";
+            this.ccUnit_ID.Name = "ccUnit_ID";
+            this.ccUnit_ID.ReadOnly = true;
+            this.ccUnit_ID.Width = 40;
+            // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
             // 
             // ccMedi_ID
             // 
@@ -1086,8 +1032,8 @@
             // ccMedi_Product
             // 
             this.ccMedi_Product.DataPropertyName = "Medi_Product";
-            dataGridViewCellStyle7.Format = "d";
-            this.ccMedi_Product.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Format = "d";
+            this.ccMedi_Product.DefaultCellStyle = dataGridViewCellStyle3;
             this.ccMedi_Product.HeaderText = "วันที่ผลิต";
             this.ccMedi_Product.Name = "ccMedi_Product";
             this.ccMedi_Product.ReadOnly = true;
@@ -1095,8 +1041,8 @@
             // ccMedi_Expired
             // 
             this.ccMedi_Expired.DataPropertyName = "Medi_Expired";
-            dataGridViewCellStyle8.Format = "d";
-            this.ccMedi_Expired.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Format = "d";
+            this.ccMedi_Expired.DefaultCellStyle = dataGridViewCellStyle4;
             this.ccMedi_Expired.HeaderText = "วันหมดอายุ";
             this.ccMedi_Expired.Name = "ccMedi_Expired";
             this.ccMedi_Expired.ReadOnly = true;
@@ -1131,25 +1077,6 @@
             this.ccMedi_Unit.Name = "ccMedi_Unit";
             this.ccMedi_Unit.ReadOnly = true;
             this.ccMedi_Unit.Visible = false;
-            // 
-            // ccUnit_Name
-            // 
-            this.ccUnit_Name.DataPropertyName = "Unit_Name";
-            this.ccUnit_Name.HeaderText = "หน่วยเรียก";
-            this.ccUnit_Name.Name = "ccUnit_Name";
-            this.ccUnit_Name.ReadOnly = true;
-            // 
-            // ccUnit_ID
-            // 
-            this.ccUnit_ID.DataPropertyName = "Unit_ID";
-            this.ccUnit_ID.HeaderText = "รหัส";
-            this.ccUnit_ID.Name = "ccUnit_ID";
-            this.ccUnit_ID.ReadOnly = true;
-            this.ccUnit_ID.Width = 40;
-            // 
-            // epCheck
-            // 
-            this.epCheck.ContainerControl = this;
             // 
             // FrmSetting11
             // 
