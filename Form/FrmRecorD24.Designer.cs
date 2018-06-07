@@ -29,19 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecorD24));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cb_outlay = new System.Windows.Forms.ComboBox();
             this.Lb_ListService = new System.Windows.Forms.Label();
             this.dGV_outlay = new System.Windows.Forms.DataGridView();
-            this.ccoutlayDetail_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccoutlayDetail_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccem_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccOutlay_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccoutlay_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccoutlayDetail_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccoutlayDetail_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_DeloutlayDetail = new System.Windows.Forms.Button();
             this.bt_Load = new System.Windows.Forms.Button();
             this.txb_outlayAmt = new System.Windows.Forms.TextBox();
@@ -58,6 +50,14 @@
             this.bt_Reset = new System.Windows.Forms.Button();
             this.bt_Refresh = new System.Windows.Forms.Button();
             this.lb_Bath = new System.Windows.Forms.Label();
+            this.ccoutlayDetail_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccem_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccOutlay_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlay_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccoutlayDetail_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_outlay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,9 +86,6 @@
             this.dGV_outlay.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dGV_outlay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dGV_outlay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_outlay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_outlay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_outlay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -108,73 +105,6 @@
             this.dGV_outlay.Size = new System.Drawing.Size(982, 475);
             this.dGV_outlay.TabIndex = 80;
             this.dGV_outlay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_outlay_CellClick);
-            // 
-            // ccoutlayDetail_ID
-            // 
-            this.ccoutlayDetail_ID.DataPropertyName = "outlayDetail_ID";
-            this.ccoutlayDetail_ID.HeaderText = "รหัสบันทึกรายจ่าย";
-            this.ccoutlayDetail_ID.Name = "ccoutlayDetail_ID";
-            this.ccoutlayDetail_ID.ReadOnly = true;
-            this.ccoutlayDetail_ID.Visible = false;
-            // 
-            // ccEm_ID
-            // 
-            this.ccEm_ID.DataPropertyName = "Em_ID";
-            this.ccEm_ID.HeaderText = "รหัสพนักงาน";
-            this.ccEm_ID.Name = "ccEm_ID";
-            this.ccEm_ID.ReadOnly = true;
-            this.ccEm_ID.Visible = false;
-            // 
-            // ccoutlayDetail_Date
-            // 
-            this.ccoutlayDetail_Date.DataPropertyName = "outlayDetail_Date";
-            dataGridViewCellStyle2.Format = "d";
-            this.ccoutlayDetail_Date.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ccoutlayDetail_Date.HeaderText = "วันที่บันทึก";
-            this.ccoutlayDetail_Date.Name = "ccoutlayDetail_Date";
-            this.ccoutlayDetail_Date.ReadOnly = true;
-            // 
-            // ccem_Name
-            // 
-            this.ccem_Name.DataPropertyName = "em_Name";
-            this.ccem_Name.FillWeight = 180F;
-            this.ccem_Name.HeaderText = "ผู้บันทึก";
-            this.ccem_Name.Name = "ccem_Name";
-            this.ccem_Name.ReadOnly = true;
-            this.ccem_Name.Width = 180;
-            // 
-            // ccOutlay_ID
-            // 
-            this.ccOutlay_ID.DataPropertyName = "Outlay_ID";
-            this.ccOutlay_ID.HeaderText = "รหัสรายจ่าย";
-            this.ccOutlay_ID.Name = "ccOutlay_ID";
-            this.ccOutlay_ID.ReadOnly = true;
-            this.ccOutlay_ID.Visible = false;
-            // 
-            // ccoutlay_Detail
-            // 
-            this.ccoutlay_Detail.DataPropertyName = "outlay_Detail";
-            this.ccoutlay_Detail.FillWeight = 240F;
-            this.ccoutlay_Detail.HeaderText = "รายการ";
-            this.ccoutlay_Detail.Name = "ccoutlay_Detail";
-            this.ccoutlay_Detail.ReadOnly = true;
-            this.ccoutlay_Detail.Width = 240;
-            // 
-            // ccoutlayDetail_Amt
-            // 
-            this.ccoutlayDetail_Amt.DataPropertyName = "outlayDetail_Amt";
-            this.ccoutlayDetail_Amt.HeaderText = "จำนวน";
-            this.ccoutlayDetail_Amt.Name = "ccoutlayDetail_Amt";
-            this.ccoutlayDetail_Amt.ReadOnly = true;
-            // 
-            // ccoutlayDetail_Remark
-            // 
-            this.ccoutlayDetail_Remark.DataPropertyName = "outlayDetail_Remark";
-            this.ccoutlayDetail_Remark.FillWeight = 200F;
-            this.ccoutlayDetail_Remark.HeaderText = "หมายเหตุ";
-            this.ccoutlayDetail_Remark.Name = "ccoutlayDetail_Remark";
-            this.ccoutlayDetail_Remark.ReadOnly = true;
-            this.ccoutlayDetail_Remark.Width = 200;
             // 
             // bt_DeloutlayDetail
             // 
@@ -339,6 +269,73 @@
             this.lb_Bath.Size = new System.Drawing.Size(35, 18);
             this.lb_Bath.TabIndex = 160;
             this.lb_Bath.Text = "บาท";
+            // 
+            // ccoutlayDetail_ID
+            // 
+            this.ccoutlayDetail_ID.DataPropertyName = "outlayDetail_ID";
+            this.ccoutlayDetail_ID.HeaderText = "รหัสบันทึกรายจ่าย";
+            this.ccoutlayDetail_ID.Name = "ccoutlayDetail_ID";
+            this.ccoutlayDetail_ID.ReadOnly = true;
+            this.ccoutlayDetail_ID.Visible = false;
+            // 
+            // ccEm_ID
+            // 
+            this.ccEm_ID.DataPropertyName = "Em_ID";
+            this.ccEm_ID.HeaderText = "รหัสพนักงาน";
+            this.ccEm_ID.Name = "ccEm_ID";
+            this.ccEm_ID.ReadOnly = true;
+            this.ccEm_ID.Visible = false;
+            // 
+            // ccoutlayDetail_Date
+            // 
+            this.ccoutlayDetail_Date.DataPropertyName = "outlayDetail_Date";
+            dataGridViewCellStyle2.Format = "d";
+            this.ccoutlayDetail_Date.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ccoutlayDetail_Date.HeaderText = "วันที่บันทึก";
+            this.ccoutlayDetail_Date.Name = "ccoutlayDetail_Date";
+            this.ccoutlayDetail_Date.ReadOnly = true;
+            // 
+            // ccem_Name
+            // 
+            this.ccem_Name.DataPropertyName = "em_Name";
+            this.ccem_Name.FillWeight = 180F;
+            this.ccem_Name.HeaderText = "ผู้บันทึก";
+            this.ccem_Name.Name = "ccem_Name";
+            this.ccem_Name.ReadOnly = true;
+            this.ccem_Name.Width = 180;
+            // 
+            // ccOutlay_ID
+            // 
+            this.ccOutlay_ID.DataPropertyName = "Outlay_ID";
+            this.ccOutlay_ID.HeaderText = "รหัสรายจ่าย";
+            this.ccOutlay_ID.Name = "ccOutlay_ID";
+            this.ccOutlay_ID.ReadOnly = true;
+            this.ccOutlay_ID.Visible = false;
+            // 
+            // ccoutlay_Detail
+            // 
+            this.ccoutlay_Detail.DataPropertyName = "outlay_Detail";
+            this.ccoutlay_Detail.FillWeight = 240F;
+            this.ccoutlay_Detail.HeaderText = "รายการ";
+            this.ccoutlay_Detail.Name = "ccoutlay_Detail";
+            this.ccoutlay_Detail.ReadOnly = true;
+            this.ccoutlay_Detail.Width = 240;
+            // 
+            // ccoutlayDetail_Amt
+            // 
+            this.ccoutlayDetail_Amt.DataPropertyName = "outlayDetail_Amt";
+            this.ccoutlayDetail_Amt.HeaderText = "จำนวน";
+            this.ccoutlayDetail_Amt.Name = "ccoutlayDetail_Amt";
+            this.ccoutlayDetail_Amt.ReadOnly = true;
+            // 
+            // ccoutlayDetail_Remark
+            // 
+            this.ccoutlayDetail_Remark.DataPropertyName = "outlayDetail_Remark";
+            this.ccoutlayDetail_Remark.FillWeight = 200F;
+            this.ccoutlayDetail_Remark.HeaderText = "หมายเหตุ";
+            this.ccoutlayDetail_Remark.Name = "ccoutlayDetail_Remark";
+            this.ccoutlayDetail_Remark.ReadOnly = true;
+            this.ccoutlayDetail_Remark.Width = 200;
             // 
             // FrmRecorD24
             // 

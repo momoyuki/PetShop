@@ -15,8 +15,8 @@ namespace Petshop
 
         static string server = "localhost";
         static string database = "petshop";
-        static string uid = "vetpetshop";
-        static string password = "petshop@nan";
+        static string uid = "root";
+        static string password = "1234";
 
         public static string connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";charset=utf8;Convert Zero Datetime=True;";
         

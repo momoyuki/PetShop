@@ -119,9 +119,6 @@
             // 
             // tabControlServiceMedi
             // 
-            this.tabControlServiceMedi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlServiceMedi.Controls.Add(this.tPService);
             this.tabControlServiceMedi.Controls.Add(this.tPMedi);
             this.tabControlServiceMedi.Enabled = false;
@@ -153,7 +150,7 @@
             // lb_ServiceID
             // 
             this.lb_ServiceID.AutoSize = true;
-            this.lb_ServiceID.Location = new System.Drawing.Point(878, 273);
+            this.lb_ServiceID.Location = new System.Drawing.Point(755, 156);
             this.lb_ServiceID.Name = "lb_ServiceID";
             this.lb_ServiceID.Size = new System.Drawing.Size(85, 18);
             this.lb_ServiceID.TabIndex = 69;
@@ -163,7 +160,7 @@
             // lb_Price
             // 
             this.lb_Price.AutoSize = true;
-            this.lb_Price.Location = new System.Drawing.Point(622, 11);
+            this.lb_Price.Location = new System.Drawing.Point(656, 11);
             this.lb_Price.Name = "lb_Price";
             this.lb_Price.Size = new System.Drawing.Size(48, 18);
             this.lb_Price.TabIndex = 68;
@@ -172,7 +169,7 @@
             // bt_refService
             // 
             this.bt_refService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_refService.Location = new System.Drawing.Point(789, 7);
+            this.bt_refService.Location = new System.Drawing.Point(866, 44);
             this.bt_refService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_refService.Name = "bt_refService";
             this.bt_refService.Size = new System.Drawing.Size(100, 32);
@@ -207,7 +204,7 @@
             // bt_BuyService
             // 
             this.bt_BuyService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_BuyService.Location = new System.Drawing.Point(680, 8);
+            this.bt_BuyService.Location = new System.Drawing.Point(758, 44);
             this.bt_BuyService.Margin = new System.Windows.Forms.Padding(4);
             this.bt_BuyService.Name = "bt_BuyService";
             this.bt_BuyService.Size = new System.Drawing.Size(100, 32);
@@ -220,9 +217,6 @@
             // 
             this.dGV_Service.AllowUserToAddRows = false;
             this.dGV_Service.AllowUserToDeleteRows = false;
-            this.dGV_Service.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -231,12 +225,12 @@
             this.ccService_Des,
             this.ccService_Price,
             this.ccService_Amt});
-            this.dGV_Service.Location = new System.Drawing.Point(8, 48);
+            this.dGV_Service.Location = new System.Drawing.Point(8, 44);
             this.dGV_Service.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_Service.Name = "dGV_Service";
             this.dGV_Service.ReadOnly = true;
             this.dGV_Service.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_Service.Size = new System.Drawing.Size(955, 221);
+            this.dGV_Service.Size = new System.Drawing.Size(737, 243);
             this.dGV_Service.TabIndex = 0;
             this.dGV_Service.SelectionChanged += new System.EventHandler(this.dGV_Service_SelectionChanged);
             // 
@@ -306,7 +300,7 @@
             // lb_MediU
             // 
             this.lb_MediU.AutoSize = true;
-            this.lb_MediU.Location = new System.Drawing.Point(892, 269);
+            this.lb_MediU.Location = new System.Drawing.Point(752, 185);
             this.lb_MediU.Name = "lb_MediU";
             this.lb_MediU.Size = new System.Drawing.Size(71, 18);
             this.lb_MediU.TabIndex = 79;
@@ -335,7 +329,7 @@
             // lb_MediID
             // 
             this.lb_MediID.AutoSize = true;
-            this.lb_MediID.Location = new System.Drawing.Point(809, 269);
+            this.lb_MediID.Location = new System.Drawing.Point(752, 156);
             this.lb_MediID.Name = "lb_MediID";
             this.lb_MediID.Size = new System.Drawing.Size(77, 18);
             this.lb_MediID.TabIndex = 76;
@@ -358,7 +352,7 @@
             // 
             this.bt_refMedi.BackColor = System.Drawing.SystemColors.Control;
             this.bt_refMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_refMedi.Location = new System.Drawing.Point(862, 6);
+            this.bt_refMedi.Location = new System.Drawing.Point(863, 42);
             this.bt_refMedi.Margin = new System.Windows.Forms.Padding(4);
             this.bt_refMedi.Name = "bt_refMedi";
             this.bt_refMedi.Size = new System.Drawing.Size(100, 32);
@@ -391,7 +385,7 @@
             // 
             this.bt_BuyMedi.BackColor = System.Drawing.SystemColors.Control;
             this.bt_BuyMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_BuyMedi.Location = new System.Drawing.Point(754, 6);
+            this.bt_BuyMedi.Location = new System.Drawing.Point(755, 42);
             this.bt_BuyMedi.Margin = new System.Windows.Forms.Padding(4);
             this.bt_BuyMedi.Name = "bt_BuyMedi";
             this.bt_BuyMedi.Size = new System.Drawing.Size(100, 32);
@@ -404,9 +398,6 @@
             // 
             this.dGV_Medi.AllowUserToAddRows = false;
             this.dGV_Medi.AllowUserToDeleteRows = false;
-            this.dGV_Medi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -421,7 +412,7 @@
             this.dGV_Medi.Name = "dGV_Medi";
             this.dGV_Medi.ReadOnly = true;
             this.dGV_Medi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV_Medi.Size = new System.Drawing.Size(954, 223);
+            this.dGV_Medi.Size = new System.Drawing.Size(737, 245);
             this.dGV_Medi.TabIndex = 1;
             this.dGV_Medi.SelectionChanged += new System.EventHandler(this.dGV_Medi_SelectionChanged);
             // 
