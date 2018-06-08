@@ -16,7 +16,7 @@ namespace Petshop
         static string server = "localhost";
         static string database = "petshop";
         static string uid = "root";
-        static string password = "";
+        static string password = "1234";
 
         public static string connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";charset=utf8;Convert Zero Datetime=True;";
         
@@ -163,27 +163,26 @@ namespace Petshop
                 this.CloseConnection();
             }
         }
-        internal void BackupDatabase(string path)
-        {
-            string Filepath = path;
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
+   /*     internal void BackupDatabase(string path)
+        {
+            string filepath = path;
+           
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
                     using (MySqlBackup mb = new MySqlBackup(cmd))
                     {
-                        cmd.Connection = conn;
-                        conn.Open();
-                        mb.ExportToFile(path);
-                        conn.Close();
+                        cmd.Connection = connection;
+                        if (this.OpenConnection() == true)
+                        {
+                            mb.ExportToFile(filepath);
+                            this.CloseConnection();
+                        }
                     }
+                
                 }
-            }
-
-
-
-        }
+                
+        }*/
         
     }
 
