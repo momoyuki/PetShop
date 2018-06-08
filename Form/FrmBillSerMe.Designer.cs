@@ -83,9 +83,6 @@
             // 
             // bt_Print
             // 
-            this.bt_Print.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Print.Enabled = false;
             this.bt_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Print.Location = new System.Drawing.Point(892, 49);
@@ -99,9 +96,6 @@
             // 
             // bt_Load
             // 
-            this.bt_Load.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Load.Location = new System.Drawing.Point(891, 6);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4);
@@ -115,9 +109,6 @@
             // 
             // txb_BillDC
             // 
-            this.txb_BillDC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_BillDC.Enabled = false;
             this.txb_BillDC.Location = new System.Drawing.Point(515, 94);
             this.txb_BillDC.Margin = new System.Windows.Forms.Padding(4);
@@ -129,9 +120,6 @@
             // 
             // lb_DC
             // 
-            this.lb_DC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_DC.AutoSize = true;
             this.lb_DC.Location = new System.Drawing.Point(445, 98);
             this.lb_DC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -142,9 +130,6 @@
             // 
             // txb_BillNet
             // 
-            this.txb_BillNet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_BillNet.Enabled = false;
             this.txb_BillNet.Location = new System.Drawing.Point(659, 94);
             this.txb_BillNet.Margin = new System.Windows.Forms.Padding(4);
@@ -155,9 +140,6 @@
             // 
             // lb_Net
             // 
-            this.lb_Net.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Net.AutoSize = true;
             this.lb_Net.Location = new System.Drawing.Point(604, 98);
             this.lb_Net.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -168,9 +150,6 @@
             // 
             // txb_BillTotal
             // 
-            this.txb_BillTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_BillTotal.Enabled = false;
             this.txb_BillTotal.Location = new System.Drawing.Point(356, 94);
             this.txb_BillTotal.Margin = new System.Windows.Forms.Padding(4);
@@ -181,9 +160,6 @@
             // 
             // lb_Total
             // 
-            this.lb_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Total.AutoSize = true;
             this.lb_Total.Location = new System.Drawing.Point(267, 98);
             this.lb_Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -194,9 +170,6 @@
             // 
             // cb_Em
             // 
-            this.cb_Em.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cb_Em.FormattingEnabled = true;
             this.cb_Em.Location = new System.Drawing.Point(347, 10);
             this.cb_Em.Margin = new System.Windows.Forms.Padding(4);
@@ -206,9 +179,6 @@
             // 
             // lb_Em
             // 
-            this.lb_Em.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Em.AutoSize = true;
             this.lb_Em.Location = new System.Drawing.Point(279, 14);
             this.lb_Em.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -219,9 +189,6 @@
             // 
             // lb_DateBill
             // 
-            this.lb_DateBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_DateBill.AutoSize = true;
             this.lb_DateBill.Location = new System.Drawing.Point(261, 53);
             this.lb_DateBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -232,9 +199,6 @@
             // 
             // dTP_ProductSaleDate
             // 
-            this.dTP_ProductSaleDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dTP_ProductSaleDate.Location = new System.Drawing.Point(353, 49);
             this.dTP_ProductSaleDate.Margin = new System.Windows.Forms.Padding(4);
             this.dTP_ProductSaleDate.Name = "dTP_ProductSaleDate";
@@ -243,9 +207,6 @@
             // 
             // lb_Bill
             // 
-            this.lb_Bill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Bill.AutoSize = true;
             this.lb_Bill.Location = new System.Drawing.Point(16, 14);
             this.lb_Bill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -256,9 +217,6 @@
             // 
             // txb_ReferID
             // 
-            this.txb_ReferID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_ReferID.Enabled = false;
             this.txb_ReferID.Location = new System.Drawing.Point(112, 49);
             this.txb_ReferID.Margin = new System.Windows.Forms.Padding(4);
@@ -270,9 +228,6 @@
             // 
             // lb_ReferID
             // 
-            this.lb_ReferID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_ReferID.AutoSize = true;
             this.lb_ReferID.Location = new System.Drawing.Point(24, 53);
             this.lb_ReferID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -283,9 +238,6 @@
             // 
             // Lb_BillID
             // 
-            this.Lb_BillID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lb_BillID.AutoSize = true;
             this.Lb_BillID.Location = new System.Drawing.Point(109, 14);
             this.Lb_BillID.Name = "Lb_BillID";
@@ -295,9 +247,6 @@
             // 
             // TabControlServiceMediBill
             // 
-            this.TabControlServiceMediBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControlServiceMediBill.Controls.Add(this.tp_Service);
             this.TabControlServiceMediBill.Controls.Add(this.tp_Medi);
             this.TabControlServiceMediBill.Enabled = false;
@@ -335,9 +284,6 @@
             this.dGV_Service.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dGV_Service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dGV_Service.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Service.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Service.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -420,9 +366,6 @@
             this.dGV_Medi.AllowUserToDeleteRows = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dGV_Medi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dGV_Medi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Medi.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Medi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Medi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -490,9 +433,6 @@
             // 
             // lbYear
             // 
-            this.lbYear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbYear.AutoSize = true;
             this.lbYear.Location = new System.Drawing.Point(599, 14);
             this.lbYear.Name = "lbYear";
@@ -503,9 +443,6 @@
             // 
             // Lb_CoBill
             // 
-            this.Lb_CoBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lb_CoBill.AutoSize = true;
             this.Lb_CoBill.Location = new System.Drawing.Point(656, 14);
             this.Lb_CoBill.Name = "Lb_CoBill";
@@ -516,9 +453,6 @@
             // 
             // bt_AddBill
             // 
-            this.bt_AddBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_AddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_AddBill.Location = new System.Drawing.Point(784, 94);
             this.bt_AddBill.Margin = new System.Windows.Forms.Padding(4);
@@ -531,9 +465,6 @@
             // 
             // lb_ServiceAmtBill
             // 
-            this.lb_ServiceAmtBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_ServiceAmtBill.AutoSize = true;
             this.lb_ServiceAmtBill.Location = new System.Drawing.Point(554, 53);
             this.lb_ServiceAmtBill.Name = "lb_ServiceAmtBill";
@@ -542,9 +473,6 @@
             // 
             // lb_Remark
             // 
-            this.lb_Remark.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Remark.AutoSize = true;
             this.lb_Remark.Location = new System.Drawing.Point(68, 101);
             this.lb_Remark.Name = "lb_Remark";
@@ -555,9 +483,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Petshop.Properties.Resources.noun_16443;
             this.pictureBox1.Location = new System.Drawing.Point(37, 99);
             this.pictureBox1.Name = "pictureBox1";
@@ -567,9 +492,6 @@
             // 
             // bt_Refresh
             // 
-            this.bt_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_Refresh.Image")));
             this.bt_Refresh.Location = new System.Drawing.Point(848, 53);

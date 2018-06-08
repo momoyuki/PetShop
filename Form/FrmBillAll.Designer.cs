@@ -29,20 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBillAll));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControlBill = new System.Windows.Forms.TabControl();
             this.tp_AllBill = new System.Windows.Forms.TabPage();
             this.dGV_Bill = new System.Windows.Forms.DataGridView();
-            this.ccBill_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccRefer_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccEm_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccBill_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccBillSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccBillSale_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccBillSale_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tp_Medi = new System.Windows.Forms.TabPage();
             this.dGV_Detail = new System.Windows.Forms.DataGridView();
             this.ccBill_IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +61,14 @@
             this.lb_EmID = new System.Windows.Forms.Label();
             this.bt_Reset = new System.Windows.Forms.Button();
             this.bt_Refresh = new System.Windows.Forms.Button();
+            this.ccBill_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccRefer_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccEm_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBill_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBillSale_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBillSale_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccBillSale_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControlBill.SuspendLayout();
             this.tp_AllBill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Bill)).BeginInit();
@@ -78,9 +78,6 @@
             // 
             // TabControlBill
             // 
-            this.TabControlBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControlBill.Controls.Add(this.tp_AllBill);
             this.TabControlBill.Controls.Add(this.tp_Medi);
             this.TabControlBill.Location = new System.Drawing.Point(12, 135);
@@ -106,9 +103,6 @@
             this.dGV_Bill.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dGV_Bill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dGV_Bill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Bill.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Bill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -131,73 +125,6 @@
             this.dGV_Bill.TabIndex = 111;
             this.dGV_Bill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Bill_CellClick);
             // 
-            // ccBill_ID
-            // 
-            this.ccBill_ID.DataPropertyName = "Bill_ID";
-            this.ccBill_ID.FillWeight = 120F;
-            this.ccBill_ID.HeaderText = "รหัสใบเสร็จ";
-            this.ccBill_ID.Name = "ccBill_ID";
-            this.ccBill_ID.ReadOnly = true;
-            this.ccBill_ID.Width = 120;
-            // 
-            // ccRefer_ID
-            // 
-            this.ccRefer_ID.DataPropertyName = "Refer_ID";
-            this.ccRefer_ID.FillWeight = 140F;
-            this.ccRefer_ID.HeaderText = "รหัสอ้างอิง";
-            this.ccRefer_ID.Name = "ccRefer_ID";
-            this.ccRefer_ID.ReadOnly = true;
-            this.ccRefer_ID.Width = 140;
-            // 
-            // ccEm_ID
-            // 
-            this.ccEm_ID.DataPropertyName = "Em_ID";
-            this.ccEm_ID.HeaderText = "รหัสเจ้าหน้าที่";
-            this.ccEm_ID.Name = "ccEm_ID";
-            this.ccEm_ID.ReadOnly = true;
-            this.ccEm_ID.Visible = false;
-            // 
-            // ccEm_Name
-            // 
-            this.ccEm_Name.DataPropertyName = "Em_Name";
-            this.ccEm_Name.FillWeight = 200F;
-            this.ccEm_Name.HeaderText = "ชื่อพนักงาน";
-            this.ccEm_Name.Name = "ccEm_Name";
-            this.ccEm_Name.ReadOnly = true;
-            this.ccEm_Name.Width = 200;
-            // 
-            // ccBill_Date
-            // 
-            this.ccBill_Date.DataPropertyName = "Bill_Date";
-            dataGridViewCellStyle2.Format = "d";
-            this.ccBill_Date.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ccBill_Date.FillWeight = 140F;
-            this.ccBill_Date.HeaderText = "ออกใบเสร็จเมื่อ";
-            this.ccBill_Date.Name = "ccBill_Date";
-            this.ccBill_Date.ReadOnly = true;
-            this.ccBill_Date.Width = 140;
-            // 
-            // ccBillSale_Total
-            // 
-            this.ccBillSale_Total.DataPropertyName = "BillSale_Total";
-            this.ccBillSale_Total.HeaderText = "รวม";
-            this.ccBillSale_Total.Name = "ccBillSale_Total";
-            this.ccBillSale_Total.ReadOnly = true;
-            // 
-            // ccBillSale_DC
-            // 
-            this.ccBillSale_DC.DataPropertyName = "BillSale_DC";
-            this.ccBillSale_DC.HeaderText = "ส่วนลด";
-            this.ccBillSale_DC.Name = "ccBillSale_DC";
-            this.ccBillSale_DC.ReadOnly = true;
-            // 
-            // ccBillSale_Net
-            // 
-            this.ccBillSale_Net.DataPropertyName = "BillSale_Net";
-            this.ccBillSale_Net.HeaderText = "สุทธิ";
-            this.ccBillSale_Net.Name = "ccBillSale_Net";
-            this.ccBillSale_Net.ReadOnly = true;
-            // 
             // tp_Medi
             // 
             this.tp_Medi.Controls.Add(this.dGV_Detail);
@@ -215,9 +142,6 @@
             this.dGV_Detail.AllowUserToDeleteRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dGV_Detail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dGV_Detail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_Detail.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_Detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Detail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -286,9 +210,6 @@
             // 
             // Lb_BillID
             // 
-            this.Lb_BillID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lb_BillID.AutoSize = true;
             this.Lb_BillID.Location = new System.Drawing.Point(106, 9);
             this.Lb_BillID.Name = "Lb_BillID";
@@ -298,9 +219,6 @@
             // 
             // txb_ReferID
             // 
-            this.txb_ReferID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_ReferID.Enabled = false;
             this.txb_ReferID.Location = new System.Drawing.Point(109, 44);
             this.txb_ReferID.Margin = new System.Windows.Forms.Padding(4);
@@ -311,9 +229,6 @@
             // 
             // lb_ReferID
             // 
-            this.lb_ReferID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_ReferID.AutoSize = true;
             this.lb_ReferID.Location = new System.Drawing.Point(21, 48);
             this.lb_ReferID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -324,7 +239,6 @@
             // 
             // bt_Print
             // 
-            this.bt_Print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Print.Location = new System.Drawing.Point(889, 50);
             this.bt_Print.Margin = new System.Windows.Forms.Padding(4);
@@ -337,7 +251,6 @@
             // 
             // bt_Load
             // 
-            this.bt_Load.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Load.Location = new System.Drawing.Point(846, 9);
             this.bt_Load.Margin = new System.Windows.Forms.Padding(4);
@@ -351,9 +264,6 @@
             // 
             // txb_BillDC
             // 
-            this.txb_BillDC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_BillDC.Enabled = false;
             this.txb_BillDC.Location = new System.Drawing.Point(506, 107);
             this.txb_BillDC.Margin = new System.Windows.Forms.Padding(4);
@@ -364,9 +274,6 @@
             // 
             // lb_DC
             // 
-            this.lb_DC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_DC.AutoSize = true;
             this.lb_DC.Location = new System.Drawing.Point(436, 111);
             this.lb_DC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -377,9 +284,6 @@
             // 
             // txb_BillNet
             // 
-            this.txb_BillNet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_BillNet.Enabled = false;
             this.txb_BillNet.Location = new System.Drawing.Point(650, 107);
             this.txb_BillNet.Margin = new System.Windows.Forms.Padding(4);
@@ -390,9 +294,6 @@
             // 
             // lb_Net
             // 
-            this.lb_Net.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Net.AutoSize = true;
             this.lb_Net.Location = new System.Drawing.Point(595, 111);
             this.lb_Net.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -403,9 +304,6 @@
             // 
             // txb_BillTotal
             // 
-            this.txb_BillTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_BillTotal.Enabled = false;
             this.txb_BillTotal.Location = new System.Drawing.Point(347, 107);
             this.txb_BillTotal.Margin = new System.Windows.Forms.Padding(4);
@@ -416,9 +314,6 @@
             // 
             // lb_Total
             // 
-            this.lb_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Total.AutoSize = true;
             this.lb_Total.Location = new System.Drawing.Point(258, 111);
             this.lb_Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -429,9 +324,6 @@
             // 
             // lb_Em
             // 
-            this.lb_Em.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Em.AutoSize = true;
             this.lb_Em.Location = new System.Drawing.Point(283, 9);
             this.lb_Em.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -442,9 +334,6 @@
             // 
             // lb_DateBill
             // 
-            this.lb_DateBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_DateBill.AutoSize = true;
             this.lb_DateBill.Location = new System.Drawing.Point(258, 48);
             this.lb_DateBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -455,9 +344,6 @@
             // 
             // dTP_BillDate
             // 
-            this.dTP_BillDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dTP_BillDate.Enabled = false;
             this.dTP_BillDate.Location = new System.Drawing.Point(350, 44);
             this.dTP_BillDate.Margin = new System.Windows.Forms.Padding(4);
@@ -467,9 +353,6 @@
             // 
             // lb_Bill
             // 
-            this.lb_Bill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Bill.AutoSize = true;
             this.lb_Bill.Location = new System.Drawing.Point(13, 9);
             this.lb_Bill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -480,9 +363,6 @@
             // 
             // lb_EmID
             // 
-            this.lb_EmID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_EmID.AutoSize = true;
             this.lb_EmID.Location = new System.Drawing.Point(352, 9);
             this.lb_EmID.Name = "lb_EmID";
@@ -492,9 +372,6 @@
             // 
             // bt_Reset
             // 
-            this.bt_Reset.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Reset.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_Reset.Location = new System.Drawing.Point(546, 40);
@@ -508,7 +385,6 @@
             // 
             // bt_Refresh
             // 
-            this.bt_Refresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bt_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("bt_Refresh.Image")));
             this.bt_Refresh.Location = new System.Drawing.Point(953, 7);
@@ -517,6 +393,73 @@
             this.bt_Refresh.TabIndex = 185;
             this.bt_Refresh.UseVisualStyleBackColor = true;
             this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
+            // 
+            // ccBill_ID
+            // 
+            this.ccBill_ID.DataPropertyName = "Bill_ID";
+            this.ccBill_ID.FillWeight = 120F;
+            this.ccBill_ID.HeaderText = "รหัสใบเสร็จ";
+            this.ccBill_ID.Name = "ccBill_ID";
+            this.ccBill_ID.ReadOnly = true;
+            this.ccBill_ID.Width = 120;
+            // 
+            // ccRefer_ID
+            // 
+            this.ccRefer_ID.DataPropertyName = "Refer_ID";
+            this.ccRefer_ID.FillWeight = 140F;
+            this.ccRefer_ID.HeaderText = "รหัสอ้างอิง";
+            this.ccRefer_ID.Name = "ccRefer_ID";
+            this.ccRefer_ID.ReadOnly = true;
+            this.ccRefer_ID.Width = 140;
+            // 
+            // ccEm_ID
+            // 
+            this.ccEm_ID.DataPropertyName = "Em_ID";
+            this.ccEm_ID.HeaderText = "รหัสเจ้าหน้าที่";
+            this.ccEm_ID.Name = "ccEm_ID";
+            this.ccEm_ID.ReadOnly = true;
+            this.ccEm_ID.Visible = false;
+            // 
+            // ccEm_Name
+            // 
+            this.ccEm_Name.DataPropertyName = "Em_Name";
+            this.ccEm_Name.FillWeight = 200F;
+            this.ccEm_Name.HeaderText = "ชื่อพนักงาน";
+            this.ccEm_Name.Name = "ccEm_Name";
+            this.ccEm_Name.ReadOnly = true;
+            this.ccEm_Name.Width = 200;
+            // 
+            // ccBill_Date
+            // 
+            this.ccBill_Date.DataPropertyName = "Bill_Date";
+            dataGridViewCellStyle2.Format = "d";
+            this.ccBill_Date.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ccBill_Date.FillWeight = 140F;
+            this.ccBill_Date.HeaderText = "ออกใบเสร็จเมื่อ";
+            this.ccBill_Date.Name = "ccBill_Date";
+            this.ccBill_Date.ReadOnly = true;
+            this.ccBill_Date.Width = 140;
+            // 
+            // ccBillSale_Total
+            // 
+            this.ccBillSale_Total.DataPropertyName = "BillSale_Total";
+            this.ccBillSale_Total.HeaderText = "รวม";
+            this.ccBillSale_Total.Name = "ccBillSale_Total";
+            this.ccBillSale_Total.ReadOnly = true;
+            // 
+            // ccBillSale_DC
+            // 
+            this.ccBillSale_DC.DataPropertyName = "BillSale_DC";
+            this.ccBillSale_DC.HeaderText = "ส่วนลด";
+            this.ccBillSale_DC.Name = "ccBillSale_DC";
+            this.ccBillSale_DC.ReadOnly = true;
+            // 
+            // ccBillSale_Net
+            // 
+            this.ccBillSale_Net.DataPropertyName = "BillSale_Net";
+            this.ccBillSale_Net.HeaderText = "สุทธิ";
+            this.ccBillSale_Net.Name = "ccBillSale_Net";
+            this.ccBillSale_Net.ReadOnly = true;
             // 
             // FrmBillAll
             // 
