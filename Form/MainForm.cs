@@ -25,31 +25,25 @@ namespace Petshop
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            if (MessageBox.Show("ต้องการออกจากโปรแกรม?",
-                         "กำลังปิดโปรแกรม",
-                          MessageBoxButtons.YesNoCancel,
-                          MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show("Backup ฐานข้อมูล?",
+                 "กำลังปิดโปรแกรม",
+                  MessageBoxButtons.YesNo,
+                  MessageBoxIcon.Information) == DialogResult.Yes)
             {
-              /*  // Prepare a dummy string, thos would appear in the dialog
-                string dummyFileName = "Save Here";
-
-                SaveFileDialog sf = new SaveFileDialog();
-                // Feed the dummy name to the save dialog
-                sf.FileName = dummyFileName;
-
-                if (sf.ShowDialog() == DialogResult.OK)
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "SQL files (*.sql)|*.sql|All files (*.*)|*.*";
+                saveFileDialog1.FileName = "backup" + DateTime.Now.ToString("dd-MM-yyyy.HH.mm") + ".sql";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    // Now here's our save folder
-                    string savePath = Path.GetDirectoryName(sf.FileName);
-                    // Do whatever
+                    string savePath = saveFileDialog1.FileName;
                     iConnect.BackupDatabase(savePath);
+                    MessageBox.Show("บันทึกแล้ว ตำแหน่ง" + savePath, "บนหัว", MessageBoxButtons.OK);
                 }
+              
+
             }
-            else
-            {*/
-                e.Cancel = true;
-            }            
         }
+    
 
 
         internal void LoadEmployee()
